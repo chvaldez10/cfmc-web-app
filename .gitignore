@@ -51,3 +51,7 @@ ehthumbs.db
 # Lock files
 yarn.lock
 package-lock.json
+
+# Personal file
+del_me*
+temp*
