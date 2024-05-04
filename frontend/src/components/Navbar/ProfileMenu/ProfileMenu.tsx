@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Menu, MenuHandler, MenuList } from "@material-tailwind/react";
 import AvatarButton from "./AvatarButton";

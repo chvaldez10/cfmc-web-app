@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { Navbar } from "@material-tailwind/react";
 import NavbarBrand from "./NavbarBrand";
 import NavList from "../NavList/NavList";
@@ -8,11 +10,11 @@ import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import { MobileNav } from "@material-tailwind/react";
 
 export default function ComplexNavbar() {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 960) {
         setIsNavOpen(false);
