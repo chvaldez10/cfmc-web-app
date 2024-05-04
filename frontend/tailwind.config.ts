@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const withMT = require("@material-tailwind/react/utils/withMT");
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,8 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         green: {
-          50: "#30AF5B",
-          90: "#292C27",
+          70: "#0A6847",
         },
         gray: {
           10: "#EEEEEE",
@@ -21,13 +22,13 @@ const config: Config = {
           90: "#141414",
         },
         orange: {
-          50: "#FF814C",
+          50: "#ED9455",
         },
         blue: {
-          70: "#021639",
+          50: "#0E46A3",
         },
         yellow: {
-          50: "#FEC601",
+          50: "#F3CA52",
         },
       },
       backgroundImage: {
@@ -50,4 +51,5 @@ const config: Config = {
   },
   plugins: [],
 };
-export default config;
+
+module.exports = withMT(config);
