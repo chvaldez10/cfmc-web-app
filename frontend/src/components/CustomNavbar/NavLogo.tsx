@@ -1,6 +1,7 @@
+import { FC } from "react";
 import Image from "next/image";
 
-const Logo = () => (
+const Logo: FC = () => (
   <a href="#" className="flex items-center rtl:space-x-reverse ml-8">
     <Image
       src="/branding/logo_no_bg.png"
