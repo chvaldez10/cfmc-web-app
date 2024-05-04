@@ -15,10 +15,11 @@ const ProfileMenu: React.FC = () => {
         <AvatarButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </MenuHandler>
       <MenuList className="p-1">
-        {profileMenuItems.map((profileData, key) => (
+        {profileMenuItems.map(({ label, icon }, key) => (
           <MenuItemComponent
-            key={profileData.label}
-            {...profileData}
+            key={label}
+            label={label}
+            icon={icon}
             closeMenu={closeMenu}
             isLastItem={key === profileMenuItems.length - 1}
           />

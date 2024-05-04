@@ -1,8 +1,9 @@
 import React from "react";
 import { MenuItem, Typography } from "@material-tailwind/react";
-import { ProfileMenuItem } from "./types";
 
-interface MenuItemProps extends ProfileMenuItem {
+interface MenuItemProps {
+  label: string;
+  icon: React.ElementType;
   closeMenu: () => void;
   isLastItem: boolean;
 }
@@ -25,10 +26,6 @@ const MenuItemComponent: React.FC<MenuItemProps> = ({
       className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
       strokeWidth: 2,
     })}
-    {/* <Icon
-      className={`h-4 w-4 ${isLastItem ? "text-red-500" : ""}`}
-      strokeWidth={2}
-    /> */}
     <Typography
       as="span"
       variant="small"

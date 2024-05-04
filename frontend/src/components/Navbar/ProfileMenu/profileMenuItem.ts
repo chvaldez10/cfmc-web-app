@@ -1,4 +1,3 @@
-import React from "react";
 import {
   UserCircleIcon,
   Cog6ToothIcon,
@@ -7,12 +6,7 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 
-type ProfileMenuItem = {
-  label: string;
-  icon: React.ElementType;
-};
-
-const profileMenuItems: ProfileMenuItem[] = [
+const profileMenuItems = [
   {
     label: "My Profile",
     icon: UserCircleIcon,
