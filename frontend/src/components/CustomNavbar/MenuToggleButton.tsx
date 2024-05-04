@@ -1,34 +1,46 @@
-import { FC } from "react";
+"use client";
 
-interface MenuToggleButtonProps {
-  toggleMenu: () => void;
-}
+import { FC, useState } from "react";
 
-const MenuToggleButton: FC<MenuToggleButtonProps> = ({ toggleMenu }) => (
-  <button
-    onClick={toggleMenu}
-    type="button"
-    className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400"
-    aria-controls="mega-menu-full"
-    aria-expanded="false"
-  >
-    <span className="sr-only">Open main menu</span>
-    <svg
-      className="w-5 h-5"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 17 14"
+const MenuToggleButton: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const genericHamburgerLine =
+    "h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300";
+
+  console.log(isOpen);
+
+  return (
+    <button
+      onClick={toggleMenu}
+      type="button"
+      className="flex flex-col h-12 w-12 md:hidden rounded justify-center items-center group"
+      aria-controls="mega-menu-full"
+      aria-expanded={isOpen}
+      aria-label="Toggle navigation menu"
     >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 1h15M1 7h15M1 13h15"
+      <div
+        className={`${genericHamburgerLine} ${
+          isOpen
+            ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
+            : "opacity-60 group-hover:opacity-100"
+        }`}
       />
-    </svg>
-  </button>
-);
+      <div
+        className={`${genericHamburgerLine} ${
+          isOpen ? "opacity-0" : "opacity-60 group-hover:opacity-100"
+        }`}
+      />
+      <div
+        className={`${genericHamburgerLine} ${
+          isOpen
+            ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
+            : "opacity-60 group-hover:opacity-100"
+        }`}
+      />
+    </button>
+  );
+};
 
 export default MenuToggleButton;
