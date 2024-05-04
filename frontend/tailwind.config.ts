@@ -28,6 +28,9 @@ const config: Config = {
         yellow: {
           50: "#F3CA52",
         },
+        white: {
+          10: "#FEFAF6",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
