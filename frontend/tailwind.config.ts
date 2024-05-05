@@ -31,6 +31,10 @@ const config: Config = {
         white: {
           10: "#FEFAF6",
         },
+        violet: {
+          10: "#F1EAFF",
+          20: "#D0BFFF",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

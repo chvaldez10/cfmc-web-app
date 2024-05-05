@@ -7,9 +7,9 @@ const MenuToggleButton: FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const genericHamburgerLine =
-    "h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300";
+    "h-1 w-7 my-1 rounded-full bg-black transition ease transform duration-300";
 
-  console.log(isOpen);
+  console.log(`Testing Hamburger icon click, isOpen = ${isOpen}`);
 
   return (
     <button
