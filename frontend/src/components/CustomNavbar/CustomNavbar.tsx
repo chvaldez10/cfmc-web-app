@@ -5,7 +5,7 @@ import AboutDropdown from "./AboutDropdown";
 
 const CustomNavbar: FC = () => {
   return (
-    <nav className="bg-violet-10 border-gray-200 m-4 rounded-xl">
+    <nav className="bg-violet-10 border-gray-200 m-6 rounded-xl">
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
         <NavLogo />
         <MenuToggleButton />
