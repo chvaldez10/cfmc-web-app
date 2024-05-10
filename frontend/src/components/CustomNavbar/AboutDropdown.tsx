@@ -1,5 +1,3 @@
-"use client";
-
 import { FC, useState } from "react";
 import DropdownItem from "./AboutDropDownItem"; // Make sure this component is properly importing and exporting.
 
