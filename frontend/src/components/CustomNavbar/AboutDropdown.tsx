@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import DropdownItem from "./AboutDropDownItem"; // Make sure this component is properly importing and exporting.
+import DropdownItem from "./AboutDropDownItem";
 
 const aboutDropDownItems: string[] = [
   "Ministry",
@@ -10,19 +10,40 @@ const aboutDropDownItems: string[] = [
 
 const AboutDropdown: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  console.log(`Testing About toggle click, isOpen = ${isOpen}`);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+    setIsClicked(!isClicked);
+  };
+
+  const getRotationClass = () => {
+    if (isClicked && isHovered) return "rotate-[360deg]";
+    if (isClicked) return "rotate-180";
+    if (isHovered) return "rotate-180";
+    return "";
+  };
 
   return (
-    <li className="relative">
+    <li
+      className="relative group"
+      onMouseEnter={() => {
+        setIsOpen(true);
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsOpen(false);
+        setIsHovered(false);
+      }}
+    >
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:p-0 md:w-auto"
+        className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-200 md:hover:bg-gray-200 md:border-0 md:p-0 md:w-auto"
       >
         About
         <svg
-          className="w-2.5 h-2.5 ml-2.5"
+          className={`w-2.5 h-2.5 ml-2.5 transition-transform duration-300 ease-in-out transform ${getRotationClass()}`}
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
