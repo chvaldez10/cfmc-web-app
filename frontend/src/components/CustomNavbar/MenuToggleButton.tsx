@@ -19,7 +19,7 @@ const MenuToggleButton: FC<MenuToggleButtonProps> = ({
       onClick={toggleMenu}
       type="button"
       className="flex flex-col h-12 w-12 md:hidden rounded justify-center items-center group"
-      aria-controls="mega-menu-full"
+      aria-controls="navbarLinks"
       aria-expanded={isMenuBarOpen}
       aria-label="Toggle navigation menu"
     >
