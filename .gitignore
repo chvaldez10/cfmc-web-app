@@ -56,3 +56,5 @@ package-lock.json
 del_me*
 temp*
 bin/
+archive/**/*
+!archive/*.*
