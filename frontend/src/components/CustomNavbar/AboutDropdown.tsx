@@ -25,6 +25,10 @@ const AboutDropdown: FC = () => {
     return "";
   };
 
+  console.log(
+    `Debugging, isOpen=${isOpen}, isClicked = ${isClicked}, isHovered=${isHovered}`
+  );
+
   return (
     <li
       className="relative group"
