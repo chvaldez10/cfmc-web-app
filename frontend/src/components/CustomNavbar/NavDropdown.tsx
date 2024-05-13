@@ -1,14 +1,18 @@
 import { FC, useState } from "react";
 import DropdownItem from "./NavDropdownItem";
 
-const navDropDownItems: string[] = [
-  "Ministry",
-  "Our Mission",
-  "Community",
-  "Contact Us",
-];
+// const navDropDownItems: string[] = [
+//   "Ministry",
+//   "Our Mission",
+//   "Community",
+//   "Contact Us",
+// ];
 
-const NavDropdown: FC = () => {
+interface NavDropdownProps {
+  items: string[];
+}
+
+const NavDropdown: FC<NavDropdownProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -66,7 +70,7 @@ const NavDropdown: FC = () => {
       {isOpen && (
         <div className="absolute z-10 font-normal bg-stone-50 divide-y divide-gray-100 rounded-lg shadow w-44">
           <ul className="py-2 text-sm text-gray-700">
-            {navDropDownItems.map((item) => (
+            {items.map((item) => (
               <DropdownItem key={item} href="#">
                 {item}
               </DropdownItem>

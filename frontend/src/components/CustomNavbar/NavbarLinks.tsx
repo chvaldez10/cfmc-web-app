@@ -7,12 +7,19 @@ const navItems = [
   { href: "#", label: "Contact Us" },
 ];
 
+const navDropDownItems: string[] = [
+  "Ministry",
+  "Our Mission",
+  "Community",
+  "Contact Us",
+];
+
 export const NavbarLinks: FC = () => (
   <ul
     id="navbarLinks"
     className="flex flex-col font-medium md:space-x-8 rtl:space-x-reverse md:flex-row"
   >
-    <NavDropdown />
+    <NavDropdown items={navDropDownItems} />
     {navItems.map((navItem, index) => (
       <NavbarLinkItems key={index} href={navItem.href} label={navItem.label} />
     ))}
