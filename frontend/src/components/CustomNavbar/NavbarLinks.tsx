@@ -1,7 +1,7 @@
 import { FC } from "react";
 import NavbarLinkItems from "./NavbarLinkItems";
 import NavDropdown from "./NavDropdown";
-import ButtonGradientOutline from "@/components/core/buttons/ButtonGradientOutline";
+import PurpleButtonPill from "@/components/core/buttons/PurpleButtonPill";
 
 const navDropdownItems: string[] = [
   "Ministry",
@@ -26,7 +26,7 @@ export const NavbarLinks: FC = () => (
     <NavbarLinkItems href="#" label="Media" />
     <NavDropdown items={getInvolvedDropdownItems} label="Get Involved" />
     <NavbarLinkItems href="#" label="Contact Us" />
-    <ButtonGradientOutline
+    <PurpleButtonPill
       text="Join Us Sunday"
       onClick={() => console.log("Join Us Sunday Clicked")}
     />
