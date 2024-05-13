@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import CustomNavbar from "@/components/CustomNavbar/CustomNavbar";
 import "./globals.css";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "CFMC",
@@ -14,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={roboto.className}>
         <CustomNavbar />
         {children}
       </body>
