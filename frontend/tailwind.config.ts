@@ -34,6 +34,7 @@ const config: Config = {
         violet: {
           10: "#F1EAFF",
           20: "#D0BFFF",
+          70: "#CFB7FF",
         },
       },
       backgroundImage: {

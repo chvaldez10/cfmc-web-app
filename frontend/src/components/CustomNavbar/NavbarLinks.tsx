@@ -4,17 +4,17 @@ import NavDropdown from "./NavDropdown";
 import PurpleButtonPill from "@/components/core/buttons/PurpleButtonPill";
 
 const navDropdownItems: string[] = [
-  "Ministry",
-  "Our Mission",
-  "Community",
-  "Contact Us",
+  "⛪ Ministry",
+  "📖 Our Mission",
+  "📜 Board",
+  "👥 Community",
 ];
 
 const getInvolvedDropdownItems: string[] = [
-  "Ministry",
-  "Our Mission",
-  "Community",
-  "Contact Us",
+  "📩 Give",
+  "🗓️ Upcoming",
+  "🖥️ Multimedia",
+  "🎶 Music",
 ];
 
 export const NavbarLinks: FC = () => (

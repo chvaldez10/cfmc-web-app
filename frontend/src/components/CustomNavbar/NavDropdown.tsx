@@ -13,19 +13,14 @@ const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    setIsClicked(!isClicked);
+    setIsClicked((prev) => !prev);
   };
 
   const getRotationClass = () => {
     if (isClicked && isHovered) return "rotate-[360deg]";
-    if (isClicked) return "rotate-180";
-    if (isHovered) return "rotate-180";
+    if (isClicked || isHovered) return "rotate-180";
     return "";
   };
-
-  console.log(
-    `Debugging, isOpen=${isOpen}, isClicked = ${isClicked}, isHovered=${isHovered}`
-  );
 
   return (
     <li
@@ -41,7 +36,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
     >
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-200 md:hover:bg-gray-200 md:border-0 md:p-0 md:w-auto"
+        className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded md:border-0 md:p-0 md:w-auto"
       >
         {label}
         <svg
@@ -62,7 +57,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 font-normal bg-stone-50 divide-y divide-gray-100 rounded-lg shadow w-44">
+        <div className="absolute z-10 font-normal bg-violet-10 divide-y divide-gray-100 rounded-lg shadow w-44">
           <ul className="py-2 text-sm text-gray-700">
             {items.map((item) => (
               <DropdownItem key={item} href="#">
