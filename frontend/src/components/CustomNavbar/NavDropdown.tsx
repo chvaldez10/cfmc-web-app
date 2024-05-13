@@ -1,18 +1,12 @@
 import { FC, useState } from "react";
 import DropdownItem from "./NavDropdownItem";
 
-// const navDropDownItems: string[] = [
-//   "Ministry",
-//   "Our Mission",
-//   "Community",
-//   "Contact Us",
-// ];
-
 interface NavDropdownProps {
   items: string[];
+  label: string;
 }
 
-const NavDropdown: FC<NavDropdownProps> = ({ items }) => {
+const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -49,7 +43,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ items }) => {
         onClick={toggleDropdown}
         className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-200 md:hover:bg-gray-200 md:border-0 md:p-0 md:w-auto"
       >
-        About
+        {label}
         <svg
           className={`w-2.5 h-2.5 ml-2.5 transition-transform duration-300 ease-in-out transform ${getRotationClass()}`}
           aria-hidden="true"
