@@ -1,14 +1,14 @@
 import { FC, useState } from "react";
-import DropdownItem from "./AboutDropDownItem";
+import DropdownItem from "./NavDropdownItem";
 
-const aboutDropDownItems: string[] = [
+const navDropDownItems: string[] = [
   "Ministry",
   "Our Mission",
   "Community",
   "Contact Us",
 ];
 
-const AboutDropdown: FC = () => {
+const NavDropdown: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -66,7 +66,7 @@ const AboutDropdown: FC = () => {
       {isOpen && (
         <div className="absolute z-10 font-normal bg-stone-50 divide-y divide-gray-100 rounded-lg shadow w-44">
           <ul className="py-2 text-sm text-gray-700">
-            {aboutDropDownItems.map((item) => (
+            {navDropDownItems.map((item) => (
               <DropdownItem key={item} href="#">
                 {item}
               </DropdownItem>
@@ -78,4 +78,4 @@ const AboutDropdown: FC = () => {
   );
 };
 
-export default AboutDropdown;
+export default NavDropdown;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import NavbarLinkItems from "./NavbarLinkItems";
-import AboutDropdown from "./AboutDropdown";
+import NavDropdown from "./NavDropdown";
 
 const navItems = [
   { href: "#", label: "Media" },
@@ -12,7 +12,7 @@ export const NavbarLinks: FC = () => (
     id="navbarLinks"
     className="flex flex-col font-medium md:space-x-8 rtl:space-x-reverse md:flex-row"
   >
-    <AboutDropdown />
+    <NavDropdown />
     {navItems.map((navItem, index) => (
       <NavbarLinkItems key={index} href={navItem.href} label={navItem.label} />
     ))}

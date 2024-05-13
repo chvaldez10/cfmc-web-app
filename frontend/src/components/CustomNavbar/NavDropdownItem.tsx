@@ -1,11 +1,11 @@
 import { FC } from "react";
 
-interface DropdownItemProps {
+interface NavDropdownItemProps {
   href: string;
   children: React.ReactNode;
 }
 
-const DropdownItem: FC<DropdownItemProps> = ({ href, children }) => (
+const NavDropdownItem: FC<NavDropdownItemProps> = ({ href, children }) => (
   <li>
     <a href={href} className="block px-4 py-2 hover:bg-violet-50 ">
       {children}
@@ -13,4 +13,4 @@ const DropdownItem: FC<DropdownItemProps> = ({ href, children }) => (
   </li>
 );
 
-export default DropdownItem;
+export default NavDropdownItem;
