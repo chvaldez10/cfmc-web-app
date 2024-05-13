@@ -3,10 +3,8 @@ import NavbarLinkItems from "./NavbarLinkItems";
 import AboutDropdown from "./AboutDropdown";
 
 const navItems = [
-  { href: "#", label: "About", isActive: true },
-  { href: "#", label: "Services" },
   { href: "#", label: "Media" },
-  { href: "#", label: "Calendar" },
+  { href: "#", label: "Contact Us" },
 ];
 
 export const NavbarLinks: FC = () => (
@@ -16,12 +14,7 @@ export const NavbarLinks: FC = () => (
   >
     <AboutDropdown />
     {navItems.map((navItem, index) => (
-      <NavbarLinkItems
-        key={index}
-        href={navItem.href}
-        label={navItem.label}
-        current={navItem.isActive}
-      />
+      <NavbarLinkItems key={index} href={navItem.href} label={navItem.label} />
     ))}
   </ul>
 );

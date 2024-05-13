@@ -11,8 +11,8 @@ const CustomNavbar: FC<{}> = () => {
   const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
 
   return (
-    <nav className="bg-violet-10 border-gray-200 m-6 rounded-xl">
-      <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-4">
+    <nav className="bg-violet-10 border-gray-200 m-2 rounded-xl">
+      <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-3">
         <NavLogo />
         <MenuToggleButton
           isMenuBarOpen={isMenuBarOpen}

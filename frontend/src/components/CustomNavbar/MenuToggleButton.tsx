@@ -5,14 +5,10 @@ interface MenuToggleButtonProps {
   toggleMenu: () => void;
 }
 
-const hamburgerLine =
-  "h-1 w-7 my-1 rounded-full bg-black transition ease transform duration-300";
-
-const hamburgerLineStyles = [
-  { open: "rotate-45 translate-y-3 opacity-50", close: "opacity-60" },
-  { open: "opacity-0", close: "opacity-60" },
-  { open: "-rotate-45 -translate-y-3 opacity-50", close: "opacity-60" },
-];
+const genericHamburgerLine =
+  "h-1 w-7 my-0.5 rounded-full bg-black transition ease transform duration-300";
+const baseOpacity = "opacity-60 group-hover:opacity-100";
+const activeTransform = "opacity-50 group-hover:opacity-100";
 
 const MenuToggleButton: FC<MenuToggleButtonProps> = ({
   isMenuBarOpen,
@@ -29,16 +25,30 @@ const MenuToggleButton: FC<MenuToggleButtonProps> = ({
       aria-expanded={isMenuBarOpen}
       aria-label="Toggle navigation menu"
     >
-      {hamburgerLineStyles.map((style, index) => (
-        <div
-          key={index}
-          className={`${hamburgerLine} ${
-            isMenuBarOpen
-              ? `%{style.open} group-hover:opacity-100`
-              : `${style.close} group-hover:opacity-100`
-          }`}
-        />
-      ))}
+      {/* Top layer */}
+      <div
+        className={`${genericHamburgerLine} ${
+          isMenuBarOpen
+            ? `rotate-45 translate-y-2 ${activeTransform}`
+            : baseOpacity
+        }`}
+      />
+
+      {/* Middle layer */}
+      <div
+        className={`${genericHamburgerLine} ${
+          isMenuBarOpen ? "opacity-0" : baseOpacity
+        }`}
+      />
+
+      {/* Bottom layer */}
+      <div
+        className={`${genericHamburgerLine} ${
+          isMenuBarOpen
+            ? `-rotate-45 -translate-y-2 ${activeTransform}`
+            : baseOpacity
+        }`}
+      />
     </button>
   );
 };
