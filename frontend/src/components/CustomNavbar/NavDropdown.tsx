@@ -8,19 +8,18 @@ interface NavDropdownProps {
 
 const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    setIsClicked((prev) => !prev);
   };
 
   const getRotationClass = () => {
-    if (isClicked && isHovered) return "rotate-[360deg]";
-    if (isClicked || isHovered) return "rotate-180";
+    if (isOpen && isHovered) return "rotate-180";
     return "";
   };
+
+  console.log(`Debugging, isOpen=${isOpen}, isHovered=${isHovered}`);
 
   return (
     <li
