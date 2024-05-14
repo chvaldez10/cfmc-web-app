@@ -1,5 +1,5 @@
-import Image from "next/image";
+import TextOnImage from "@/components/core/hero/TextOnImage";
 
 export default function Home() {
-  return <div>Home</div>;
+  return <TextOnImage />;
 }
