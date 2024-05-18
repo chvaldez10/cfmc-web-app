@@ -11,6 +11,9 @@ const config: Config = {
       height: {
         "576": "576px",
       },
+      width: {
+        "864": "864px",
+      },
       colors: {
         green: {
           10: "#f8ffea",
@@ -33,6 +36,7 @@ const config: Config = {
           50: "#F3CA52",
         },
         white: {
+          0: "#ffffff",
           10: "#FEFAF6",
         },
         violet: {
