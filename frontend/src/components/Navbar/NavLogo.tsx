@@ -2,7 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo: FC<{}> = () => (
+const NavLogo: FC<{}> = () => (
   <Link href="/" className="flex items-center rtl:space-x-reverse ml-5">
     <Image
       src="/branding/logo_no_bg.png"
@@ -19,4 +19,4 @@ const Logo: FC<{}> = () => (
   </Link>
 );
 
-export default Logo;
+export default NavLogo;

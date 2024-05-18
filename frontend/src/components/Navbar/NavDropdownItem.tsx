@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 
 interface NavDropdownItemProps {
   href: string;
@@ -7,9 +8,9 @@ interface NavDropdownItemProps {
 
 const NavDropdownItem: FC<NavDropdownItemProps> = ({ href, children }) => (
   <li>
-    <a href={href} className="block px-4 py-2 hover:bg-violet-50 ">
+    <Link href={href} className="block px-4 py-2 hover:bg-violet-100 ">
       {children}
-    </a>
+    </Link>
   </li>
 );
 

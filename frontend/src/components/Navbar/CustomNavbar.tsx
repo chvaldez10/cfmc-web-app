@@ -6,7 +6,7 @@ import MenuToggleButton from "./MenuToggleButton";
 import NavbarLinks from "./NavbarLinks";
 
 const CustomNavbar: FC<{}> = () => {
-  const [isMenuBarOpen, setIsMenuBarOpen] = useState(false);
+  const [isMenuBarOpen, setIsMenuBarOpen] = useState<boolean>(false);
 
   const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
 

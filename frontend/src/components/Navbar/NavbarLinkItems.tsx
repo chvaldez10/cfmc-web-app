@@ -7,10 +7,6 @@ interface NavbarLinkItemsProps {
 }
 
 export const NavbarLinkItems: FC<NavbarLinkItemsProps> = ({ href, label }) => {
-  const activeClasses =
-    "py-2 px-3 rounded md:p-0 dark:bg-blue-600 md:dark:bg-transparent";
-  const inactiveClasses = "py-2 px-3 md:p-0";
-
   return (
     <li>
       <Link href="#">{label}</Link>

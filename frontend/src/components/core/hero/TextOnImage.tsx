@@ -17,7 +17,7 @@ const TextOnImage: React.FC<{}> = () => {
       </div>
 
       {/* Text Column */}
-      <div className="relative max-w-lg md:max-w-2xl md:shadow-lg md:absolute lg:w-3/5 lg:left-0 lg:ml-20 xl:ml-12 z-50 bg-white-0">
+      <div className="relative max-w-lg md:max-w-2xl md:shadow-lg md:absolute lg:w-3/5 lg:left-0 lg:ml-20 xl:ml-12 z-10 bg-white-0">
         {/* Text Wrapper */}
         <div className="flex flex-col p-12 md:px-16 my-6">
           <h2 className="text-2xl font-bold lg:text-4xl text-center">

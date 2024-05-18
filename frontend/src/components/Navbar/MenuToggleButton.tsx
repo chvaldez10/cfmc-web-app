@@ -7,15 +7,15 @@ interface MenuToggleButtonProps {
 
 const genericHamburgerLine =
   "h-1 w-7 my-0.5 rounded-full bg-black transition ease transform duration-300";
+
 const baseOpacity = "opacity-60 group-hover:opacity-100";
+
 const activeTransform = "opacity-50 group-hover:opacity-100";
 
 const MenuToggleButton: FC<MenuToggleButtonProps> = ({
   isMenuBarOpen,
   toggleMenu,
 }) => {
-  console.log(`Testing Hamburger icon click, isMenuBarOpen = ${isMenuBarOpen}`);
-
   return (
     <button
       onClick={toggleMenu}

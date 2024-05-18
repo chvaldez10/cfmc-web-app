@@ -18,10 +18,7 @@ const getInvolvedDropdownItems: string[] = [
 ];
 
 export const NavbarLinks: FC = () => (
-  <ul
-    id="navbarLinks"
-    className="flex flex-col font-medium md:space-x-8 rtl:space-x-reverse md:flex-row items-center"
-  >
+  <ul className="flex flex-col font-medium md:space-x-8 rtl:space-x-reverse md:flex-row items-center">
     <NavDropdown items={navDropdownItems} label="About" />
     <NavbarLinkItems href="#" label="Media" />
     <NavDropdown items={getInvolvedDropdownItems} label="Get Involved" />
