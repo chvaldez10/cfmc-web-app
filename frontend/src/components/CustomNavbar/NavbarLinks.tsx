@@ -29,6 +29,7 @@ export const NavbarLinks: FC = () => (
     <PurpleButtonPill
       text="Join Us Sunday"
       onClick={() => console.log("Join Us Sunday Clicked")}
+      variant="filled"
     />
   </ul>
 );

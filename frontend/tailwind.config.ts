@@ -36,7 +36,7 @@ const config: Config = {
           50: "#F3CA52",
         },
         white: {
-          0: "#ffffff",
+          0: "#F6F5F2",
           10: "#FEFAF6",
         },
         violet: {
