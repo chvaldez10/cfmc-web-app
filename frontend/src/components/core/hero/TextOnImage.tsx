@@ -4,11 +4,11 @@ const TextOnImage: React.FC<{}> = () => {
   return (
     <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
       {/* Image Column */}
-      <div className="relative w-full h-64 lg:w-1/2 lg:h-auto z-10">
+      <div className="w-full h-64 lg:w-1/2 lg:h-auto">
         <img
           className="h-full w-full object-cover"
-          src="https://picsum.photos/id/1018/2000"
-          alt="Winding mountain road"
+          src="/background/Bible_with_leaf.jpg"
+          alt="Bible_with_leaf.jpg"
         />
       </div>
 
