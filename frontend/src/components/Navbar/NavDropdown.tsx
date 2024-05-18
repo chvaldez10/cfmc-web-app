@@ -56,7 +56,7 @@ const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 font-normal bg-slate-50 divide-y divide-gray-600 rounded-lg shadow w-48">
+        <div className="absolute z-20 font-normal bg-slate-50 divide-y divide-gray-600 rounded-lg shadow w-48">
           <ul className="py-2 text-sm text-gray-700">
             {items.map((item) => (
               <DropdownItem key={item} href="#">
