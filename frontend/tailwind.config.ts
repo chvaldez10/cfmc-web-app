@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        "576": "576px",
+      },
       colors: {
         green: {
           10: "#f8ffea",

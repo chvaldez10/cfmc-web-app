@@ -4,11 +4,14 @@ const TextOnImage: React.FC<{}> = () => {
   return (
     <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
       {/* Image Column */}
-      <div className="w-full h-64 lg:w-1/2 lg:h-auto">
-        <img
-          className="h-full w-full object-cover"
-          src="/background/Bible_with_leaf.jpg"
-          alt="Bible_with_leaf.jpg"
+      <div className="w-full h-64 lg:w-1/2 lg:h-576">
+        <Image
+          src="/background/Bible_with_leaf_resized.jpg"
+          alt="tmp image"
+          width={1920}
+          height={576}
+          style={{ objectFit: "cover" }}
+          className="w-full h-full"
         />
       </div>
 
