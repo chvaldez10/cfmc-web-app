@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaRegSmile, FaLeaf, FaSeedling } from "react-icons/fa";
 
 const TextOnImage: React.FC<{}> = () => {
   return (
@@ -18,16 +19,25 @@ const TextOnImage: React.FC<{}> = () => {
       {/* Text Column */}
       <div className="relative max-w-lg md:max-w-2xl md:shadow-lg md:absolute lg:w-3/5 lg:left-0 lg:ml-20 xl:ml-12 z-50 bg-white-0">
         {/* Text Wrapper */}
-        <div className="flex flex-col p-12 md:px-16 text-center">
-          <h2 className="text-2xl font-medium  lg:text-4xl">Our Mission</h2>
-          <ul className="mt-4 space-y-2 text-lg">
-            <li className="font-medium">Spread the Good News</li>
-            <li className="font-medium">Lead to New Life</li>
-            <li className="font-medium">Nurture Growth</li>
-          </ul>
-          <div className="mt-8 text-gray-800">
-            <p className="text-lg">2:00 PM | Sunday</p>
-            <p className="text-lg">419 Northmount Drive NW, Calgary, AB</p>
+        <div className="flex flex-col p-12 md:px-16 my-6">
+          <h2 className="text-2xl font-bold lg:text-4xl text-center">
+            Welcome to Our Church
+          </h2>
+          <div className="mt-4 text-xl">
+            <p className="font-semibold">Mission Statement</p>
+            <p>
+              To <span className="font-semibold"> share</span> the good news of
+              God’s love. To
+              <span className="font-semibold"> lead</span> with a new life of
+              <span className=""> faith, trust, love, and obedience.</span> To
+              <span className="font-semibold"> nurture</span> to become
+              Christ-like in their lives.
+            </p>
+          </div>
+          <div className="mt-4 text-xl">
+            <p className="font-semibold">
+              Sundays 2:00 PM | 419 Northmount Drive NW, Calgary, AB
+            </p>
           </div>
         </div>
       </div>
