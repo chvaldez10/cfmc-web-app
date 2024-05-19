@@ -18,11 +18,7 @@ const CustomNavbar: FC<{}> = () => {
           isMenuBarOpen={isMenuBarOpen}
           toggleMenu={toggleMenu}
         />
-        <div
-          className={`w-full md:block md:w-auto ${
-            isMenuBarOpen ? "block" : "hidden"
-          }`}
-        >
+        <div className={`w-full md:block md:w-auto hidden`}>
           <NavbarLinks />
         </div>
       </div>
