@@ -19,8 +19,6 @@ const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
     return "";
   };
 
-  console.log(`Debugging, isOpen=${isOpen}, isHovered=${isHovered}`);
-
   return (
     <li
       className="relative group"

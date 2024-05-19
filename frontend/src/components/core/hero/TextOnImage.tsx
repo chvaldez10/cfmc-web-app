@@ -5,7 +5,10 @@ import PurplePillButton from "@/components/core/buttons/PurplePillButton";
 
 const TextOnImage: React.FC<{}> = () => {
   return (
-    <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl xl:max-w-6xl lg:mt-12">
+    <div
+      className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl xl:max-w-6xl lg:mt-12 align-center"
+      style={{ height: "70vh" }}
+    >
       {/* Image Column */}
       <div className="hidden lg:block lg:w-576 lg:h-576 w-full h-full">
         <Image
@@ -55,7 +58,7 @@ const TextOnImage: React.FC<{}> = () => {
             text="Join Us Sunday"
             onClick={() => console.log("Join Us Sunday Clicked")}
             variant="filled"
-            className="md:hidden mt-4"
+            className="md:hidden mt-5"
           />
         </div>
       </div>

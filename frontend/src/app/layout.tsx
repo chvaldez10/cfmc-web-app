@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Providers>
-          <CustomNavbar />
-          {children}
-        </Providers>
+        {/* <Providers> */}
+        <CustomNavbar />
+        {children}
+        {/* </Providers> */}
       </body>
     </html>
   );
