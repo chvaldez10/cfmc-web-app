@@ -12,7 +12,7 @@ const baseClass =
   "font-medium rounded-full text-sm px-5 py-2.5 text-center transition-colors duration-300";
 
 const variants = {
-  filled: "text-white-0 bg-purple-500 hover:bg-white-0 hover:text-purple-500",
+  filled: "text-white-0 bg-purple-500 hover:bg-purple-700 hover:text-white-0",
 
   outline:
     "text-purple-500 border border-purple-500 hover:bg-purple-500 hover:text-white-0",
