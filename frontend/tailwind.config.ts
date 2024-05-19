@@ -12,7 +12,7 @@ const config: Config = {
         "576": "576px",
       },
       width: {
-        "576": "864px",
+        "576": "576px",
       },
       colors: {
         green: {
