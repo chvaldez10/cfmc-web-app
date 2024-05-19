@@ -55,8 +55,16 @@ const NavDropdown: FC<NavDropdownProps> = ({ items, label }) => {
         </svg>
       </button>
 
+      {/*
+      left-1/2: sets the left edge of the dropdown container at 50% of the
+      width of the li element.
+
+      transform -translate-x-1/2 applies
+      a translation to the left (-translate-x) by 50% of the container's own
+      width (1/2).
+      */}
       {isOpen && (
-        <div className="absolute z-20 font-normal bg-slate-50 divide-y divide-gray-600 rounded-lg shadow w-48">
+        <div className="absolute z-20 font-normal bg-slate-50 divide-y divide-gray-600 rounded-lg shadow w-48 left-1/2 transform -translate-x-1/2 top-full">
           <ul className="py-2 text-sm text-gray-700">
             {items.map((item) => (
               <DropdownItem key={item} href="#">
