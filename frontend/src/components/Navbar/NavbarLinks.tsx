@@ -11,9 +11,18 @@ const navDropdownItems: {
     label: "📖 Our Mission",
     url: "/about/our-mission",
   },
-  // "⛪ Ministry",
-  // "📜 Board",
-  // "👥 Community",
+  {
+    label: "⛪ Ministry",
+    url: "/about/ministry",
+  },
+  {
+    label: "📜 Board",
+    url: "/about/board",
+  },
+  {
+    label: "👥 Community",
+    url: "/about/our-community",
+  },
 ];
 
 const getInvolvedDropdownItems: string[] = [
