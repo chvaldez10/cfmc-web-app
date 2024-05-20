@@ -1,5 +1,8 @@
+"use client";
+
 import { FC } from "react";
 import Image from "next/image";
+import PurplePillButton from "../buttons/PurplePillButton";
 
 const images = [
   "/featured/header/1.jpeg",
@@ -10,61 +13,60 @@ const images = [
 
 const ImageCollage: FC<{}> = () => {
   return (
-    <div className="container mx-auto flex flex-col lg:flex-row items-center p-5 lg:py-12 lg:px-32 bg-gradient-to-r from-violet-400 to-purple-300">
-      {/* Collage column */}
-      <div className="grid grid-cols-2 grid-rows-3 gap-2 lg:gap-4 w-full lg:w-2/3">
-        {/* Image 1 which takes up 2 columns */}
-        <div className="relative col-span-2 row-span-1 h-48 lg:h-64">
+    <div className="mx-auto flex flex-col md:flex-row items-center p-5 md:p-8 md:px-16  backdrop-blur-2xl bg-gradient-to-r from-violet-50 via-slate-50 to-purple-50">
+      <div className="grid grid-cols-2 grid-rows-3 gap-2 md:gap-4 w-full md:w-2/3">
+        <div className="relative col-span-2 row-span-1 h-48">
           <Image
             src={images[1]}
             alt="featured image 0"
             fill={true}
             sizes="(max-width: 2048px)"
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom"
+            className="rounded-lg object-bottom 2xl:object-left"
           />
         </div>
-        <div className="relative col-span-1 row-span-2 h-full">
+        <div className="relative col-span-1 row-span-2">
           <Image
             src={images[0]}
-            alt="featured image 2"
+            alt="featured image 1"
             fill={true}
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom"
+            className="rounded-lg object-bottom 2xl:object-center"
           />
         </div>
-        <div className="relative col-span-1 row-span-1 h-48 lg:h-64">
+        <div className="relative col-span-1 row-span-1 h-48 ">
           <Image
             src={images[2]}
-            alt="featured image 0"
+            alt="featured image 2"
             fill={true}
             sizes="(max-width: 2048px)"
             style={{ objectFit: "cover" }}
             className="rounded-lg object-bottom"
           />
         </div>
-        <div className="relative col-span-1 row-span-1 h-48 lg:h-64">
+        <div className="relative col-span-1 row-span-1 h-48">
           <Image
             src={images[3]}
-            alt="featured image 0"
+            alt="featured image 3"
             fill={true}
             sizes="(max-width: 2048px)"
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom"
+            className="rounded-lg object-bottom 2xl:bottom-left"
           />
         </div>
       </div>
 
-      {/* Text column */}
-      <div className="w-full lg:ml-12 lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left text-white-0">
+      <div className="w-full md:ml-12 md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
         <h2 className="text-4xl font-bold mb-4">Pentecost Sunday</h2>
         <p className="text-lg mb-4">
-          To lead with new life of faith, trust, love and obedience to Jesus
+          To lead with new life of faith, trust, love, and obedience to Jesus
           Christ.
         </p>
-        <button className="bg-violet-100 text-white px-6 py-3 rounded-lg shadow-md hover:bg-violet-200 transition duration-300 text-gray-600">
-          Learn More
-        </button>
+        <PurplePillButton
+          text={"Learn More"}
+          onClick={() => console.log("Learn More button clicked")}
+          variant={"outline"}
+        />
       </div>
     </div>
   );

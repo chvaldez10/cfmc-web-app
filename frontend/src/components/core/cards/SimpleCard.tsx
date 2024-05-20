@@ -12,7 +12,7 @@ interface CardContainerProps {
 
 const SimpleCard: FC<CardContainerProps> = ({ cardContainerItems }) => {
   return (
-    <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 py-8 bg-green-50 text-white-0">
+    <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 py-8 bg-green-600 text-white-0">
       {cardContainerItems.map((item, index) => (
         <div key={index} className="flex flex-col items-center py-4">
           <div className="text-6xl mb-4">{item.svgIcon}</div>

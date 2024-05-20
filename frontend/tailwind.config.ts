@@ -17,7 +17,6 @@ const config: Config = {
       colors: {
         green: {
           10: "#f8ffea",
-          50: "#0D9276",
           70: "#0A6847",
         },
         gray: {
@@ -44,6 +43,11 @@ const config: Config = {
           10: "#F1EAFF",
           20: "#D0BFFF",
           70: "#CFB7FF",
+        },
+        cloudy: {
+          light: "#FFF7FC", // light cloud color
+          DEFAULT: "#FFEFEF", // default cloud color
+          dark: "#E0FBE2", // dark cloud color
         },
       },
       backgroundImage: {
