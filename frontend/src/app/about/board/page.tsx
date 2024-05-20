@@ -1,3 +1,5 @@
+import UnderConstruction from "@/components/template/UnderConstruction";
+
 export default function page() {
-  return <div>board</div>;
+  return <UnderConstruction />;
 }
