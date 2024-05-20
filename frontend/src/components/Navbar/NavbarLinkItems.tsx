@@ -9,7 +9,7 @@ interface NavbarLinkItemsProps {
 export const NavbarLinkItems: FC<NavbarLinkItemsProps> = ({ href, label }) => {
   return (
     <li>
-      <Link href="#">{label}</Link>
+      <Link href={href}>{label}</Link>
     </li>
   );
 };
