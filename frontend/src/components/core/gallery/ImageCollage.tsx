@@ -13,16 +13,19 @@ const images = [
 
 const ImageCollage: FC<{}> = () => {
   return (
-    <div className="mx-auto flex flex-col md:flex-row items-center p-5 md:p-8 md:px-16  backdrop-blur-2xl bg-gradient-to-r from-violet-50 via-slate-50 to-purple-50">
+    <div
+      className="mx-auto flex flex-col md:flex-row items-center p-5 md:px-16  backdrop-blur-2xl bg-gradient-to-r from-violet-50 via-slate-50 to-purple-50"
+      style={{ height: "90vh" }}
+    >
       <div className="grid grid-cols-2 grid-rows-3 gap-2 md:gap-4 w-full md:w-2/3">
-        <div className="relative col-span-2 row-span-1 h-48">
+        <div className="relative col-span-2 row-span-1 h-40 lg:h-48">
           <Image
             src={images[1]}
             alt="featured image 0"
             fill={true}
             sizes="(max-width: 2048px)"
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom 2xl:object-left"
+            className="rounded-lg object-bottom xl:object-center animate-fadeIn"
           />
         </div>
         <div className="relative col-span-1 row-span-2">
@@ -31,27 +34,27 @@ const ImageCollage: FC<{}> = () => {
             alt="featured image 1"
             fill={true}
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom 2xl:object-center"
+            className="rounded-lg object-bottom 2xl:object-center animate-fadeIn"
           />
         </div>
-        <div className="relative col-span-1 row-span-1 h-48 ">
+        <div className="relative col-span-1 row-span-1 h-40 lg:h-48 ">
           <Image
             src={images[2]}
             alt="featured image 2"
             fill={true}
             sizes="(max-width: 2048px)"
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom"
+            className="rounded-lg object-bottom 2xl:object-center animate-fadeIn"
           />
         </div>
-        <div className="relative col-span-1 row-span-1 h-48">
+        <div className="relative col-span-1 row-span-1 h-40 lg:h-48">
           <Image
             src={images[3]}
             alt="featured image 3"
             fill={true}
             sizes="(max-width: 2048px)"
             style={{ objectFit: "cover" }}
-            className="rounded-lg object-bottom 2xl:bottom-left"
+            className="rounded-lg object-bottom 2xl:object-bottom-left animate-fadeIn"
           />
         </div>
       </div>

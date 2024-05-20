@@ -13,7 +13,7 @@ const CustomNavbar: FC<{}> = () => {
 
   return (
     <>
-      <nav className="bg-slate-50">
+      <nav className="backdrop-blur-2xl bg-gradient-to-r from-violet-50 via-slate-50 to-purple-50 shadow-md">
         <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-3">
           <NavLogo />
           <MenuToggleButton

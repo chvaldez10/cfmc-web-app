@@ -44,27 +44,25 @@ const config: Config = {
           20: "#D0BFFF",
           70: "#CFB7FF",
         },
-        cloudy: {
-          light: "#FFF7FC", // light cloud color
-          DEFAULT: "#FFEFEF", // default cloud color
-          dark: "#E0FBE2", // dark cloud color
-        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      screens: {
-        xs: "400px",
-        "3xl": "1680px",
-        "4xl": "2200px",
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        scaleUp: {
+          "0%": { transform: "scale(0.95)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
-      maxWidth: {
-        "10xl": "1512px",
-      },
-      borderRadius: {
-        "5xl": "40px",
+      animation: {
+        fadeIn: "fadeIn 1s ease-in-out",
+        scaleUp: "scaleUp 1s ease-in-out",
       },
     },
   },
