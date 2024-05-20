@@ -1,4 +1,4 @@
-export const navDropdownItems: {
+export const aboutDropdownItems: {
   label: string;
   url: string;
 }[] = [
@@ -25,7 +25,7 @@ export const getInvolvedDropdownItems: {
   url: string;
 }[] = [
   {
-    label: "📩 Give",
+    label: "💚 Give",
     url: "/get-involved/give",
   },
   {
@@ -33,11 +33,29 @@ export const getInvolvedDropdownItems: {
     url: "/get-involved/upcoming",
   },
   {
-    label: "🖥️ Multimedia",
-    url: "/get-involved/give",
+    label: "🎚️ Multimedia",
+    url: "/get-involved/multimedia",
   },
   {
     label: "🎶 Music",
     url: "/get-involved/music",
+  },
+];
+
+export const supperDropdownItem: {
+  label: string;
+  url: string;
+}[] = [
+  {
+    label: "📩 Contact Us",
+    url: "/support/contact-us",
+  },
+  {
+    label: "🙏 Prayer",
+    url: "/support/prayer",
+  },
+  {
+    label: "💻 forum",
+    url: "/support/forum",
   },
 ];
