@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { FaHandshake } from "react-icons/fa";
-import TextOnImage from "@/components/core/hero/TextOnImage";
 
 const cardItems: {
   label: string;
@@ -15,5 +14,5 @@ const cardItems: {
 ];
 
 export default function Home() {
-  return <TextOnImage />;
+  return <div>home</div>;
 }

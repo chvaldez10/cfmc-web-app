@@ -4,8 +4,8 @@ import NavDropdown from "./NavDropdown";
 import PurplePillButton from "@/components/core/buttons/PurplePillButton";
 
 const navDropdownItems: string[] = [
-  "⛪ Ministry",
   "📖 Our Mission",
+  "⛪ Ministry",
   "📜 Board",
   "👥 Community",
 ];
