@@ -3,11 +3,17 @@ import NavbarLinkItems from "./NavbarLinkItems";
 import NavDropdown from "./NavDropdown";
 import PurplePillButton from "@/components/core/buttons/PurplePillButton";
 
-const navDropdownItems: string[] = [
-  "📖 Our Mission",
-  "⛪ Ministry",
-  "📜 Board",
-  "👥 Community",
+const navDropdownItems: {
+  label: string;
+  url: string;
+}[] = [
+  {
+    label: "📖 Our Mission",
+    url: "/about/our-mission",
+  },
+  // "⛪ Ministry",
+  // "📜 Board",
+  // "👥 Community",
 ];
 
 const getInvolvedDropdownItems: string[] = [
@@ -19,9 +25,9 @@ const getInvolvedDropdownItems: string[] = [
 
 export const NavbarLinks: FC = () => (
   <ul className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-5">
-    <NavDropdown items={navDropdownItems} label="About" />
+    <NavDropdown navDropdownItems={navDropdownItems} dropdownLabel="About" />
     <NavbarLinkItems href="#" label="Media" />
-    <NavDropdown items={getInvolvedDropdownItems} label="Get Involved" />
+    {/* <NavDropdown items={getInvolvedDropdownItems} label="Get Involved" /> */}
     <NavbarLinkItems href="#" label="Contact Us" />
     <PurplePillButton
       text="Join Us Sunday"

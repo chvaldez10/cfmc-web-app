@@ -6,12 +6,15 @@ interface NavDropdownItemProps {
   children: React.ReactNode;
 }
 
-const NavDropdownItem: FC<NavDropdownItemProps> = ({ href, children }) => (
-  <li>
-    <Link href={href} className="block px-4 py-2 hover:bg-violet-100 ">
-      {children}
-    </Link>
-  </li>
-);
+const NavDropdownItem: FC<NavDropdownItemProps> = ({ href, children }) => {
+  console.log(`children: ${children}`);
+  return (
+    <li>
+      <Link href={href} className="block px-4 py-2 hover:bg-violet-100 ">
+        {children}
+      </Link>
+    </li>
+  );
+};
 
 export default NavDropdownItem;
