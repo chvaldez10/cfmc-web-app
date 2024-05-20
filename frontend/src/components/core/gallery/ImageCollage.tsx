@@ -60,7 +60,6 @@ const ImageCollage: FC<{}> = () => {
       </div>
 
       <div className="w-full md:ml-12 md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
-        <h2 className="text-4xl font-bold mb-4">Pentecost Sunday</h2>
         <p className="text-lg mb-4">
           To lead with new life of faith, trust, love, and obedience to Jesus
           Christ.
