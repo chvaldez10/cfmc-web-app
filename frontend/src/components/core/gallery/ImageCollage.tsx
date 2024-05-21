@@ -21,8 +21,12 @@ const ImageCollage: FC<{}> = () => {
             Our Mission
           </h2>
           <p className="w-full md:w-3/4 text-base md:text-lg lg:text-xl p-4 bg-purple-100 text-gray-600 border-r-4 border-l-4 border-purple-500 shadow-lg rounded-md mb-4 md:my-0 ">
-            To lead with new life of faith, trust, love, and obedience to Jesus
-            Christ.
+            To lead with new life of{" "}
+            <span className="font-black">
+              {" "}
+              faith, trust, love, and obedience{" "}
+            </span>
+            to Jesus Christ.
           </p>
         </div>
       </div>
