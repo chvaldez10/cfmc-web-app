@@ -28,11 +28,8 @@ const CustomNavbar: FC<{}> = () => {
   return (
     <>
       <nav
-        className={`${
-          scrollPosition > 50
-            ? "bg-violet-10"
-            : "bg-gradient-to-r from-violet-50 via-slate-50 to-purple-50"
-        } sticky top-0 z-50 transition-colors duration-300 `}
+        className="bg-purple-50
+        sticky top-0 z-50 transition-colors duration-300"
       >
         <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-3">
           <NavLogo />
