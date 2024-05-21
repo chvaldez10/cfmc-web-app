@@ -1,10 +1,10 @@
-import { FC, CSSProperties } from "react";
+import { FC } from "react";
 import Image from "next/image";
 
 interface ImageCollageItemProps {
   src: string;
   alt: string;
-  containerClassName: CSSProperties;
+  containerClassName: string;
 }
 
 const ImageCollageItem: FC<ImageCollageItemProps> = ({
