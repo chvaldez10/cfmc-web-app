@@ -1,8 +1,8 @@
 import { FC } from "react";
-import ImageCollageItem from "./ImageCollageItem";
+import ImageCollageItem from "@/components/core/gallery/ImageCollageItem";
 import { featuredImages } from "./featuredItems";
 
-const ImageCollage: FC<{}> = () => {
+const HeroCollage: FC<{}> = () => {
   return (
     <div className="w-full bg-purple-50">
       <div className="mx-auto lg:max-w-5xl xl:max-w-6xl flex flex-col-reverse md:flex-row items-center p-5 lg:py-8 md:px-16 md:gap-4">
@@ -34,4 +34,4 @@ const ImageCollage: FC<{}> = () => {
   );
 };
 
-export default ImageCollage;
+export default HeroCollage;

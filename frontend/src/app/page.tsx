@@ -3,7 +3,7 @@ import { MdContactMail } from "react-icons/md";
 import { FaPrayingHands } from "react-icons/fa";
 import { FaCalendarCheck } from "react-icons/fa";
 import SimpleCard from "@/components/core/cards/SimpleCard";
-import ImageCollage from "@/components/core/gallery/ImageCollage";
+import HeroCollage from "@/components/core/hero/HeroCollage";
 
 const cardContainerItems: {
   label: string;
@@ -30,7 +30,7 @@ const cardContainerItems: {
 export default function Home() {
   return (
     <>
-      <ImageCollage />
+      <HeroCollage />
       <SimpleCard cardContainerItems={cardContainerItems} />
     </>
   );
