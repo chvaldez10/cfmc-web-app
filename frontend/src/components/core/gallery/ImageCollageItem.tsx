@@ -18,8 +18,9 @@ const ImageCollageItem: FC<ImageCollageItemProps> = ({
         src={src}
         alt={alt}
         fill={true}
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         style={{ objectFit: "cover" }}
-        className="rounded-lg object-bottom animate-fadeIn hover-up-animation"
+        className="rounded-lg object-center animate-fadeIn hover-up-animation"
       />
     </div>
   );

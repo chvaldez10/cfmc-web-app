@@ -6,14 +6,14 @@ import ParticlesBackground from "@/components/core/background/ParticlesBackgroun
 const HeroCollage: FC = () => {
   return (
     <div
-      className="w-full mx-auto p-5 md:p-0 md:px-16 items-center justify-center lg:max-w-5xl xl:max-w-6xl flex flex-col-reverse gap-4 lg:gap-7"
+      className="w-full mx-auto p-5 md:p-0 items-center justify-center md:w-11/12 flex flex-col-reverse gap-4 lg:gap-7"
       style={{ height: "90vh" }}
     >
       {/* Particles Background */}
       <ParticlesBackground />
 
       {/* Image Column */}
-      <div className="grid grid-cols-2 grid-rows-3 gap-2 md:gap-5 w-full md:w-4/5 z-10">
+      <div className="grid grid-cols-3 grid-rows-2 gap-2 md:gap-5 w-full z-10">
         {featuredImages.map((featuredImage, index) => (
           <ImageCollageItem
             key={index}
