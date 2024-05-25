@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const HeroTemplate: FC = () => {
   return (
-    <div className="relative flex flex-col items-center mx-auto lg:flex-row lg:max-w-5xl xl:max-w-6xl lg:justify-between align-center p-4 lg:p-8 bg-purple-50">
+    <div className="relative flex flex-col items-center mx-auto md:flex-row lg:max-w-5xl xl:max-w-6xl lg:justify-between align-center p-4 lg:p-8 bg-purple-50">
       <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left p-4 lg:p-6">
         <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-600">
           Sunday Service

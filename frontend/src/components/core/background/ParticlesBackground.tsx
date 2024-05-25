@@ -30,11 +30,6 @@ const ParticlesBackground: FC = () => {
 
   const options: ISourceOptions = useMemo(
     () => ({
-      //   background: {
-      //     color: {
-      //       value: "#faf5ff",
-      //     },
-      //   },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -60,7 +55,7 @@ const ParticlesBackground: FC = () => {
       fullScreen: false,
       particles: {
         color: {
-          value: "#6d28d9",
+          value: "#7c3aed",
         },
         links: {
           color: "#fecaca",
