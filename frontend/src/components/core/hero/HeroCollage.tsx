@@ -6,7 +6,7 @@ const HeroCollage: FC<{}> = () => {
   return (
     <div className="w-full bg-purple-50">
       <div
-        className="mx-auto lg:max-w-5xl xl:max-w-6xl flex flex-col-reverse md:flex-row items-center justify-center p-5 lg:py-8 md:px-16 gap-4"
+        className="mx-auto p-5 items-center justify-center lg:max-w-5xl xl:max-w-6xl flex flex-col-reverse md:flex-row lg:py-8 md:px-16 gap-4"
         style={{ height: "90vh" }}
       >
         <div className="grid grid-cols-2 grid-rows-3 gap-2 md:gap-4 w-full md:w-2/3">

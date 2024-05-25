@@ -1,17 +1,17 @@
 import Image from "next/image";
 
-const TextOnImage: React.FC<{}> = () => {
+const HeroOverlappingImage: React.FC<{}> = () => {
   return (
     <div
-      className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl xl:max-w-6xl lg:mt-12 align-center"
-      style={{ height: "70vh" }}
+      className="relative flex flex-col justify-center items-center align-center mx-auto lg:flex-row-reverse lg:max-w-5xl"
+      style={{ height: "90vh" }}
     >
       {/* Image Column */}
-      <div className="hidden lg:block lg:w-576 lg:h-576 w-full h-full">
+      <div className="hidden w-576 h-576 lg:block lg:ml-auto">
         <Image
           src="/background/Bible_with_leaf_resized.jpg"
           alt="tmp image"
-          width={1920}
+          width={576}
           height={576}
           style={{ objectFit: "cover" }}
           className="w-full h-full"
@@ -19,7 +19,7 @@ const TextOnImage: React.FC<{}> = () => {
       </div>
 
       {/* Text Column */}
-      <div className="relative max-w-lg md:max-w-2xl md:absolute lg:w-3/5 lg:left-0 lg:ml-10 xl:ml-12 z-10 bg-white-0 lg:shadow-lg lg:rounded-lg">
+      <div className="relative md:absolute max-w-lg md:max-w-2xl lg:left-0 z-10 bg-white-0 lg:shadow-lg lg:rounded-lg">
         <div className="flex flex-col p-4 md:p-6 lg:p-12">
           {/* Header */}
           <h2 className="text-3xl font-extrabold lg:text-5xl text-center text-gray-800">
@@ -55,4 +55,4 @@ const TextOnImage: React.FC<{}> = () => {
   );
 };
 
-export default TextOnImage;
+export default HeroOverlappingImage;

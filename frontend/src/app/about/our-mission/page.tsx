@@ -1,5 +1,5 @@
-import TextOnImage from "@/components/core/hero/TextOnImage";
+import HeroOverlappingImage from "@/components/core/hero/HeroOverlappingImage";
 
 export default function page() {
-  return <TextOnImage />;
+  return <HeroOverlappingImage />;
 }
