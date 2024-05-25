@@ -14,7 +14,7 @@ export default function Providers({ children }: ProvidersProp) {
     // Extra attributes from the server: data-new-gr-c-s-check-loaded,data-gr-ext-installed
     <ThemeProvider defaultTheme="light" attribute="class">
       <div
-        className="min-h-screen select-none transition-colors duration-300 bg-white"
+        className="min-h-screen select-none transition-colors duration-300 bg-purple-50"
         suppressHydrationWarning
       >
         {children}
