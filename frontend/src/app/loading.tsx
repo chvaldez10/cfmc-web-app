@@ -1,6 +1,6 @@
 export default function loading() {
   return (
-    <div className="flex flex-col justify-center" style={{ height: "90vh" }}>
+    <div className="flex flex-col justify-center h-screen">
       <img
         className="h-24"
         src="/icons/general/tube-spinner.svg"

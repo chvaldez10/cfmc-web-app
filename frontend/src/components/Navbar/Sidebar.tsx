@@ -20,10 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
           Close
         </button>
       </div>
-      <div
-        className="flex flex-col items-center justify-center"
-        style={{ height: "90vh" }}
-      >
+      <div className="flex flex-col items-center justify-center h-screen">
         <NavbarLinks />
       </div>
     </div>

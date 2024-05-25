@@ -2,10 +2,7 @@ import Image from "next/image";
 
 const HeroOverlappingImage: React.FC<{}> = () => {
   return (
-    <div
-      className="relative flex flex-col justify-center items-center align-center mx-auto lg:flex-row-reverse lg:max-w-5xl"
-      style={{ height: "90vh" }}
-    >
+    <div className="relative flex flex-col justify-center items-center align-center mx-auto lg:flex-row-reverse lg:max-w-5xl h-screen">
       {/* Image Column */}
       <div className="hidden w-576 h-576 lg:block lg:ml-auto">
         <Image

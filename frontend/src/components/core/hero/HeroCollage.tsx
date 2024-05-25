@@ -5,10 +5,7 @@ import ParticlesBackground from "@/components/core/background/ParticlesBackgroun
 
 const HeroCollage: FC = () => {
   return (
-    <div
-      className="w-full mx-auto p-5 md:p-0 items-center justify-center md:w-11/12 flex flex-col-reverse gap-4 lg:gap-7"
-      style={{ height: "90vh" }}
-    >
+    <div className="w-full mx-auto p-5 md:p-0 items-center justify-center md:w-11/12 flex flex-col-reverse gap-4 lg:gap-7 h-screen">
       {/* Particles Background */}
       <ParticlesBackground />
 
