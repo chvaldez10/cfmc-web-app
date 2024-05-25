@@ -30,6 +30,7 @@ const CustomNavbar: FC<{}> = () => {
       <nav
         className="bg-purple-50
         sticky top-0 z-50 transition-colors duration-300"
+        style={{ height: "10vh" }}
       >
         <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-3">
           <NavLogo />

@@ -31,6 +31,7 @@ export const NavbarLinks: FC = () => {
         text="Join Us Sunday"
         onClick={() => router.push("/sunday-service")}
         variant="filled"
+        className="transform transition-transform duration-300 ease-in-out hover:scale-105"
       />
     </ul>
   );
