@@ -4,6 +4,7 @@ import { FaPrayingHands } from "react-icons/fa";
 import { FaCalendarCheck } from "react-icons/fa";
 import SimpleCard from "@/components/core/cards/SimpleCard";
 import HeroCollage from "@/components/core/hero/HeroCollage";
+import HeroMap from "@/components/core/hero/HeroMap";
 
 const cardContainerItems: {
   label: string;
@@ -31,6 +32,7 @@ export default function Home() {
   return (
     <>
       <HeroCollage />
+      <HeroMap />
       <SimpleCard cardContainerItems={cardContainerItems} />
     </>
   );

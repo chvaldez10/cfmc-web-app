@@ -22,3 +22,8 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Hover up animation */
+.hover-up-animation {
+  @apply cursor-pointer animate-fadeIn transform transition-transform duration-300 hover:translate-y-[-5px];
+}

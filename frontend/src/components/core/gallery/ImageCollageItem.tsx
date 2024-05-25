@@ -19,7 +19,7 @@ const ImageCollageItem: FC<ImageCollageItemProps> = ({
         alt={alt}
         fill={true}
         style={{ objectFit: "cover" }}
-        className="rounded-lg object-bottom animate-fadeIn"
+        className="rounded-lg object-bottom animate-fadeIn hover-up-animation"
       />
     </div>
   );

@@ -16,7 +16,7 @@ const SimpleCard: FC<CardContainerProps> = ({ cardContainerItems }) => {
       {cardContainerItems.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col items-center py-4 transform transition-transform duration-300 hover:translate-y-[-5px] cursor-pointer"
+          className="flex flex-col items-center py-4 hover-up-animation"
         >
           <div className="text-6xl mb-4">{item.svgIcon}</div>
           <h2 className="text-xl font-bold">{item.label.toUpperCase()}</h2>
