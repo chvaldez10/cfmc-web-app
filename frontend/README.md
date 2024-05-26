@@ -1,6 +1,6 @@
 ## Frontend 🖥️
 
-Frontend using Next.js and React with App Router.
+Frontend using Next.js with App Router.
 
 ## Folder Structure
 
@@ -10,16 +10,20 @@ Frontend using Next.js and React with App Router.
 ├── src
 │   ├── page.tsx        # Maps to the / route
 │   ├── layout.tsx
-│   ├── globals.css
-│   └── about           # Maps to the /about route
+│   ├── Provider.tsx    # For theming
+│   ├── error.tsx       # To handle server-side errors
+│   ├── not-found.tsx   # Page not found
+│   ├── globals.css     # Global styling
+│   └── about           # Sub-routes
 │       └── page.tsx
 ├── components
 │   ├── Header.tsx
 │   └── Footer.tsx
 ├── public              # Static files
-│   └── assets
-│       ├── images
-│       └── fonts
+│   └── icons
+│   └── branding
+│   └── featured        # Featured images
+│   └── background
 ├── styles
 │   └── *.css
 ├── lib

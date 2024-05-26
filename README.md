@@ -1,6 +1,6 @@
-# Calgary Filipino Methodist Church Landing Page Frontend 🖥️
+# Calgary Filipino Methodist Church Landing Page🖥️
 
-This is the frontend project for the Calgary Filipino Methodist Church (CFMC) Landing Page, utilizing Next.js 14 for the frontend. More details about the backend services will be provided later.
+This is the frontend project for the Calgary Filipino Methodist Church (CFMC) Landing Page, utilizing Next.js 14, TypeScript, and Tailwind CSS for the frontend. More details about the backend services will be provided later (most likely going to be rendered by Next.js also).
 
 ## Getting Started 🚀
 
@@ -13,7 +13,7 @@ cd frontend
 
 Install all node modules:
 
-```
+```bash
 npm i
 # or
 npm install
@@ -23,11 +23,16 @@ Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the results.
+Build the production environment:
+
+```bash
+npm run build
+npm run start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the page.
 
 ## Learn More 📚
 
