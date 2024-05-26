@@ -55,10 +55,10 @@ const ParticlesBackground: FC = () => {
       fullScreen: false,
       particles: {
         color: {
-          value: "#7c3aed",
+          value: "#7c3aed", // violet-600
         },
         links: {
-          color: "#fecaca",
+          color: "#f87171", // red-400
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -78,7 +78,7 @@ const ParticlesBackground: FC = () => {
           density: {
             enable: true,
           },
-          value: 160, // Number of stars
+          value: 100, // Number of stars
         },
         opacity: {
           value: 0.8,
