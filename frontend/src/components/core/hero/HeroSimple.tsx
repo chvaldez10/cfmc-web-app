@@ -9,6 +9,7 @@ interface HeroSimpleProps {
   verbiage: string;
   element: ReactNode;
   layout?: string;
+  backgroundColor?: string;
 }
 
 const HeroSimple: FC<HeroSimpleProps> = ({
@@ -16,6 +17,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
   verbiage,
   element,
   layout = "flex flex-col md:flex-row",
+  backgroundColor = "",
 }) => {
   const [textRef, textInView] = useInView();
   const [mapRef, mapInView] = useInView();
@@ -23,7 +25,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
   console.log("isInView", textInView);
 
   return (
-    <div className="w-full bg-neutral-50">
+    <div className={`w-full ${backgroundColor}`}>
       <div
         className={`relative ${layout} items-center mx-auto lg:max-w-5xl xl:max-w-6xl align-center p-4 lg:p-8`}
       >
