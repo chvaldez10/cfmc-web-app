@@ -12,7 +12,7 @@ export default function Home() {
         header={"Sunday Service"}
         verbiage="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         element={<IframeMap />}
-        backgroundColor="bg-neutral"
+        backgroundColor="bg-neutral-50"
       />
       <SimpleCard cardContainerItems={cardContainerItems} />
     </>

@@ -29,11 +29,11 @@ export const mediaDropDownItems: {
     url: "/media/gallery",
   },
   {
-    label: "💿 announcements",
+    label: "💿 Announcements",
     url: "/media/announcements",
   },
   {
-    label: "📝 inquiries",
+    label: "📝 Inquiries",
     url: "/media/inquiries",
   },
 ];
