@@ -14,7 +14,6 @@ const useInView = (threshold = 0.1) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          console.log("isInView", isInView);
         }
       });
     };

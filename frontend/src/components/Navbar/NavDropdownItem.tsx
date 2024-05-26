@@ -7,7 +7,6 @@ interface NavDropdownItemProps {
 }
 
 const NavDropdownItem: FC<NavDropdownItemProps> = ({ href, children }) => {
-  console.log(`children: ${children}`);
   return (
     <li>
       <Link href={href} className="block px-4 py-2 hover:bg-violet-100 ">

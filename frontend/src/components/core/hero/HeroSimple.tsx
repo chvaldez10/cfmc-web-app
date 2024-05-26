@@ -22,8 +22,6 @@ const HeroSimple: FC<HeroSimpleProps> = ({
   const [textRef, textInView] = useInView();
   const [mapRef, mapInView] = useInView();
 
-  console.log("isInView", textInView);
-
   return (
     <div className={`w-full ${backgroundColor}`}>
       <div

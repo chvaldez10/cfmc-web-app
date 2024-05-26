@@ -5,8 +5,11 @@ import ImageCollageItem from "@/components/core/gallery/ImageCollageItem";
 import { featuredImages } from "./featuredItems";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 import PurplePillButton from "../buttons/PurplePillButton";
+import { useRouter } from "next/navigation";
 
 const HeroCollage: FC = () => {
+  const router = useRouter();
+
   return (
     <div className="w-full mx-auto p-5 md:p-0 items-center justify-center md:w-10/12 flex flex-col gap-4 lg:gap-5 h-screen">
       {/* Particles Background */}
@@ -17,7 +20,10 @@ const HeroCollage: FC = () => {
         <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
           Our Vision
         </h2>
-        <p className="text-lg md:text-xl lg:text-2xl px-6 py-4 bg-purple-50 text-gray-700 rounded-md hover-animation shadow-up">
+        <p
+          className="text-lg md:text-xl lg:text-2xl px-6 py-4 bg-purple-50 text-gray-700 rounded-md hover-animation shadow-up"
+          onClick={() => router.push("/about/mission-and-vision")}
+        >
           To be a Church that glorifies God, shepherds in Christ, and is filled
           with the Holy Spirit, dedicated to fulfilling God's mission in the
           city.
@@ -28,12 +34,12 @@ const HeroCollage: FC = () => {
       <div className="flex flex-row gap-4 md:gap-x-8">
         <PurplePillButton
           text={"Join Our Services"}
-          onClick={() => console.log("Sunday Service")}
+          onClick={() => router.push("/services")}
           className="z-10 scale-up"
         />
         <PurplePillButton
           text={"Announcements"}
-          onClick={() => console.log("Announcements")}
+          onClick={() => router.push("/media/announcements")}
           variant={"outline"}
           className="z-10 scale-up"
         />
