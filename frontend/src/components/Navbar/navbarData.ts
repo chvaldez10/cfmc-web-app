@@ -20,17 +20,35 @@ export const aboutDropdownItems: {
   },
 ];
 
+export const mediaDropDownItems: {
+  label: string;
+  url: string;
+}[] = [
+  {
+    label: "📷 Gallery",
+    url: "/media/gallery",
+  },
+  {
+    label: "💿 announcements",
+    url: "/media/announcements",
+  },
+  {
+    label: "📝 inquiries",
+    url: "/media/inquiries",
+  },
+];
+
 export const getInvolvedDropdownItems: {
   label: string;
   url: string;
 }[] = [
   {
-    label: "💚 Give",
-    url: "/get-involved/give",
-  },
-  {
     label: "🗓️ Upcoming",
     url: "/get-involved/upcoming",
+  },
+  {
+    label: "📖 Bible Study",
+    url: "/get-involved/bible-study",
   },
   {
     label: "🎚️ Multimedia",
@@ -47,15 +65,15 @@ export const supperDropdownItem: {
   url: string;
 }[] = [
   {
-    label: "📩 Contact Us",
-    url: "/support/contact-us",
+    label: "📩 Email",
+    url: "/connect/contact-us",
   },
   {
     label: "🙏 Prayer",
-    url: "/support/prayer",
+    url: "/connect/prayer",
   },
   {
-    label: "💻 forum",
-    url: "/support/forum",
+    label: "💻 Forum",
+    url: "/connect/forum",
   },
 ];

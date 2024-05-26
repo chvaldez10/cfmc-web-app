@@ -2,9 +2,9 @@ import { FC } from "react";
 import {
   aboutDropdownItems,
   getInvolvedDropdownItems,
+  mediaDropDownItems,
   supperDropdownItem,
 } from "./navbarData";
-import NavbarLinkItems from "./NavbarLinkItems";
 import NavDropdown from "./NavDropdown";
 import PurplePillButton from "@/components/core/buttons/PurplePillButton";
 import { useRouter } from "next/navigation";
@@ -18,18 +18,21 @@ export const NavbarLinks: FC = () => {
         navDropdownItems={aboutDropdownItems}
         dropdownLabel="About"
       />
-      <NavbarLinkItems href="/media" label="Media" />
+      <NavDropdown
+        navDropdownItems={mediaDropDownItems}
+        dropdownLabel="Media"
+      />
       <NavDropdown
         navDropdownItems={getInvolvedDropdownItems}
         dropdownLabel="Get Involved"
       />
       <NavDropdown
         navDropdownItems={supperDropdownItem}
-        dropdownLabel="Support"
+        dropdownLabel="Connect"
       />
       <PurplePillButton
-        text="Join Us Sunday"
-        onClick={() => router.push("/sunday-service")}
+        text="Tithes & Offering"
+        onClick={() => router.push("/tithes-and-offering")}
         variant="filled"
         className="transform transition-transform duration-300 ease-in-out hover:scale-105"
       />
