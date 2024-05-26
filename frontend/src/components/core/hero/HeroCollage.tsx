@@ -13,7 +13,7 @@ const HeroCollage: FC = () => {
       <ParticlesBackground />
 
       {/* Text Column */}
-      <div className="w-full z-10 flex flex-col items-center text-center md:text-left xl:max-w-4xl">
+      <div className="w-full z-10 flex flex-col items-center text-center xl:max-w-4xl">
         <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
           Our Vision
         </h2>

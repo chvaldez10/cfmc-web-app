@@ -17,7 +17,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center text-center">
+    <div className="flex flex-col items-center justify-center text-center h-screen">
       <h1>Something went wrong. Please try again later</h1>
       <button
         className="hover:text-violet-300 text-violet-600"
