@@ -31,11 +31,12 @@ export const NavbarLinks: FC = () => {
         dropdownLabel="Connect"
       />
       <PurplePillButton
-        text="Tithes & Offering"
         onClick={() => router.push("/tithes-and-offering")}
         variant="filled"
         className="z-10 scale-up"
-      />
+      >
+        Tithes and Offering
+      </PurplePillButton>
     </ul>
   );
 };

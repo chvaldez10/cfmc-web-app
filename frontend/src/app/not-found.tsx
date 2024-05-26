@@ -21,11 +21,9 @@ export default function NotFoundPage() {
           Please navigate back to the homepage.
         </p>
 
-        <PurplePillButton
-          text="Homepage"
-          onClick={() => router.push("/")}
-          variant="outline"
-        />
+        <PurplePillButton onClick={() => router.push("/")} variant="outline">
+          Homepage
+        </PurplePillButton>
       </div>
     </div>
   );

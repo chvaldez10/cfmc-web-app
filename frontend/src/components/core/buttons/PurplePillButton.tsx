@@ -1,15 +1,15 @@
-import { FC } from "react";
+import { Children, FC, ReactNode } from "react";
 import classNames from "classnames";
 
 interface PurplePillButtonProps {
-  text: string;
   onClick: () => void;
   variant?: "filled" | "outline";
   className?: string;
+  children?: ReactNode;
 }
 
 const baseClass =
-  "font-medium rounded-full text-sm px-5 py-2.5 text-center hover-animation";
+  "flex flex-row font-medium items-center gap-2 rounded-full text-sm px-5 py-2.5 text-center hover-animation";
 
 const variants = {
   filled: "text-white-0 bg-purple-500 hover:bg-purple-700 hover:text-white-0",
@@ -19,16 +19,16 @@ const variants = {
 };
 
 const PurplePillButton: FC<PurplePillButtonProps> = ({
-  text,
   onClick,
   variant = "filled",
   className,
+  children,
 }) => {
   const buttonClass = classNames(baseClass, variants[variant], className);
 
   return (
     <button className={buttonClass} onClick={onClick}>
-      {text}
+      {children}
     </button>
   );
 };
