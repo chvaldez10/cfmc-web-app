@@ -30,7 +30,7 @@ body {
 
 /* Hover up animation */
 .hover-up {
-  @apply hover:translate-y-[-5px] animate-fadeIn;
+  @apply hover:translate-y-[-5px];
 }
 
 /* Scale animation */
@@ -41,4 +41,18 @@ body {
 /* Shadow animation */
 .shadow-up {
   @apply transition-all hover:shadow-xl hover:border-r-4 hover:border-l-4 hover:border-purple-500;
+}
+
+/* Pulse once */
+@keyframes pulse-once {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.single-pulse {
+  animation: pulse-once 1s ease-in-out;
 }

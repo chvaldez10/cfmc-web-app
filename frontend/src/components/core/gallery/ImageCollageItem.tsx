@@ -13,13 +13,14 @@ const ImageCollageItem: FC<ImageCollageItemProps> = ({
   containerClassName,
 }) => {
   return (
-    <div className={`relative ${containerClassName}`}>
+    <div className={`relative ${containerClassName} pulse-once`}>
       <Image
         src={src}
         alt={alt}
         fill={true}
         style={{ objectFit: "cover" }}
-        className="rounded-lg object-center animate-fadeIn hover-animation hover-up"
+        className="rounded-lg object-center hover-animation hover-up single-pulse"
+        // placeholder="blur"
       />
     </div>
   );
