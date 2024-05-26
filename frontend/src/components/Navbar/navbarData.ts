@@ -3,8 +3,8 @@ export const aboutDropdownItems: {
   url: string;
 }[] = [
   {
-    label: "📖 Our Mission",
-    url: "/about/our-mission",
+    label: "📖 Mission and Vision",
+    url: "/about/mission-and-vision",
   },
   {
     label: "⛪ Ministry",

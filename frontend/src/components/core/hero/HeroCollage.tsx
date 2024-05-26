@@ -24,12 +24,12 @@ const HeroCollage: FC = () => {
       {/* Text Column */}
       <div className="w-full flex flex-col items-center text-center md:text-left z-10">
         <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
-          Our Mission
+          Our Vision
         </h2>
-        <p className="text-base lg:text-xl p-4 bg-violet-50 text-gray-600 border-r-4 border-l-4 border-purple-500 shadow-lg rounded-md mb-4 md:mb-0">
-          To lead with new life of{" "}
-          <span className="italic"> faith, trust, love, and obedience </span>
-          to Jesus Christ.
+        <p className="text-lg md:text-xl lg:text-2xl px-6 py-4 bg-violet-50 text-gray-700 border-r-4 border-l-4 border-purple-500 shadow-lg rounded-md transition-all duration-300 ease-in-out hover:shadow-xl">
+          To be a Church that glorifies God, shepherds in Christ, and is filled
+          with the Holy Spirit, dedicated to fulfilling God's mission in the
+          city.
         </p>
       </div>
     </div>
