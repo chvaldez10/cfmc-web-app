@@ -23,7 +23,22 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+/* Base class for hover animations */
+.hover-animation {
+  @apply cursor-pointer transform transition-transform duration-500 ease-in-out;
+}
+
 /* Hover up animation */
-.hover-up-animation {
-  @apply cursor-pointer animate-fadeIn transform transition-transform duration-300 hover:translate-y-[-5px];
+.hover-up {
+  @apply hover:translate-y-[-5px] animate-fadeIn;
+}
+
+/* Scale animation */
+.scale-up {
+  @apply hover:scale-105;
+}
+
+/* Shadow animation */
+.shadow-up {
+  @apply transition-all hover:shadow-xl hover:border-r-4 hover:border-l-4 hover:border-purple-500;
 }

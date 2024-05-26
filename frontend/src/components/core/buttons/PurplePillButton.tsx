@@ -9,7 +9,7 @@ interface PurplePillButtonProps {
 }
 
 const baseClass =
-  "font-medium rounded-full text-sm px-5 py-2.5 text-center transition-colors duration-300";
+  "font-medium rounded-full text-sm px-5 py-2.5 text-center hover-animation";
 
 const variants = {
   filled: "text-white-0 bg-purple-500 hover:bg-purple-700 hover:text-white-0",

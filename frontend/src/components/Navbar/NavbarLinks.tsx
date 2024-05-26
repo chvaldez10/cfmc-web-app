@@ -34,7 +34,7 @@ export const NavbarLinks: FC = () => {
         text="Tithes & Offering"
         onClick={() => router.push("/tithes-and-offering")}
         variant="filled"
-        className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+        className="z-10 scale-up"
       />
     </ul>
   );
