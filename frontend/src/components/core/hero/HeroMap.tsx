@@ -1,13 +1,24 @@
 "use client";
 
 import { FC } from "react";
+import useInView from "@/hooks/useInView";
+import "./slide.css";
 
 const HeroTemplate: FC = () => {
+  const [textRef, textInView] = useInView();
+
+  console.log("isInView", textInView);
+
   return (
     <div className="w-full bg-neutral-50">
       <div className="relative flex flex-col items-center mx-auto md:flex-row lg:max-w-5xl xl:max-w-6xl align-center p-4 lg:p-8">
         {/* Text Column */}
-        <div className="flex-1 flex flex-col justify-center items-center text-center  p-4 lg:p-6">
+        <div
+          ref={textRef}
+          className={`${
+            textInView ? "animate-slide-in-left" : ""
+          } flex-1 flex flex-col justify-center items-center text-center  p-4 lg:p-6`}
+        >
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-600">
             Sunday Service
           </h2>
@@ -17,7 +28,11 @@ const HeroTemplate: FC = () => {
         </div>
 
         {/* Map Column */}
-        <div className="flex-1 flex justify-center p-4 lg:p-6">
+        <div
+          className={`${
+            textRef ? "animate-slide-in-right" : ""
+          } flex-1 flex justify-center p-4 lg:p-6`}
+        >
           <div className="relative w-full max-w-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.821665914685!2d-114.0807365!3d51.0932986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371658521e49643%3A0xe758ea3bb43192eb!2s419%20Northmount%20Dr%20NW%2C%20Calgary%2C%20AB%20T2K%203H7!5e0!3m2!1sen!2sca!4v1716651064489!5m2!1sen!2sca"
