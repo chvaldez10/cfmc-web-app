@@ -2,10 +2,11 @@
 
 import { FC } from "react";
 import useInView from "@/hooks/useInView";
-import "./slide.css";
+import "../../../styles/slide.css";
 
 const HeroTemplate: FC = () => {
   const [textRef, textInView] = useInView();
+  const [mapRef, mapInView] = useInView();
 
   console.log("isInView", textInView);
 
@@ -17,7 +18,7 @@ const HeroTemplate: FC = () => {
           ref={textRef}
           className={`${
             textInView ? "animate-slide-in-left" : ""
-          } flex-1 flex flex-col justify-center items-center text-center  p-4 lg:p-6`}
+          } flex-1 flex-col justify-center items-center text-center p-4 lg:p-6`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-600">
             Sunday Service
@@ -29,8 +30,9 @@ const HeroTemplate: FC = () => {
 
         {/* Map Column */}
         <div
+          ref={mapRef}
           className={`${
-            textRef ? "animate-slide-in-right" : ""
+            mapInView ? "animate-slide-in-right" : ""
           } flex-1 flex justify-center p-4 lg:p-6`}
         >
           <div className="relative w-full max-w-lg">
