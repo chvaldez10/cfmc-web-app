@@ -3,7 +3,7 @@ import HeroCollage from "@/components/core/hero/HeroCollage";
 import HeroSimple from "@/components/core/hero/HeroSimple";
 import IframeMap from "@/data/hero/IframeMap";
 import { cardContainerItems } from "@/data/hero/CardContainer";
-import CardWithImage from "@/components/core/cards/CardWithImage";
+import CardWithImageContainer from "@/components/core/cards/CardWithImageContainer";
 
 export default function Home() {
   return (
@@ -19,14 +19,7 @@ export default function Home() {
 
       <SimpleCard cardContainerItems={cardContainerItems} />
 
-      {/* <div className="container mx-auto p-4"> */}
-      {/* <CardWithImage
-          src="/featured/header/14.jpeg"
-          title="title"
-          description="I am description"
-          link="/about/ministry"
-        /> */}
-      {/* </div> */}
+      <CardWithImageContainer />
     </>
   );
 }

@@ -17,9 +17,15 @@ const CardWithImage: FC<CardWithImageProps> = ({
 }) => {
   return (
     <div className="max-w-sm bg-white-0 border border-gray-200 rounded-lg shadow">
-      <Link href={link}>
-        <Image src={src} alt={title} fill={true} className="rounded-t-lg" />
-      </Link>
+      <div className="relative h-48 w-full">
+        <Image
+          src={src}
+          alt={title}
+          fill={true}
+          style={{ objectFit: "cover" }}
+          className="rounded-t-lg object-right"
+        />
+      </div>
 
       <div className="p-5">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
