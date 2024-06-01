@@ -19,7 +19,7 @@ const ImageCollageItem: FC<ImageCollageItemProps> = ({
         alt={alt}
         fill={true}
         style={{ objectFit: "cover" }}
-        className="rounded-lg object-center hover-animation hover-up single-pulse"
+        className="rounded-lg object-center"
       />
     </div>
   );

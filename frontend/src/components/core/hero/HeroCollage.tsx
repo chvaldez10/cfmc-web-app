@@ -11,7 +11,7 @@ const HeroCollage: FC = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full mx-auto relative p-5 md:p-0 items-center justify-center md:w-10/12 flex flex-col gap-4 h-screen">
+    <div className="w-full mx-auto p-5 md:p-0 items-center justify-center md:w-10/12 flex flex-col gap-4 h-screen">
       {/* Particles Background */}
       <ParticlesBackground />
 

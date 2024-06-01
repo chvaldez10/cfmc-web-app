@@ -22,8 +22,8 @@ const CardWithImage: FC<CardWithImageProps> = ({
   const router = useRouter();
 
   return (
-    <div className="max-w-sm bg-white-0 border border-gray-200 rounded-lg shadow">
-      <div className="relative h-48 w-full">
+    <div className=" bg-white-0 border border-gray-200 rounded-lg shadow">
+      <div className="relative h-72 w-full ">
         <Image
           src={src}
           alt={title}
