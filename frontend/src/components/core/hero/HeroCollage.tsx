@@ -33,7 +33,7 @@ const HeroCollage: FC = () => {
       {/* Button */}
       <div className="flex flex-row gap-x-4 md:gap-x-8">
         <PurplePillButton
-          onClick={() => router.push("/services")}
+          onClick={() => router.push("/sunday-services")}
           className="z-10 scale-up"
         >
           Find a Service

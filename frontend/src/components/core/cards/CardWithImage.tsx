@@ -44,7 +44,7 @@ const CardWithImage: FC<CardWithImageProps> = ({
         </p>
 
         <PurplePillButton onClick={() => router.push(url)} variant="filled">
-          Read More <FaArrowRight />
+          Learn More <FaArrowRight />
         </PurplePillButton>
       </div>
     </div>
