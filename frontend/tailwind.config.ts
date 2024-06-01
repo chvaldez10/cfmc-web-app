@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       height: {
+        "68": "17rem",
         "576": "576px",
       },
       width: {

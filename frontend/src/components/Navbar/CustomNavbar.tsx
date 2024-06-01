@@ -18,7 +18,7 @@ const CustomNavbar: FC<{}> = () => {
         className={` ${scrollPosition > 50 ? "bg-purple-50" : ""}
         fixed top-0 z-50 transition-colors duration-300 mx-auto w-full`}
       >
-        <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-3">
+        <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-5">
           <NavLogo />
           <MenuToggleButton
             isMenuBarOpen={isMenuBarOpen}
