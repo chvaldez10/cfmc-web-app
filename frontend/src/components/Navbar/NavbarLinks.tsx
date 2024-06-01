@@ -13,7 +13,7 @@ export const NavbarLinks: FC = () => {
   const router = useRouter();
 
   return (
-    <ul className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-5">
+    <ul className="flex flex-col md:flex-row items-center justify-center md:justify-start  gap-3 lg:gap-5">
       <NavDropdown
         navDropdownItems={aboutDropdownItems}
         dropdownLabel="About"

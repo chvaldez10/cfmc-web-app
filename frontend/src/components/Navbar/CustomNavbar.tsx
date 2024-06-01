@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import NavLogo from "./NavLogo";
 import MenuToggleButton from "./MenuToggleButton";
 import NavbarLinks from "./NavbarLinks";

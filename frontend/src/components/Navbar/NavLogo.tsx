@@ -12,7 +12,7 @@ const NavLogo: FC<{}> = () => (
       style={{ width: 32, height: 52 }}
       priority={true}
     />
-    <div className="self-center font-bold flex flex-col sm:text-sm md:text-base ml-2">
+    <div className="self-center font-bold flex flex-col text-sm md:text-lg ml-2">
       <span>Calgary Filipino</span>
       <span>Methodist Church</span>
     </div>

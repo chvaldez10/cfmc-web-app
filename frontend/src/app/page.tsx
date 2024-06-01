@@ -16,10 +16,8 @@ export default function Home() {
         element={<IframeMap />}
         backgroundColor="bg-neutral-50"
       />
-
-      <SimpleCard cardContainerItems={cardContainerItems} />
-
       <CardWithImageContainer />
+      <SimpleCard cardContainerItems={cardContainerItems} />
     </>
   );
 }
