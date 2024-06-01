@@ -1,9 +1,10 @@
-import { FC, useState } from "react";
+import { FC, useState, ReactNode } from "react";
 import DropdownItem from "./NavDropdownItem";
 
 type NavDropdownItem = {
-  label: string;
   url: string;
+  label: string;
+  svgIcon: ReactNode;
 };
 
 interface NavDropdownProps {
@@ -70,15 +71,15 @@ const NavDropdown: FC<NavDropdownProps> = ({
       width (1/2).
       */}
       {isOpen && (
-        <div className="absolute z-20 font-normal bg-slate-50 divide-y divide-gray-600 rounded-lg shadow w-48 left-1/2 transform -translate-x-1/2 top-full">
+        <div className="absolute z-20 font-normal bg-zinc-50 divide-y divide-gray-600 rounded-lg shadow w-48 left-1/2 transform -translate-x-1/2 top-full">
           <ul className="py-2 text-sm text-gray-700">
             {navDropdownItems.map((navDropdownItem) => (
               <DropdownItem
                 key={navDropdownItem.label}
                 href={navDropdownItem.url}
-              >
-                {navDropdownItem.label}
-              </DropdownItem>
+                label={navDropdownItem.label}
+                svgIcon={navDropdownItem.svgIcon}
+              />
             ))}
           </ul>
         </div>

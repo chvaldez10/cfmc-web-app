@@ -1,16 +1,22 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import Link from "next/link";
 
 interface NavDropdownItemProps {
   href: string;
-  children: React.ReactNode;
+  label: string;
+  svgIcon: ReactNode;
 }
 
-const NavDropdownItem: FC<NavDropdownItemProps> = ({ href, children }) => {
+const NavDropdownItem: FC<NavDropdownItemProps> = ({
+  href,
+  label,
+  svgIcon,
+}) => {
   return (
-    <li>
-      <Link href={href} className="block px-4 py-2 hover:bg-violet-100 ">
-        {children}
+    <li className="hover:bg-violet-100 ">
+      <Link href={href} className="flex flex-row gap-2 items-center ml-4 py-2">
+        <span className="hover:text-red-400">{svgIcon}</span>
+        <span>{label}</span>
       </Link>
     </li>
   );

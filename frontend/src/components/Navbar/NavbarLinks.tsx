@@ -1,10 +1,10 @@
 import { FC } from "react";
 import {
   aboutDropdownItems,
-  getInvolvedDropdownItems,
   mediaDropDownItems,
+  getInvolvedDropdownItems,
   supperDropdownItem,
-} from "./navbarData";
+} from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
 import PurplePillButton from "@/components/core/buttons/PurplePillButton";
 import { useRouter } from "next/navigation";

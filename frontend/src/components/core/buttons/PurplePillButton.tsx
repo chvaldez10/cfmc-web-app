@@ -9,7 +9,7 @@ interface PurplePillButtonProps {
 }
 
 const baseClass =
-  "flex flex-row font-medium items-center gap-2 rounded-full text-sm px-5 py-2.5 text-center hover-animation";
+  "flex flex-row font-medium items-center text-center gap-2 rounded-full text-sm px-5 py-2.5 hover-animation";
 
 const variants = {
   filled: "text-white-0 bg-purple-500 hover:bg-purple-700 hover:text-white-0",
