@@ -9,27 +9,29 @@ import { useRouter } from "next/navigation";
 interface CardWithImageProps {
   src: string;
   title: string;
+  alt: string;
   description: string;
-  link: string;
+  url: string;
 }
 
 const CardWithImage: FC<CardWithImageProps> = ({
   src,
   title,
+  alt,
   description,
-  link,
+  url,
 }) => {
   const router = useRouter();
 
   return (
     <div className=" bg-white-0 border border-gray-200 rounded-lg shadow">
-      <div className="relative h-72 w-full ">
+      <div className="relative h-96 w-full">
         <Image
           src={src}
-          alt={title}
+          alt={alt}
           fill={true}
-          style={{ objectFit: "cover" }}
-          className="rounded-t-lg object-right"
+          objectFit="cover"
+          className="rounded-t-lg object-center"
         />
       </div>
 
@@ -41,10 +43,7 @@ const CardWithImage: FC<CardWithImageProps> = ({
           {description}
         </p>
 
-        <PurplePillButton
-          onClick={() => router.push("about/mission")}
-          variant="filled"
-        >
+        <PurplePillButton onClick={() => router.push(url)} variant="filled">
           Read More <FaArrowRight />
         </PurplePillButton>
       </div>
