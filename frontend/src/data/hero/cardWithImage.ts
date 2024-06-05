@@ -21,7 +21,7 @@ export const cardWithImageItems = [
     url: "/get-involved/music",
   },
   {
-    src: "/featured/header/6.jpg",
+    src: "/featured/header/8.jpeg",
     title: "Bible Study",
     alt: "Featured Image 4",
     description: "Bible study",

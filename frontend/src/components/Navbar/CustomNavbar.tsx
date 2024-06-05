@@ -12,13 +12,19 @@ const CustomNavbar: FC<{}> = () => {
   const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
   const scrollPosition = useScrollPosition();
 
+  console.log(`scrollPosition = ${scrollPosition}`);
+
   return (
     <>
       <nav
-        className={` ${scrollPosition > 50 ? "bg-purple-50" : ""}
+        className={` ${scrollPosition > 10 ? "bg-purple-50" : ""}
         fixed top-0 z-50 transition-colors duration-300 mx-auto w-full`}
       >
-        <div className="max-w-screen-xl flex flex-wrap justify-between items-center mx-auto p-5">
+        <div
+          className={`max-w-screen-xl flex flex-wrap justify-between items-center mx-auto ${
+            scrollPosition > 10 ? "p-2 transition-all 0.1s ease-in-out" : "p-5"
+          }`}
+        >
           <NavLogo />
           <MenuToggleButton
             isMenuBarOpen={isMenuBarOpen}

@@ -15,7 +15,7 @@ export const featuredImages = [
     containerClassName: "col-span-1 row-span-1 h-40 md:h-56 2xl:h-68",
   },
   {
-    src: "/featured/header/4.jpeg",
+    src: "/featured/header/5.jpg",
     alt: "featured image 4",
     containerClassName: "col-span-2 row-span-1 h-40 md:h-56 2xl:h-68",
   },
