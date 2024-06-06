@@ -3,6 +3,7 @@
 import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
 import "@/styles/slide.css";
+import "@/styles/blurred-background.css";
 
 interface HeroSimpleProps {
   header: string;
@@ -24,8 +25,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
 
   return (
     <div
-      className={`w-full justify-center ${backgroundColor}`}
-      style={{ height: "50vh" }}
+      className={`w-full justify-center h-[60vh] md:h-[50vh] ${backgroundColor}`}
     >
       <div
         className={`relative h-full ${layout} items-center mx-auto lg:max-w-5xl xl:max-w-6xl align-center p-4 lg:p-8`}

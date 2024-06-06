@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @apply transition-all duration-500 ease-out;
 }
 
 body {
