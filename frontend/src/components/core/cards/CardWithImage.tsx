@@ -24,7 +24,7 @@ const CardWithImage: FC<CardWithImageProps> = ({
   const router = useRouter();
 
   return (
-    <div className=" bg-white-0 border border-gray-200 rounded-lg shadow">
+    <div className=" bg-white-0 border border-gray-200 rounded-lg shadow hover-animation hover-up">
       <div className="relative h-96 w-full">
         <Image
           src={src}

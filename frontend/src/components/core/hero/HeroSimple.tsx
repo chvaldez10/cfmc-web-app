@@ -28,7 +28,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
       className={`w-full justify-center h-[72vh] md:h-[50vh] rounded-xl shadow-lg ${backgroundColor}`}
     >
       <div
-        className={`relative h-full ${layout} items-center mx-auto lg:max-w-5xl xl:max-w-6xl align-center p-4 lg:p-8`}
+        className={`relative h-full ${layout} items-center align-center mx-auto lg:max-w-5xl xl:max-w-6xl p-4 lg:p-8`}
       >
         {/* Text Column */}
         <div

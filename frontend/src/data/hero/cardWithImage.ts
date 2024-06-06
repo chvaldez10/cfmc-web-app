@@ -22,9 +22,9 @@ export const cardWithImageItems = [
   },
   {
     src: "/featured/header/8.jpeg",
-    title: "Bible Study",
+    title: "New member",
     alt: "Featured Image 4",
-    description: "Bible study",
+    description: "New member",
     url: "/get-involved/bible-study",
   },
 ];
