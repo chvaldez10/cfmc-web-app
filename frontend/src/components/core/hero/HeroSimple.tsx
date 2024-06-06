@@ -25,7 +25,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
 
   return (
     <div
-      className={`w-full justify-center h-[60vh] md:h-[50vh] ${backgroundColor}`}
+      className={`w-full justify-center h-[72vh] md:h-[50vh] rounded-xl shadow-lg ${backgroundColor}`}
     >
       <div
         className={`relative h-full ${layout} items-center mx-auto lg:max-w-5xl xl:max-w-6xl align-center p-4 lg:p-8`}

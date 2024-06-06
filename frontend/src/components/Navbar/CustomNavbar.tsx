@@ -18,7 +18,7 @@ const CustomNavbar: FC<{}> = () => {
     <>
       <nav
         className={` ${scrollPosition > 10 ? "bg-purple-50" : ""}
-        fixed top-0 z-50 transition-colors duration-300 mx-auto w-full`}
+        fixed top-0 z-50 transition-all duration-300 mx-auto w-full`}
       >
         <div
           className={`max-w-screen-xl flex flex-wrap justify-between items-center mx-auto ${
