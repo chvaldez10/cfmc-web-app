@@ -3,7 +3,7 @@ export const cardWithImageItems = [
     src: "/featured/header/3.jpg",
     title: "Sunday Service",
     alt: "Featured Image 1",
-    description: "Sunday Services",
+    description: "Sunday Service",
     url: "/about/ministry",
   },
   {

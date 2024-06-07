@@ -11,7 +11,7 @@ export default function Home() {
       <HeroCollage />
       <HeroSimple
         key={"Hero Map"}
-        header={"Sunday Service"}
+        header={"Service Details:"}
         verbiage="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         element={<IframeMap />}
         backgroundColor="bg-neutral-50"

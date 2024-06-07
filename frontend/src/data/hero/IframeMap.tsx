@@ -10,7 +10,6 @@ const IframeMap: React.FC<{}> = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="absolute top-0 left-0 w-full h-full rounded-lg border-2 border-green-50"></div>
     </>
   );
 };
