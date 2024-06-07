@@ -3,6 +3,7 @@ import HeroCollage from "@/components/core/hero/HeroCollage";
 import HeroSimple from "@/components/core/hero/HeroSimple";
 import IframeMap from "@/data/hero/IframeMap";
 import { cardContainerItems } from "@/data/hero/CardContainer";
+import UpcomingEvents from "@/data/hero/UpcomingEvents";
 import CardWithImageContainer from "@/components/core/cards/CardWithImageContainer";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
+      <UpcomingEvents />
     </>
   );
 }
