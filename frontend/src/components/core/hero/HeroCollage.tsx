@@ -18,7 +18,7 @@ const HeroCollage: FC = () => {
       <div className="flex flex-col items-center justify-center z-10 w-full h-[80vh] gap-4">
         {/* Text Column */}
         <div className="w-full z-10 flex flex-col items-center text-center xl:max-w-4xl ">
-          <h2 className="text-4xl md:mb-4 md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl mb-4 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
             Our Vision
           </h2>
           <p

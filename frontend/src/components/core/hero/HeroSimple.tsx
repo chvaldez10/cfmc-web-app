@@ -4,6 +4,7 @@ import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
 import "@/styles/slide.css";
 import "@/styles/blurred-background.css";
+import "@/styles/hero-floating.css";
 
 interface HeroSimpleProps {
   header: string;
@@ -17,7 +18,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
   header,
   verbiage,
   element,
-  layout = "grid grid-cols-1 md:grid-cols-2",
+  layout = "flex flex-col md:flex-row",
   backgroundColor = "",
 }) => {
   const [textRef, textInView] = useInView();
@@ -25,17 +26,17 @@ const HeroSimple: FC<HeroSimpleProps> = ({
 
   return (
     <div
-      className={`w-full justify-center h-[72vh] md:h-[50vh] rounded-xl shadow-lg ${backgroundColor}`}
+      className={`w-full md:h-[50vh] rounded-xl hero-floating ${backgroundColor}`}
     >
       <div
-        className={`relative h-full ${layout} items-center align-center mx-auto lg:max-w-5xl xl:max-w-6xl p-4 lg:p-8`}
+        className={`h-full ${layout} items-center mx-auto lg:w-9/12 p-4 lg:p-8`}
       >
         {/* Text Column */}
         <div
           ref={textRef}
           className={`${
             textInView ? "animate-slide-in-left" : ""
-          } col-span-1 mx-auto justify-center items-center text-center p-4 lg:p-6`}
+          } flex-1 flex flex-col justify-center items-center text-center p-4 lg:p-6`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-800">
             {header}
@@ -50,11 +51,9 @@ const HeroSimple: FC<HeroSimpleProps> = ({
           ref={mapRef}
           className={`${
             mapInView ? "animate-slide-in-right" : ""
-          } col-span-1 flex justify-center items-center`}
+          } flex-1 flex justify-center items-center`}
         >
-          <div className="relative w-full max-w-lg flex justify-center items-center">
-            {element}
-          </div>
+          {element}
         </div>
       </div>
     </div>

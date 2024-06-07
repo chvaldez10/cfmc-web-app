@@ -4,8 +4,8 @@ import { cardWithImageItems } from "@/data/hero/cardWithImage";
 
 const CardWithImageContainer: FC<{}> = () => {
   return (
-    <div className="mx-auto p-5 md:p-0 items-center justify-center md:w-10/12 flex flex-col gap-4 ">
-      <div className="w-full grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4 py-8 text-white-0">
+    <div className="mx-auto p-5 md:p-0 items-center justify-center  flex flex-col gap-4 bg-neutral-50">
+      <div className="w-full grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4 py-8 text-white-0 md:w-10/12">
         {cardWithImageItems.map((item, index) => (
           <CardWithImage
             key={item.title}
