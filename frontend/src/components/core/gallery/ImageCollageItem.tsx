@@ -13,7 +13,9 @@ const ImageCollageItem: FC<ImageCollageItemProps> = ({
   containerClassName,
 }) => {
   return (
-    <div className={`relative ${containerClassName} pulse-once`}>
+    <div
+      className={`relative h-96 md:h-[50vh] 2xl:h-[55vh] ${containerClassName} pulse-once `}
+    >
       <Image
         src={src}
         alt={alt}

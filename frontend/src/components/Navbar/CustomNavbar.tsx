@@ -12,8 +12,6 @@ const CustomNavbar: FC<{}> = () => {
   const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
   const scrollPosition = useScrollPosition();
 
-  console.log(`scrollPosition = ${scrollPosition}`);
-
   return (
     <>
       <nav
