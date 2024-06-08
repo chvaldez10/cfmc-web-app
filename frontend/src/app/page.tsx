@@ -17,9 +17,9 @@ export default function Home() {
         element={<IframeMap />}
         backgroundColor="bg-neutral-50"
       />
+      <UpcomingEvents />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
-      <UpcomingEvents />
     </>
   );
 }

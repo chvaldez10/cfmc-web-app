@@ -1,4 +1,10 @@
-export const cardWithImageItems = [
+export const cardWithImageItems: {
+  src: string;
+  title: string;
+  alt: string;
+  description: string;
+  url: string;
+}[] = [
   {
     src: "/featured/header/3.jpg",
     title: "Holly Communion",

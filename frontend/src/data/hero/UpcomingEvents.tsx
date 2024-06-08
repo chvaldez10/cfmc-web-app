@@ -1,19 +1,5 @@
 import { FC } from "react";
-
-type Event = {
-  time: string;
-  title: string;
-  link: string;
-};
-
-const events: Event[] = [
-  { time: "June 9, 5:00 PM - 9:00 PM", title: "Opening remarks", link: "#" },
-  {
-    time: "June 9, 5:00 PM - 9:00 PM",
-    title: "Bergside LLC: Controlling the video traffic flows",
-    link: "#",
-  },
-];
+import { upcomingEvents } from "@/data/events/upcomingEventsData";
 
 const UpcomingEvents: FC = () => {
   return (
@@ -26,14 +12,14 @@ const UpcomingEvents: FC = () => {
       {/* Time slots */}
       <div className="mt-8 md:mt-16">
         <div className="divide-y divide-gray-700">
-          {events.map((event, index) => (
+          {upcomingEvents.map((upcomingEvent, index) => (
             <div key={index} className="flex items-center py-4">
               <p className="w-32 text-lg text-gray-400 sm:text-right shrink-0">
-                {event.time}
+                {upcomingEvent.time}
               </p>
               <h3 className="ml-4 text-lg font-semibold">
-                <a href={event.link} className="hover:underline">
-                  {event.title}
+                <a href={upcomingEvent.link} className="hover:underline">
+                  {upcomingEvent.title}
                 </a>
               </h3>
             </div>

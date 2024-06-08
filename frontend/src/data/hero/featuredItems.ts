@@ -1,4 +1,8 @@
-export const featuredImages = [
+export const featuredImages: {
+  src: string;
+  alt: string;
+  containerClassName: string;
+}[] = [
   {
     src: "/featured/header/2.jpg",
     alt: "featured image 1",
