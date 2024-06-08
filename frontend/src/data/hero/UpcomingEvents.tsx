@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { upcomingEvents } from "@/data/events/upcomingEventsData";
+import Link from "next/link";
 
 const UpcomingEvents: FC = () => {
   return (
@@ -14,18 +15,18 @@ const UpcomingEvents: FC = () => {
         {upcomingEvents.map((upcomingEvent, index) => (
           <div
             key={index}
-            className="flex flex-col md:grid md:grid-rows-1 md:grid-cols-3 items-start md:items-center py-4"
+            className="flex flex-col md:grid md:grid-rows-1 md:grid-cols-3 py-4"
           >
-            <p className="text-lg text-gray-700 md:text-right col-span-1 mb-2 md:mb-0">
+            <p className="text-lg text-gray-700 font-bold col-span-1 mb-2 md:mb-0">
               {upcomingEvent.time}
             </p>
-            <p className="text-lg font-semibold truncate col-span-2">
-              <a
+            <p className="text-lg truncate col-span-2">
+              <Link
                 href={upcomingEvent.link}
                 className="hover:underline block truncate"
               >
                 {upcomingEvent.title}
-              </a>
+              </Link>
             </p>
           </div>
         ))}
