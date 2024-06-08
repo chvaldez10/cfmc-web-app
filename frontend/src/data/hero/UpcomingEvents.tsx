@@ -3,28 +3,32 @@ import { upcomingEvents } from "@/data/events/upcomingEventsData";
 
 const UpcomingEvents: FC = () => {
   return (
-    <div className="mx-auto w-full md:w-10/12 px-4 py-8 lg:px-6 sm:py-16 lg:py-24">
+    <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:py-16 lg:py-24 lg:px-6">
       {/* Header */}
-      <div className="text-center">
+      <div className="text-center mb-8 md:mb-16">
         <h2 className="text-4xl font-extrabold">Upcoming Events</h2>
       </div>
 
       {/* Time slots */}
-      <div className="mt-8 md:mt-16">
-        <div className="divide-y divide-gray-700">
-          {upcomingEvents.map((upcomingEvent, index) => (
-            <div key={index} className="flex items-center py-4">
-              <p className="w-32 text-lg text-gray-400 sm:text-right shrink-0">
-                {upcomingEvent.time}
-              </p>
-              <h3 className="ml-4 text-lg font-semibold">
-                <a href={upcomingEvent.link} className="hover:underline">
-                  {upcomingEvent.title}
-                </a>
-              </h3>
-            </div>
-          ))}
-        </div>
+      <div className="divide-y divide-gray-700">
+        {upcomingEvents.map((upcomingEvent, index) => (
+          <div
+            key={index}
+            className="flex flex-col md:grid md:grid-rows-1 md:grid-cols-3 items-start md:items-center py-4"
+          >
+            <p className="text-lg text-gray-700 md:text-right col-span-1 mb-2 md:mb-0">
+              {upcomingEvent.time}
+            </p>
+            <p className="text-lg font-semibold truncate col-span-2">
+              <a
+                href={upcomingEvent.link}
+                className="hover:underline block truncate"
+              >
+                {upcomingEvent.title}
+              </a>
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
