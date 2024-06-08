@@ -1,9 +1,9 @@
 export const cardWithImageItems = [
   {
     src: "/featured/header/3.jpg",
-    title: "Sunday Service",
+    title: "Holly Communion",
     alt: "Featured Image 1",
-    description: "Sunday Service",
+    description: "Hole Communion",
     url: "/about/ministry",
   },
   {
@@ -21,7 +21,7 @@ export const cardWithImageItems = [
     url: "/get-involved/music",
   },
   {
-    src: "/featured/header/8.jpeg",
+    src: "/featured/header/14.jpeg",
     title: "New member",
     alt: "Featured Image 4",
     description: "New member",
