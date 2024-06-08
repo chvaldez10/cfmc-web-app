@@ -50,14 +50,26 @@ const HeroCollage: FC = () => {
 
         {/* Image Column */}
         <div className="hidden md:grid grid-rows-1 grid-cols-3 gap-2 w-full">
-          {featuredImages.map((featuredImage, index) => (
+          {/* {featuredImages.map((featuredImage, index) => (
             <ImageCollageItem
               key={index}
               src={featuredImage.src}
               alt={featuredImage.alt}
               containerClassName={featuredImage.containerClassName}
             />
-          ))}
+          ))} */}
+          <ImageCollageItem
+            key={"feature-image-1"}
+            src={"/featured/header/2.jpg"}
+            alt={"featured Image 1"}
+            containerClassName={"col-span-2 row-span-1"}
+          />
+          <ImageCollageItem
+            key={"feature-image-1"}
+            src={"/featured/header/8.jpeg"}
+            alt={"featured Image 2"}
+            containerClassName={"col-span-1 row-span-1"}
+          />
         </div>
       </div>
     </div>
