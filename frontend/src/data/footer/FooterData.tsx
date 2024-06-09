@@ -12,27 +12,40 @@ export const socialPlatforms: {
     label: "Facebook",
     url: "https://www.facebook.com/share/2BYMGfpPUgVrQPJh/?mibextid=LQQJ4d",
   },
-  {
-    icon: <FaYahoo />,
-    label: "Yahoo",
-    url: "",
-  },
 ];
 
-export const usefulLinks = [
+export const usefulLinks: {
+  link: string;
+  label: string;
+}[] = [
   {
-    href: "/about/ministry",
+    link: "/media/inquiries",
     label: "Media Inquiries",
   },
   {
-    href: "/media/about-us",
-    label: "Media Inquiries",
+    link: "/get-involved/upcoming",
+    label: "Upcoming Events",
+  },
+  {
+    link: "/connect/contact-us",
+    label: "Contact Us",
   },
 ];
 
-// const otherResources = [
-//   {
-//     href: "https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile",
-//     label: "MIT License",
-//   },
-// ];
+export const otherResources: {
+  link: string;
+  label: string;
+}[] = [
+  {
+    link: "/login",
+    label: "Login",
+  },
+  {
+    link: "/login",
+    label: "Sign up",
+  },
+  {
+    link: "https://github.com/chvaldez10/cfmc-landing-page.git",
+    label: "GitHub",
+  },
+];
