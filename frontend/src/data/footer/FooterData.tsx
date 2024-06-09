@@ -5,11 +5,17 @@ import { FaYahoo } from "react-icons/fa";
 export const socialPlatforms: {
   icon: ReactElement;
   label: string;
+  url: string;
 }[] = [
-  { icon: <FaFacebook />, label: "Facebook" },
+  {
+    icon: <FaFacebook />,
+    label: "Facebook",
+    url: "https://www.facebook.com/share/2BYMGfpPUgVrQPJh/?mibextid=LQQJ4d",
+  },
   {
     icon: <FaYahoo />,
     label: "Yahoo",
+    url: "",
   },
 ];
 

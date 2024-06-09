@@ -1,25 +1,21 @@
 import { FC } from "react";
 import { FaFacebook } from "react-icons/fa";
 import CopyrightNotice from "@/components/Footer/CopyrightNotice";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 const Footer: FC = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="relative bg-blueGray-200 pt-8 pb-6">
+    <footer className="relative pt-8 pb-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap text-left lg:text-left">
+          {/* Platforms */}
           <div className="w-full lg:w-6/12 px-4">
-            <p className="text-3xl font-semibold text-gray-600">
-              Let's keep in touch!
-            </p>
-            <p className="text-lg mt-0 mb-2 text-blueGray-600">
+            <p className="text-2xl mt-0 mb-2 font-semibold text-blueGray-600">
               Find us on any of these platforms.
             </p>
-            <div className="mt-6 lg:mb-0 mb-6">
-              <FaFacebook />
-            </div>
+            <SocialMediaLinks />
           </div>
+
           <div className="w-full lg:w-6/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
               <div className="w-full lg:w-4/12 px-4 ml-auto">
