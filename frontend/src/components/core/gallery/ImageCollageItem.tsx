@@ -21,7 +21,7 @@ const ImageCollageItem: FC<ImageCollageItemProps> = ({
         alt={alt}
         fill={true}
         style={{ objectFit: "cover" }}
-        className="rounded-lg object-center"
+        className="rounded-lg object-top"
       />
     </div>
   );
