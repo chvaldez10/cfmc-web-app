@@ -5,6 +5,7 @@ import IframeMap from "@/data/hero/IframeMap";
 import { cardContainerItems } from "@/data/hero/CardContainer";
 import UpcomingEvents from "@/data/hero/UpcomingEvents";
 import CardWithImageContainer from "@/components/core/cards/CardWithImageContainer";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <UpcomingEvents />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
+      <Footer />
     </>
   );
 }
