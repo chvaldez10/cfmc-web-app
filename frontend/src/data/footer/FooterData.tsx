@@ -37,12 +37,12 @@ export const otherResources: {
   label: string;
 }[] = [
   {
-    link: "/login",
+    link: "/authorize/login",
     label: "Login",
   },
   {
-    link: "/login",
-    label: "Sign up",
+    link: "/resources/release-notes",
+    label: "Release Notes",
   },
   {
     link: "https://github.com/chvaldez10/cfmc-landing-page.git",
