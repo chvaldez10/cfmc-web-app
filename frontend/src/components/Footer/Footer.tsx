@@ -6,12 +6,12 @@ import { usefulLinks, otherResources } from "@/data/footer/FooterData";
 
 const Footer: FC = () => {
   return (
-    <footer className="relative pt-8 pb-6">
+    <footer className="relative pt-8 pb-6 ">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap text-left lg:text-left">
           {/* Platforms */}
           <div className="w-full lg:w-6/12 px-4">
-            <p className="text-2xl mt-0 mb-2 font-semibold text-blueGray-600">
+            <p className="text-2xl mt-0 mb-2 font-semibold text-gray-600">
               Find us Facebook!
             </p>
             <SocialMediaLinks />
