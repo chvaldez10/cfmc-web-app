@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { FaFacebook } from "react-icons/fa";
-import { FaYahoo } from "react-icons/fa";
 
 export const socialPlatforms: {
   icon: ReactElement;
