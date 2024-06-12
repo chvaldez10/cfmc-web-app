@@ -3,7 +3,7 @@
 import { FC, useState } from "react";
 import ReleaseItemContainer from "../core/text/ReleaseItemContainer";
 
-const yearsTest = [2025, 2024];
+const yearsTest = [2024];
 
 const FixedSidebarWithContent: FC = () => {
   const currentYear = new Date().getFullYear();
