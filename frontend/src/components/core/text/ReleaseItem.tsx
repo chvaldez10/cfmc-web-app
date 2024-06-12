@@ -1,30 +1,26 @@
-import React from "react";
-
-type descriptionList = {
-  title: string;
-  description: string;
-};
+import { FC } from "react";
+import { ReleaseDetails } from "@/types/releaseData";
 
 interface ReleaseItemProps {
-  date: string;
-  version: string;
+  releaseDetail: ReleaseDetails;
 }
 
-const ReleaseItem: React.FC = () => {
+const ReleaseItem: FC<ReleaseItemProps> = ({ releaseDetail }) => {
   return (
-    <>
-      {/* TODO: make this into component */}
-      <h2 className="text-2xl font-bold mb-2">June 09, 2024</h2>
-      <p className="text-lg mb-4">v 24.06.09</p>
+    <div className="bg-white-0 p-6 rounded-lg shadow-lg max-w-lg mx-auto my-6 lg:my-8 lg:max-w-xl">
+      <h2 className="text-2xl font-bold mb-2">{releaseDetail.details.date}</h2>
+      <p className="text-bold mb-4">{releaseDetail.version}</p>
       <ul className="list-disc pl-5 space-y-4">
-        <li>
-          <span className="font-bold">🎉 First Release</span> description
-        </li>
-        <li>
-          <span className="font-bold">Feature Title 2</span> description
-        </li>
+        {Object.entries(releaseDetail.details.featureList).map(
+          ([featureHeader, featureDescription]) => (
+            <li key={featureHeader}>
+              <span className="font-bold">{featureHeader}</span>{" "}
+              <span>{featureDescription}</span>
+            </li>
+          )
+        )}
       </ul>
-    </>
+    </div>
   );
 };
 

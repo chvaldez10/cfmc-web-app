@@ -7,7 +7,8 @@ interface ReleaseItemContainerProps {
 }
 
 function filterReleaseByYear(year: number) {
-  return releaseData.filter((release) => release.year === year);
+  const releaseYear = releaseData.find((release) => release.year === year);
+  return releaseYear ? releaseYear.releaseItems : [];
 }
 
 const ReleaseItemContainer: React.FC<ReleaseItemContainerProps> = ({
@@ -15,9 +16,13 @@ const ReleaseItemContainer: React.FC<ReleaseItemContainerProps> = ({
 }) => {
   const releaseDetails = filterReleaseByYear(year);
 
-  console.log(releaseData);
-
-  return <ReleaseItem />;
+  return (
+    <>
+      {releaseDetails.map((releaseDetail, index) => (
+        <ReleaseItem key={index} releaseDetail={releaseDetail} />
+      ))}
+    </>
+  );
 };
 
 export default ReleaseItemContainer;
