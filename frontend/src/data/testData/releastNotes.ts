@@ -1,3 +1,5 @@
+// This will be a table
+
 interface Features {
   [key: string]: string;
 }

@@ -1,3 +1,5 @@
+// This will be a table
+
 export const upcomingEvents: {
   time: string;
   title: string;

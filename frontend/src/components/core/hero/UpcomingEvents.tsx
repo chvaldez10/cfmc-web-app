@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { upcomingEvents } from "@/data/events/upcomingEventsData";
+import { upcomingEvents } from "@/data/testData/upcomingEventsData";
 import Link from "next/link";
 
 const UpcomingEvents: FC = () => {
