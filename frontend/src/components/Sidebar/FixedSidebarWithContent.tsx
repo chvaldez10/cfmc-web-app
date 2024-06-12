@@ -1,10 +1,9 @@
 "use client";
 
 import { FC, useState } from "react";
-import Link from "next/link";
 import ReleaseItemContainer from "../core/text/ReleaseItemContainer";
 
-const yearsTest = [2024, 2023];
+const yearsTest = [2025, 2024];
 
 const FixedSidebarWithContent: FC = () => {
   const currentYear = new Date().getFullYear();
@@ -22,7 +21,7 @@ const FixedSidebarWithContent: FC = () => {
             <button
               key={year}
               onClick={() => handleYearClick(year)}
-              className={`text-lg text-center ${
+              className={`text-lg text-center hover:text-purple-500 ${
                 selectedYear === year ? "font-bold" : ""
               }`}
             >

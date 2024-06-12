@@ -22,7 +22,7 @@ const FooterLinkGroup: FC<LinkGroupProps> = ({ title, footerLinks }) => {
           <li key={index}>
             <Link
               href={link}
-              className="text-gray-600 hover:text-purple-600 font-semibold block pb-2 text-sm"
+              className="text-gray-600 hover:text-purple-500 font-semibold block pb-2 text-sm"
             >
               {label}
             </Link>
