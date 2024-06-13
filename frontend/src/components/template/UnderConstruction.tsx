@@ -17,7 +17,7 @@ const UnderConstruction: FC<{}> = () => {
           Coming Soon !
         </h2>
 
-        <p className="font-semibold my-4">Our Website is under construction.</p>
+        <p className="font-semibold my-4">Our website is under construction.</p>
 
         <button
           className="hover:text-violet-300 text-violet-600"

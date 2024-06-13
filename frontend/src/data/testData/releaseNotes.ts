@@ -5,7 +5,7 @@ export const releaseData: ReleaseData[] = [
     year: 2024,
     releaseItems: [
       {
-        version: "v 24.06.11",
+        version: "v 24.0.0",
         details: {
           date: "June 11, 2024",
           featureList: {
