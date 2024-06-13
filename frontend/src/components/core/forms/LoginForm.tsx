@@ -1,8 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { FC } from "react";
-import PurplePillButton from "../buttons/PurplePillButton";
+import { login, signup } from "@/app/login/actions";
 
 const LoginForm: FC = () => {
   return (
@@ -34,25 +32,27 @@ const LoginForm: FC = () => {
               />
             </div>
             <div className="flex items-center justify-between">
-              <Link
-                href="#"
-                className="text-sm font-medium hover:text-purple-500"
-              >
+              <button className="text-sm font-medium hover:text-purple-500">
                 Forgot password?
-              </Link>
-              <PurplePillButton
-                onClick={() => console.log("login clicked")}
-                variant="filled"
-                className="px-7"
+              </button>
+
+              <button
+                formAction={login}
+                className="text-sm font-medium text-purple-500 "
               >
                 Sign In
-              </PurplePillButton>
+              </button>
             </div>
+
+            {/* Turn this off for live use */}
             <p className="text-sm font-light text-center">
               Don’t have an account yet?{" "}
-              <Link href="#" className="font-medium hover:text-purple-500">
+              <button
+                formAction={signup}
+                className="font-medium hover:text-purple-500"
+              >
                 Sign up
-              </Link>
+              </button>
             </p>
           </form>
         </div>
