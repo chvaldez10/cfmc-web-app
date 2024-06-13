@@ -21,7 +21,7 @@ const LoginForm: FC = () => {
                 type="email"
                 name="email"
                 id="email"
-                className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5"
+                className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 focus:shadow-outline block w-full p-2.5"
                 placeholder="name@email.com"
                 required
               />
@@ -38,7 +38,7 @@ const LoginForm: FC = () => {
                 name="password"
                 id="password"
                 placeholder="••••••••"
-                className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5"
+                className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 focus:shadow-outline block w-full p-2.5"
                 required
               />
             </div>
