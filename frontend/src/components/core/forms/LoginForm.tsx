@@ -14,9 +14,6 @@ const LoginForm: FC = () => {
           </h1>
           <form className="space-y-6" action="#">
             <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium">
-                Your email
-              </label>
               <input
                 type="email"
                 name="email"
@@ -27,12 +24,6 @@ const LoginForm: FC = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="password"
-                className="block mb-2 text-sm font-medium"
-              >
-                Password
-              </label>
               <input
                 type="password"
                 name="password"
