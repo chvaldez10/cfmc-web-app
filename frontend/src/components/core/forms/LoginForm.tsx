@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { login, signup } from "@/app/login/actions";
 import CustomInput from "./CustomInput";
+import SimpleButton from "../buttons/SimpleButton";
 
 const LoginForm: FC = () => {
   return (
@@ -25,28 +26,25 @@ const LoginForm: FC = () => {
               placeholder="••••••••"
               required
             />
-            <div className="flex items-center justify-between">
-              <button className="text-sm font-medium hover:text-purple-500">
+            <div className="flex flex-col items-end ">
+              {/* <SimpleButton className="underline hover:text-purple-500">
                 Forgot password?
-              </button>
+              </SimpleButton> */}
 
-              <button
+              <SimpleButton
                 formAction={login}
-                className="text-sm font-medium text-purple-500 "
+                className="text-purple-500 hover:underline"
               >
                 Sign In
-              </button>
+              </SimpleButton>
             </div>
 
-            {/* Turn this off for live use */}
+            {/* Disable as off now */}
             <p className="text-sm font-light text-center">
               Don’t have an account yet?{" "}
-              <button
-                formAction={signup}
-                className="font-medium underline hover:text-purple-500"
-              >
-                Sign up
-              </button>
+              <SimpleButton className="underline hover:text-purple-500">
+                Sign Up
+              </SimpleButton>
             </p>
           </form>
         </div>
