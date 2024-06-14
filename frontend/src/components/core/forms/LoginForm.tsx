@@ -26,6 +26,7 @@ const LoginForm: FC = () => {
             required
           />
           <div className="flex flex-col items-end ">
+            {/* Un comment when need to be used */}
             {/* <SimpleButton className="underline hover:text-purple-500">
                 Forgot password?
               </SimpleButton> */}
@@ -38,13 +39,13 @@ const LoginForm: FC = () => {
             </SimpleButton>
           </div>
 
-          {/* Disable as off now */}
-          <p className="text-sm font-light text-center">
-            Don’t have an account yet?{" "}
-            <SimpleButton className="underline hover:text-purple-500">
-              Sign Up
-            </SimpleButton>
-          </p>
+          {/* Un comment when need to be used */}
+          {/* <p className="text-sm font-light text-center">
+          Don’t have an account yet?{" "}
+          <SimpleButton className="underline hover:text-purple-500">
+            Sign Up
+          </SimpleButton>
+        </p> */}
         </form>
       </div>
     </div>
