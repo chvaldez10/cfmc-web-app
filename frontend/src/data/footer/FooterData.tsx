@@ -36,7 +36,7 @@ export const otherResources: {
   label: string;
 }[] = [
   {
-    link: "/authorize/login",
+    link: "/login",
     label: "Login",
   },
   {

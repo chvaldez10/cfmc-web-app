@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { FC } from "react";
 import { login, signup } from "@/app/login/actions";
+import CustomInput from "./CustomInput";
 
 const LoginForm: FC = () => {
   return (
@@ -11,26 +11,20 @@ const LoginForm: FC = () => {
             Welcome
           </h1>
           <form className="space-y-6" action="#">
-            <div>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 focus:shadow-outline block w-full p-2.5"
-                placeholder="name@email.com"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="••••••••"
-                className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 focus:shadow-outline block w-full p-2.5"
-                required
-              />
-            </div>
+            <CustomInput
+              type="email"
+              name="email"
+              id="email"
+              placeholder="name@email.com"
+              required
+            />
+            <CustomInput
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              required
+            />
             <div className="flex items-center justify-between">
               <button className="text-sm font-medium hover:text-purple-500">
                 Forgot password?
@@ -49,7 +43,7 @@ const LoginForm: FC = () => {
               Don’t have an account yet?{" "}
               <button
                 formAction={signup}
-                className="font-medium hover:text-purple-500"
+                className="font-medium underline hover:text-purple-500"
               >
                 Sign up
               </button>
