@@ -1,5 +1,5 @@
-import LoginForm from "@/components/core/forms/LoginForm";
+import LoginFormContainer from "@/components/core/forms/LoginFormContainer";
 
 export default function page() {
-  return <LoginForm />;
+  return <LoginFormContainer />;
 }
