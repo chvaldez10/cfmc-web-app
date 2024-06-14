@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 
-interface SimpleButtonProps {
+interface FormButtonProps {
   formAction?: (formData: FormData) => Promise<void>;
   children: ReactNode;
   className?: string;
@@ -8,7 +8,7 @@ interface SimpleButtonProps {
 
 const baseClass = "text-sm font-medium";
 
-const SimpleButton: FC<SimpleButtonProps> = ({
+const FormButton: FC<FormButtonProps> = ({
   formAction = "",
   children,
   className = "",
@@ -20,4 +20,4 @@ const SimpleButton: FC<SimpleButtonProps> = ({
   );
 };
 
-export default SimpleButton;
+export default FormButton;

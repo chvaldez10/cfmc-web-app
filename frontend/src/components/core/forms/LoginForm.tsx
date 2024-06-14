@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { login, signup } from "@/app/login/actions";
 import CustomInput from "./CustomInput";
-import SimpleButton from "../buttons/SimpleButton";
+import FormButton from "../buttons/FormButton";
 
 const LoginForm: FC = () => {
   return (
@@ -27,24 +27,24 @@ const LoginForm: FC = () => {
           />
           <div className="flex flex-col items-end ">
             {/* Un comment when need to be used */}
-            {/* <SimpleButton className="underline hover:text-purple-500">
+            {/* <FormButton className="underline hover:text-purple-500">
                 Forgot password?
-              </SimpleButton> */}
+              </FormButton> */}
 
-            <SimpleButton
+            <FormButton
               formAction={login}
               className="text-purple-500 hover:underline"
             >
               Sign In
-            </SimpleButton>
+            </FormButton>
           </div>
 
           {/* Un comment when need to be used */}
           {/* <p className="text-sm font-light text-center">
           Don’t have an account yet?{" "}
-          <SimpleButton className="underline hover:text-purple-500">
+          <FormButton className="underline hover:text-purple-500">
             Sign Up
-          </SimpleButton>
+          </FormButton>
         </p> */}
         </form>
       </div>

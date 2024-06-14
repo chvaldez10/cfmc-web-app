@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { login } from "@/app/login/actions";
-import SimpleButton from "../buttons/SimpleButton";
+import { logout } from "@/app/login/actions";
+import FormButton from "../buttons/FormButton";
 
 const AuthenticatedForm: FC = () => {
   return (
@@ -10,12 +10,12 @@ const AuthenticatedForm: FC = () => {
       </h1>
       <form className="space-y-6" action="#">
         <div className="flex flex-col items-center">
-          <SimpleButton
-            formAction={login}
+          <FormButton
+            formAction={logout}
             className="text-purple-500 hover:underline"
           >
             Logout
-          </SimpleButton>
+          </FormButton>
         </div>
       </form>
     </div>
