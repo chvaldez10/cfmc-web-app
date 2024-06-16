@@ -49,7 +49,7 @@ const HeroCollage: FC = () => {
         </div>
 
         {/* Image Column */}
-        <div className="hidden md:grid grid-rows-1 grid-cols-3 gap-2 w-full">
+        <div className="hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2 w-full">
           {featuredImages.map((featuredImage, index) => (
             <ImageCollageItem
               key={index}
