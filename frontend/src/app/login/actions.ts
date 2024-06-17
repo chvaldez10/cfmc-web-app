@@ -19,7 +19,7 @@ export async function login(formData: FormData) {
   }
 
   revalidatePath("/", "layout");
-  redirect("/login?status=success&message=Successful login");
+  redirect("/?status=success&message=Successful login");
 }
 
 export async function signup(formData: FormData) {
