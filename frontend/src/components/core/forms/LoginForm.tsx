@@ -5,9 +5,11 @@ import { login, signup } from "@/app/login/actions";
 import CustomInput from "./CustomInput";
 import FormButton from "../buttons/FormButton";
 import useToastNotification from "@/hooks/useToastNotification";
+// import useAuthentication from "@/hooks/userAuthentication";
 
 const LoginForm: FC = () => {
   useToastNotification();
+  // const isAuthenticated = useAuthentication();
 
   return (
     <div className="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">

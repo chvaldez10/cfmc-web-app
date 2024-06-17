@@ -1,8 +1,6 @@
 "use client";
 
 import { FC, useState } from "react";
-import { IoMdEye } from "react-icons/io";
-import { IoMdEyeOff } from "react-icons/io";
 import ShowHideButton from "../buttons/ShowHideButton";
 
 interface CustomInputProps {
