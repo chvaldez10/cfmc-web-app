@@ -45,7 +45,7 @@ export async function logout(formData: FormData) {
   const { error } = await supabase.auth.signOut();
 
   if (error) {
-    redirect("/login?message=Could not logout user");
+    redirect("/?status=error&message=Could not logout user");
   }
 
   revalidatePath("/", "layout");
