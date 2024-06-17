@@ -2,35 +2,12 @@
 
 import { FC, useEffect } from "react";
 import { login, signup } from "@/app/login/actions";
-import { useSearchParams } from "next/navigation";
-import { toast } from "react-toastify";
 import CustomInput from "./CustomInput";
 import FormButton from "../buttons/FormButton";
+import useToastNotification from "@/hooks/useToastNotification";
 
 const LoginForm: FC = () => {
-  const searchParams = useSearchParams();
-  const status = searchParams.get("status");
-  const message = searchParams.get("message");
-
-  useEffect(() => {
-    let toastId: number | string;
-
-    if (status && message) {
-      if (status === "success") {
-        toastId = toast.success(message);
-        console.log("toastId = ", toastId);
-      } else if (status === "error") {
-        toastId = toast.error(message);
-        console.log("toastId = ", toastId);
-      }
-    }
-
-    return () => {
-      if (toastId) {
-        toast.dismiss(toastId);
-      }
-    };
-  }, [status, message]);
+  useToastNotification();
 
   return (
     <div className="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">

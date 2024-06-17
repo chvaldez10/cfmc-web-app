@@ -8,7 +8,6 @@ interface ShowHideButtonProps {
 }
 
 const ShowHideButton: FC<ShowHideButtonProps> = ({ isToggled, onClick }) => {
-  console.log(isToggled);
   return (
     <>
       <button
