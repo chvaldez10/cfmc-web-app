@@ -10,6 +10,8 @@ import { cardContainerItems } from "@/data/hero/CardContainer";
 import EventContainer from "@/components/core/hero/EventContainer";
 import { upcomingEvents } from "@/data/testData/upcomingEvents";
 
+import WordWall from "@/components/core/hero/WordWall";
+
 export default function Home() {
   return (
     <>
