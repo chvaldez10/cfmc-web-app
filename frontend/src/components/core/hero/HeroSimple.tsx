@@ -38,7 +38,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
             textInView ? "animate-slide-in-left" : ""
           } flex-1 flex flex-col justify-center items-center text-center p-4 lg:p-6`}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-3xl lg:text-6xl font-bold mb-4 text-gray-800">
             {header}
           </h2>
           <p className="text-base lg:text-lg text-gray-800 w-3/4 md:w-full mx-auto">

@@ -10,7 +10,7 @@ import { cardContainerItems } from "@/data/hero/CardContainer";
 import EventContainer from "@/components/core/hero/EventContainer";
 import { upcomingEvents } from "@/data/testData/upcomingEvents";
 
-import WordWall from "@/components/core/hero/WordWall";
+import HeroTextImage from "@/components/core/hero/HeroTextImage";
 
 export default function Home() {
   return (
@@ -23,7 +23,10 @@ export default function Home() {
         element={<IframeMap />}
         backgroundColor="bg-neutral-50"
       />
+
+      <HeroTextImage />
       <EventContainer events={upcomingEvents} />
+
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
       <Footer />
