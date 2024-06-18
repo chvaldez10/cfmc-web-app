@@ -3,9 +3,10 @@ import HeroCollage from "@/components/core/hero/HeroCollage";
 import HeroSimple from "@/components/core/hero/HeroSimple";
 import IframeMap from "@/data/hero/IframeMap";
 import { cardContainerItems } from "@/data/hero/CardContainer";
-import UpcomingEvents from "@/components/core/hero/UpcomingEvents";
+import VerticalList from "@/components/core/hero/VerticalList";
 import CardWithImageContainer from "@/components/core/cards/CardWithImageContainer";
 import Footer from "@/components/Footer/Footer";
+import { upcomingEvents } from "@/data/testData/verticalListTest";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         element={<IframeMap />}
         backgroundColor="bg-neutral-50"
       />
-      <UpcomingEvents />
+      <VerticalList header={"Upcoming Events"} data={upcomingEvents} />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
       <Footer />
