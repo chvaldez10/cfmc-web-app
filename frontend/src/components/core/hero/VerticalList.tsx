@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { upcomingEvents } from "@/data/testData/verticalListTest";
 import Link from "next/link";
-import { verticalListData } from "@/types/genericTypes";
+import { VerticalListData } from "@/types/genericTypes";
+import SectionHeader from "../text/SectionHeader";
 
 interface VerticalListProps {
   header: string;
-  data: verticalListData[];
+  data: VerticalListData[];
 }
 
 const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
@@ -13,9 +13,7 @@ const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
     <div className="bg-slate-50">
       <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:py-16 lg:py-24 lg:px-6">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-4xl font-extrabold underline">{header}</h2>
-        </div>
+        <SectionHeader title={"Upcoming Events"} />
 
         {/* Time slots */}
         <div className="divide-y divide-purple-300">

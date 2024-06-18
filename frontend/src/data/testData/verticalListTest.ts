@@ -1,6 +1,6 @@
-import { verticalListData } from "@/types/genericTypes";
+import { VerticalListData } from "@/types/genericTypes";
 
-export const upcomingEvents: verticalListData[] = [
+export const upcomingEvents: VerticalListData[] = [
   {
     title: "June 15, 2024 | 5:00 PM",
     content: "Gospel of Mark Home Bible Study (recurring)",
