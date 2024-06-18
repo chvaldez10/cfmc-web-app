@@ -1,7 +1,15 @@
-import UnderConstruction from "@/components/template/UnderConstruction";
+import HeroHeader from "@/components/core/hero/HeroHeader";
+import VerticalList from "@/components/core/hero/VerticalList";
+import { upcomingEvents } from "@/data/testData/verticalListTest";
+
+const heroHeaderTitle = "Announcements";
+const heroHeaderVerbiage = "4th Sunday After Pentecost";
 
 export default function page() {
-  // This will be an advance feature
-
-  return <UnderConstruction />;
+  return (
+    <>
+      <HeroHeader title={heroHeaderTitle} verbiage={heroHeaderVerbiage} />
+      <VerticalList header={"Upcoming Events"} data={upcomingEvents} />
+    </>
+  );
 }
