@@ -8,7 +8,7 @@ import "@/styles/slide.css";
 import "@/styles/blurred-background.css";
 import "@/styles/hero-floating.css";
 
-interface HeroSimpleProps {
+interface HeroWithSlideAnimationProps {
   header: string;
   verbiage: string;
   element: ReactNode;
@@ -16,7 +16,7 @@ interface HeroSimpleProps {
   backgroundColor?: string;
 }
 
-const HeroSimple: FC<HeroSimpleProps> = ({
+const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
   header,
   verbiage,
   element,
@@ -56,4 +56,4 @@ const HeroSimple: FC<HeroSimpleProps> = ({
   );
 };
 
-export default HeroSimple;
+export default HeroWithSlideAnimation;

@@ -1,6 +1,6 @@
 import SimpleCard from "@/components/core/cards/SimpleCard";
 import HeroCollage from "@/components/core/hero/HeroCollage";
-import HeroSimple from "@/components/core/hero/HeroSimple";
+import HeroWithSlideAnimation from "@/components/core/hero/HeroWithSlideAnimation";
 import IframeMap from "@/data/hero/IframeMap";
 import Footer from "@/components/Footer/Footer";
 
@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <HeroCollage />
-      <HeroSimple
+      <HeroWithSlideAnimation
         key={"Hero Map"}
         header={"Sunday Service"}
         verbiage="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
