@@ -23,10 +23,11 @@ export default function Home() {
         element={<IframeMap />}
         backgroundColor="bg-neutral-50"
       />
-
-      <HeroTextImage header={"Sermon Series"} subheader={"Men's Empowerment"} />
+      <HeroTextImage
+        header={"Men's Empowerment Month"}
+        subheader={"Sermon Series"}
+      />
       <EventContainer events={upcomingEvents} />
-
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
       <Footer />

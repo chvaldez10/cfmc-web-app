@@ -1,6 +1,7 @@
 import { FC } from "react";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
+import SectionSubheader from "../text/SectionSubheader";
 
 interface HeroHeaderProps {
   title: string;
@@ -17,9 +18,7 @@ const HeroHeader: FC<HeroHeaderProps> = ({ title, verbiage }) => {
         {/* Text Column */}
         <div className="w-full z-10 flex flex-col items-center text-center xl:max-w-4xl ">
           <MainGradientHeader text={title} />
-          <p className="text-lg md:text-xl lg:text-2xl px-6 bg-white-10 text-gray-700 rounded-md hover-animation shadow-up">
-            {verbiage}
-          </p>
+          <SectionSubheader text={verbiage} className={"bg-white-10"} />
         </div>
       </div>
     </div>

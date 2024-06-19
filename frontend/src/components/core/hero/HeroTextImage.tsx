@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import SectionHeader from "../text/SectionHeader";
+import SectionSubheader from "../text/SectionSubheader";
 
 interface HeroTextImageProps {
   header: string;
@@ -22,13 +23,11 @@ const HeroTextImage: FC<HeroTextImageProps> = ({ header, subheader }) => {
         </div>
 
         {/* Text column */}
-        <div className="order-2 lg:order-2 flex flex-col justify-center items-center text-center space-y-4 lg:space-y-6">
-          <p className="text-2xl lg:text-4xl font-bold text-purple-500">
-            {subheader}
-          </p>
+        <div className="order-2 lg:order-2 flex flex-col justify-center items-center text-center space-y-4 lg:space-y-5">
+          <SectionSubheader text={subheader} className="text-purple-500 " />
 
           <SectionHeader text={header} />
-          <p className="mt-2 text-sm lg:text-lg leading-relaxed">
+          <p className="text-sm lg:text-lg leading-relaxed">
             Children, obey your parents in the Lord, for this is right. “Honor
             your father and mother”—which is the first commandment with a
             promise— “so that it may go well with you and that you may enjoy

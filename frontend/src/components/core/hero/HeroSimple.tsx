@@ -3,6 +3,7 @@
 import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
 import SectionHeader from "../text/SectionHeader";
+import SectionSubheader from "../text/SectionSubheader";
 import "@/styles/slide.css";
 import "@/styles/blurred-background.css";
 import "@/styles/hero-floating.css";
@@ -40,10 +41,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
           } flex-1 flex flex-col justify-center items-center text-center p-4 lg:p-6`}
         >
           <SectionHeader text={header} />
-
-          <p className="text-base lg:text-lg text-gray-800 w-3/4 md:w-full mx-auto">
-            {verbiage}
-          </p>
+          <SectionSubheader text={verbiage} />
         </div>
 
         {/* Element Column */}
