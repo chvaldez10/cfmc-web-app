@@ -23,7 +23,7 @@ export default function Home() {
         header={"Sunday Service"}
         verbiage="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         element={<IframeMap />}
-        backgroundColor="bg-neutral-50"
+        backgroundColor="bg-green-10"
       />
       <HeroTextImage
         header={"5th Sunday After Pentecost"}

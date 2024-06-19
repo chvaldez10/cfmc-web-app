@@ -28,17 +28,15 @@ const HeroSimple: FC<HeroSimpleProps> = ({
 
   return (
     <div
-      className={`w-full md:h-[50vh] rounded-xl hero-floating ${backgroundColor}`}
+      className={`w-full h-screen md:h-[60vh] hero-floating ${backgroundColor} flex items-center justify-center`}
     >
-      <div
-        className={`h-full ${layout} items-center mx-auto lg:w-9/12 p-4 lg:p-8`}
-      >
+      <div className={` ${layout} items-center mx-auto lg:w-9/12 p-4 lg:p-8`}>
         {/* Text Column */}
         <div
           ref={textRef}
           className={`${
             textInView ? "animate-slide-in-left" : ""
-          } flex-1 flex flex-col justify-center items-center text-center p-4 lg:p-6`}
+          } flex-1 flex flex-col justify-center items-center text-center p-4 lg:p-6 mb-4 md:mb-0`}
         >
           <SectionHeader text={header} />
           <SectionSubheader text={verbiage} />
@@ -49,7 +47,7 @@ const HeroSimple: FC<HeroSimpleProps> = ({
           ref={mapRef}
           className={`${
             mapInView ? "animate-slide-in-right" : ""
-          } flex-1 flex justify-center items-center`}
+          } flex-1 flex w-full justify-center items-center`}
         >
           {element}
         </div>
