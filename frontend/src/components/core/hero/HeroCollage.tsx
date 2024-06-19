@@ -6,6 +6,7 @@ import { featuredImages } from "@/data/hero/featuredItems";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 import PurplePillButton from "../buttons/PurplePillButton";
 import { useRouter } from "next/navigation";
+import MainGradientHeader from "@/components/core/text/MainGradientHeader";
 
 const HeroCollage: FC = () => {
   const router = useRouter();
@@ -18,11 +19,9 @@ const HeroCollage: FC = () => {
       <div className="flex flex-col items-center justify-center z-10 w-full h-[80vh] gap-4">
         {/* Text Column */}
         <div className="w-full z-10 flex flex-col items-center text-center xl:max-w-4xl ">
-          <h2 className="text-5xl mb-4 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
-            Our Vision
-          </h2>
+          <MainGradientHeader text={"Our Vision"} />
           <p
-            className="text-lg md:text-xl lg:text-2xl px-6 bg-purple-50 text-gray-700 rounded-md hover-animation shadow-up"
+            className="text-lg md:text-xl lg:text-2xl px-6 bg-white-10 text-gray-700 rounded-md hover-animation shadow-up"
             onClick={() => router.push("/about/mission-and-vision")}
           >
             To be a Church that glorifies God, shepherds in Christ, and is

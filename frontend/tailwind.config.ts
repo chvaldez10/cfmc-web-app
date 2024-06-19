@@ -38,7 +38,7 @@ const config: Config = {
         },
         white: {
           0: "#ffffff",
-          10: "#FEFAF6",
+          10: "#F9F9F9",
         },
         violet: {
           10: "#F1EAFF",

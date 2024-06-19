@@ -13,7 +13,7 @@ const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
     <div className="bg-slate-50">
       <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:py-16 lg:py-24 lg:px-6">
         {/* Header */}
-        <SectionHeader title={"Upcoming Events"} />
+        <SectionHeader text={"Upcoming Events"} />
 
         {/* Time slots */}
         <div className="divide-y divide-purple-300">

@@ -12,7 +12,7 @@ export default function Providers({ children }: ProvidersProp) {
     // Default theme is light. Light mode will not be implemented.
     <ThemeProvider defaultTheme="light" attribute="class">
       <div
-        className="min-h-screen select-none transition-colors duration-300 bg-purple-50"
+        className="min-h-screen select-none transition-colors duration-300 bg-white-10"
         suppressHydrationWarning
       >
         {children}

@@ -15,7 +15,7 @@ const CustomNavbar: FC<{}> = () => {
   return (
     <>
       <nav
-        className={` ${scrollPosition > 10 ? "bg-purple-50" : ""}
+        className={` ${scrollPosition > 10 ? "bg-white-10" : ""}
         fixed top-0 z-50 transition-all duration-300 mx-auto w-full`}
       >
         <div
