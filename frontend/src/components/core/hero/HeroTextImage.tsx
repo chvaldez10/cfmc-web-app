@@ -1,7 +1,13 @@
 import { FC } from "react";
 import Image from "next/image";
+import SectionHeader from "../text/SectionHeader";
 
-const HeroTextImage: FC = () => {
+interface HeroTextImageProps {
+  header: string;
+  subheader: string;
+}
+
+const HeroTextImage: FC<HeroTextImageProps> = ({ header, subheader }) => {
   return (
     <section className="px-3 py-5 bg-neutral-50 lg:py-10">
       <div className="grid lg:grid-cols-2 mx-auto lg:w-9/12 items-center justify-items-center gap-5">
@@ -14,13 +20,14 @@ const HeroTextImage: FC = () => {
             height={500}
           />
         </div>
+
+        {/* Text column */}
         <div className="order-2 lg:order-2 flex flex-col justify-center items-center text-center space-y-4 lg:space-y-6">
           <p className="text-2xl lg:text-4xl font-bold text-purple-500">
-            5th Sunday After Epiphany
+            {subheader}
           </p>
-          <p className="text-2xl lg:text-4xl font-bold">
-            Christian Men's Empowerment Month
-          </p>
+
+          <SectionHeader text={header} />
           <p className="mt-2 text-sm lg:text-lg leading-relaxed">
             Children, obey your parents in the Lord, for this is right. “Honor
             your father and mother”—which is the first commandment with a

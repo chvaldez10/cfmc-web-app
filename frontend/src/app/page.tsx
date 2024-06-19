@@ -24,7 +24,7 @@ export default function Home() {
         backgroundColor="bg-neutral-50"
       />
 
-      <HeroTextImage />
+      <HeroTextImage header={"Sermon Series"} subheader={"Men's Empowerment"} />
       <EventContainer events={upcomingEvents} />
 
       <CardWithImageContainer />

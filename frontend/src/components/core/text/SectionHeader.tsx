@@ -6,7 +6,7 @@ interface SectionHeaderProps {
 
 const SectionHeader: FC<SectionHeaderProps> = ({ text }) => {
   return (
-    <h2 className="text-4xl font-extrabold underline my-8 text-center">
+    <h2 className="text-3xl lg:text-6xl font-bold my-4 text-gray-800 text-center">
       {text}
     </h2>
   );

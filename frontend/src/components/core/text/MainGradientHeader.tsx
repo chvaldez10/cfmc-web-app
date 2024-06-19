@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-interface SectionHeaderProps {
+interface MainGradientHeaderProps {
   text: string;
 }
 
-const SectionHeader: FC<SectionHeaderProps> = ({ text }) => {
+const MainGradientHeader: FC<MainGradientHeaderProps> = ({ text }) => {
   return (
     <h2 className="text-5xl mb-4 md:text-7xl font-bold bg-gradient-to-r from-purple-500 to-red-400 bg-clip-text text-transparent">
       {text}
@@ -12,4 +12,4 @@ const SectionHeader: FC<SectionHeaderProps> = ({ text }) => {
   );
 };
 
-export default SectionHeader;
+export default MainGradientHeader;
