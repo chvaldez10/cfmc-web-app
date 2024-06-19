@@ -12,6 +12,8 @@ import { upcomingEvents } from "@/data/testData/upcomingEvents";
 
 import HeroTextImage from "@/components/core/hero/HeroTextImage";
 
+const sampleVerse = `Children, obey your parents in the Lord, for this is right. “Honor your father and mother”—which is the first commandment with a promise— “so that it may go well with you and that you may enjoy long life on the earth.” (Ephesians 6:1-3 NIV)`;
+
 export default function Home() {
   return (
     <>
@@ -24,8 +26,9 @@ export default function Home() {
         backgroundColor="bg-neutral-50"
       />
       <HeroTextImage
-        header={"Men's Empowerment Month"}
-        subheader={"Sermon Series"}
+        header={"5th Sunday After Pentecost"}
+        subheader={"Men's Empowerment Month"}
+        longParagraph={sampleVerse}
       />
       <EventContainer events={upcomingEvents} />
       <CardWithImageContainer />
