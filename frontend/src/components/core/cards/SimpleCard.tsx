@@ -1,4 +1,6 @@
 import { FC, ReactElement } from "react";
+import SectionSubheader from "../text/SectionSubheader";
+import LongParagraph from "../text/LongParagraph";
 
 type CardContainerItem = {
   label: string;
@@ -16,11 +18,11 @@ const SimpleCard: FC<CardContainerProps> = ({ cardContainerItems }) => {
       {cardContainerItems.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col items-center justify-center py-4 hover-animation hover-up h-[40vh] md:h-[30vh]"
+          className="flex flex-col items-center justify-center py-4 hover-animation hover-up h-[50vh] md:h-[30vh]"
         >
           <div className="text-6xl mb-4">{item.svgIcon}</div>
-          <h2 className="text-xl font-bold">{item.label.toUpperCase()}</h2>
-          <p>{item.description}</p>
+          <SectionSubheader text={item.label.toUpperCase()} />
+          <LongParagraph>{item.description}</LongParagraph>
         </div>
       ))}
     </div>

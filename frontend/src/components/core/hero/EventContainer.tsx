@@ -9,8 +9,11 @@ interface EventContainerProps {
 
 const EventContainer: FC<EventContainerProps> = ({ events }) => {
   return (
-    <div className="pt-6 bg-violet-10">
+    <div className="bg-violet-10 min-h-screen flex flex-col justify-center">
+      {/* Header */}
       <SectionHeader text={"Upcoming Events"} />
+
+      {/* Events */}
       <div className="container px-5 py-8 md:py-14 mx-auto">
         <div className="flex flex-wrap -mx-4 -my-8">
           {events.map((event, index) => (

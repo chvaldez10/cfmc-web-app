@@ -13,7 +13,7 @@ export const upcomingEvents: EventData[] = [
     month: "June",
     day: 18,
     category: "bi-weekly",
-    title: "It Takes Two to Tango Home Bible Study",
+    title: "It Takes Two to Tango",
     description: "Insert short description",
   },
   {

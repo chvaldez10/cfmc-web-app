@@ -36,10 +36,6 @@ export const otherResources: {
   label: string;
 }[] = [
   {
-    link: "/login",
-    label: "Login",
-  },
-  {
     link: "/resources/release-notes",
     label: "Release Notes",
   },
