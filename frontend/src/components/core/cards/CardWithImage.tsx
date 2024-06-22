@@ -1,12 +1,11 @@
 "use client";
 
 import { FC } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FaArrowRight } from "react-icons/fa";
 import PurplePillButton from "../buttons/PurplePillButton";
-import { useRouter } from "next/navigation";
-
+import SectionSubheader from "../text/SectionSubheader";
 interface CardWithImageProps {
   src: string;
   title: string;
@@ -37,7 +36,10 @@ const CardWithImage: FC<CardWithImageProps> = ({
       </div>
 
       <div className="flex flex-col p-5 flex-grow">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight">{title}</h5>
+        <SectionSubheader
+          text={title}
+          className="mb-2 font-bold tracking-tight"
+        />
         <p className="mb-3 font-normal text-gray-600 flex-grow">
           {description}
         </p>

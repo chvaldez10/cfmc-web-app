@@ -39,7 +39,7 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
           } flex-1 flex flex-col justify-center items-center text-center p-4 lg:p-6 mb-4 md:mb-0`}
         >
           <SectionHeader text={header} />
-          <SectionSubheader text={verbiage} />
+          <SectionSubheader text={verbiage} className={"text-gray-700"} />
         </div>
 
         {/* Element Column */}
