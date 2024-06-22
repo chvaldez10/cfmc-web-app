@@ -11,7 +11,5 @@ export default async function page() {
     redirect("/login");
   }
 
-  console.log(data.user.aud);
-
   return <UnderConstruction />;
 }
