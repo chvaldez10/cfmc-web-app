@@ -30,16 +30,16 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
     <div
       className={`w-full min-h-screen hero-floating ${backgroundColor} flex items-center justify-center`}
     >
-      <div className={` ${layout} items-center mx-auto lg:w-10/12 `}>
+      <div className={`${layout} items-center mx-auto w-full lg:w-10/12`}>
         {/* Text Column */}
         <div
           ref={textRef}
           className={`${
             textInView ? "animate-slide-in-left" : ""
-          } flex-1 flex flex-col justify-center items-center text-center mb-8 md:mb-0 `}
+          } flex flex-col w-full md:w-1/2 justify-center items-center text-center mb-8 md:mb-0`}
         >
           <SectionHeader text={header} />
-          <SectionSubheader text={verbiage} className={"text-gray-700"} />
+          <SectionSubheader text={verbiage} className="text-gray-700" />
         </div>
 
         {/* Element Column */}
@@ -47,7 +47,7 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
           ref={mapRef}
           className={`${
             mapInView ? "animate-slide-in-right" : ""
-          } flex-1 flex w-full justify-center items-center`}
+          } flex flex-col p-4 w-full md:w-1/2 h-96 md:h-576 justify-center items-center`}
         >
           {element}
         </div>
