@@ -5,7 +5,7 @@ import Link from "next/link";
 const SocialMediaLinks: FC = () => (
   <div className="flex space-x-4 lg:mb-0 mb-6">
     {socialPlatforms.map(({ label, url, icon }) => (
-      <Link key={label} href={url} className="text-gray-600 hover:text-red-400">
+      <Link key={label} href={url} className="text-blue-600 hover:text-red-400">
         <div className="text-2xl">{icon}</div>
       </Link>
     ))}

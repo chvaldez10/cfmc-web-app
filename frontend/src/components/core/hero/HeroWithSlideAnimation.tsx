@@ -28,7 +28,7 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
 
   return (
     <div
-      className={`w-full h-screen md:h-[60vh] hero-floating ${backgroundColor} flex items-center justify-center`}
+      className={`w-full h-[70vh] md:h-[60vh] hero-floating ${backgroundColor} flex items-center justify-center`}
     >
       <div className={` ${layout} items-center mx-auto lg:w-9/12 p-4 lg:p-8`}>
         {/* Text Column */}
