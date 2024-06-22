@@ -7,10 +7,7 @@ import { MdConstruction } from "react-icons/md";
 const UnderConstruction: FC<{}> = () => {
   const router = useRouter();
   return (
-    <div
-      className="flex flex-col items-center justify-center p-16"
-      style={{ height: "80vh" }}
-    >
+    <div className="h-screen flex flex-col items-center justify-center p-16">
       <div className="text-center">
         <MdConstruction className="mx-auto text-8xl text-violet-600" />
         <h2 className="font-extrabold text-4xl dark:text-gray-400">
