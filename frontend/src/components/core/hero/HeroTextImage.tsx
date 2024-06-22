@@ -31,7 +31,7 @@ const HeroTextImage: FC<HeroTextImageProps> = ({
         <div className="order-2 lg:order-2 flex flex-col justify-center items-center text-center mt-5 lg:mt-0 lg:ml-5">
           <SectionSubheader text={subheader} className="text-purple-500" />
           <SectionHeader text={header} />
-          <LongParagraph longParagraph={longParagraph} />
+          <LongParagraph>{longParagraph} </LongParagraph>
         </div>
       </div>
     </div>

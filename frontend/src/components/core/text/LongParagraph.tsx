@@ -1,12 +1,18 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 interface LongParagraphProps {
-  longParagraph: string;
+  children: ReactNode;
+  className?: string;
 }
 
-const LongParagraph: FC<LongParagraphProps> = ({ longParagraph }) => {
+const LongParagraph: FC<LongParagraphProps> = ({
+  children,
+  className = "",
+}) => {
   return (
-    <p className="text-sm lg:text-lg leading-relaxed my-4">{longParagraph}</p>
+    <p className={`text-sm lg:text-lg leading-relaxed my-2 ${className}`}>
+      {children}
+    </p>
   );
 };
 

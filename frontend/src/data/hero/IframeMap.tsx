@@ -1,4 +1,6 @@
-const IframeMap: React.FC<{}> = () => {
+import { FC } from "react";
+
+const IframeMap: FC = () => {
   return (
     <>
       <iframe
