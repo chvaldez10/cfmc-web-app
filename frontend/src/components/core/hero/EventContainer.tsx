@@ -9,7 +9,7 @@ interface EventContainerProps {
 
 const EventContainer: FC<EventContainerProps> = ({ events }) => {
   return (
-    <>
+    <div className="pt-6">
       <SectionHeader text={"Upcoming Events"} />
       <div className="container px-5 py-8 md:py-14 mx-auto">
         <div className="flex flex-wrap -mx-4 -my-8">
@@ -18,7 +18,7 @@ const EventContainer: FC<EventContainerProps> = ({ events }) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

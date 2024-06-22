@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import PurplePillButton from "../buttons/PurplePillButton";
 import { useRouter } from "next/navigation";
+
 interface CardWithImageProps {
   src: string;
   title: string;
@@ -24,7 +25,7 @@ const CardWithImage: FC<CardWithImageProps> = ({
   const router = useRouter();
 
   return (
-    <div className=" bg-white-0 border border-gray-200 rounded-lg shadow hover-animation hover-up">
+    <div className="bg-white-0 border flex flex-col border-gray-200 rounded-lg shadow hover-animation hover-up ">
       <div className="relative h-96 w-full">
         <Image
           src={src}
@@ -35,17 +36,17 @@ const CardWithImage: FC<CardWithImageProps> = ({
         />
       </div>
 
-      <div className="p-5">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {title}
-        </h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <div className="flex flex-col p-5 flex-grow">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight">{title}</h5>
+        <p className="mb-3 font-normal text-gray-600 flex-grow">
           {description}
         </p>
 
-        <PurplePillButton onClick={() => router.push(url)} variant="filled">
-          Learn More <FaArrowRight />
-        </PurplePillButton>
+        <div className="mt-auto">
+          <PurplePillButton onClick={() => router.push(url)} variant="filled">
+            Learn More <FaArrowRight />
+          </PurplePillButton>
+        </div>
       </div>
     </div>
   );

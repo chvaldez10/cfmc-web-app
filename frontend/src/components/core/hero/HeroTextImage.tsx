@@ -16,7 +16,7 @@ const HeroTextImage: FC<HeroTextImageProps> = ({
   longParagraph,
 }) => {
   return (
-    <section className="px-3 py-5 bg-neutral-50 lg:py-10">
+    <section className="px-3 py-5 bg-white-10 lg:py-10">
       <div className="flex flex-col lg:flex-row items-center justify-between mx-auto lg:w-9/12">
         <div className="order-1 lg:order-1 flex-shrink-0">
           <Image
