@@ -10,11 +10,13 @@ type NavDropdownItem = {
 interface NavDropdownProps {
   navDropdownItems: NavDropdownItem[];
   dropdownLabel: string;
+  className: string;
 }
 
 const NavDropdown: FC<NavDropdownProps> = ({
   navDropdownItems,
   dropdownLabel,
+  className,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -43,7 +45,7 @@ const NavDropdown: FC<NavDropdownProps> = ({
     >
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded md:border-0 md:p-0 md:w-auto text-sm lg:text-lg"
+        className={`flex items-center justify-between w-full py-2 px-3 rounded md:border-0 md:p-0 md:w-auto text-sm lg:text-lg ${className}`}
       >
         {dropdownLabel}
         <svg

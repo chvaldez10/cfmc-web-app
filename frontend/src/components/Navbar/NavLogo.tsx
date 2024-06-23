@@ -2,12 +2,19 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const NavLogo: FC<{}> = () => (
-  <Link href="/" className="flex items-center rtl:space-x-reverse ml-5">
+interface NavLogoProps {
+  className: string;
+}
+
+const NavLogo: FC<NavLogoProps> = ({ className }) => (
+  <Link
+    href="/"
+    className={`flex items-center rtl:space-x-reverse ml-5 ${className}`}
+  >
     <Image
       src="/branding/logo_no_bg.png"
       alt="CFMC Logo"
-      height={50}
+      height={52}
       width={32}
       style={{ width: 32, height: 52 }}
       priority={true}

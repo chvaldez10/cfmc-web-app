@@ -24,13 +24,19 @@ const CustomNavbar: FC<{}> = () => {
             scrollPosition > 10 ? "p-2 transition-all 0.1s ease-in-out" : "p-5"
           }`}
         >
-          <NavLogo />
+          <NavLogo className={`${scrollPosition > 10 ? "text-white-0" : ""}`} />
+
           <MenuToggleButton
             isMenuBarOpen={isMenuBarOpen}
             toggleMenu={toggleMenu}
           />
           <div className="hidden md:block md:w-auto">
-            <NavbarLinks />
+            <NavbarLinks
+              NavClassNames={`${scrollPosition > 10 ? "text-white-0" : ""}`}
+              ButtonClassNames={`${
+                scrollPosition > 10 ? "border-white-0" : ""
+              }`}
+            />
           </div>
         </div>
       </nav>
