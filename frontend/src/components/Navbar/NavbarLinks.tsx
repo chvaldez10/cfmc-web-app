@@ -10,13 +10,13 @@ import PurplePillButton from "@/components/core/buttons/PurplePillButton";
 import { useRouter } from "next/navigation";
 
 interface NavbarLinksProps {
-  NavClassNames: string;
-  ButtonClassNames: string;
+  NavClassNames?: string;
+  ButtonClassNames?: string;
 }
 
 export const NavbarLinks: FC<NavbarLinksProps> = ({
-  NavClassNames,
-  ButtonClassNames,
+  NavClassNames = "",
+  ButtonClassNames = "",
 }) => {
   const router = useRouter();
 

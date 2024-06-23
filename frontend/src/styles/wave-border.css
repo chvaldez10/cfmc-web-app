@@ -11,6 +11,7 @@
   right: 0;
   background-repeat: repeat;
   transform: scaleY(-1); /* Flip vertically */
+  border: none;
 }
 
 .wave::before {
@@ -22,6 +23,7 @@
     transparent 12px,
     #8b5cf6 13px
   );
+  border: none;
 }
 
 .wave::after {
@@ -33,4 +35,5 @@
     #8b5cf6 12px,
     transparent 13px
   );
+  border: none;
 }
