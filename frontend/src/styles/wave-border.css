@@ -1,0 +1,36 @@
+.wave {
+  height: auto;
+  background: #8b5cf6;
+}
+
+.wave::before,
+.wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-repeat: repeat;
+  transform: scaleY(-1); /* Flip vertically */
+}
+
+.wave::before {
+  bottom: -10px;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(
+    circle at 10px -5px,
+    transparent 12px,
+    #8b5cf6 13px
+  );
+}
+
+.wave::after {
+  bottom: -15px;
+  height: 15px;
+  background-size: 40px 20px;
+  background-image: radial-gradient(
+    circle at 10px 15px,
+    #8b5cf6 12px,
+    transparent 13px
+  );
+}

@@ -39,6 +39,7 @@ const NavDropdown: FC<NavDropdownProps> = ({
         setIsOpen(false);
         setIsHovered(false);
       }}
+      id={`nav-${dropdownLabel}`}
     >
       <button
         onClick={toggleDropdown}

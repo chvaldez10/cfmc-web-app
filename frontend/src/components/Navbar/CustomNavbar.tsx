@@ -6,6 +6,7 @@ import MenuToggleButton from "./MenuToggleButton";
 import NavbarLinks from "./NavbarLinks";
 import Sidebar from "./Sidebar";
 import useScrollPosition from "@/hooks/useScrollPosition";
+import "@/styles/wave-border.css";
 
 const CustomNavbar: FC<{}> = () => {
   const [isMenuBarOpen, setIsMenuBarOpen] = useState<boolean>(false);
@@ -15,9 +16,7 @@ const CustomNavbar: FC<{}> = () => {
   return (
     <>
       <nav
-        className={` ${
-          scrollPosition > 10 ? "bg-white-10 border-red-400 border-b-2" : ""
-        }
+        className={` ${scrollPosition > 10 ? "wave" : ""}
         fixed top-0 z-50 mx-auto w-full `}
       >
         <div

@@ -13,7 +13,10 @@ export const NavbarLinks: FC = () => {
   const router = useRouter();
 
   return (
-    <ul className="flex flex-col md:flex-row items-center justify-center md:justify-start  gap-3 lg:gap-5">
+    <ul
+      className="flex flex-col md:flex-row items-center justify-center md:justify-start  gap-3 lg:gap-5"
+      id="NavbarLinks"
+    >
       <NavDropdown
         navDropdownItems={aboutDropdownItems}
         dropdownLabel="About"
@@ -32,7 +35,7 @@ export const NavbarLinks: FC = () => {
       />
       <PurplePillButton
         onClick={() => router.push("/tithes-and-offering")}
-        variant="filled"
+        variant="outline"
         className="z-10 scale-up"
       >
         Tithes and Offering
