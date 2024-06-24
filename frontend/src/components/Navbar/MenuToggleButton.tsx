@@ -1,20 +1,21 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 interface MenuToggleButtonProps {
   isMenuBarOpen: boolean;
   toggleMenu: () => void;
+  changeBackgroundColor: string;
 }
 
-const genericHamburgerLine =
-  "h-1 w-7 my-0.5 rounded-full bg-black transition ease transform duration-300";
+const genericHamburgerLine = `h-1 w-7 my-0.5 rounded-full bg-black transition ease-in-out transform duration-300 `;
 
-const baseOpacity = "opacity-60 group-hover:opacity-100";
+const baseOpacity = "opacity-60 group-hover:opacity-100 ";
 
 const activeTransform = "opacity-50 group-hover:opacity-100";
 
 const MenuToggleButton: FC<MenuToggleButtonProps> = ({
   isMenuBarOpen,
   toggleMenu,
+  changeBackgroundColor,
 }) => {
   return (
     <button
@@ -27,7 +28,7 @@ const MenuToggleButton: FC<MenuToggleButtonProps> = ({
     >
       {/* Top layer */}
       <div
-        className={`${genericHamburgerLine} ${
+        className={`${genericHamburgerLine} ${changeBackgroundColor} ${
           isMenuBarOpen
             ? `rotate-45 translate-y-2 ${activeTransform}`
             : baseOpacity
@@ -36,14 +37,14 @@ const MenuToggleButton: FC<MenuToggleButtonProps> = ({
 
       {/* Middle layer */}
       <div
-        className={`${genericHamburgerLine} ${
+        className={`${genericHamburgerLine} ${changeBackgroundColor} ${
           isMenuBarOpen ? "opacity-0" : baseOpacity
         }`}
       />
 
       {/* Bottom layer */}
       <div
-        className={`${genericHamburgerLine} ${
+        className={`${genericHamburgerLine} ${changeBackgroundColor} ${
           isMenuBarOpen
             ? `-rotate-45 -translate-y-2 ${activeTransform}`
             : baseOpacity

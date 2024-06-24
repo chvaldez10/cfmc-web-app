@@ -13,29 +13,34 @@ const CustomNavbar: FC<{}> = () => {
   const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
   const scrollPosition = useScrollPosition();
 
+  const isScrolled = scrollPosition > 10;
+  const changeTextColor = `${isScrolled ? "text-white-10" : ""}`;
+  const changeBorderColor = `${scrollPosition > 10 ? "border-white-10" : ""}`;
+  const changeBackgroundColor = `${scrollPosition > 10 ? "bg-white-10" : ""}`;
+
   return (
     <>
       <nav
-        className={` ${scrollPosition > 10 ? "wave" : ""}
+        className={` ${isScrolled ? "wave" : ""}
         fixed top-0 z-50 mx-auto w-full `}
       >
         <div
           className={`max-w-screen-xl flex flex-wrap justify-between items-center mx-auto ${
-            scrollPosition > 10 ? "p-2 transition-all 0.1s ease-in-out" : "p-5"
+            scrollPosition > 10 ? "p-1" : "p-5"
           }`}
         >
-          <NavLogo className={`${scrollPosition > 10 ? "text-white-0" : ""}`} />
+          <NavLogo className={changeTextColor} />
 
           <MenuToggleButton
             isMenuBarOpen={isMenuBarOpen}
             toggleMenu={toggleMenu}
+            changeBackgroundColor={changeBackgroundColor}
           />
-          <div className="hidden md:block md:w-auto">
+
+          <div className="hidden md:block">
             <NavbarLinks
-              NavClassNames={`${scrollPosition > 10 ? "text-white-0" : ""}`}
-              ButtonClassNames={`${
-                scrollPosition > 10 ? "border-white-0" : ""
-              }`}
+              NavClassNames={changeTextColor}
+              ButtonClassNames={changeBorderColor}
             />
           </div>
         </div>

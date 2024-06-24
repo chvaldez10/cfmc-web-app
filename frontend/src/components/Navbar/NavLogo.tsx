@@ -7,10 +7,7 @@ interface NavLogoProps {
 }
 
 const NavLogo: FC<NavLogoProps> = ({ className }) => (
-  <Link
-    href="/"
-    className={`flex items-center rtl:space-x-reverse ml-5 ${className}`}
-  >
+  <Link href="/" className={`flex items-center rtl:space-x-reverse ml-5`}>
     <Image
       src="/branding/logo_no_bg.png"
       alt="CFMC Logo"
@@ -19,7 +16,9 @@ const NavLogo: FC<NavLogoProps> = ({ className }) => (
       style={{ width: 32, height: 52 }}
       priority={true}
     />
-    <div className="self-center font-bold flex flex-col text-sm md:text-lg ml-2">
+    <div
+      className={`self-center font-bold flex flex-col text-sm md:text-lg ml-2 ${className}`}
+    >
       <span>Calgary Filipino</span>
       <span>Methodist Church</span>
     </div>
