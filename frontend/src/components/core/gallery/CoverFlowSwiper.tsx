@@ -4,6 +4,7 @@ import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import SectionHeader from "../text/SectionHeader";
+import SectionSubheader from "../text/SectionSubheader";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
@@ -20,6 +21,10 @@ const CoverFlowSwiper: FC = () => {
     <div className="py-6">
       <div className="max-w-5xl mx-auto px-6 lg:px-0">
         <SectionHeader text={"Past Events"} />
+        <SectionSubheader
+          text={"We've had an eventful year so far!"}
+          className={"text-center"}
+        />
         <Swiper
           modules={[EffectCoverflow, Pagination]}
           effect="coverflow"

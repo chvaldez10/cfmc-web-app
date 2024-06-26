@@ -8,12 +8,12 @@ import CardWithImageContainer from "@/components/core/cards/CardWithImageContain
 import { cardContainerItems } from "@/data/hero/CardContainer";
 
 import EventBlog from "@/components/core/hero/EventBlog";
-import { upcomingEvents } from "@/data/testData/upcomingEvents";
+import { upcomingEvents } from "@/data/testData/churchEvents";
 
 import HeroTextImage from "@/components/core/hero/HeroTextImage";
 import CoverFlowSwiper from "@/components/core/gallery/CoverFlowSwiper";
 
-const sampleVerse = `Children, obey your parents in the Lord, for this is right. “Honor your father and mother”—which is the first commandment with a promise— “so that it may go well with you and that you may enjoy long life on the earth.” (Ephesians 6:1-3 NIV)`;
+import { verseTable } from "@/data/testData/verticalListTest";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
       <HeroTextImage
         header={"5th Sunday After Pentecost"}
         subheader={"Men's Empowerment Month"}
-        longParagraph={sampleVerse}
+        longParagraph={verseTable[0].verse}
       />
       <EventBlog events={upcomingEvents} />
       <CoverFlowSwiper />

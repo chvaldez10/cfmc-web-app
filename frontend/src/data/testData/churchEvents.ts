@@ -1,5 +1,6 @@
 import { EventData } from "@/types/eventData";
 
+// There will be an events table
 export const upcomingEvents: EventData[] = [
   {
     month: "June",
