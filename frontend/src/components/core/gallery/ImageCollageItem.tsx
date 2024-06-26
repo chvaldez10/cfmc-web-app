@@ -4,7 +4,7 @@ import Image from "next/image";
 interface ImageCollageItemProps {
   src: string;
   alt: string;
-  containerClassName: string;
+  containerClassName: string | undefined;
 }
 
 const ImageCollageItem: FC<ImageCollageItemProps> = ({

@@ -5,7 +5,6 @@ import useInView from "@/hooks/useInView";
 import SectionHeader from "../text/SectionHeader";
 import SectionSubheader from "../text/SectionSubheader";
 import "@/styles/slide.css";
-import "@/styles/blurred-background.css";
 import "@/styles/hero-floating.css";
 
 interface HeroWithSlideAnimationProps {
@@ -28,15 +27,15 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
 
   return (
     <div
-      className={`w-full min-h-screen hero-floating ${backgroundColor} flex items-center justify-center`}
+      className={`div-outside-width min-h-screen hero-floating ${backgroundColor}`}
     >
-      <div className={`${layout} items-center mx-auto w-full lg:w-10/12`}>
+      <div className={`${layout} resize-hero-width`}>
         {/* Text Column */}
         <div
           ref={textRef}
           className={`${
             textInView ? "animate-slide-in-left" : ""
-          } flex flex-col w-full md:w-1/2 justify-center items-center text-center mb-8 md:mb-0`}
+          } div-outside-width resize-width-to-half text-center mb-8 md:mb-0`}
         >
           <SectionHeader text={header} />
           <SectionSubheader text={verbiage} className="text-gray-700" />
@@ -47,7 +46,7 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
           ref={mapRef}
           className={`${
             mapInView ? "animate-slide-in-right" : ""
-          } flex flex-col p-4 w-full md:w-1/2 h-96 md:h-576 justify-center items-center`}
+          }  div-outside-width resize-width-to-half p-4 h-96 md:h-576 `}
         >
           {element}
         </div>
