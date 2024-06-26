@@ -8,6 +8,7 @@ import SectionSubheader from "../text/SectionSubheader";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import "./CoverFlow.css";
 
 const photos: string[] = [
   "https://images.pexels.com/photos/7469387/pexels-photo-7469387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -42,6 +43,7 @@ const CoverFlowSwiper: FC = () => {
         >
           {photos.map((photo, index) => (
             <SwiperSlide key={index}>
+              {/* TODO: Crate a Next Image component to group images */}
               <img src={photo} alt={`Cover Flow Slide ${index + 1}`} />
             </SwiperSlide>
           ))}
