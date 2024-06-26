@@ -58,17 +58,19 @@ body {
   animation: pulse-once 1s ease-in-out;
 }
 
-/* Outside container for flex box */
+/* Some repeated flex bpx */
 .div-outside-width {
   @apply flex flex-col items-center justify-center;
 }
 
-/* Outside container for flex box */
+.div-col-row {
+  @apply flex flex-col md:flex-row;
+}
+
 .resize-hero-width {
   @apply w-full md:w-10/12;
 }
 
-/* Outside container for flex box */
 .resize-width-to-half {
   @apply w-full md:w-1/2;
 }

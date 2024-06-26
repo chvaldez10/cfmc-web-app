@@ -19,7 +19,7 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
   header,
   verbiage,
   element,
-  layout = "flex flex-col md:flex-row",
+  layout = "div-col-row",
   backgroundColor = "",
 }) => {
   const [textRef, textInView] = useInView();
