@@ -11,7 +11,8 @@ export const releaseData: ReleaseData[] = [
           featureList: {
             "Email Authentication:":
               "Added authentication for email login. Currently, only admin members are allowed to sign in.",
-            "Design:": "Reverse theming, improved landing page layout",
+            "Design:":
+              "Reverse theming, improved landing page layout, change navbar design",
           },
         },
       },

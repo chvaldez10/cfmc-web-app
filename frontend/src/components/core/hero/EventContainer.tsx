@@ -9,7 +9,7 @@ interface EventContainerProps {
 
 const EventContainer: FC<EventContainerProps> = ({ events }) => {
   return (
-    <div className="bg-violet-10 min-h-screen flex flex-col justify-center">
+    <div className="bg-violet-10 h-full flex flex-col justify-center py-7">
       {/* Header */}
       <SectionHeader text={"Upcoming Events"} />
 

@@ -1,15 +1,14 @@
 "use client";
 
-import { FC, useEffect } from "react";
-import { login, signup } from "@/app/login/actions";
+import { FC } from "react";
+import { login } from "@/app/login/actions";
 import CustomInput from "./CustomInput";
 import FormButton from "../buttons/FormButton";
 import useToastNotification from "@/hooks/useToastNotification";
-// import useAuthentication from "@/hooks/userAuthentication";
+import LongParagraph from "../text/LongParagraph";
 
 const LoginForm: FC = () => {
   useToastNotification();
-  // const isAuthenticated = useAuthentication();
 
   return (
     <div className="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">
@@ -17,6 +16,7 @@ const LoginForm: FC = () => {
         <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
           Welcome
         </h1>
+        <LongParagraph> Please sign in if you're an admin user.</LongParagraph>
         <form className="space-y-6" action="#">
           <CustomInput
             type="email"
