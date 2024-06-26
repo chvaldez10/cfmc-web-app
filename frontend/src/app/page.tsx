@@ -7,7 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import CardWithImageContainer from "@/components/core/cards/CardWithImageContainer";
 import { cardContainerItems } from "@/data/hero/CardContainer";
 
-import EventContainer from "@/components/core/hero/EventContainer";
+import EventBlog from "@/components/core/hero/EventBlog";
 import { upcomingEvents } from "@/data/testData/upcomingEvents";
 
 import HeroTextImage from "@/components/core/hero/HeroTextImage";
@@ -30,7 +30,7 @@ export default function Home() {
         subheader={"Men's Empowerment Month"}
         longParagraph={sampleVerse}
       />
-      <EventContainer events={upcomingEvents} />
+      <EventBlog events={upcomingEvents} />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
       <Footer />

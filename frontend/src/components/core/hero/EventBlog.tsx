@@ -3,11 +3,11 @@ import EventCard from "../cards/EventCard";
 import { EventData } from "@/types/eventData";
 import SectionHeader from "../text/SectionHeader";
 
-interface EventContainerProps {
+interface EventBlogProps {
   events: EventData[];
 }
 
-const EventContainer: FC<EventContainerProps> = ({ events }) => {
+const EventBlog: FC<EventBlogProps> = ({ events }) => {
   return (
     <div className="bg-violet-10 h-full flex flex-col justify-center py-7">
       {/* Header */}
@@ -25,4 +25,4 @@ const EventContainer: FC<EventContainerProps> = ({ events }) => {
   );
 };
 
-export default EventContainer;
+export default EventBlog;
