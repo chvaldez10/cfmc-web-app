@@ -14,11 +14,13 @@ import HeroTextImage from "@/components/core/hero/HeroTextImage";
 import CoverFlowSwiper from "@/components/core/gallery/CoverFlowSwiper";
 
 import { verseTable } from "@/data/testData/verticalListTest";
+import { visionStatement } from "@/data/hero/constants";
 
 export default function Home() {
   return (
     <>
-      <HeroCollage />
+      <HeroCollage header={"Our Vision"} longParagraph={visionStatement} />
+
       <HeroWithSlideAnimation
         key={"Hero Map"}
         header={"Sunday Service"}
@@ -26,6 +28,7 @@ export default function Home() {
         element={<IframeMap />}
         backgroundColor="bg-green-10"
       />
+
       <HeroTextImage
         header={"5th Sunday After Pentecost"}
         subheader={"Men's Empowerment Month"}

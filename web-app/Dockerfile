@@ -10,11 +10,11 @@ COPY package*.json ./
 # Install dependencies using npm
 RUN npm install --prefer-offline --no-audit --progress=false
 
+# Install chokidar for better file watching (if needed)
+RUN npm install chokidar
+
 # Copy the rest of the application code to the container
 COPY . .
-
-# Build the Next.js app
-RUN npm run build
 
 # Expose port 3000 to the outside world
 EXPOSE 3000
