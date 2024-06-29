@@ -60,6 +60,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
               src={featuredImage.src}
               alt={featuredImage.alt}
               containerClassName={featuredImage.containerClassName}
+              imageClassName={"rounded-lg object-top"}
             />
           ))}
         </div>

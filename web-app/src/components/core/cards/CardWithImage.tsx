@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { FaArrowRight } from "react-icons/fa";
 import PurplePillButton from "../buttons/PurplePillButton";
 import SectionSubheader from "../text/SectionSubheader";
+import NextImage from "../gallery/NextImage";
+
 interface CardWithImageProps {
   src: string;
   title: string;
@@ -25,15 +27,13 @@ const CardWithImage: FC<CardWithImageProps> = ({
 
   return (
     <div className="bg-white-0 border flex flex-col border-gray-200 rounded-lg shadow hover-animation hover-up ">
-      <div className="relative h-96 w-full">
-        <Image
-          src={src}
-          alt={alt}
-          fill={true}
-          objectFit="cover"
-          className="rounded-t-lg object-center"
-        />
-      </div>
+      <NextImage
+        width={"w-full"}
+        height={"h-96"}
+        src={src}
+        alt={alt}
+        imageClassName={"rounded-t-lg object-center"}
+      />
 
       <div className="flex flex-col p-5 flex-grow">
         <SectionSubheader
