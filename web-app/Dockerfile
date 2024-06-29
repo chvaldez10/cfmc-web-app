@@ -10,9 +10,6 @@ COPY package*.json ./
 # Install dependencies using npm
 RUN npm install --prefer-offline --no-audit --progress=false
 
-# Install chokidar for better file watching (if needed)
-RUN npm install chokidar
-
 # Copy the rest of the application code to the container
 COPY . .
 

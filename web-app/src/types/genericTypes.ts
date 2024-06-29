@@ -4,8 +4,13 @@ export interface liturgyTableData {
   link: string;
 }
 
+export interface heroContent {
+  header: string;
+  longParagraph: string;
+}
+
 export interface nextImage {
   src: string;
   alt: string;
-  containerClassName?: string;
+  containerClassName?: string | undefined;
 }

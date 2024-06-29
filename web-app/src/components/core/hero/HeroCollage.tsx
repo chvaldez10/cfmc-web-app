@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRouter } from "next/navigation";
 
-import ImageCollageItem from "@/components/core/gallery/ImageCollageItem";
+import NextImage from "@/components/core/gallery/NextImage";
 import { featuredImages } from "@/data/hero/featuredItems";
 
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
@@ -11,11 +11,9 @@ import ParticlesBackground from "@/components/core/background/ParticlesBackgroun
 import PurplePillButton from "../buttons/PurplePillButton";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
 import CustomParagraph from "../text/CustomParagraph";
+import { heroContent } from "@/types/genericTypes";
 
-interface HeroCollageProps {
-  header: string;
-  longParagraph: string;
-}
+interface HeroCollageProps extends heroContent {}
 
 const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
   const router = useRouter();
@@ -28,7 +26,6 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
         {/* Text Column */}
         <div className="div-outside-width z-10 xl:max-w-4xl ">
           <MainGradientHeader text={header} />
-
           <CustomParagraph
             onClick={() => router.push("/about/mission-and-vision")}
             className={"hover-animation shadow-up"}
@@ -57,7 +54,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
         {/* Image Column */}
         <div className="hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2 w-full">
           {featuredImages.map((featuredImage, index) => (
-            <ImageCollageItem
+            <NextImage
               key={index}
               src={featuredImage.src}
               alt={featuredImage.alt}

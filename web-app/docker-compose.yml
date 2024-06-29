@@ -11,5 +11,8 @@ services:
     volumes:
       - .:/src/app
       - /src/app/node_modules
+      - /src/app/.next
     environment:
       - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
