@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Image from "next/image";
 import SectionHeader from "../text/SectionHeader";
 import SectionSubheader from "../text/SectionSubheader";
 import LongParagraph from "../text/LongParagraph";

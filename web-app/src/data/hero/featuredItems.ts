@@ -20,19 +20,23 @@ export const featuredImages: nextImage[] = [
 
 export const pastEvents: nextImage[] = [
   {
-    src: "/featured/past-events/1.jpeg",
+    src: "/featured/past-events/1.jpg",
     alt: "past event 1",
   },
   {
-    src: "/featured/past-events/2.jpeg",
+    src: "/featured/past-events/2.jpg",
     alt: "past event 2",
   },
   {
-    src: "/featured/past-events/3.jpeg",
+    src: "/featured/past-events/3.jpg",
     alt: "past event 3",
   },
   {
-    src: "/featured/past-events/4.jpeg",
+    src: "/featured/past-events/4.jpg",
     alt: "past event 4",
+  },
+  {
+    src: "/featured/past-events/5.jpg",
+    alt: "past event 5",
   },
 ];
