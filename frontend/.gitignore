@@ -54,5 +54,6 @@ package-lock.json
 
 # Personal file
 del_me*
+bin/
 archive/**/*
 !archive/*.*
