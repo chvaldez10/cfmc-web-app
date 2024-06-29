@@ -1,11 +1,11 @@
 import { FC } from "react";
 import Link from "next/link";
-import { VerticalListData } from "@/types/genericTypes";
+import { liturgyTableData } from "@/types/genericTypes";
 import SectionHeader from "../text/SectionHeader";
 
 interface VerticalListProps {
   header: string;
-  data: VerticalListData[];
+  data: liturgyTableData[];
 }
 
 const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
