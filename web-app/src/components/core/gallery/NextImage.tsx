@@ -2,12 +2,24 @@ import { FC } from "react";
 import Image from "next/image";
 import { nextImage } from "@/types/genericTypes";
 
-interface NextImageProps extends nextImage {}
+interface NextImageProps extends nextImage {
+  width?: string;
+  height?: string;
+  containerClassName?: string | undefined;
+  imageClassName?: string;
+}
 
-const NextImage: FC<NextImageProps> = ({ src, alt, containerClassName }) => {
+const NextImage: FC<NextImageProps> = ({
+  src,
+  alt,
+  containerClassName = "",
+  width = "w-full",
+  height = "h-96",
+  imageClassName = "rounded-lg object-top",
+}) => {
   return (
     <div
-      className={`relative h-96 md:h-[50vh] 2xl:h-[55vh] ${containerClassName} pulse-once `}
+      className={`relative ${width} ${height} ${containerClassName} pulse-once `}
     >
       <Image
         src={src}

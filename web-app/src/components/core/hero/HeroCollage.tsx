@@ -52,10 +52,11 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
         </div>
 
         {/* Image Column */}
-        <div className="hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2 w-full">
+        <div className="hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2 w-full 3xl:w-7/12">
           {featuredImages.map((featuredImage, index) => (
             <NextImage
               key={index}
+              height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
               src={featuredImage.src}
               alt={featuredImage.alt}
               containerClassName={featuredImage.containerClassName}

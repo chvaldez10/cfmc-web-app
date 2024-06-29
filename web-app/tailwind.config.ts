@@ -15,6 +15,9 @@ const config: Config = {
       width: {
         "576": "576px",
       },
+      screens: {
+        "3xl": "1921px",
+      },
       colors: {
         green: {
           10: "#CDE8E5",
