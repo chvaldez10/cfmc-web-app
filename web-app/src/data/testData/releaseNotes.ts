@@ -7,12 +7,12 @@ export const releaseData: ReleaseData[] = [
       {
         version: "v 24.0.1",
         details: {
-          date: "June 27, 2024",
+          date: "June 30, 2024",
           featureList: {
-            "Email Authentication:":
-              "Added authentication for email login. Currently, only admin members are allowed to sign in.",
-            "Design:":
-              "Reverse theming, improved landing page layout, change navbar design",
+            "Supabase Integration": "Added authentication for admin use.",
+            Design:
+              "Reversed theming, changed landing page layout, created new hero sections, and added a navbar background.",
+            Docker: "Added Docker for local development.",
           },
         },
       },
