@@ -34,7 +34,9 @@ export default function Home() {
         subheader={"Men's Empowerment Month"}
         longParagraph={verseTable[0].verse}
         swiperImages={pastEvents1}
+        containerClassName={"bg-white-10"}
       />
+
       <EventBlog events={upcomingEvents} />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
