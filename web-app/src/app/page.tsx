@@ -11,7 +11,6 @@ import EventBlog from "@/components/core/hero/EventBlog";
 import { upcomingEvents } from "@/data/testData/churchEvents";
 
 import HeroTextImage from "@/components/core/hero/HeroTextImage";
-import CoverFlowSwiper from "@/components/core/gallery/CoverFlowSwiper";
 
 import { verseTable } from "@/data/testData/verticalListTest";
 import { visionStatement } from "@/data/hero/constants";
@@ -35,7 +34,6 @@ export default function Home() {
         longParagraph={verseTable[0].verse}
       />
       <EventBlog events={upcomingEvents} />
-      <CoverFlowSwiper />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
       <Footer />
