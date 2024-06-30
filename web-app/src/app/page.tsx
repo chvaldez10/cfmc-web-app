@@ -12,6 +12,7 @@ import {
   cardContainerItems,
   visionStatement,
   pastEvents1,
+  liturgicalCalendar,
 } from "@/data/hero";
 
 import { SimpleCard, CardWithImageContainer } from "@/components/core/cards";
@@ -21,7 +22,6 @@ import useNextSunday from "@/hooks/useNextSunday";
 
 export default function Home() {
   const nextSunday = useNextSunday();
-  console.log(`Next Sunday: ${nextSunday}`);
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Home() {
 
       <HeroTextImage
         header={"Men's Empowerment Month"}
-        subheader={"6th Sunday After pentecost"}
+        subheader={nextSunday ? liturgicalCalendar[nextSunday] : ""}
         longParagraph={verseTable[0].verse}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10"}

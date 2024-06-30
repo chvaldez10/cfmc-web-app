@@ -1,4 +1,4 @@
-const liturgicalCalendar: { [date: string]: string } = {
+export const liturgicalCalendar: { [date: string]: string } = {
   "June 30": "6th Sunday after Pentecost",
   "July 07": "7th Sunday after Pentecost",
   "July 14": "8th Sunday after Pentecost",
