@@ -1,19 +1,20 @@
-import SimpleCard from "@/components/core/cards/SimpleCard";
-import HeroCollage from "@/components/core/hero/HeroCollage";
-import HeroWithSlideAnimation from "@/components/core/hero/HeroWithSlideAnimation";
-import IframeMap from "@/data/hero/IframeMap";
-import Footer from "@/components/Footer/Footer";
+import {
+  HeroCollage,
+  HeroWithSlideAnimation,
+  HeroTextImage,
+  EventBlog,
+} from "@/components/core/hero";
 
-import CardWithImageContainer from "@/components/core/cards/CardWithImageContainer";
-import { cardContainerItems } from "@/data/hero/CardContainer";
+import {
+  IframeMap,
+  cardContainerItems,
+  visionStatement,
+  pastEvents1,
+} from "@/data/hero";
 
-import EventBlog from "@/components/core/hero/EventBlog";
-import { upcomingEvents } from "@/data/testData/churchEvents";
+import { SimpleCard, CardWithImageContainer } from "@/components/core/cards";
 
-import HeroTextImage from "@/components/core/hero/HeroTextImage";
-
-import { verseTable } from "@/data/testData/verticalListTest";
-import { visionStatement } from "@/data/hero/constants";
+import { upcomingEvents, verseTable } from "@/data/testData";
 
 export default function Home() {
   return (
@@ -32,11 +33,11 @@ export default function Home() {
         header={"5th Sunday After Pentecost"}
         subheader={"Men's Empowerment Month"}
         longParagraph={verseTable[0].verse}
+        swiperImages={pastEvents1}
       />
       <EventBlog events={upcomingEvents} />
       <CardWithImageContainer />
       <SimpleCard cardContainerItems={cardContainerItems} />
-      <Footer />
     </>
   );
 }

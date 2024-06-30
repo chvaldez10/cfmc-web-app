@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "./Providers";
 import CustomNavbar from "@/components/Navbar/CustomNavbar";
-// import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
+
+import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
   weight: "400",
@@ -34,6 +34,7 @@ export default function RootLayout({
             draggable={false}
           /> */}
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
