@@ -59,7 +59,7 @@ const CoverFlowSwiper: FC = () => {
           <SwiperSlide key={index}>
             <NextImage
               width={"w-full"}
-              height={"h-96 md:h-576"}
+              height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
               src={pastEvent.src}
               alt={pastEvent.alt}
               imageClassName={"rounded-lg object-center"}

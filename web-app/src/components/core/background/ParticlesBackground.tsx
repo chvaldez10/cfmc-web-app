@@ -10,9 +10,6 @@ import {
 } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
-// tsParticles documentation https://github.com/tsparticles/react/blob/main/README.md
-// tsParticles config https://particles.js.org/
-
 const ParticlesBackground: FC = () => {
   const [init, setInit] = useState(false);
 

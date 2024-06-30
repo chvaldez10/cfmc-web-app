@@ -4,7 +4,7 @@ export default function loading() {
       <img
         className="h-24"
         src="/icons/general/tube-spinner.svg"
-        alt="loading..."
+        alt="loading ..."
       />
     </div>
   );

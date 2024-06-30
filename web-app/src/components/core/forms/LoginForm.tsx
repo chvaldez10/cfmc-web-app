@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { login } from "@/app/login/actions";
-import CustomInput from "./CustomInput";
+import LoginInput from "./LoginInput";
 import FormButton from "../buttons/FormButton";
 import useToastNotification from "@/hooks/useToastNotification";
 import LongParagraph from "../text/LongParagraph";
@@ -18,14 +18,14 @@ const LoginForm: FC = () => {
         </h1>
         <LongParagraph> Please sign in if you're an admin user.</LongParagraph>
         <form className="space-y-6" action="#">
-          <CustomInput
+          <LoginInput
             type="email"
             name="email"
             id="email"
             placeholder="name@email.com"
             required
           />
-          <CustomInput
+          <LoginInput
             type="password"
             name="password"
             id="password"

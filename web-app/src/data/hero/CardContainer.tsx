@@ -7,6 +7,7 @@ export const cardContainerItems: {
   label: string;
   description: string;
   svgIcon: ReactElement;
+  url?: string;
 }[] = [
   {
     label: "Connect",

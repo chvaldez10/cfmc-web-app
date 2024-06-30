@@ -3,7 +3,7 @@
 import { FC, useState } from "react";
 import ShowHideButton from "../buttons/ShowHideButton";
 
-interface CustomInputProps {
+interface LoginInputProps {
   type: string;
   name: string;
   id: string;
@@ -11,7 +11,7 @@ interface CustomInputProps {
   required?: boolean;
 }
 
-const CustomInput: FC<CustomInputProps> = ({
+const LoginInput: FC<LoginInputProps> = ({
   type,
   name,
   id,
@@ -46,4 +46,4 @@ const CustomInput: FC<CustomInputProps> = ({
   );
 };
 
-export default CustomInput;
+export default LoginInput;
