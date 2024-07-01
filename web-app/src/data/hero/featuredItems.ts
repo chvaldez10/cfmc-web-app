@@ -52,3 +52,22 @@ export const pastEvents1: nextImage[] = [
     alt: "past event 8",
   },
 ];
+
+export const communityBuilding1: nextImage[] = [
+  {
+    src: "/featured/community-building-1/1.jpg",
+    alt: "community building 1",
+  },
+  {
+    src: "/featured/community-building-1/2.jpg",
+    alt: "community building 2",
+  },
+  {
+    src: "/featured/community-building-1/3.jpg",
+    alt: "community building 3",
+  },
+  {
+    src: "/featured/community-building-1/4.jpg",
+    alt: "community building 4",
+  },
+];

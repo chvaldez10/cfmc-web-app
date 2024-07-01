@@ -9,9 +9,9 @@ interface EventBlogProps {
 
 const EventBlog: FC<EventBlogProps> = ({ events }) => {
   return (
-    <div className="bg-violet-10 h-full flex flex-col justify-center py-7">
+    <div className="bg-violet-10 h-full div-outside-width pt-7">
       {/* Header */}
-      <SectionHeader text={"Upcoming Events"} className={"text-center"} />
+      <SectionHeader text={"All Upcoming Events"} className={"text-center"} />
 
       {/* Events */}
       <div className="container px-5 py-8 md:py-14 mx-auto">
