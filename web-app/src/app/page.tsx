@@ -14,7 +14,9 @@ import {
 
 import { SimpleCard, CardWithImageContainer } from "@/components/core/cards";
 
-import { upcomingEvents, verseTable } from "@/data/testData";
+import { upcomingEvents } from "@/data/testData";
+
+import { featuredEvent1 } from "@/data/hero/constants";
 
 export default function Home() {
   return (
@@ -31,7 +33,7 @@ export default function Home() {
 
       <HeroTextImageClient
         header={"Men's Empowerment Month"}
-        longParagraph={verseTable[0].verse}
+        longParagraph={featuredEvent1}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10"}
       />
