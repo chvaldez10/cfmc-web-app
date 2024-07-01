@@ -7,35 +7,45 @@ import SectionSubheader from "../text/SectionSubheader";
 import "@/styles/slide.css";
 import "@/styles/hero-floating.css";
 
-interface HeroWithSlideAnimationProps {
+interface HeroSlideClientProps {
   header: string;
   verbiage: string;
   element: ReactNode;
-  layout?: string;
+  reverse?: boolean;
   backgroundColor?: string;
 }
 
-const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
+const HeroSlideClient: FC<HeroSlideClientProps> = ({
   header,
   verbiage,
   element,
-  layout = "div-col-row",
+  reverse = false,
   backgroundColor = "",
 }) => {
   const [textRef, textInView] = useInView();
   const [mapRef, mapInView] = useInView();
 
+  const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
+  const textAnimationClass = textInView
+    ? reverse
+      ? "animate-slide-in-right"
+      : "animate-slide-in-left"
+    : "";
+  const mapAnimationClass = mapInView
+    ? reverse
+      ? "animate-slide-in-left"
+      : "animate-slide-in-right"
+    : "";
+
   return (
     <div
       className={`div-outside-width min-h-screen hero-floating ${backgroundColor}`}
     >
-      <div className={`${layout} resize-hero-width`}>
+      <div className={`${layoutClass} resize-hero-width`}>
         {/* Text Column */}
         <div
           ref={textRef}
-          className={`${
-            textInView ? "animate-slide-in-left" : ""
-          } div-outside-width resize-width-to-half text-center mb-8 md:mb-0`}
+          className={`div-outside-width resize-width-to-half text-center mb-8 md:mb-0 ${textAnimationClass}`}
         >
           <SectionHeader text={header} />
           <SectionSubheader text={verbiage} className="text-gray-700" />
@@ -44,9 +54,7 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
         {/* Element Column */}
         <div
           ref={mapRef}
-          className={`${
-            mapInView ? "animate-slide-in-right" : ""
-          }  div-outside-width resize-width-to-half p-4 h-96 md:h-576 `}
+          className={`div-outside-width resize-width-to-half p-4 h-96 md:h-576 ${mapAnimationClass}`}
         >
           {element}
         </div>
@@ -55,4 +63,4 @@ const HeroWithSlideAnimation: FC<HeroWithSlideAnimationProps> = ({
   );
 };
 
-export default HeroWithSlideAnimation;
+export default HeroSlideClient;

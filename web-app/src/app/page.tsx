@@ -1,6 +1,6 @@
 import {
   HeroCollage,
-  HeroWithSlideAnimation,
+  HeroSlideClient,
   HeroTextImageClient,
   EventBlog,
 } from "@/components/core/hero";
@@ -13,9 +13,7 @@ import {
 } from "@/data/hero";
 
 import { SimpleCard, CardWithImageContainer } from "@/components/core/cards";
-
 import { upcomingEvents } from "@/data/testData";
-
 import { featuredEvent1 } from "@/data/hero/constants";
 
 export default function Home() {
@@ -23,7 +21,7 @@ export default function Home() {
     <>
       <HeroCollage header={"Our Vision"} longParagraph={visionStatement} />
 
-      <HeroWithSlideAnimation
+      <HeroSlideClient
         key={"Hero Map"}
         header={"Sunday Service"}
         verbiage="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
