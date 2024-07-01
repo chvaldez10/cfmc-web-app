@@ -1,9 +1,7 @@
-"use client";
-
 import {
   HeroCollage,
   HeroWithSlideAnimation,
-  HeroTextImage,
+  HeroTextImageClient,
   EventBlog,
 } from "@/components/core/hero";
 
@@ -12,17 +10,13 @@ import {
   cardContainerItems,
   visionStatement,
   pastEvents1,
-  liturgicalCalendar,
 } from "@/data/hero";
 
 import { SimpleCard, CardWithImageContainer } from "@/components/core/cards";
 
 import { upcomingEvents, verseTable } from "@/data/testData";
-import useNextSunday from "@/hooks/useNextSunday";
 
 export default function Home() {
-  const nextSunday = useNextSunday();
-
   return (
     <>
       <HeroCollage header={"Our Vision"} longParagraph={visionStatement} />
@@ -35,9 +29,8 @@ export default function Home() {
         backgroundColor="bg-green-10"
       />
 
-      <HeroTextImage
+      <HeroTextImageClient
         header={"Men's Empowerment Month"}
-        subheader={nextSunday ? liturgicalCalendar[nextSunday] : ""}
         longParagraph={verseTable[0].verse}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10"}

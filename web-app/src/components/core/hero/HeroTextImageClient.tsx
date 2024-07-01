@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import SectionHeader from "../text/SectionHeader";
 import SectionSubheader from "../text/SectionSubheader";
@@ -5,23 +7,31 @@ import LongParagraph from "../text/LongParagraph";
 import CoverFlowSwiper from "../gallery/CoverFlowSwiper";
 import { nextImage } from "@/types/genericTypes";
 
-interface HeroTextImageProps {
+import useNextSunday from "@/hooks/useNextSunday";
+
+import { liturgicalCalendar } from "@/data/hero";
+
+interface HeroTextImageClientProps {
   header: string;
-  subheader: string;
+  userSubHeader?: string;
   longParagraph: string;
   swiperImages: nextImage[];
   reverse?: boolean;
   containerClassName?: string | null;
 }
 
-const HeroTextImage: FC<HeroTextImageProps> = ({
+const HeroTextImageClient: FC<HeroTextImageClientProps> = ({
   header,
-  subheader,
+  userSubHeader,
   longParagraph,
   swiperImages,
   reverse = false,
   containerClassName,
 }) => {
+  const nextSunday = useNextSunday();
+  const subheader =
+    userSubHeader || (nextSunday ? liturgicalCalendar[nextSunday] : "");
+
   const imageOrderClass = reverse ? "order-1 md:order-2" : "order-2 md:order-1";
   const textOrderClass = reverse ? "order-2 md:order-1" : "order-1 md:order-2";
 
@@ -48,4 +58,4 @@ const HeroTextImage: FC<HeroTextImageProps> = ({
   );
 };
 
-export default HeroTextImage;
+export default HeroTextImageClient;
