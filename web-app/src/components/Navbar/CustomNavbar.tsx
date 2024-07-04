@@ -25,10 +25,11 @@ const CustomNavbar: FC<{}> = () => {
       <nav
         className={` ${isScrolled ? "wave" : ""}
         fixed top-0 z-50 mx-auto w-full `}
+        id="#custom-navbar"
       >
         <div
-          className={`max-w-screen-xl flex flex-wrap justify-between items-center mx-auto ${
-            scrollPosition > 10 ? "p-1" : "p-5"
+          className={`max-w-screen-xl div-outside-width-wrapped mx-auto ${
+            scrollPosition > 10 ? "p-2" : "p-6"
           }`}
         >
           <NavLogo className={changeTextColor} />

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useRouter } from "next/navigation";
 import {
   aboutDropdownItems,
   mediaDropDownItems,
@@ -7,11 +8,10 @@ import {
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
 import PurplePillButton from "@/components/core/buttons/PurplePillButton";
-import { useRouter } from "next/navigation";
 
 interface NavbarLinksProps {
-  NavClassNames?: string;
-  ButtonClassNames?: string;
+  NavClassNames?: string | undefined;
+  ButtonClassNames?: string | undefined;
 }
 
 export const NavbarLinks: FC<NavbarLinksProps> = ({
@@ -22,7 +22,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
 
   return (
     <ul
-      className="flex flex-col md:flex-row items-center justify-center md:justify-start  gap-3 lg:gap-5"
+      className="div-outside-width md:flex-row md:justify-start  gap-3 lg:gap-5"
       id="NavbarLinks"
     >
       <NavDropdown

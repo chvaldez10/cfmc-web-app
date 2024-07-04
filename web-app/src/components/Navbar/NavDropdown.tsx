@@ -45,7 +45,7 @@ const NavDropdown: FC<NavDropdownProps> = ({
     >
       <button
         onClick={toggleDropdown}
-        className={`flex items-center justify-between w-full py-2 px-3 rounded md:border-0 md:p-0 md:w-auto text-sm lg:text-lg ${className}`}
+        className={`flex items-center justify-between w-full py-2 px-3 rounded md:border-0 md:p-0 md:w-auto text-base lg:text-lg ${className}`}
       >
         {dropdownLabel}
         <svg

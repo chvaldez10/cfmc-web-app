@@ -13,7 +13,7 @@ const NavLogo: FC<NavLogoProps> = ({ className }) => (
       alt="CFMC Logo"
       height={52}
       width={32}
-      style={{ width: 32, height: 52 }}
+      style={{ height: 52, width: 32 }}
       priority={true}
     />
     <div
