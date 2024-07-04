@@ -1,10 +1,12 @@
 "use client";
 
 import { FC, useState } from "react";
-import NavLogo from "./NavLogo";
-import MenuToggleButton from "./MenuToggleButton";
-import NavbarLinks from "./NavbarLinks";
-import Sidebar from "./Sidebar";
+import {
+  NavLogo,
+  MenuToggleButton,
+  NavbarLinks,
+  NavDrawer,
+} from "@/components/Navbar";
 import useScrollPosition from "@/hooks/useScrollPosition";
 import "@/styles/wave-border.css";
 
@@ -45,7 +47,7 @@ const CustomNavbar: FC<{}> = () => {
           </div>
         </div>
       </nav>
-      <Sidebar isOpen={isMenuBarOpen} toggleMenu={toggleMenu} />
+      <NavDrawer isOpen={isMenuBarOpen} toggleMenu={toggleMenu} />
     </>
   );
 };

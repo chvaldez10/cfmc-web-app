@@ -18,6 +18,7 @@ const NextImage: FC<NextImageProps> = ({
   imageClassName,
 }) => {
   return (
+    // The outer div is used to set the width and height of the image
     <div
       className={`relative ${width} ${height} ${containerClassName} pulse-once `}
     >
@@ -25,6 +26,7 @@ const NextImage: FC<NextImageProps> = ({
         src={src}
         alt={alt}
         fill={true}
+        sizes="width: 100%"
         style={{ objectFit: "cover" }}
         className={`${imageClassName}`}
       />

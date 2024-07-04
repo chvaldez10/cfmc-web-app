@@ -19,7 +19,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
   const router = useRouter();
 
   return (
-    <div className="div-outside-width gap-4 h-screen" id="hero-collage">
+    <div className="div-outside-width gap-4 min-h-screen" id="hero-collage">
       <ParticlesBackground />
 
       <div className="div-outside-width resize-hero-width z-10 h-[80vh] gap-4">

@@ -6,7 +6,7 @@ interface SidebarProps {
   toggleMenu: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
+const NavDrawer: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
   return (
     <div
       className={`fixed inset-0 bg-white-0 z-50 transition-transform transform ${
@@ -15,8 +15,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
           : "translate-x-full ease-in duration-300"
       }`}
     >
-      <div className="flex justify-start m-5">
-        <button onClick={toggleMenu} className="text-white focus:outline-none">
+      <div className="relative">
+        <button onClick={toggleMenu} className="absolute top-10 left-10">
           Close
         </button>
       </div>
@@ -27,4 +27,4 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
   );
 };
 
-export default Sidebar;
+export default NavDrawer;
