@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "./Providers";
-import CustomNavbar from "@/components/Navbar/CustomNavbar";
+import NavbarClient from "@/components/Navbar/NavbarClient";
 import "./globals.css";
 
 import Footer from "@/components/Footer/Footer";
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Providers>
-          <CustomNavbar />
+          <NavbarClient />
           {/* <ToastContainer
             position="top-right"
             autoClose={5000}

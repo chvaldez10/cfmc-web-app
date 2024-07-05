@@ -10,7 +10,7 @@ import {
 import useScrollPosition from "@/hooks/useScrollPosition";
 import "@/styles/wave-border.css";
 
-const CustomNavbar: FC<{}> = () => {
+const NavbarClient: FC<{}> = () => {
   const [isMenuBarOpen, setIsMenuBarOpen] = useState<boolean>(false);
   const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
   const scrollPosition = useScrollPosition();
@@ -53,4 +53,4 @@ const CustomNavbar: FC<{}> = () => {
   );
 };
 
-export default CustomNavbar;
+export default NavbarClient;

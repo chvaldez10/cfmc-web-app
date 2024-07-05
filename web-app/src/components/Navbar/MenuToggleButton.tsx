@@ -6,7 +6,8 @@ interface MenuToggleButtonProps {
   changeBackgroundColor: string;
 }
 
-const genericHamburgerLine = `h-1 w-7 my-0.5 rounded-full bg-black transition ease-in-out transform duration-300 `;
+const genericHamburgerLine =
+  "h-1 w-7 my-0.5 rounded-full bg-black transform-animation";
 const baseOpacity = "opacity-60 group-hover:opacity-100 ";
 const activeTransform = "opacity-50 group-hover:opacity-100";
 

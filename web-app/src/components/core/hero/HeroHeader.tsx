@@ -10,7 +10,7 @@ interface HeroHeaderProps {
 
 const HeroHeader: FC<HeroHeaderProps> = ({ title, verbiage }) => {
   return (
-    <div className="w-full mx-auto p-5 md:p-0 items-center justify-center md:w-10/12 flex flex-col gap-4 h-screen">
+    <div className="w-full div-outside-width mx-auto p-5 md:p-0 md:w-10/12 gap-4 min-h-screen">
       {/* Particles Background */}
       <ParticlesBackground />
 

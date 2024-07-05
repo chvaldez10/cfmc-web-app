@@ -1,5 +1,5 @@
 import { FC, useState, ReactNode } from "react";
-import DropdownItem from "./NavDropdownItem";
+import NavDropdownItem from "./NavDropdownItem";
 
 type NavDropdownItem = {
   url: string;
@@ -77,7 +77,7 @@ const NavDropdown: FC<NavDropdownProps> = ({
         <div className="absolute z-20 font-normal bg-zinc-50 divide-y divide-gray-600 rounded-lg shadow w-48 left-1/2 transform -translate-x-1/2 top-full">
           <ul className="py-2 text-sm text-gray-700">
             {navDropdownItems.map((navDropdownItem) => (
-              <DropdownItem
+              <NavDropdownItem
                 key={navDropdownItem.label}
                 href={navDropdownItem.url}
                 label={navDropdownItem.label}

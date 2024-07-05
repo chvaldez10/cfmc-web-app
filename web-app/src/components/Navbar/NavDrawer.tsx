@@ -6,7 +6,7 @@ interface SidebarProps {
   toggleMenu: () => void;
 }
 
-const NavDrawer: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
+const NavDrawer: FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
   return (
     <div
       className={`fixed inset-0 bg-white-0 z-50 transition-transform transform ${
@@ -20,7 +20,7 @@ const NavDrawer: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
           Close
         </button>
       </div>
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="div-outside-width h-screen">
         <NavbarLinks />
       </div>
     </div>
