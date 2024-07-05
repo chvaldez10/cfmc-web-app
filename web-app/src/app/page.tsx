@@ -32,9 +32,9 @@ export default function Home() {
 
       <HeroSlideClient
         header={"Sunday Service"}
-        verbiage="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
+        longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         element={<IframeMap />}
-        backgroundColor="bg-green-10"
+        containerClassName="bg-green-10"
       />
 
       <HeroImageClient
@@ -55,7 +55,7 @@ export default function Home() {
 
       <HeroSlideClient
         header={"Next Big Event"}
-        verbiage="Next Big Event Description"
+        longParagraph="Next Big Event Description"
         element={
           <NextImage
             width={"w-full"}

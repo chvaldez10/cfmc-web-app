@@ -4,23 +4,20 @@ import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
 import SectionHeader from "../text/SectionHeader";
 import SectionSubheader from "../text/SectionSubheader";
+import { heroSection } from "@/types/genericTypes";
 import "@/styles/slide.css";
 import "@/styles/hero-floating.css";
 
-interface HeroSlideClientProps {
-  header: string;
-  verbiage: string;
+interface HeroSlideClientProps extends heroSection {
   element: ReactNode;
-  reverse?: boolean;
-  backgroundColor?: string;
 }
 
 const HeroSlideClient: FC<HeroSlideClientProps> = ({
   header,
-  verbiage,
+  longParagraph,
   element,
   reverse = false,
-  backgroundColor = "",
+  containerClassName = "",
 }) => {
   const [textRef, textInView] = useInView();
   const [mapRef, mapInView] = useInView();
@@ -39,7 +36,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
 
   return (
     <div
-      className={`div-outside-width min-h-screen hero-floating ${backgroundColor}`}
+      className={`div-outside-width min-h-screen hero-floating ${containerClassName}`}
     >
       <div className={`${layoutClass} resize-hero-width`}>
         {/* Text Column */}
@@ -48,7 +45,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
           className={`div-outside-width resize-width-to-half text-center mb-8 md:mb-0 ${textAnimationClass}`}
         >
           <SectionHeader text={header} />
-          <SectionSubheader text={verbiage} className="text-gray-700" />
+          <SectionSubheader text={longParagraph} className="text-gray-700" />
         </div>
 
         {/* Element Column */}

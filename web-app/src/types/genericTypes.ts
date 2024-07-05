@@ -14,3 +14,11 @@ export interface nextImage {
   alt: string;
   containerClassName?: string | undefined;
 }
+
+export interface heroSection {
+  header: string;
+  userSubHeader?: string;
+  longParagraph: string;
+  reverse?: boolean;
+  containerClassName?: string | null;
+}

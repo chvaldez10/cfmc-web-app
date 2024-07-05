@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface SectionHeaderProps {
-  text: string;
+  text: string | undefined;
   className?: string;
 }
 

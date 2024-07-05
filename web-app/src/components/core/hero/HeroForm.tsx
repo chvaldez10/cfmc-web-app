@@ -1,36 +1,20 @@
-"use client";
-
 import { FC } from "react";
-
 import {
   SectionHeader,
   SectionSubheader,
   LongParagraph,
 } from "@/components/core/text/";
-import CoverFlowSwiper from "../gallery/CoverFlowSwiper";
-import { nextImage } from "@/types/genericTypes";
-import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
 
-// temporary data
-import { liturgicalCalendar } from "@/data/hero";
+interface HeroFormProps extends heroSection {}
 
-interface HeroImageClientProps extends heroSection {
-  swiperImages: nextImage[];
-}
-
-const HeroImageClient: FC<HeroImageClientProps> = ({
+const HeroForm: FC<HeroFormProps> = ({
   header,
   userSubHeader,
   longParagraph,
-  swiperImages,
   reverse = false,
   containerClassName,
 }) => {
-  const nextSunday = useNextSunday();
-  const subheader =
-    userSubHeader || (nextSunday ? liturgicalCalendar[nextSunday] : "");
-
   const imageOrderClass = reverse ? "order-1 md:order-2" : "order-2 md:order-1";
   const textOrderClass = reverse ? "order-2 md:order-1" : "order-1 md:order-2";
 
@@ -41,14 +25,16 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
         <div
           className={`resize-width-to-half text-center space-y-5 ${imageOrderClass}`}
         >
-          <CoverFlowSwiper swiperImages={swiperImages} />
+          <SectionSubheader text={userSubHeader} className="text-purple-500" />
+          <SectionHeader text={header} />
+          <LongParagraph>{longParagraph}</LongParagraph>
         </div>
 
         {/* Text Column */}
         <div
           className={`resize-width-to-half div-outside-width text-center space-y-5 ${textOrderClass}`}
         >
-          <SectionSubheader text={subheader} className="text-purple-500" />
+          <SectionSubheader text={userSubHeader} className="text-purple-500" />
           <SectionHeader text={header} />
           <LongParagraph>{longParagraph}</LongParagraph>
         </div>
@@ -57,4 +43,4 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   );
 };
 
-export default HeroImageClient;
+export default HeroForm;
