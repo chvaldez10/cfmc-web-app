@@ -23,7 +23,7 @@ const HeroForm: FC<HeroFormProps> = ({
       <div className="div-col-row resize-hero-width gap-8">
         {/* Image Column */}
         <div
-          className={`resize-width-to-half text-center space-y-5 ${imageOrderClass}`}
+          className={`resize-width-to-2/3 text-center space-y-5 ${imageOrderClass}`}
         >
           <SectionSubheader text={userSubHeader} className="text-purple-500" />
           <SectionHeader text={header} />
@@ -32,7 +32,7 @@ const HeroForm: FC<HeroFormProps> = ({
 
         {/* Text Column */}
         <div
-          className={`resize-width-to-half div-outside-width text-center space-y-5 ${textOrderClass}`}
+          className={`resize-width-to-1/3 div-outside-width text-center space-y-5 ${textOrderClass}`}
         >
           <SectionSubheader text={userSubHeader} className="text-purple-500" />
           <SectionHeader text={header} />
