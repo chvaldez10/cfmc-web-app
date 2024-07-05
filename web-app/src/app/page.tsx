@@ -1,7 +1,7 @@
 import {
   HeroCollageClient,
   HeroSlideClient,
-  HeroTextImageClient,
+  HeroImageClient,
   EventBlog,
 } from "@/components/core/hero";
 
@@ -37,14 +37,14 @@ export default function Home() {
         backgroundColor="bg-green-10"
       />
 
-      <HeroTextImageClient
+      <HeroImageClient
         header={"Men's Empowerment Month"}
         longParagraph={featuredEvent1Verbiage}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10"}
       />
 
-      <HeroTextImageClient
+      <HeroImageClient
         header={"Small Groups"}
         userSubHeader={"Community Building"}
         longParagraph={communityBuilding1Verbiage}

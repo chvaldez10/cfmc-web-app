@@ -11,7 +11,7 @@ import useNextSunday from "@/hooks/useNextSunday";
 
 import { liturgicalCalendar } from "@/data/hero";
 
-interface HeroTextImageClientProps {
+interface HeroImageClientProps {
   header: string;
   userSubHeader?: string;
   longParagraph: string;
@@ -20,7 +20,7 @@ interface HeroTextImageClientProps {
   containerClassName?: string | null;
 }
 
-const HeroTextImageClient: FC<HeroTextImageClientProps> = ({
+const HeroImageClient: FC<HeroImageClientProps> = ({
   header,
   userSubHeader,
   longParagraph,
@@ -58,4 +58,4 @@ const HeroTextImageClient: FC<HeroTextImageClientProps> = ({
   );
 };
 
-export default HeroTextImageClient;
+export default HeroImageClient;
