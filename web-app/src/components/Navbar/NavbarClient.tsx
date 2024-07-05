@@ -25,7 +25,7 @@ const NavbarClient: FC<{}> = () => {
       <nav
         className={` ${isScrolled ? "wave" : ""}
         fixed top-0 z-50 mx-auto w-full `}
-        id="#custom-navbar"
+        id="#nav-client"
       >
         <div
           className={`max-w-screen-xl div-outside-width-wrapped mx-auto ${

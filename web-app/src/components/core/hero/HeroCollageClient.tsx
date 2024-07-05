@@ -13,9 +13,12 @@ import MainGradientHeader from "@/components/core/text/MainGradientHeader";
 import CustomParagraph from "../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
 
-interface HeroCollageProps extends heroContent {}
+interface HeroCollageClientProps extends heroContent {}
 
-const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
+const HeroCollageClient: FC<HeroCollageClientProps> = ({
+  header,
+  longParagraph,
+}) => {
   const router = useRouter();
 
   return (
@@ -69,4 +72,4 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
   );
 };
 
-export default HeroCollage;
+export default HeroCollageClient;

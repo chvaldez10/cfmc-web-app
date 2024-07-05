@@ -1,5 +1,5 @@
 export { default as EventBlog } from "./EventBlog";
-export { default as HeroCollage } from "./HeroCollage";
+export { default as HeroCollageClient } from "./HeroCollageClient";
 export { default as HeroHeader } from "./HeroHeader";
 export { default as HeroOverlappingImage } from "./HeroOverlappingImage";
 export { default as HeroTextImageClient } from "./HeroTextImageClient";
