@@ -19,23 +19,19 @@ const HeroForm: FC<HeroFormProps> = ({
   const textOrderClass = reverse ? "order-2 md:order-1" : "order-1 md:order-2";
 
   return (
-    <div className={`div-outside-width min-h-screen p-4 ${containerClassName}`}>
-      <div className="div-col-row resize-hero-width gap-8">
+    <div className={`div-outside-width min-h-screen p-2 ${containerClassName}`}>
+      <div className="div-col-row resize-hero-width gap-4">
         {/* Image Column */}
         <div
-          className={`resize-width-to-2/3 text-center space-y-5 ${imageOrderClass}`}
+          className={`resize-width-to-half text-center  bg-red-300 ${imageOrderClass}`}
         >
-          <SectionSubheader text={userSubHeader} className="text-purple-500" />
-          <SectionHeader text={header} />
           <LongParagraph>{longParagraph}</LongParagraph>
         </div>
 
         {/* Text Column */}
         <div
-          className={`resize-width-to-1/3 div-outside-width text-center space-y-5 ${textOrderClass}`}
+          className={`resize-width-to-half text-center bg-blue-300 ${textOrderClass}`}
         >
-          <SectionSubheader text={userSubHeader} className="text-purple-500" />
-          <SectionHeader text={header} />
           <LongParagraph>{longParagraph}</LongParagraph>
         </div>
       </div>

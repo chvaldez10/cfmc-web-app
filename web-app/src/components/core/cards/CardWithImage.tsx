@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import PurplePillButtonClient from "../buttons/PurplePillButtonClient";
+import { NavigateButton } from "../buttons";
 import SectionSubheader from "../text/SectionSubheader";
 import NextImage from "../gallery/NextImage";
 
@@ -39,9 +39,9 @@ const CardWithImage: FC<CardWithImageProps> = ({
         </p>
 
         <div className="mt-auto">
-          <PurplePillButtonClient url={url} variant="filled">
+          <NavigateButton url={url} variant="filled">
             Learn More <FaArrowRight />
-          </PurplePillButtonClient>
+          </NavigateButton>
         </div>
       </div>
     </div>

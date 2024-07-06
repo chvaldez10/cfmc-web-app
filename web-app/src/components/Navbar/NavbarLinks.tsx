@@ -46,9 +46,9 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
         className={NavClassNames}
       />
       <PurplePillButtonClient
-        url={"/tithes-and-offering"}
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
+        onClick={() => console.log("Tithes and Offering Modal")}
       >
         Tithes and Offering
       </PurplePillButtonClient>

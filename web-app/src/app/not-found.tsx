@@ -1,4 +1,4 @@
-import PurplePillButtonClient from "@/components/core/buttons/PurplePillButtonClient";
+import NavigateButton from "@/components/core/buttons/NavigateButton";
 
 export default function NotFoundPage() {
   return (
@@ -15,9 +15,9 @@ export default function NotFoundPage() {
         Please navigate back to the homepage.
       </p>
 
-      <PurplePillButtonClient url={"/"} variant="outline">
+      <NavigateButton url={"/"} variant="outline">
         Homepage
-      </PurplePillButtonClient>
+      </NavigateButton>
     </div>
   );
 }

@@ -12,7 +12,7 @@ import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
 
-// temporary data
+// temporary data, this component should be server once theres a working db
 import { liturgicalCalendar } from "@/data/hero";
 
 interface HeroImageClientProps extends heroSection {
@@ -36,11 +36,9 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
 
   return (
     <div className={`div-outside-width min-h-screen p-4 ${containerClassName}`}>
-      <div className="div-col-row resize-hero-width gap-8">
+      <div className="div-col-row resize-hero-width gap-4">
         {/* Image Column */}
-        <div
-          className={`resize-width-to-half text-center space-y-5 ${imageOrderClass}`}
-        >
+        <div className={`resize-width-to-half ${imageOrderClass}`}>
           <CoverFlowSwiper swiperImages={swiperImages} />
         </div>
 

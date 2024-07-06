@@ -2,7 +2,7 @@ import { FC } from "react";
 import NextImage from "@/components/core/gallery/NextImage";
 import { featuredImages } from "@/data/hero/featuredItems";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
-import PurplePillButton from "../buttons/PurplePillButtonClient";
+import { NavigateButton } from "@/components/core/buttons";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
 import CustomParagraph from "../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
@@ -31,20 +31,20 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 
         {/* Button */}
         <div className="flex flex-row gap-x-4 md:gap-x-8">
-          <PurplePillButton className="z-10 scale-up" url={"/sunday-services"}>
+          <NavigateButton className="z-10 scale-up" url={"/sunday-services"}>
             Find a Service
-          </PurplePillButton>
-          <PurplePillButton
+          </NavigateButton>
+          <NavigateButton
             variant={"outline"}
             className="z-10 scale-up"
             url={"/media/announcements"}
           >
             Announcements
-          </PurplePillButton>
+          </NavigateButton>
         </div>
 
         {/* Image Column */}
-        <div className="hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2 w-full 3xl:w-7/12">
+        <div className="hidden-grid-1-3 w-full 3xl:w-7/12">
           {featuredImages.map((featuredImage, index) => (
             <NextImage
               key={index}
