@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { LongParagraph } from "@/components/core/text";
 
 export default function Error({
   error,
@@ -17,13 +18,15 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center text-center h-screen">
-      <h1>Something went wrong. Please try again later</h1>
+    <div className="div-outside-width min-h-screen">
+      <LongParagraph>
+        Something went wrong. Please try again later.
+      </LongParagraph>
       <button
+        onClick={() => reset()}
         className="hover:text-violet-300 text-violet-600"
-        onClick={() => router.push("/")}
       >
-        Homepage
+        Retry
       </button>
     </div>
   );
