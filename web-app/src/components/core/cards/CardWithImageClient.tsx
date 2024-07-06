@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRouter } from "next/navigation";
 import { FaArrowRight } from "react-icons/fa";
-import PurplePillButton from "../buttons/PurplePillButton";
+import PurplePillButton from "../buttons/PurplePillButtonClient";
 import SectionSubheader from "../text/SectionSubheader";
 import NextImage from "../gallery/NextImage";
 

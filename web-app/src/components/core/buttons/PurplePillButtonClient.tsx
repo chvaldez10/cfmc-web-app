@@ -1,11 +1,15 @@
+"use client";
+
 import { FC, ReactNode } from "react";
 import classNames from "classnames";
+import { useRouter } from "next/navigation";
 
-interface PurplePillButtonProps {
-  onClick: () => void;
+interface PurplePillButtonClientProps {
+  onClick?: () => void | undefined;
   variant?: "filled" | "outline";
   className?: string;
   children?: ReactNode;
+  url?: string;
 }
 
 const baseClass =
@@ -18,19 +22,24 @@ const variants = {
     "text-purple-500 border border-purple-500 hover:bg-purple-500 hover:text-white-0",
 };
 
-const PurplePillButton: FC<PurplePillButtonProps> = ({
+const PurplePillButtonClient: FC<PurplePillButtonClientProps> = ({
   onClick,
   variant = "filled",
   className,
   children,
+  url,
 }) => {
+  const router = useRouter();
   const buttonClass = classNames(baseClass, variants[variant], className);
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button
+      className={buttonClass}
+      onClick={url ? () => router.push(url) : onClick}
+    >
       {children}
     </button>
   );
 };
 
-export default PurplePillButton;
+export default PurplePillButtonClient;

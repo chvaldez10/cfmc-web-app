@@ -1,14 +1,8 @@
-"use client";
-
 import { FC } from "react";
-import { useRouter } from "next/navigation";
-
 import NextImage from "@/components/core/gallery/NextImage";
 import { featuredImages } from "@/data/hero/featuredItems";
-
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
-
-import PurplePillButton from "../buttons/PurplePillButton";
+import PurplePillButton from "../buttons/PurplePillButtonClient";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
 import CustomParagraph from "../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
@@ -19,8 +13,6 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
   header,
   longParagraph,
 }) => {
-  const router = useRouter();
-
   return (
     <div className="div-outside-width gap-4 min-h-screen" id="hero-collage">
       <ParticlesBackground />
@@ -30,8 +22,8 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
         <div className="div-outside-width z-10 xl:max-w-4xl ">
           <MainGradientHeader text={header} />
           <CustomParagraph
-            onClick={() => router.push("/about/mission-and-vision")}
             className={"hover-animation shadow-up"}
+            url={"/about/mission-and-vision"}
           >
             {longParagraph}
           </CustomParagraph>
@@ -39,16 +31,13 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 
         {/* Button */}
         <div className="flex flex-row gap-x-4 md:gap-x-8">
-          <PurplePillButton
-            onClick={() => router.push("/sunday-services")}
-            className="z-10 scale-up"
-          >
+          <PurplePillButton className="z-10 scale-up" url={"/sunday-services"}>
             Find a Service
           </PurplePillButton>
           <PurplePillButton
-            onClick={() => router.push("/media/announcements")}
             variant={"outline"}
             className="z-10 scale-up"
+            url={"/media/announcements"}
           >
             Announcements
           </PurplePillButton>

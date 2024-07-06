@@ -1,11 +1,6 @@
-"use client";
-
-import PurplePillButton from "@/components/core/buttons/PurplePillButton";
-import { useRouter } from "next/navigation";
+import PurplePillButtonClient from "@/components/core/buttons/PurplePillButtonClient";
 
 export default function NotFoundPage() {
-  const router = useRouter();
-
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
@@ -20,9 +15,9 @@ export default function NotFoundPage() {
         Please navigate back to the homepage.
       </p>
 
-      <PurplePillButton onClick={() => router.push("/")} variant="outline">
+      <PurplePillButtonClient url={"/"} variant="outline">
         Homepage
-      </PurplePillButton>
+      </PurplePillButtonClient>
     </div>
   );
 }
