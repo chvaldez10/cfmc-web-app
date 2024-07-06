@@ -1,5 +1,5 @@
 import { FC } from "react";
-import CardWithImageClient from "./CardWithImageClient";
+import CardWithImage from "./CardWithImage";
 import { cardWithImageItems } from "@/data/hero/cardWithImage";
 
 const CardWithImageContainer: FC<{}> = () => {
@@ -7,7 +7,7 @@ const CardWithImageContainer: FC<{}> = () => {
     <div className="div-outside-width mx-auto p-5 md:p-0 gap-4 ">
       <div className="resize-hero-width grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4 py-8 ">
         {cardWithImageItems.map((item, index) => (
-          <CardWithImageClient
+          <CardWithImage
             key={item.title}
             src={item.src}
             title={item.title}

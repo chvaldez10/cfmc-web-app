@@ -7,7 +7,7 @@ import {
   supperDropdownItem,
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
-import PurplePillButton from "@/components/core/buttons/PurplePillButtonClient";
+import PurplePillButtonClient from "@/components/core/buttons/PurplePillButtonClient";
 
 interface NavbarLinksProps {
   NavClassNames?: string | undefined;
@@ -45,13 +45,13 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
         dropdownLabel="Connect"
         className={NavClassNames}
       />
-      <PurplePillButton
-        onClick={() => router.push("/tithes-and-offering")}
+      <PurplePillButtonClient
+        url={"/tithes-and-offering"}
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
       >
         Tithes and Offering
-      </PurplePillButton>
+      </PurplePillButtonClient>
     </ul>
   );
 };

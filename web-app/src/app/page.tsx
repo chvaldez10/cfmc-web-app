@@ -1,5 +1,5 @@
 import {
-  HeroCollageClient,
+  HeroCollage,
   HeroSlideClient,
   HeroImageClient,
   EventBlog,
@@ -25,10 +25,7 @@ import { NextImage } from "@/components/core/gallery";
 export default function Home() {
   return (
     <>
-      <HeroCollageClient
-        header={"Our Vision"}
-        longParagraph={visionStatement}
-      />
+      <HeroCollage header={"Our Vision"} longParagraph={visionStatement} />
 
       <HeroSlideClient
         header={"Sunday Service"}

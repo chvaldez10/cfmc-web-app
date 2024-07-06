@@ -5,11 +5,10 @@ import classNames from "classnames";
 import { useRouter } from "next/navigation";
 
 interface PurplePillButtonClientProps {
-  onClick?: () => void | undefined;
   variant?: "filled" | "outline";
   className?: string;
   children?: ReactNode;
-  url?: string;
+  url: string;
 }
 
 const baseClass =
@@ -23,7 +22,6 @@ const variants = {
 };
 
 const PurplePillButtonClient: FC<PurplePillButtonClientProps> = ({
-  onClick,
   variant = "filled",
   className,
   children,
@@ -33,10 +31,7 @@ const PurplePillButtonClient: FC<PurplePillButtonClientProps> = ({
   const buttonClass = classNames(baseClass, variants[variant], className);
 
   return (
-    <button
-      className={buttonClass}
-      onClick={url ? () => router.push(url) : onClick}
-    >
+    <button className={buttonClass} onClick={() => router.push(url)}>
       {children}
     </button>
   );

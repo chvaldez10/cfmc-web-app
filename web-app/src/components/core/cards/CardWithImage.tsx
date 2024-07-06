@@ -1,9 +1,6 @@
-"use client";
-
 import { FC } from "react";
-import { useRouter } from "next/navigation";
 import { FaArrowRight } from "react-icons/fa";
-import PurplePillButton from "../buttons/PurplePillButtonClient";
+import PurplePillButtonClient from "../buttons/PurplePillButtonClient";
 import SectionSubheader from "../text/SectionSubheader";
 import NextImage from "../gallery/NextImage";
 
@@ -22,8 +19,6 @@ const CardWithImage: FC<CardWithImageProps> = ({
   description,
   url,
 }) => {
-  const router = useRouter();
-
   return (
     <div className="bg-white-0 border flex flex-col border-gray-200 rounded-lg shadow hover-animation hover-up ">
       <NextImage
@@ -44,9 +39,9 @@ const CardWithImage: FC<CardWithImageProps> = ({
         </p>
 
         <div className="mt-auto">
-          <PurplePillButton onClick={() => router.push(url)} variant="filled">
+          <PurplePillButtonClient url={url} variant="filled">
             Learn More <FaArrowRight />
-          </PurplePillButton>
+          </PurplePillButtonClient>
         </div>
       </div>
     </div>
