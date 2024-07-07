@@ -10,10 +10,14 @@ interface PurplePillButtonClientProps {
   onClick: () => void;
 }
 
-const variants = {
-  filled: "purple-button-filled",
+const baseClass =
+  "div-flex-row font-medium gap-2 rounded-full text-sm px-5 py-2.5 hover-animation";
 
-  outline: "purple-button-outline",
+const variants = {
+  filled: "text-white-0 bg-purple-500 hover:bg-purple-700 hover:text-white-0",
+
+  outline:
+    "text-purple-500 border border-purple-500 hover:bg-purple-500 hover:text-white-0",
 };
 
 const PurplePillButtonClient: FC<PurplePillButtonClientProps> = ({
@@ -22,11 +26,7 @@ const PurplePillButtonClient: FC<PurplePillButtonClientProps> = ({
   children,
   onClick,
 }) => {
-  const buttonClass = classNames(
-    "purple-button-base",
-    variants[variant],
-    className
-  );
+  const buttonClass = classNames(baseClass, variants[variant], className);
 
   return (
     <button className={buttonClass} onClick={onClick}>
