@@ -44,7 +44,7 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
 
         {/* Text Column */}
         <div
-          className={`resize-width-to-half div-outside-width text-center space-y-5 ${textOrderClass}`}
+          className={`resize-width-to-half div-outside-width text-center gap-4 ${textOrderClass}`}
         >
           <SectionSubheader text={subheader} className="text-purple-500" />
           <SectionHeader text={header} />

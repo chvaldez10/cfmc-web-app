@@ -29,7 +29,7 @@ const CardWithImage: FC<CardWithImageProps> = ({
         imageClassName={"rounded-t-lg object-center"}
       />
 
-      <div className="flex flex-col p-5 flex-grow">
+      <div className="flex flex-col flex-grow p-5">
         <SectionSubheader
           text={title}
           className="mb-2 font-bold tracking-tight"

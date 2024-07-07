@@ -33,7 +33,7 @@ const Footer: FC = () => {
         </div>
 
         {/* Copyright */}
-        <hr className="pb-3 border-gray-300" />
+        <hr className="py-3 border-gray-300" />
         <CopyrightNotice />
       </div>
     </footer>

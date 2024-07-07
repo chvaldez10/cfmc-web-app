@@ -38,11 +38,11 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
     <div
       className={`div-outside-width min-h-screen hero-floating ${containerClassName}`}
     >
-      <div className={`${layoutClass} resize-hero-width`}>
+      <div className={`${layoutClass} resize-hero-width gap-4`}>
         {/* Text Column */}
         <div
           ref={textRef}
-          className={`div-outside-width resize-width-to-half text-center mb-8 md:mb-0 ${textAnimationClass}`}
+          className={`div-outside-width resize-width-to-half text-center  gap-4 ${textAnimationClass}`}
         >
           <SectionHeader text={header} />
           <SectionSubheader text={longParagraph} className="text-gray-700" />

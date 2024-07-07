@@ -19,7 +19,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 
       <div className="div-outside-width resize-hero-width z-10 h-[80vh] gap-4">
         {/* Text Column */}
-        <div className="div-outside-width z-10 xl:max-w-4xl ">
+        <div className="div-outside-width z-10 xl:max-w-4xl gap-4">
           <MainGradientHeader text={header} />
           <CustomParagraph
             className={"hover-animation shadow-up"}

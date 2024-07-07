@@ -14,7 +14,7 @@ interface LinkGroupProps {
 const FooterLinkGroup: FC<LinkGroupProps> = ({ title, footerLinks }) => {
   return (
     <div className="w-full lg:w-4/12 ml-auto">
-      <span className="block uppercase text-gray-600 text-sm  underline font-bold mb-2">
+      <span className="block uppercase text-gray-600 text-sm underline font-bold mb-2">
         {title}
       </span>
       <ul>
