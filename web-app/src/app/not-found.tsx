@@ -2,7 +2,7 @@ import NavigateButton from "@/components/core/buttons/NavigateButton";
 
 export default function NotFoundPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="div-outside-width h-screen">
       <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
         <span className="sr-only">Error</span>404
       </h2>

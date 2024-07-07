@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { LongParagraph } from "@/components/core/text";
+import { PurplePillButtonClient } from "@/components/core/buttons";
 
 export default function Error({
   error,
@@ -22,12 +23,9 @@ export default function Error({
       <LongParagraph>
         Something went wrong. Please try again later.
       </LongParagraph>
-      <button
-        onClick={() => reset()}
-        className="hover:text-violet-300 text-violet-600"
-      >
-        Retry
-      </button>
+      <PurplePillButtonClient onClick={() => reset()}>
+        Please Try Again
+      </PurplePillButtonClient>
     </div>
   );
 }

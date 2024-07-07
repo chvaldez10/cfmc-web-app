@@ -1,27 +1,18 @@
-"use client";
-
 import { FC } from "react";
-import { useRouter } from "next/navigation";
 import { MdConstruction } from "react-icons/md";
+import { NavigateButton } from "@/components/core/buttons";
+import { SectionSubheader, LongParagraph } from "../core/text";
 
 const UnderConstruction: FC<{}> = () => {
-  const router = useRouter();
   return (
-    <div className="h-screen flex flex-col items-center justify-center p-16">
-      <div className="text-center">
+    <div className="div-outside-width min-h-screen">
+      <div className="div-outside-width text-center gap-4">
         <MdConstruction className="mx-auto text-8xl text-violet-600" />
-        <h2 className="font-extrabold text-4xl dark:text-gray-400">
-          Coming Soon !
-        </h2>
+        <SectionSubheader text={"Coming Soon!"} />
 
-        <p className="font-semibold my-4">Our website is under construction.</p>
-
-        <button
-          className="hover:text-violet-300 text-violet-600"
-          onClick={() => router.push("/")}
-        >
+        <NavigateButton url="/" variant="outline">
           Homepage
-        </button>
+        </NavigateButton>
       </div>
     </div>
   );

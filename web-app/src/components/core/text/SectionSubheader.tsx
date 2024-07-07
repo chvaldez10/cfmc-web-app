@@ -10,7 +10,7 @@ const SectionSubheader: FC<SectionSubheaderProps> = ({
   className = "",
 }) => {
   return (
-    <h2 className={`text-base md:text-lg lg:text-xl 2xl:text-2xl ${className}`}>
+    <h2 className={`text-lg md:text-xl lg:text-2xl 2xl:text-4xl ${className}`}>
       {text}
     </h2>
   );
