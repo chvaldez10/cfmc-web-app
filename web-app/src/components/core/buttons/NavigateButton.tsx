@@ -3,12 +3,10 @@
 import { FC, ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import PurplePillButtonClient from "./PurplePillButtonClient";
+import { clientButton } from "@/types/genericTypes";
 
-interface NavigateButtonProps {
+interface NavigateButtonProps extends clientButton {
   url: string;
-  variant?: "filled" | "outline";
-  className?: string;
-  children?: ReactNode;
 }
 
 const NavigateButton: FC<NavigateButtonProps> = ({

@@ -2,11 +2,9 @@
 
 import { FC, ReactNode } from "react";
 import classNames from "classnames";
+import { clientButton } from "@/types/genericTypes";
 
-interface PurplePillButtonClientProps {
-  variant?: "filled" | "outline";
-  className?: string;
-  children: ReactNode;
+interface PurplePillButtonClientProps extends clientButton {
   onClick: () => void;
 }
 
