@@ -10,10 +10,10 @@ interface NavigateButtonProps extends clientButton {
 }
 
 const NavigateButton: FC<NavigateButtonProps> = ({
-  url,
   variant = "filled",
   className,
   children,
+  url,
 }) => {
   const router = useRouter();
 

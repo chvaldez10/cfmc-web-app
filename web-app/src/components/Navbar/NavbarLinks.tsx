@@ -8,6 +8,7 @@ import {
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
 import PurplePillButtonClient from "@/components/core/buttons/PurplePillButtonClient";
+import OpenModalButton from "@/components/core/buttons/OpenModalButton";
 
 interface NavbarLinksProps {
   NavClassNames?: string | undefined;
@@ -45,13 +46,20 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
         dropdownLabel="Connect"
         className={NavClassNames}
       />
-      <PurplePillButtonClient
+      {/* <PurplePillButtonClient
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
         onClick={() => console.log("Tithes and Offering Modal")}
       >
         Tithes and Offering
-      </PurplePillButtonClient>
+      </PurplePillButtonClient> */}
+
+      <OpenModalButton
+        variant="outline"
+        className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
+      >
+        Tithes and Offering
+      </OpenModalButton>
     </ul>
   );
 };
