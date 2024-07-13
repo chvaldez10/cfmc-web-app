@@ -31,3 +31,8 @@ export interface clientButton {
   children?: ReactNode;
   disabled?: boolean;
 }
+
+export interface modalProps {
+  title: string;
+  content: string;
+}
