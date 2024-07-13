@@ -29,4 +29,5 @@ export interface clientButton {
   variant?: "filled" | "outline";
   className?: string;
   children?: ReactNode;
+  disabled?: boolean;
 }

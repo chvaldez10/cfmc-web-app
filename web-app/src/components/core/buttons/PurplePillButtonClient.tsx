@@ -23,11 +23,12 @@ const PurplePillButtonClient: FC<PurplePillButtonClientProps> = ({
   className,
   children,
   onClick,
+  disabled = false,
 }) => {
   const buttonClass = classNames(baseClass, variants[variant], className);
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

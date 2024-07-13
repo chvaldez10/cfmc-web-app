@@ -7,7 +7,6 @@ import {
   supperDropdownItem,
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
-import PurplePillButtonClient from "@/components/core/buttons/PurplePillButtonClient";
 import OpenModalButton from "@/components/core/buttons/OpenModalButton";
 
 interface NavbarLinksProps {

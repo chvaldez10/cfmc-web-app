@@ -46,11 +46,12 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
         variant={variant}
         className={className}
         onClick={handleClick}
+        disabled={showModal}
       >
         {children}
       </PurplePillButtonClient>
       {showModal && (
-        <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center">
           <div
             className="bg-white-0 p-6 rounded-lg shadow-lg w-11/12 max-w-md mx-auto"
             ref={modalRef}
