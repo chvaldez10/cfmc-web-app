@@ -6,14 +6,14 @@ import PurplePillButtonClient from "./PurplePillButtonClient";
 import VerticalCenteredModal from "../modals/VerticalCenteredModal";
 
 interface OpenModalButtonProps extends clientButton {
-  modalElement: ReactNode;
+  // modalElement: ReactNode;
 }
 
 const OpenModalButton: FC<OpenModalButtonProps> = ({
   variant = "filled",
   className,
   children,
-  modalElement,
+  // modalElement,
 }) => {
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
