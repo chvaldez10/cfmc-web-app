@@ -3,9 +3,10 @@
 import { FC, useState, ReactNode, useRef, useEffect } from "react";
 import { clientButton } from "@/types/genericTypes";
 import PurplePillButtonClient from "./PurplePillButtonClient";
+import VerticalCenteredModal from "../modals/VerticalCenteredModal";
 
 interface OpenModalButtonProps extends clientButton {
-  modalElement?: ReactNode | undefined;
+  modalElement: ReactNode;
 }
 
 const OpenModalButton: FC<OpenModalButtonProps> = ({
@@ -51,14 +52,9 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
         {children}
       </PurplePillButtonClient>
       {showModal && (
-        <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center">
-          <div
-            className="bg-white-0 p-6 rounded-lg shadow-lg w-11/12 max-w-md mx-auto"
-            ref={modalRef}
-          >
-            <div className="text-center text-lg">Test</div>
-          </div>
-        </div>
+        <VerticalCenteredModal ref={modalRef} title="Test" content="Test">
+          <div className="text-center text-lg">Test</div>
+        </VerticalCenteredModal>
       )}
     </>
   );

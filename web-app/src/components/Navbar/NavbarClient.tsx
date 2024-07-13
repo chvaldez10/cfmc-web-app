@@ -1,13 +1,13 @@
 "use client";
 
 import { FC, useState } from "react";
+import useScrollPosition from "@/hooks/useScrollPosition";
 import {
   NavLogo,
   MenuToggleButton,
   NavbarLinks,
   NavDrawer,
 } from "@/components/Navbar";
-import useScrollPosition from "@/hooks/useScrollPosition";
 import "@/styles/wave-border.css";
 
 const NavbarClient: FC<{}> = () => {
