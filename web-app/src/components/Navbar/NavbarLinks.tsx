@@ -8,8 +8,8 @@ import {
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
 import OpenModalButton from "@/components/core/buttons/OpenModalButton";
-import { VerticalCenteredModal } from "@/components/core/modals";
 import SimpleModalItem from "@/components/core/modals/SimpleModalItem";
+import { tithesAndOfferingVerse } from "@/data/hero/constants";
 
 interface NavbarLinksProps {
   NavClassNames?: string | undefined;
@@ -58,7 +58,12 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
       <OpenModalButton
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
-        modalElement={<SimpleModalItem />}
+        modalElement={
+          <SimpleModalItem
+            title="Tithes and Offering"
+            description={tithesAndOfferingVerse}
+          />
+        }
       >
         Tithes and Offering
       </OpenModalButton>

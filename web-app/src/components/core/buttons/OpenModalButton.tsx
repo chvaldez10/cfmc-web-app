@@ -52,7 +52,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
         {children}
       </PurplePillButtonClient>
       {showModal && (
-        <VerticalCenteredModal ref={modalRef} title="Test" content="Test">
+        <VerticalCenteredModal ref={modalRef}>
           {modalElement}
         </VerticalCenteredModal>
       )}

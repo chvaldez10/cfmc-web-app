@@ -1,7 +1,6 @@
 import { FC, forwardRef, ReactNode } from "react";
-import { modalProps } from "@/types/genericTypes";
 
-interface VerticalCenteredModalProps extends modalProps {
+interface VerticalCenteredModalProps {
   children: ReactNode;
   // showModal: boolean;
   // onClose: () => void;
@@ -13,8 +12,6 @@ const VerticalCenteredModal = forwardRef<
 >(
   (
     {
-      title,
-      content,
       children,
       // showModal = true,
       // onClose,
