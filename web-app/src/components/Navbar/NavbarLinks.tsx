@@ -58,12 +58,13 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
       <OpenModalButton
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
-        modalElement={
+        modalElement={(closeModal) => (
           <SimpleModalItem
             title="Tithes and Offering"
             description={tithesAndOfferingVerse}
+            onClose={closeModal}
           />
-        }
+        )}
       >
         Tithes and Offering
       </OpenModalButton>
