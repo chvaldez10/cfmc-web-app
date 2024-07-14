@@ -58,6 +58,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
       <OpenModalButton
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
+        // pass closeModal function to modalElement
         modalElement={(closeModal) => (
           <SimpleModalItem
             title="Tithes and Offering"
