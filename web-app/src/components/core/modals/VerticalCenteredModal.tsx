@@ -22,9 +22,9 @@ const VerticalCenteredModal = forwardRef<
     modalRef
   ) => {
     return (
-      <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
+      <div className="flex justify-center items-center fixed inset-0 z-30 overflow-x-hidden overflow-y-auto">
         <div
-          className="bg-white-0 p-6 rounded-lg shadow-lg w-11/12 max-w-md mx-auto"
+          className="relative w-auto my-5 mx-auto max-w-3xl h-screen md:h-auto bg-white border border-gray-200 rounded-lg bg-white-0"
           ref={modalRef}
         >
           {children}

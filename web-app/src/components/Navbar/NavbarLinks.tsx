@@ -9,6 +9,7 @@ import {
 import NavDropdown from "./NavDropdown";
 import OpenModalButton from "@/components/core/buttons/OpenModalButton";
 import { VerticalCenteredModal } from "@/components/core/modals";
+import SimpleModalItem from "@/components/core/modals/SimpleModalItem";
 
 interface NavbarLinksProps {
   NavClassNames?: string | undefined;
@@ -57,9 +58,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
       <OpenModalButton
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
-        modalElement={
-          <VerticalCenteredModal title="Tithes and Offering" content="text" />
-        }
+        modalElement={<SimpleModalItem />}
       >
         Tithes and Offering
       </OpenModalButton>
