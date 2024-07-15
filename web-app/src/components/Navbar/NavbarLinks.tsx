@@ -8,7 +8,7 @@ import {
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
 import OpenModalButton from "@/components/core/buttons/OpenModalButton";
-import SimpleModalItem from "@/components/core/modals/SimpleModalItem";
+import TithesAndOffering from "@/components/core/modals/atoms/TithesAndOffering";
 import { tithesAndOfferingVerse } from "@/data/hero/constants";
 
 interface NavbarLinksProps {
@@ -60,7 +60,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
         // pass closeModal function to modalElement
         modalElement={(closeModal) => (
-          <SimpleModalItem
+          <TithesAndOffering
             title="Tithes and Offering"
             description={tithesAndOfferingVerse}
             onClose={closeModal}

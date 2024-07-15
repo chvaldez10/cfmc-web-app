@@ -31,7 +31,10 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 
         {/* Button */}
         <div className="flex flex-row gap-x-4 md:gap-x-8">
-          <NavigateButton className="z-10 scale-up" url={"/sunday-services"}>
+          <NavigateButton
+            className="z-10 scale-up"
+            url={"/get-involved/upcoming"}
+          >
             Find a Service
           </NavigateButton>
           <NavigateButton
