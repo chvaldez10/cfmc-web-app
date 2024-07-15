@@ -1,5 +1,6 @@
 import { FC } from "react";
 import NavbarLinks from "./NavbarLinks";
+import { CloseButton } from "@/components/core/buttons";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -15,10 +16,8 @@ const NavDrawer: FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
           : "translate-x-full ease-in duration-300"
       }`}
     >
-      <div className="relative">
-        <button onClick={toggleMenu} className="absolute top-10 left-10">
-          Close
-        </button>
+      <div className="absolute top-7 left-7">
+        <CloseButton onClose={toggleMenu} />
       </div>
       <div className="div-outside-width h-screen">
         <NavbarLinks />

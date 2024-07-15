@@ -8,10 +8,11 @@ const VerticalCenteredModal = forwardRef<
   HTMLDivElement,
   VerticalCenteredModalProps
 >(({ children }, modalRef) => {
+  // TODO: Improve styling
   return (
     <div className="flex justify-center items-center fixed inset-0 z-30 overflow-x-hidden overflow-y-auto">
       <div
-        className="relative w-auto my-5 mx-auto md:max-w-2xl h-screen md:h-auto border border-gray-200 rounded-lg bg-white-0"
+        className="relative w-auto my-5 mx-auto md:max-w-2xl h-screen md:h-auto border border-gray-200 rounded-lg bg-white-0 animate-translate-up"
         ref={modalRef}
       >
         {children}
