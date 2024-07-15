@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState } from "react";
-import ShowHideButton from "../buttons/ShowHideButton";
+import { ShowHideButton } from "@/components/core/buttons/";
 
 interface LoginInputProps {
   type: string;
