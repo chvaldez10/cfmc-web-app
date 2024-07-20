@@ -1,48 +1,21 @@
 import { FC } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { NavigateButton } from "../buttons";
-import SectionSubheader from "../text/SectionSubheader";
-import NextImage from "../gallery/NextImage";
+import CardWithImageItem from "./atoms/CardWithImageItem";
+import { cardWithImageItems } from "@/data/hero/cardWithImage";
 
-interface CardWithImageProps {
-  src: string;
-  title: string;
-  alt: string;
-  description: string;
-  url: string;
-}
-
-const CardWithImage: FC<CardWithImageProps> = ({
-  src,
-  title,
-  alt,
-  description,
-  url,
-}) => {
+const CardWithImage: FC<{}> = () => {
   return (
-    <div className="bg-white-0 border flex flex-col border-gray-200 rounded-lg shadow hover-animation hover-up ">
-      <NextImage
-        width={"w-full"}
-        height={"h-96"}
-        src={src}
-        alt={alt}
-        imageClassName={"rounded-t-lg object-center"}
-      />
-
-      <div className="flex flex-col flex-grow p-5">
-        <SectionSubheader
-          text={title}
-          className="mb-2 font-bold tracking-tight"
-        />
-        <p className="mb-3 font-normal text-gray-600 flex-grow">
-          {description}
-        </p>
-
-        <div className="mt-auto">
-          <NavigateButton url={url} variant="filled">
-            Learn More <FaArrowRight />
-          </NavigateButton>
-        </div>
+    <div className="div-outside-width mx-auto p-5 md:p-0 gap-4 ">
+      <div className="resize-hero-width grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4 py-8 ">
+        {cardWithImageItems.map((item, index) => (
+          <CardWithImageItem
+            key={item.title}
+            src={item.src}
+            title={item.title}
+            alt={item.alt}
+            description={item.description}
+            url={item.url}
+          />
+        ))}
       </div>
     </div>
   );

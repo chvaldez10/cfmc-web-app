@@ -13,7 +13,7 @@ import {
   communityBuilding1,
 } from "@/data/hero";
 
-import { SimpleCard, CardWithImageContainer } from "@/components/core/cards";
+import { SimpleCard, CardWithImage } from "@/components/core/cards";
 import { upcomingEvents } from "@/data/testData";
 import {
   featuredEvent1Verbiage,
@@ -66,7 +66,7 @@ export default function Home() {
       />
 
       <EventBlog events={upcomingEvents} />
-      <CardWithImageContainer />
+      <CardWithImage />
       <SimpleCard cardContainerItems={cardContainerItems} />
     </>
   );
