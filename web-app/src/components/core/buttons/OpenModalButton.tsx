@@ -6,8 +6,8 @@ import PurplePillButtonClient from "./PurplePillButtonClient";
 import VerticalCenteredModal from "../modals/VerticalCenteredModal";
 
 interface OpenModalButtonProps extends clientButton {
-  // takes a closeModal function as an argument and returns a ReactNode
-  modalElement: (closeModal: () => void) => ReactNode;
+  modalElement: ReactNode;
+  title: string;
 }
 
 const OpenModalButton: FC<OpenModalButtonProps> = ({
@@ -15,6 +15,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
   className,
   children,
   modalElement,
+  title,
 }) => {
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -40,8 +41,6 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
     };
   }, [showModal]);
 
-  console.log(showModal);
-
   return (
     <>
       <PurplePillButtonClient
@@ -53,9 +52,12 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
         {children}
       </PurplePillButtonClient>
       {showModal && (
-        // pass closeModal function to modalElement
-        <VerticalCenteredModal ref={modalRef}>
-          {modalElement(() => setShowModal(false))}
+        <VerticalCenteredModal
+          ref={modalRef}
+          title={title}
+          onClose={() => setShowModal(false)}
+        >
+          {modalElement}
         </VerticalCenteredModal>
       )}
     </>
