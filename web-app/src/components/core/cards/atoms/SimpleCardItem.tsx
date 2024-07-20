@@ -4,6 +4,7 @@ import { FC, ReactNode, useState } from "react";
 import { SectionSubheader, LongParagraph } from "../../text";
 import VerticalCenteredModal from "../../modals/VerticalCenteredModal";
 import RequestForm from "../../forms/RequestForm";
+import useModal from "@/hooks/useModal";
 
 interface SimpleCardItemProps {
   title: string;
@@ -16,15 +17,7 @@ const SimpleCardItem: FC<SimpleCardItemProps> = ({
   description,
   svgIcon,
 }) => {
-  const [showModal, setShowModal] = useState<boolean>(false);
-
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+  const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
 
   return (
     <>
@@ -39,7 +32,11 @@ const SimpleCardItem: FC<SimpleCardItemProps> = ({
       </div>
 
       {showModal && (
-        <VerticalCenteredModal title="Request Form" onClose={handleCloseModal}>
+        <VerticalCenteredModal
+          ref={modalRef}
+          title="Request Form"
+          onClose={handleCloseModal}
+        >
           <RequestForm />
         </VerticalCenteredModal>
       )}
