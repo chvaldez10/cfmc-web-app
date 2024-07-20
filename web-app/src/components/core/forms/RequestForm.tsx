@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BasicForm = () => {
+const RequestForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -123,4 +123,4 @@ const BasicForm = () => {
   );
 };
 
-export default BasicForm;
+export default RequestForm;

@@ -20,8 +20,12 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = () => {
-    setShowModal((prev) => !prev);
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -46,7 +50,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
       <PurplePillButtonClient
         variant={variant}
         className={className}
-        onClick={handleClick}
+        onClick={handleOpenModal}
         disabled={showModal}
       >
         {children}
@@ -55,7 +59,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
         <VerticalCenteredModal
           ref={modalRef}
           title={title}
-          onClose={() => setShowModal(false)}
+          onClose={handleCloseModal}
         >
           {modalElement}
         </VerticalCenteredModal>
