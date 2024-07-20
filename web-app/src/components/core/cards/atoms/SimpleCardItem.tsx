@@ -7,14 +7,16 @@ interface SimpleCardItemProps {
   title: string;
   description: string;
   svgIcon: ReactNode;
-  handleClick: () => void;
 }
+
+const handleClick = () => {
+  console.log("clicked");
+};
 
 const SimpleCardItem: FC<SimpleCardItemProps> = ({
   title,
   description,
   svgIcon,
-  handleClick,
 }) => {
   return (
     <div
