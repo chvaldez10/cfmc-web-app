@@ -36,3 +36,10 @@ export interface modalProps {
   title: string;
   content: string;
 }
+
+export interface churchLiturgy {
+  header: string;
+  indicationToStand: boolean;
+  personInCharge: string;
+  content: string;
+}
