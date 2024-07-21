@@ -71,8 +71,12 @@ body {
   @apply flex flex-row items-center justify-center;
 }
 
+.div-outside-width-justify-between {
+  @apply flex items-center justify-between;
+}
+
 .div-outside-width-wrapped {
-  @apply flex flex-wrap items-center justify-between;
+  @apply div-outside-width-justify-between flex-wrap;
 }
 
 .div-col-row {
@@ -89,6 +93,10 @@ body {
 
 .resize-width-to-half {
   @apply w-full md:w-1/2;
+}
+
+.resize-modal {
+  @apply w-auto h-screen md:w-7/12 md:h-auto;
 }
 
 /* Repeated grids */

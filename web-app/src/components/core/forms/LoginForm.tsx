@@ -2,10 +2,10 @@
 
 import { FC } from "react";
 import { login } from "@/app/login/actions";
-import LoginInput from "./LoginInput";
+import LoginInput from "./atoms/LoginInput";
 import FormButton from "../buttons/FormButton";
 import useToastNotification from "@/hooks/useToastNotification";
-import LongParagraph from "../text/LongParagraph";
+import { SectionHeader, LongParagraph } from "../text/";
 
 const LoginForm: FC = () => {
   useToastNotification();
@@ -13,9 +13,7 @@ const LoginForm: FC = () => {
   return (
     <div className="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">
       <div className="p-6 space-y-6 sm:p-8">
-        <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-          Welcome
-        </h1>
+        <SectionHeader text="Welcome" />
         <LongParagraph> Please sign in if you're an admin user.</LongParagraph>
         <form className="space-y-6" action="#">
           <LoginInput
