@@ -10,7 +10,7 @@ interface SimpleModalItemProps extends clientButton {
 
 const SimpleModalItem: FC<SimpleModalItemProps> = ({ description }) => {
   return (
-    <div className="p-5 flex-auto bg-white-0 ">
+    <>
       <LongParagraph>{description}</LongParagraph>
 
       <LongParagraph>
@@ -22,7 +22,7 @@ const SimpleModalItem: FC<SimpleModalItemProps> = ({ description }) => {
           calgaryfilipinomethodistchurch@yahoo.com
         </Link>
       </LongParagraph>
-    </div>
+    </>
   );
 };
 
