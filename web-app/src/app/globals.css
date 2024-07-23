@@ -96,7 +96,7 @@ body {
 }
 
 .resize-modal {
-  @apply w-full h-screen md:w-7/12 md:h-auto;
+  @apply w-full h-screen md:max-w-2xl md:h-auto;
 }
 
 /* Repeated grids */
