@@ -32,7 +32,7 @@ const LoginInput: FC<LoginInputProps> = ({
         type={inputType}
         name={name}
         id={id}
-        className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 focus:shadow-outline block w-full p-2.5"
+        className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 block w-full p-2.5"
         placeholder={placeholder}
         required={required}
       />
