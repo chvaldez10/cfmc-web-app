@@ -2,14 +2,9 @@
 
 import { FC, useState } from "react";
 import { ShowHideButton } from "@/components/core/buttons/";
+import { formProps } from "@/types/genericTypes";
 
-interface LoginInputProps {
-  type: string;
-  name: string;
-  id: string;
-  placeholder: string;
-  required?: boolean;
-}
+interface LoginInputProps extends formProps {}
 
 const LoginInput: FC<LoginInputProps> = ({
   type,
@@ -17,6 +12,7 @@ const LoginInput: FC<LoginInputProps> = ({
   id,
   placeholder,
   required = false,
+  maxLength,
 }) => {
   const [inputType, setInputType] = useState<string>(type);
   const [isToggled, setIsToggled] = useState<boolean>(false);
@@ -35,6 +31,7 @@ const LoginInput: FC<LoginInputProps> = ({
         className="border border-gray-300 sm:text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 focus:outline-purple-500 block w-full p-2.5"
         placeholder={placeholder}
         required={required}
+        maxLength={maxLength}
       />
       {type === "password" && (
         <ShowHideButton

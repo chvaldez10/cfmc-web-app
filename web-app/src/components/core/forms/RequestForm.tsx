@@ -29,13 +29,24 @@ const RequestForm: FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <TextInput type="text" name="fullName" id="fullName" label="Full Name" />
-      <TextInput type="email" name="email" id="email" label="Email" required />
+      <TextInput
+        type="text"
+        name="fullName"
+        id="fullName"
+        placeholder="Full Name"
+      />
+      <TextInput
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        required
+      />
       <TextInput
         type="tel"
         name="phoneNumber"
         id="phoneNumber"
-        label="Phone Number"
+        placeholder="Phone Number"
         maxLength={10}
       />
       <TextSelector />

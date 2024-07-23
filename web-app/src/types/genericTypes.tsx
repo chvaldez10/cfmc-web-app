@@ -43,3 +43,12 @@ export interface churchLiturgy {
   personInCharge: string;
   content: string;
 }
+
+export interface formProps {
+  type: string;
+  name: string;
+  id: string;
+  placeholder: string;
+  required?: boolean;
+  maxLength?: number;
+}

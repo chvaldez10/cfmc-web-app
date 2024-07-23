@@ -29,6 +29,7 @@ const LoginForm: FC = () => {
             id="password"
             placeholder="••••••••"
             required
+            maxLength={20}
           />
           <div className="flex flex-col items-end ">
             {/* Un comment when need to be used */}
