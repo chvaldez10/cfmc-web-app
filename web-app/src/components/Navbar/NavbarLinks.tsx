@@ -4,7 +4,7 @@ import {
   aboutDropdownItems,
   mediaDropDownItems,
   getInvolvedDropdownItems,
-  supperDropdownItem,
+  connectDropdownItem,
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
 import OpenModalButton from "@/components/core/buttons/OpenModalButton";
@@ -43,17 +43,10 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
         className={NavClassNames}
       />
       <NavDropdown
-        navDropdownItems={supperDropdownItem}
+        navDropdownItems={connectDropdownItem}
         dropdownLabel="Connect"
         className={NavClassNames}
       />
-      {/* <PurplePillButtonClient
-        variant="outline"
-        className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
-        onClick={() => console.log("Tithes and Offering Modal")}
-      >
-        Tithes and Offering
-      </PurplePillButtonClient> */}
 
       <OpenModalButton
         variant="outline"

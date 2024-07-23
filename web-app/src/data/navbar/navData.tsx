@@ -90,7 +90,7 @@ export const getInvolvedDropdownItems: {
   },
 ];
 
-export const supperDropdownItem: {
+export const connectDropdownItem: {
   label: string;
   url: string;
   svgIcon: ReactElement;

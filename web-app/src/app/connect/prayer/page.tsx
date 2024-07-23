@@ -1,9 +1,9 @@
-import RequestForm from "@/components/core/forms/RequestForm";
+import UnderConstruction from "@/components/template/UnderConstruction";
 
 export default function page() {
   return (
     <>
-      <RequestForm />
+      <UnderConstruction />
     </>
   );
 }

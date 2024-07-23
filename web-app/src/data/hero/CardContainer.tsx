@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { MdContactMail } from "react-icons/md";
 import { FaPrayingHands } from "react-icons/fa";
-import { FaCalendarCheck } from "react-icons/fa";
+import { RiSoundModuleFill } from "react-icons/ri";
 
 export const cardContainerItems: {
   label: string;
@@ -20,8 +20,8 @@ export const cardContainerItems: {
     svgIcon: <FaPrayingHands />,
   },
   {
-    label: "Get Involved",
-    description: "Get involved today!",
-    svgIcon: <FaCalendarCheck />,
+    label: "Media Inquiries",
+    description: "Please submit and any media inquiries",
+    svgIcon: <RiSoundModuleFill />,
   },
 ];
