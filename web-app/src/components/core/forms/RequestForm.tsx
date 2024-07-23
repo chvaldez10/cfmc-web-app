@@ -28,7 +28,7 @@ const RequestForm: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className=" space-y-4 z-50 ">
       <TextInput
         type="text"
         name="fullName"
@@ -52,7 +52,7 @@ const RequestForm: FC = () => {
       <TextSelector />
       <TextArea id="message" label="Message" />
       <div className="flex justify-end">
-        <FormButton className="text-purple-500 hover:underline">
+        <FormButton className="text-emerald-500 hover:underline">
           Submit
         </FormButton>
       </div>

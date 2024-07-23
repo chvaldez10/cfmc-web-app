@@ -24,7 +24,7 @@ const NavbarClient: FC<{}> = () => {
     <>
       <nav
         className={` ${isScrolled ? "wave" : ""}
-        fixed top-0 z-50 mx-auto w-full `}
+        fixed top-0 z-30 mx-auto w-full `}
         id="#nav-client"
       >
         <div

@@ -33,7 +33,7 @@ const TextInput: FC<TextInputProps> = ({
   };
 
   return (
-    <div className="relative z-0 w-full mb-5 group">
+    <div className="relative z-0">
       <input
         type={type}
         name={name}

@@ -30,7 +30,6 @@ const SimpleCardItem: FC<SimpleCardItemProps> = ({
         <SectionSubheader text={title.toUpperCase()} />
         <LongParagraph>{description}</LongParagraph>
       </div>
-
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
