@@ -4,7 +4,7 @@ import { featuredImages } from "@/data/hero/featuredItems";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 import { NavigateButton } from "@/components/core/buttons";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
-import CustomParagraph from "../../../text/CustomParagraph";
+import CustomParagraph from "../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
 
 interface HeroCollageClientProps extends heroContent {}
