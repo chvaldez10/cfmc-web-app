@@ -4,7 +4,7 @@ import { featuredImages } from "@/data/hero/featuredItems";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 import { NavigateButton } from "@/components/core/buttons";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
-import CustomParagraph from "../text/CustomParagraph";
+import CustomParagraph from "../../../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
 
 interface HeroCollageClientProps extends heroContent {}
@@ -19,7 +19,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 
       <div className="div-outside-width resize-hero-width z-10 h-[80vh] gap-4">
         {/* Text Column */}
-        <div className="div-outside-width z-10 xl:max-w-4xl gap-4">
+        <div className="div-outside-width z-10 xl:max-w-4xl gap-4 text-center">
           <MainGradientHeader text={header} />
           <CustomParagraph
             className={"hover-animation shadow-up"}
