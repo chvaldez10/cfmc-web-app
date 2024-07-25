@@ -8,7 +8,7 @@ import {
 import {
   IframeMap,
   cardContainerItems,
-  visionStatement,
+  visionStatementLong,
   pastEvents1,
   communityBuilding1,
 } from "@/data/hero";
@@ -25,7 +25,7 @@ import { NextImage } from "@/components/core/gallery";
 export default function Home() {
   return (
     <>
-      <HeroCollage header={"Our Vision "} longParagraph={visionStatement} />
+      <HeroCollage header={"Our Vision "} longParagraph={visionStatementLong} />
 
       <HeroSlideClient
         header={"Sunday Service"}

@@ -1,5 +1,5 @@
 export { default as IframeMap } from "./IframeMap";
-export { visionStatement } from "./constants";
+export { visionStatementLong } from "./constants";
 export {
   pastEvents1,
   communityBuilding1,
