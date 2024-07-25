@@ -1,6 +1,5 @@
 import HeroHeader from "@/components/core/hero/HeroHeader";
 import VerticalList from "@/components/core/hero/VerticalList";
-import { Announcements } from "@/components/core/modals";
 import { announcements } from "@/data/testData/verticalListTest";
 
 const heroHeaderTitle = "Announcements";
@@ -11,7 +10,6 @@ export default function page() {
     <>
       <HeroHeader title={heroHeaderTitle} verbiage={heroHeaderVerbiage} />
       <VerticalList header={"Upcoming Events"} data={announcements} />
-      <Announcements />
     </>
   );
 }
