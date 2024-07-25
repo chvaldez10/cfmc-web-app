@@ -62,6 +62,7 @@ export default function Home() {
             imageClassName={"rounded-lg object-center"}
           />
         }
+        // containerClassName={"bg-green-10"}
         reverse={true}
       />
 
