@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 
 export interface liturgyTableData {
+  date: Date;
   title: string;
   content: string;
-  link: string;
+  link?: string;
 }
 
 export interface heroContent {

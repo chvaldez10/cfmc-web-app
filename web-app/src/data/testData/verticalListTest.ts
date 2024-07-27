@@ -3,16 +3,20 @@ import { liturgyTableData } from "@/types/genericTypes";
 // Will be a table called liturgy
 export const announcements: liturgyTableData[] = [
   {
-    title: "June 15, 2024 | 5:00 PM",
-    content: "Gospel of Mark Home Bible Study (recurring)",
-    link: "#",
+    date: new Date("June 15, 2024"),
+    title: "Home Bible Study",
+    content: "Gospel of Mark Home Bible Study ",
   },
   {
-    title: "June 22, 2024 | 5:00 PM ",
-    content: "It Takes Two to Tango Home Bible Study (recurring)",
-    link: "#",
+    date: new Date("June 22, 2024"),
+    title: "It Takes Two to Tango Home Bible Study",
+    content: "It Takes Two to Tango Home Bible Study",
   },
-  { title: "June 28-30, 2024 | All Day", content: "Family Camp", link: "#" },
+  {
+    date: new Date("June 28, 2024"),
+    title: "Family Camp",
+    content: "Family Camp Description",
+  },
 ];
 
 // Will be a table called verses
