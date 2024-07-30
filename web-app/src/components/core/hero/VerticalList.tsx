@@ -9,8 +9,8 @@ interface VerticalListProps {
 
 const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
   return (
-    <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:py-16 lg:px-6">
-      <div className="divide-y divide-purple-300">
+    <div className="div-outside-width p-4">
+      <div className="resize-hero-width divide-y divide-purple-300">
         {data.map((dataEntry, index) => (
           <div key={index} className="py-4 div-col-row">
             <div className="hidden-md-flex md:w-64">
@@ -33,7 +33,7 @@ const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
               </LongParagraph>
             </div>
             <div className="hidden-md-flex-reverse">
-              <LongParagraph className="text-gray-500 text-sm lg:text-sm my-2">
+              <LongParagraph className="text-gray-500 text-sm lg:text-sm ">
                 {dataEntry.date.toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
