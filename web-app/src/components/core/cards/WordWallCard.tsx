@@ -1,10 +1,19 @@
 import { FC } from "react";
+import { LongParagraph } from "../text";
+import "@/styles/balloon.css";
 
-const WordWallCard: FC = () => {
+interface WordWallCardProps {
+  month: string;
+  day: number;
+  fullName: string;
+}
+
+const WordWallCard: FC<WordWallCardProps> = ({ fullName, month, day }) => {
   return (
-    <div className={`py-8 px-4 lg:w-1/3 text-center `}>
-      <span className="font-medium text-lg">{"Christian Valdez "}</span>
-      <span className="font-medium text-lg">{"(February 21)"}</span>
+    <div className="balloon">
+      <LongParagraph className=" text-white-0">
+        {`${fullName} ${month} ${day}`}
+      </LongParagraph>
     </div>
   );
 };

@@ -18,4 +18,19 @@ export const membersBirthday: {
     day: 23,
     fullName: "Spicy Rice",
   },
+  {
+    month: "February",
+    day: 21,
+    fullName: "Christian Valdez",
+  },
+  {
+    month: "February",
+    day: 22,
+    fullName: "Chris Valdez",
+  },
+  {
+    month: "February",
+    day: 23,
+    fullName: "Spicy Rice",
+  },
 ];
