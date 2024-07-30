@@ -11,10 +11,13 @@
   z-index: 10;
   animation: balloons 4s ease-in-out infinite;
   transform-origin: bottom center;
-  text-align: center; /* Ensure text is centered */
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 @keyframes balloons {
@@ -81,3 +84,33 @@
 .balloon:nth-child(5):before {
   color: hsl(23, 44%, 46%);
 }
+
+/* @media (max-width: 600px) {
+  .balloon {
+    width: 80px;
+    height: 100px;
+    font-size: 12px;
+  }
+  .balloon:before {
+    font-size: 16px;
+  }
+  .balloon:after {
+    top: 103px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .balloon {
+    width: 160px;
+    height: 200px;
+    font-size: 18px;
+  }
+  .balloon:before {
+    font-size: 24px;
+  }
+  .balloon:after {
+    top: 203px;
+    height: 300px;
+  }
+} */

@@ -20,17 +20,12 @@ export const membersBirthday: {
   },
   {
     month: "February",
-    day: 21,
-    fullName: "Christian Valdez",
+    day: 24,
+    fullName: "Hot Rice",
   },
   {
     month: "February",
-    day: 22,
-    fullName: "Chris Valdez",
-  },
-  {
-    month: "February",
-    day: 23,
-    fullName: "Spicy Rice",
+    day: 25,
+    fullName: "Purple/Korean Rice",
   },
 ];
