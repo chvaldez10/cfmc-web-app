@@ -1,11 +1,11 @@
 import { FC, ReactNode } from "react";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 
-interface HeroWrapperProps {
+interface VerticalWrapperProps {
   children: ReactNode;
 }
 
-const HeroWrapper: FC<HeroWrapperProps> = ({ children }) => {
+const VerticalWrapper: FC<VerticalWrapperProps> = ({ children }) => {
   return (
     <div className="div-outside-width gap-4 min-h-screen">
       {/* Particles Background */}
@@ -17,4 +17,4 @@ const HeroWrapper: FC<HeroWrapperProps> = ({ children }) => {
   );
 };
 
-export default HeroWrapper;
+export default VerticalWrapper;

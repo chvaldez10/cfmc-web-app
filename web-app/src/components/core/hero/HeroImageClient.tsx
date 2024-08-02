@@ -31,21 +31,18 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   const subheader =
     userSubHeader || (nextSunday ? liturgicalCalendar[nextSunday] : "");
 
-  const imageOrderClass = reverse ? "order-1 md:order-2" : "order-2 md:order-1";
-  const textOrderClass = reverse ? "order-2 md:order-1" : "order-1 md:order-2";
+  const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
 
   return (
     <div className={`div-outside-width min-h-screen p-4 ${containerClassName}`}>
-      <div className="div-col-row resize-hero-width gap-4">
+      <div className={`resize-hero-width gap-4 ${layoutClass}`}>
         {/* Image Column */}
-        <div className={`resize-width-to-half ${imageOrderClass}`}>
+        <div className="resize-width-to-half">
           <CoverFlowSwiper swiperImages={swiperImages} />
         </div>
 
         {/* Text Column */}
-        <div
-          className={`resize-width-to-half div-outside-width text-center gap-4 ${textOrderClass}`}
-        >
+        <div className="resize-width-to-half div-outside-width text-center gap-4">
           <SectionSubheader text={subheader} className="text-purple-500" />
           <SectionHeader text={header} />
           <LongParagraph>{longParagraph}</LongParagraph>

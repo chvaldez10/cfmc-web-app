@@ -1,5 +1,5 @@
 import { FC } from "react";
-import HeroWrapper from "./molecules/HeroWrapper";
+import VerticalWrapper from "./molecules/VerticalWrapper";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
 import HeroTextWrapper from "./molecules/atoms/HeroTextWrapper";
 import SectionSubheader from "../text/SectionSubheader";
@@ -11,12 +11,12 @@ interface HeroHeaderProps {
 
 const HeroHeader: FC<HeroHeaderProps> = ({ title, verbiage }) => {
   return (
-    <HeroWrapper>
+    <VerticalWrapper>
       <HeroTextWrapper>
         <MainGradientHeader text={title} />
         <SectionSubheader text={verbiage} className={"bg-white-10"} />
       </HeroTextWrapper>
-    </HeroWrapper>
+    </VerticalWrapper>
   );
 };
 

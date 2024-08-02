@@ -1,6 +1,6 @@
 import { FC } from "react";
 import NextImage from "@/components/core/gallery/NextImage";
-import HeroWrapper from "./molecules/HeroWrapper";
+import VerticalWrapper from "./molecules/VerticalWrapper";
 import HeroTextWrapper from "./molecules/atoms/HeroTextWrapper";
 import { featuredImages } from "@/data/hero/featuredItems";
 import { NavigateButton } from "@/components/core/buttons";
@@ -15,7 +15,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
   longParagraph,
 }) => {
   return (
-    <HeroWrapper>
+    <VerticalWrapper>
       <HeroTextWrapper>
         <MainGradientHeader text={header} />
         <CustomParagraph
@@ -56,7 +56,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
           />
         ))}
       </div>
-    </HeroWrapper>
+    </VerticalWrapper>
   );
 };
 
