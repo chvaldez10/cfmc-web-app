@@ -9,10 +9,6 @@
   @apply transition-all duration-100 ease-in-out;
 }
 
-body {
-  font-family: Inter;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
