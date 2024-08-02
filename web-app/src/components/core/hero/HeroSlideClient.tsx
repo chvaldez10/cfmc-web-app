@@ -4,12 +4,13 @@ import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
 import SectionHeader from "../text/SectionHeader";
 import SectionSubheader from "../text/SectionSubheader";
+import FlexWrapper from "./molecules/FlexWrapper";
 import { heroSection } from "@/types/genericTypes";
 import "@/styles/slide.css";
-import "@/styles/hero-floating.css";
 
 interface HeroSlideClientProps extends heroSection {
   element: ReactNode;
+  isFloating?: boolean;
 }
 
 const HeroSlideClient: FC<HeroSlideClientProps> = ({
@@ -18,6 +19,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
   element,
   reverse = false,
   containerClassName = "",
+  isFloating = false,
 }) => {
   const [textRef, textInView] = useInView();
   const [mapRef, mapInView] = useInView();
@@ -35,28 +37,28 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
     : "";
 
   return (
-    <div
-      className={`div-outside-width min-h-screen hero-floating ${containerClassName}`}
+    <FlexWrapper
+      containerClassName={containerClassName}
+      layoutClass={layoutClass}
+      isFloating={isFloating}
     >
-      <div className={`${layoutClass} resize-hero-width gap-4`}>
-        {/* Text Column */}
-        <div
-          ref={textRef}
-          className={`div-outside-width resize-width-to-half text-center  gap-4 ${textAnimationClass}`}
-        >
-          <SectionHeader text={header} />
-          <SectionSubheader text={longParagraph} className="text-gray-700" />
-        </div>
-
-        {/* Element Column */}
-        <div
-          ref={mapRef}
-          className={`div-outside-width resize-width-to-half p-4 h-96 md:h-576 ${mapAnimationClass}`}
-        >
-          {element}
-        </div>
+      {/* Text Column */}
+      <div
+        ref={textRef}
+        className={`div-outside-width resize-width-to-half text-center  gap-4 ${textAnimationClass}`}
+      >
+        <SectionHeader text={header} />
+        <SectionSubheader text={longParagraph} className="text-gray-700" />
       </div>
-    </div>
+
+      {/* Element Column */}
+      <div
+        ref={mapRef}
+        className={`div-outside-width resize-width-to-half p-4 h-96 md:h-576 ${mapAnimationClass}`}
+      >
+        {element}
+      </div>
+    </FlexWrapper>
   );
 };
 

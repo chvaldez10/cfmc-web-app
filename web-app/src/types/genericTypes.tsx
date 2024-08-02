@@ -23,7 +23,7 @@ export interface heroSection {
   userSubHeader?: string;
   longParagraph: string;
   reverse?: boolean;
-  containerClassName?: string | null;
+  containerClassName?: string | undefined;
 }
 
 export interface clientButton {

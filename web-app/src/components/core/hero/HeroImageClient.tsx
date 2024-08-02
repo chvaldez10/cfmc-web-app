@@ -11,6 +11,7 @@ import CoverFlowSwiper from "../gallery/CoverFlowSwiper";
 import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
+import FlexWrapper from "./molecules/FlexWrapper";
 
 // temporary data, this component should be server once theres a working db
 import { liturgicalCalendar } from "@/data/hero";
@@ -25,7 +26,7 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   longParagraph,
   swiperImages,
   reverse = false,
-  containerClassName,
+  containerClassName = "",
 }) => {
   const nextSunday = useNextSunday();
   const subheader =
@@ -34,21 +35,22 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
 
   return (
-    <div className={`div-outside-width min-h-screen p-4 ${containerClassName}`}>
-      <div className={`resize-hero-width gap-4 ${layoutClass}`}>
-        {/* Image Column */}
-        <div className="resize-width-to-half">
-          <CoverFlowSwiper swiperImages={swiperImages} />
-        </div>
-
-        {/* Text Column */}
-        <div className="resize-width-to-half div-outside-width text-center gap-4">
-          <SectionSubheader text={subheader} className="text-purple-500" />
-          <SectionHeader text={header} />
-          <LongParagraph>{longParagraph}</LongParagraph>
-        </div>
+    <FlexWrapper
+      containerClassName={containerClassName}
+      layoutClass={layoutClass}
+    >
+      {/* Image Column */}
+      <div className="resize-width-to-half">
+        <CoverFlowSwiper swiperImages={swiperImages} />
       </div>
-    </div>
+
+      {/* Text Column */}
+      <div className="resize-width-to-half div-outside-width text-center gap-4">
+        <SectionSubheader text={subheader} className="text-purple-500" />
+        <SectionHeader text={header} />
+        <LongParagraph>{longParagraph}</LongParagraph>
+      </div>
+    </FlexWrapper>
   );
 };
 

@@ -32,6 +32,7 @@ export default function Home() {
         longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         element={<IframeMap />}
         containerClassName="bg-green-10"
+        isFloating={true}
       />
 
       <HeroImageClient
@@ -62,8 +63,8 @@ export default function Home() {
             imageClassName={"rounded-lg object-center"}
           />
         }
-        // containerClassName={"bg-green-10"}
         reverse={true}
+        isFloating={true}
       />
 
       <EventBlog events={upcomingEvents} />
