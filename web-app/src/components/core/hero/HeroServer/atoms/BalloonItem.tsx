@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { LongParagraph } from "../text";
+import { LongParagraph } from "../../../text";
 import "@/styles/balloon.css";
 
 interface WordWallCardProps {
