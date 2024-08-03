@@ -19,7 +19,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="div-outside-width min-h-screen">
+    <div className="div-outside-width min-h-screen space-y-4">
       <LongParagraph>
         Something went wrong. Please try again later.
       </LongParagraph>

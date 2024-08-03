@@ -2,7 +2,6 @@ import {
   HeroCollage,
   HeroSlideClient,
   HeroImageClient,
-  EventBlog,
   VerseOfTheDay,
   EventBlogSwiper,
 } from "@/components/core/hero";
@@ -70,7 +69,6 @@ export default function Home() {
         isFloating={true}
       />
 
-      <EventBlog events={upcomingEvents} />
       <EventBlogSwiper />
       <CardWithImage />
       <SimpleCard cardContainerItems={cardContainerItems} />

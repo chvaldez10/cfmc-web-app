@@ -1,9 +1,15 @@
 import { FC } from "react";
-import { VerticalWrapper } from "@/components/core/hero";
+import { VerticalWrapper, FlexWrapper } from "@/components/core/hero";
+import { SwiperScrollbar } from "@/components/core/gallery/";
 
 const EventBlogSwiper: FC = () => {
   return (
-    <VerticalWrapper containerClassName={"h-[50vh]"}>Test</VerticalWrapper>
+    <FlexWrapper
+      containerClassName={"h-[60vh] w-full"}
+      layoutClass={"flex-col"}
+    >
+      <SwiperScrollbar />
+    </FlexWrapper>
   );
 };
 
