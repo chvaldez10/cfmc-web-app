@@ -3,6 +3,7 @@ import {
   HeroSlideClient,
   HeroImageClient,
   EventBlog,
+  VerseOfTheDay,
 } from "@/components/core/hero";
 
 import {
@@ -70,6 +71,7 @@ export default function Home() {
       <EventBlog events={upcomingEvents} />
       <CardWithImage />
       <SimpleCard cardContainerItems={cardContainerItems} />
+      <VerseOfTheDay />
     </>
   );
 }

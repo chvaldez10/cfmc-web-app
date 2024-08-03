@@ -6,3 +6,4 @@ export { default as HeroImageClient } from "./HeroClient/HeroImageClient";
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
 export { default as VerticalList } from "./HeroServer/VerticalList";
 export { default as WordWall } from "./HeroServer/WordWall";
+export { default as VerseOfTheDay } from "./HeroServer/atoms/VerseOfTheDay";
