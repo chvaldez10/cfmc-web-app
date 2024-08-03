@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { NavigateButton } from "../../buttons";
-import SectionSubheader from "../../text/SectionSubheader";
+import { SectionSubheader, LongParagraph } from "@/components/core/text/";
 import NextImage from "../../gallery/NextImage";
 
 interface CardWithImageItemProps {
@@ -29,15 +29,9 @@ const CardWithImageItem: FC<CardWithImageItemProps> = ({
         imageClassName={"rounded-t-lg object-center"}
       />
 
-      <div className="flex flex-col flex-grow p-5">
-        <SectionSubheader
-          text={title}
-          className="mb-2 font-bold tracking-tight"
-        />
-        <p className="mb-3 font-normal text-gray-600 flex-grow">
-          {description}
-        </p>
-
+      <div className="flex flex-col flex-grow p-5 gap-3">
+        <SectionSubheader text={title} className="font-bold tracking-tight" />
+        <LongParagraph className="text-gray-600">{description}</LongParagraph>
         <div className="mt-auto">
           <NavigateButton url={url} variant="filled">
             Learn More <FaArrowRight />
