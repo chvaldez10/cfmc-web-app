@@ -1,7 +1,7 @@
 import { FC } from "react";
 import NextImage from "@/components/core/gallery/NextImage";
 import VerticalWrapper from "./molecules/VerticalWrapper";
-import HeroTextWrapper from "./molecules/atoms/HeroTextWrapper";
+import HeroTextWrapper from "./molecules/HeroTextWrapper";
 import { featuredImages } from "@/data/hero/featuredItems";
 import { NavigateButton } from "@/components/core/buttons";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";

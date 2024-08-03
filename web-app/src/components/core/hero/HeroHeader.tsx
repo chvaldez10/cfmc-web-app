@@ -1,7 +1,7 @@
 import { FC } from "react";
 import VerticalWrapper from "./molecules/VerticalWrapper";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
-import HeroTextWrapper from "./molecules/atoms/HeroTextWrapper";
+import HeroTextWrapper from "./molecules/HeroTextWrapper";
 import SectionSubheader from "../text/SectionSubheader";
 
 interface HeroHeaderProps {
