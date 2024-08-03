@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { EventCard } from "@/components/core/cards";
+import { EventBlogCategory } from "@/components/core/cards";
 import { EventData } from "@/types/eventData";
 import SectionHeader from "@/components/core/text/SectionHeader";
 import ContainerWrapper from "@/components/core/hero/molecules/ContainerWrapper";
@@ -17,7 +17,7 @@ const EventBlog: FC<EventBlogProps> = ({ events }) => {
       <ContainerWrapper>
         <div className="flex flex-wrap -mx-4 ">
           {events.map((event, index) => (
-            <EventCard key={index} event={event} />
+            <EventBlogCategory key={index} event={event} />
           ))}
         </div>
       </ContainerWrapper>
