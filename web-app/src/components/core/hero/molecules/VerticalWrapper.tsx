@@ -3,7 +3,7 @@ import ParticlesBackground from "@/components/core/background/ParticlesBackgroun
 
 interface VerticalWrapperProps {
   children: ReactNode;
-  containerClassName: string;
+  containerClassName?: string;
   itemClassName?: string | undefined;
 }
 
@@ -13,7 +13,9 @@ const VerticalWrapper: FC<VerticalWrapperProps> = ({
   itemClassName,
 }) => {
   return (
-    <div className={`div-outside-width gap-4 ${containerClassName}`}>
+    <div
+      className={`div-outside-width gap-4 min-h-screen ${containerClassName}`}
+    >
       {/* Particles Background */}
       <ParticlesBackground />
       <div
