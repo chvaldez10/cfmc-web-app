@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import NextImage from "../gallery/NextImage";
+import NextImage from "./NextImage";
 import { nextImage } from "@/types/genericTypes";
 
 // Swiper modules

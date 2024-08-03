@@ -7,7 +7,7 @@ import {
   SectionSubheader,
   LongParagraph,
 } from "@/components/core/text/";
-import CoverFlowSwiper from "../../gallery/CoverFlowSwiper";
+import { SwiperCoverFlow } from "@/components/core/gallery";
 import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
@@ -42,7 +42,7 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
     >
       {/* Image Column */}
       <HeroHalfWrapper>
-        <CoverFlowSwiper swiperImages={swiperImages} />
+        <SwiperCoverFlow swiperImages={swiperImages} />
       </HeroHalfWrapper>
 
       {/* Text Column */}

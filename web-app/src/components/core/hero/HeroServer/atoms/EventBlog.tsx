@@ -10,7 +10,7 @@ interface EventBlogProps {
 
 const EventBlog: FC<EventBlogProps> = ({ events }) => {
   return (
-    <div className="min-h-full div-outside-width py-16 gap-5 bg-violet-10">
+    <div className="div-outside-width py-16 gap-5 bg-violet-10">
       {/* Header */}
       <SectionHeader text={"All Upcoming Events"} className={"text-center"} />
 
