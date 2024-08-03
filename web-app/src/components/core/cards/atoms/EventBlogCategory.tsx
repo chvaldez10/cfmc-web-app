@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { EventData } from "@/types/eventData";
-import { LongParagraph, SectionSubheader } from "../text";
+import { LongParagraph, SectionSubheader } from "../../text";
 
 interface EventCardProps {
   event: EventData;

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import EventCard from "@/components/core/cards/EventCard";
+import { EventCard } from "@/components/core/cards";
 import { EventData } from "@/types/eventData";
 import SectionHeader from "@/components/core/text/SectionHeader";
 import ContainerWrapper from "@/components/core/hero/molecules/ContainerWrapper";
@@ -11,7 +11,6 @@ interface EventBlogProps {
 const EventBlog: FC<EventBlogProps> = ({ events }) => {
   return (
     <div className="div-outside-width py-16 gap-5 bg-violet-10">
-      {/* Header */}
       <SectionHeader text={"All Upcoming Events"} className={"text-center"} />
 
       {/* Events */}
