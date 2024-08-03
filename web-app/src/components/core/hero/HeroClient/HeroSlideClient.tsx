@@ -16,9 +16,9 @@ interface HeroSlideClientProps extends heroSection {
 const HeroSlideClient: FC<HeroSlideClientProps> = ({
   header,
   longParagraph,
+  containerClassName = "",
   element,
   reverse = false,
-  containerClassName = "",
   isFloating = false,
 }) => {
   const [textRef, textInView] = useInView();
@@ -45,7 +45,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       {/* Text Column */}
       <div
         ref={textRef}
-        className={`div-outside-width resize-width-to-half text-center  gap-4 ${textAnimationClass}`}
+        className={`div-outside-width resize-width-to-half text-center gap-4 ${textAnimationClass}`}
       >
         <SectionHeader text={header} />
         <SectionSubheader text={longParagraph} className="text-gray-700" />
@@ -54,7 +54,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       {/* Element Column */}
       <div
         ref={mapRef}
-        className={`div-outside-width resize-width-to-half p-4 h-96 md:h-576 ${mapAnimationClass}`}
+        className={`div-outside-width resize-width-to-half h-96 md:h-576 ${mapAnimationClass}`}
       >
         {element}
       </div>

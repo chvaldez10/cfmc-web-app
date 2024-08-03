@@ -16,7 +16,7 @@ const FlexWrapper: FC<FlexWrapperProps> = ({
 }) => {
   return (
     <div
-      className={`div-outside-width min-h-screen ${
+      className={`div-outside-width p-4 lg:p-0 ${
         isFloating ? "hero-floating" : ""
       } ${containerClassName}`}
     >

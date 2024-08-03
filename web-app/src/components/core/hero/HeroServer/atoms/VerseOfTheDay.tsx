@@ -2,6 +2,7 @@ import { BsFillChatLeftQuoteFill } from "react-icons/bs";
 import { Verse } from "@/types/genericTypes";
 import { defaultVerse } from "@/data/hero/constants";
 import { SectionSubheader, LongParagraph } from "@/components/core/text";
+import ContainerWrapper from "@/components/core/hero/molecules/ContainerWrapper";
 
 async function VerseOfTheDay() {
   let verseData: Verse;
@@ -27,7 +28,7 @@ async function VerseOfTheDay() {
   }
 
   return (
-    <div className="container px-5 py-24 mx-auto">
+    <ContainerWrapper>
       <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
         <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 text-white mb-8" />
         <SectionSubheader text="Verse of the Day" />
@@ -39,7 +40,7 @@ async function VerseOfTheDay() {
           {verseData.verse.details.reference} {verseData.verse.details.version}
         </LongParagraph>
       </div>
-    </div>
+    </ContainerWrapper>
   );
 }
 

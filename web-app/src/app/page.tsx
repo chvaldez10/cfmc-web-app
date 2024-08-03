@@ -31,8 +31,8 @@ export default function Home() {
       <HeroSlideClient
         header={"Sunday Service"}
         longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
+        containerClassName="bg-green-10 min-h-screen"
         element={<IframeMap />}
-        containerClassName="bg-green-10"
         isFloating={true}
       />
 
@@ -40,7 +40,7 @@ export default function Home() {
         header={"Men's Empowerment Month"}
         longParagraph={featuredEvent1Verbiage}
         swiperImages={pastEvents1}
-        containerClassName={"bg-white-10"}
+        containerClassName={"bg-white-10 min-h-screen"}
       />
 
       <HeroImageClient
@@ -49,12 +49,13 @@ export default function Home() {
         longParagraph={communityBuilding1Verbiage}
         swiperImages={communityBuilding1}
         reverse={true}
-        containerClassName={"bg-violet-10"}
+        containerClassName={"bg-violet-10 min-h-screen"}
       />
 
       <HeroSlideClient
         header={"Next Big Event"}
         longParagraph="Next Big Event Description"
+        containerClassName="min-h-screen"
         element={
           <NextImage
             width={"w-full"}

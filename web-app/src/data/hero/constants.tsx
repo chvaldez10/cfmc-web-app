@@ -14,7 +14,7 @@ export const communityBuilding1Verbiage =
 export const tithesAndOfferingVerse =
   "Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this,” says the Lord Almighty, “and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it. (Malachi 3:10)";
 
-const defaultVerse: Verse = {
+export const defaultVerse: Verse = {
   verse: {
     details: {
       text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
