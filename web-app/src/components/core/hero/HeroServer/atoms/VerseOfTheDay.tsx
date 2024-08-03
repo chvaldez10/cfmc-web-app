@@ -28,7 +28,7 @@ async function VerseOfTheDay() {
   }
 
   return (
-    <ContainerWrapper>
+    <ContainerWrapper className="py-16">
       <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
         <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 text-white mb-8" />
         <SectionSubheader text="Verse of the Day" />

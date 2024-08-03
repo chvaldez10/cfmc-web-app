@@ -2,10 +2,16 @@ import { FC, ReactNode } from "react";
 
 interface ContainerWrapperProps {
   children: ReactNode;
+  className?: string;
 }
 
-const ContainerWrapper: FC<ContainerWrapperProps> = ({ children }) => {
-  return <div className="container px-5 py-8 md:py-14 mx-auto">{children}</div>;
+const ContainerWrapper: FC<ContainerWrapperProps> = ({
+  children,
+  className,
+}) => {
+  return (
+    <div className={`container px-5 mx-auto ${className}`}>{children}</div>
+  );
 };
 
 export default ContainerWrapper;
