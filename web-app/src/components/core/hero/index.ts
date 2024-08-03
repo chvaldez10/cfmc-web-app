@@ -1,4 +1,4 @@
-export { default as EventBlog } from "./HeroServer/atoms/EventBlog";
+export { default as EventBlog } from "./HeroServer/EventBlog";
 export { default as HeroCollage } from "./HeroServer/HeroCollage";
 export { default as HeroHeader } from "./HeroServer/HeroHeader";
 export { default as HeroOverlappingImage } from "./HeroServer/HeroOverlappingImage";
