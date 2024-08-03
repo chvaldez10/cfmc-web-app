@@ -7,11 +7,11 @@ import {
   SectionSubheader,
   LongParagraph,
 } from "@/components/core/text/";
-import CoverFlowSwiper from "../gallery/CoverFlowSwiper";
+import CoverFlowSwiper from "../../gallery/CoverFlowSwiper";
 import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
-import FlexWrapper from "./molecules/FlexWrapper";
+import FlexWrapper from "../molecules/FlexWrapper";
 
 // temporary data, this component should be server once theres a working db
 import { liturgicalCalendar } from "@/data/hero";
