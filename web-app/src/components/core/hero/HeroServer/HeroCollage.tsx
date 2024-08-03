@@ -15,7 +15,10 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
   longParagraph,
 }) => {
   return (
-    <VerticalWrapper>
+    <VerticalWrapper
+      containerClassName={"min-h-screen"}
+      itemClassName={" h-[80vh] "}
+    >
       <HeroTextWrapper>
         <MainGradientHeader text={header} />
         <CustomParagraph

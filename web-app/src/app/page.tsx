@@ -4,6 +4,7 @@ import {
   HeroImageClient,
   EventBlog,
   VerseOfTheDay,
+  EventBlogSwiper,
 } from "@/components/core/hero";
 
 import {
@@ -70,6 +71,7 @@ export default function Home() {
       />
 
       <EventBlog events={upcomingEvents} />
+      <EventBlogSwiper />
       <CardWithImage />
       <SimpleCard cardContainerItems={cardContainerItems} />
       <VerseOfTheDay />
