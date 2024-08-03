@@ -53,3 +53,15 @@ export interface formProps {
   required?: boolean;
   maxLength?: number;
 }
+
+export interface Verse {
+  verse: {
+    details: {
+      text: string;
+      reference: string;
+      version: string;
+      verseURL: string;
+    };
+    notice: string;
+  };
+}

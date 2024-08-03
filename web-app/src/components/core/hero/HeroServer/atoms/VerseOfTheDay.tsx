@@ -1,45 +1,43 @@
 import { BsFillChatLeftQuoteFill } from "react-icons/bs";
-
-interface Verse {
-  verse: {
-    details: {
-      text: string;
-      reference: string;
-      version: string;
-      verseURL: string;
-    };
-    notice: string;
-  };
-}
+import { Verse } from "@/types/genericTypes";
+import { defaultVerse } from "@/data/hero/constants";
+import { SectionSubheader, LongParagraph } from "@/components/core/text";
 
 async function VerseOfTheDay() {
-  const res = await fetch(
-    "https://beta.ourmanna.com/api/v1/get?format=json&order=daily",
-    {
-      headers: {
-        accept: "application/json",
-      },
+  let verseData: Verse;
+
+  try {
+    const res = await fetch(
+      "https://beta.ourmanna.com/api/v1/get?format=json&order=daily",
+      {
+        headers: {
+          accept: "application/json",
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch verse of the day");
     }
-  );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch verse of the day");
+    verseData = await res.json();
+  } catch (error) {
+    console.error("Error fetching verse of the day", error);
+    verseData = defaultVerse;
   }
-
-  const verseData: Verse = await res.json();
 
   return (
     <div className="container px-5 py-24 mx-auto">
       <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
         <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 text-white mb-8" />
-        <p>Verse of the Day</p>
-        <p className="leading-relaxed text-lg">
+        <SectionSubheader text="Verse of the Day" />
+        <LongParagraph>
           {verseData.verse.details.text}
           drinking vinegar.
-        </p>
-        <h2 className="text-white font-medium title-font tracking-wider text-sm">
+        </LongParagraph>
+        <LongParagraph className="text-gray-500">
           {verseData.verse.details.reference} {verseData.verse.details.version}
-        </h2>
+        </LongParagraph>
       </div>
     </div>
   );
