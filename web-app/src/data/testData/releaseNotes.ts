@@ -5,11 +5,21 @@ export const releaseData: ReleaseData[] = [
     year: 2024,
     releaseItems: [
       {
+        version: "v 24.0.2",
+        details: {
+          date: "Aug 03, 2024",
+          featureList: {
+            "🖼️ Design":
+              "Verse of the day, announcement section, modal skeleton.",
+          },
+        },
+      },
+      {
         version: "v 24.0.1",
         details: {
           date: "June 30, 2024",
           featureList: {
-            "🗲 Supabase Integration": "Added authentication for admin use.",
+            "⚡ Supabase Integration": "Added authentication for admin use.",
             "🖼️ Design":
               "Reversed theming, changed landing page layout, created new hero sections, and added a navbar background.",
             "🐋 Docker": "Added Docker for local development.",

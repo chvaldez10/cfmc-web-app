@@ -1,4 +1,4 @@
-import HeroHeader from "@/components/core/hero/HeroHeader";
+import { HeroHeader } from "@/components/core/hero";
 import FixedSidebarWithContent from "@/components/Sidebar/FixedSidebarWithContent";
 
 const heroHeaderTitle = "2024 Release Notes";
