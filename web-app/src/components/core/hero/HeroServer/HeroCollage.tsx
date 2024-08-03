@@ -1,11 +1,11 @@
 import { FC } from "react";
 import NextImage from "@/components/core/gallery/NextImage";
-import VerticalWrapper from "./molecules/VerticalWrapper";
-import HeroTextWrapper from "./molecules/HeroTextWrapper";
+import VerticalWrapper from "../molecules/VerticalWrapper";
+import HeroTextWrapper from "../molecules/HeroTextWrapper";
 import { featuredImages } from "@/data/hero/featuredItems";
 import { NavigateButton } from "@/components/core/buttons";
 import MainGradientHeader from "@/components/core/text/MainGradientHeader";
-import CustomParagraph from "../text/CustomParagraph";
+import CustomParagraph from "../../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
 
 interface HeroCollageClientProps extends heroContent {}

@@ -1,7 +1,7 @@
 import { FC } from "react";
-import EventCard from "../cards/EventCard";
+import EventCard from "../../cards/EventCard";
 import { EventData } from "@/types/eventData";
-import SectionHeader from "../text/SectionHeader";
+import SectionHeader from "../../text/SectionHeader";
 
 interface EventBlogProps {
   events: EventData[];

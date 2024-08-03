@@ -12,6 +12,7 @@ import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
 import FlexWrapper from "../molecules/FlexWrapper";
+import HeroHalfWrapper from "../molecules/HeroHalfWrapper";
 
 // temporary data, this component should be server once theres a working db
 import { liturgicalCalendar } from "@/data/hero";
@@ -28,7 +29,7 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   reverse = false,
   containerClassName = "",
 }) => {
-  const nextSunday = useNextSunday();
+  const nextSunday = useNextSunday(); // client component because of this hooke
   const subheader =
     userSubHeader || (nextSunday ? liturgicalCalendar[nextSunday] : "");
 
@@ -40,16 +41,16 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
       layoutClass={layoutClass}
     >
       {/* Image Column */}
-      <div className="resize-width-to-half">
+      <HeroHalfWrapper>
         <CoverFlowSwiper swiperImages={swiperImages} />
-      </div>
+      </HeroHalfWrapper>
 
       {/* Text Column */}
-      <div className="resize-width-to-half div-outside-width text-center gap-4">
+      <HeroHalfWrapper className="div-outside-width text-center gap-4">
         <SectionSubheader text={subheader} className="text-purple-500" />
         <SectionHeader text={header} />
         <LongParagraph>{longParagraph}</LongParagraph>
-      </div>
+      </HeroHalfWrapper>
     </FlexWrapper>
   );
 };
