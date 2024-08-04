@@ -5,12 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { EventData } from "@/types/supabaseTypes";
 import { EventCard } from "@/components/core/cards";
 import { upcomingEvents } from "@/data/testData/churchEvents";
+import useSlidesPerView from "@/hooks/useSlidesPerView";
+import { LoadingSkeleton } from "@/components/core/loader";
 
-const SwiperFree: FC = () => {
+const breakpoints: { screenSize: number; slidesPerView: number }[] = [
+  { screenSize: 640, slidesPerView: 2 },
+];
+
+const SwiperScrollbar: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const slidesPerView = useSlidesPerView(breakpoints);
+
+  console.log(slidesPerView);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 500);
@@ -21,14 +29,19 @@ const SwiperFree: FC = () => {
     <>
       {isLoading ? (
         <div className="flex space-x-4">
-          {[...Array(2)].map((_, index) => (
-            <div
-              key={index}
-              className="w-1/2 h-48 bg-gray-200 animate-pulse rounded"
-            ></div>
+          {[...Array(slidesPerView)].map((_, index) => (
+            <LoadingSkeleton key={index} />
           ))}
         </div>
       ) : (
+        // <div className="flex space-x-4">
+        //   {[...Array(2)].map((_, index) => (
+        //     <div
+        //       key={index}
+        //       className="w-1/2 h-48 bg-gray-200 animate-pulse rounded"
+        //     ></div>
+        //   ))}
+        // </div>
         <Swiper
           modules={[Scrollbar]}
           scrollbar={{
@@ -54,4 +67,4 @@ const SwiperFree: FC = () => {
   );
 };
 
-export default SwiperFree;
+export default SwiperScrollbar;
