@@ -65,3 +65,8 @@ export interface Verse {
     notice: string;
   };
 }
+
+export interface textProps {
+  children: ReactNode;
+  className?: string;
+}

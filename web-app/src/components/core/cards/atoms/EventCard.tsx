@@ -2,7 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { NextImage } from "@/components/core/gallery/";
 import { EventData } from "@/types/eventData";
-import { LongParagraph, SectionSubheader } from "@/components/core/text";
+import {
+  LongParagraph,
+  SectionSubheader,
+  SmallText,
+} from "@/components/core/text";
 
 interface EventCardProps extends EventData {
   imageUrl?: string;
@@ -33,9 +37,9 @@ const EventCard: React.FC<EventCardProps> = ({
 
       <Link
         href={`/event/${slug}`}
-        className="flex flex-col justify-between p-4 leading-normal w-full truncate"
+        className="flex flex-col justify-between p-4 leading-normal w-full truncate gap-1"
       >
-        <div className="mb-2 text-sm text-gray-600">{category}</div>
+        <SmallText> {category}</SmallText>
         <LongParagraph className="overflow-hidden whitespace-nowrap">
           {month} {startDay}
           {endDay && ` - ${endDay}`}

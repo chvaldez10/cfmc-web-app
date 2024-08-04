@@ -11,8 +11,7 @@ import { SwiperCoverFlow } from "@/components/core/gallery";
 import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";
 import { heroSection } from "@/types/genericTypes";
-import FlexWrapper from "../molecules/FlexWrapper";
-import HeroHalfWrapper from "../molecules/HeroHalfWrapper";
+import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 
 // temporary data, this component should be server once theres a working db
 import { liturgicalCalendar } from "@/data/hero";
