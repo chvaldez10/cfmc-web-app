@@ -1,12 +1,12 @@
 import { EventDataProps } from "@/types/supabaseTypes";
 
-// There will be an events table
+// Mocking data
 export const upcomingEvents: EventDataProps[] = [
   {
     id: 1,
     name: "Gospel of Mark Home Bible Study",
-    startDate: new Date("2024-08-01"),
-    endDate: new Date("2024-08-01"),
+    startDate: new Date("2024-08-01T00:00:00"),
+    endDate: new Date("2024-08-01T00:00:00"),
     tags: ["Bible study"],
     category: "Bible study",
     occurrence: "weekly",
@@ -22,8 +22,8 @@ export const upcomingEvents: EventDataProps[] = [
   {
     id: 2,
     name: "It Takes Two to Tango",
-    startDate: new Date("2024-08-08"),
-    endDate: new Date("2024-08-09"),
+    startDate: new Date("2024-08-08T00:00:00"),
+    endDate: new Date("2024-08-09T00:00:00"),
     tags: ["Bible study", "couple"],
     category: "Bible study",
     occurrence: "weekly",
@@ -38,8 +38,8 @@ export const upcomingEvents: EventDataProps[] = [
   {
     id: 3,
     name: "Family Camp",
-    startDate: new Date("2024-08-15"),
-    endDate: new Date("2024-08-17"),
+    startDate: new Date("2024-08-15T00:00:00"),
+    endDate: new Date("2024-08-17T00:00:00"),
     tags: ["family", "camp"],
     category: "retreat",
     occurrence: "multiple-days",
@@ -54,8 +54,8 @@ export const upcomingEvents: EventDataProps[] = [
   {
     id: 4,
     name: "Community Potluck",
-    startDate: new Date("2024-08-22"),
-    endDate: new Date("2024-08-22"),
+    startDate: new Date("2024-08-22T00:00:00"),
+    endDate: new Date("2024-08-22T00:00:00"),
     tags: ["potluck", "food", "fellowship", "social"],
     category: "potluck",
     occurrence: "one-time",
@@ -70,8 +70,8 @@ export const upcomingEvents: EventDataProps[] = [
   {
     id: 5,
     name: "Youth Group Retreat",
-    startDate: new Date("2024-08-29"),
-    endDate: new Date("2024-08-31"),
+    startDate: new Date("2024-08-29T00:00:00"),
+    endDate: new Date("2024-08-31T00:00:00"),
     tags: ["youth", "retreat"],
     category: "retreat",
     occurrence: "multiple-days",
@@ -86,8 +86,8 @@ export const upcomingEvents: EventDataProps[] = [
   {
     id: 6,
     name: "Christmas Caroling",
-    startDate: new Date("2024-08-31"),
-    endDate: new Date("2024-08-31"),
+    startDate: new Date("2024-08-31T00:00:00"),
+    endDate: new Date("2024-08-31T00:00:00"),
     tags: ["seasonal", "social"],
     category: "Christmas",
     occurrence: "seasonal",

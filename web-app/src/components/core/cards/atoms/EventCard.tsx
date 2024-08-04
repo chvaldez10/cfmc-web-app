@@ -22,6 +22,10 @@ const EventCard: React.FC<EventCardProps> = ({
   organizerName,
   slug,
 }) => {
+  const month = startDate.toLocaleString("en-US", { month: "long" });
+  const startDay = startDate.getDate();
+  const endDay = startDay === endDate.getDate() ? "" : endDate.getDate();
+
   return (
     <div className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
       {image && (
@@ -40,8 +44,8 @@ const EventCard: React.FC<EventCardProps> = ({
       >
         <SmallText> {category}</SmallText>
         <LongParagraph className="overflow-hidden whitespace-nowrap">
-          {"August"} {1}
-          {2 && ` - ${3}`}
+          {month} {startDay}
+          {endDay && ` - ${endDay}`}
         </LongParagraph>
         <SectionSubheader text={name} />
         <LongParagraph className="text-clip overflow-hidden whitespace-nowrap">
