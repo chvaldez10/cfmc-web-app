@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import { EventData } from "@/types/supabaseTypes";
 import { EventCard } from "@/components/core/cards";
+import { upcomingEvents } from "@/data/testData/churchEvents";
 
 const SwiperFree: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -41,20 +42,10 @@ const SwiperFree: FC = () => {
             640: { slidesPerView: 2 },
           }}
         >
-          {Array.from({ length: 10 }, (_, index) => (
+          {/* mocking eventData */}
+          {upcomingEvents.map((currentEvent, index) => (
             <SwiperSlide key={index} className="my-8">
-              <EventCard
-                name="Super Cool Bible Study With Long Title"
-                startDate={new Date()}
-                endDate={new Date()}
-                category="Bible Study"
-                description="Super cool Bible Study with super cool description. I am currently testing a super long description so that I can see how it looks like. I am currently testing a super long description so that I can see how it looks like. I am currently testing a super long description so that I can see how it looks like."
-                image="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                location="Super cool location"
-                status="Active"
-                organizerName="Super cool organizer"
-                slug={`slug-${index}`}
-              />
+              <EventCard {...currentEvent} />
             </SwiperSlide>
           ))}
         </Swiper>
