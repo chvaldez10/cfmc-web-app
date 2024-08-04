@@ -1,36 +1,35 @@
 import React from "react";
 import Link from "next/link";
 import { NextImage } from "@/components/core/gallery/";
-import { EventData } from "@/types/eventData";
+import { EventDataProps } from "@/types/supabaseTypes";
 import {
   LongParagraph,
   SectionSubheader,
   SmallText,
 } from "@/components/core/text";
 
-interface EventCardProps extends EventData {
-  imageUrl?: string;
-  slug: string;
-}
+interface EventCardProps extends EventDataProps {}
 
 const EventCard: React.FC<EventCardProps> = ({
-  month,
-  startDay,
-  endDay,
+  name,
+  startDate,
+  endDate,
   category,
-  title,
   description,
-  imageUrl,
+  image,
+  location,
+  status,
+  organizerName,
   slug,
 }) => {
   return (
     <div className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
-      {imageUrl && (
+      {image && (
         <NextImage
           width={"w-full"}
           height={"h-48"}
-          src={imageUrl}
-          alt={title}
+          src={image}
+          alt={name}
           imageClassName={"rounded-lg object-center"}
         />
       )}
@@ -41,10 +40,10 @@ const EventCard: React.FC<EventCardProps> = ({
       >
         <SmallText> {category}</SmallText>
         <LongParagraph className="overflow-hidden whitespace-nowrap">
-          {month} {startDay}
-          {endDay && ` - ${endDay}`}
+          {"August"} {1}
+          {2 && ` - ${3}`}
         </LongParagraph>
-        <SectionSubheader text={title} />
+        <SectionSubheader text={name} />
         <LongParagraph className="text-clip overflow-hidden whitespace-nowrap">
           {description}
         </LongParagraph>
