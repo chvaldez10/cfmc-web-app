@@ -5,10 +5,10 @@ and Holy Spirit-filled Church in fulfilling God’s Mission in the City`;
 
 export const missionStatementLong = `To reach out to as many people as we possibly can to share with them the good news of God's redeeming love in Jesus Christ. To lead them to that new life of faith, trust, love, and obedience to Jesus Christ. To continue nurturing them to become Christ-like in their lives.`;
 
-export const featuredEvent1Verbiage =
-  "June was Men's Empowerment Month, and we also hosted our annual retreat. Guest speakers included Pastor Geremiah and Brother Junne. The camp's theme was Radiance.";
+export const featuredMonthlyThemeVerbiage =
+  "August is Discipleship Month. We will be focusing on growing in our relationship with Jesus Christ and learning how to live out our faith in our daily lives.";
 
-export const communityBuilding1Verbiage =
+export const featureCommunityBuildingVerbiage =
   "After our Sunday service, we host food fellowship and afterwards go into small groups.";
 
 export const tithesAndOfferingVerse =

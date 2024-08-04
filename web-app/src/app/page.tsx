@@ -17,8 +17,8 @@ import {
 import { SimpleCard, CardWithImage } from "@/components/core/cards";
 import { upcomingEvents } from "@/data/testData";
 import {
-  featuredEvent1Verbiage,
-  communityBuilding1Verbiage,
+  featuredMonthlyThemeVerbiage,
+  featureCommunityBuildingVerbiage,
 } from "@/data/hero/constants";
 
 import { NextImage } from "@/components/core/gallery";
@@ -37,8 +37,8 @@ export default function Home() {
       />
 
       <HeroImageClient
-        header={"Men's Empowerment Month"}
-        longParagraph={featuredEvent1Verbiage}
+        header={"Discipleship Month"}
+        longParagraph={featuredMonthlyThemeVerbiage}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10 min-h-screen"}
         reverse={true}
@@ -47,7 +47,7 @@ export default function Home() {
       <HeroImageClient
         header={"Small Groups"}
         userSubHeader={"Community Building"}
-        longParagraph={communityBuilding1Verbiage}
+        longParagraph={featureCommunityBuildingVerbiage}
         swiperImages={communityBuilding1}
         containerClassName={"bg-violet-10 min-h-screen"}
       />
