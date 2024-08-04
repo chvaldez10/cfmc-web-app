@@ -20,35 +20,27 @@ const SwiperScrollbar: FC = () => {
 
   console.log(slidesPerView);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setIsLoading(false), 500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
       {isLoading ? (
-        <div className="flex space-x-4">
+        <div className="flex gap-2">
           {[...Array(slidesPerView)].map((_, index) => (
-            <LoadingSkeleton key={index} />
+            <LoadingSkeleton key={index} containerClassName="w-full md:w-1/2" />
           ))}
         </div>
       ) : (
-        // <div className="flex space-x-4">
-        //   {[...Array(2)].map((_, index) => (
-        //     <div
-        //       key={index}
-        //       className="w-1/2 h-48 bg-gray-200 animate-pulse rounded"
-        //     ></div>
-        //   ))}
-        // </div>
         <Swiper
           modules={[Scrollbar]}
           scrollbar={{
             hide: false,
             draggable: true,
           }}
-          slidesPerView={1}
+          slidesPerView={slidesPerView}
           spaceBetween={30}
           className="scrollbar cursor-grabbing"
           breakpoints={{
