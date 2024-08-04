@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { NextImage } from "@/components/core/gallery/";
 import { EventData } from "@/types/eventData";
 
 interface EventCardProps extends EventData {
@@ -22,12 +23,15 @@ const EventCard: React.FC<EventCardProps> = ({
       className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden"
     >
       {imageUrl && (
-        <img
-          className="object-cover w-full sm:w-48 h-48 sm:h-full"
+        <NextImage
+          width={"w-full"}
+          height={"h-48"}
           src={imageUrl}
           alt={title}
+          imageClassName={"rounded-lg object-center"}
         />
       )}
+
       <div className="flex flex-col justify-between p-4 leading-normal w-full">
         <div className="mb-2 text-xl font-bold">
           {month} {day}
