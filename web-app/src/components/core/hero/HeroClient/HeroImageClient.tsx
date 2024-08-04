@@ -40,16 +40,16 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
       containerClassName={containerClassName}
       layoutClass={layoutClass}
     >
-      {/* Image Column */}
-      <HeroHalfWrapper>
-        <SwiperCoverFlow swiperImages={swiperImages} />
-      </HeroHalfWrapper>
-
       {/* Text Column */}
       <HeroHalfWrapper className="div-outside-width text-center gap-4">
         <SectionSubheader text={subheader} className="text-purple-500" />
         <SectionHeader text={header} />
         <LongParagraph>{longParagraph}</LongParagraph>
+      </HeroHalfWrapper>
+
+      {/* Image Column */}
+      <HeroHalfWrapper>
+        <SwiperCoverFlow swiperImages={swiperImages} />
       </HeroHalfWrapper>
     </FlexWrapper>
   );

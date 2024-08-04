@@ -54,7 +54,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       {/* Element Column */}
       <div
         ref={mapRef}
-        className={`div-outside-width resize-width-to-half h-96 md:h-576 ${mapAnimationClass}`}
+        className={`div-outside-width resize-width-to-half h-96 lg:h-576 ${mapAnimationClass}`}
       >
         {element}
       </div>

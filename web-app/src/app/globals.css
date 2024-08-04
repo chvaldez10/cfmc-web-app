@@ -80,11 +80,11 @@
 }
 
 .div-col-row {
-  @apply flex flex-col md:flex-row;
+  @apply flex flex-col lg:flex-row;
 }
 
 .div-col-row-reverse {
-  @apply flex flex-col md:flex-row-reverse;
+  @apply flex flex-col lg:flex-row-reverse;
 }
 
 .resize-hero-width {
@@ -92,7 +92,7 @@
 }
 
 .resize-width-to-half {
-  @apply w-full md:w-1/2;
+  @apply w-full lg:w-1/2;
 }
 
 .resize-modal {

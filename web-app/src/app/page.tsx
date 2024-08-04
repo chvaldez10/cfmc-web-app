@@ -41,6 +41,7 @@ export default function Home() {
         longParagraph={featuredEvent1Verbiage}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10 min-h-screen"}
+        reverse={true}
       />
 
       <HeroImageClient
@@ -48,7 +49,6 @@ export default function Home() {
         userSubHeader={"Community Building"}
         longParagraph={communityBuilding1Verbiage}
         swiperImages={communityBuilding1}
-        reverse={true}
         containerClassName={"bg-violet-10 min-h-screen"}
       />
 
