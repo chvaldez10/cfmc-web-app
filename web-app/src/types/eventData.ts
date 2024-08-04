@@ -1,6 +1,7 @@
 export interface EventData {
   month: string;
-  day: number;
+  startDay: number;
+  endDay?: number;
   category: string;
   title: string;
   description: string;

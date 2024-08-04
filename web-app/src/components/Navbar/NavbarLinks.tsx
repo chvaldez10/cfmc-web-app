@@ -24,7 +24,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
 
   return (
     <ul
-      className="div-outside-width md:flex-row md:justify-start  gap-3 lg:gap-5"
+      className="div-outside-width md:flex-row md:justify-start gap-1 lg:gap-5"
       id="NavbarLinks"
     >
       <NavDropdown
@@ -51,12 +51,12 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
       <OpenModalButton
         variant="outline"
         className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
-        title="Tithes and Offering"
+        title="Tithes & Offering"
         modalElement={
           <TithesAndOffering description={tithesAndOfferingVerse} />
         }
       >
-        Tithes and Offering
+        Tithes & Offering
       </OpenModalButton>
     </ul>
   );
