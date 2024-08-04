@@ -15,7 +15,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
   longParagraph,
 }) => {
   return (
-    <VerticalWrapper itemClassName={" h-[80vh] "}>
+    <VerticalWrapper itemClassName={"h-[80vh]"}>
       <HeroTextWrapper>
         <MainGradientHeader text={header} />
         <CustomParagraph

@@ -59,12 +59,16 @@
 }
 
 /* Repeated flex box */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
 .div-outside-width {
-  @apply flex flex-col items-center justify-center;
+  @apply flex-center flex-col;
 }
 
 .div-flex-row {
-  @apply flex flex-row items-center justify-center;
+  @apply flex-center flex-row;
 }
 
 .div-outside-width-justify-between {
@@ -107,4 +111,12 @@
 
 .hidden-grid-1-3 {
   @apply hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2;
+}
+
+/* media queries */
+
+@media (max-height: 600px) {
+  .hidden-grid-1-3 {
+    @apply hidden;
+  }
 }
