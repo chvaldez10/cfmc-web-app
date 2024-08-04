@@ -19,6 +19,7 @@ import { upcomingEvents } from "@/data/testData";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
+  nextBigEventDescription,
 } from "@/data/hero/constants";
 
 import { NextImage } from "@/components/core/gallery";
@@ -54,7 +55,7 @@ export default function Home() {
 
       <HeroSlideClient
         header={"Next Big Event"}
-        longParagraph="Next Big Event Description"
+        longParagraph={nextBigEventDescription}
         containerClassName="min-h-screen"
         element={
           <NextImage

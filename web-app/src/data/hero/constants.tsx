@@ -9,10 +9,13 @@ export const featuredMonthlyThemeVerbiage =
   "August is Discipleship Month. We will be focusing on growing in our relationship with Jesus Christ and learning how to live out our faith in our daily lives.";
 
 export const featureCommunityBuildingVerbiage =
-  "After our Sunday service, we host food fellowship and afterwards go into small groups.";
+  "After our Sunday service, we host food fellowship and afterwards go into small groups for Bible study or pray for each other. It's a great way to get to know each other and grow in our faith.";
 
 export const tithesAndOfferingVerse =
   "Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this,” says the Lord Almighty, “and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it. (Malachi 3:10)";
+
+export const nextBigEventDescription =
+  "On August 11, CFMC will hold Recognition Sunday for all Levels Up students and graduates of Batch 2024. Please submit names to our Nurture Ministry Team, including Dss. Wendy Valdez, Sis. May Casimero, and Sis. Dorothy Narasa.";
 
 export const defaultVerse: Verse = {
   verse: {
