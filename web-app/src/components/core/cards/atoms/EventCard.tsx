@@ -1,8 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import { EventData } from "@/types/eventData";
 
 interface EventCardProps extends EventData {
   imageUrl?: string;
+  slug: string;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -12,9 +14,13 @@ const EventCard: React.FC<EventCardProps> = ({
   title,
   description,
   imageUrl,
+  slug,
 }) => {
   return (
-    <a className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
+    <Link
+      href={`/event/${slug}`}
+      className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden"
+    >
       {imageUrl && (
         <img
           className="object-cover w-full sm:w-48 h-48 sm:h-full"
@@ -32,7 +38,7 @@ const EventCard: React.FC<EventCardProps> = ({
         </h5>
         <p className="mb-3 font-normal text-gray-700">{description}</p>
       </div>
-    </a>
+    </Link>
   );
 };
 
