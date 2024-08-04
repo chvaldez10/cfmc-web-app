@@ -7,7 +7,9 @@ export const upcomingEvents: EventDataProps[] = [
     name: "Gospel of Mark Home Bible Study",
     startDate: new Date("2024-08-01"),
     endDate: new Date("2024-08-01"),
-    category: "bi-weekly",
+    tags: ["Bible study"],
+    category: "Bible study",
+    occurrence: "weekly",
     description:
       "Insert very very very very very very very very very very long description",
     image:
@@ -22,7 +24,9 @@ export const upcomingEvents: EventDataProps[] = [
     name: "It Takes Two to Tango",
     startDate: new Date("2024-08-08"),
     endDate: new Date("2024-08-09"),
-    category: "bi-weekly",
+    tags: ["Bible study", "couple"],
+    category: "Bible study",
+    occurrence: "weekly",
     description: "Insert short description",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -36,7 +40,9 @@ export const upcomingEvents: EventDataProps[] = [
     name: "Family Camp",
     startDate: new Date("2024-08-15"),
     endDate: new Date("2024-08-17"),
-    category: "multiple days",
+    tags: ["family", "camp"],
+    category: "retreat",
+    occurrence: "multiple-days",
     description: "Description",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -50,7 +56,9 @@ export const upcomingEvents: EventDataProps[] = [
     name: "Community Potluck",
     startDate: new Date("2024-08-22"),
     endDate: new Date("2024-08-22"),
-    category: "monthly",
+    tags: ["potluck", "food", "fellowship", "social"],
+    category: "potluck",
+    occurrence: "one-time",
     description: "Join us for a community potluck dinner.",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -64,7 +72,9 @@ export const upcomingEvents: EventDataProps[] = [
     name: "Youth Group Retreat",
     startDate: new Date("2024-08-29"),
     endDate: new Date("2024-08-31"),
+    tags: ["youth", "retreat"],
     category: "retreat",
+    occurrence: "multiple-days",
     description: "A weekend retreat for the youth group.",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -78,7 +88,9 @@ export const upcomingEvents: EventDataProps[] = [
     name: "Christmas Caroling",
     startDate: new Date("2024-08-31"),
     endDate: new Date("2024-08-31"),
-    category: "seasonal",
+    tags: ["seasonal", "social"],
+    category: "Christmas",
+    occurrence: "seasonal",
     description: "Join us for a night of caroling in the neighborhood.",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

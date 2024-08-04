@@ -3,15 +3,17 @@ export interface EventData {
   name: string;
   startDate: Date;
   endDate: Date;
-  category: string;
+  updatedAt: Date;
+  createdAt: Date;
+  tags: string[];
+  category: string; // similar to tags: Bible study, potluck, social
+  occurrence: string; // multiple-days,weekly, monthly, one-time
   description: string;
   image: string;
   location: string;
   status: string;
   organizerName: string;
   slug: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 export interface EventDataProps {
@@ -19,7 +21,9 @@ export interface EventDataProps {
   name: string;
   startDate: Date;
   endDate: Date;
+  tags?: string[];
   category: string;
+  occurrence: string;
   description: string;
   image: string;
   location: string;
