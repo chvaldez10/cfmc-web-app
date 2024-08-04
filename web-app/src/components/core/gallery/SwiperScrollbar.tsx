@@ -20,10 +20,10 @@ const SwiperFree: FC = () => {
     <>
       {isLoading ? (
         <div className="flex space-x-4">
-          {[...Array(3)].map((_, index) => (
+          {[...Array(2)].map((_, index) => (
             <div
               key={index}
-              className="w-1/3 h-[30vh] bg-gray-200 animate-pulse rounded"
+              className="w-1/2 h-48 bg-gray-200 animate-pulse rounded"
             ></div>
           ))}
         </div>
@@ -38,20 +38,18 @@ const SwiperFree: FC = () => {
           spaceBetween={30}
           className="scrollbar cursor-grabbing"
           breakpoints={{
-            320: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
           }}
         >
           {Array.from({ length: 10 }, (_, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="my-8">
               <EventCard
                 month="August"
-                day={1}
+                startDay={index + 1}
                 category="Bible Study"
-                title="Cool Event"
+                title="Super Cool Bible Study"
                 slug={`slug-${index}`}
-                description="This is a cool event"
+                description="Super cool Bible Study with super cool description. I am currently testing a super long description so that I can see how it looks like. I am currently testing a super long description so that I can see how it looks like. I am currently testing a super long description so that I can see how it looks like."
                 imageUrl="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
             </SwiperSlide>

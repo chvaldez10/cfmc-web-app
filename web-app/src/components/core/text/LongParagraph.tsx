@@ -10,7 +10,7 @@ const LongParagraph: FC<LongParagraphProps> = ({
   className = "",
 }) => {
   return (
-    <p className={`text-sm lg:text-lg leading-relaxed ${className}`}>
+    <p className={`text-sm lg:text-lg leading-relaxed ${className} `}>
       {children}
     </p>
   );

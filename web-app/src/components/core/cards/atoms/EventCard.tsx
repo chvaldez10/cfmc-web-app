@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { NextImage } from "@/components/core/gallery/";
 import { EventData } from "@/types/eventData";
+import { LongParagraph, SectionSubheader } from "@/components/core/text";
 
 interface EventCardProps extends EventData {
   imageUrl?: string;
@@ -10,7 +11,8 @@ interface EventCardProps extends EventData {
 
 const EventCard: React.FC<EventCardProps> = ({
   month,
-  day,
+  startDay,
+  endDay,
   category,
   title,
   description,
@@ -18,10 +20,7 @@ const EventCard: React.FC<EventCardProps> = ({
   slug,
 }) => {
   return (
-    <Link
-      href={`/event/${slug}`}
-      className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden"
-    >
+    <div className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
       {imageUrl && (
         <NextImage
           width={"w-full"}
@@ -32,17 +31,21 @@ const EventCard: React.FC<EventCardProps> = ({
         />
       )}
 
-      <div className="flex flex-col justify-between p-4 leading-normal w-full">
-        <div className="mb-2 text-xl font-bold">
-          {month} {day}
-        </div>
+      <Link
+        href={`/event/${slug}`}
+        className="flex flex-col justify-between p-4 leading-normal w-full truncate"
+      >
         <div className="mb-2 text-sm text-gray-600">{category}</div>
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-          {title}
-        </h5>
-        <p className="mb-3 font-normal text-gray-700">{description}</p>
-      </div>
-    </Link>
+        <LongParagraph className="overflow-hidden whitespace-nowrap">
+          {month} {startDay}
+          {endDay && ` - ${endDay}`}
+        </LongParagraph>
+        <SectionSubheader text={title} />
+        <LongParagraph className="text-clip overflow-hidden whitespace-nowrap">
+          {description}
+        </LongParagraph>
+      </Link>
+    </div>
   );
 };
 
