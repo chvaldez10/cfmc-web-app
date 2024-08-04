@@ -4,7 +4,7 @@ import VerticalWrapper from "../molecules/VerticalWrapper";
 import HeroTextWrapper from "../molecules/HeroTextWrapper";
 import { featuredImages } from "@/data/hero/featuredItems";
 import { NavigateButton } from "@/components/core/buttons";
-import MainGradientHeader from "@/components/core/text/MainGradientHeader";
+import MainGradientHeader from "@/components/core/text/atoms/MainGradientHeader";
 import CustomParagraph from "../../text/CustomParagraph";
 import { heroContent } from "@/types/genericTypes";
 

@@ -29,7 +29,7 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   reverse = false,
   containerClassName = "",
 }) => {
-  const nextSunday = useNextSunday(); // client component because of this hooke
+  const nextSunday = useNextSunday(); // client component because of this hook
   const subheader =
     userSubHeader || (nextSunday ? liturgicalCalendar[nextSunday] : "");
 
