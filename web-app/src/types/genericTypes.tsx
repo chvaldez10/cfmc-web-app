@@ -70,3 +70,8 @@ export interface textProps {
   children: ReactNode;
   className?: string;
 }
+
+export interface DivProps {
+  children: ReactNode;
+  containerClassName?: string;
+}
