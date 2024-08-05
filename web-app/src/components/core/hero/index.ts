@@ -19,3 +19,4 @@ export { default as HeroImageClient } from "./HeroClient/HeroImageClient";
 export { default as VerticalWrapper } from "./molecules/VerticalWrapper";
 export { default as FlexWrapper } from "./molecules/FlexWrapper";
 export { default as HeroHalfWrapper } from "./molecules/HeroHalfWrapper";
+export { default as HeroTextWrapper } from "./molecules/HeroTextWrapper";

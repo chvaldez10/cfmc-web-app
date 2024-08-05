@@ -1,14 +1,19 @@
 import { FC, ReactNode } from "react";
+import { FlexCenter } from "@/components/core/ui";
+import { DivProps } from "@/types/genericTypes";
 
-interface HeroTextWrapperProps {
-  children: ReactNode;
-}
+interface HeroTextWrapperProps extends DivProps {}
 
-const HeroTextWrapper: FC<HeroTextWrapperProps> = ({ children }) => {
+const HeroTextWrapper: FC<HeroTextWrapperProps> = ({
+  children,
+  containerClassName,
+}) => {
   return (
-    <div className="div-outside-width z-10 xl:max-w-4xl gap-4 text-center">
+    <FlexCenter
+      containerClassName={`z-10 xl:max-w-4xl gap-4 ${containerClassName}`}
+    >
       {children}
-    </div>
+    </FlexCenter>
   );
 };
 

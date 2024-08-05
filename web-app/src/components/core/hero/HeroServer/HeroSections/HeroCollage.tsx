@@ -1,11 +1,11 @@
 import { FC } from "react";
-import NextImage from "@/components/core/gallery/NextImage";
-import VerticalWrapper from "../../molecules/VerticalWrapper";
-import HeroTextWrapper from "../../molecules/HeroTextWrapper";
+import { NextImage } from "@/components/core/gallery";
+import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero/";
 import { featuredImages } from "@/data/hero/featuredItems";
 import { NavigateButton } from "@/components/core/buttons";
-import MainGradientHeader from "@/components/core/text/atoms/MainGradientHeader";
-import CustomParagraph from "../../../text/CustomParagraph";
+import { MainGradientHeader } from "@/components/core/text/";
+import { NavigationText } from "@/components/core/ui";
+import { FlexCenterRow } from "@/components/core/ui";
 import { heroContent } from "@/types/genericTypes";
 
 interface HeroCollageClientProps extends heroContent {}
@@ -18,16 +18,16 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
     <VerticalWrapper itemClassName={"h-[80vh]"}>
       <HeroTextWrapper>
         <MainGradientHeader text={header} />
-        <CustomParagraph
-          className={"hover-animation shadow-up"}
+        <NavigationText
+          containerClassName={"hover-animation shadow-up"}
           url={"/about/mission-and-vision"}
         >
           {longParagraph}
-        </CustomParagraph>
+        </NavigationText>
       </HeroTextWrapper>
 
       {/* Buttons*/}
-      <div className="flex flex-row gap-x-4 md:gap-x-8">
+      <FlexCenterRow containerClassName="gap-x-4 md:gap-x-8">
         <NavigateButton
           className="z-10 scale-up"
           url={"/get-involved/upcoming"}
@@ -41,7 +41,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
         >
           Announcements
         </NavigateButton>
-      </div>
+      </FlexCenterRow>
 
       {/* Image Column */}
       <div className="hidden-grid-1-3 w-full 3xl:w-7/12">

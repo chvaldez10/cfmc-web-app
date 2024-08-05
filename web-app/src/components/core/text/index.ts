@@ -1,4 +1,3 @@
-export { default as CustomParagraph } from "./CustomParagraph";
 export { default as LongParagraph } from "./atoms/LongParagraph";
 export { default as MainGradientHeader } from "./atoms/MainGradientHeader";
 export { default as ReleaseItemContainer } from "./ReleaseItemContainer";
