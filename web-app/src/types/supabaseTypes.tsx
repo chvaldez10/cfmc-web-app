@@ -5,8 +5,8 @@ export interface EventData {
   endDate: Date;
   updatedAt: Date;
   createdAt: Date;
-  tags: string[];
-  category: string; // similar to tags: Bible study, potluck, social
+  tags: string[]; // similar to category with more flexibility
+  category: string; // similar to tags but with more specific categories
   occurrence: string; // multiple-days,weekly, monthly, one-time
   description: string;
   image: string;

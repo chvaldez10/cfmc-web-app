@@ -9,7 +9,7 @@ interface HeroHeaderProps {
 
 const HeroHeader: FC<HeroHeaderProps> = ({ title, verbiage }) => {
   return (
-    <VerticalWrapper itemClassName={"h-[80vh] "}>
+    <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
       <HeroTextWrapper>
         <MainGradientHeader text={title} />
         <SectionSubheader text={verbiage} className={"bg-white-10"} />
