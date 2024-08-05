@@ -7,10 +7,14 @@ export const releaseData: ReleaseData[] = [
       {
         version: "v 24.0.2",
         details: {
-          date: "Aug 03, 2024",
+          date: "Aug 04, 2024",
           featureList: {
-            "🖼️ Design":
-              "Verse of the day, announcement section, modal skeleton.",
+            "🧑‍🍳 Fresh out the oven":
+              "Announcement page and new UI components such as modals, even cards, verse of the day, and more.",
+            "🐛 Bug fixes and improvements":
+              "Fixed broken layouts for mobile and tablet, and improved spacing.",
+            "⏭️ Up next":
+              "Working backend server! More UI components and features to come.",
           },
         },
       },

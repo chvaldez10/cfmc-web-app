@@ -15,15 +15,15 @@ const breakpoints: { screenSize: number; slidesPerView: number }[] = [
 ];
 
 const SwiperScrollbar: FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const slidesPerView = useSlidesPerView(breakpoints);
 
-  console.log(slidesPerView);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setIsLoading(false), 500);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <>
@@ -40,7 +40,7 @@ const SwiperScrollbar: FC = () => {
             hide: false,
             draggable: true,
           }}
-          slidesPerView={slidesPerView}
+          slidesPerView={1}
           spaceBetween={30}
           className="scrollbar cursor-grabbing"
           breakpoints={{
