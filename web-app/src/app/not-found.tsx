@@ -6,7 +6,7 @@ import { LuSearchX } from "react-icons/lu";
 export default function NotFoundPage() {
   return (
     <FlexCenter containerClassName="h-screen">
-      <Box className="flex-center">
+      <Box containerClassName="flex-center">
         <LuSearchX className="text-6xl" />
         <SectionHeader text="Error 404" className="m-4" />
       </Box>

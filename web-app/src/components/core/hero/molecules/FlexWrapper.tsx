@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { FlexCenter, Box } from "@/components/core/ui";
 import "@/styles/hero-floating.css";
 
 interface FlexWrapperProps {
@@ -15,13 +16,15 @@ const FlexWrapper: FC<FlexWrapperProps> = ({
   isFloating = false,
 }) => {
   return (
-    <div
-      className={`div-outside-width p-4 lg:p-0 ${
+    <FlexCenter
+      containerClassName={`p-4 lg:p-0 ${
         isFloating ? "hero-floating" : ""
       } ${containerClassName}`}
     >
-      <div className={`resize-hero-width gap-4 ${layoutClass}`}>{children}</div>
-    </div>
+      <Box containerClassName={`resize-hero-width gap-4 ${layoutClass}`}>
+        {children}
+      </Box>
+    </FlexCenter>
   );
 };
 

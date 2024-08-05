@@ -8,7 +8,7 @@ const useSlidesPerView = (
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      let slidesPerView = 2;
+      let slidesPerView = 1;
 
       breakpoints.forEach((breakpoint) => {
         if (width >= breakpoint.screenSize) {

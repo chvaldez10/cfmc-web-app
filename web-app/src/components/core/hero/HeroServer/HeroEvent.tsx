@@ -13,7 +13,7 @@ const HeroEvent = () => {
         <SectionHeader text="Outdoor Worship" />
 
         {/* country region island */}
-        <Box className="space-y-4 my-16 font-light ">
+        <Box containerClassName="space-y-4 my-16 font-light ">
           <LongParagraph containerClassName="flex flex-row gap-2 items-center">
             <div className="text-violet-500">
               <FaCalendarCheck />
