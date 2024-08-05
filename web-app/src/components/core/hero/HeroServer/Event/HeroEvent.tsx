@@ -3,7 +3,7 @@ import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 import { Box } from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
 import { EventDataProps } from "@/types/supabaseTypes";
-import { LongParagraph, SectionHeader } from "../../text";
+import { LongParagraph, SectionHeader } from "../../../text";
 import { FaCalendarCheck, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
 
 const HeroEvent = () => {

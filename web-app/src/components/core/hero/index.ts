@@ -1,13 +1,15 @@
-// Hero server
+// Events
 // export { default as EventBlog } from "./HeroServer/EventBlog";
-export { default as HeroCollage } from "./HeroServer/HeroCollage";
-export { default as HeroHeader } from "./HeroServer/HeroHeader";
-export { default as HeroOverlappingImage } from "./HeroServer/HeroOverlappingImage";
+export { default as HeroEvent } from "./HeroServer/Event/HeroEvent";
+export { default as EventBlogSwiper } from "./HeroServer/Event/EventBlogSwiper";
+
+// HeroSections
+export { default as HeroCollage } from "./HeroServer/HeroSections/HeroCollage";
+export { default as HeroHeader } from "./HeroServer/HeroSections/HeroHeader";
+export { default as HeroOverlappingImage } from "./HeroServer/HeroSections/HeroOverlappingImage";
 export { default as VerticalList } from "./HeroServer/VerticalList";
 export { default as WordWall } from "./HeroServer/WordWall";
 export { default as VerseOfTheDay } from "./HeroServer/atoms/VerseOfTheDay";
-export { default as EventBlogSwiper } from "./HeroServer/EventBlogSwiper";
-export { default as HeroEvent } from "./HeroServer/HeroEvent";
 
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";

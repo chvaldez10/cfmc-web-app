@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
 import Image from "next/image";
-import SectionHeader from "../../text/atoms/SectionHeader";
-import SectionSubheader from "../../text/atoms/SectionSubheader";
-import LongParagraph from "../../text/atoms/LongParagraph";
+import SectionHeader from "../../../text/atoms/SectionHeader";
+import SectionSubheader from "../../../text/atoms/SectionSubheader";
+import LongParagraph from "../../../text/atoms/LongParagraph";
 
 interface HeroOverlappingImageProps {
   header: string;
