@@ -1,10 +1,8 @@
 import { FC } from "react";
-import { clientButton } from "@/types/genericTypes";
-import { SectionSubheader, LongParagraph } from "@/components/core/text/";
-import { CloseButton } from "@/components/core/buttons";
+import { LongParagraph } from "@/components/core/ui/";
 import Link from "next/link";
 
-interface SimpleModalItemProps extends clientButton {
+interface SimpleModalItemProps {
   description: string;
 }
 

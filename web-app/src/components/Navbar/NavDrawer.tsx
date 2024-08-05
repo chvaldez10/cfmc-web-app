@@ -1,6 +1,6 @@
 import { FC } from "react";
 import NavbarLinks from "./NavbarLinks";
-import { CloseButton } from "@/components/core/buttons";
+import { CloseButton } from "@/components/core/ui";
 
 interface SidebarProps {
   isOpen: boolean;

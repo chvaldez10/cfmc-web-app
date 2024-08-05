@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { logout } from "@/app/login/actions";
-import FormButton from "../buttons/FormButton";
+import { FormButton } from "@/components/core/ui";
 
 const AuthenticatedForm: FC = () => {
   return (

@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import TextInput from "./atoms/TextInput";
 import TextSelector from "./atoms/TextSelector";
 import TextArea from "./atoms/TextArea";
-import { FormButton } from "../buttons";
+import { FormButton } from "@/components/core/ui";
 
 const RequestForm: FC = () => {
   const [formData, setFormData] = useState({

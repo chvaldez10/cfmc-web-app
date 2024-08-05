@@ -2,8 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { LongParagraph } from "@/components/core/ui";
-import { PurplePillButtonClient } from "@/components/core/buttons";
+import { LongParagraph, PurplePillButtonClient } from "@/components/core/ui";
 
 export default function Error({
   error,

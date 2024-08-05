@@ -1,7 +1,10 @@
 import { FC } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { NavigateButton } from "../../buttons";
-import { SectionSubheader, LongParagraph } from "@/components/core/ui/";
+import {
+  SectionSubheader,
+  LongParagraph,
+  NavigateButton,
+} from "@/components/core/ui/";
 import { NextImage } from "@/components/core/gallery";
 
 interface CardWithImageItemProps {

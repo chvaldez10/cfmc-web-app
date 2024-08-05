@@ -2,11 +2,11 @@ import { FC } from "react";
 import { NextImage } from "@/components/core/gallery";
 import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero/";
 import { featuredImages } from "@/data/hero/featuredItems";
-import { NavigateButton } from "@/components/core/buttons";
 import {
   MainGradientHeader,
   NavigationText,
   FlexCenterRow,
+  NavigateButton,
 } from "@/components/core/ui";
 import { heroContent } from "@/types/genericTypes";
 

@@ -1,7 +1,10 @@
 import { FC } from "react";
 import { MdConstruction } from "react-icons/md";
-import { NavigateButton } from "@/components/core/buttons";
-import { SectionSubheader, LongParagraph } from "@/components/core/ui";
+import {
+  SectionSubheader,
+  LongParagraph,
+  NavigateButton,
+} from "@/components/core/ui";
 
 const UnderConstruction: FC<{}> = () => {
   return (

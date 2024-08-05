@@ -7,7 +7,7 @@ import {
   connectDropdownItem,
 } from "@/data/navbar/navData";
 import NavDropdown from "./NavDropdown";
-import OpenModalButton from "@/components/core/buttons/OpenModalButton";
+import { OpenModalButton } from "@/components/core/ui";
 import TithesAndOffering from "@/components/core/modals/atoms/TithesAndOffering";
 import { tithesAndOfferingVerse } from "@/data/hero/constants";
 

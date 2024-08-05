@@ -1,8 +1,8 @@
 "use client";
 
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { useRouter } from "next/navigation";
-import PurplePillButtonClient from "./PurplePillButtonClient";
+import { PurplePillButtonClient } from "@/components/core/ui";
 import { clientButton } from "@/types/genericTypes";
 
 interface NavigateButtonProps extends clientButton {
