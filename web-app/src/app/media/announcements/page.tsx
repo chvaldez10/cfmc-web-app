@@ -2,7 +2,7 @@ import { HeroHeader, VerticalList, WordWall } from "@/components/core/hero";
 import { announcements } from "@/data/testData/verticalListTest";
 
 const heroHeaderTitle = "Announcements";
-const heroHeaderVerbiage = "4th Sunday After Pentecost";
+const heroHeaderVerbiage = "11th Sunday After Pentecost";
 
 export default function page() {
   return (

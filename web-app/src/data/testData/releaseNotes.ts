@@ -10,7 +10,7 @@ export const releaseData: ReleaseData[] = [
           date: "August 4, 2024",
           featureList: {
             "🧑‍🍳 Fresh out the oven":
-              "Announcement page and new UI components such as modals, even cards, verse of the day, and more.",
+              "Announcement page and new UI components such as modals, event cards, verse of the day, and more.",
             "🐛 Bug fixes and improvements":
               "Fixed broken layouts for mobile and tablet, and improved spacing.",
             "⏭️ Up next":

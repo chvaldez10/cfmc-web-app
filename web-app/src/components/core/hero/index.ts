@@ -7,6 +7,7 @@ export { default as VerticalList } from "./HeroServer/VerticalList";
 export { default as WordWall } from "./HeroServer/WordWall";
 export { default as VerseOfTheDay } from "./HeroServer/atoms/VerseOfTheDay";
 export { default as EventBlogSwiper } from "./HeroServer/EventBlogSwiper";
+export { default as HeroEvent } from "./HeroServer/HeroEvent";
 
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";

@@ -1,7 +1,13 @@
-import UnderConstruction from "@/components/template/UnderConstruction";
+import { HeroHeader, HeroEvent } from "@/components/core/hero";
+
+const heroHeaderTitle = "Event Page";
+const heroHeaderVerbiage = "Event Page";
 
 export default function page() {
-  // This will be an advance feature
-
-  return <UnderConstruction />;
+  return (
+    <>
+      {/* <HeroHeader title={heroHeaderTitle} verbiage={heroHeaderVerbiage} /> */}
+      <HeroEvent />
+    </>
+  );
 }
