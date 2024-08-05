@@ -23,7 +23,7 @@ const useSlidesPerView = (
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [breakpoints]);
 
   return slidesPerView;
 };
