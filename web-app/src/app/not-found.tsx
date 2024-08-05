@@ -1,6 +1,6 @@
 import NavigateButton from "@/components/core/buttons/NavigateButton";
 import { FlexCenter, Box } from "@/components/core/ui";
-import { LongParagraph, SectionHeader } from "@/components/core/text";
+import { LongParagraph, SectionHeader } from "@/components/core/ui";
 import { LuSearchX } from "react-icons/lu";
 
 export default function NotFoundPage() {

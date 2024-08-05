@@ -1,5 +1,5 @@
 import { forwardRef, ReactNode } from "react";
-import { SectionSubheader } from "@/components/core/text/";
+import { SectionSubheader } from "@/components/core/ui";
 import { CloseButton } from "@/components/core/buttons";
 
 interface VerticalCenteredModalProps {

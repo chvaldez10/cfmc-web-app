@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { textProps } from "@/types/genericTypes";
 
 interface SmallTextProps extends textProps {}

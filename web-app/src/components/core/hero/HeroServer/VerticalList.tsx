@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { liturgyTableData } from "@/types/genericTypes";
-import { SectionSubheader, LongParagraph } from "../../text";
+import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 
 interface VerticalListProps {
   header: string;

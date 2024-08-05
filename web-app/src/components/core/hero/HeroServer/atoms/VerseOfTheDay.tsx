@@ -1,7 +1,7 @@
 import { BsFillChatLeftQuoteFill } from "react-icons/bs";
 import { Verse } from "@/types/genericTypes";
 import { defaultVerse } from "@/data/hero/constants";
-import { SectionSubheader, LongParagraph } from "@/components/core/text";
+import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import ContainerWrapper from "@/components/core/hero/molecules/ContainerWrapper";
 
 async function VerseOfTheDay() {

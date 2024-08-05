@@ -6,7 +6,7 @@ import {
   SectionHeader,
   SectionSubheader,
   LongParagraph,
-} from "@/components/core/text/";
+} from "@/components/core/ui/";
 import { SwiperCoverFlow } from "@/components/core/gallery";
 import { nextImage } from "@/types/genericTypes";
 import useNextSunday from "@/hooks/useNextSunday";

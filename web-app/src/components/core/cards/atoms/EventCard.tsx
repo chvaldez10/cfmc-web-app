@@ -6,7 +6,7 @@ import {
   LongParagraph,
   SectionSubheader,
   SmallText,
-} from "@/components/core/text";
+} from "@/components/core/ui";
 
 interface EventCardProps extends EventDataProps {}
 

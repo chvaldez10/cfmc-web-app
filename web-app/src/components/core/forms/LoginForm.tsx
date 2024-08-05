@@ -5,7 +5,7 @@ import { login } from "@/app/login/actions";
 import LoginInput from "./atoms/LoginInput";
 import FormButton from "../buttons/FormButton";
 import useToastNotification from "@/hooks/useToastNotification";
-import { SectionHeader, LongParagraph } from "../text/";
+import { SectionHeader, LongParagraph } from "@/components/core/ui";
 
 const LoginForm: FC = () => {
   useToastNotification();

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import { SectionSubheader, LongParagraph } from "../../text";
+import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import VerticalCenteredModal from "../../modals/VerticalCenteredModal";
 import RequestForm from "../../forms/RequestForm";
 import useModal from "@/hooks/useModal";

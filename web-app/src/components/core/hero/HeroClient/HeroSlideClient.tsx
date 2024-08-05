@@ -2,9 +2,8 @@
 
 import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
-import SectionHeader from "../../text/atoms/SectionHeader";
-import SectionSubheader from "../../text/atoms/SectionSubheader";
-import FlexWrapper from "../molecules/FlexWrapper";
+import { SectionHeader, SectionSubheader } from "@/components/core/ui";
+import { FlexWrapper } from "@/components/core/hero";
 import { heroSection } from "@/types/genericTypes";
 import "@/styles/slide.css";
 

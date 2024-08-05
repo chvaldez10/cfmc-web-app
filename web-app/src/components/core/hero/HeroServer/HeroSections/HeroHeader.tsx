@@ -1,8 +1,6 @@
 import { FC } from "react";
-import VerticalWrapper from "../../molecules/VerticalWrapper";
-import MainGradientHeader from "@/components/core/text/atoms/MainGradientHeader";
-import HeroTextWrapper from "../../molecules/HeroTextWrapper";
-import SectionSubheader from "../../../text/atoms/SectionSubheader";
+import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero";
+import { MainGradientHeader, SectionSubheader } from "@/components/core/ui";
 
 interface HeroHeaderProps {
   title: string;

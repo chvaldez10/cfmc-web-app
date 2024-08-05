@@ -3,9 +3,11 @@ import { NextImage } from "@/components/core/gallery";
 import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero/";
 import { featuredImages } from "@/data/hero/featuredItems";
 import { NavigateButton } from "@/components/core/buttons";
-import { MainGradientHeader } from "@/components/core/text/";
-import { NavigationText } from "@/components/core/ui";
-import { FlexCenterRow } from "@/components/core/ui";
+import {
+  MainGradientHeader,
+  NavigationText,
+  FlexCenterRow,
+} from "@/components/core/ui";
 import { heroContent } from "@/types/genericTypes";
 
 interface HeroCollageClientProps extends heroContent {}

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { FlexWrapper } from "@/components/core/hero";
 import { SwiperScrollbar } from "@/components/core/gallery/";
-import { SectionHeader } from "@/components/core/text";
+import { SectionHeader } from "@/components/core/ui";
 
 const EventBlogSwiper: FC = () => {
   return (
