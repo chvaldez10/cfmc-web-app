@@ -1,10 +1,12 @@
 import React from "react";
+import { FlexWrapper } from "@/components/core/hero";
+// import {EventDataProps} from "@/types/supabaseTypes"
 
 const HeroEvent = () => {
   return (
-    <div className="flex flex-wrap md items-center min-h-screen">
+    <FlexWrapper containerClassName="min-h-auto" layoutClass="div-col-row">
       <div className="w-full md:w-1/2 h-auto">
-        <div className="mx-32">
+        <div className="">
           <h1 className="text-6xl font-bold">Outdoor Workship</h1>
 
           {/* country region island */}
@@ -30,7 +32,7 @@ const HeroEvent = () => {
           alt=""
         />
       </div>
-    </div>
+    </FlexWrapper>
   );
 };
 
