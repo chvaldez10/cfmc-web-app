@@ -7,7 +7,7 @@ export const releaseData: ReleaseData[] = [
       {
         version: "v 24.0.2",
         details: {
-          date: "Aug 04, 2024",
+          date: "August 4, 2024",
           featureList: {
             "🧑‍🍳 Fresh out the oven":
               "Announcement page and new UI components such as modals, even cards, verse of the day, and more.",
