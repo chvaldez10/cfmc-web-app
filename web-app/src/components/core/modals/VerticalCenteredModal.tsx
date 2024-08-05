@@ -29,4 +29,6 @@ const VerticalCenteredModal = forwardRef<
   );
 });
 
+VerticalCenteredModal.displayName = "VerticalCenteredModal";
+
 export default VerticalCenteredModal;

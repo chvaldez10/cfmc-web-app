@@ -11,7 +11,7 @@ const WordWall: FC = () => {
         <div className="container px-5 py-8 md:py-14 mx-auto">
           <div className="flex flex-wrap justify-between -mx-4 -my-8">
             {membersBirthday.map((memberBirthday, index) => (
-              <BallonItem {...memberBirthday} />
+              <BallonItem key={index} {...memberBirthday} />
             ))}
           </div>
         </div>

@@ -24,14 +24,16 @@ const useInView = (threshold = 0.1) => {
       observerOptions
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    let currentRef = ref.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     // Cleanup function to unobserve the element
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [threshold]);
