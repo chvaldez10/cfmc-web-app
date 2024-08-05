@@ -1,5 +1,6 @@
 import React from "react";
-import { FlexWrapper, Box, HeroHalfWrapper } from "@/components/core/hero";
+import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
+import { Box } from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
 import { EventDataProps } from "@/types/supabaseTypes";
 import { LongParagraph, SectionHeader } from "../../text";
@@ -13,21 +14,21 @@ const HeroEvent = () => {
 
         {/* country region island */}
         <Box className="space-y-4 my-16 font-light ">
-          <LongParagraph className="flex flex-row gap-2 items-center">
+          <LongParagraph containerClassName="flex flex-row gap-2 items-center">
             <div className="text-violet-500">
               <FaCalendarCheck />
             </div>
             Sunday August 11th, 2024
           </LongParagraph>
 
-          <LongParagraph className="flex flex-row gap-2 items-center">
+          <LongParagraph containerClassName="flex flex-row gap-2 items-center">
             <div className="text-violet-500">
               <FaRegClock />
             </div>
             10:00 AM
           </LongParagraph>
 
-          <LongParagraph className="flex flex-row gap-2 items-center">
+          <LongParagraph containerClassName="flex flex-row gap-2 items-center">
             <div className="text-violet-500">
               <FaMapMarkerAlt />
             </div>

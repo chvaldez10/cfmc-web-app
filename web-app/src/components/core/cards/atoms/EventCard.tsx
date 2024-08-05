@@ -43,12 +43,12 @@ const EventCard: React.FC<EventCardProps> = ({
         className="flex flex-col justify-between p-4 leading-normal w-full truncate gap-1"
       >
         <SmallText> {category}</SmallText>
-        <LongParagraph className="overflow-hidden whitespace-nowrap">
+        <LongParagraph containerClassName="overflow-hidden whitespace-nowrap">
           {month} {startDay}
           {endDay && ` - ${endDay}`}
         </LongParagraph>
         <SectionSubheader text={name} />
-        <LongParagraph className="text-clip overflow-hidden whitespace-nowrap">
+        <LongParagraph containerClassName="text-clip overflow-hidden whitespace-nowrap">
           {description}
         </LongParagraph>
       </Link>

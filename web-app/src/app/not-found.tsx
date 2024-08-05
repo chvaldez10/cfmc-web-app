@@ -1,23 +1,27 @@
 import NavigateButton from "@/components/core/buttons/NavigateButton";
+import { FlexCenter, Box } from "@/components/core/ui";
+import { LongParagraph, SectionHeader } from "@/components/core/text";
+import { LuSearchX } from "react-icons/lu";
 
 export default function NotFoundPage() {
   return (
-    <div className="div-outside-width h-screen">
-      <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
-        <span className="sr-only">Error</span>404
-      </h2>
+    <FlexCenter containerClassName="h-screen">
+      <Box className="flex-center">
+        <LuSearchX className="text-6xl" />
+        <SectionHeader text="Error 404" className="m-4" />
+      </Box>
 
-      <p className="text-2xl font-semibold md:text-3xl">
-        Sorry, we couldn't find this page.
-      </p>
+      <LongParagraph containerClassName="">
+        {`Sorry, we couldn't find this page.`}
+      </LongParagraph>
 
-      <p className="my-4 dark:text-gray-600">
-        Please navigate back to the homepage.
-      </p>
+      <LongParagraph containerClassName="">
+        {`Please navigate back to the homepage.`}
+      </LongParagraph>
 
       <NavigateButton url={"/"} variant="outline">
         Homepage
       </NavigateButton>
-    </div>
+    </FlexCenter>
   );
 }

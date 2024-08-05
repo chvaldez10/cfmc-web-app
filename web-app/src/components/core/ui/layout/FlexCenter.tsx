@@ -3,11 +3,11 @@ import { DivProps } from "@/types/genericTypes";
 
 interface FlexCenterProps extends DivProps {}
 
-export const FlexCenter: FC<FlexCenterProps> = ({
-  children,
-  containerClassName,
-}) => {
+// Totally not a copy of Flex from Chakra UI
+const FlexCenter: FC<FlexCenterProps> = ({ children, containerClassName }) => {
   return (
     <div className={`div-outside-width ${containerClassName}`}>{children}</div>
   );
 };
+
+export default FlexCenter;

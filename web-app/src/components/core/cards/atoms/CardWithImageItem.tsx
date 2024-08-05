@@ -31,7 +31,9 @@ const CardWithImageItem: FC<CardWithImageItemProps> = ({
 
       <div className="flex flex-col flex-grow p-5 gap-3">
         <SectionSubheader text={title} className="font-bold tracking-tight" />
-        <LongParagraph className="text-gray-600">{description}</LongParagraph>
+        <LongParagraph containerClassName="text-gray-600">
+          {description}
+        </LongParagraph>
         <div className="mt-auto">
           <NavigateButton url={url} variant="filled">
             Learn More <FaArrowRight />

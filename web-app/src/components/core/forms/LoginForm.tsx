@@ -14,7 +14,9 @@ const LoginForm: FC = () => {
     <div className="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">
       <div className="p-6 space-y-6 sm:p-8">
         <SectionHeader text="Welcome" />
-        <LongParagraph> Please sign in if you're an admin user.</LongParagraph>
+        <LongParagraph containerClassName="text-gray-600">
+          {`Please sign in if you're an admin user.`}
+        </LongParagraph>
         <form className="space-y-6" action="#">
           <LoginInput
             type="email"

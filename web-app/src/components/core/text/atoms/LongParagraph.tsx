@@ -1,16 +1,14 @@
 import { FC, ReactNode } from "react";
+import { DivProps } from "@/types/genericTypes";
 
-interface LongParagraphProps {
-  children: ReactNode;
-  className?: string;
-}
+interface LongParagraphProps extends DivProps {}
 
 const LongParagraph: FC<LongParagraphProps> = ({
   children,
-  className = "",
+  containerClassName = "",
 }) => {
   return (
-    <p className={`text-sm lg:text-lg leading-relaxed ${className} `}>
+    <p className={`text-sm lg:text-lg leading-relaxed ${containerClassName} `}>
       {children}
     </p>
   );

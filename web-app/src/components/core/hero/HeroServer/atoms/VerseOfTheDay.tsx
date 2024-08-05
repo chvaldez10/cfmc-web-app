@@ -33,7 +33,7 @@ async function VerseOfTheDay() {
         <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 text-white " />
         <SectionSubheader text="Verse of the Day" />
         <LongParagraph>{verseData.verse.details.text}</LongParagraph>
-        <LongParagraph className="text-gray-500">
+        <LongParagraph containerClassName="text-gray-500">
           {verseData.verse.details.reference} {verseData.verse.details.version}
         </LongParagraph>
       </div>

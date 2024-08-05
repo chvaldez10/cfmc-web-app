@@ -14,8 +14,10 @@ const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
         {data.map((dataEntry, index) => (
           <div key={index} className="py-4 div-col-row">
             <div className="hidden-md-flex md:w-64">
-              <LongParagraph className="text-gray-900 ">Date</LongParagraph>
-              <LongParagraph className="text-gray-500 text-sm lg:text-sm my-2">
+              <LongParagraph containerClassName="text-gray-900 ">
+                Date
+              </LongParagraph>
+              <LongParagraph containerClassName="text-gray-500 text-sm lg:text-sm my-2">
                 {dataEntry.date.toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
@@ -24,16 +26,16 @@ const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
               </LongParagraph>
             </div>
             <div className="md:flex-grow">
-              <LongParagraph className="text-gray-900 font-bold ">
+              <LongParagraph containerClassName="text-gray-900 font-bold ">
                 {dataEntry.title}
               </LongParagraph>
 
-              <LongParagraph className="text-gray-500">
+              <LongParagraph containerClassName="text-gray-500">
                 {dataEntry.content}
               </LongParagraph>
             </div>
             <div className="hidden-md-flex-reverse">
-              <LongParagraph className="text-gray-500 text-sm lg:text-sm ">
+              <LongParagraph containerClassName="text-gray-500 text-sm lg:text-sm ">
                 {dataEntry.date.toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",

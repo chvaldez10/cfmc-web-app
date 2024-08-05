@@ -23,7 +23,7 @@
 //             {event.category}
 //           </p>
 //           <SectionSubheader text={event.title} className="mb-3 font-medium" />
-//           <LongParagraph className="text-gray-600">
+//           <LongParagraph containerClassName="text-gray-600">
 //             {event.description}
 //           </LongParagraph>
 //         </div>
