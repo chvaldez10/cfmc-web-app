@@ -1,9 +1,17 @@
-import React from "react";
+import { FC, ReactElement } from "react";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 import { EventDataProps } from "@/types/supabaseTypes";
 import { NextImage } from "@/components/core/gallery";
 import { LongParagraph, SectionHeader, Box } from "@/components/core/ui";
 import { FaCalendarCheck, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
+import { MdPersonAdd } from "react-icons/md";
+
+const renderEventDetail = (icon: ReactElement, text: string) => (
+  <LongParagraph containerClassName="flex flex-row gap-2 items-center">
+    <div className="text-violet-500 ">{icon}</div>
+    {text}
+  </LongParagraph>
+);
 
 const HeroEvent = () => {
   return (
@@ -11,28 +19,14 @@ const HeroEvent = () => {
       <HeroHalfWrapper className="flex flex-col justify-center">
         <SectionHeader text="Outdoor Worship" />
 
-        {/* country region island */}
         <Box containerClassName="space-y-4 my-16 font-light ">
-          <LongParagraph containerClassName="flex flex-row gap-2 items-center">
-            <div className="text-violet-500">
-              <FaCalendarCheck />
-            </div>
-            Sunday August 11th, 2024
-          </LongParagraph>
-
-          <LongParagraph containerClassName="flex flex-row gap-2 items-center">
-            <div className="text-violet-500">
-              <FaRegClock />
-            </div>
-            10:00 AM
-          </LongParagraph>
-
-          <LongParagraph containerClassName="flex flex-row gap-2 items-center">
-            <div className="text-violet-500">
-              <FaMapMarkerAlt />
-            </div>
-            Glenmore Park
-          </LongParagraph>
+          {renderEventDetail(<FaCalendarCheck />, "Sunday August 11th, 2024")}
+          {renderEventDetail(<FaRegClock />, "10:00 AM")}
+          {renderEventDetail(<FaMapMarkerAlt />, "Glenmore Park")}
+          {renderEventDetail(
+            <MdPersonAdd />,
+            "Calgary Filipino Methodist Church"
+          )}
         </Box>
       </HeroHalfWrapper>
       <HeroHalfWrapper className="div-outside-width">
