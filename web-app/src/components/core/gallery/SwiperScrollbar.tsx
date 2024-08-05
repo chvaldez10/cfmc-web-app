@@ -15,7 +15,7 @@ const breakpoints: { screenSize: number; slidesPerView: number }[] = [
 ];
 
 const SwiperScrollbar: FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const slidesPerView = useSlidesPerView(breakpoints);
 
   useEffect(() => {
