@@ -16,7 +16,7 @@
     "@tsparticles/slim": "^3.4.0",
     "chokidar": "^3.6.0",
     "classnames": "^2.5.1",
-    "next": "14.2.3",
+    "next": "^14.2.5",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
