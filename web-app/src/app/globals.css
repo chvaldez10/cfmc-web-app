@@ -59,6 +59,7 @@
 }
 
 /* Repeated flex box */
+
 .flex-center {
   @apply flex items-center justify-center;
 }

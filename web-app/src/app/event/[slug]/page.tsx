@@ -5,7 +5,7 @@ const heroHeaderVerbiage = "Event Page";
 
 export default function page() {
   return (
-    <Box>
+    <Box className="py-32">
       <HeroEvent />
     </Box>
   );
