@@ -25,3 +25,4 @@ export { default as EventDescription } from "./molecules/atoms/EventDescription"
 // atoms
 export { default as IframeMap } from "./molecules/atoms/IframeMap";
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
+export { default as EventGoogleMaps } from "./molecules/atoms/EventGoogleMaps";
