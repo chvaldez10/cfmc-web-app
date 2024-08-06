@@ -18,7 +18,7 @@ export interface nextImage {
   containerClassName?: string | undefined;
 }
 
-export interface heroSection {
+export interface HeroSectionProps {
   header: string;
   userSubHeader?: string;
   longParagraph: string;

@@ -17,7 +17,7 @@ const renderEventDetail = (icon: ReactElement, text: string) => (
 const HeroEvent = () => {
   return (
     <FlexWrapper containerClassName="min-h-auto" layoutClass="div-col-row">
-      <HeroHalfWrapper className="flex flex-col justify-center">
+      <HeroHalfWrapper containerClassName="flex flex-col justify-center">
         <SectionHeader text="Outdoor Worship" />
 
         <Box containerClassName="space-y-4 my-16 font-light ">
@@ -31,7 +31,7 @@ const HeroEvent = () => {
           {renderEventDetail(<BiCategory />, "Outdoor Worship")}
         </Box>
       </HeroHalfWrapper>
-      <HeroHalfWrapper className="div-outside-width">
+      <HeroHalfWrapper containerClassName="div-outside-width">
         <NextImage
           width={"w-full"}
           height={"h-576"}
