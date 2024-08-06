@@ -2,9 +2,9 @@
 
 import { FC } from "react";
 import classNames from "classnames";
-import { clientButton } from "@/types/genericTypes";
+import { ClientButtonProps } from "@/types/genericTypes";
 
-interface PurplePillButtonClientProps extends clientButton {
+interface PurplePillButtonClientProps extends ClientButtonProps {
   onClick: () => void;
 }
 

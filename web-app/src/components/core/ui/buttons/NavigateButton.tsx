@@ -3,9 +3,9 @@
 import { FC } from "react";
 import { useRouter } from "next/navigation";
 import { PurplePillButtonClient } from "@/components/core/ui";
-import { clientButton } from "@/types/genericTypes";
+import { ClientButtonProps } from "@/types/genericTypes";
 
-interface NavigateButtonProps extends clientButton {
+interface NavigateButtonProps extends ClientButtonProps {
   url: string;
 }
 

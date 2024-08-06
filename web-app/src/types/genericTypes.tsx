@@ -26,7 +26,7 @@ export interface HeroSectionProps {
   containerClassName?: string | undefined;
 }
 
-export interface clientButton {
+export interface ClientButtonProps {
   variant?: "filled" | "outline";
   className?: string;
   children?: ReactNode;
