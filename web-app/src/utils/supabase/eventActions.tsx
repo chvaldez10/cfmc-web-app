@@ -28,3 +28,22 @@ export async function getEventBySlug(
 
   return data;
 }
+
+export async function getEventsByMonth(
+  monthIndex: number,
+  year: number
+): Promise<EventDataProps[] | null> {
+  const supabase = createServerComponentClient({ cookies });
+  const { data, error } = await supabase
+    .from("events")
+    .select("*")
+    .eq("start_date", monthIndex)
+    .eq("start_date", year);
+
+  if (error) {
+    console.error("Error fetching events:", error);
+    return null;
+  }
+
+  return data;
+}
