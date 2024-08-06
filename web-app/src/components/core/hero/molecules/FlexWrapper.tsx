@@ -9,6 +9,7 @@ interface FlexWrapperProps {
   isFloating?: boolean;
 }
 
+// Wraps children in a flex center and boxes it with width 10/12 for large screens and full width for small screens
 const FlexWrapper: FC<FlexWrapperProps> = ({
   children,
   containerClassName,

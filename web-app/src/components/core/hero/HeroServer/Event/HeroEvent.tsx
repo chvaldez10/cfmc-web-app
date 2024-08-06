@@ -4,6 +4,7 @@ import { EventDataProps } from "@/types/supabaseTypes";
 import { NextImage } from "@/components/core/gallery";
 import { LongParagraph, SectionHeader, Box } from "@/components/core/ui";
 import { FaCalendarCheck, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
+import { BiCategory } from "react-icons/bi";
 import { MdPersonAdd } from "react-icons/md";
 
 const renderEventDetail = (icon: ReactElement, text: string) => (
@@ -27,6 +28,7 @@ const HeroEvent = () => {
             <MdPersonAdd />,
             "Calgary Filipino Methodist Church"
           )}
+          {renderEventDetail(<BiCategory />, "Outdoor Worship")}
         </Box>
       </HeroHalfWrapper>
       <HeroHalfWrapper className="div-outside-width">

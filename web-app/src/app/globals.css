@@ -60,8 +60,12 @@
 
 /* Repeated flex box */
 
+.flex-items {
+  @apply flex items-center;
+}
+
 .flex-center {
-  @apply flex items-center justify-center;
+  @apply flex-items justify-center;
 }
 
 .div-outside-width {
@@ -73,7 +77,7 @@
 }
 
 .div-outside-width-justify-between {
-  @apply flex items-center justify-between;
+  @apply flex-items justify-between;
 }
 
 .div-outside-width-wrapped {

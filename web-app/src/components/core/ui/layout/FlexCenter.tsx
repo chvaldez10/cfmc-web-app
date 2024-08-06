@@ -1,12 +1,15 @@
 import { FC } from "react";
 import { DivProps } from "@/types/genericTypes";
+import { Box } from "@/components/core/ui";
 
 interface FlexCenterProps extends DivProps {}
 
-// Totally not a copy of Flex from Chakra UI
+// Centers children vertically and horizontally
 const FlexCenter: FC<FlexCenterProps> = ({ children, containerClassName }) => {
   return (
-    <div className={`div-outside-width ${containerClassName}`}>{children}</div>
+    <Box containerClassName={`div-outside-width ${containerClassName}`}>
+      {children}
+    </Box>
   );
 };
 
