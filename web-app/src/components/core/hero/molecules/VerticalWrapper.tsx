@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { FlexCenter } from "@/components/core/ui";
 import { DivProps } from "@/types/genericTypes";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";

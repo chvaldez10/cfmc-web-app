@@ -7,6 +7,7 @@ import {
   NavigationText,
   FlexCenterRow,
   NavigateButton,
+  Grid,
 } from "@/components/core/ui";
 import { heroContent } from "@/types/genericTypes";
 
@@ -18,6 +19,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 }) => {
   return (
     <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
+      {/* Headers */}
       <HeroTextWrapper>
         <MainGradientHeader text={header} />
         <NavigationText
@@ -45,8 +47,8 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
         </NavigateButton>
       </FlexCenterRow>
 
-      {/* Image Column */}
-      <div className="hidden-grid-1-3 w-full 3xl:w-7/12">
+      {/* Image Grid */}
+      <Grid containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12">
         {featuredImages.map((featuredImage, index) => (
           <NextImage
             key={index}
@@ -57,7 +59,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
             imageClassName={"rounded-lg object-top"}
           />
         ))}
-      </div>
+      </Grid>
     </VerticalWrapper>
   );
 };
