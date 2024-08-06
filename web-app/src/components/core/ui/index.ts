@@ -1,7 +1,7 @@
 // layout
 export { default as FlexCenter } from "./layout/FlexCenter";
 export { default as Box } from "./layout/Box";
-export { default as FlexCenterRow } from "./layout/FlexCenterRow";
+export { default as Flex } from "./layout/Flex";
 export { default as Grid } from "./layout/Grid";
 
 // text

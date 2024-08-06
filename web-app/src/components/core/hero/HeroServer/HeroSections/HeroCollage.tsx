@@ -5,7 +5,7 @@ import { featuredImages } from "@/data/hero/featuredItems";
 import {
   MainGradientHeader,
   NavigationText,
-  FlexCenterRow,
+  Flex,
   NavigateButton,
   Grid,
 } from "@/components/core/ui";
@@ -31,7 +31,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
       </HeroTextWrapper>
 
       {/* Buttons*/}
-      <FlexCenterRow containerClassName="gap-x-4 md:gap-x-8">
+      <Flex containerClassName="div-flex-row gap-x-4 md:gap-x-8">
         <NavigateButton
           className="z-10 scale-up"
           url={"/get-involved/upcoming"}
@@ -45,7 +45,7 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
         >
           Announcements
         </NavigateButton>
-      </FlexCenterRow>
+      </Flex>
 
       {/* Image Grid */}
       <Grid containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12">

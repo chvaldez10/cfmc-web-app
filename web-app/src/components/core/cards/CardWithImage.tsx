@@ -1,11 +1,12 @@
 import { FC } from "react";
 import CardWithImageItem from "./atoms/CardWithImageItem";
 import { cardWithImageItems } from "@/data/hero/cardWithImage";
+import { FlexCenter, Grid } from "@/components/core/ui";
 
 const CardWithImage: FC<{}> = () => {
   return (
-    <div className="div-outside-width mx-auto p-5 md:p-0 gap-4 ">
-      <div className="resize-hero-width grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4 py-8 ">
+    <FlexCenter containerClassName="mx-auto p-4 md:p-0 gap-4 ">
+      <Grid containerClassName="resize-hero-width grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4 py-8 ">
         {cardWithImageItems.map((item, index) => (
           <CardWithImageItem
             key={item.title}
@@ -16,8 +17,8 @@ const CardWithImage: FC<{}> = () => {
             url={item.url}
           />
         ))}
-      </div>
-    </div>
+      </Grid>
+    </FlexCenter>
   );
 };
 
