@@ -28,3 +28,4 @@ export { default as EventHeader } from "./molecules/events/EventHeader";
 export { default as EventDescription } from "./molecules/events/EventDescription";
 export { default as IframeMap } from "./molecules/events/IframeMap";
 export { default as EventGoogleMaps } from "./molecules/events/EventGoogleMaps";
+export { default as EventTags } from "./molecules/events/EventTags";

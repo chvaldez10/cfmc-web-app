@@ -2,6 +2,7 @@ import {
   EventHeader,
   EventDescription,
   EventGoogleMaps,
+  EventTags,
 } from "@/components/core/hero";
 import { Box } from "@/components/core/ui";
 
@@ -16,6 +17,7 @@ export default function page() {
       <EventHeader />
       <EventDescription>{testDescription}</EventDescription>
       <EventGoogleMaps eventLocation={testLocation} />
+      <EventTags />
     </Box>
   );
 }

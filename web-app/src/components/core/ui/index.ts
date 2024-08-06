@@ -21,3 +21,7 @@ export { default as OpenModalButton } from "./buttons/OpenModalButton";
 // small button components
 export { default as ShowHideButton } from "./buttons/atoms/ShowHideButton";
 export { default as CloseButton } from "./buttons/atoms/CloseButton";
+
+// badges
+export { default as FilledColoredBadge } from "./badges/FilledColoredBadge";
+export { default as OutlineColoredBadge } from "./badges/OutlineColoredBadge";

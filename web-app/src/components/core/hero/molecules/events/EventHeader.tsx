@@ -8,7 +8,7 @@ import { BiCategory } from "react-icons/bi";
 import { MdPersonAdd } from "react-icons/md";
 
 const renderEventDetail = (icon: ReactElement, text: string) => (
-  <LongParagraph containerClassName="flex flex-row gap-2 items-center">
+  <LongParagraph containerClassName="div-flex-row gap-2 ">
     <Box containerClassName="text-violet-500 ">{icon}</Box>
     {text}
   </LongParagraph>
