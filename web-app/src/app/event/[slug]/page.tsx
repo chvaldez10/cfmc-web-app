@@ -5,7 +5,7 @@ const testDescription = `Come join us for a day of fun and learning. We will sta
 
 export default function page() {
   return (
-    <Box containerClassName="py-32">
+    <Box containerClassName="pt-32 space-y-10">
       <HeroEvent />
       <EventDescription>{testDescription}</EventDescription>
     </Box>

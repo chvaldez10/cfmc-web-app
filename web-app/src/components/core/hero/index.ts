@@ -21,3 +21,4 @@ export { default as FlexWrapper } from "./molecules/FlexWrapper";
 export { default as HeroHalfWrapper } from "./molecules/HeroHalfWrapper";
 export { default as HeroTextWrapper } from "./molecules/HeroTextWrapper";
 export { default as EventDescription } from "./HeroServer/atoms/EventDescription";
+export { default as IframeMap } from "./HeroServer/atoms/IframeMap";

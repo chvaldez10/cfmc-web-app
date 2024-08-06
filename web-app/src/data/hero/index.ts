@@ -1,4 +1,3 @@
-export { default as IframeMap } from "./IframeMap";
 export { visionStatementLong } from "./constants";
 export {
   pastEvents1,

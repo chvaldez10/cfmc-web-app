@@ -4,10 +4,10 @@ import {
   HeroImageClient,
   VerseOfTheDay,
   EventBlogSwiper,
+  IframeMap,
 } from "@/components/core/hero";
 
 import {
-  IframeMap,
   cardContainerItems,
   visionStatementLong,
   pastEvents1,
