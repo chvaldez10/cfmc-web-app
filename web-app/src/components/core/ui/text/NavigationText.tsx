@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { FlexCenter } from "@/components/core/ui";
 import { DivProps } from "@/types/genericTypes";
 import { useRouter } from "next/navigation";

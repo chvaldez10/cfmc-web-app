@@ -66,9 +66,9 @@ export interface Verse {
   };
 }
 
-export interface textProps {
-  children: ReactNode;
-  className?: string;
+export interface BadgeProps {
+  color: string;
+  tagName: string;
 }
 
 export interface DivProps {
