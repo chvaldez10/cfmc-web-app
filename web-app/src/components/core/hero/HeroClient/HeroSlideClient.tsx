@@ -4,10 +4,10 @@ import { FC, ReactNode } from "react";
 import useInView from "@/hooks/useInView";
 import { SectionHeader, SectionSubheader } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
-import { heroSection } from "@/types/genericTypes";
+import { HeroSectionProps } from "@/types/genericTypes";
 import "@/styles/slide.css";
 
-interface HeroSlideClientProps extends heroSection {
+interface HeroSlideClientProps extends HeroSectionProps {
   element: ReactNode;
   isFloating?: boolean;
 }
