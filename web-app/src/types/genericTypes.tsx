@@ -69,6 +69,7 @@ export interface Verse {
 export interface BadgeProps {
   color: string;
   tagName: string;
+  containerClassName?: string;
 }
 
 export interface DivProps {
