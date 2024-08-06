@@ -20,6 +20,7 @@ import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
+  churchGoogleMapSrc,
 } from "@/data/hero/constants";
 
 import { NextImage } from "@/components/core/gallery";
@@ -33,7 +34,7 @@ export default function Home() {
         header={"Sunday Service"}
         longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         containerClassName="bg-green-10 min-h-screen"
-        element={<IframeMap />}
+        element={<IframeMap src={churchGoogleMapSrc} />}
         isFloating={true}
       />
 
