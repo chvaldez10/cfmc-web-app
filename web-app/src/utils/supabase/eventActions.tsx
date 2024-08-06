@@ -2,9 +2,11 @@
 
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { Event } from "@/types/supabaseTypes";
+import { EventDataProps } from "@/types/supabaseTypes";
 
-export async function getEventBySlug(slug: string): Promise<Event | null> {
+export async function getEventBySlug(
+  slug: string
+): Promise<EventDataProps | null> {
   const supabase = createServerComponentClient({ cookies });
 
   const { data, error } = await supabase
