@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { login } from "@/app/login/actions";
+import { login, signUp } from "@/app/login/actions";
 import LoginInput from "./atoms/LoginInput";
 import useToastNotification from "@/hooks/useToastNotification";
 import { SectionHeader, LongParagraph, FormButton } from "@/components/core/ui";
@@ -47,12 +47,15 @@ const LoginForm: FC = () => {
           </div>
 
           {/* Un comment when need to be used */}
-          {/* <p className="text-sm font-light text-center">
-          Don’t have an account yet?{" "}
-          <FormButton className="underline hover:text-purple-500">
-            Sign Up
-          </FormButton>
-        </p> */}
+          <p className="text-sm font-light text-center">
+            Don’t have an account yet?{" "}
+            <FormButton
+              className="underline hover:text-purple-500"
+              formAction={signUp}
+            >
+              Sign Up
+            </FormButton>
+          </p>
         </form>
       </div>
     </div>

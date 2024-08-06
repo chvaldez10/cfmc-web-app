@@ -22,7 +22,7 @@ export async function login(formData: FormData) {
   redirect("/?status=success&message=Successful login");
 }
 
-export async function signup(formData: FormData) {
+export async function signUp(formData: FormData) {
   const supabase = createClient();
 
   const data = {
