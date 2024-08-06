@@ -1,6 +1,5 @@
 // Events
 // export { default as EventBlog } from "./HeroServer/EventBlog";
-export { default as HeroEvent } from "./HeroServer/Event/HeroEvent";
 export { default as EventBlogSwiper } from "./HeroServer/Event/EventBlogSwiper";
 
 // HeroSections
@@ -20,9 +19,12 @@ export { default as VerticalWrapper } from "./molecules/VerticalWrapper";
 export { default as FlexWrapper } from "./molecules/FlexWrapper";
 export { default as HeroHalfWrapper } from "./molecules/HeroHalfWrapper";
 export { default as HeroTextWrapper } from "./molecules/HeroTextWrapper";
-export { default as EventDescription } from "./molecules/atoms/EventDescription";
 
 // atoms
-export { default as IframeMap } from "./molecules/atoms/IframeMap";
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
-export { default as EventGoogleMaps } from "./molecules/atoms/EventGoogleMaps";
+
+// event atoms
+export { default as EventHeader } from "./molecules/events/EventHeader";
+export { default as EventDescription } from "./molecules/events/EventDescription";
+export { default as IframeMap } from "./molecules/events/IframeMap";
+export { default as EventGoogleMaps } from "./molecules/events/EventGoogleMaps";

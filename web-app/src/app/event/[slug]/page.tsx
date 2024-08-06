@@ -1,5 +1,5 @@
 import {
-  HeroEvent,
+  EventHeader,
   EventDescription,
   EventGoogleMaps,
 } from "@/components/core/hero";
@@ -13,7 +13,7 @@ const testLocation =
 export default function page() {
   return (
     <Box containerClassName="py-32 space-y-10">
-      <HeroEvent />
+      <EventHeader />
       <EventDescription>{testDescription}</EventDescription>
       <EventGoogleMaps eventLocation={testLocation} />
     </Box>

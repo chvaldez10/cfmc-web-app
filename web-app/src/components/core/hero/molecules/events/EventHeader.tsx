@@ -9,12 +9,12 @@ import { MdPersonAdd } from "react-icons/md";
 
 const renderEventDetail = (icon: ReactElement, text: string) => (
   <LongParagraph containerClassName="flex flex-row gap-2 items-center">
-    <div className="text-violet-500 ">{icon}</div>
+    <Box containerClassName="text-violet-500 ">{icon}</Box>
     {text}
   </LongParagraph>
 );
 
-const HeroEvent = () => {
+const EventHeader = () => {
   return (
     <FlexWrapper containerClassName="min-h-auto" layoutClass="div-col-row">
       <HeroHalfWrapper containerClassName="flex flex-col justify-center">
@@ -46,4 +46,4 @@ const HeroEvent = () => {
   );
 };
 
-export default HeroEvent;
+export default EventHeader;
