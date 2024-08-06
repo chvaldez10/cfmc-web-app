@@ -9,7 +9,7 @@ export { default as HeroHeader } from "./HeroServer/HeroSections/HeroHeader";
 export { default as HeroOverlappingImage } from "./HeroServer/HeroSections/HeroOverlappingImage";
 export { default as VerticalList } from "./HeroServer/VerticalList";
 export { default as WordWall } from "./HeroServer/WordWall";
-export { default as VerseOfTheDay } from "./HeroServer/atoms/VerseOfTheDay";
+export { default as VerseOfTheDay } from "./molecules/atoms/VerseOfTheDay";
 
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
@@ -20,5 +20,8 @@ export { default as VerticalWrapper } from "./molecules/VerticalWrapper";
 export { default as FlexWrapper } from "./molecules/FlexWrapper";
 export { default as HeroHalfWrapper } from "./molecules/HeroHalfWrapper";
 export { default as HeroTextWrapper } from "./molecules/HeroTextWrapper";
-export { default as EventDescription } from "./HeroServer/atoms/EventDescription";
-export { default as IframeMap } from "./HeroServer/atoms/IframeMap";
+export { default as EventDescription } from "./molecules/atoms/EventDescription";
+
+// atoms
+export { default as IframeMap } from "./molecules/atoms/IframeMap";
+export { default as BalloonItem } from "./molecules/atoms/BalloonItem";

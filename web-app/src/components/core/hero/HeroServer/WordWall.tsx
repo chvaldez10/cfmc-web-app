@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { membersBirthday } from "@/data/testData/membersBirthday";
 import { SectionHeader } from "@/components/core/ui";
-import BallonItem from "./atoms/BalloonItem";
+import BallonItem from "../molecules/atoms/BalloonItem";
 
 const WordWall: FC = () => {
   return (
