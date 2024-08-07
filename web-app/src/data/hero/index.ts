@@ -5,4 +5,3 @@ export {
   featuredImages,
 } from "./featuredItems";
 export { cardContainerItems } from "./CardContainer";
-export { liturgicalCalendar } from "./liturgicalCalendar";
