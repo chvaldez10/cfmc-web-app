@@ -15,3 +15,15 @@ export interface EventDataProps {
   organizerName: string;
   slug: string;
 }
+
+export interface SundaysAndSpecialDaysProps {
+  id?: number;
+  date: Date;
+  sundayEventName: string;
+  liturgicalColor: string;
+  scriptureReadings?: string[];
+  preacher?: string;
+  sermonTitle?: string;
+  sermonSeries?: string;
+  preacherNotes?: string;
+}

@@ -19,9 +19,7 @@ export async function getEventBySlug(
   if (error) {
     console.error("Error fetching event:", error);
     return null;
-  }
-
-  if (!data) {
+  } else if (!data) {
     console.error("No event data found for slug:", slug);
     return null;
   }
@@ -42,6 +40,9 @@ export async function getEventsByMonth(
 
   if (error) {
     console.error("Error fetching events:", error);
+    return null;
+  } else if (!data) {
+    console.error("No events found for month:", monthIndex, year);
     return null;
   }
 
