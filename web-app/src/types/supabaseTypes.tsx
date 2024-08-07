@@ -26,4 +26,5 @@ export interface SundaysAndSpecialDaysProps {
   sermonTitle?: string;
   sermonSeries?: string;
   preacherNotes?: string;
+  sundayEventAlternateName?: string;
 }

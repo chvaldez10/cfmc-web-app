@@ -20,7 +20,7 @@ export interface nextImage {
 
 export interface HeroSectionProps {
   header: string | undefined;
-  userSubHeader?: string;
+  subheader?: string;
   longParagraph: string;
   reverse?: boolean;
   containerClassName?: string | undefined;

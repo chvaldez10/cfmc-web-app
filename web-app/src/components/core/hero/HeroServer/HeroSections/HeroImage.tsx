@@ -9,10 +9,6 @@ import { SwiperCoverFlow } from "@/components/core/gallery";
 import { nextImage } from "@/types/genericTypes";
 import { HeroSectionProps } from "@/types/genericTypes";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
-import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
-
-// temporary data, this component should be server once theres a working db
-import { liturgicalCalendar } from "@/data/hero";
 
 interface HeroImageClientProps extends HeroSectionProps {
   swiperImages: nextImage[];
@@ -20,20 +16,12 @@ interface HeroImageClientProps extends HeroSectionProps {
 
 const HeroImageClient: FC<HeroImageClientProps> = ({
   header,
-  userSubHeader,
+  subheader,
   longParagraph,
   swiperImages,
   reverse = false,
   containerClassName = "",
 }) => {
-  const sundaysAndSpecialDays = getSundaysAndSpecialDays();
-  const nextSunday = "August 11";
-
-  console.log("sundaysAndSpecialDays", sundaysAndSpecialDays);
-
-  const subheader =
-    userSubHeader || (nextSunday ? liturgicalCalendar[nextSunday] : "");
-
   const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
 
   return (

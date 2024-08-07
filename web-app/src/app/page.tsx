@@ -1,7 +1,7 @@
 import {
   HeroCollage,
   HeroSlideClient,
-  HeroImageClient,
+  HeroImage,
   VerseOfTheDay,
   EventBlogSwiper,
   IframeMap,
@@ -25,7 +25,11 @@ import {
 
 import { NextImage } from "@/components/core/gallery";
 
-export default function Home() {
+import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
+
+export default async function Home() {
+  const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
+
   return (
     <>
       <HeroCollage header={"Our Vision "} longParagraph={visionStatementLong} />
@@ -38,17 +42,18 @@ export default function Home() {
         isFloating={true}
       />
 
-      <HeroImageClient
+      <HeroImage
         header={"Discipleship Month"}
         longParagraph={featuredMonthlyThemeVerbiage}
+        subheader={sundaysAndSpecialDays?.sundayEventName}
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10 min-h-screen"}
         reverse={true}
       />
 
-      <HeroImageClient
+      <HeroImage
         header={"Small Groups"}
-        userSubHeader={"Community Building"}
+        subheader={"Community Building"}
         longParagraph={featureCommunityBuildingVerbiage}
         swiperImages={communityBuilding1}
         containerClassName={"bg-violet-10 min-h-screen"}

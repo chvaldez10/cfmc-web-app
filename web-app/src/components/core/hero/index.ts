@@ -12,7 +12,7 @@ export { default as VerseOfTheDay } from "./molecules/atoms/VerseOfTheDay";
 
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
-export { default as HeroImageClient } from "./HeroClient/HeroImageClient";
+export { default as HeroImage } from "./HeroServer/HeroSections/HeroImage";
 
 // molecules
 export { default as VerticalWrapper } from "./molecules/VerticalWrapper";

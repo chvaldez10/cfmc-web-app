@@ -5,19 +5,19 @@ import { cookies } from "next/headers";
 import { SundaysAndSpecialDaysProps } from "@/types/supabaseTypes";
 import { getNextSunday, getMonthNameAndDay } from "../common/dateUtils";
 
-export async function getSundaysAndSpecialDays(): Promise<
-  SundaysAndSpecialDaysProps[] | null
-> {
+export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDaysProps | null> {
   const supabase = createServerComponentClient({ cookies });
   const nextSunday = getNextSunday(new Date());
   const nextSundayMDT = nextSunday.toLocaleDateString("en-US", {
     timeZone: "America/Denver",
   });
 
+  // should only return one instance regardless of duplicate dates
   const { data, error } = await supabase
     .from("sundays_and_special_days")
     .select("*")
-    .eq("date", nextSundayMDT);
+    .eq("date", nextSundayMDT)
+    .single();
 
   if (error) {
     console.error(error);
@@ -27,5 +27,18 @@ export async function getSundaysAndSpecialDays(): Promise<
     return null;
   }
 
-  return data;
+  const formattedData: SundaysAndSpecialDaysProps = {
+    id: data.id,
+    date: data.date,
+    sundayEventName: data.sunday_event_name,
+    liturgicalColor: data.liturgical_color,
+    scriptureReadings: data.scripture_readings,
+    preacher: data.preacher,
+    sermonTitle: data.sermon_title,
+    sermonSeries: data.sermon_series,
+    preacherNotes: data.preacher_notes,
+    sundayEventAlternateName: data.sunday_event_alternate_name,
+  };
+
+  return formattedData;
 }
