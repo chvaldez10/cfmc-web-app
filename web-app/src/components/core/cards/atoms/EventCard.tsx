@@ -11,10 +11,15 @@ import {
 interface EventCardProps extends EventDataProps {}
 
 const EventCard: React.FC<EventCardProps> = ({
+  id,
   name,
   startDate,
   endDate,
+  updatedAt,
+  createdAt,
+  tags,
   category,
+  occurrence,
   description,
   image,
   location,
@@ -22,9 +27,11 @@ const EventCard: React.FC<EventCardProps> = ({
   organizerName,
   slug,
 }) => {
-  const month = startDate.toLocaleString("en-US", { month: "long" });
-  const startDay = startDate.getDate();
-  const endDay = startDay === endDate.getDate() ? "" : endDate.getDate();
+  const startDateObj = new Date(startDate);
+  const endDateObj = new Date(endDate);
+  const month = startDateObj.toLocaleString("en-US", { month: "long" });
+  const startDay = startDateObj.getDate();
+  const endDay = startDay === endDateObj.getDate() ? "" : endDateObj.getDate();
 
   return (
     <div className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">

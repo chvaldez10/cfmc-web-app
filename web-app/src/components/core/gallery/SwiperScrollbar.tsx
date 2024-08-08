@@ -9,12 +9,17 @@ import { EventCard } from "@/components/core/cards";
 import { upcomingEvents } from "@/data/testData/churchEvents";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { LoadingSkeleton } from "@/components/core/loader";
+import { EventDataProps } from "@/types/supabaseTypes";
 
 const breakpoints: { screenSize: number; slidesPerView: number }[] = [
   { screenSize: 640, slidesPerView: 2 },
 ];
 
-const SwiperScrollbar: FC = () => {
+interface SwiperScrollbarProps {
+  events: EventDataProps[] | null;
+}
+
+const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const slidesPerView = useSlidesPerView(breakpoints);
 
@@ -48,7 +53,7 @@ const SwiperScrollbar: FC = () => {
           }}
         >
           {/* mocking eventData */}
-          {upcomingEvents.map((currentEvent, index) => (
+          {events?.map((currentEvent, index) => (
             <SwiperSlide key={index} className="my-8">
               <EventCard {...currentEvent} />
             </SwiperSlide>

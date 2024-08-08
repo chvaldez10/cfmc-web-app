@@ -15,7 +15,6 @@ import {
 } from "@/data/hero";
 
 import { SimpleCard, CardWithImage } from "@/components/core/cards";
-import { upcomingEvents } from "@/data/testData";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,

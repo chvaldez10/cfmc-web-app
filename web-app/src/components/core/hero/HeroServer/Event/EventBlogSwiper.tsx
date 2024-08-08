@@ -1,18 +1,27 @@
-import { FC } from "react";
 import { FlexWrapper } from "@/components/core/hero";
 import { SwiperScrollbar } from "@/components/core/gallery/";
 import { SectionHeader } from "@/components/core/ui";
+import { getEventsByMonth } from "@/utils/supabase/eventActions";
 
-const EventBlogSwiper: FC = () => {
+async function EventBlogSwiper() {
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
+  const monthNumber = +currentMonth;
+  const currentYear = currentDate.getFullYear();
+
+  const eventsInMonth = await getEventsByMonth(monthNumber, currentYear);
+
+  console.log(eventsInMonth);
+
   return (
     <FlexWrapper
       containerClassName={"h-[50vh] "}
       layoutClass={"flex-col space-y-8"}
     >
       <SectionHeader text={"Upcoming Events "} className={"text-center"} />
-      <SwiperScrollbar />
+      <SwiperScrollbar events={eventsInMonth} />
     </FlexWrapper>
   );
-};
+}
 
 export default EventBlogSwiper;
