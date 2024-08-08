@@ -6,7 +6,6 @@ import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { EventCard } from "@/components/core/cards";
-import { upcomingEvents } from "@/data/testData/churchEvents";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { LoadingSkeleton } from "@/components/core/loader";
 import { EventDataProps } from "@/types/supabaseTypes";

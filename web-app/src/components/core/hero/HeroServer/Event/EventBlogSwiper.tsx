@@ -11,8 +11,6 @@ async function EventBlogSwiper() {
 
   const eventsInMonth = await getEventsByMonth(monthNumber, currentYear);
 
-  console.log(eventsInMonth);
-
   return (
     <FlexWrapper
       containerClassName={"h-[50vh] "}
