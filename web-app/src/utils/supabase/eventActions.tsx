@@ -1,13 +1,12 @@
 "use server";
 
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
 import { EventDataProps } from "@/types/supabaseTypes";
+import { createClient } from "@/utils/supabase/server";
 
 export async function getEventBySlug(
   slug: string
 ): Promise<EventDataProps | null> {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClient();
 
   const { data, error } = await supabase
     .from("events")
@@ -31,7 +30,8 @@ export async function getEventsByMonth(
   monthIndex: number,
   year: number
 ): Promise<EventDataProps[] | null> {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClient();
+
   const { data, error } = await supabase
     .from("events")
     .select("*")
