@@ -31,9 +31,11 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
     >
       {/* Text Column */}
       <HeroHalfWrapper containerClassName="div-outside-width text-center gap-4">
-        <SectionSubheader text={subheader} className="text-purple-500" />
+        <LongParagraph containerClassName="text-purple-500 ">
+          {subheader}
+        </LongParagraph>
         <SectionHeader text={header} />
-        <LongParagraph>{longParagraph}</LongParagraph>
+        <SectionSubheader text={longParagraph} />
       </HeroHalfWrapper>
 
       {/* Image Column */}

@@ -28,3 +28,10 @@ export interface SundaysAndSpecialDaysProps {
   preacherNotes?: string;
   sundayEventAlternateName?: string;
 }
+
+export interface ReleaseProps {
+  id?: number;
+  releaseDate: Date;
+  version: string;
+  features: string[];
+}
