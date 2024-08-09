@@ -1,9 +1,22 @@
 import { ReleaseData } from "@/types/releaseData";
 
+// Note: This is just for testing purposes. This data structure does not reflect the database structure.
 export const releaseData: ReleaseData[] = [
   {
     year: 2024,
     releaseItems: [
+      {
+        version: "v 24.0.3",
+        details: {
+          date: "August 11, 2024",
+          featureList: {
+            "🧑‍🍳 Fresh out the oven":
+              "Working backend server! Mocked a few pages.",
+            "🐛 Bug fixes and improvements": "Fix build and linting errors.",
+            "⏭️ Up next": "More UI components and features to come.",
+          },
+        },
+      },
       {
         version: "v 24.0.2",
         details: {
