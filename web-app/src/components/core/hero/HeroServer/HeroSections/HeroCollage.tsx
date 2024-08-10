@@ -19,7 +19,6 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
 }) => {
   return (
     <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
-      {/* Headers */}
       <HeroTextWrapper>
         <MainGradientHeader text={header} />
         <NavigationText
@@ -30,7 +29,6 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
         </NavigationText>
       </HeroTextWrapper>
 
-      {/* Buttons*/}
       <Flex containerClassName="div-flex-row gap-x-4 md:gap-x-8">
         <NavigateButton
           className="z-10 scale-up"
@@ -47,7 +45,6 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
         </NavigateButton>
       </Flex>
 
-      {/* Image Grid */}
       <Grid containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12">
         {featuredImages.map((featuredImage, index) => (
           <NextImage

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
-import { nextImage } from "@/types/genericTypes";
+import { ImageProps } from "@/types/genericTypes";
 
-interface NextImageProps extends nextImage {
+interface NextImageProps extends ImageProps {
   width?: string;
   height: string;
   containerClassName?: string | undefined;

@@ -10,7 +10,7 @@ const ContactUs = () => {
             height="100%"
             className="absolute inset-0"
             title="map"
-            src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.821665914685!2d-114.0807365!3d51.0932986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371658521e49643%3A0xe758ea3bb43192eb!2s419%20Northmount%20Dr%20NW%2C%20Calgary%2C%20AB%20T2K%203H7!5e0!3m2!1sen!2sca!4v1716651064489!5m2!1sen!2sca"
             style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
           ></iframe>
           <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">

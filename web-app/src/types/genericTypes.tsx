@@ -12,7 +12,7 @@ export interface heroContent {
   longParagraph: string;
 }
 
-export interface nextImage {
+export interface ImageProps {
   src: string;
   alt: string;
   containerClassName?: string | undefined;
@@ -75,4 +75,5 @@ export interface BadgeProps {
 export interface DivProps {
   children: ReactNode;
   containerClassName?: string;
+  onClick?: () => void;
 }
