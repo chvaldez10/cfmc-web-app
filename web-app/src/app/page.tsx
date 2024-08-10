@@ -25,15 +25,22 @@ import {
 import { NextImage } from "@/components/core/gallery";
 
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
+import { getEventById } from "@/utils/supabase/eventActions";
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
 
-  console.log("sundaysAndSpecialDays: ", sundaysAndSpecialDays);
+  const eventDetails = await getEventById(
+    sundaysAndSpecialDays?.eventId as number
+  );
 
   return (
     <>
-      <HeroCollage header={"Our Vision "} longParagraph={visionStatementLong} />
+      <HeroCollage
+        header={"Our Vision "}
+        longParagraph={visionStatementLong}
+        nextServiceSlug={eventDetails?.slug}
+      />
 
       <HeroSlideClient
         header={"Sunday Service"}

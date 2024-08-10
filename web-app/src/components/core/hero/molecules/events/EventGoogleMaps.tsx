@@ -3,7 +3,7 @@ import { Box } from "@/components/core/ui";
 import { IframeMap, HeroHalfWrapper } from "@/components/core/hero";
 
 interface EventDescriptionProps {
-  eventLocation: string;
+  eventLocation: string | undefined;
 }
 
 const EventGoogleMaps: FC<EventDescriptionProps> = ({ eventLocation }) => {

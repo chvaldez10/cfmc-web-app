@@ -13,18 +13,19 @@ export default function NotFoundPage() {
         <LuSearchX className="text-6xl" />
         <SectionHeader text="Error 404" className="m-4" />
       </Box>
+      <FlexCenter containerClassName="space-y-2">
+        <LongParagraph containerClassName="">
+          {`Sorry, we couldn't find this page.`}
+        </LongParagraph>
 
-      <LongParagraph containerClassName="">
-        {`Sorry, we couldn't find this page.`}
-      </LongParagraph>
+        <LongParagraph containerClassName="">
+          {`Please navigate back to the homepage.`}
+        </LongParagraph>
 
-      <LongParagraph containerClassName="">
-        {`Please navigate back to the homepage.`}
-      </LongParagraph>
-
-      <NavigateButton url={"/"} variant="outline">
-        Homepage
-      </NavigateButton>
+        <NavigateButton url={"/"} variant="outline">
+          Homepage
+        </NavigateButton>
+      </FlexCenter>
     </FlexCenter>
   );
 }

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface IframeMapProps {
-  src: string;
+  src: string | undefined;
   containerClassName?: string;
 }
 

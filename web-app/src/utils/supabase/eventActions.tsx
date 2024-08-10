@@ -26,6 +26,27 @@ export async function getEventBySlug(
   return data;
 }
 
+export async function getEventById(id: number): Promise<EventDataProps | null> {
+  const supabase = createClient();
+
+  const { data, error } = await supabase
+    .from("events")
+    .select("*")
+    .eq("id", id)
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.error("Error fetching event ID:", error);
+    return null;
+  } else if (!data) {
+    console.error("No event data found for id:", id);
+    return null;
+  }
+
+  return data;
+}
+
 export async function getEventsByMonth(
   monthIndex: number,
   year: number

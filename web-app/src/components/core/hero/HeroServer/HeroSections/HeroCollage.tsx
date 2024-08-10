@@ -11,9 +11,15 @@ import {
 } from "@/components/core/ui";
 import { heroContent } from "@/types/genericTypes";
 
-interface HeroCollageProps extends heroContent {}
+interface HeroCollageProps extends heroContent {
+  nextServiceSlug: string | undefined;
+}
 
-const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
+const HeroCollage: FC<HeroCollageProps> = ({
+  header,
+  longParagraph,
+  nextServiceSlug,
+}) => {
   return (
     <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
       <HeroTextWrapper>
@@ -30,7 +36,11 @@ const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
         {/* TODO: Please remove this test slug after testing */}
         <NavigateButton
           className="z-10 scale-up"
-          url={"/event/outdoor-worship-service-20240811"}
+          url={
+            nextServiceSlug
+              ? `/event/${nextServiceSlug}`
+              : `/${nextServiceSlug}`
+          }
         >
           Find a Service
         </NavigateButton>
