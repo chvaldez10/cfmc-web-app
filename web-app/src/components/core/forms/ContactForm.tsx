@@ -1,24 +1,21 @@
 import { FC } from "react";
-
+import { Flex, SectionSubheader, LongParagraph } from "@/components/core/ui";
 import {
   contactUsVerbiage,
   contactUsFooterVerbiage,
 } from "@/data/hero/constants";
+import TextLabel from "./atoms/TextLabel";
 
 const ContactForm: FC = () => {
   return (
-    <div className="container px-5 py-24 mx-auto flex ">
-      <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md bg-white-0">
-        <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
-          Contact Us
-        </h2>
-        <p className="leading-relaxed mb-5 text-gray-600">
+    <Flex containerClassName="container px-5 py-24 mx-auto flex ">
+      <Flex containerClassName="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md bg-white-0">
+        <SectionSubheader text="Contact Us" />
+        <LongParagraph containerClassName="text-gray-600 my-2">
           {contactUsVerbiage}
-        </p>
+        </LongParagraph>
         <div className="relative mb-4">
-          <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-            Email
-          </label>
+          <TextLabel label="Email" htmlFor="email" />
           <input
             type="email"
             id="email"
@@ -27,9 +24,7 @@ const ContactForm: FC = () => {
           />
         </div>
         <div className="relative mb-4">
-          <label htmlFor="message" className="leading-7 text-sm text-gray-600">
-            Message
-          </label>
+          <TextLabel label="Message" htmlFor="message" />
           <textarea
             id="message"
             name="message"
@@ -40,8 +35,8 @@ const ContactForm: FC = () => {
           Button
         </button>
         <p className="text-xs text-gray-500 mt-3">{contactUsFooterVerbiage}</p>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 };
 
