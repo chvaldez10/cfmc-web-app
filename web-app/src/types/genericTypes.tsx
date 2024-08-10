@@ -76,4 +76,5 @@ export interface DivProps {
   children: ReactNode;
   containerClassName?: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
