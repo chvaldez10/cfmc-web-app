@@ -18,7 +18,7 @@ const TextInput: React.FC<TextInputProps> = ({
       type={type}
       id={id}
       name={name}
-      className={`w-full bg-white rounded border border-gray-300 focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out ${containerClassName}`}
+      className={`w-full bg-white rounded border border-gray-300 focus:border-purple-500 text-sm outline-none text-gray-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out ${containerClassName}`}
     />
   );
 };

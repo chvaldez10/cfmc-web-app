@@ -14,7 +14,7 @@ const InputLabel: React.FC<InputLabelProps> = ({
   return (
     <label
       htmlFor={htmlFor}
-      className={`leading-7 text-sm text-gray-600 ${containerClassName}`}
+      className={`leading-7 text-sm text-gray-500 ${containerClassName}`}
     >
       {label}
     </label>

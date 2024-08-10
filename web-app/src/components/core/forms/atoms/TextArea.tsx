@@ -17,14 +17,14 @@ const TextArea: FC<TextAreaProps> = ({
     <div>
       <label
         htmlFor={id}
-        className="block mb-2 text-sm font-medium text-gray-600"
+        className="block mb-2 text-sm font-medium text-gray-500"
       >
         {label}
       </label>
       <textarea
         id={id}
         rows={rows}
-        className="block p-2.5 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500"
+        className="block p-2.5 w-full text-sm text-gray-500 bg-white-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500"
         placeholder={placeholder}
       ></textarea>
     </div>
