@@ -17,7 +17,7 @@ const TextArea: FC<TextAreaProps> = ({
     <div>
       <label
         htmlFor={id}
-        className="block mb-2 text-sm font-medium text-gray-900"
+        className="block mb-2 text-sm font-medium text-gray-600"
       >
         {label}
       </label>

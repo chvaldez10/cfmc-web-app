@@ -52,7 +52,7 @@ const RequestForm: FC = () => {
       <TextSelector />
       <TextArea id="message" label="Message" />
       <div className="flex justify-end">
-        <FormButton className="text-emerald-500 hover:underline">
+        <FormButton className="text-purple-500 hover:underline">
           Submit
         </FormButton>
       </div>
