@@ -30,9 +30,10 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
       </HeroTextWrapper>
 
       <Flex containerClassName="div-flex-row gap-x-4 md:gap-x-8">
+        {/* TODO: Please remove this test slug after testing */}
         <NavigateButton
           className="z-10 scale-up"
-          url={"/get-involved/upcoming"}
+          url={"/event/outdoor-worship-service-20240811"}
         >
           Find a Service
         </NavigateButton>

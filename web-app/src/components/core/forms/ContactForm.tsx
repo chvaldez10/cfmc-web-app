@@ -16,7 +16,7 @@ const ContactForm: FC = () => {
     <Flex containerClassName="container px-5 py-24 mx-auto flex">
       <Flex containerClassName="lg:w-1/3 md:w-1/2 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md bg-white-0 space-y-2">
         <SectionSubheader text="Contact Us" />
-        <LongParagraph containerClassName="text-gray-600">
+        <LongParagraph containerClassName="text-gray-500">
           {contactUsVerbiage}
         </LongParagraph>
         <Box>
