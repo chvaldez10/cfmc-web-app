@@ -4,7 +4,7 @@ import {
   contactUsVerbiage,
   contactUsFooterVerbiage,
 } from "@/data/hero/constants";
-import TextLabel from "./atoms/TextLabel";
+import TextLabel from "./atoms/InputLabel";
 
 const ContactForm: FC = () => {
   return (
