@@ -37,6 +37,7 @@ export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDaysP
     sermonSeries: data.sermon_series,
     preacherNotes: data.preacher_notes,
     sundayEventAlternateName: data.sunday_event_alternate_name,
+    eventId: data.event_id,
   };
 
   return formattedData;

@@ -11,12 +11,9 @@ import {
 } from "@/components/core/ui";
 import { heroContent } from "@/types/genericTypes";
 
-interface HeroCollageClientProps extends heroContent {}
+interface HeroCollageProps extends heroContent {}
 
-const HeroCollageClient: FC<HeroCollageClientProps> = ({
-  header,
-  longParagraph,
-}) => {
+const HeroCollage: FC<HeroCollageProps> = ({ header, longParagraph }) => {
   return (
     <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
       <HeroTextWrapper>
@@ -62,4 +59,4 @@ const HeroCollageClient: FC<HeroCollageClientProps> = ({
   );
 };
 
-export default HeroCollageClient;
+export default HeroCollage;

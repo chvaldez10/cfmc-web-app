@@ -29,6 +29,8 @@ import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysA
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
 
+  console.log("sundaysAndSpecialDays: ", sundaysAndSpecialDays);
+
   return (
     <>
       <HeroCollage header={"Our Vision "} longParagraph={visionStatementLong} />
