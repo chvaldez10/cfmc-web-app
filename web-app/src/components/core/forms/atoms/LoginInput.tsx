@@ -2,9 +2,9 @@
 
 import { FC, useState } from "react";
 import { ShowHideButton } from "@/components/core/ui/";
-import { formProps } from "@/types/genericTypes";
+import { FormProps } from "@/types/genericTypes";
 
-interface LoginInputProps extends formProps {}
+interface LoginInputProps extends FormProps {}
 
 const LoginInput: FC<LoginInputProps> = ({
   type,

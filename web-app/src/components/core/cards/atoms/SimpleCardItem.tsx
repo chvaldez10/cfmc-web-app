@@ -2,7 +2,7 @@
 
 import { FC, ReactNode } from "react";
 import { SectionSubheader, LongParagraph } from "@/components/core/ui";
-import VerticalCenteredModal from "../../modals/VerticalCenteredModal";
+import { VerticalCenteredModal } from "@/components/core/modals";
 import RequestForm from "../../forms/RequestForm";
 import useModal from "@/hooks/useModal";
 

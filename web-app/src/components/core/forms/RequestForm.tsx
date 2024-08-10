@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import TextInput from "./atoms/TextInput";
+import TextInputLabel from "./atoms/TextInputLabel";
 import TextSelector from "./atoms/TextSelector";
 import TextArea from "./atoms/TextArea";
 import { FormButton } from "@/components/core/ui";
@@ -29,20 +29,20 @@ const RequestForm: FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className=" space-y-4 z-50 ">
-      <TextInput
+      <TextInputLabel
         type="text"
         name="fullName"
         id="fullName"
         placeholder="Full Name"
       />
-      <TextInput
+      <TextInputLabel
         type="email"
         name="email"
         id="email"
         placeholder="Email"
         required
       />
-      <TextInput
+      <TextInputLabel
         type="tel"
         name="phoneNumber"
         id="phoneNumber"

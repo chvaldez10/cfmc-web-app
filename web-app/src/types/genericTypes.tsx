@@ -45,7 +45,7 @@ export interface churchLiturgy {
   content: string;
 }
 
-export interface formProps {
+export interface FormProps {
   type: string;
   name: string;
   id: string;

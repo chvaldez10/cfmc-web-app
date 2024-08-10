@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
-import { formProps } from "@/types/genericTypes";
+import { FormProps } from "@/types/genericTypes";
 
-interface TextInputProps extends formProps {}
+interface TextInputLabelProps extends FormProps {}
 
-const TextInput: FC<TextInputProps> = ({
+const TextInputLabel: FC<TextInputLabelProps> = ({
   type,
   name,
   id,
@@ -59,4 +59,4 @@ const TextInput: FC<TextInputProps> = ({
   );
 };
 
-export default TextInput;
+export default TextInputLabel;

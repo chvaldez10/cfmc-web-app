@@ -1,5 +1,6 @@
 import { FC, ReactElement } from "react";
 import SimpleCardItem from "./atoms/SimpleCardItem";
+import { Grid } from "@/components/core/ui";
 
 type CardContainerItem = {
   label: string;
@@ -13,7 +14,7 @@ interface CardContainerProps {
 
 const SimpleCard: FC<CardContainerProps> = ({ cardContainerItems }) => {
   return (
-    <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-3 py-8 bg-emerald-500 text-white-0 ">
+    <Grid containerClassName="w-full grid gap-4 grid-cols-1 md:grid-cols-3 py-8 bg-emerald-500 text-white-0 ">
       {cardContainerItems.map((item, index) => (
         <SimpleCardItem
           key={index}
@@ -22,7 +23,7 @@ const SimpleCard: FC<CardContainerProps> = ({ cardContainerItems }) => {
           svgIcon={item.svgIcon}
         />
       ))}
-    </div>
+    </Grid>
   );
 };
 

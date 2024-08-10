@@ -96,7 +96,7 @@ export const connectDropdownItem: {
   svgIcon: ReactElement;
 }[] = [
   {
-    label: "Email",
+    label: "Contact Us",
     url: "/connect/contact-us",
     svgIcon: <MdMarkEmailRead />,
   },
