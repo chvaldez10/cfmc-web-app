@@ -6,12 +6,12 @@ import {
   LongParagraph,
 } from "@/components/core/ui/";
 import { SwiperCoverFlow } from "@/components/core/gallery";
-import { nextImage } from "@/types/genericTypes";
+import { ImageProps } from "@/types/genericTypes";
 import { HeroSectionProps } from "@/types/genericTypes";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 
 interface HeroImageClientProps extends HeroSectionProps {
-  swiperImages: nextImage[];
+  swiperImages: ImageProps[];
 }
 
 const HeroImageClient: FC<HeroImageClientProps> = ({

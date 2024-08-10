@@ -1,6 +1,6 @@
-import { nextImage } from "@/types/genericTypes";
+import { ImageProps } from "@/types/genericTypes";
 
-export const featuredImages: nextImage[] = [
+export const featuredImages: ImageProps[] = [
   {
     src: "/featured/header/17.jpeg",
     alt: "featured image 1",
@@ -18,7 +18,7 @@ export const featuredImages: nextImage[] = [
   },
 ];
 
-export const pastEvents1: nextImage[] = [
+export const pastEvents1: ImageProps[] = [
   {
     src: "/featured/past-events-1/1.jpg",
     alt: "past event 1",
@@ -53,7 +53,7 @@ export const pastEvents1: nextImage[] = [
   },
 ];
 
-export const communityBuilding1: nextImage[] = [
+export const communityBuilding1: ImageProps[] = [
   {
     src: "/featured/community-building-1/1.jpg",
     alt: "community building 1",

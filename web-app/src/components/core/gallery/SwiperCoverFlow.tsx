@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import NextImage from "./NextImage";
-import { nextImage } from "@/types/genericTypes";
+import { ImageProps } from "@/types/genericTypes";
 
 // Swiper modules
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +14,7 @@ import "swiper/css/autoplay";
 import "@/styles/cover-flow.css";
 
 interface CoverFlowSwiperProps {
-  swiperImages: nextImage[];
+  swiperImages: ImageProps[];
 }
 
 const CoverFlowSwiper: FC<CoverFlowSwiperProps> = ({ swiperImages }) => {
