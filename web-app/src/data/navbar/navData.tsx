@@ -1,18 +1,22 @@
 import { ReactElement } from "react";
-import { FaBookOpen } from "react-icons/fa";
-import { FaChurch } from "react-icons/fa";
-import { MdTableRestaurant } from "react-icons/md";
-import { FaPeopleCarry } from "react-icons/fa";
+import {
+  FaBookOpen,
+  FaChurch,
+  FaPeopleCarry,
+  FaRegCalendarCheck,
+} from "react-icons/fa";
+import {
+  MdTableRestaurant,
+  MdOutlineAnnouncement,
+  MdForum,
+} from "react-icons/md";
 import { CiImageOn } from "react-icons/ci";
-import { MdOutlineAnnouncement } from "react-icons/md";
 import { HiPencilAlt } from "react-icons/hi";
-import { FaRegCalendarCheck } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import { RiSoundModuleFill } from "react-icons/ri";
-import { IoMusicalNotesOutline } from "react-icons/io5";
-import { MdMarkEmailRead } from "react-icons/md";
 import { PiHandsPrayingFill } from "react-icons/pi";
-import { MdForum } from "react-icons/md";
+import { IoMusicalNotesOutline } from "react-icons/io5";
+import { IoIosMail } from "react-icons/io";
 
 export const aboutDropdownItems: {
   label: string;
@@ -98,7 +102,7 @@ export const connectDropdownItem: {
   {
     label: "Contact Us",
     url: "/connect/contact-us",
-    svgIcon: <MdMarkEmailRead />,
+    svgIcon: <IoIosMail />,
   },
   {
     label: " Prayer",
