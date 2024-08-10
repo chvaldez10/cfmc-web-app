@@ -10,11 +10,11 @@ import { ImageProps } from "@/types/genericTypes";
 import { HeroSectionProps } from "@/types/genericTypes";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 
-interface HeroImageClientProps extends HeroSectionProps {
+interface HeroImageProps extends HeroSectionProps {
   swiperImages: ImageProps[];
 }
 
-const HeroImageClient: FC<HeroImageClientProps> = ({
+const HeroImage: FC<HeroImageProps> = ({
   header,
   subheader,
   longParagraph,
@@ -46,4 +46,4 @@ const HeroImageClient: FC<HeroImageClientProps> = ({
   );
 };
 
-export default HeroImageClient;
+export default HeroImage;

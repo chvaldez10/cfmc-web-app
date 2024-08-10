@@ -1,6 +1,10 @@
-import UnderConstruction from "@/components/template/UnderConstruction";
 import ContactUs from "@/components/core/hero/HeroServer/Contact/ContactUs";
+import { Box } from "@/components/core/ui";
 
 export default function page() {
-  return <ContactUs />;
+  return (
+    <Box containerClassName="mt-24">
+      <ContactUs />
+    </Box>
+  );
 }
