@@ -4,6 +4,24 @@ import { SundaysAndSpecialDaysProps } from "@/types/supabaseTypes";
 import { getNextSunday } from "../common/dateUtils";
 import { createClient } from "@/utils/supabase/server";
 
+function formatSundaysAndSpecialDaysData(
+  data: any
+): SundaysAndSpecialDaysProps {
+  return {
+    id: data.id,
+    date: data.date,
+    sundayEventName: data.sunday_event_name,
+    liturgicalColor: data.liturgical_color,
+    scriptureReadings: data.scripture_readings,
+    preacher: data.preacher,
+    sermonTitle: data.sermon_title,
+    sermonSeries: data.sermon_series,
+    preacherNotes: data.preacher_notes,
+    sundayEventAlternateName: data.sunday_event_alternate_name,
+    eventId: data.event_id,
+  };
+}
+
 export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDaysProps | null> {
   const supabase = createClient();
   const nextSunday = getNextSunday(new Date());
@@ -26,19 +44,5 @@ export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDaysP
     return null;
   }
 
-  const formattedData: SundaysAndSpecialDaysProps = {
-    id: data.id,
-    date: data.date,
-    sundayEventName: data.sunday_event_name,
-    liturgicalColor: data.liturgical_color,
-    scriptureReadings: data.scripture_readings,
-    preacher: data.preacher,
-    sermonTitle: data.sermon_title,
-    sermonSeries: data.sermon_series,
-    preacherNotes: data.preacher_notes,
-    sundayEventAlternateName: data.sunday_event_alternate_name,
-    eventId: data.event_id,
-  };
-
-  return formattedData;
+  return formatSundaysAndSpecialDaysData(data);
 }
