@@ -63,7 +63,26 @@ export async function getEventById(id: number): Promise<EventDataProps | null> {
     return null;
   }
 
-  return data;
+  const formattedData: EventDataProps = {
+    id: data.id,
+    name: data.name,
+    startDate: data.start_date,
+    endDate: data.end_date,
+    updatedAt: data.updated_at,
+    createdAt: data.created_at,
+    tags: data.tags,
+    category: data.category,
+    occurrence: data.occurrence,
+    description: data.description,
+    image: data.image,
+    address: data.address,
+    googleMapsUrl: data.google_maps_url,
+    status: data.status,
+    organizerName: data.organizer_name,
+    slug: data.slug,
+  };
+
+  return formattedData;
 }
 
 export async function getEventsByMonth(

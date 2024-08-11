@@ -14,30 +14,55 @@ const renderEventDetail = (icon: ReactElement, text: string) => (
   </LongParagraph>
 );
 
-const EventHeader = () => {
+interface EventHeaderProps {
+  eventName: string | undefined;
+  eventStartDate: string;
+  eventAddress: string;
+  eventOrganizerName: string;
+  eventCategory: string;
+  eventImageUrl: string;
+}
+
+const EventHeader = ({
+  eventName,
+  eventStartDate,
+  eventAddress,
+  eventOrganizerName,
+  eventCategory,
+  eventImageUrl,
+}: EventHeaderProps) => {
+  const utcDate = new Date(eventStartDate);
+  const mdtDate = utcDate.toLocaleString("en-US", {
+    timeZone: "America/Denver",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  const longDate = utcDate.toLocaleString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <FlexWrapper containerClassName="min-h-auto" layoutClass="div-col-row">
       <HeroHalfWrapper containerClassName="flex flex-col justify-center">
-        <SectionHeader text="Outdoor Worship" />
+        <SectionHeader text={eventName} />
 
         <Box containerClassName="space-y-4 my-16 font-light ">
-          {renderEventDetail(<FaCalendarCheck />, "Sunday August 11th, 2024")}
-          {renderEventDetail(<FaRegClock />, "10:00 AM")}
-          {renderEventDetail(<FaMapMarkerAlt />, "Glenmore Park")}
-          {renderEventDetail(
-            <MdPersonAdd />,
-            "Calgary Filipino Methodist Church"
-          )}
-          {renderEventDetail(<BiCategory />, "Outdoor Worship")}
+          {renderEventDetail(<FaCalendarCheck />, longDate)}
+          {renderEventDetail(<FaRegClock />, mdtDate)}
+          {renderEventDetail(<FaMapMarkerAlt />, eventAddress)}
+          {renderEventDetail(<MdPersonAdd />, eventOrganizerName)}
+          {renderEventDetail(<BiCategory />, eventCategory)}
         </Box>
       </HeroHalfWrapper>
       <HeroHalfWrapper containerClassName="div-outside-width">
         <NextImage
           width={"w-full"}
           height={"h-576"}
-          src={
-            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
+          src={eventImageUrl}
           alt={"Test Image"}
           imageClassName={"rounded-lg object-center"}
         />
