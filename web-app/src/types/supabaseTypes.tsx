@@ -10,7 +10,8 @@ export interface EventDataProps {
   occurrence: string;
   description: string;
   image: string;
-  location: string;
+  address: string;
+  googleMapsUrl?: string;
   status: string;
   organizerName: string;
   slug: string;
