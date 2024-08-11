@@ -16,7 +16,7 @@ const renderEventDetail = (icon: ReactElement, text: string) => (
 
 interface EventHeaderProps {
   eventName: string | undefined;
-  eventStartDate: string;
+  eventStartDate: Date;
   eventAddress: string;
   eventOrganizerName: string;
   eventCategory: string;
@@ -31,14 +31,13 @@ const EventHeader = ({
   eventCategory,
   eventImageUrl,
 }: EventHeaderProps) => {
-  const utcDate = new Date(eventStartDate);
-  const mdtDate = utcDate.toLocaleString("en-US", {
+  const mdtDate = eventStartDate.toLocaleString("en-US", {
     timeZone: "America/Denver",
     hour: "numeric",
     minute: "numeric",
     hour12: true,
   });
-  const longDate = utcDate.toLocaleString("en-US", {
+  const longDate = eventStartDate.toLocaleString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",

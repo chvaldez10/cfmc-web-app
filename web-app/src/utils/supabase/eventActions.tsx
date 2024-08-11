@@ -3,6 +3,27 @@
 import { EventDataProps } from "@/types/supabaseTypes";
 import { createClient } from "@/utils/supabase/server";
 
+function formatEventData(data: any): EventDataProps {
+  return {
+    id: data.id,
+    name: data.name,
+    startDate: new Date(data.start_date),
+    endDate: new Date(data.end_date),
+    updatedAt: new Date(data.updated_at),
+    createdAt: new Date(data.created_at),
+    tags: data.tags ? [...data.tags] : [],
+    category: data.category,
+    occurrence: data.occurrence,
+    description: data.description,
+    image: data.image,
+    address: data.address,
+    googleMapsUrl: data.google_maps_url,
+    status: data.status,
+    organizerName: data.organizer_name,
+    slug: data.slug,
+  };
+}
+
 export async function getEventBySlug(
   slug: string
 ): Promise<EventDataProps | null> {
@@ -23,26 +44,7 @@ export async function getEventBySlug(
     return null;
   }
 
-  const formattedData: EventDataProps = {
-    id: data.id,
-    name: data.name,
-    startDate: data.start_date,
-    endDate: data.end_date,
-    updatedAt: data.updated_at,
-    createdAt: data.created_at,
-    tags: data.tags,
-    category: data.category,
-    occurrence: data.occurrence,
-    description: data.description,
-    image: data.image,
-    address: data.address,
-    googleMapsUrl: data.google_maps_url,
-    status: data.status,
-    organizerName: data.organizer_name,
-    slug: data.slug,
-  };
-
-  return formattedData;
+  return formatEventData(data);
 }
 
 export async function getEventById(id: number): Promise<EventDataProps | null> {
@@ -63,26 +65,7 @@ export async function getEventById(id: number): Promise<EventDataProps | null> {
     return null;
   }
 
-  const formattedData: EventDataProps = {
-    id: data.id,
-    name: data.name,
-    startDate: data.start_date,
-    endDate: data.end_date,
-    updatedAt: data.updated_at,
-    createdAt: data.created_at,
-    tags: data.tags,
-    category: data.category,
-    occurrence: data.occurrence,
-    description: data.description,
-    image: data.image,
-    address: data.address,
-    googleMapsUrl: data.google_maps_url,
-    status: data.status,
-    organizerName: data.organizer_name,
-    slug: data.slug,
-  };
-
-  return formattedData;
+  return formatEventData(data);
 }
 
 export async function getEventsByMonth(
@@ -105,26 +88,5 @@ export async function getEventsByMonth(
     return null;
   }
 
-  const formattedData: EventDataProps[] = data.map((event) => {
-    return {
-      id: event.id,
-      name: event.name,
-      startDate: event.start_date,
-      endDate: event.end_date,
-      updatedAt: event.updated_at,
-      createdAt: event.created_at,
-      tags: event.tags ? [...event.tags] : [],
-      category: event.category,
-      occurrence: event.occurrence,
-      description: event.description,
-      image: event.image,
-      address: event.address,
-      googleMapsUrl: event.google_maps_url,
-      status: event.status,
-      organizerName: event.organizer_name,
-      slug: event.slug,
-    };
-  });
-
-  return formattedData;
+  return data.map((event) => formatEventData(event));
 }
