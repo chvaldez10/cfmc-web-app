@@ -13,10 +13,7 @@ export default async function page({ params }: { params: { slug: string } }) {
   const eventDetails = await getEventBySlug(slug);
 
   if (!eventDetails) {
-    console.error("Event not found");
     return <EventNotFound />;
-  } else {
-    console.log("Fetched event details:", eventDetails);
   }
 
   return (
@@ -31,7 +28,7 @@ export default async function page({ params }: { params: { slug: string } }) {
       />
       <EventDescription>{eventDetails?.description}</EventDescription>
       <EventGoogleMaps eventLocation={eventDetails?.googleMapsUrl} />
-      <EventTags />
+      <EventTags tags={eventDetails.tags} />
     </Box>
   );
 }
