@@ -18,10 +18,6 @@ export default function NotFoundPage() {
           {`Sorry, we couldn't find this page.`}
         </LongParagraph>
 
-        <LongParagraph containerClassName="">
-          {`Please navigate back to the homepage.`}
-        </LongParagraph>
-
         <NavigateButton url={"/"} variant="outline">
           Homepage
         </NavigateButton>
