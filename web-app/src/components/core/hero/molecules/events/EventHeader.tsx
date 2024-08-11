@@ -8,7 +8,7 @@ import { BiCategory } from "react-icons/bi";
 import { MdPersonAdd } from "react-icons/md";
 
 const renderEventDetail = (icon: ReactElement, text: string) => (
-  <LongParagraph containerClassName="flex flex-row gap-2 ">
+  <LongParagraph containerClassName="flex flex-row gap-2 items-center">
     <Box containerClassName="text-violet-500 ">{icon}</Box>
     {text}
   </LongParagraph>
@@ -45,18 +45,10 @@ const EventHeader = ({
   });
 
   return (
-    <FlexWrapper containerClassName="min-h-auto" layoutClass="div-col-row">
-      <HeroHalfWrapper containerClassName="flex flex-col justify-center">
-        <SectionHeader text={eventName} />
-
-        <Box containerClassName="space-y-4 my-16 font-light ">
-          {renderEventDetail(<FaCalendarCheck />, longDate)}
-          {renderEventDetail(<FaRegClock />, mdtDate)}
-          {renderEventDetail(<FaMapMarkerAlt />, eventAddress)}
-          {renderEventDetail(<MdPersonAdd />, eventOrganizerName)}
-          {renderEventDetail(<BiCategory />, eventCategory)}
-        </Box>
-      </HeroHalfWrapper>
+    <FlexWrapper
+      containerClassName="min-h-auto"
+      layoutClass="div-col-row-reverse"
+    >
       <HeroHalfWrapper containerClassName="div-outside-width">
         <NextImage
           width={"w-full"}
@@ -65,6 +57,17 @@ const EventHeader = ({
           alt={"Test Image"}
           imageClassName={"rounded-lg object-center"}
         />
+      </HeroHalfWrapper>
+      <HeroHalfWrapper containerClassName="flex flex-col justify-center">
+        <SectionHeader text={eventName} />
+
+        <Box containerClassName="space-y-4 my-16 font-light  ">
+          {renderEventDetail(<FaCalendarCheck />, longDate)}
+          {renderEventDetail(<FaRegClock />, mdtDate)}
+          {renderEventDetail(<FaMapMarkerAlt />, eventAddress)}
+          {renderEventDetail(<MdPersonAdd />, eventOrganizerName)}
+          {renderEventDetail(<BiCategory />, eventCategory)}
+        </Box>
       </HeroHalfWrapper>
     </FlexWrapper>
   );
