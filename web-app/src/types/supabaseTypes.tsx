@@ -35,5 +35,8 @@ export interface ReleaseProps {
   id?: number;
   releaseDate: Date;
   version: string;
-  features: string[];
+  freshOutTheOven: string;
+  bugFixesAndImprovements: string;
+  upNext?: string;
+  specialNotes?: string;
 }
