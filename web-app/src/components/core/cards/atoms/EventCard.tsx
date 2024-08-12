@@ -22,7 +22,7 @@ const EventCard: React.FC<EventCardProps> = ({
   occurrence,
   description,
   image,
-  location,
+  address,
   status,
   organizerName,
   slug,

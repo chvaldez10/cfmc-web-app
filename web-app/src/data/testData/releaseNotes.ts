@@ -10,10 +10,11 @@ export const releaseData: ReleaseData[] = [
         details: {
           date: "August 11, 2024",
           featureList: {
-            "🧑‍🍳 Fresh out the oven":
-              "Working backend server! Mocked a few pages.",
-            "🐛 Bug fixes and improvements": "Fix build and linting errors.",
-            "⏭️ Up next": "More UI components and features to come.",
+            "🧑‍🍳 Fresh out of the oven":
+              "Working backend server! New pages and UI components.",
+            "🐛 Bug fixes and improvements":
+              "Fixed build and linting errors. Updated schema.",
+            "⏭️ Up next": "More pages and UI components.",
           },
         },
       },
@@ -36,10 +37,11 @@ export const releaseData: ReleaseData[] = [
         details: {
           date: "June 30, 2024",
           featureList: {
-            "⚡ Supabase Integration": "Added authentication for admin use.",
-            "🖼️ Design":
-              "Reversed theming, changed landing page layout, created new hero sections, and added a navbar background.",
-            "🐋 Docker": "Added Docker for local development.",
+            "🧑‍🍳 Fresh out the oven":
+              "Added authentication for admin use. New hero sections, and added a navbar background. Docker for local development.",
+            "🐛 Bug fixes and improvements":
+              "Reversed theming, changed landing page layout.",
+            "⏭️ Up next": "New pages and UI components.",
           },
         },
       },
@@ -48,11 +50,10 @@ export const releaseData: ReleaseData[] = [
         details: {
           date: "June 11, 2024",
           featureList: {
-            "🎉 First Official Release:":
-              "Introduced a static page with routing, main header, several hero sections and cards, footer, and release page.",
-            "📸 Featured Images:": "Selected featured images for the web page.",
-            "📲 Mobile/Web:":
-              "The web page can resize for both small and large screens.",
+            "🧑‍🍳 Fresh out the oven":
+              "🎉 First Official Release. Introduced a static page with routing, main header, several hero sections and cards, footer, and release page.",
+            "🐛 Bug fixes and improvements": "",
+            "⏭️ Up next": "Improve navbar and add more pages.",
           },
         },
       },
