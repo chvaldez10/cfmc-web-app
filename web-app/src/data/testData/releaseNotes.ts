@@ -14,7 +14,7 @@ export const releaseData: ReleaseData[] = [
               "Working backend server! New pages and UI components.",
             "🐛 Bug fixes and improvements":
               "Fixed build and linting errors. Updated schema.",
-            "⏭️ Up next": "More pages and UI components.",
+            "⏭️ Up next": "More pages and UI components. Working forms.",
           },
         },
       },
