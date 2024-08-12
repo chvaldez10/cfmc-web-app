@@ -1,4 +1,5 @@
 import { IoPerson } from "react-icons/io5";
+import { SectionHeader, LongParagraph, Box } from "@/components/core/ui";
 
 interface BoardMember {
   boardMemberName: string;
@@ -17,21 +18,21 @@ const boardMembers: BoardMember[] = [
     boardPosition: "Board Position 2",
     caption: "Another short caption",
   },
+  {
+    boardMemberName: "Board Member Name 2",
+    boardPosition: "Board Position 2",
+    caption: "Another short caption",
+  },
 ];
 
 const TeamSection: React.FC = () => {
   return (
-    <section className="bg-purple-50">
+    <section className="">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-purple-900">
-            Our Team
-          </h2>
-          <p className="font-light text-purple-600 lg:mb-16 sm:text-xl">
-            Explore our talented team of professionals dedicated to driving
-            innovation and excellence.
-          </p>
-        </div>
+        <Box containerClassName="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+          <SectionHeader text="Meet Our Team" />
+          <LongParagraph>Explore our talented board members.</LongParagraph>
+        </Box>
         <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
           {boardMembers.map((member, index) => (
             <div

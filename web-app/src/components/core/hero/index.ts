@@ -31,3 +31,4 @@ export { default as IframeMap } from "./molecules/events/IframeMap";
 export { default as EventGoogleMaps } from "./molecules/events/EventGoogleMaps";
 export { default as EventTags } from "./molecules/events/EventTags";
 export { default as EventNotFound } from "./molecules/events/EventNotFound";
+export { default as TeamSection } from "./molecules/atoms/TeamSection";
