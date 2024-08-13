@@ -76,7 +76,7 @@
   @apply flex-items justify-between;
 }
 
-.div-outside-width-wrapped {
+.navbar-flex-wrap {
   @apply div-outside-width-justify-between flex-wrap;
 }
 

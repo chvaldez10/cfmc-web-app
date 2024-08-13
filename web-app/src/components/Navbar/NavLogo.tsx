@@ -1,12 +1,13 @@
 import { FC } from "react";
+import { Flex } from "@/components/core/ui";
 import Image from "next/image";
 import Link from "next/link";
 
 interface NavLogoProps {
-  className: string;
+  textClassName: string;
 }
 
-const NavLogo: FC<NavLogoProps> = ({ className }) => (
+const NavLogo: FC<NavLogoProps> = ({ textClassName }) => (
   <Link href="/" className={`flex items-center rtl:space-x-reverse ml-5`}>
     <Image
       src="/branding/logo_no_bg.png"
@@ -16,12 +17,12 @@ const NavLogo: FC<NavLogoProps> = ({ className }) => (
       style={{ height: 52, width: 32 }}
       priority={true}
     />
-    <div
-      className={`self-center font-bold flex flex-col text-sm md:text-lg ml-2 ${className}`}
+    <Flex
+      containerClassName={`font-bold self-center flex flex-col text-sm md:text-lg ml-2 ${textClassName}`}
     >
       <span>Calgary Filipino</span>
       <span>Methodist Church</span>
-    </div>
+    </Flex>
   </Link>
 );
 

@@ -8,6 +8,7 @@ import {
   NavbarLinks,
   NavDrawer,
 } from "@/components/Navbar";
+import { Flex, Box } from "@/components/core/ui";
 import "@/styles/wave-border.css";
 
 const NavbarClient: FC<{}> = () => {
@@ -27,12 +28,12 @@ const NavbarClient: FC<{}> = () => {
         fixed top-0 z-30 mx-auto w-full `}
         id="#nav-client"
       >
-        <div
-          className={`max-w-screen-xl div-outside-width-wrapped mx-auto ${
+        <Flex
+          containerClassName={` navbar-flex-wrap max-w-screen-xl mx-auto  ${
             scrollPosition > 10 ? "p-2" : "p-6"
           }`}
         >
-          <NavLogo className={changeTextColor} />
+          <NavLogo textClassName={changeTextColor} />
 
           <MenuToggleButton
             isMenuBarOpen={isMenuBarOpen}
@@ -40,13 +41,13 @@ const NavbarClient: FC<{}> = () => {
             changeBackgroundColor={changeBackgroundColor}
           />
 
-          <div className="hidden md:block">
+          <Box containerClassName="hidden md:block">
             <NavbarLinks
               NavClassNames={changeTextColor}
               ButtonClassNames={changeBorderColor}
             />
-          </div>
-        </div>
+          </Box>
+        </Flex>
       </nav>
       <NavDrawer isOpen={isMenuBarOpen} toggleMenu={toggleMenu} />
     </>

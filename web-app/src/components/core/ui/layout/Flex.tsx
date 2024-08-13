@@ -4,7 +4,7 @@ import { DivProps } from "@/types/genericTypes";
 
 interface FlexProps extends DivProps {}
 
-// Note that the Grid component currently has no default styles. Its just to have better visualization of the layout when coding.
+// Note that the Flex component has no default styles. Its just to have better visualization of the layout when coding.
 const Flex: FC<FlexProps> = ({ children, containerClassName }) => {
   return <Box containerClassName={`${containerClassName}`}>{children}</Box>;
 };
