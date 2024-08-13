@@ -38,7 +38,7 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
       <div className="relative md:absolute md:max-w-2xl lg:left-0 z-10 bg-white-10 lg:bg-white-0 lg:shadow-lg lg:rounded-lg">
         <div className="flex flex-col p-4 md:p-6 lg:p-12">
           {/* Header */}
-          <SectionHeader text={header} className="xl:text-5xl" />
+          <SectionHeader text={header} containerClassName="xl:text-5xl" />
 
           {/* Header */}
           <SectionSubheader

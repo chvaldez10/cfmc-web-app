@@ -11,7 +11,7 @@ export default function NotFoundPage() {
     <FlexCenter containerClassName="h-screen">
       <Box containerClassName="flex-center">
         <LuSearchX className="text-6xl" />
-        <SectionHeader text="Error 404" className="m-4" />
+        <SectionHeader text="Error 404" containerClassName="m-4" />
       </Box>
       <FlexCenter containerClassName="space-y-2">
         <LongParagraph containerClassName="">

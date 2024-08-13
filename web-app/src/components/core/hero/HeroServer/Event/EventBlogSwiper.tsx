@@ -16,7 +16,10 @@ async function EventBlogSwiper() {
       containerClassName={"h-[50vh] "}
       layoutClass={"flex-col space-y-8"}
     >
-      <SectionHeader text={"Upcoming Events "} className={"text-center"} />
+      <SectionHeader
+        text={"Upcoming Events "}
+        containerClassName={"text-center"}
+      />
       <SwiperScrollbar events={eventsInMonth} />
     </FlexWrapper>
   );

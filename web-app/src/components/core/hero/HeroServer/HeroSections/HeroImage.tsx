@@ -34,7 +34,7 @@ const HeroImage: FC<HeroImageProps> = ({
         <LongParagraph containerClassName="text-purple-500 ">
           {subheader}
         </LongParagraph>
-        <SectionHeader text={header} />
+        <SectionHeader text={header} containerClassName="text-gray-600" />
         <SectionSubheader text={longParagraph} />
       </HeroHalfWrapper>
 
