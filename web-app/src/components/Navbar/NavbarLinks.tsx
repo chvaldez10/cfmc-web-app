@@ -24,7 +24,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
 
   return (
     <ul
-      className="div-outside-width md:flex-row md:justify-start gap-1 lg:gap-5"
+      className="div-outside-width md:flex-row md:justify-start gap-4 md:gap-1 lg:gap-6"
       id="NavbarLinks"
     >
       <NavDropdown
