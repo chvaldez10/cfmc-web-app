@@ -9,7 +9,7 @@ const EventDescription: FC<EventDescriptionProps> = ({ children }) => {
   return (
     <Box containerClassName="resize-hero-width mx-auto">
       <HeroHalfWrapper>
-        <SectionSubheader text="Event Description" className="" />
+        <SectionSubheader text="Event Description" containerClassName="" />
         <LongParagraph>{children}</LongParagraph>
       </HeroHalfWrapper>
     </Box>

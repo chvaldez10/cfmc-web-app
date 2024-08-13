@@ -52,7 +52,10 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
         style={{ userSelect: "text" }}
       >
         <SectionHeader text={header} />
-        <SectionSubheader text={longParagraph} className="text-gray-600" />
+        <SectionSubheader
+          text={longParagraph}
+          containerClassName="text-gray-600"
+        />
       </div>
 
       {/* Element Column */}

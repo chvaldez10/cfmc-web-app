@@ -35,7 +35,10 @@ const CardWithImageItem: FC<CardWithImageItemProps> = ({
       />
 
       <Flex containerClassName="flex flex-col flex-grow p-5 gap-3">
-        <SectionSubheader text={title} className="font-bold tracking-tight" />
+        <SectionSubheader
+          text={title}
+          containerClassName="font-bold tracking-tight"
+        />
 
         {/* Description */}
         <LongParagraph containerClassName="text-gray-600">

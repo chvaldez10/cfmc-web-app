@@ -43,7 +43,7 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
           {/* Header */}
           <SectionSubheader
             text={subheader}
-            className="font-bold text-gray-800 text-xl"
+            containerClassName="font-bold text-gray-800 text-xl"
           />
 
           {/* Long Paragraph */}
