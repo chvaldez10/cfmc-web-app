@@ -11,7 +11,7 @@ import { LoadingSkeleton } from "@/components/core/loader";
 import { EventDataProps } from "@/types/supabaseTypes";
 
 const breakpoints: { screenSize: number; slidesPerView: number }[] = [
-  { screenSize: 640, slidesPerView: 2 },
+  { screenSize: 1024, slidesPerView: 2 },
 ];
 
 interface SwiperScrollbarProps {
@@ -23,11 +23,10 @@ const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
   const slidesPerView = useSlidesPerView(breakpoints);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 500);
-    return () => {
-      clearTimeout(timer);
-    };
+    setIsLoading(false);
   }, []);
+
+  console.log(slidesPerView);
 
   return (
     <>
@@ -48,7 +47,7 @@ const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
           spaceBetween={30}
           className="scrollbar cursor-grabbing"
           breakpoints={{
-            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 2 },
           }}
         >
           {/* mocking eventData */}

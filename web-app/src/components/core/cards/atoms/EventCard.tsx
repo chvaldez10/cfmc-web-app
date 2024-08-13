@@ -6,6 +6,7 @@ import {
   LongParagraph,
   SectionSubheader,
   SmallText,
+  Flex,
 } from "@/components/core/ui";
 
 interface EventCardProps extends EventDataProps {}
@@ -34,7 +35,7 @@ const EventCard: React.FC<EventCardProps> = ({
   const endDay = startDay === endDateObj.getDate() ? "" : endDateObj.getDate();
 
   return (
-    <div className="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
+    <Flex containerClassName="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
       {image && (
         <NextImage
           width={"w-full"}
@@ -47,19 +48,18 @@ const EventCard: React.FC<EventCardProps> = ({
 
       <Link
         href={`/event/${slug}`}
-        className="flex flex-col justify-between p-4 leading-normal w-full truncate gap-1"
+        className="flex flex-col justify-between p-4 leading-normal w-full gap-1 truncate"
       >
-        <SmallText> {category}</SmallText>
-        <LongParagraph containerClassName="overflow-hidden whitespace-nowrap">
-          {month} {startDay}
-          {endDay && ` - ${endDay}`}
-        </LongParagraph>
-        <SectionSubheader text={name} />
-        <LongParagraph containerClassName="text-clip overflow-hidden whitespace-nowrap">
+        <SmallText>{category}</SmallText>
+        <SectionSubheader
+          text={`${month} ${startDay}${endDay ? ` - ${endDay}` : ""}`}
+        />
+
+        <LongParagraph containerClassName="truncate">
           {description}
         </LongParagraph>
       </Link>
-    </div>
+    </Flex>
   );
 };
 

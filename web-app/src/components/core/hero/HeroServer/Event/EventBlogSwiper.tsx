@@ -13,8 +13,8 @@ async function EventBlogSwiper() {
 
   return (
     <FlexWrapper
-      containerClassName={"h-[50vh] "}
-      layoutClass={"flex-col space-y-8"}
+      containerClassName={"min-h-[50vh] "}
+      layoutClass={"flex-col space-y-4 lg:space-y-8"}
     >
       <SectionHeader
         text={"Upcoming Events "}
