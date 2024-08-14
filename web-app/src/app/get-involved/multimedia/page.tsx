@@ -1,5 +1,8 @@
-import UnderConstruction from "@/components/template/UnderConstruction";
-
+import { HeroHalfHeader } from "@/components/core/hero";
 export default function page() {
-  return <UnderConstruction />;
+  return (
+    <>
+      <HeroHalfHeader />
+    </>
+  );
 }

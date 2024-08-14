@@ -10,6 +10,7 @@ export { default as VerticalList } from "./HeroServer/VerticalList";
 export { default as WordWall } from "./HeroServer/WordWall";
 export { default as HeroImage } from "./HeroServer/HeroSections/HeroImage";
 export { default as ContactUs } from "./HeroServer/Contact/ContactUs";
+export { default as HeroHalfHeader } from "./HeroServer/HeroSections/HeroHalfHeader";
 
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
