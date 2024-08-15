@@ -4,7 +4,7 @@ import { MainGradientHeader, SectionSubheader } from "@/components/core/ui";
 
 interface HeroHeaderProps {
   title: string;
-  verbiage: string;
+  verbiage: string | undefined;
 }
 
 const HeroHeader: FC<HeroHeaderProps> = ({ title, verbiage }) => {

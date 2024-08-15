@@ -1,13 +1,16 @@
 import { HeroHeader, VerticalList, WordWall } from "@/components/core/hero";
 import { announcements } from "@/data/testData/verticalListTest";
+import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
 
-const heroHeaderTitle = "Announcements";
-const heroHeaderVerbiage = "11th Sunday After Pentecost";
+export default async function page() {
+  const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
 
-export default function page() {
   return (
     <>
-      <HeroHeader title={heroHeaderTitle} verbiage={heroHeaderVerbiage} />
+      <HeroHeader
+        title={"Announcements"}
+        verbiage={sundaysAndSpecialDays?.sundayEventName}
+      />
       <VerticalList header={"Upcoming Events"} data={announcements} />
       <WordWall />
     </>
