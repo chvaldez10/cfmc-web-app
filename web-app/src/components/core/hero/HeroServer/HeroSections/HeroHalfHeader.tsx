@@ -6,6 +6,7 @@ import {
   LongParagraph,
   SectionSubheader,
 } from "@/components/core/ui";
+import { RiSoundModuleFill } from "react-icons/ri";
 import SVGWage from "@/components/core/hero/molecules/atoms/SVGWage";
 
 const HeroHalfHeader = () => {
@@ -29,15 +30,15 @@ const HeroHalfHeader = () => {
               <SectionSubheader text="Join The Ministry" />
               <ul className="space-y-4">
                 <li className="flex items-center">
-                  <FaYoutube className="w-6 h-6 mr-3 text-red-500" />
-                  <span>Learn to Play</span>
+                  <RiSoundModuleFill className="w-6 h-6 mr-3 text-green-500" />
+                  <span>Have Fun While You Serve</span>
                 </li>
                 <li className="flex items-center">
-                  <FaUserFriends className="w-6 h-6 mr-3 text-green-500" />
+                  <FaUserFriends className="w-6 h-6 mr-3 text-purple-500" />
                   <span>Meet New Friends</span>
                 </li>
                 <li className="flex items-center">
-                  <FaBrain className="w-6 h-6 mr-3 text-purple-500" />
+                  <FaBrain className="w-6 h-6 mr-3 text-yellow-400" />
                   <span>Be Creative</span>
                 </li>
               </ul>

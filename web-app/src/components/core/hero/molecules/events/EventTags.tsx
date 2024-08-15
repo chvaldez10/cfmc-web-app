@@ -23,7 +23,6 @@ const EventTags: FC<EventTagsProps> = ({ tags }) => {
           {tags?.map((tag) => {
             let color =
               colors[generateRandomInteger(Object.keys(colors).length)];
-            console.log(`color: ${color}`);
             return <FilledColoredBadge key={tag} color={color} tagName={tag} />;
           })}
         </Flex>

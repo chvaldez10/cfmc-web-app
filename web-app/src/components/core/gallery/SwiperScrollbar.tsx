@@ -26,8 +26,6 @@ const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
     setIsLoading(false);
   }, []);
 
-  console.log(slidesPerView);
-
   return (
     <>
       {isLoading ? (
