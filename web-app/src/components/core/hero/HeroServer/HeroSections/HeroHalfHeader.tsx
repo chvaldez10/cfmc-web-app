@@ -11,7 +11,7 @@ import SVGWage from "@/components/core/hero/molecules/atoms/SVGWage";
 
 const HeroHalfHeader = () => {
   return (
-    <Box containerClassName="pt-20 relative bg-gradient-to-r from-white-10 to-green-10 text-white overflow-hidden">
+    <Box containerClassName="pt-20 relative bg-gradient-to-r from-white-10 to-green-10 overflow-hidden">
       <Box containerClassName="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <FlexCenter containerClassName="md:flex-row ">
           <Box containerClassName="w-full md:w-1/2 mb-12 md:mb-0 space-y-8">

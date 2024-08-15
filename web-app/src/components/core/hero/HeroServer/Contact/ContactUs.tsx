@@ -6,11 +6,16 @@ import { Box } from "@/components/core/ui";
 
 const ContactUs = () => {
   return (
-    <Box containerClassName="relative">
-      <Box containerClassName="absolute inset-0">
-        <IframeMap src={churchGoogleMapSrc} containerClassName="contrast-75" />
+    <Box containerClassName="py-24 max-w-screen-2xl mx-auto">
+      <Box containerClassName="relative">
+        <Box containerClassName="absolute inset-0">
+          <IframeMap
+            src={churchGoogleMapSrc}
+            containerClassName="contrast-75"
+          />
+        </Box>
+        <ContactForm />
       </Box>
-      <ContactForm />
     </Box>
   );
 };

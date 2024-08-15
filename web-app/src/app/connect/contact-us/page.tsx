@@ -1,10 +1,10 @@
-import ContactUs from "@/components/core/hero/HeroServer/Contact/ContactUs";
-import { Box } from "@/components/core/ui";
+import { ContactUs, HeroHeader } from "@/components/core/hero";
 
 export default function page() {
   return (
-    <Box containerClassName="mt-24">
+    <>
+      <HeroHeader title="Contact Us" verbiage="Contact Us" />
       <ContactUs />
-    </Box>
+    </>
   );
 }
