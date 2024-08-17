@@ -40,7 +40,7 @@ export type AnnouncementProps = {
   eventId?: number;
 };
 
-export type ChurchMembersProps = {
+export type ChurchMembers = {
   id?: number;
   name: string;
   birthDate?: Date;
