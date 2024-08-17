@@ -78,7 +78,8 @@ export async function getEventsByMonth(
     .from("events")
     .select("*")
     .gte("start_date", `${year}-${monthIndex}-01`)
-    .lte("start_date", `${year}-${monthIndex}-31`);
+    .lte("start_date", `${year}-${monthIndex}-31`)
+    .order("start_date");
 
   if (error) {
     console.error("Error fetching events:", error);
@@ -88,5 +89,5 @@ export async function getEventsByMonth(
     return null;
   }
 
-  return data.map((event) => formatEventData(event));
+  return data.map((event: EventDataProps) => formatEventData(event));
 }
