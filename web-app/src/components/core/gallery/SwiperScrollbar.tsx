@@ -8,14 +8,14 @@ import "swiper/css/scrollbar";
 import { EventCard } from "@/components/core/cards";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { LoadingSkeleton } from "@/components/core/loader";
-import { EventDataProps } from "@/types/supabaseTypes";
+import { Events } from "@/types/supabaseTypes";
 
 const breakpoints: { screenSize: number; slidesPerView: number }[] = [
   { screenSize: 1024, slidesPerView: 2 },
 ];
 
 interface SwiperScrollbarProps {
-  events: EventDataProps[] | null;
+  events: Events[] | null;
 }
 
 const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {

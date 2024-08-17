@@ -1,4 +1,4 @@
-export type EventDataProps = {
+export type Events = {
   id?: number;
   name: string;
   startDate: Date;

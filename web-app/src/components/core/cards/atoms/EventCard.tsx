@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { NextImage } from "@/components/core/gallery/";
-import { EventDataProps } from "@/types/supabaseTypes";
+import { Events } from "@/types/supabaseTypes";
 import {
   LongParagraph,
   SectionSubheader,
@@ -9,7 +9,7 @@ import {
   Flex,
 } from "@/components/core/ui";
 
-interface EventCardProps extends EventDataProps {}
+interface EventCardProps extends Events {}
 
 const EventCard: React.FC<EventCardProps> = ({
   id,

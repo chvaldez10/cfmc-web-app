@@ -1,9 +1,13 @@
 "use server";
 
-import { EventDataProps } from "@/types/supabaseTypes";
+import { Events } from "@/types/supabaseTypes";
 import { createClient } from "@/utils/supabase/server";
 
-function formatEventData(data: any): EventDataProps {
+/*
+  @param data: any - The data to be formatted to the Events type
+  @returns Events - The formatted data
+*/
+function formatEventData(data: any): Events {
   return {
     id: data.id,
     name: data.name,
@@ -24,9 +28,7 @@ function formatEventData(data: any): EventDataProps {
   };
 }
 
-export async function getEventBySlug(
-  slug: string
-): Promise<EventDataProps | null> {
+export async function getEventBySlug(slug: string): Promise<Events | null> {
   const supabase = createClient();
 
   const { data, error } = await supabase
@@ -47,7 +49,7 @@ export async function getEventBySlug(
   return formatEventData(data);
 }
 
-export async function getEventById(id: number): Promise<EventDataProps | null> {
+export async function getEventById(id: number): Promise<Events | null> {
   const supabase = createClient();
 
   const { data, error } = await supabase
@@ -71,7 +73,7 @@ export async function getEventById(id: number): Promise<EventDataProps | null> {
 export async function getEventsByMonth(
   monthIndex: number,
   year: number
-): Promise<EventDataProps[] | null> {
+): Promise<Events[] | null> {
   const supabase = createClient();
 
   const { data, error } = await supabase
@@ -89,5 +91,5 @@ export async function getEventsByMonth(
     return null;
   }
 
-  return data.map((event: EventDataProps) => formatEventData(event));
+  return data.map((event: any) => formatEventData(event));
 }
