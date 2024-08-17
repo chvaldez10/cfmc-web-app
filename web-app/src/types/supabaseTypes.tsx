@@ -1,4 +1,4 @@
-export interface EventDataProps {
+export type EventDataProps = {
   id?: number;
   name: string;
   startDate: Date;
@@ -15,9 +15,9 @@ export interface EventDataProps {
   status: string;
   organizerName: string;
   slug: string;
-}
+};
 
-export interface SundaysAndSpecialDaysProps {
+export type SundaysAndSpecialDaysProps = {
   id?: number;
   date: Date;
   sundayEventName: string;
@@ -29,24 +29,24 @@ export interface SundaysAndSpecialDaysProps {
   preacherNotes?: string;
   sundayEventAlternateName?: string;
   eventId?: number; // reference to the event
-}
+};
 
-export interface AnnouncementProps {
+export type AnnouncementProps = {
   id?: number;
   date: Date;
   announcement: string;
   category: string;
   description: string;
   eventId?: number;
-}
+};
 
-export interface ChurchMembersProps {
+export type ChurchMembersProps = {
   id?: number;
   name: string;
   birthDate?: Date;
-}
+};
 
-export interface ReleaseProps {
+export type ReleaseProps = {
   id?: number;
   releaseDate: Date;
   version: string;
@@ -54,4 +54,4 @@ export interface ReleaseProps {
   bugFixesAndImprovements: string;
   upNext?: string;
   specialNotes?: string;
-}
+};
