@@ -71,7 +71,7 @@ export interface BadgeProps {
 }
 
 export interface DivProps {
-  children: ReactNode;
+  children?: ReactNode;
   containerClassName?: string;
   onClick?: () => void;
   style?: React.CSSProperties;

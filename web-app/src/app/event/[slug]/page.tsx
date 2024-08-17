@@ -17,7 +17,8 @@ export default async function page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <Box containerClassName="py-32 space-y-10">
+    <>
+      <Box containerClassName="py-12 space-y-10"></Box>
       <EventHeader
         eventName={eventDetails.name}
         eventStartDate={eventDetails.startDate}
@@ -29,6 +30,6 @@ export default async function page({ params }: { params: { slug: string } }) {
       <EventDescription>{eventDetails?.description}</EventDescription>
       <EventGoogleMaps eventLocation={eventDetails?.googleMapsUrl} />
       <EventTags tags={eventDetails.tags} />
-    </Box>
+    </>
   );
 }
