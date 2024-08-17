@@ -4,25 +4,27 @@ import {
   FooterLinkGroup,
   SocialMediaLinks,
 } from "@/components/Footer";
-import { Box } from "@/components/core/ui";
+import { Box, Flex, SectionSubheader } from "@/components/core/ui";
 import { usefulLinks, otherResources } from "@/data/footer/FooterData";
+import { HeroHalfWrapper } from "@/components/core/hero";
 
 const Footer: FC = () => {
   return (
-    <footer className="relative py-12 ">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap text-left lg:text-left">
+    <footer className="relative py-12">
+      <Box containerClassName="container mx-auto px-4">
+        <Flex containerClassName="flex flex-wrap text-left lg:text-left gap-4 lg:gap-0">
           {/* Platforms */}
-          <div className="w-full lg:w-6/12 px-4">
-            <p className="text-2xl mt-0 mb-2 font-semibold text-gray-800">
-              Find us Facebook!
-            </p>
+          <HeroHalfWrapper containerClassName="px-4 space-y-2">
+            <SectionSubheader
+              text="Find us Facebook!"
+              containerClassName="font-semibold"
+            />
             <SocialMediaLinks />
-          </div>
+          </HeroHalfWrapper>
 
           {/* Footer Links */}
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="flex flex-row items-top mb-6">
+          <HeroHalfWrapper containerClassName="px-4 space-y-2">
+            <Flex containerClassName="flex flex-row items-start">
               <FooterLinkGroup
                 title={"Useful Links"}
                 footerLinks={usefulLinks}
@@ -31,14 +33,14 @@ const Footer: FC = () => {
                 title={" Other Resources "}
                 footerLinks={otherResources}
               />
-            </div>
-          </div>
-        </div>
+            </Flex>
+          </HeroHalfWrapper>
+        </Flex>
 
         {/* Copyright */}
-        <hr className="py-3 border-gray-300" />
+        <hr className="my-3 border-gray-300" />
         <CopyrightNotice />
-      </div>
+      </Box>
     </footer>
   );
 };
