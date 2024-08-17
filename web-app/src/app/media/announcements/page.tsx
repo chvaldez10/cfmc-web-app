@@ -8,8 +8,8 @@ export default async function page() {
   return (
     <>
       <HeroHeader
-        title={"Announcements"}
-        verbiage={sundaysAndSpecialDays?.sundayEventName}
+        header={"Announcements"}
+        longParagraph={sundaysAndSpecialDays?.sundayEventName}
       />
       <VerticalList header={"Upcoming Events"} data={announcements} />
       <WordWall />

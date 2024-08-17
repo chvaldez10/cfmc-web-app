@@ -3,7 +3,7 @@ import { TeamSection } from "@/components/core/hero";
 export default function page() {
   return (
     <>
-      <HeroHeader title="Board" verbiage="Board members" />
+      <HeroHeader header="Board" longParagraph="Board members" />
       <TeamSection />
     </>
   );

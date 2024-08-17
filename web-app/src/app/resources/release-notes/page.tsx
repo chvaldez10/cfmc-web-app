@@ -7,7 +7,7 @@ const heroHeaderVerbiage = "Browse our release notes";
 export default function page() {
   return (
     <>
-      <HeroHeader title={heroHeaderTitle} verbiage={heroHeaderVerbiage} />
+      <HeroHeader header={heroHeaderTitle} longParagraph={heroHeaderVerbiage} />
       <FixedSidebarWithContent />;
     </>
   );

@@ -9,7 +9,7 @@ export interface liturgyTableData {
 
 export interface HeroContentProps {
   header: string;
-  longParagraph: string;
+  longParagraph: string | undefined;
 }
 
 export interface ImageProps {
