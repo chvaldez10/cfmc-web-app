@@ -1,16 +1,15 @@
 import { FC, ReactNode } from "react";
-
-interface ContainerWrapperProps {
-  children: ReactNode;
-  className?: string;
-}
+import { DivProps } from "@/types/genericTypes";
+interface ContainerWrapperProps extends DivProps {}
 
 const ContainerWrapper: FC<ContainerWrapperProps> = ({
   children,
-  className,
+  containerClassName,
 }) => {
   return (
-    <div className={`container px-5 mx-auto ${className}`}>{children}</div>
+    <div className={`container px-5 mx-auto ${containerClassName}`}>
+      {children}
+    </div>
   );
 };
 

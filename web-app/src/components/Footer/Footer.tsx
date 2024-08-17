@@ -6,13 +6,13 @@ import {
 } from "@/components/Footer";
 import { Box, Flex, SectionSubheader } from "@/components/core/ui";
 import { usefulLinks, otherResources } from "@/data/footer/FooterData";
-import { HeroHalfWrapper } from "@/components/core/hero";
+import { HeroHalfWrapper, ContainerWrapper } from "@/components/core/hero";
 
 const Footer: FC = () => {
   return (
-    <footer className="relative py-12">
-      <Box containerClassName="container mx-auto px-4">
-        <Flex containerClassName="flex flex-wrap text-left lg:text-left gap-4 lg:gap-0">
+    <footer className="relative pb-16">
+      <ContainerWrapper containerClassName="w-full max-w-6xl">
+        <Flex containerClassName="flex flex-wrap text-left lg:text-left gap-4 lg:gap-0 py-4">
           {/* Platforms */}
           <HeroHalfWrapper containerClassName="px-4 space-y-2">
             <SectionSubheader
@@ -40,7 +40,7 @@ const Footer: FC = () => {
         {/* Copyright */}
         <hr className="my-3 border-gray-300" />
         <CopyrightNotice />
-      </Box>
+      </ContainerWrapper>
     </footer>
   );
 };
