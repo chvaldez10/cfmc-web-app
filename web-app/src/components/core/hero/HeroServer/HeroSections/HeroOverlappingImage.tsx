@@ -1,23 +1,22 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import Image from "next/image";
 import {
   SectionHeader,
   SectionSubheader,
   LongParagraph,
 } from "@/components/core/ui";
+import { HeroContentProps } from "@/types/genericTypes";
 
-interface HeroOverlappingImageProps {
-  header: string;
+interface HeroOverlappingImageProps extends HeroContentProps {
   subheader: string;
   imagePath: string;
-  element: string;
 }
 
 const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
   header,
   subheader,
   imagePath,
-  element,
+  longParagraph,
 }) => {
   // Note that the layout for this hero section is a bit hard to refactor and make it similar to the other hero sections.
   return (
@@ -47,7 +46,7 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
           />
 
           {/* Long Paragraph */}
-          <LongParagraph>{element}</LongParagraph>
+          <LongParagraph>{longParagraph}</LongParagraph>
         </div>
       </div>
     </div>

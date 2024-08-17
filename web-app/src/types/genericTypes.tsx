@@ -7,21 +7,19 @@ export interface liturgyTableData {
   link?: string;
 }
 
-export interface HeroContentProps {
-  header: string;
-  longParagraph: string | undefined;
-}
-
 export interface ImageProps {
   src: string;
   alt: string;
   containerClassName?: string | undefined;
 }
 
-export interface HeroSectionProps {
-  header: string | undefined;
+export interface HeroContentProps {
+  header: string;
+  longParagraph: string | undefined;
+}
+
+export interface HeroSectionProps extends HeroContentProps {
   subheader?: string;
-  longParagraph: string;
   reverse?: boolean;
   containerClassName?: string | undefined;
 }
