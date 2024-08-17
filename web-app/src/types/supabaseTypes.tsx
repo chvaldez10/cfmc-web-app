@@ -31,6 +31,21 @@ export interface SundaysAndSpecialDaysProps {
   eventId?: number; // reference to the event
 }
 
+export interface AnnouncementProps {
+  id?: number;
+  date: Date;
+  announcement: string;
+  category: string;
+  description: string;
+  eventId?: number;
+}
+
+export interface ChurchMembersProps {
+  id?: number;
+  name: string;
+  birthDate?: Date;
+}
+
 export interface ReleaseProps {
   id?: number;
   releaseDate: Date;
