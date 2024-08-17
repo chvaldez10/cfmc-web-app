@@ -2,14 +2,14 @@
   display: inline-block;
   width: 120px;
   height: 145px;
-  background: hsl(215, 50%, 65%);
+  background: var(--balloon-color, hsl(215, 50%, 65%)); /* Use CSS variable */
   border-radius: 80%;
   position: relative;
   box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
   margin: 20px;
   transition: transform 0.5s ease;
   z-index: 10;
-  animation: balloons 4s ease-in-out infinite;
+  animation: balloons var(--animation-duration, 4s) ease-in-out infinite; /* Use random animation duration */
   transform-origin: bottom center;
   text-align: center;
   display: flex;
@@ -23,17 +23,18 @@
 @keyframes balloons {
   0%,
   100% {
-    transform: translateY(0) rotate(-4deg);
+    transform: translateY(0) rotate(calc(var(--rotate-angle, 0deg) * -1));
   }
   50% {
-    transform: translateY(-25px) rotate(4deg);
+    transform: translateY(var(--translate-y, 25px))
+      rotate(var(--rotate-angle, 4deg));
   }
 }
 
 .balloon:before {
   content: "▲";
   font-size: 20px;
-  color: hsl(215, 30%, 50%);
+  color: var(--string-color, hsl(215, 30%, 50%));
   display: block;
   text-align: center;
   width: 100%;
@@ -43,6 +44,7 @@
 }
 
 .balloon:after {
+  display: none;
   display: inline-block;
   top: 153px;
   position: absolute;
@@ -52,65 +54,3 @@
   content: "";
   background: rgba(0, 0, 0, 0.2);
 }
-
-.balloon:nth-child(2) {
-  background: hsl(245, 40%, 65%);
-  animation-duration: 3.5s;
-}
-.balloon:nth-child(2):before {
-  color: hsl(245, 40%, 65%);
-}
-
-.balloon:nth-child(3) {
-  background: hsl(139, 50%, 60%);
-  animation-duration: 3s;
-}
-.balloon:nth-child(3):before {
-  color: hsl(139, 30%, 50%);
-}
-
-.balloon:nth-child(4) {
-  background: hsl(59, 50%, 58%);
-  animation-duration: 4.5s;
-}
-.balloon:nth-child(4):before {
-  color: hsl(59, 30%, 52%);
-}
-
-.balloon:nth-child(5) {
-  background: hsl(23, 55%, 57%);
-  animation-duration: 5s;
-}
-.balloon:nth-child(5):before {
-  color: hsl(23, 44%, 46%);
-}
-
-/* @media (max-width: 600px) {
-  .balloon {
-    width: 80px;
-    height: 100px;
-    font-size: 12px;
-  }
-  .balloon:before {
-    font-size: 16px;
-  }
-  .balloon:after {
-    top: 103px;
-    height: 200px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .balloon {
-    width: 160px;
-    height: 200px;
-    font-size: 18px;
-  }
-  .balloon:before {
-    font-size: 24px;
-  }
-  .balloon:after {
-    top: 203px;
-    height: 300px;
-  }
-} */
