@@ -3,7 +3,7 @@ import { membersBirthday } from "@/data/testData/membersBirthday";
 import { getChurchMembersBirthdayForMonth } from "@/utils/supabase/churchMembersActions";
 import { FlexCenter, Flex } from "@/components/core/ui";
 import { ContainerWrapper } from "@/components/core/hero";
-import BallonItem from "../molecules/atoms/BalloonItem";
+import BallonItem from "../atoms/BalloonItem";
 
 async function WordWall() {
   const currentMonth = new Date().getMonth() + 1;

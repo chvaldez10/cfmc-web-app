@@ -7,7 +7,7 @@ export { default as HeroCollage } from "./HeroServer/HeroSections/HeroCollage";
 export { default as HeroHeader } from "./HeroServer/HeroSections/HeroHeader";
 export { default as HeroOverlappingImage } from "./HeroServer/HeroSections/HeroOverlappingImage";
 export { default as VerticalList } from "./HeroServer/VerticalList";
-export { default as WordWall } from "./HeroServer/WordWall";
+export { default as BirthdaySection } from "./molecules/announcements/BirthdaySection";
 export { default as HeroImage } from "./HeroServer/HeroSections/HeroImage";
 export { default as ContactUs } from "./HeroServer/Contact/ContactUs";
 export { default as HeroHalfHeader } from "./HeroServer/HeroSections/HeroHalfHeader";
