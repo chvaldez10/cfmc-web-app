@@ -1,7 +1,7 @@
 import { FlexWrapper } from "@/components/core/hero";
 import { SwiperScrollbar } from "@/components/core/gallery/";
 import { SectionHeader } from "@/components/core/ui";
-import { getEventsByMonth } from "@/utils/supabase/eventActions";
+import { getEventsByMonth } from "@/utils/supabase/eventsActions";
 
 async function EventBlogSwiper() {
   const currentDate = new Date();

@@ -25,7 +25,7 @@ import {
 import { NextImage } from "@/components/core/gallery";
 
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
-import { getEventById } from "@/utils/supabase/eventActions";
+import { getEventById } from "@/utils/supabase/eventsActions";
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
