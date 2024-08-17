@@ -48,7 +48,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
       <Link
         href={`/event/${slug}`}
-        className="flex flex-col justify-between p-4 leading-normal w-full gap-1 truncate"
+        className="flex flex-col justify-between p-4 leading-normal w-full gap-2 truncate"
       >
         <SmallText>{category}</SmallText>
         <SectionSubheader
