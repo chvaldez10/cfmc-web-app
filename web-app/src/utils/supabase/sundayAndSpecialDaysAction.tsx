@@ -1,12 +1,14 @@
 "use server";
 
-import { SundaysAndSpecialDaysProps } from "@/types/supabaseTypes";
+import { SundaysAndSpecialDays } from "@/types/supabaseTypes";
 import { getNextSunday } from "../common/dateUtils";
 import { createClient } from "@/utils/supabase/server";
 
-function formatSundaysAndSpecialDaysData(
-  data: any
-): SundaysAndSpecialDaysProps {
+/*
+  @param data: any - The data to be formatted to the SundaysAndSpecialDays type
+  @returns SundaysAndSpecialDays - The formatted data
+*/
+function formatSundaysAndSpecialDaysData(data: any): SundaysAndSpecialDays {
   return {
     id: data.id,
     date: data.date,
@@ -22,7 +24,7 @@ function formatSundaysAndSpecialDaysData(
   };
 }
 
-export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDaysProps | null> {
+export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDays | null> {
   const supabase = createClient();
   const nextSunday = getNextSunday(new Date());
   const nextSundayMDT = nextSunday.toLocaleDateString("en-US", {

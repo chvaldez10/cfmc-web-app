@@ -17,7 +17,7 @@ export type Events = {
   slug: string;
 };
 
-export type SundaysAndSpecialDaysProps = {
+export type SundaysAndSpecialDays = {
   id?: number;
   date: Date;
   sundayEventName: string;
