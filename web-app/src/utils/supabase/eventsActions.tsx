@@ -75,12 +75,13 @@ export async function getEventsByMonth(
   year: number
 ): Promise<Events[] | null> {
   const supabase = createClient();
+  const lastDay = new Date(year, monthIndex, 0).getDate();
 
   const { data, error } = await supabase
     .from("events")
     .select("*")
     .gte("start_date", `${year}-${monthIndex}-01`)
-    .lte("start_date", `${year}-${monthIndex}-31`)
+    .lte("start_date", `${year}-${monthIndex}-${lastDay}`)
     .order("start_date");
 
   if (error) {

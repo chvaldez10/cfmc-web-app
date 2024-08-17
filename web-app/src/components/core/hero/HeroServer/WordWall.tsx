@@ -1,9 +1,21 @@
 import { FC } from "react";
-import { membersBirthday } from "@/data/testData/membersBirthday";
 import { SectionHeader } from "@/components/core/ui";
+import { membersBirthday } from "@/data/testData/membersBirthday";
+import { getChurchMembersBirthdayForMonth } from "@/utils/supabase/churchMembersActions";
 import BallonItem from "../molecules/atoms/BalloonItem";
 
-const WordWall: FC = () => {
+async function WordWall() {
+  const currentMonth = new Date().getMonth() + 1;
+  const currentYear = new Date().getFullYear();
+  const membersBirthdayTest = await getChurchMembersBirthdayForMonth(
+    currentMonth,
+    currentYear
+  );
+
+  console.log(currentMonth, currentYear);
+
+  console.log(membersBirthdayTest);
+
   return (
     <div className="div-outside-width p-4">
       <div className="resize-hero-width">
@@ -18,6 +30,6 @@ const WordWall: FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default WordWall;
