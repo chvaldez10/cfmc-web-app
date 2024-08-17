@@ -9,26 +9,23 @@ import {
   NavigateButton,
   Grid,
 } from "@/components/core/ui";
+import { visionStatementLong } from "@/data/hero/";
 import { HeroContentProps } from "@/types/genericTypes";
 
-interface HeroCollageProps extends HeroContentProps {
+interface HeroCollageProps {
   nextServiceSlug: string | undefined;
 }
 
-const HeroCollage: FC<HeroCollageProps> = ({
-  header,
-  longParagraph,
-  nextServiceSlug,
-}) => {
+const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
   return (
     <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
       <HeroTextWrapper>
-        <MainGradientHeader text={header} />
+        <MainGradientHeader text={"Our Vision"} />
         <NavigationText
           containerClassName={"hover-animation shadow-up"}
           url={"/about/mission-and-vision"}
         >
-          {longParagraph}
+          {visionStatementLong}
         </NavigationText>
       </HeroTextWrapper>
 
@@ -42,7 +39,7 @@ const HeroCollage: FC<HeroCollageProps> = ({
               : `/${nextServiceSlug}`
           }
         >
-          Find a Service
+          Next Sunday Service
         </NavigateButton>
         <NavigateButton
           variant={"outline"}

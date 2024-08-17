@@ -36,11 +36,7 @@ export default async function Home() {
 
   return (
     <>
-      <HeroCollage
-        header={"Our Vision "}
-        longParagraph={visionStatementLong}
-        nextServiceSlug={eventDetails?.slug}
-      />
+      <HeroCollage nextServiceSlug={eventDetails?.slug} />
 
       <HeroSlideClient
         header={"Sunday Service"}
