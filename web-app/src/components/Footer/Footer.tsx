@@ -1,7 +1,10 @@
 import { FC } from "react";
-import CopyrightNotice from "@/components/Footer/CopyrightNotice";
-import SocialMediaLinks from "@/components/Footer/SocialMediaLinks";
-import FooterLinkGroup from "@/components/Footer/FooterLinkGroup";
+import {
+  CopyrightNotice,
+  FooterLinkGroup,
+  SocialMediaLinks,
+} from "@/components/Footer";
+import { Box } from "@/components/core/ui";
 import { usefulLinks, otherResources } from "@/data/footer/FooterData";
 
 const Footer: FC = () => {
