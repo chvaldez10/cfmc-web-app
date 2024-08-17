@@ -7,7 +7,7 @@ export interface liturgyTableData {
   link?: string;
 }
 
-export interface heroContent {
+export interface HeroContentProps {
   header: string;
   longParagraph: string;
 }

@@ -9,9 +9,9 @@ import {
   NavigateButton,
   Grid,
 } from "@/components/core/ui";
-import { heroContent } from "@/types/genericTypes";
+import { HeroContentProps } from "@/types/genericTypes";
 
-interface HeroCollageProps extends heroContent {
+interface HeroCollageProps extends HeroContentProps {
   nextServiceSlug: string | undefined;
 }
 
