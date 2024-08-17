@@ -17,7 +17,7 @@ interface EventTagsProps {
 
 const EventTags: FC<EventTagsProps> = ({ tags }) => {
   return (
-    <Box containerClassName="resize-hero-width mx-auto">
+    <Box containerClassName="resize-hero-width mx-auto p-4 lg:py-4 lg:px-0">
       <HeroHalfWrapper>
         <Flex containerClassName="flex flex-row gap-2 ">
           {tags?.map((tag) => {
