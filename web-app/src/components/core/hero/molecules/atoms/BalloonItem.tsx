@@ -2,13 +2,13 @@ import { FC } from "react";
 import { LongParagraph } from "@/components/core/ui";
 import "@/styles/balloon.css";
 
-interface WordWallCardProps {
-  month: string;
-  day: number;
+interface BalloonItemProps {
+  month: string | undefined;
+  day: number | undefined;
   fullName: string;
 }
 
-const WordWallCard: FC<WordWallCardProps> = ({ fullName, month, day }) => {
+const BalloonItem: FC<BalloonItemProps> = ({ fullName, month, day }) => {
   return (
     // Note that long names will be cut off
     <div className="balloon">
@@ -19,4 +19,4 @@ const WordWallCard: FC<WordWallCardProps> = ({ fullName, month, day }) => {
   );
 };
 
-export default WordWallCard;
+export default BalloonItem;

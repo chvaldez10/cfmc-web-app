@@ -12,7 +12,7 @@ function formatChurchMembersData(data: any): ChurchMembers {
   return {
     id: data.id,
     name: data.name,
-    birthDate: data.birth_date,
+    birthDate: new Date(data.birth_date),
   };
 }
 
