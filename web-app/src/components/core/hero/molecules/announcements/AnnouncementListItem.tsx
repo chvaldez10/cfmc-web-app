@@ -27,24 +27,21 @@ const AnnouncementListItem: React.FC<AnnouncementListItemProps> = ({
 
   return (
     <Flex containerClassName="py-4 div-col-row">
-      <Flex containerClassName="hidden-md-flex md:w-64">
-        <LongParagraph containerClassName="text-gray-900 ">Date</LongParagraph>
-        <LongParagraph containerClassName="text-gray-500 text-sm lg:text-sm my-2">
+      <Flex containerClassName="resize-width-to-1-3">
+        <LongParagraph containerClassName="hidden lg:block text-gray-900 ">
+          Date
+        </LongParagraph>
+        <LongParagraph containerClassName="text-gray-500 text-sm lg:text-sm my-1 lg:my-2">
           {formattedDate}
         </LongParagraph>
       </Flex>
-      <Flex containerClassName="md:flex-grow">
+      <Flex containerClassName="resize-width-to-2-3">
         <LongParagraph containerClassName="text-gray-900 font-bold ">
           {announcement}
         </LongParagraph>
 
         <LongParagraph containerClassName="text-gray-500">
           {description}
-        </LongParagraph>
-      </Flex>
-      <Flex containerClassName="hidden-md-flex-reverse">
-        <LongParagraph containerClassName="text-gray-500 text-sm lg:text-sm ">
-          {formattedDate}
         </LongParagraph>
       </Flex>
     </Flex>
