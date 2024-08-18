@@ -2,12 +2,13 @@ import { FC } from "react";
 import { liturgyTableData } from "@/types/genericTypes";
 import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { announcements } from "@/data/testData/verticalListTest";
+import { FlexCenter } from "@/components/core/ui";
 
 const AnnouncementList: FC = () => {
   const data = announcements;
 
   return (
-    <div className="div-outside-width p-4">
+    <FlexCenter containerClassName="p-4">
       <div className="resize-hero-width divide-y divide-purple-300">
         {data.map((dataEntry, index) => (
           <div key={index} className="py-4 div-col-row">
@@ -44,7 +45,7 @@ const AnnouncementList: FC = () => {
           </div>
         ))}
       </div>
-    </div>
+    </FlexCenter>
   );
 };
 

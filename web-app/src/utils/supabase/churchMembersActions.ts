@@ -13,6 +13,7 @@ function formatChurchMembersData(data: any): ChurchMembers {
     id: data.id,
     name: data.name,
     birthDate: new Date(data.birth_date),
+    isActive: data.is_active,
   };
 }
 

@@ -44,6 +44,7 @@ export type ChurchMembers = {
   id?: number;
   name: string;
   birthDate?: Date;
+  isActive: boolean;
 };
 
 export type ReleaseProps = {

@@ -3,7 +3,6 @@ import {
   AnnouncementList,
   BirthdaySection,
 } from "@/components/core/hero";
-import { announcements } from "@/data/testData/verticalListTest";
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
 
 export default async function page() {
@@ -15,7 +14,7 @@ export default async function page() {
         header={"Announcements"}
         longParagraph={sundaysAndSpecialDays?.sundayEventName}
       />
-      <AnnouncementList header={"Upcoming Events"} data={announcements} />
+      <AnnouncementList />
       <BirthdaySection />
     </>
   );
