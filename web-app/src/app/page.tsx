@@ -24,7 +24,7 @@ import {
 
 import { NextImage } from "@/components/core/gallery";
 
-import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysAction";
+import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
 import { getEventById } from "@/utils/supabase/eventsActions";
 
 export default async function Home() {

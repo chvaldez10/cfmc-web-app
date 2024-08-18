@@ -31,7 +31,7 @@ export type SundaysAndSpecialDays = {
   eventId?: number; // reference to the event
 };
 
-export type AnnouncementProps = {
+export type Announcements = {
   id?: number;
   date: Date;
   announcement: string;
