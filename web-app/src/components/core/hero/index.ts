@@ -36,4 +36,4 @@ export { default as TeamSection } from "./molecules/atoms/TeamSection";
 // announcements
 export { default as BirthdayNotFound } from "./molecules/announcements/BirthdayNotFound";
 export { default as BirthdaySection } from "./molecules/announcements/BirthdaySection";
-export { default as AnnouncementList } from "./HeroServer/AnnouncementList";
+export { default as AnnouncementList } from "./molecules/announcements/AnnouncementList";

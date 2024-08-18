@@ -6,7 +6,7 @@ import { Announcements } from "@/types/supabaseTypes";
 function formatAnnouncementsData(data: any): Announcements {
   return {
     id: data.id,
-    date: data.date,
+    date: new Date(data.date),
     announcement: data.announcement,
     category: data.category,
     description: data.description,
