@@ -16,9 +16,8 @@ function formatChurchMembersData(data: any): ChurchMembers {
   };
 }
 
-export async function getChurchMembersBirthdayForMonth(
-  monthIndex: number,
-  year: number
+export async function getChurchMembersBirthdayByBirthMonth(
+  monthIndex: number
 ): Promise<ChurchMembers[] | null> {
   const supabase = createClient();
 
@@ -31,7 +30,7 @@ export async function getChurchMembersBirthdayForMonth(
     console.error("Error fetching church members birthday:", error);
     return null;
   } else if (!data) {
-    console.error("No church members found for month:", monthIndex, year);
+    console.error("No church members found for month:", monthIndex);
     return null;
   }
 

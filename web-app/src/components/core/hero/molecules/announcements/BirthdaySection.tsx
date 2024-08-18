@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/core/ui";
-import { getChurchMembersBirthdayForMonth } from "@/utils/supabase/churchMembersActions";
+import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/churchMembersActions";
 import { FlexCenter, Flex } from "@/components/core/ui";
 import { ContainerWrapper, BalloonItem } from "@/components/core/hero";
 import { BirthdayNotFound } from "@/components/core/hero";
@@ -7,9 +7,8 @@ import { BirthdayNotFound } from "@/components/core/hero";
 async function WordWall() {
   const currentMonth = new Date().getMonth() + 1;
   const currentYear = new Date().getFullYear();
-  const membersBirthday = await getChurchMembersBirthdayForMonth(
-    currentMonth,
-    currentYear
+  const membersBirthday = await getChurchMembersBirthdayByBirthMonth(
+    currentMonth
   );
 
   if (!membersBirthday) {
