@@ -4,7 +4,7 @@ import { FlexCenter, Flex } from "@/components/core/ui";
 import { ContainerWrapper, BalloonItem } from "@/components/core/hero";
 import { BirthdayNotFound } from "@/components/core/hero";
 
-async function WordWall() {
+async function BirthdaySection() {
   const currentMonth = new Date().getMonth() + 1;
   const currentYear = new Date().getFullYear();
   const membersBirthday = await getChurchMembersBirthdayByBirthMonth(
@@ -50,4 +50,4 @@ async function WordWall() {
   );
 }
 
-export default WordWall;
+export default BirthdaySection;

@@ -1,6 +1,6 @@
 import {
   HeroHeader,
-  VerticalList,
+  AnnouncementList,
   BirthdaySection,
 } from "@/components/core/hero";
 import { announcements } from "@/data/testData/verticalListTest";
@@ -15,7 +15,7 @@ export default async function page() {
         header={"Announcements"}
         longParagraph={sundaysAndSpecialDays?.sundayEventName}
       />
-      <VerticalList header={"Upcoming Events"} data={announcements} />
+      <AnnouncementList header={"Upcoming Events"} data={announcements} />
       <BirthdaySection />
     </>
   );

@@ -1,13 +1,11 @@
 import { FC } from "react";
 import { liturgyTableData } from "@/types/genericTypes";
 import { SectionSubheader, LongParagraph } from "@/components/core/ui";
+import { announcements } from "@/data/testData/verticalListTest";
 
-interface VerticalListProps {
-  header: string;
-  data: liturgyTableData[];
-}
+const AnnouncementList: FC = () => {
+  const data = announcements;
 
-const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
   return (
     <div className="div-outside-width p-4">
       <div className="resize-hero-width divide-y divide-purple-300">
@@ -50,4 +48,4 @@ const VerticalList: FC<VerticalListProps> = ({ header, data }) => {
   );
 };
 
-export default VerticalList;
+export default AnnouncementList;
