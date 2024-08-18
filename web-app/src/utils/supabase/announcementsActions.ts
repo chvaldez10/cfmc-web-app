@@ -11,14 +11,18 @@ function formatAnnouncementsData(data: any): Announcements {
     category: data.category,
     description: data.description,
     eventId: data.event_id,
+    isActive: data.is_active,
   };
 }
 
-export async function getAnnouncements(): Promise<Announcements[]> {
+export async function getAnnouncements(): Promise<Announcements[] | null> {
   const supabase = createClient();
   const { data, error } = await supabase.from("announcements").select("*");
   if (error) {
     throw new Error(error.message);
+  } else if (!data) {
+    console.error("No announcements found");
+    return null;
   }
-  return data.map(formatAnnouncementsData);
+  return data.map((announcement: any) => formatAnnouncementsData(announcement));
 }

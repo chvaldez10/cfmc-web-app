@@ -38,6 +38,7 @@ export type Announcements = {
   category: string;
   description: string;
   eventId?: number;
+  isActive: boolean;
 };
 
 export type ChurchMembers = {

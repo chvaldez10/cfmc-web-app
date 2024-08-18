@@ -4,9 +4,10 @@ import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { announcements } from "@/data/testData/verticalListTest";
 import { FlexCenter, Box } from "@/components/core/ui";
 import { getAnnouncements } from "@/utils/supabase/announcementsActions";
-const AnnouncementList: FC = () => {
+
+async function AnnouncementList() {
   const data = announcements;
-  const dataTest = getAnnouncements();
+  const dataTest = await getAnnouncements();
 
   console.log(dataTest);
 
@@ -50,6 +51,6 @@ const AnnouncementList: FC = () => {
       </Box>
     </FlexCenter>
   );
-};
+}
 
 export default AnnouncementList;
