@@ -21,20 +21,11 @@ export async function getChurchMembersBirthdayForMonth(
   year: number
 ): Promise<ChurchMembers[] | null> {
   const supabase = createClient();
-  const today = new Date();
-  const start = new Date(today);
-  start.setDate(today.getDate() - 3);
-  const end = new Date(today);
-  end.setDate(today.getDate() + 7);
 
-  const lastDay = new Date(year, monthIndex, 0).getDate();
-
-  const { data, error } = await supabase
-    .from("church_members")
-    .select("*")
-    .gte("birth_date", start.toISOString().slice(0, 10))
-    .lte("birth_date", `${year}-${monthIndex}-${lastDay}`)
-    .order("birth_date");
+  const { data, error } = await supabase.rpc(
+    "get_church_members_by_birth_month",
+    { month_index: monthIndex }
+  );
 
   if (error) {
     console.error("Error fetching church members birthday:", error);
