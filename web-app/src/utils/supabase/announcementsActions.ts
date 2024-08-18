@@ -13,3 +13,12 @@ function formatAnnouncementsData(data: any): Announcements {
     eventId: data.event_id,
   };
 }
+
+export async function getAnnouncements(): Promise<Announcements[]> {
+  const supabase = createClient();
+  const { data, error } = await supabase.from("announcements").select("*");
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data.map(formatAnnouncementsData);
+}

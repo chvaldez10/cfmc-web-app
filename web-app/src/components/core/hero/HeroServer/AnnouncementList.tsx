@@ -3,9 +3,12 @@ import { liturgyTableData } from "@/types/genericTypes";
 import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { announcements } from "@/data/testData/verticalListTest";
 import { FlexCenter, Box } from "@/components/core/ui";
-
+import { getAnnouncements } from "@/utils/supabase/announcementsActions";
 const AnnouncementList: FC = () => {
   const data = announcements;
+  const dataTest = getAnnouncements();
+
+  console.log(dataTest);
 
   return (
     <FlexCenter containerClassName="p-4">
