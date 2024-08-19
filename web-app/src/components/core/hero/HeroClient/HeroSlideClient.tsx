@@ -12,15 +12,14 @@ import { HeroSectionProps } from "@/types/genericTypes";
 import "@/styles/slide.css";
 
 interface HeroSlideClientProps extends HeroSectionProps {
-  element: ReactNode;
   isFloating?: boolean;
 }
 
 const HeroSlideClient: FC<HeroSlideClientProps> = ({
+  children,
   header,
   longParagraph,
   containerClassName = "",
-  element,
   reverse = false,
   isFloating = false,
 }) => {
@@ -63,7 +62,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
         ref={mapRef}
         className={`div-outside-width resize-width-to-half h-96 lg:h-576 ${mapAnimationClass}`}
       >
-        {element}
+        {children}
       </div>
     </FlexWrapper>
   );

@@ -9,7 +9,6 @@ import {
 
 import {
   cardContainerItems,
-  visionStatementLong,
   pastEvents1,
   communityBuilding1,
 } from "@/data/hero";
@@ -42,9 +41,10 @@ export default async function Home() {
         header={"Sunday Service"}
         longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         containerClassName="bg-green-10 min-h-screen"
-        element={<IframeMap src={churchGoogleMapSrc} />}
         isFloating={true}
-      />
+      >
+        <IframeMap src={churchGoogleMapSrc} />
+      </HeroSlideClient>
 
       <HeroImage
         header={"Discipleship Month"}
@@ -67,18 +67,17 @@ export default async function Home() {
         header={"Next Big Event"}
         longParagraph={nextBigEventDescription}
         containerClassName="min-h-screen"
-        element={
-          <NextImage
-            width={"w-full"}
-            height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
-            src={"/featured/past-events-1/2.jpg"}
-            alt={"Next Big Event Image"}
-            imageClassName={"rounded-lg object-center"}
-          />
-        }
         reverse={true}
         isFloating={true}
-      />
+      >
+        <NextImage
+          width={"w-full"}
+          height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
+          src={"/featured/past-events-1/2.jpg"}
+          alt={"Next Big Event Image"}
+          imageClassName={"rounded-lg object-center"}
+        />
+      </HeroSlideClient>
 
       <EventBlogSwiper />
       <CardWithImage />

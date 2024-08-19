@@ -19,6 +19,7 @@ export interface HeroContentProps {
 }
 
 export interface HeroSectionProps extends HeroContentProps {
+  children?: ReactNode;
   subheader?: string;
   reverse?: boolean;
   containerClassName?: string | undefined;
