@@ -6,7 +6,7 @@ export { default as EventBlogSwiper } from "./HeroServer/Event/EventBlogSwiper";
 export { default as HeroCollage } from "./HeroServer/HeroSections/HeroCollage";
 export { default as HeroHeader } from "./HeroServer/HeroSections/HeroHeader";
 export { default as HeroOverlappingImage } from "./HeroServer/HeroSections/HeroOverlappingImage";
-export { default as HeroImage } from "./HeroServer/HeroSections/HeroImage";
+export { default as HeroImageSwiper } from "./HeroServer/HeroSections/HeroImageSwiper";
 export { default as ContactUs } from "./HeroServer/Contact/ContactUs";
 export { default as HeroHalfHeader } from "./HeroServer/HeroSections/HeroHalfHeader";
 

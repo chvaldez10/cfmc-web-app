@@ -1,7 +1,7 @@
 import {
   HeroCollage,
   HeroSlideClient,
-  HeroImage,
+  HeroImageSwiper,
   VerseOfTheDay,
   EventBlogSwiper,
   IframeMap,
@@ -46,7 +46,7 @@ export default async function Home() {
         <IframeMap src={churchGoogleMapSrc} />
       </HeroSlideClient>
 
-      <HeroImage
+      <HeroImageSwiper
         header={"Discipleship Month"}
         longParagraph={featuredMonthlyThemeVerbiage}
         subheader={sundaysAndSpecialDays?.sundayEventName}
@@ -55,7 +55,7 @@ export default async function Home() {
         reverse={true}
       />
 
-      <HeroImage
+      <HeroImageSwiper
         header={"Small Groups"}
         subheader={"Community Building"}
         longParagraph={featureCommunityBuildingVerbiage}
