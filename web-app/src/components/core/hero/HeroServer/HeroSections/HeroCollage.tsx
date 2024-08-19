@@ -10,7 +10,6 @@ import {
   Grid,
 } from "@/components/core/ui";
 import { visionStatementLong } from "@/data/hero/";
-import { HeroContentProps } from "@/types/genericTypes";
 
 interface HeroCollageProps {
   nextServiceSlug: string | undefined;
@@ -33,11 +32,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         {/* TODO: Please remove this test slug after testing */}
         <NavigateButton
           className="z-10 scale-up"
-          url={
-            nextServiceSlug
-              ? `/event/${nextServiceSlug}`
-              : `/${nextServiceSlug}`
-          }
+          url={`/event/${nextServiceSlug}`}
         >
           Next Sunday Service
         </NavigateButton>
