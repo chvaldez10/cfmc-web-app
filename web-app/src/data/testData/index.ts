@@ -1,1 +1,0 @@
-export { verseTable } from "./verticalListTest";
