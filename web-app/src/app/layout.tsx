@@ -26,13 +26,6 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Providers>
           <NavbarClient />
-          {/* <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            pauseOnHover={false}
-            draggable={false}
-          /> */}
           {children}
           <Footer />
         </Providers>
