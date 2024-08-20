@@ -39,18 +39,6 @@ export const pastEvents1: ImageProps[] = [
     src: "/featured/past-events-1/5.jpg",
     alt: "past event 5",
   },
-  {
-    src: "/featured/past-events-1/6.jpg",
-    alt: "past event 6",
-  },
-  {
-    src: "/featured/past-events-1/7.jpg",
-    alt: "past event 7",
-  },
-  {
-    src: "/featured/past-events-1/8.jpg",
-    alt: "past event 8",
-  },
 ];
 
 export const communityBuilding1: ImageProps[] = [
