@@ -18,7 +18,7 @@ export default async function page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <Box containerClassName="py-12 space-y-10"></Box>
+      <Box containerClassName="py-12"></Box>
       <EventHeader
         eventName={eventDetails.name}
         eventStartDate={eventDetails.startDate}

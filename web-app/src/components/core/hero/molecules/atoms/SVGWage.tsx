@@ -3,7 +3,7 @@ import { Box } from "@/components/core/ui";
 
 const SVGWage: FC = () => {
   return (
-    <Box containerClassName="hidden md:block absolute bottom-0 left-0 right-0">
+    <Box containerClassName="hidden-for-small-height absolute bottom-0 left-0 right-0">
       <svg
         viewBox="0 0 1440 120"
         preserveAspectRatio="xMinYMin meet"

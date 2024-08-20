@@ -123,9 +123,17 @@
   @apply hidden md:grid grid-rows-1 grid-cols-2 lg:grid-cols-3 gap-2;
 }
 
+.hidden-for-small-height {
+  @apply hidden md:block;
+}
+
 /* Media queries */
 @media (max-height: 600px) {
   .hidden-grid-1-3 {
+    @apply hidden;
+  }
+
+  .hidden-for-small-height {
     @apply hidden;
   }
 }
