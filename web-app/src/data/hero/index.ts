@@ -4,4 +4,4 @@ export {
   communityBuilding1,
   featuredImages,
 } from "./featuredItems";
-export { cardContainerItems } from "./CardContainer";
+export { cardInquiries, mediaInquiries } from "./mediaInquiries";

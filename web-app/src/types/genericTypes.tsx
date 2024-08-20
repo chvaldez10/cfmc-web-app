@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, ReactElement } from "react";
 
 export interface liturgyTableData {
   date: Date;
@@ -76,4 +76,11 @@ export interface DivProps {
   containerClassName?: string;
   onClick?: () => void;
   style?: React.CSSProperties;
+}
+
+export interface CardInquiry {
+  label: string;
+  description: string;
+  svgIcon: ReactElement;
+  url?: string;
 }

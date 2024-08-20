@@ -7,11 +7,7 @@ import {
   IframeMap,
 } from "@/components/core/hero";
 
-import {
-  cardContainerItems,
-  pastEvents1,
-  communityBuilding1,
-} from "@/data/hero";
+import { cardInquiries, pastEvents1, communityBuilding1 } from "@/data/hero";
 
 import { SimpleCard, CardWithImage } from "@/components/core/cards";
 import {
@@ -81,7 +77,7 @@ export default async function Home() {
 
       <EventBlogSwiper />
       <CardWithImage />
-      <SimpleCard cardContainerItems={cardContainerItems} />
+      <SimpleCard cardContainerItems={cardInquiries} />
       <VerseOfTheDay />
     </>
   );
