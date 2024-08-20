@@ -1,7 +1,10 @@
-import UnderConstruction from "@/components/template/UnderConstruction";
-
+import { VerticalTimeline } from "@/components/core/hero";
+import { Box } from "@/components/core/ui";
 export default function page() {
-  // This will be an advance feature
-
-  return <UnderConstruction />;
+  return (
+    <>
+      <Box containerClassName="py-12"></Box>
+      <VerticalTimeline />
+    </>
+  );
 }

@@ -23,6 +23,7 @@ export { default as ContainerWrapper } from "./molecules/ContainerWrapper";
 // atoms
 export { default as VerseOfTheDay } from "./molecules/atoms/VerseOfTheDay";
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
+export { default as VerticalTimeline } from "./molecules/atoms/VerticalTimeline";
 
 // event atoms
 export { default as EventHeader } from "./molecules/events/EventHeader";

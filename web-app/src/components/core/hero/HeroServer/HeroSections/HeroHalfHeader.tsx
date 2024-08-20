@@ -1,16 +1,11 @@
-import { FaUserFriends, FaYoutube, FaBrain } from "react-icons/fa";
+import { FaUserFriends, FaBrain } from "react-icons/fa";
 import {
   Box,
-  FlexCenter,
   SectionHeader,
   LongParagraph,
   SectionSubheader,
 } from "@/components/core/ui";
-import {
-  FlexWrapper,
-  VerticalWrapper,
-  HeroHalfWrapper,
-} from "@/components/core/hero";
+import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 import { RiSoundModuleFill } from "react-icons/ri";
 import SVGWage from "@/components/core/hero/molecules/atoms/SVGWage";
 

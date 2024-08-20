@@ -1,6 +1,5 @@
 import { HeroHalfHeader, HeroSlideClient } from "@/components/core/hero";
 import { NextImage } from "@/components/core/gallery";
-import { Box } from "@/components/core/ui";
 
 export default function page() {
   return (
