@@ -16,7 +16,7 @@ export default function page() {
         <NextImage
           width={"w-full"}
           height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
-          src={"/featured/past-events-1/6.jpg"}
+          src={"/featured/ministries/1.jpg"}
           alt={"Next Big Event Image"}
           imageClassName={"rounded-lg object-center"}
         />
