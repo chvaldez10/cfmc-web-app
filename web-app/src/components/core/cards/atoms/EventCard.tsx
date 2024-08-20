@@ -12,20 +12,12 @@ import {
 interface EventCardProps extends Events {}
 
 const EventCard: React.FC<EventCardProps> = ({
-  id,
   name,
   startDate,
   endDate,
-  updatedAt,
-  createdAt,
-  tags,
   category,
-  occurrence,
   description,
   image,
-  address,
-  status,
-  organizerName,
   slug,
 }) => {
   const startDateObj = new Date(startDate);
@@ -35,7 +27,7 @@ const EventCard: React.FC<EventCardProps> = ({
   const endDay = startDay === endDateObj.getDate() ? "" : endDateObj.getDate();
 
   return (
-    <Flex containerClassName="flex flex-col sm:flex-row items-center w-full max-w-xl hover:bg-gray-100 overflow-hidden">
+    <Flex containerClassName="flex-center flex-col sm:flex-row hover:bg-gray-100">
       {image && (
         <NextImage
           width={"w-full"}
@@ -48,9 +40,9 @@ const EventCard: React.FC<EventCardProps> = ({
 
       <Link
         href={`/event/${slug}`}
-        className="flex flex-col justify-between p-4 leading-normal w-full gap-2 truncate"
+        className="flex flex-col justify-between p-4 leading-normal w-full gap-2 truncate "
       >
-        <SmallText>{category}</SmallText>
+        <SmallText containerClassName="">{category}</SmallText>
         <SectionSubheader
           text={`${month} ${startDay}${endDay ? ` - ${endDay}` : ""}`}
         />

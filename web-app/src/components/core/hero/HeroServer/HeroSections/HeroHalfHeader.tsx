@@ -17,7 +17,6 @@ import SVGWage from "@/components/core/hero/molecules/atoms/SVGWage";
 const HeroHalfHeader = () => {
   return (
     <Box containerClassName="bg-gradient-to-r from-white-10 to-green-10 overflow-hidden">
-      {/* <Box containerClassName="container mx-auto px-4 py-24 md:py-32 relative z-10 "> */}
       <FlexWrapper layoutClass="div-col-row" containerClassName="min-h-screen">
         <HeroHalfWrapper containerClassName="space-y-4 lg:space-y-8 div-outside-width">
           <SectionHeader
@@ -49,8 +48,6 @@ const HeroHalfHeader = () => {
           </Box>
         </HeroHalfWrapper>
       </FlexWrapper>
-      {/* </Box> */}
-
       <SVGWage />
     </Box>
   );

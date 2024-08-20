@@ -1,14 +1,18 @@
 "use client";
 
 import { FC, useState, useEffect } from "react";
+
+// swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
+
 import { EventCard } from "@/components/core/cards";
-import useSlidesPerView from "@/hooks/useSlidesPerView";
 import { LoadingSkeleton } from "@/components/core/loader";
+import { Flex } from "@/components/core/ui";
 import { Events } from "@/types/supabaseTypes";
+import useSlidesPerView from "@/hooks/useSlidesPerView";
 
 const breakpoints: { screenSize: number; slidesPerView: number }[] = [
   { screenSize: 1024, slidesPerView: 2 },
@@ -29,11 +33,11 @@ const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
   return (
     <>
       {isLoading ? (
-        <div className="flex gap-2">
+        <Flex containerClassName="flex gap-2">
           {[...Array(slidesPerView)].map((_, index) => (
             <LoadingSkeleton key={index} containerClassName="w-full md:w-1/2" />
           ))}
-        </div>
+        </Flex>
       ) : (
         <Swiper
           modules={[Scrollbar]}
@@ -48,9 +52,8 @@ const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
             1024: { slidesPerView: 2 },
           }}
         >
-          {/* mocking eventData */}
           {events?.map((currentEvent, index) => (
-            <SwiperSlide key={index} className="my-8">
+            <SwiperSlide key={index} className="my-8 ">
               <EventCard {...currentEvent} />
             </SwiperSlide>
           ))}
