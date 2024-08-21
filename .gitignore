@@ -26,8 +26,9 @@
 # logs
 *.log
 
-# local env files
-.env*.local
+# env files
+.env.local
+.env.production
 
 # vercel
 .vercel/
