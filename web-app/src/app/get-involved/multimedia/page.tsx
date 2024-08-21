@@ -4,6 +4,7 @@ import {
   BoxIcon,
 } from "@/components/core/hero";
 import { NextImage } from "@/components/core/gallery";
+import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
 
 export default function page() {
   return (
@@ -15,7 +16,7 @@ export default function page() {
         }
         containerClassName="bg-gradient-to-r from-white-10 to-green-10 overflow-hidden"
       >
-        <BoxIcon />
+        <BoxIcon cardInquiries={whyJoinTheMultimediaTeam} />
       </HeroWaveHeader>
 
       <HeroSlideClient

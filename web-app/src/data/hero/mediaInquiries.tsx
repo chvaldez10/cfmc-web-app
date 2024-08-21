@@ -1,5 +1,10 @@
 import { MdContactMail } from "react-icons/md";
-import { FaPrayingHands, FaYoutube } from "react-icons/fa";
+import {
+  FaPrayingHands,
+  FaYoutube,
+  FaUserFriends,
+  FaBrain,
+} from "react-icons/fa";
 import { RiSoundModuleFill } from "react-icons/ri";
 import { CardInquiry } from "@/types/genericTypes";
 import { TbWorldWww } from "react-icons/tb";
@@ -41,5 +46,23 @@ export const mediaInquiries: CardInquiry[] = [
     svgIcon: <TbWorldWww className="w-12 h-12" />,
     description:
       "Additionally, the multimedia team is known for handling unique projects. We developed and designed this website from scratch. We're still working on it, so expect more updates in the future.",
+  },
+];
+
+export const whyJoinTheMultimediaTeam: CardInquiry[] = [
+  {
+    label: "Have Fun While You Serve",
+    svgIcon: <RiSoundModuleFill className="w-6 h-6 mr-3 text-green-500" />,
+    description: "",
+  },
+  {
+    label: "Meet New Friends",
+    svgIcon: <FaUserFriends className="w-6 h-6 mr-3 text-purple-500" />,
+    description: "",
+  },
+  {
+    label: "Be Creative",
+    svgIcon: <FaBrain className="w-6 h-6 mr-3 text-yellow-400" />,
+    description: "",
   },
 ];
