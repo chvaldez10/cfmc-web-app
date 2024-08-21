@@ -26,8 +26,8 @@ export const usefulLinks: {
     label: "Upcoming Events",
   },
   {
-    link: "/connect/contact-us",
-    label: "Contact Us",
+    link: "/about-us/ministry",
+    label: "Ministry",
   },
 ];
 
@@ -46,5 +46,9 @@ export const otherResources: {
   {
     link: "/login",
     label: "Admin Login",
+  },
+  {
+    link: "/connect/forum",
+    label: "Forum",
   },
 ];

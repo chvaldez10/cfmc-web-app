@@ -43,15 +43,9 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
 
       <NavbarLinkItem
         url="/connect/contact-us"
-        label="Connect"
+        label="Contact Us"
         className={NavClassNames}
       />
-
-      {/* <NavDropdown
-        navDropdownItems={connectDropdownItem}
-        dropdownLabel="Connect"
-        className={NavClassNames}
-      /> */}
 
       <OpenModalButton
         variant="outline"
