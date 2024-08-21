@@ -36,7 +36,7 @@ const InquiryCardItem: FC<InquiryCardItemProps> = ({
           title="Request Form"
           onClose={handleCloseModal}
         >
-          <RequestForm defaultSelectedItem={title.toLowerCase()} />
+          <RequestForm defaultSelectedItem={title} />
         </VerticalCenteredModal>
       )}
     </>
