@@ -13,9 +13,8 @@ const BoxIcon: FC<BoxIconProps> = ({ cardInquiries, header }) => {
       <SectionSubheader text={header} />
       <ul className="space-y-4">
         {cardInquiries.map((inquiry) => (
-          <li className="flex items-center" key={inquiry.label}>
+          <li className="flex items-center gap-2" key={inquiry.label}>
             {inquiry.svgIcon}
-
             <span>{inquiry.label}</span>
           </li>
         ))}

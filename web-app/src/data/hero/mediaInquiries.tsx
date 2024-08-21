@@ -52,17 +52,19 @@ export const mediaInquiries: CardInquiry[] = [
 export const whyJoinTheMultimediaTeam: CardInquiry[] = [
   {
     label: "Have Fun While You Serve",
-    svgIcon: <RiSoundModuleFill className="w-6 h-6 mr-3 text-green-500" />,
+    svgIcon: (
+      <RiSoundModuleFill className="w-6 h-6" style={{ color: "#22c55e" }} />
+    ),
     description: "",
   },
   {
     label: "Meet New Friends",
-    svgIcon: <FaUserFriends className="w-6 h-6 mr-3 text-purple-500" />,
+    svgIcon: <FaUserFriends className="w-6 h-6" style={{ color: "#a855f7" }} />,
     description: "",
   },
   {
     label: "Be Creative",
-    svgIcon: <FaBrain className="w-6 h-6 mr-3 text-yellow-400" />,
+    svgIcon: <FaBrain className="w-6 h-6" style={{ color: "#facc15" }} />,
     description: "",
   },
 ];
@@ -70,17 +72,19 @@ export const whyJoinTheMultimediaTeam: CardInquiry[] = [
 export const multimediaInquiries: CardInquiry[] = [
   {
     label: "Music",
-    svgIcon: <IoMusicalNotesOutline className="w-6 h-6 mr-3 text-purple-500" />,
+    svgIcon: (
+      <IoMusicalNotesOutline className="w-6 h-6" style={{ color: "#a855f7" }} />
+    ),
     description: "",
   },
   {
     label: "Presentation",
-    svgIcon: <FaYoutube className="w-6 h-6 mr-3 text-purple-500" />,
+    svgIcon: <FaYoutube className="w-6 h-6" style={{ color: "#ef4444" }} />,
     description: "",
   },
   {
     label: "Web Design",
-    svgIcon: <TbWorldWww className="w-6 h-6 mr-3 text-purple-500" />,
+    svgIcon: <TbWorldWww className="w-6 h-6" style={{ color: "#60a5fa" }} />,
     description: "",
   },
 ];
