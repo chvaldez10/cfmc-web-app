@@ -14,8 +14,8 @@ const VerticalCenteredModal = forwardRef<
 >(({ children, title, onClose }, modalRef) => {
   return (
     <FlexCenter containerClassName="fixed inset-0 z-30 overflow-x-hidden overflow-y-auto">
-      <Box
-        containerClassName="resize-modal border border-gray-200 rounded-lg bg-white-0 animate-translate-up text-gray-900"
+      <div
+        className="resize-modal border border-gray-200 rounded-lg bg-white-0 animate-translate-up text-gray-900"
         ref={modalRef}
       >
         <Flex containerClassName="div-outside-width-justify-between px-5 py-3 border-b border-gray-200 bg-purple-50 md:rounded-t-lg">
@@ -23,7 +23,7 @@ const VerticalCenteredModal = forwardRef<
           <CloseButton onClose={onClose} />
         </Flex>
         <Box containerClassName="p-5">{children}</Box>
-      </Box>
+      </div>
     </FlexCenter>
   );
 });

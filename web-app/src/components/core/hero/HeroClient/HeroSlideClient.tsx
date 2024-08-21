@@ -1,12 +1,8 @@
 "use client";
 
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import useInView from "@/hooks/useInView";
-import {
-  SectionHeader,
-  SectionSubheader,
-  FlexCenter,
-} from "@/components/core/ui";
+import { SectionHeader, SectionSubheader } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
 import { HeroSectionProps } from "@/types/genericTypes";
 import "@/styles/slide.css";

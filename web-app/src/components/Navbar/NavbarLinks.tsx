@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { useRouter } from "next/navigation";
 import {
   aboutDropdownItems,
   mediaDropDownItems,
@@ -20,8 +19,6 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
   NavClassNames = "",
   ButtonClassNames = "",
 }) => {
-  const router = useRouter();
-
   return (
     <ul
       className="div-outside-width md:flex-row md:justify-start gap-4 md:gap-1 lg:gap-6"

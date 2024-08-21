@@ -21,7 +21,12 @@ const ContactForm: FC = () => {
         </LongParagraph>
         <Box>
           <InputLabel label="Email" htmlFor="email" />
-          <TextInput type="email" id="email" name="email" />
+          <TextInput
+            type="email"
+            id="email"
+            name="email"
+            placeholder="first.last@email.com"
+          />
         </Box>
         <TextArea id="contact-message" label="Message" />
         <Flex containerClassName="flex justify-end">
