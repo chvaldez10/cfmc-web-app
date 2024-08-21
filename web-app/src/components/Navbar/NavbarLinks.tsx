@@ -5,7 +5,8 @@ import {
   getInvolvedDropdownItems,
   connectDropdownItem,
 } from "@/data/navbar/navData";
-import NavDropdown from "./NavDropdown";
+
+import { NavDropdown, NavbarLinkItem } from "@/components/Navbar/";
 import { OpenModalButton } from "@/components/core/ui";
 import TithesAndOffering from "@/components/core/modals/atoms/TithesAndOffering";
 import { tithesAndOfferingVerse } from "@/data/hero/constants";
@@ -39,11 +40,18 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
         dropdownLabel="Get Involved"
         className={NavClassNames}
       />
-      <NavDropdown
+
+      <NavbarLinkItem
+        url="/connect/contact-us"
+        label="Connect"
+        className={NavClassNames}
+      />
+
+      {/* <NavDropdown
         navDropdownItems={connectDropdownItem}
         dropdownLabel="Connect"
         className={NavClassNames}
-      />
+      /> */}
 
       <OpenModalButton
         variant="outline"
