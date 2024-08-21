@@ -16,7 +16,10 @@ export default function page() {
         }
         containerClassName="bg-gradient-to-r from-white-10 to-green-10 overflow-hidden"
       >
-        <BoxIcon cardInquiries={whyJoinTheMultimediaTeam} />
+        <BoxIcon
+          cardInquiries={whyJoinTheMultimediaTeam}
+          header={"Join The Ministry"}
+        />
       </HeroWaveHeader>
 
       <HeroSlideClient

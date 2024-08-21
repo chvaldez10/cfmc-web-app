@@ -1,4 +1,4 @@
-import { MdContactMail } from "react-icons/md";
+import { MdContactMail, MdCoPresent } from "react-icons/md";
 import {
   FaPrayingHands,
   FaYoutube,
@@ -63,6 +63,24 @@ export const whyJoinTheMultimediaTeam: CardInquiry[] = [
   {
     label: "Be Creative",
     svgIcon: <FaBrain className="w-6 h-6 mr-3 text-yellow-400" />,
+    description: "",
+  },
+];
+
+export const multimediaInquiries: CardInquiry[] = [
+  {
+    label: "Music",
+    svgIcon: <IoMusicalNotesOutline className="w-6 h-6 mr-3 text-purple-500" />,
+    description: "",
+  },
+  {
+    label: "Presentation",
+    svgIcon: <FaYoutube className="w-6 h-6 mr-3 text-purple-500" />,
+    description: "",
+  },
+  {
+    label: "Web Design",
+    svgIcon: <TbWorldWww className="w-6 h-6 mr-3 text-purple-500" />,
     description: "",
   },
 ];

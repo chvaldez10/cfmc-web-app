@@ -4,16 +4,18 @@ import { CardInquiry } from "@/types/genericTypes";
 
 interface BoxIconProps {
   cardInquiries: CardInquiry[];
+  header: string;
 }
 
-const BoxIcon: FC<BoxIconProps> = ({ cardInquiries }) => {
+const BoxIcon: FC<BoxIconProps> = ({ cardInquiries, header }) => {
   return (
     <Box containerClassName="bg-white-0 bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-2xl space-y-4 w-full">
-      <SectionSubheader text="Join The Ministry" />
+      <SectionSubheader text={header} />
       <ul className="space-y-4">
         {cardInquiries.map((inquiry) => (
           <li className="flex items-center" key={inquiry.label}>
             {inquiry.svgIcon}
+
             <span>{inquiry.label}</span>
           </li>
         ))}
