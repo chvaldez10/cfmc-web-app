@@ -34,7 +34,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
           className="z-10 scale-up"
           url={`/event/${nextServiceSlug}`}
         >
-          Next Sunday Service
+          Next Sunday Worship
         </NavigateButton>
         <NavigateButton
           variant={"outline"}
