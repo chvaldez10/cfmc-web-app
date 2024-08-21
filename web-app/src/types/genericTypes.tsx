@@ -32,12 +32,12 @@ export interface ClientButtonProps {
   disabled?: boolean;
 }
 
-export interface modalProps {
+export interface ModalProps {
   title: string;
-  content: string;
+  children: ReactNode;
 }
 
-export interface churchLiturgy {
+export interface ChurchLiturgy {
   header: string;
   indicationToStand: boolean;
   personInCharge: string;

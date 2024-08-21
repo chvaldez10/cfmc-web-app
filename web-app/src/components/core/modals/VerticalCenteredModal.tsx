@@ -1,10 +1,10 @@
 import { forwardRef, ReactNode } from "react";
 import { SectionSubheader } from "@/components/core/ui";
 import { CloseButton } from "@/components/core/ui";
+import { ModalProps } from "@/types/genericTypes";
+import { FlexCenter, Box } from "@/components/core/ui";
 
-interface VerticalCenteredModalProps {
-  children: ReactNode;
-  title: string;
+interface VerticalCenteredModalProps extends ModalProps {
   onClose: () => void;
 }
 
@@ -14,7 +14,7 @@ const VerticalCenteredModal = forwardRef<
 >(({ children, title, onClose }, modalRef) => {
   // TODO: Improve styling
   return (
-    <div className="fixed div-outside-width inset-0 z-30 overflow-x-hidden overflow-y-auto">
+    <FlexCenter containerClassName="fixed inset-0 z-30 overflow-x-hidden overflow-y-auto">
       <div
         className="resize-modal border border-gray-200 rounded-lg bg-white-0 animate-translate-up text-gray-900"
         ref={modalRef}
@@ -25,7 +25,7 @@ const VerticalCenteredModal = forwardRef<
         </div>
         <div className="p-5">{children}</div>
       </div>
-    </div>
+    </FlexCenter>
   );
 });
 
