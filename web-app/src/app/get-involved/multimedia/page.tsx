@@ -1,10 +1,10 @@
-import { HeroHalfHeader, HeroSlideClient } from "@/components/core/hero";
+import { HeroWaveHeader, HeroSlideClient } from "@/components/core/hero";
 import { NextImage } from "@/components/core/gallery";
 
 export default function page() {
   return (
     <>
-      <HeroHalfHeader />
+      <HeroWaveHeader />
       <HeroSlideClient
         header={"Have Fun While You Serve"}
         longParagraph={"Have Fun While You Serve Description"}
