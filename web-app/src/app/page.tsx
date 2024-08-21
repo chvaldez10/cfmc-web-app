@@ -9,7 +9,7 @@ import {
 
 import { cardInquiries, pastEvents1, communityBuilding1 } from "@/data/hero";
 
-import { SimpleCard, CardWithImage } from "@/components/core/cards";
+import { InquiryCard, CardWithImage } from "@/components/core/cards";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
@@ -77,7 +77,7 @@ export default async function Home() {
 
       <EventBlogSwiper />
       <CardWithImage />
-      <SimpleCard cardContainerItems={cardInquiries} />
+      <InquiryCard cardContainerItems={cardInquiries} />
       <VerseOfTheDay />
     </>
   );

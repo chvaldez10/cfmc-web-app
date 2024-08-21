@@ -9,17 +9,17 @@ export const cardInquiries: CardInquiry[] = [
   {
     label: "Connect",
     description: "Fill out a description card",
-    svgIcon: <MdContactMail />,
+    svgIcon: <MdContactMail className="w-24 h-24 mb-4" />,
   },
   {
     label: "Pray",
     description: "Send us your prayer request",
-    svgIcon: <FaPrayingHands />,
+    svgIcon: <FaPrayingHands className="w-24 h-24 mb-4" />,
   },
   {
     label: "Media Inquiries",
     description: "Please submit and any media inquiries",
-    svgIcon: <RiSoundModuleFill />,
+    svgIcon: <RiSoundModuleFill className="w-24 h-24 mb-4" />,
   },
 ];
 
