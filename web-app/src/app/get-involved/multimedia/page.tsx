@@ -1,10 +1,23 @@
-import { HeroWaveHeader, HeroSlideClient } from "@/components/core/hero";
+import {
+  HeroWaveHeader,
+  HeroSlideClient,
+  BoxIcon,
+} from "@/components/core/hero";
 import { NextImage } from "@/components/core/gallery";
 
 export default function page() {
   return (
     <>
-      <HeroWaveHeader />
+      <HeroWaveHeader
+        header={"Multimedia"}
+        longParagraph={
+          "Some super epic text about getting involved in multimedia ministry."
+        }
+        containerClassName="bg-gradient-to-r from-white-10 to-green-10 overflow-hidden"
+      >
+        <BoxIcon />
+      </HeroWaveHeader>
+
       <HeroSlideClient
         header={"Have Fun While You Serve"}
         longParagraph={"Have Fun While You Serve Description"}

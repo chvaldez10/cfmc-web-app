@@ -23,9 +23,8 @@ export { default as ContainerWrapper } from "./molecules/ContainerWrapper";
 // atoms
 export { default as VerseOfTheDay } from "./molecules/atoms/VerseOfTheDay";
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
-export { default as VerticalTimeline } from "./molecules/atoms/VerticalTimeline";
 
-// event atoms
+// event
 export { default as EventHeader } from "./molecules/events/EventHeader";
 export { default as EventDescription } from "./molecules/events/EventDescription";
 export { default as IframeMap } from "./molecules/events/IframeMap";
@@ -38,3 +37,7 @@ export { default as TeamSection } from "./molecules/atoms/TeamSection";
 export { default as BirthdayNotFound } from "./molecules/announcements/BirthdayNotFound";
 export { default as BirthdaySection } from "./molecules/announcements/BirthdaySection";
 export { default as AnnouncementList } from "./molecules/announcements/AnnouncementList";
+
+// multimedia
+export { default as VerticalTimeline } from "./molecules/multimedia/VerticalTimeline";
+export { default as BoxIcon } from "./molecules/multimedia/BoxIcon";
