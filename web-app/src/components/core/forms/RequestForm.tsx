@@ -4,7 +4,13 @@ import TextSelector from "./atoms/TextSelector";
 import TextArea from "./atoms/TextArea";
 import { FormButton } from "@/components/core/ui";
 
-const RequestForm: FC = () => {
+interface RequestFormProps {
+  defaultSelectedItem?: string | undefined;
+}
+
+const RequestForm: FC<RequestFormProps> = ({
+  defaultSelectedItem = "connect",
+}) => {
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -49,7 +55,7 @@ const RequestForm: FC = () => {
         placeholder="Phone Number"
         maxLength={10}
       />
-      <TextSelector />
+      <TextSelector defaultSelectedItem={defaultSelectedItem} />
       <TextArea id="message" label="Message" />
       <div className="flex justify-end">
         <FormButton className="text-purple-500 hover:underline">

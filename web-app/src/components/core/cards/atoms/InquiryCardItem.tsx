@@ -1,11 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import {
-  SectionSubheader,
-  LongParagraph,
-  FlexCenter,
-} from "@/components/core/ui";
+import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { VerticalCenteredModal } from "@/components/core/modals";
 import RequestForm from "@/components/core/forms/RequestForm";
 import useModal from "@/hooks/useModal";
@@ -25,22 +21,22 @@ const InquiryCardItem: FC<InquiryCardItemProps> = ({
 
   return (
     <>
-      <FlexCenter
+      <div
         key={title}
-        containerClassName="py-4 hover-animation hover-up h-[40vh] md:h-[30vh]"
+        className="div-outside-width py-4 hover-animation hover-up h-[40vh] md:h-[30vh]"
         onClick={handleOpenModal}
       >
         {svgIcon}
         <SectionSubheader text={title.toUpperCase()} />
         <LongParagraph>{description}</LongParagraph>
-      </FlexCenter>
+      </div>
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
           title="Request Form"
           onClose={handleCloseModal}
         >
-          <RequestForm />
+          <RequestForm defaultSelectedItem={title.toLowerCase()} />
         </VerticalCenteredModal>
       )}
     </>

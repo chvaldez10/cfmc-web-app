@@ -26,7 +26,7 @@ export const cardWithImageItems: {
     title: "Get Involved",
     alt: "Featured Image 3",
     description:
-      "There are many ways to get involved. We always need help setting up Sunday services. We look for people to hold Bible Study throughout the week. Lastly, our music and multimedia team always welcomes new members.",
+      "There are many ways to get involved. We always need help setting up Sunday worship. We look for people to hold Bible Study throughout the week. Lastly, our music and multimedia team always welcomes new members.",
     url: "/get-involved/music",
   },
   {

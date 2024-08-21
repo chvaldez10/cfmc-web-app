@@ -12,12 +12,12 @@ export const cardInquiries: CardInquiry[] = [
     svgIcon: <MdContactMail className="w-24 h-24 mb-4" />,
   },
   {
-    label: "Pray",
+    label: "Prayer",
     description: "Send us your prayer request",
     svgIcon: <FaPrayingHands className="w-24 h-24 mb-4" />,
   },
   {
-    label: "Media Inquiries",
+    label: "Media",
     description: "Please submit and any media inquiries",
     svgIcon: <RiSoundModuleFill className="w-24 h-24 mb-4" />,
   },

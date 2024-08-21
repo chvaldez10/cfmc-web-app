@@ -7,7 +7,7 @@ import {
   IframeMap,
 } from "@/components/core/hero";
 
-import { cardInquiries, pastEvents1, communityBuilding1 } from "@/data/hero";
+import { pastEvents1, communityBuilding1 } from "@/data/hero";
 
 import { InquiryCard, CardWithImage } from "@/components/core/cards";
 import {
@@ -34,7 +34,7 @@ export default async function Home() {
       <HeroCollage nextServiceSlug={eventDetails?.slug} />
 
       <HeroSlideClient
-        header={"Sunday Service"}
+        header={"Sunday Worship"}
         longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
         containerClassName="bg-green-10 min-h-screen"
         isFloating={true}
@@ -77,7 +77,7 @@ export default async function Home() {
 
       <EventBlogSwiper />
       <CardWithImage />
-      <InquiryCard cardContainerItems={cardInquiries} />
+      <InquiryCard />
       <VerseOfTheDay />
     </>
   );
