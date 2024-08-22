@@ -1,5 +1,5 @@
-import UnderConstruction from "@/components/template/UnderConstruction";
+import { ImageContent } from "@/components/core/hero";
 
 export default function page() {
-  return <UnderConstruction />;
+  return <ImageContent />;
 }

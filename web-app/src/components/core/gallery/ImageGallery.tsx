@@ -10,6 +10,7 @@ import { NextImage } from "@/components/core/gallery";
 import { pastEvents1 } from "@/data/hero";
 
 const ImageGallery: FC = () => {
+  // TODO: Choose the images to display
   return (
     <Box containerClassName="container px-5 py-24 mx-auto space-y-4 resize-hero-width">
       <Box>

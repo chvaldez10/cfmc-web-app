@@ -41,3 +41,4 @@ export { default as AnnouncementList } from "./molecules/announcements/Announcem
 // multimedia
 export { default as VerticalTimeline } from "./molecules/multimedia/VerticalTimeline";
 export { default as BoxIcon } from "./molecules/multimedia/BoxIcon";
+export { default as ImageContent } from "./molecules/multimedia/ImageContent";
