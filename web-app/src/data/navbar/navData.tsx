@@ -10,11 +10,9 @@ import {
   MdOutlineAnnouncement,
   MdForum,
 } from "react-icons/md";
-import { CiImageOn } from "react-icons/ci";
 import { HiPencilAlt } from "react-icons/hi";
 import { CgNotes } from "react-icons/cg";
 import { RiSoundModuleFill } from "react-icons/ri";
-import { PiHandsPrayingFill } from "react-icons/pi";
 import { IoMusicalNotesOutline } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
 
@@ -50,11 +48,6 @@ export const mediaDropDownItems: {
   url: string;
   svgIcon: ReactElement;
 }[] = [
-  {
-    label: "Gallery",
-    url: "/media/gallery",
-    svgIcon: <CiImageOn />,
-  },
   {
     label: "Announcements",
     url: "/media/announcements",
@@ -103,11 +96,6 @@ export const connectDropdownItem: {
     label: "Contact Us",
     url: "/connect/contact-us",
     svgIcon: <IoIosMail />,
-  },
-  {
-    label: " Prayer",
-    url: "/connect/prayer",
-    svgIcon: <PiHandsPrayingFill />,
   },
   {
     label: "Forum",
