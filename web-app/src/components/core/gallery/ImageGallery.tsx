@@ -4,13 +4,14 @@ import {
   LongParagraph,
   Box,
   Flex,
+  Grid,
 } from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
 import { pastEvents1 } from "@/data/hero";
 
 const ImageGallery: FC = () => {
   return (
-    <div className="container px-5 py-24 mx-auto space-y-4 resize-hero-width">
+    <Box containerClassName="container px-5 py-24 mx-auto space-y-4 resize-hero-width">
       <Box>
         <SectionSubheader text="Past events" />
         <LongParagraph>
@@ -19,7 +20,7 @@ const ImageGallery: FC = () => {
       </Box>
 
       <Flex containerClassName="flex flex-row gap-2">
-        <div className="grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
+        <Grid containerClassName="grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
           <NextImage
             height={"h-56"}
             src={pastEvents1[0].src}
@@ -42,8 +43,8 @@ const ImageGallery: FC = () => {
             containerClassName="col-span-2 row-span-1"
             imageClassName="rounded-lg object-center"
           />
-        </div>
-        <div className="hidden md:grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
+        </Grid>
+        <Grid containerClassName="hidden md:grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
           <NextImage
             alt={pastEvents1[2].alt}
             height={"h-56"}
@@ -66,9 +67,9 @@ const ImageGallery: FC = () => {
             containerClassName="col-span-1 row-span-1"
             imageClassName="rounded-lg object-center"
           />
-        </div>
+        </Grid>
       </Flex>
-    </div>
+    </Box>
   );
 };
 
