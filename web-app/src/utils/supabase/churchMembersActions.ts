@@ -14,6 +14,9 @@ function formatChurchMembersData(data: any): ChurchMembers {
     name: data.name,
     birthDate: new Date(data.birth_date),
     isActive: data.is_active,
+    isBoardMember: data.is_board_member,
+    bio: data.bio,
+    training: data.training,
   };
 }
 

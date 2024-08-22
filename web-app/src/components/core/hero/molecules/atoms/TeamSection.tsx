@@ -19,20 +19,20 @@ interface BoardMember {
 
 const boardMembers: BoardMember[] = [
   {
-    boardMemberName: "Board Member Name 1",
-    boardPosition: "Board Position 1",
+    boardMemberName: "Rev. Jonavern Pascual",
+    boardPosition: "Pastor",
     caption: "Short caption here",
     email: "email@example.com",
   },
   {
-    boardMemberName: "Board Member Name 2",
-    boardPosition: "Board Position 2",
+    boardMemberName: "Rev. Jose Velasco",
+    boardPosition: "Pastor",
     caption: "Another short caption",
     email: "email@example.com",
   },
   {
-    boardMemberName: "Board Member Name 2",
-    boardPosition: "Board Position 2",
+    boardMemberName: "Dss. Tessie Velasco",
+    boardPosition: "Deaconess",
     caption: "Another short caption",
     email: "email@example.com",
   },

@@ -46,6 +46,9 @@ export type ChurchMembers = {
   name: string;
   birthDate?: Date;
   isActive: boolean;
+  isBoardMember: boolean;
+  bio?: string;
+  training?: string[];
 };
 
 export type ReleaseProps = {
