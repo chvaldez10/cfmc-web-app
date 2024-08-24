@@ -1,21 +1,20 @@
-import Image from "next/image";
+import { FC } from "react";
 import Link from "next/link";
-import { Flex } from "@/components/core/ui";
+import { Flex, Box } from "@/components/core/ui";
 import { IoPerson } from "react-icons/io5";
+import { NextImage } from "@/components/core/gallery";
 
-const ImageContent: React.FC = () => {
+const ImageContent: FC = () => {
   return (
-    <div className="container px-5 py-24 mx-auto flex flex-col">
-      <div className="lg:w-4/6 mx-auto">
-        <div className="rounded-lg h-64 overflow-hidden">
-          <Image
-            alt="content"
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            width={1200}
-            height={500}
-            className="object-cover object-center w-full h-full"
-          />
-        </div>
+    <Flex containerClassName="container px-4 mx-auto flex flex-col">
+      <Box containerClassName="resize-hero-width mx-auto">
+        <NextImage
+          width={"w-full"}
+          height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
+          src={"/featured/past-events-1/2.jpg"}
+          alt={"Next Big Event Image"}
+          imageClassName={"rounded-lg object-center"}
+        />
         <div className="flex flex-col sm:flex-row mt-10">
           <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
             <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-purple-100 text-purple-500">
@@ -66,8 +65,8 @@ const ImageContent: React.FC = () => {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+      </Box>
+    </Flex>
   );
 };
 
