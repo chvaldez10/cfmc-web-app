@@ -39,7 +39,7 @@ const EventCard: React.FC<EventCardProps> = ({
       )}
 
       <Link
-        href={`/event/${slug}`}
+        href={`/events/${slug}`}
         className="flex flex-col justify-between p-4 leading-normal w-full gap-2 truncate "
       >
         <SmallText containerClassName="">{category}</SmallText>

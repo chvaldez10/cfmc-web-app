@@ -32,7 +32,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         {/* TODO: Please remove this test slug after testing */}
         <NavigateButton
           className="z-10 scale-up"
-          url={`/event/${nextServiceSlug}`}
+          url={`/events/${nextServiceSlug}`}
         >
           Next Sunday Worship
         </NavigateButton>
