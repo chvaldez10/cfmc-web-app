@@ -39,7 +39,10 @@ export default async function Home() {
         containerClassName="bg-green-10 min-h-screen"
         isFloating={true}
       >
-        <IframeMap src={churchGoogleMapSrc} />
+        <IframeMap
+          src={churchGoogleMapSrc}
+          containerClassName="h-96 lg:h-576"
+        />
       </HeroSlideClient>
 
       <HeroImageSwiper
