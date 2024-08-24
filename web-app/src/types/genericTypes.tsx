@@ -32,9 +32,8 @@ export interface ClientButtonProps {
   disabled?: boolean;
 }
 
-export interface ModalProps {
-  title: string;
-  children: ReactNode;
+export interface ModalProps extends DivProps {
+  header: string;
 }
 
 export interface ChurchLiturgy {

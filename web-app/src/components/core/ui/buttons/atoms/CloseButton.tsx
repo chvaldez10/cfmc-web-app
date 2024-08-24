@@ -2,7 +2,7 @@ import { FC } from "react";
 import { IoMdClose } from "react-icons/io";
 
 interface CloseButtonProps {
-  onClose: () => void;
+  onClose: (() => void) | undefined;
 }
 
 const CloseButton: FC<CloseButtonProps> = ({ onClose }) => {

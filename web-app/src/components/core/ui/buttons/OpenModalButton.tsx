@@ -33,8 +33,9 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
-          title={title}
-          onClose={handleCloseModal}
+          header={title}
+          onClick={handleCloseModal}
+          containerClassName={"resize-modal"}
         >
           {modalElement}
         </VerticalCenteredModal>

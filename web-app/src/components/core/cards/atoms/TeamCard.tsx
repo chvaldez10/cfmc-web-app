@@ -46,8 +46,9 @@ const TeamCard: FC<TeamCardProps> = ({
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
-          title={boardMemberName}
-          onClose={handleCloseModal}
+          header={boardMemberName}
+          onClick={handleCloseModal}
+          containerClassName={"resize-modal"}
         >
           <FullTeamCard />
         </VerticalCenteredModal>
