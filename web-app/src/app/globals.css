@@ -109,6 +109,10 @@
   @apply w-full h-screen md:max-w-2xl md:h-auto;
 }
 
+.resize-modal-full-width {
+  @apply w-full h-screen md:w-7/12 md:h-auto;
+}
+
 /* Hidden classes */
 .hidden-md-flex {
   @apply hidden md:flex flex-col;

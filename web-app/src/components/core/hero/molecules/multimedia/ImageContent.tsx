@@ -19,7 +19,7 @@ const ImageContent: FC = () => {
           width={"w-full"}
           height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
           src={"/featured/past-events-1/2.jpg"}
-          alt={"Next Big Event Image"}
+          alt={"Image Content Image"}
           imageClassName={"rounded-lg object-center"}
         />
         <Flex containerClassName="flex flex-col sm:flex-row mt-10">
