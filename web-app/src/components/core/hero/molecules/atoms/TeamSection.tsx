@@ -4,7 +4,6 @@ import { getChurchMembersBoardMembers } from "@/utils/supabase/churchMembersActi
 
 async function TeamSection() {
   const boardMembersTest = await getChurchMembersBoardMembers();
-  console.log(boardMembersTest);
 
   return (
     <Box containerClassName="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
