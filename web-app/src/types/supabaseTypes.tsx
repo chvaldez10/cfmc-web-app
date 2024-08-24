@@ -50,7 +50,7 @@ export type ChurchMembers = {
   traits?: string[];
   suffix?: string;
   email?: string;
-  role?: string;
+  role: string;
   firstName?: string;
   lastName?: string;
 };

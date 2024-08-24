@@ -44,3 +44,22 @@ export async function getChurchMembersBirthdayByBirthMonth(
 
   return data.map((event: any) => formatChurchMembersData(event));
 }
+
+export async function getChurchMembersBoardMembers() {
+  const supabase = createClient();
+
+  const { data, error } = await supabase
+    .from("church_members")
+    .select("*")
+    .eq("is_board_member", true);
+
+  if (error) {
+    console.error("Error fetching church members board members:", error);
+    return null;
+  } else if (!data) {
+    console.error("No church members board members found");
+    return null;
+  }
+
+  return data.map((event: any) => formatChurchMembersData(event));
+}
