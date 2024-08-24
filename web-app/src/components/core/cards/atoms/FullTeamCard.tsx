@@ -1,8 +1,13 @@
 import { FC } from "react";
 import { IoPerson } from "react-icons/io5";
-import { FlexCenter, Box, Flex } from "@/components/core/ui";
+import {
+  FlexCenter,
+  Box,
+  Flex,
+  SectionSubheader,
+  PurpleColoredBadge,
+} from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
-import Image from "next/image";
 
 const FullTeamCard: FC = () => {
   return (
@@ -23,29 +28,25 @@ const FullTeamCard: FC = () => {
             <IoPerson className="w-24 h-24 text-gray-300" />
           </Box>
         </Flex>
-        <FlexCenter containerClassName="sm:flex-row max-sm:gap-4 sm:justify-between mb-4">
-          <div className="block">
-            <h3 className="font-bold text-2xl text-gray-800 mb-1 max-sm:text-center">
-              John Doe
-            </h3>
+        <FlexCenter containerClassName="sm:flex-row max-sm:gap-4 sm:justify-between">
+          <Box containerClassName="block">
+            <SectionSubheader
+              text={"John Doe"}
+              containerClassName="text-center max-sm:text-center text-start"
+            />
             <p className="text-sm text-gray-600 max-sm:text-center">
               Insert role here
               <br className="hidden sm:block" />
               Calgary Filipino Methodist Church
             </p>
-          </div>
+          </Box>
         </FlexCenter>
-        <div className="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
-          <button className="rounded-full py-3 px-6 bg-gray-100 text-gray-700 font-semibold text-sm leading-6 transition-all duration-300 hover:bg-purple-500 hover:text-white-0">
-            Media
-          </button>
-          <button className="rounded-full py-3 px-6 bg-gray-100 text-gray-700 font-semibold text-sm leading-6 transition-all duration-300 hover:bg-purple-500 hover:text-white-0">
-            Music
-          </button>
-          <button className="rounded-full py-3 px-6 bg-gray-100 text-gray-700 font-semibold text-sm leading-6 transition-all duration-300 hover:bg-purple-500 hover:text-white-0">
-            Video
-          </button>
-        </div>
+
+        <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
+          <PurpleColoredBadge>Media</PurpleColoredBadge>
+          <PurpleColoredBadge>Video</PurpleColoredBadge>
+          <PurpleColoredBadge>Music</PurpleColoredBadge>
+        </Flex>
       </Box>
     </Box>
   );
