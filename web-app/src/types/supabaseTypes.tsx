@@ -43,12 +43,16 @@ export type Announcements = {
 
 export type ChurchMembers = {
   id?: number;
-  name: string;
   birthDate?: Date;
   isActive: boolean;
   isBoardMember: boolean;
   bio?: string;
-  training?: string[];
+  traits?: string[];
+  suffix?: string;
+  email?: string;
+  role?: string;
+  firstName?: string;
+  lastName?: string;
 };
 
 export type ReleaseProps = {

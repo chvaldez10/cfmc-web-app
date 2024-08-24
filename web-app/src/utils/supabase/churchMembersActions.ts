@@ -11,12 +11,16 @@ import { ChurchMembers } from "@/types/supabaseTypes";
 function formatChurchMembersData(data: any): ChurchMembers {
   return {
     id: data.id,
-    name: data.name,
     birthDate: new Date(data.birth_date),
     isActive: data.is_active,
     isBoardMember: data.is_board_member,
     bio: data.bio,
-    training: data.training,
+    traits: data.traits,
+    suffix: data.suffix,
+    email: data.email,
+    role: data.role,
+    firstName: data.first_name,
+    lastName: data.last_name,
   };
 }
 

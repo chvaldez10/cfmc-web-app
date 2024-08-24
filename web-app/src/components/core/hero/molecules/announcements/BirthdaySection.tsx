@@ -38,7 +38,7 @@ async function BirthdaySection() {
                     key={index}
                     month={month}
                     day={day}
-                    fullName={memberBirthday.name}
+                    fullName={`${memberBirthday.suffix} ${memberBirthday.firstName}`}
                   />
                 );
               })}
