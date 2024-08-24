@@ -17,6 +17,7 @@ export { default as FormButton } from "./buttons/FormButton";
 export { default as PurplePillButtonClient } from "./buttons/PurplePillButtonClient";
 export { default as NavigateButton } from "./buttons/NavigateButton";
 export { default as OpenModalButton } from "./buttons/OpenModalButton";
+export { default as LearnMoreButton } from "./buttons/LearnMoreButton";
 
 // small button components
 export { default as ShowHideButton } from "./buttons/atoms/ShowHideButton";

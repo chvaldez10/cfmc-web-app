@@ -6,6 +6,7 @@ import {
   NavigateButton,
   Box,
   Flex,
+  LearnMoreButton,
 } from "@/components/core/ui/";
 import { NextImage } from "@/components/core/gallery";
 
@@ -46,11 +47,7 @@ const CardWithImageItem: FC<CardWithImageItemProps> = ({
         </LongParagraph>
 
         {/* Button */}
-        <Box containerClassName="mt-auto">
-          <NavigateButton url={url} variant="filled">
-            Learn More <FaArrowRight />
-          </NavigateButton>
-        </Box>
+        <LearnMoreButton url={url} />
       </Flex>
     </Box>
   );
