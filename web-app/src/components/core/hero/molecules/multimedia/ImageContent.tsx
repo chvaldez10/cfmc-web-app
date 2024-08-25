@@ -2,13 +2,10 @@ import { FC } from "react";
 import {
   Flex,
   Box,
-  FlexCenter,
-  SectionSubheader,
   LongParagraph,
   LearnMoreButton,
 } from "@/components/core/ui";
 import ImageContentProfile from "./ImageContentProfile";
-import { IoPerson } from "react-icons/io5";
 import { NextImage } from "@/components/core/gallery";
 
 const ImageContent: FC = () => {

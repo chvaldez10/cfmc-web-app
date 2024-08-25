@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { IoPerson } from "react-icons/io5";
 import {
@@ -6,14 +8,22 @@ import {
   SectionSubheader,
   LongParagraph,
 } from "@/components/core/ui";
+import useModal from "@/hooks/useModal";
+import { VerticalCenteredModal } from "@/components/core/modals";
+import FullTeamCard from "@/components/core/cards/atoms/FullTeamCard";
 import { ChurchMembers } from "@/types/supabaseTypes";
 
 // interface ImageContentProfileProps extends ChurchMembers {}
 
 const ImageContentProfile: FC = ({}) => {
+  const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
+
   return (
     <>
-      <Box containerClassName="sm:w-1/3 text-center sm:pr-8 sm:py-8 space-y-4">
+      <div
+        className="sm:w-1/3 text-center sm:pr-8 sm:py-8 space-y-4 hover-animation hover-up"
+        onClick={handleOpenModal}
+      >
         <Box containerClassName="w-20 h-20 rounded-full inline-flex items-center justify-center bg-purple-100 text-purple-500">
           <IoPerson className="w-10 h-10" />
         </Box>
@@ -28,7 +38,17 @@ const ImageContentProfile: FC = ({}) => {
             sartorial venmo tbh hot chicken gentrify portland.
           </LongParagraph>
         </FlexCenter>
-      </Box>
+      </div>
+      {showModal && (
+        <VerticalCenteredModal
+          ref={modalRef}
+          header="Phoebe Caulfield"
+          onClick={handleCloseModal}
+          containerClassName={"resize-modal-full-width"}
+        >
+          <FullTeamCard />
+        </VerticalCenteredModal>
+      )}
     </>
   );
 };
