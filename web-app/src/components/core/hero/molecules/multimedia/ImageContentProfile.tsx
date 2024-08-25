@@ -15,7 +15,7 @@ import { ChurchMembers } from "@/types/supabaseTypes";
 
 // interface ImageContentProfileProps extends ChurchMembers {}
 
-const ImageContentProfile: FC = ({}) => {
+const ImageContentProfile: FC = () => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
 
   return (

@@ -6,6 +6,7 @@ import {
   Flex,
   SectionSubheader,
   PurpleColoredBadge,
+  LongParagraph,
 } from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
 
@@ -42,7 +43,19 @@ const FullTeamCard: FC = () => {
           </Box>
         </FlexCenter>
 
-        <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
+        <Box containerClassName="w-full h-1 bg-gray-300 rounded my-2"></Box>
+        <LongParagraph containerClassName="text-gray-600">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book. It has survived not
+          only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum
+        </LongParagraph>
+        <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4 py-2">
           <PurpleColoredBadge>Media</PurpleColoredBadge>
           <PurpleColoredBadge>Video</PurpleColoredBadge>
           <PurpleColoredBadge>Music</PurpleColoredBadge>
