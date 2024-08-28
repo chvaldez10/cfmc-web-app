@@ -2,6 +2,6 @@ export { visionStatementLong } from "./constants";
 export {
   pastEvents1,
   communityBuilding1,
-  featuredImages,
+  heroCollageImages,
 } from "./featuredItems";
 export { cardInquiries, mediaInquiries } from "./mediaInquiries";

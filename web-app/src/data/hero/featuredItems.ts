@@ -1,19 +1,19 @@
 import { ImageProps } from "@/types/genericTypes";
 
-export const featuredImages: ImageProps[] = [
+export const heroCollageImages: ImageProps[] = [
   {
-    src: "/featured/header/17.jpeg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/17.jpeg?t=2024-08-28T04%3A58%3A24.795Z",
     alt: "featured image 1",
     containerClassName: "col-span-1 row-span-1",
   },
   {
-    src: "/featured/header/1.jpeg",
-    alt: "featured image 1",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/1.jpeg?t=2024-08-28T04%3A58%3A24.795Z",
+    alt: "featured image 2",
     containerClassName: "col-span-1 row-span-1 ",
   },
   {
-    src: "/featured/header/8.jpeg",
-    alt: "featured image 4",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/8.jpeg?t=2024-08-28T05%3A00%3A21.192Z",
+    alt: "featured image 3",
     containerClassName: "col-span-1 row-span-1 hidden lg:block",
   },
 ];

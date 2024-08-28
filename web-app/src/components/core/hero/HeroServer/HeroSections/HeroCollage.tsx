@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { NextImage } from "@/components/core/gallery";
 import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero/";
-import { featuredImages } from "@/data/hero/featuredItems";
+import { heroCollageImages } from "@/data/hero/featuredItems";
 import {
   MainGradientHeader,
   NavigationText,
@@ -29,7 +29,6 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
       </HeroTextWrapper>
 
       <Flex containerClassName="div-flex-row gap-x-4 md:gap-x-8">
-        {/* TODO: Please remove this test slug after testing */}
         <NavigateButton
           className="z-10 scale-up"
           url={`/events/${nextServiceSlug}`}
@@ -46,7 +45,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
       </Flex>
 
       <Grid containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12">
-        {featuredImages.map((featuredImage, index) => (
+        {heroCollageImages.map((featuredImage, index) => (
           <NextImage
             key={index}
             height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
