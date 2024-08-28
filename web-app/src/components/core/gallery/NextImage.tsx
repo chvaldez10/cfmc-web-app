@@ -29,6 +29,7 @@ const NextImage: FC<NextImageProps> = ({
         sizes="width: 100%"
         style={{ objectFit: "cover" }}
         className={`${imageClassName}`}
+        loading="lazy"
       />
     </div>
   );
