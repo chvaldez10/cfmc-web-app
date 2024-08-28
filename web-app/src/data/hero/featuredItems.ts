@@ -78,19 +78,26 @@ export const pastEvents1: ImageProps[] = [
 
 export const communityBuilding1: ImageProps[] = [
   {
-    src: "/featured/community-building-1/1.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/community_building/1.jpg?t=2024-08-28T05%3A35%3A16.546Z",
     alt: "community building 1",
   },
   {
-    src: "/featured/community-building-1/2.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/community_building/2.jpg",
     alt: "community building 2",
   },
   {
-    src: "/featured/community-building-1/3.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/community_building/3.jpg?t=2024-08-28T05%3A35%3A41.497Z",
     alt: "community building 3",
   },
   {
-    src: "/featured/community-building-1/4.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/community_building/3.jpg?t=2024-08-28T05%3A35%3A41.497Z",
     alt: "community building 4",
+  },
+];
+
+export const ministryImages1: ImageProps[] = [
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/ministry/1.jpg?t=2024-08-28T05%3A38%3A14.426Z",
+    alt: "ministry 1",
   },
 ];

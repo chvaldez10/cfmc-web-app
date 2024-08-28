@@ -5,6 +5,7 @@ import {
 } from "@/components/core/hero";
 import { NextImage } from "@/components/core/gallery";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
+import { ministryImages1 } from "@/data/hero/featuredItems";
 
 export default function page() {
   return (
@@ -32,7 +33,7 @@ export default function page() {
         <NextImage
           width={"w-full"}
           height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
-          src={"/featured/ministries/1.jpg"}
+          src={ministryImages1[0].src}
           alt={"Next Big Event Image"}
           imageClassName={"rounded-lg object-center"}
         />

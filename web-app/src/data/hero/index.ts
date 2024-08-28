@@ -4,5 +4,6 @@ export {
   communityBuilding1,
   heroCollageImages,
   cardWithImageItems,
+  ministryImages1,
 } from "./featuredItems";
 export { cardInquiries, mediaInquiries } from "./mediaInquiries";
