@@ -1,22 +1,15 @@
 import { FC } from "react";
-import { FaArrowRight } from "react-icons/fa";
 import {
   SectionSubheader,
   LongParagraph,
-  NavigateButton,
   Box,
   Flex,
   LearnMoreButton,
 } from "@/components/core/ui/";
 import { NextImage } from "@/components/core/gallery";
+import { CardWithImageProps } from "@/types/genericTypes";
 
-interface CardWithImageItemProps {
-  src: string;
-  title: string;
-  alt: string;
-  description: string;
-  url: string;
-}
+interface CardWithImageItemProps extends CardWithImageProps {}
 
 const CardWithImageItem: FC<CardWithImageItemProps> = ({
   src,

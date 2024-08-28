@@ -1,6 +1,6 @@
 import { FC } from "react";
 import CardWithImageItem from "./atoms/CardWithImageItem";
-import { cardWithImageItems } from "@/data/hero/cardWithImage";
+import { cardWithImageItems } from "@/data/hero/featuredItems";
 import { FlexCenter, Grid } from "@/components/core/ui";
 
 const CardWithImage: FC<{}> = () => {

@@ -13,6 +13,12 @@ export interface ImageProps {
   containerClassName?: string | undefined;
 }
 
+export interface CardWithImageProps extends ImageProps {
+  title: string;
+  description: string;
+  url: string;
+}
+
 export interface HeroContentProps {
   header: string;
   longParagraph: string | undefined;

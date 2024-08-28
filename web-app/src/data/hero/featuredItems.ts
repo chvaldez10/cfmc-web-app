@@ -1,4 +1,4 @@
-import { ImageProps } from "@/types/genericTypes";
+import { ImageProps, CardWithImageProps } from "@/types/genericTypes";
 
 export const heroCollageImages: ImageProps[] = [
   {
@@ -15,6 +15,41 @@ export const heroCollageImages: ImageProps[] = [
     src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/8.jpeg?t=2024-08-28T05%3A00%3A21.192Z",
     alt: "featured image 3",
     containerClassName: "col-span-1 row-span-1 hidden lg:block",
+  },
+];
+
+export const cardWithImageItems: CardWithImageProps[] = [
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/3.jpg?t=2024-08-28T05%3A13%3A09.072Z",
+    alt: "Card Image 1",
+    url: "/about/ministry",
+    title: "Holy Communion",
+    description:
+      "Holy Communion is a reminder of Christ's sacrifice. We conduct this during the first Sunday of the month.",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/1.jpg?t=2024-08-28T05%3A16%3A31.399Z",
+    title: "Fellowship",
+    alt: "Card Image 2",
+    description:
+      "We have different groups for various ages: kids, youth, and adults. We hold outdoor services during the summer.",
+    url: "/about/ministry",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/3.jpeg?t=2024-08-28T05%3A16%3A58.143Z",
+    title: "Get Involved",
+    alt: "Card Image 3",
+    description:
+      "There are many ways to get involved. We always need help setting up Sunday worship. We look for people to hold Bible Study throughout the week. Lastly, our music and multimedia team always welcomes new members.",
+    url: "/get-involved/music",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/14.jpeg?t=2024-08-28T05%3A17%3A14.837Z",
+    title: "New Member",
+    alt: "Card Image 4",
+    description:
+      "Come join us in one of our services, fellowships, or ministries.",
+    url: "/get-involved/bible-study",
   },
 ];
 
