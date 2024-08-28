@@ -7,6 +7,7 @@ import {
 } from "@/components/core/ui";
 import ImageContentProfile from "./ImageContentProfile";
 import { NextImage } from "@/components/core/gallery";
+import { pastEvents1 } from "@/data/hero/featuredItems";
 
 const ImageContent: FC = () => {
   return (
@@ -15,7 +16,7 @@ const ImageContent: FC = () => {
         <NextImage
           width={"w-full"}
           height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
-          src={"/featured/past-events-1/2.jpg"}
+          src={pastEvents1[1].src}
           alt={"Image Content Image"}
           imageClassName={"rounded-lg object-center"}
         />

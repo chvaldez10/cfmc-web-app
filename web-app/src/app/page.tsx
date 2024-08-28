@@ -18,7 +18,6 @@ import {
 } from "@/data/hero/constants";
 
 import { NextImage } from "@/components/core/gallery";
-
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
 import { getEventById } from "@/utils/supabase/eventsActions";
 
@@ -72,7 +71,7 @@ export default async function Home() {
         <NextImage
           width={"w-full"}
           height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
-          src={"/featured/past-events-1/2.jpg"}
+          src={pastEvents1[1].src}
           alt={"Next Big Event Image"}
           imageClassName={"rounded-lg object-center"}
         />

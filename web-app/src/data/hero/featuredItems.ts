@@ -55,23 +55,23 @@ export const cardWithImageItems: CardWithImageProps[] = [
 
 export const pastEvents1: ImageProps[] = [
   {
-    src: "/featured/past-events-1/1.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/1.jpg?t=2024-08-28T05%3A30%3A54.504Z",
     alt: "past event 1",
   },
   {
-    src: "/featured/past-events-1/2.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/2.jpg?t=2024-08-28T05%3A31%3A07.585Z",
     alt: "past event 2",
   },
   {
-    src: "/featured/past-events-1/3.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/3.jpg?t=2024-08-28T05%3A31%3A19.789Z",
     alt: "past event 3",
   },
   {
-    src: "/featured/past-events-1/4.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/4.jpg",
     alt: "past event 4",
   },
   {
-    src: "/featured/past-events-1/5.jpg",
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/5.jpg?t=2024-08-28T05%3A31%3A41.898Z",
     alt: "past event 5",
   },
 ];
