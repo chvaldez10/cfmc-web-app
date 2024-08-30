@@ -2,6 +2,7 @@ import { FlexWrapper } from "@/components/core/hero";
 import { SwiperScrollbar } from "@/components/core/gallery/";
 import { SectionHeader } from "@/components/core/ui";
 import { getEventsByMonth } from "@/utils/supabase/eventsActions";
+import { EmptySetFromSupabase } from "@/components/template";
 
 async function EventBlogSwiper() {
   const currentDate = new Date();
@@ -21,7 +22,7 @@ async function EventBlogSwiper() {
         containerClassName={"text-center"}
       />
       {eventsInMonth?.length === 0 ? (
-        <div>No events in this month</div>
+        <EmptySetFromSupabase longParagraph={"No events in this month"} />
       ) : (
         <>
           <SwiperScrollbar events={eventsInMonth} />
