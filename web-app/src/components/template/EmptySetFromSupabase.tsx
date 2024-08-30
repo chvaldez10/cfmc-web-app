@@ -10,7 +10,9 @@ const EmptySetFromSupabase: FC<EmptySetFromSupabaseProps> = ({
 }) => {
   return (
     <FlexCenter containerClassName={"py-8 md:py-14"}>
-      <LongParagraph>{longParagraph}</LongParagraph>
+      <LongParagraph containerClassName={"long-paragraph-text-color"}>
+        {longParagraph}
+      </LongParagraph>
     </FlexCenter>
   );
 };

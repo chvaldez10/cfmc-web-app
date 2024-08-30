@@ -35,7 +35,7 @@ const CardWithImageItem: FC<CardWithImageItemProps> = ({
         />
 
         {/* Description */}
-        <LongParagraph containerClassName="text-gray-600">
+        <LongParagraph containerClassName="long-paragraph-text-color">
           {description}
         </LongParagraph>
 

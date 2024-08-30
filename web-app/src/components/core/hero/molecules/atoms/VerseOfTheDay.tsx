@@ -29,10 +29,12 @@ async function VerseOfTheDay() {
 
   return (
     <ContainerWrapper containerClassName="py-8 md:py-16">
-      <Box containerClassName="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center space-y-4">
-        <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 text-white " />
+      <Box containerClassName="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center space-y-2">
+        <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 " />
         <SectionSubheader text="Verse of the Day" />
-        <LongParagraph>{verseData.verse.details.text}</LongParagraph>
+        <LongParagraph containerClassName="long-paragraph-text-color">
+          {verseData.verse.details.text}
+        </LongParagraph>
         <LongParagraph containerClassName="text-gray-500">
           {verseData.verse.details.reference} {verseData.verse.details.version}
         </LongParagraph>
