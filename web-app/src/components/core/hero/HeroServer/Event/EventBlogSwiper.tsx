@@ -14,7 +14,7 @@ async function EventBlogSwiper() {
 
   return (
     <FlexWrapper
-      containerClassName={"min-h-[50vh] "}
+      containerClassName={"min-h-[50vh] bg-green-20"}
       layoutClass={"flex-col space-y-4 lg:space-y-8"}
     >
       <SectionHeader
@@ -24,9 +24,7 @@ async function EventBlogSwiper() {
       {eventsInMonth?.length === 0 ? (
         <EmptySetFromSupabase longParagraph={"No events in this month"} />
       ) : (
-        <>
-          <SwiperScrollbar events={eventsInMonth} />
-        </>
+        <SwiperScrollbar events={eventsInMonth} />
       )}
     </FlexWrapper>
   );

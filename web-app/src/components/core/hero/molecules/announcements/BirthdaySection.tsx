@@ -6,7 +6,6 @@ import { EmptySetFromSupabase } from "@/components/template";
 
 async function BirthdaySection() {
   const currentMonth = new Date().getMonth() + 1;
-  const currentYear = new Date().getFullYear();
   const membersBirthday = await getChurchMembersBirthdayByBirthMonth(
     currentMonth
   );

@@ -35,6 +35,7 @@ const config: Config = {
       colors: {
         green: {
           10: "#CDE8E5",
+          20: "#e7f2f1",
           70: "#0A6847",
         },
         gray: {
