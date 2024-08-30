@@ -17,7 +17,10 @@ interface HeroCollageProps {
 
 const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
   return (
-    <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
+    <VerticalWrapper
+      containerClassName={"min-h-screen"}
+      itemClassName={"h-[80vh]"}
+    >
       <HeroTextWrapper>
         <MainGradientHeader text={"Our Vision"} />
         <NavigationText
@@ -28,7 +31,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         </NavigationText>
       </HeroTextWrapper>
 
-      <Flex containerClassName="div-flex-row gap-x-4 md:gap-x-8">
+      <Flex containerClassName="div-flex-row gap-x-4 lg:gap-x-8 xl:gap-x-12">
         <NavigateButton
           className="z-10 scale-up"
           url={`/events/${nextServiceSlug}`}
@@ -46,14 +49,23 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
 
       <Grid containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12">
         {heroCollageImages.map((featuredImage, index) => (
-          <NextImage
+          <div
             key={index}
-            height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
-            src={featuredImage.src}
-            alt={featuredImage.alt}
-            containerClassName={featuredImage.containerClassName}
-            imageClassName={"rounded-lg object-top"}
-          />
+            className="opacity-0"
+            style={{
+              animation: `slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards`,
+              animationDelay: `${index * 0.3}s`,
+            }}
+          >
+            <NextImage
+              key={index}
+              height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
+              src={featuredImage.src}
+              alt={featuredImage.alt}
+              containerClassName={featuredImage.containerClassName}
+              imageClassName={"rounded-lg object-top"}
+            />
+          </div>
         ))}
       </Grid>
     </VerticalWrapper>
