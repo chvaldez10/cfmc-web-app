@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { FlexCenter, LongParagraph } from "@/components/core/ui";
 
-const BirthdayNotFound: FC = () => {
+const EmptySetFromSupabase: FC = () => {
   return (
     <FlexCenter containerClassName={"py-8 md:py-14"}>
       <LongParagraph>
@@ -12,4 +12,4 @@ const BirthdayNotFound: FC = () => {
   );
 };
 
-export default BirthdayNotFound;
+export default EmptySetFromSupabase;

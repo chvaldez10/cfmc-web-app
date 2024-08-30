@@ -20,7 +20,13 @@ async function EventBlogSwiper() {
         text={"Upcoming Events "}
         containerClassName={"text-center"}
       />
-      <SwiperScrollbar events={eventsInMonth} />
+      {eventsInMonth?.length === 0 ? (
+        <div>No events in this month</div>
+      ) : (
+        <>
+          <SwiperScrollbar events={eventsInMonth} />
+        </>
+      )}
     </FlexWrapper>
   );
 }

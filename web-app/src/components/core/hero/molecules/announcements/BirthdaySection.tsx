@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components/core/ui";
 import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/churchMembersActions";
 import { FlexCenter, Flex } from "@/components/core/ui";
 import { ContainerWrapper, BalloonItem } from "@/components/core/hero";
-import { BirthdayNotFound } from "@/components/core/hero";
+import { EmptySetFromSupabase } from "@/components/template";
 
 async function BirthdaySection() {
   const currentMonth = new Date().getMonth() + 1;
@@ -12,7 +12,7 @@ async function BirthdaySection() {
   );
 
   if (!membersBirthday) {
-    return <BirthdayNotFound />;
+    return <EmptySetFromSupabase />;
   }
 
   return (
@@ -20,7 +20,7 @@ async function BirthdaySection() {
       <FlexCenter containerClassName="p-4 resize-hero-width mx-auto">
         <SectionHeader text={"Birthdays"} containerClassName="text-center" />
 
-        {membersBirthday.length === 0 && <BirthdayNotFound />}
+        {membersBirthday.length === 0 && <EmptySetFromSupabase />}
 
         {membersBirthday.length > 0 && (
           <ContainerWrapper containerClassName="py-8 md:py-14">
