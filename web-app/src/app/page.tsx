@@ -34,7 +34,7 @@ export default async function Home() {
 
       <HeroSlideClient
         header={"Sunday Worship"}
-        longParagraph="2:00 PM | 419 Northmount Drive NW, Calgary, AB"
+        longParagraph={"2:00 PM | 419 Northmount Drive NW, Calgary, AB"}
         containerClassName="bg-green-10 min-h-screen"
         isFloating={true}
       >

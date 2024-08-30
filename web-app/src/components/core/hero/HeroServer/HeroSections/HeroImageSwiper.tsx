@@ -37,13 +37,13 @@ const HeroImageSwiper: FC<HeroImageSwiperProps> = ({
         <SectionHeader text={header} />
         <SectionSubheader
           text={longParagraph}
-          containerClassName="text-gray-600"
+          containerClassName="long-paragraph-text-color"
         />
       </HeroHalfWrapper>
 
       {/* Image Column */}
       <HeroHalfWrapper>
-        <SwiperCoverFlow swiperImages={swiperImages} />
+        <SwiperCoverFlow swiperImages={swiperImages} slidesPerView={1} />
       </HeroHalfWrapper>
     </FlexWrapper>
   );

@@ -15,16 +15,20 @@ import "@/styles/cover-flow.css";
 
 interface CoverFlowSwiperProps {
   swiperImages: ImageProps[];
+  slidesPerView?: number;
 }
 
-const CoverFlowSwiper: FC<CoverFlowSwiperProps> = ({ swiperImages }) => {
+const CoverFlowSwiper: FC<CoverFlowSwiperProps> = ({
+  swiperImages,
+  slidesPerView = 1,
+}) => {
   return (
     <Swiper
       modules={[EffectCoverflow, Pagination, Autoplay]}
       effect="coverflow"
       loop={true}
       spaceBetween={30}
-      slidesPerView={1}
+      slidesPerView={slidesPerView}
       pagination={{ clickable: true }}
       centeredSlides={true}
       grabCursor={true}

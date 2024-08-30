@@ -20,7 +20,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
   isFloating = false,
 }) => {
   const [textRef, textInView] = useInView();
-  const [mapRef, mapInView] = useInView();
+  const [elementRef, elementInView] = useInView();
 
   const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
   const textAnimationClass = textInView
@@ -28,7 +28,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       ? "animate-slide-in-right"
       : "animate-slide-in-left"
     : "";
-  const mapAnimationClass = mapInView
+  const elementAnimationClass = elementInView
     ? reverse
       ? "animate-slide-in-left"
       : "animate-slide-in-right"
@@ -49,14 +49,14 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
         <SectionHeader text={header} />
         <SectionSubheader
           text={longParagraph}
-          containerClassName="text-gray-600"
+          containerClassName="long-paragraph-text-color"
         />
       </div>
 
       {/* Element Column */}
       <div
-        ref={mapRef}
-        className={`div-outside-width resize-width-to-half ${mapAnimationClass}`}
+        ref={elementRef}
+        className={`div-outside-width resize-width-to-half ${elementAnimationClass}`}
       >
         {children}
       </div>

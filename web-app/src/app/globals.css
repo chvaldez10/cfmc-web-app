@@ -131,6 +131,11 @@
   @apply hidden md:block;
 }
 
+/* Text colors */
+.long-paragraph-text-color {
+  @apply text-gray-600;
+}
+
 /* Media queries */
 @media (max-height: 600px) {
   .hidden-grid-1-3 {
