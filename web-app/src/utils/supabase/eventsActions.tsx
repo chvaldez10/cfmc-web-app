@@ -75,14 +75,8 @@ export async function getEventsByMonth(
   year: number
 ): Promise<Events[] | null> {
   const supabase = createClient();
-  const lastDay = new Date(year, monthIndex, 0).getDate();
 
-  const { data, error } = await supabase
-    .from("events")
-    .select("*")
-    .gte("start_date", `${year}-${monthIndex}-01`)
-    .lte("start_date", `${year}-${monthIndex}-${lastDay}`)
-    .order("start_date");
+  const { data, error } = await supabase.rpc("get_events_from_range");
 
   if (error) {
     console.error("Error fetching events:", error);
