@@ -51,9 +51,8 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         {heroCollageImages.map((featuredImage, index) => (
           <div
             key={index}
-            className="opacity-0"
+            className={"opacity-0 animate-slide-up"}
             style={{
-              animation: `slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards`,
               animationDelay: `${index * 0.3}s`,
             }}
           >
