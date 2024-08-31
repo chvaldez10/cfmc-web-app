@@ -1,7 +1,7 @@
 import { FlexWrapper } from "@/components/core/hero";
 import { SwiperScrollbar } from "@/components/core/gallery/";
 import { SectionHeader } from "@/components/core/ui";
-import { getEventsByMonth } from "@/utils/supabase/eventsActions";
+import { getEventsFromRange } from "@/utils/supabase/eventsActions";
 import { EmptySetFromSupabase } from "@/components/template";
 
 async function EventBlogSwiper() {
@@ -10,7 +10,7 @@ async function EventBlogSwiper() {
   const monthNumber = +currentMonth;
   const currentYear = currentDate.getFullYear();
 
-  const eventsInMonth = await getEventsByMonth(monthNumber, currentYear);
+  const eventsInMonth = await getEventsFromRange();
 
   return (
     <FlexWrapper

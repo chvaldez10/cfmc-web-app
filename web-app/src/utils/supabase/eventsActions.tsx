@@ -70,10 +70,7 @@ export async function getEventById(id: number): Promise<Events | null> {
   return formatEventData(data);
 }
 
-export async function getEventsByMonth(
-  monthIndex: number,
-  year: number
-): Promise<Events[] | null> {
+export async function getEventsFromRange(): Promise<Events[] | null> {
   const supabase = createClient();
 
   const { data, error } = await supabase.rpc("get_events_from_range");
@@ -82,7 +79,7 @@ export async function getEventsByMonth(
     console.error("Error fetching events:", error);
     return null;
   } else if (!data) {
-    console.error("No events found for month:", monthIndex, year);
+    console.error("No events found");
     return null;
   }
 
