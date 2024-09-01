@@ -11,7 +11,7 @@ function filterReleaseByYear(year: number) {
   return releaseYear ? releaseYear.releaseItems : [];
 }
 
-const ReleaseItemContainer: FC<ReleaseItemContainerProps> = ({ year }) => {
+async function ReleaseItemContainer({ year }: ReleaseItemContainerProps) {
   const releaseDetails = filterReleaseByYear(year);
 
   return (
@@ -21,6 +21,6 @@ const ReleaseItemContainer: FC<ReleaseItemContainerProps> = ({ year }) => {
       ))}
     </>
   );
-};
+}
 
 export default ReleaseItemContainer;
