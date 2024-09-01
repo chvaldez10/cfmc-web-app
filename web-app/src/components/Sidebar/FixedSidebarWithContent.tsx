@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import ReleaseItemContainer from "../core/text/ReleaseItemContainer";
+import { Flex, Box } from "@/components/core/ui";
 
 const yearsTest = [2024];
 
@@ -14,9 +15,9 @@ const FixedSidebarWithContent: FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto p-5 md:p-0 md:w-7/12 flex flex-col md:flex-row gap-4">
+    <Flex containerClassName="w-full mx-auto p-5 md:p-0 md:w-7/12 flex flex-col md:flex-row gap-4">
       {/* sidebar */}
-      <div className=" z-10 top-5 left-5 bg-white-0 w-32 p-6 my-6 lg:my-8 rounded-lg h-full shadow-md">
+      <Box containerClassName=" z-10 top-5 left-5 bg-white-0 w-32 p-6 my-6 lg:my-8 rounded-lg h-full shadow-md">
         <nav className="flex flex-col space-y-2 ">
           {yearsTest.map((year) => (
             <button
@@ -30,13 +31,13 @@ const FixedSidebarWithContent: FC = () => {
             </button>
           ))}
         </nav>
-      </div>
+      </Box>
 
       {/* features */}
-      <div className="md:ml-10 w-full ">
+      <Box containerClassName="md:ml-10 w-full ">
         <ReleaseItemContainer year={selectedYear} />
-      </div>
-    </div>
+      </Box>
+    </Flex>
   );
 };
 

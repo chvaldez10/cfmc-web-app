@@ -55,12 +55,12 @@ export type ChurchMembers = {
   lastName?: string;
 };
 
-export type ReleaseProps = {
+export type ReleaseNotes = {
   id?: number;
   releaseDate: Date;
   version: string;
   freshOutTheOven: string;
   bugFixesAndImprovements: string;
-  upNext?: string;
-  specialNotes?: string;
+  upNext: string;
+  specialNotes?: string[];
 };

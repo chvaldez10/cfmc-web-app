@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import ReleaseItem from "@/components/core/text/ReleaseItem";
 import { releaseData } from "@/data/testData/releaseNotes";
 
@@ -11,9 +11,7 @@ function filterReleaseByYear(year: number) {
   return releaseYear ? releaseYear.releaseItems : [];
 }
 
-const ReleaseItemContainer: React.FC<ReleaseItemContainerProps> = ({
-  year,
-}) => {
+const ReleaseItemContainer: FC<ReleaseItemContainerProps> = ({ year }) => {
   const releaseDetails = filterReleaseByYear(year);
 
   return (

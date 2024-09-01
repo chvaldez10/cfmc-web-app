@@ -6,6 +6,18 @@ export const releaseData: ReleaseData[] = [
     year: 2024,
     releaseItems: [
       {
+        version: "v 24.0.4",
+        details: {
+          date: "August 31, 2024",
+          featureList: {
+            "🧑‍🍳 Fresh out of the oven":
+              "More pages and UI components. New tables",
+            "🐛 Bug fixes and improvements": "Bug fixes and improvements",
+            "⏭️ Up next": "More pages and UI components. Working forms.",
+          },
+        },
+      },
+      {
         version: "v 24.0.3",
         details: {
           date: "August 11, 2024",
