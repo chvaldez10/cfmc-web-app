@@ -42,7 +42,7 @@ const EventCard: React.FC<EventCardProps> = ({
         href={`/events/${slug}`}
         className="flex flex-col justify-between p-4 leading-normal w-full gap-2 truncate "
       >
-        <SmallText containerClassName="">{category}</SmallText>
+        <SmallText containerClassName="text-purple-500">{category}</SmallText>
         <SectionSubheader
           text={`${month} ${startDay}${endDay ? ` - ${endDay}` : ""}`}
         />

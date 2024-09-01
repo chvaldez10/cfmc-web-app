@@ -5,9 +5,7 @@ interface SmallTextProps extends DivProps {}
 
 const SmallText: FC<SmallTextProps> = ({ children, containerClassName }) => {
   return (
-    <p className={`text-xs md:text-sm text-purple-500 ${containerClassName}`}>
-      {children}
-    </p>
+    <p className={`text-xs md:text-sm ${containerClassName}`}>{children}</p>
   );
 };
 

@@ -39,7 +39,9 @@ const TeamCard: FC<TeamCardProps> = ({
             <SectionSubheader text={boardMemberName} />
             <LongParagraph>{role}</LongParagraph>
             <LongParagraph>{caption}</LongParagraph>
-            <SmallText>Email: {email}</SmallText>
+            <SmallText containerClassName="text-purple-500">
+              Email: {email}
+            </SmallText>
           </Box>
         </Box>
       </div>
