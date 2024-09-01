@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState } from "react";
-import ReleaseItemContainer from "../core/text/ReleaseItemContainer";
+import ReleaseItemContainer from "@/components/core/text/ReleaseItemContainer";
 import { Flex, Box } from "@/components/core/ui";
 
 const yearsTest = [2024];
@@ -34,7 +34,7 @@ const FixedSidebarWithContent: FC = () => {
       </Box>
 
       {/* features */}
-      <Box containerClassName="md:ml-10 w-full ">
+      <Box containerClassName="md:ml-10 w-full space-y-4">
         <ReleaseItemContainer year={selectedYear} />
       </Box>
     </Flex>

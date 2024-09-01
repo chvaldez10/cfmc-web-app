@@ -27,8 +27,8 @@ export async function getReleaseNotesByYear(
   const { data, error } = await supabase
     .from("release_notes")
     .select("*")
-    .order("release_date", { ascending: false })
-    .eq("release_date", year);
+    .order("release_date", { ascending: false });
+  // .eq("release_date", year);
 
   if (error) {
     console.error("Error fetching release notes:", error);

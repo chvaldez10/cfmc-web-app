@@ -1,26 +1,32 @@
-import { FC } from "react";
-import ReleaseItem from "@/components/core/text/ReleaseItem";
-import { releaseData } from "@/data/testData/releaseNotes";
+"use client";
 
+import { FC, useEffect, useState } from "react";
+import ReleaseItem from "@/components/core/text/ReleaseItem";
+import { getReleaseNotesByYear } from "@/utils/supabase/releaseNotesActions";
+import { ReleaseNotes } from "@/types/supabaseTypes";
 interface ReleaseItemContainerProps {
   year: number;
 }
 
-function filterReleaseByYear(year: number) {
-  const releaseYear = releaseData.find((release) => release.year === year);
-  return releaseYear ? releaseYear.releaseItems : [];
-}
+const ReleaseItemContainer: FC<ReleaseItemContainerProps> = ({ year }) => {
+  const [releaseDetails, setReleaseDetails] = useState<ReleaseNotes[]>([]);
 
-async function ReleaseItemContainer({ year }: ReleaseItemContainerProps) {
-  const releaseDetails = filterReleaseByYear(year);
+  useEffect(() => {
+    const fetchReleaseDetails = async () => {
+      const data = await getReleaseNotesByYear(year);
+      setReleaseDetails(data || []);
+    };
+    fetchReleaseDetails();
+  }, [year]);
 
+  console.log(releaseDetails);
   return (
     <>
       {releaseDetails.map((releaseDetail, index) => (
-        <ReleaseItem key={index} releaseDetail={releaseDetail} />
+        <ReleaseItem key={index} {...releaseDetail} />
       ))}
     </>
   );
-}
+};
 
 export default ReleaseItemContainer;
