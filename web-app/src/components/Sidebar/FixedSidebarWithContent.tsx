@@ -16,9 +16,9 @@ const FixedSidebarWithContent: FC = () => {
 
   return (
     <Flex containerClassName="w-full mx-auto p-5 md:p-0 md:w-7/12 flex flex-col md:flex-row gap-4">
-      {/* sidebar */}
-      <Box containerClassName=" z-10 top-5 left-5 bg-white-0 w-32 p-6 my-6 lg:my-8 rounded-lg h-full shadow-md">
-        <nav className="flex flex-col space-y-2 ">
+      {/* TODO: Refactor design for multiple years */}
+      <Box containerClassName="z-10 top-4 left-4 bg-white-0 w-32 p-6 rounded-lg h-full shadow-md">
+        <nav className="flex flex-col space-y-2">
           {yearsTest.map((year) => (
             <button
               key={year}
