@@ -8,7 +8,7 @@ import {
 
 import { NavDropdown, NavbarLinkItem } from "@/components/Navbar/";
 import { OpenModalButton } from "@/components/core/ui";
-import TithesAndOffering from "@/components/core/modals/atoms/TithesAndOffering";
+import { TithesAndOffering } from "@/components/core/hero";
 import { tithesAndOfferingVerse } from "@/data/hero/constants";
 
 interface NavbarLinksProps {
