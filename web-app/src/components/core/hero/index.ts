@@ -21,7 +21,6 @@ export { default as HeroTextWrapper } from "./molecules/HeroTextWrapper";
 export { default as ContainerWrapper } from "./molecules/ContainerWrapper";
 
 // atoms
-export { default as VerseOfTheDay } from "./molecules/atoms/VerseOfTheDay";
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
 
 // event
@@ -41,3 +40,6 @@ export { default as AnnouncementList } from "./molecules/announcements/Announcem
 export { default as VerticalTimeline } from "./molecules/multimedia/VerticalTimeline";
 export { default as BoxIcon } from "./molecules/multimedia/BoxIcon";
 export { default as ImageContent } from "./molecules/multimedia/ImageContent";
+
+// service items
+export { default as VerseOfTheDay } from "./molecules/service-items/VerseOfTheDay";
