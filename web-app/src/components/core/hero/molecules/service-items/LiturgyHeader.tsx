@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ContainerWrapper } from "@/components/core/hero";
+import { ContainerWrapper, PDFViewer } from "@/components/core/hero";
 import {
   Box,
   SectionHeader,
@@ -7,7 +7,6 @@ import {
   OpenModalButton,
 } from "@/components/core/ui";
 import { liturgyVerbiage } from "@/data/hero/constants";
-import LiturgyIFrameModal from "./LiturgyIFrameModal";
 
 const LiturgyHeader: FC = () => {
   return (
@@ -22,7 +21,7 @@ const LiturgyHeader: FC = () => {
             variant="outline"
             title="Liturgy"
             className={`z-10 scale-up mx-auto`}
-            modalElement={<LiturgyIFrameModal />}
+            modalElement={<PDFViewer pdfFile={"liturgy.pdf"} />}
           >
             View Liturgy
           </OpenModalButton>

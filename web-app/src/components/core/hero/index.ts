@@ -35,7 +35,7 @@ export { default as TeamSection } from "./molecules/atoms/TeamSection";
 // announcements
 export { default as BirthdaySection } from "./molecules/announcements/BirthdaySection";
 export { default as AnnouncementList } from "./molecules/announcements/AnnouncementList";
-
+export { default as PDFViewer } from "./molecules/announcements/PDFViewer";
 // multimedia
 export { default as VerticalTimeline } from "./molecules/multimedia/VerticalTimeline";
 export { default as BoxIcon } from "./molecules/multimedia/BoxIcon";
