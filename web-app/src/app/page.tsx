@@ -5,6 +5,7 @@ import {
   VerseOfTheDay,
   EventBlogSwiper,
   IframeMap,
+  LiturgyHeader,
 } from "@/components/core/hero";
 
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
@@ -32,10 +33,12 @@ export default async function Home() {
     <>
       <HeroCollage nextServiceSlug={eventDetails?.slug} />
 
+      <LiturgyHeader />
+
       <HeroSlideClient
         header={"Sunday Worship"}
         longParagraph={"2:00 PM | 419 Northmount Drive NW, Calgary, AB"}
-        containerClassName="bg-green-10 min-h-screen"
+        containerClassName="bg-green-10 min-h-[80vh]"
         isFloating={true}
       >
         <IframeMap
@@ -49,7 +52,7 @@ export default async function Home() {
         longParagraph={featuredMonthlyThemeVerbiage}
         subheader={sundaysAndSpecialDays?.sundayEventName}
         swiperImages={pastEvents1}
-        containerClassName={"bg-white-10 min-h-screen"}
+        containerClassName={"bg-white-10 min-h-[80vh]"}
         reverse={true}
       />
 
@@ -58,13 +61,13 @@ export default async function Home() {
         subheader={"Community Building"}
         longParagraph={featureCommunityBuildingVerbiage}
         swiperImages={communityBuilding1}
-        containerClassName={"bg-violet-10 min-h-screen"}
+        containerClassName={"bg-violet-10 min-h-[80vh]"}
       />
 
       <HeroSlideClient
         header={"Next Big Event"}
         longParagraph={nextBigEventDescription}
-        containerClassName="min-h-screen"
+        containerClassName="min-h-[80vh]"
         reverse={true}
         isFloating={true}
       >

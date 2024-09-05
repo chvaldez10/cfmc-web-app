@@ -43,3 +43,4 @@ export { default as ImageContent } from "./molecules/multimedia/ImageContent";
 
 // service items
 export { default as VerseOfTheDay } from "./molecules/service-items/VerseOfTheDay";
+export { default as LiturgyHeader } from "./molecules/service-items/LiturgyHeader";
