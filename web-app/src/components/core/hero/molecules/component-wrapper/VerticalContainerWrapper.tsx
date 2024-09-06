@@ -13,7 +13,7 @@ const VerticalContainerWrapper: FC<VerticalContainerWrapperProps> = ({
     <ContainerWrapper
       containerClassName={`py-8 md:py-16 ${containerClassName}`}
     >
-      <Box containerClassName="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center space-y-2 md:space-y-4">
+      <Box containerClassName="w-full lg:w-3/4 xl:w-8/12 mx-auto text-center space-y-2 md:space-y-4">
         {children}
       </Box>
     </ContainerWrapper>
