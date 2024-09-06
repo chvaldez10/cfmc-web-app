@@ -12,6 +12,7 @@ const SectionHeader: FC<SectionHeaderProps> = ({
   return (
     <h2
       className={`text-4xl lg:text-5xl xl:text-6xl font-bold  ${containerClassName}`}
+      style={{ userSelect: "text" }}
     >
       {text}
     </h2>

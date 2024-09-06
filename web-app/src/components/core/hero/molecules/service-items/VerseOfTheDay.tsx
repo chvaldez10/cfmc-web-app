@@ -2,8 +2,7 @@ import { BsFillChatLeftQuoteFill } from "react-icons/bs";
 import { Verse } from "@/types/genericTypes";
 import { defaultVerse } from "@/data/hero/constants";
 import { SectionSubheader, LongParagraph, Box } from "@/components/core/ui";
-import { ContainerWrapper } from "@/components/core/hero";
-
+import { VerticalContainerWrapper } from "@/components/core/hero";
 async function VerseOfTheDay() {
   let verseData: Verse;
 
@@ -28,18 +27,16 @@ async function VerseOfTheDay() {
   }
 
   return (
-    <ContainerWrapper containerClassName="py-8 md:py-16">
-      <Box containerClassName="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center space-y-2 md:space-y-4">
-        <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 " />
-        <SectionSubheader text="Verse of the Day" />
-        <LongParagraph containerClassName="long-paragraph-text-color">
-          {verseData.verse.details.text}
-        </LongParagraph>
-        <LongParagraph containerClassName="text-gray-500">
-          {verseData.verse.details.reference} {verseData.verse.details.version}
-        </LongParagraph>
-      </Box>
-    </ContainerWrapper>
+    <VerticalContainerWrapper>
+      <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 " />
+      <SectionSubheader text="Verse of the Day" />
+      <LongParagraph containerClassName="long-paragraph-text-color">
+        {verseData.verse.details.text}
+      </LongParagraph>
+      <LongParagraph containerClassName="text-gray-500">
+        {verseData.verse.details.reference} {verseData.verse.details.version}
+      </LongParagraph>
+    </VerticalContainerWrapper>
   );
 }
 

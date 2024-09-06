@@ -44,7 +44,6 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       <div
         ref={textRef}
         className={`div-outside-width resize-width-to-half text-center gap-4 ${textAnimationClass}`}
-        style={{ userSelect: "text" }}
       >
         <SectionHeader text={header} />
         <SectionSubheader

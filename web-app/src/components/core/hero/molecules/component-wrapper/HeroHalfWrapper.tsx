@@ -10,10 +10,7 @@ const HeroHalfWrapper: FC<HeroHalfWrapperProps> = ({
   containerClassName,
 }) => {
   return (
-    <Box
-      containerClassName={`resize-width-to-half ${containerClassName}`}
-      style={{ userSelect: "text" }}
-    >
+    <Box containerClassName={`resize-width-to-half ${containerClassName}`}>
       {children}
     </Box>
   );

@@ -5,7 +5,12 @@ interface SmallTextProps extends DivProps {}
 
 const SmallText: FC<SmallTextProps> = ({ children, containerClassName }) => {
   return (
-    <p className={`text-xs md:text-sm ${containerClassName}`}>{children}</p>
+    <p
+      className={`text-xs md:text-sm ${containerClassName}`}
+      style={{ userSelect: "text" }}
+    >
+      {children}
+    </p>
   );
 };
 
