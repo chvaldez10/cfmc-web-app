@@ -19,7 +19,7 @@ const LiturgyHeader: FC = () => {
       <OpenModalButton
         variant="outline"
         title="Liturgy"
-        className={`z-10 scale-up mx-auto`}
+        containerClassName={`z-10 scale-up mx-auto`}
         modalElement={<PDFViewer pdfFile={"liturgy.pdf"} />}
       >
         View Liturgy

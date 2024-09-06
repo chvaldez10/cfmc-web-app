@@ -13,7 +13,7 @@ interface OpenModalButtonProps extends ClientButtonProps {
 
 const OpenModalButton: FC<OpenModalButtonProps> = ({
   variant = "filled",
-  className,
+  containerClassName,
   children,
   modalElement,
   title,
@@ -24,7 +24,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
     <>
       <PurplePillButtonClient
         variant={variant}
-        className={className}
+        containerClassName={containerClassName}
         onClick={handleOpenModal}
         disabled={showModal}
       >

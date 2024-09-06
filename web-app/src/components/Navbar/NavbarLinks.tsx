@@ -49,7 +49,7 @@ export const NavbarLinks: FC<NavbarLinksProps> = ({
 
       <OpenModalButton
         variant="outline"
-        className={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
+        containerClassName={`z-10 scale-up ${NavClassNames} ${ButtonClassNames}`}
         title="Tithes & Offering"
         modalElement={
           <TithesAndOffering description={tithesAndOfferingVerse} />

@@ -33,7 +33,7 @@ export interface HeroSectionProps extends HeroContentProps {
 
 export interface ClientButtonProps {
   variant?: "filled" | "outline";
-  className?: string;
+  containerClassName?: string;
   children?: ReactNode;
   disabled?: boolean;
 }

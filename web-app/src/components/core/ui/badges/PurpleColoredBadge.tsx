@@ -15,10 +15,14 @@ const variants = {
 
 const PurpleColoredBadge: FC<PurplePillButtonClientProps> = ({
   variant = "filled",
-  className,
+  containerClassName,
   children,
 }) => {
-  const buttonClass = classNames(baseClass, variants[variant], className);
+  const buttonClass = classNames(
+    baseClass,
+    variants[variant],
+    containerClassName
+  );
 
   return <span className={buttonClass}>{children}</span>;
 };

@@ -11,7 +11,7 @@ interface NavigateButtonProps extends ClientButtonProps {
 
 const NavigateButton: FC<NavigateButtonProps> = ({
   variant = "filled",
-  className,
+  containerClassName,
   children,
   url,
 }) => {
@@ -21,7 +21,7 @@ const NavigateButton: FC<NavigateButtonProps> = ({
     <PurplePillButtonClient
       onClick={() => router.push(url)}
       variant={variant}
-      className={className}
+      containerClassName={containerClassName}
     >
       {children}
     </PurplePillButtonClient>

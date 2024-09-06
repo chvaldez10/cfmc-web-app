@@ -33,14 +33,14 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
 
       <Flex containerClassName="div-flex-row gap-x-4 lg:gap-x-8 xl:gap-x-12">
         <NavigateButton
-          className="z-10 scale-up"
+          containerClassName="z-10 scale-up"
           url={`/events/${nextServiceSlug}`}
         >
           Next Sunday Worship
         </NavigateButton>
         <NavigateButton
           variant={"outline"}
-          className="z-10 scale-up"
+          containerClassName="z-10 scale-up"
           url={"/media/announcements"}
         >
           Announcements
