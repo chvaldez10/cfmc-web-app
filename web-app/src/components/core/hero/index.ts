@@ -13,12 +13,12 @@ export { default as HeroWaveHeader } from "./HeroServer/HeroSections/HeroWaveHea
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
 
-// molecules
-export { default as VerticalWrapper } from "./molecules/VerticalWrapper";
-export { default as FlexWrapper } from "./molecules/FlexWrapper";
-export { default as HeroHalfWrapper } from "./molecules/HeroHalfWrapper";
-export { default as HeroTextWrapper } from "./molecules/HeroTextWrapper";
-export { default as ContainerWrapper } from "./molecules/ContainerWrapper";
+// component-wrapper
+export { default as VerticalWrapper } from "./molecules/component-wrapper/VerticalWrapper";
+export { default as FlexWrapper } from "./molecules/component-wrapper/FlexWrapper";
+export { default as HeroHalfWrapper } from "./molecules/component-wrapper/HeroHalfWrapper";
+export { default as HeroTextWrapper } from "./molecules/component-wrapper/HeroTextWrapper";
+export { default as ContainerWrapper } from "./molecules/component-wrapper/ContainerWrapper";
 
 // atoms
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
