@@ -20,7 +20,14 @@ const LiturgyHeader: FC = () => {
         variant="outline"
         title="Liturgy"
         containerClassName={`z-10 scale-up mx-auto`}
-        modalElement={<PDFViewer pdfFile={"liturgy.pdf"} />}
+        itemClassName="resize-modal-full-width"
+        modalElement={
+          <PDFViewer
+            src={
+              "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/docs/server-items/liturgy.pdf?t=2024-09-06T04%3A05%3A31.012Z"
+            }
+          />
+        }
       >
         View Liturgy
       </OpenModalButton>

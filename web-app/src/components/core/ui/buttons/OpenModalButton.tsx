@@ -8,6 +8,7 @@ import useModal from "@/hooks/useModal";
 
 interface OpenModalButtonProps extends ClientButtonProps {
   modalElement: ReactNode;
+  itemClassName?: string;
   title: string;
 }
 
@@ -16,6 +17,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
   containerClassName,
   children,
   modalElement,
+  itemClassName = "resize-modal",
   title,
 }) => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
@@ -35,7 +37,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
           ref={modalRef}
           header={title}
           onClick={handleCloseModal}
-          containerClassName={"resize-modal"}
+          containerClassName={itemClassName}
         >
           {modalElement}
         </VerticalCenteredModal>
