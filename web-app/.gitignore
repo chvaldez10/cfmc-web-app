@@ -58,3 +58,4 @@ del_me*
 bin/
 archive/**/*
 !archive/*.*
+.vercel
