@@ -91,5 +91,5 @@ export interface IconProps {
 }
 
 export interface NavDropdownItemProps extends IconProps {
-  onClick: () => void;
+  onClick?: () => void;
 }

@@ -1,10 +1,10 @@
-import { FC, useState, ReactNode, useEffect, useRef } from "react";
+import { FC, useState, useEffect, useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import NavDropdownItem from "./NavDropdownItem";
-import { NavDropdownItemProps } from "@/types/genericTypes";
+import { IconProps } from "@/types/genericTypes";
 
 interface NavDropdownProps {
-  navDropdownItems: NavDropdownItemProps[];
+  navDropdownItems: IconProps[];
   dropdownLabel: string;
   className: string;
 }
@@ -74,9 +74,6 @@ const NavDropdown: FC<NavDropdownProps> = ({
                 url={navDropdownItem.url}
                 label={navDropdownItem.label}
                 svgIcon={navDropdownItem.svgIcon}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
               />
             ))}
           </ul>
