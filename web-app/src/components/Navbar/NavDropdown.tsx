@@ -16,18 +16,36 @@ const NavDropdown: FC<NavDropdownProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const getRotationClass = () => {
-    if (isOpen && isHovered) return "rotate-180";
+    if (isOpen || isHovered) return "rotate-180";
     return "";
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <li
+      ref={dropdownRef}
       className="relative group"
       onMouseEnter={() => {
         setIsOpen(true);
@@ -44,18 +62,10 @@ const NavDropdown: FC<NavDropdownProps> = ({
         className={`div-outside-width-justify-between md:w-auto text-base lg:text-lg gap-1 ${className}`}
       >
         {dropdownLabel}
-        <IoIosArrowDown />
+        <IoIosArrowDown className={getRotationClass()} />
       </button>
 
-      {/*
-      left-1/2: sets the left edge of the dropdown container at 50% of the
-      width of the li element.
-
-      transform -translate-x-1/2 applies
-      a translation to the left (-translate-x) by 50% of the container's own
-      width (1/2).
-      */}
-      {isOpen && (
+      {(isOpen || isHovered) && (
         <div className="absolute z-20 font-normal bg-zinc-50 divide-y divide-gray-600 rounded-lg shadow w-48 left-1/2 transform -translate-x-1/2 top-full">
           <ul className="py-2 text-sm text-gray-700">
             {navDropdownItems.map((navDropdownItem) => (
@@ -64,6 +74,9 @@ const NavDropdown: FC<NavDropdownProps> = ({
                 url={navDropdownItem.url}
                 label={navDropdownItem.label}
                 svgIcon={navDropdownItem.svgIcon}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
               />
             ))}
           </ul>
