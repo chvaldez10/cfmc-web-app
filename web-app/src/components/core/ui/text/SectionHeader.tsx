@@ -1,9 +1,7 @@
 import { FC } from "react";
+import { TextProps } from "@/types/genericTypes";
 
-interface SectionHeaderProps {
-  text: string | undefined;
-  containerClassName?: string;
-}
+interface SectionHeaderProps extends TextProps {}
 
 const SectionHeader: FC<SectionHeaderProps> = ({
   text,

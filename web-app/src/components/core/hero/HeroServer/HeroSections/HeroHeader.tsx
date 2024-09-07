@@ -9,7 +9,7 @@ const HeroHeader: FC<HeroHeaderProps> = ({ header, longParagraph }) => {
   return (
     <VerticalWrapper itemClassName={"h-[80vh] min-h-screen"}>
       <HeroTextWrapper>
-        <MainGradientHeader text={header} />
+        <MainGradientHeader text={header} containerClassName="text-center" />
         <SectionSubheader
           text={longParagraph}
           containerClassName={"bg-white-10"}
