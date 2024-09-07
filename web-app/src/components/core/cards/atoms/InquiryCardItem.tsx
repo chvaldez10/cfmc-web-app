@@ -5,15 +5,12 @@ import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { VerticalCenteredModal } from "@/components/core/modals";
 import RequestForm from "@/components/core/forms/RequestForm";
 import useModal from "@/hooks/useModal";
+import { IconProps } from "@/types/genericTypes";
 
-interface InquiryCardItemProps {
-  title: string;
-  description: string;
-  svgIcon: ReactNode;
-}
+interface InquiryCardItemProps extends IconProps {}
 
 const InquiryCardItem: FC<InquiryCardItemProps> = ({
-  title,
+  label,
   description,
   svgIcon,
 }) => {
@@ -22,12 +19,12 @@ const InquiryCardItem: FC<InquiryCardItemProps> = ({
   return (
     <>
       <div
-        key={title}
+        key={label}
         className="div-outside-width py-4 hover-animation hover-up h-[40vh] md:h-[30vh]"
         onClick={handleOpenModal}
       >
         {svgIcon}
-        <SectionSubheader text={title.toUpperCase()} />
+        <SectionSubheader text={label.toUpperCase()} />
         <LongParagraph>{description}</LongParagraph>
       </div>
       {showModal && (
@@ -37,7 +34,7 @@ const InquiryCardItem: FC<InquiryCardItemProps> = ({
           onClick={handleCloseModal}
           containerClassName={"resize-modal"}
         >
-          <RequestForm defaultSelectedItem={title} />
+          <RequestForm defaultSelectedItem={label} />
         </VerticalCenteredModal>
       )}
     </>

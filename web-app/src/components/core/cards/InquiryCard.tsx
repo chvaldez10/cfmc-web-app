@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { FC } from "react";
 import InquiryCardItem from "./atoms/InquiryCardItem";
 import { Grid } from "@/components/core/ui";
 import { cardInquiries } from "@/data/hero";
@@ -9,9 +9,10 @@ const InquiryCard: FC = () => {
       {cardInquiries.map((item, index) => (
         <InquiryCardItem
           key={index}
-          title={item.label}
+          label={item.label}
           description={item.description}
           svgIcon={item.svgIcon}
+          url={item.url}
         />
       ))}
     </Grid>

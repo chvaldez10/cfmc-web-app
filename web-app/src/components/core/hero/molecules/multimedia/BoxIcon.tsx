@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Box, SectionSubheader } from "@/components/core/ui/";
-import { CardInquiry } from "@/types/genericTypes";
+import { IconProps } from "@/types/genericTypes";
 
 interface BoxIconProps {
-  cardInquiries: CardInquiry[];
+  cardInquiries: IconProps[];
   header: string;
 }
 

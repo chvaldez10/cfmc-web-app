@@ -83,9 +83,13 @@ export interface DivProps {
   style?: React.CSSProperties;
 }
 
-export interface CardInquiry {
+export interface IconProps {
   label: string;
-  description: string;
-  svgIcon: ReactElement;
-  url?: string;
+  description?: string;
+  svgIcon: ReactNode;
+  url: string;
+}
+
+export interface NavDropdownItemProps extends IconProps {
+  onClick?: () => void;
 }
