@@ -2,6 +2,10 @@
 
 This is the web project for the Calgary Filipino Methodist Church (CFMC) Landing Page, utilizing Next.js 14, Supabase, TypeScript, and Tailwind CSS.
 
+## Deploy on Vercel 🌐
+
+A beta version of the landing page is deployed on Vercel at [CFMC Landing Page](https://cfmc-landing-page.vercel.app/). You can access the release notes [here](https://cfmc-web-app.vercel.app/resources/release-notes).
+
 ## Getting Started 🚀
 
 To begin, clone the repository and change the directory to the web-app folder:
@@ -54,7 +58,3 @@ Visit our Facebook page: [CFMC Facebook](https://www.facebook.com/calgaryfilipin
 ## Contribute 💻
 
 If you would like to contribute, please branch off the main branch using a common naming convention. For example, use "feat/add-footer" for feature additions.
-
-## Deploy on Vercel 🌐
-
-TBD
