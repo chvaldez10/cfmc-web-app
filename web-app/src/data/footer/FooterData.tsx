@@ -26,7 +26,7 @@ export const usefulLinks: {
     label: "Upcoming Events",
   },
   {
-    link: "/about-us/ministry",
+    link: "/about/ministry",
     label: "Ministry",
   },
 ];
