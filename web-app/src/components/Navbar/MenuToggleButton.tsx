@@ -1,8 +1,6 @@
 import { FC } from "react";
-
+import { useNavbar } from "@/contexts/NavbarContext";
 interface MenuToggleButtonProps {
-  isMenuBarOpen: boolean;
-  toggleMenu: () => void;
   changeBackgroundColor: string;
 }
 
@@ -12,10 +10,10 @@ const baseOpacity = "opacity-60 group-hover:opacity-100 ";
 const activeTransform = "opacity-50 group-hover:opacity-100";
 
 const MenuToggleButton: FC<MenuToggleButtonProps> = ({
-  isMenuBarOpen,
-  toggleMenu,
   changeBackgroundColor,
 }) => {
+  const { isMenuBarOpen, toggleMenu } = useNavbar();
+
   return (
     <button
       onClick={toggleMenu}

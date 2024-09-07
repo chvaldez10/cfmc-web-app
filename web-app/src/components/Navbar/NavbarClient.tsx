@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import useScrollPosition from "@/hooks/useScrollPosition";
 import {
   NavLogo,
@@ -10,12 +10,10 @@ import {
 } from "@/components/Navbar";
 import { Flex, Box } from "@/components/core/ui";
 import "@/styles/wave-border.css";
+import { NavbarProvider, useNavbar } from "@/contexts/NavbarContext";
 
-const NavbarClient: FC<{}> = () => {
-  const [isMenuBarOpen, setIsMenuBarOpen] = useState<boolean>(false);
-  const toggleMenu = () => setIsMenuBarOpen(!isMenuBarOpen);
+const NavbarContent: FC = () => {
   const scrollPosition = useScrollPosition();
-
   const isScrolled = scrollPosition > 10;
   const changeTextColor = `${isScrolled ? "text-white-10" : ""}`;
   const changeBorderColor = `${scrollPosition > 10 ? "border-white-10" : ""}`;
@@ -35,11 +33,7 @@ const NavbarClient: FC<{}> = () => {
         >
           <NavLogo textClassName={changeTextColor} />
 
-          <MenuToggleButton
-            isMenuBarOpen={isMenuBarOpen}
-            toggleMenu={toggleMenu}
-            changeBackgroundColor={changeBackgroundColor}
-          />
+          <MenuToggleButton changeBackgroundColor={changeBackgroundColor} />
 
           <Box containerClassName="hidden md:block">
             <NavbarLinks
@@ -49,8 +43,16 @@ const NavbarClient: FC<{}> = () => {
           </Box>
         </Flex>
       </nav>
-      <NavDrawer isOpen={isMenuBarOpen} toggleMenu={toggleMenu} />
+      <NavDrawer />
     </>
+  );
+};
+
+const NavbarClient: FC = () => {
+  return (
+    <NavbarProvider>
+      <NavbarContent />
+    </NavbarProvider>
   );
 };
 
