@@ -32,8 +32,8 @@ export const aboutDropdownItems: {
     svgIcon: <FaChurch />,
   },
   {
-    label: "Board",
-    url: "/about/board",
+    label: "Leadership",
+    url: "/about/board-and-leadership",
     svgIcon: <MdTableRestaurant />,
   },
   {

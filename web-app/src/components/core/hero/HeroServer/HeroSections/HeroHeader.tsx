@@ -12,7 +12,7 @@ const HeroHeader: FC<HeroHeaderProps> = ({ header, longParagraph }) => {
         <MainGradientHeader text={header} containerClassName="text-center" />
         <SectionSubheader
           text={longParagraph}
-          containerClassName={"bg-white-10"}
+          containerClassName={"bg-white-10 text-center"}
         />
       </HeroTextWrapper>
     </VerticalWrapper>

@@ -45,7 +45,9 @@ export async function getChurchMembersBirthdayByBirthMonth(
   return data.map((event: any) => formatChurchMembersData(event));
 }
 
-export async function getChurchMembersBoardMembers() {
+export async function getChurchMembersBoardMembers(): Promise<
+  ChurchMembers[] | null
+> {
   const supabase = createClient();
 
   const { data, error } = await supabase

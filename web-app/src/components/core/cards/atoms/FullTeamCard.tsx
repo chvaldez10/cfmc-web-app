@@ -32,11 +32,11 @@ const FullTeamCard: FC = () => {
         <FlexCenter containerClassName="sm:flex-row max-sm:gap-4 sm:justify-between">
           <Box containerClassName="block">
             <SectionSubheader
-              text={"John Doe"}
+              text={"Christian Valdez"}
               containerClassName="text-center max-sm:text-center text-start"
             />
             <p className="text-sm text-gray-600 max-sm:text-center">
-              Insert role here
+              Multimedia Team Lead
               <br className="hidden sm:block" />
               Calgary Filipino Methodist Church
             </p>
@@ -45,15 +45,13 @@ const FullTeamCard: FC = () => {
 
         <Box containerClassName="w-full h-1 bg-gray-300 rounded my-2"></Box>
         <LongParagraph containerClassName="text-gray-600">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book. It has survived not
-          only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum
+          {`Hi there! My name is Christian 👋 but you can call me Chris if you
+          prefer. I lead the multimedia team, handling everything from video and
+          music/sound to now web development. If you ever want to catch me on a
+          Sunday, head to the sanctuary around 2 PM and ask me about anything
+          multimedia-related. While I enjoy staying home and working on
+          projects, I'm always up for youth-related activities. Outside of
+          church, feel free to chat with me about school or careers!`}
         </LongParagraph>
         <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4 py-2">
           <PurpleColoredBadge>Media</PurpleColoredBadge>
