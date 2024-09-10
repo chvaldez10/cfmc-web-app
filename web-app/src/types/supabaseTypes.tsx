@@ -28,7 +28,7 @@ export type SundaysAndSpecialDays = {
   sermonSeries?: string;
   preacherNotes?: string;
   sundayEventAlternateName?: string;
-  eventId?: number; // reference to the event
+  eventId?: number;
 };
 
 export type Announcements = {
@@ -53,6 +53,7 @@ export type ChurchMembers = {
   role: string;
   firstName?: string;
   lastName?: string;
+  phoneNumber?: string;
 };
 
 export type ReleaseNotes = {
