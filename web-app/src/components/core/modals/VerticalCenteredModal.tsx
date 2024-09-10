@@ -20,7 +20,7 @@ const VerticalCenteredModal = forwardRef<
           <SectionSubheader text={header} />
           <CloseButton onClose={onClick} />
         </Flex>
-        <Box containerClassName="p-5">{children}</Box>
+        <Box containerClassName="p-5 bg-white-0">{children}</Box>
       </div>
     </FlexCenter>
   );

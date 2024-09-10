@@ -15,14 +15,12 @@ interface FullTeamCardProps extends ChurchMembers {}
 
 const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
   return (
-    <Box containerClassName="relative">
+    <Box containerClassName="relative bg-white-0">
       <NextImage
         width={"w-full"}
         height={"h-48"}
-        src={
-          "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        }
-        alt={"Full Team Card Image"}
+        src={props.image || ""}
+        alt={`${props.firstName} ${props.lastName} Image`}
         imageClassName={"rounded-t-lg object-center"}
       />
 

@@ -26,7 +26,7 @@ const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
           <Flex containerClassName="w-full sm:w-1/3 flex-center p-5">
             <IoPerson className="w-24 h-24 text-gray-300" />
           </Flex>
-          <Box containerClassName="p-5 sm:w-2/3 space-y-2">
+          <Box containerClassName="p-5 sm:w-2/3 space-y-1">
             <SectionSubheader
               text={`${props.suffix} ${props.firstName} ${props.lastName}`}
             />
