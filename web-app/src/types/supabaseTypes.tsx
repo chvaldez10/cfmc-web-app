@@ -55,6 +55,8 @@ export type ChurchMembers = {
   lastName: string;
   phoneNumber?: string;
   isLeader: boolean;
+  headline?: string;
+  image?: string;
 };
 
 export type ReleaseNotes = {
