@@ -9,8 +9,11 @@ import {
   LongParagraph,
 } from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
+import { ChurchMembers } from "@/types/supabaseTypes";
 
-const FullTeamCard: FC = () => {
+interface FullTeamCardProps extends ChurchMembers {}
+
+const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
   return (
     <Box containerClassName="relative">
       <NextImage
@@ -32,26 +35,20 @@ const FullTeamCard: FC = () => {
         <FlexCenter containerClassName="sm:flex-row max-sm:gap-4 sm:justify-between">
           <Box containerClassName="block">
             <SectionSubheader
-              text={"Christian Valdez"}
+              text={`${props.firstName} ${props.lastName}`}
               containerClassName="text-center max-sm:text-center text-start"
             />
             <p className="text-sm text-gray-600 max-sm:text-center">
-              Multimedia Team Lead
+              {props.role}
               <br className="hidden sm:block" />
-              Calgary Filipino Methodist Church
+              {props.headline}
             </p>
           </Box>
         </FlexCenter>
 
         <Box containerClassName="w-full h-1 bg-gray-300 rounded my-2"></Box>
         <LongParagraph containerClassName="text-gray-600">
-          {`Hi there! My name is Christian 👋 but you can call me Chris if you
-          prefer. I lead the multimedia team, handling everything from video and
-          music/sound to now web development. If you ever want to catch me on a
-          Sunday, head to the sanctuary around 2 PM and ask me about anything
-          multimedia-related. While I enjoy staying home and working on
-          projects, I'm always up for youth-related activities. Outside of
-          church, feel free to chat with me about school or careers!`}
+          {props.bio}
         </LongParagraph>
         <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4 py-2">
           <PurpleColoredBadge>Media</PurpleColoredBadge>

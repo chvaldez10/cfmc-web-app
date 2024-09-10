@@ -12,20 +12,11 @@ import { IoPerson } from "react-icons/io5";
 import useModal from "@/hooks/useModal";
 import { VerticalCenteredModal } from "@/components/core/modals";
 import FullTeamCard from "./FullTeamCard";
+import { ChurchMembers } from "@/types/supabaseTypes";
 
-interface TeamCardProps {
-  boardMemberName: string;
-  role: string;
-  caption: string | undefined;
-  email: string | undefined;
-}
+interface TeamCardProps extends ChurchMembers {}
 
-const TeamCard: FC<TeamCardProps> = ({
-  boardMemberName,
-  role,
-  caption,
-  email,
-}) => {
+const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
 
   return (
@@ -36,11 +27,13 @@ const TeamCard: FC<TeamCardProps> = ({
             <IoPerson className="w-24 h-24 text-gray-300" />
           </Flex>
           <Box containerClassName="p-5 sm:w-2/3 space-y-2">
-            <SectionSubheader text={boardMemberName} />
-            <LongParagraph>{role}</LongParagraph>
-            <LongParagraph>{caption}</LongParagraph>
+            <SectionSubheader
+              text={`${props.suffix} ${props.firstName} ${props.lastName}`}
+            />
+            <LongParagraph>{props.role}</LongParagraph>
+            <LongParagraph>{props.headline}</LongParagraph>
             <SmallText containerClassName="text-purple-500">
-              Email: {email}
+              Email: {props.email}
             </SmallText>
           </Box>
         </Box>
@@ -48,11 +41,11 @@ const TeamCard: FC<TeamCardProps> = ({
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
-          header={boardMemberName}
+          header={`${props.suffix} ${props.firstName} ${props.lastName}`}
           onClick={handleCloseModal}
           containerClassName={"resize-modal-full-width"}
         >
-          <FullTeamCard />
+          <FullTeamCard {...props} />
         </VerticalCenteredModal>
       )}
     </>

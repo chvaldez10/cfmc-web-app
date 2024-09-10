@@ -20,13 +20,7 @@ async function TeamSection({
       </Box>
       <Grid containerClassName="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
         {boardMembers?.map((member, index) => (
-          <TeamCard
-            key={index}
-            boardMemberName={`${member.suffix} ${member.firstName} ${member.lastName}`}
-            role={member.role}
-            caption={member.bio}
-            email={member.email}
-          />
+          <TeamCard key={index} {...member} />
         ))}
       </Grid>
     </Box>
