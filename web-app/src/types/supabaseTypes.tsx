@@ -42,7 +42,7 @@ export type Announcements = {
 };
 
 export type ChurchMembers = {
-  id?: number;
+  id: number;
   birthDate?: Date;
   isActive: boolean;
   isBoardMember: boolean;
@@ -51,9 +51,10 @@ export type ChurchMembers = {
   suffix?: string;
   email?: string;
   role: string;
-  firstName?: string;
-  lastName?: string;
+  firstName: string;
+  lastName: string;
   phoneNumber?: string;
+  isLeader: boolean;
 };
 
 export type ReleaseNotes = {

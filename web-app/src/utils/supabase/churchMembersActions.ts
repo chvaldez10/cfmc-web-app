@@ -22,6 +22,7 @@ function formatChurchMembersData(data: any): ChurchMembers {
     firstName: data.first_name,
     lastName: data.last_name,
     phoneNumber: data.phone_number,
+    isLeader: data.is_leader,
   };
 }
 
