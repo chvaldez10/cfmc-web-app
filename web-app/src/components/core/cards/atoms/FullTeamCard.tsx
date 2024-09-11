@@ -43,10 +43,9 @@ const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
           {props.bio}
         </LongParagraph>
         <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
-          {/* {props} */}
-          <PurpleColoredBadge>Media</PurpleColoredBadge>
-          <PurpleColoredBadge>Video</PurpleColoredBadge>
-          <PurpleColoredBadge>Music</PurpleColoredBadge>
+          {props.tags?.map((tag, index) => (
+            <PurpleColoredBadge key={index}>{tag}</PurpleColoredBadge>
+          ))}
         </Flex>
       </Box>
     </Box>
