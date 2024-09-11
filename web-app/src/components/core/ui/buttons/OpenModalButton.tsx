@@ -17,7 +17,7 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
   containerClassName,
   children,
   modalElement,
-  itemClassName = "resize-modal",
+  itemClassName = "resize-modal-small",
   title,
 }) => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();

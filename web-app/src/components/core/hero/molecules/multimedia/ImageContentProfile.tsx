@@ -13,9 +13,11 @@ import { VerticalCenteredModal } from "@/components/core/modals";
 import FullTeamCard from "@/components/core/cards/atoms/FullTeamCard";
 import { ChurchMembers } from "@/types/supabaseTypes";
 
-// interface ImageContentProfileProps extends ChurchMembers {}
+interface ImageContentProfileProps extends ChurchMembers {}
 
-const ImageContentProfile: FC = () => {
+const ImageContentProfile: FC<ImageContentProfileProps> = ({
+  ...churchMemberData
+}) => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
 
   return (
@@ -30,23 +32,22 @@ const ImageContentProfile: FC = () => {
         <FlexCenter containerClassName="text-center ">
           <SectionSubheader
             containerClassName="title-font text-gray-900"
-            text="Phoebe Caulfield"
+            text={`${churchMemberData.suffix} ${churchMemberData.firstName} ${churchMemberData.lastName}`}
           />
           <Box containerClassName="w-12 h-1 bg-purple-500 rounded mt-2 mb-4"></Box>
           <LongParagraph containerClassName="text-gray-600">
-            Raclette knausgaard hella meggs normcore williamsburg enamel pin
-            sartorial venmo tbh hot chicken gentrify portland.
+            {churchMemberData.bio}
           </LongParagraph>
         </FlexCenter>
       </div>
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
-          header="Phoebe Caulfield"
+          header={`${churchMemberData.suffix} ${churchMemberData.firstName} ${churchMemberData.lastName}`}
           onClick={handleCloseModal}
-          containerClassName={"resize-modal-full-width"}
+          containerClassName={"resize-modal-medium"}
         >
-          <FullTeamCard />
+          <FullTeamCard {...churchMemberData} />
         </VerticalCenteredModal>
       )}
     </>

@@ -13,14 +13,14 @@ import { ChurchMembers } from "@/types/supabaseTypes";
 
 interface FullTeamCardProps extends ChurchMembers {}
 
-const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
+const FullTeamCard: FC<FullTeamCardProps> = ({ ...churchMemberData }) => {
   return (
     <Box containerClassName="relative bg-white-0">
       <NextImage
         width={"w-full"}
         height={"h-48"}
-        src={props.image || ""}
-        alt={`${props.firstName} ${props.lastName} Image`}
+        src={churchMemberData.image || ""}
+        alt={`${churchMemberData.firstName} ${churchMemberData.lastName} Image`}
         imageClassName={"rounded-t-lg object-center"}
       />
 
@@ -35,19 +35,19 @@ const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
         {/* User Details */}
         <Box containerClassName="text-center sm:text-left">
           <SectionSubheader
-            text={`${props.firstName} ${props.lastName}`}
+            text={`${churchMemberData.firstName} ${churchMemberData.lastName}`}
             containerClassName=""
           />
-          <LongParagraph>{`${props.role} | ${props.headline}`}</LongParagraph>
+          <LongParagraph>{`${churchMemberData.role} | ${churchMemberData.headline}`}</LongParagraph>
         </Box>
         <HorizontalLine />
 
         {/* User Bio and important information */}
         <LongParagraph containerClassName="text-gray-600">
-          {props.bio}
+          {churchMemberData.bio}
         </LongParagraph>
         <Flex containerClassName="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
-          {props.tags?.map((tag, index) => (
+          {churchMemberData.tags?.map((tag, index) => (
             <PurpleColoredBadge key={index}>{tag}</PurpleColoredBadge>
           ))}
         </Flex>

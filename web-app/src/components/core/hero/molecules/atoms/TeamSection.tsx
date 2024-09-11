@@ -19,8 +19,8 @@ async function TeamSection({
         <LongParagraph>{longParagraph}</LongParagraph>
       </Box>
       <Grid containerClassName="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-        {boardMembers?.map((member, index) => (
-          <TeamCard key={index} {...member} />
+        {boardMembers?.map((churchMemberData, index) => (
+          <TeamCard key={index} {...churchMemberData} />
         ))}
       </Grid>
     </Box>

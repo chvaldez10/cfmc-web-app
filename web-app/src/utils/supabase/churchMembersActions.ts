@@ -49,6 +49,28 @@ export async function getChurchMembersBirthdayByBirthMonth(
   return data.map((event: any) => formatChurchMembersData(event));
 }
 
+export async function getChurchMembersByID(
+  id: number
+): Promise<ChurchMembers | null> {
+  const supabase = createClient();
+
+  const { data, error } = await supabase
+    .from("church_members")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error("Error fetching church members by ID:", error);
+    return null;
+  } else if (!data) {
+    console.error("No church members found for ID:", id);
+    return null;
+  }
+
+  return formatChurchMembersData(data);
+}
+
 export async function getChurchMembersBoardMembers(): Promise<
   ChurchMembers[] | null
 > {

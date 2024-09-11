@@ -16,7 +16,7 @@ import { ChurchMembers } from "@/types/supabaseTypes";
 
 interface TeamCardProps extends ChurchMembers {}
 
-const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
+const TeamCard: FC<TeamCardProps> = ({ ...churchMemberData }) => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
 
   return (
@@ -28,15 +28,15 @@ const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
           </Flex>
           <Box containerClassName="p-5 sm:w-2/3 space-y-1">
             <SectionSubheader
-              text={`${props.suffix} ${props.firstName} ${props.lastName}`}
+              text={`${churchMemberData.suffix} ${churchMemberData.firstName} ${churchMemberData.lastName}`}
             />
-            <LongParagraph>{props.role}</LongParagraph>
-            <LongParagraph>{props.headline}</LongParagraph>
+            <LongParagraph>{churchMemberData.role}</LongParagraph>
+            <LongParagraph>{churchMemberData.headline}</LongParagraph>
             <SmallText containerClassName="text-purple-500">
-              Email: {props.email}
+              Email: {churchMemberData.email}
             </SmallText>
             <SmallText containerClassName="text-purple-500">
-              Phone: {props?.phoneNumber || "N/A"}
+              Phone: {churchMemberData.phoneNumber || "N/A"}
             </SmallText>
           </Box>
         </Box>
@@ -44,11 +44,11 @@ const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
       {showModal && (
         <VerticalCenteredModal
           ref={modalRef}
-          header={`${props.suffix} ${props.firstName} ${props.lastName}`}
+          header={`${churchMemberData.suffix} ${churchMemberData.firstName} ${churchMemberData.lastName}`}
           onClick={handleCloseModal}
-          containerClassName={"w-full h-screen md:w-7/12 md:h-auto"}
+          containerClassName={"resize-modal-medium"}
         >
-          <FullTeamCard {...props} />
+          <FullTeamCard {...churchMemberData} />
         </VerticalCenteredModal>
       )}
     </>

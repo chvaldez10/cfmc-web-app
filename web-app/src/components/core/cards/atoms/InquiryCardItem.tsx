@@ -32,7 +32,7 @@ const InquiryCardItem: FC<InquiryCardItemProps> = ({
           ref={modalRef}
           header="Request Form"
           onClick={handleCloseModal}
-          containerClassName={"resize-modal"}
+          containerClassName={"resize-modal-small"}
         >
           <RequestForm defaultSelectedItem={label} />
         </VerticalCenteredModal>

@@ -105,11 +105,15 @@
   @apply w-full lg:w-2/3;
 }
 
-.resize-modal {
+.resize-modal-small {
   @apply w-full h-screen md:max-w-2xl md:h-auto;
 }
 
-.resize-modal-full-width {
+.resize-modal-medium {
+  @apply w-full h-screen md:w-5/12 md:h-auto;
+}
+
+.resize-modal-large {
   @apply w-full h-screen md:w-10/12 md:h-auto;
 }
 
