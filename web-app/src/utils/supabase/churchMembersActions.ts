@@ -15,7 +15,7 @@ function formatChurchMembersData(data: any): ChurchMembers {
     isActive: data.is_active,
     isBoardMember: data.is_board_member,
     bio: data.bio,
-    traits: data.traits,
+    tags: data.tags,
     suffix: data.suffix,
     email: data.email,
     role: data.role,

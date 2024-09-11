@@ -47,7 +47,7 @@ export type ChurchMembers = {
   isActive: boolean;
   isBoardMember: boolean;
   bio?: string;
-  traits?: string[];
+  tags?: string[];
   suffix?: string;
   email?: string;
   role: string;

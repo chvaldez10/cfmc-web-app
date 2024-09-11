@@ -35,6 +35,9 @@ const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
             <SmallText containerClassName="text-purple-500">
               Email: {props.email}
             </SmallText>
+            <SmallText containerClassName="text-purple-500">
+              Phone: {props?.phoneNumber || "N/A"}
+            </SmallText>
           </Box>
         </Box>
       </div>
@@ -43,7 +46,7 @@ const TeamCard: FC<TeamCardProps> = ({ ...props }) => {
           ref={modalRef}
           header={`${props.suffix} ${props.firstName} ${props.lastName}`}
           onClick={handleCloseModal}
-          containerClassName={"resize-modal-full-width"}
+          containerClassName={"w-full h-screen md:w-7/12 md:h-auto"}
         >
           <FullTeamCard {...props} />
         </VerticalCenteredModal>
