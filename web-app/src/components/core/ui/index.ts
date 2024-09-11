@@ -27,3 +27,6 @@ export { default as CloseButton } from "./buttons/atoms/CloseButton";
 export { default as FilledColoredBadge } from "./badges/FilledColoredBadge";
 export { default as OutlineColoredBadge } from "./badges/OutlineColoredBadge";
 export { default as PurpleColoredBadge } from "./badges/PurpleColoredBadge";
+
+// shapes
+export { default as HorizontalLine } from "./shapes/HorizontalLine";

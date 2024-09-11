@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { IoPerson } from "react-icons/io5";
 import {
-  FlexCenter,
   Box,
   Flex,
   SectionSubheader,
   PurpleColoredBadge,
   LongParagraph,
+  HorizontalLine,
 } from "@/components/core/ui";
 import { NextImage } from "@/components/core/gallery";
 import { ChurchMembers } from "@/types/supabaseTypes";
@@ -25,11 +25,14 @@ const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
       />
 
       <Box containerClassName="w-full max-w-7xl mx-auto px-6 md:px-8 space-y-4">
+        {/* User Profile Picture */}
         <Flex containerClassName="flex-center sm:justify-start relative z-10 -mt-12">
           <Box containerClassName="bg-white-0 rounded-full p-2 border-4 border-solid border-white-0">
             <IoPerson className="w-24 h-24 text-gray-300" />
           </Box>
         </Flex>
+
+        {/* User Details */}
         <Box containerClassName="text-center sm:text-left">
           <SectionSubheader
             text={`${props.firstName} ${props.lastName}`}
@@ -37,8 +40,9 @@ const FullTeamCard: FC<FullTeamCardProps> = ({ ...props }) => {
           />
           <LongParagraph>{`${props.role} | ${props.headline}`}</LongParagraph>
         </Box>
+        <HorizontalLine />
 
-        <Box containerClassName="w-full h-1 bg-gray-300 rounded my-2"></Box>
+        {/* User Bio and important information */}
         <LongParagraph containerClassName="text-gray-600">
           {props.bio}
         </LongParagraph>
