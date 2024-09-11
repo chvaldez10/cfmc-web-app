@@ -15,7 +15,7 @@ interface LinkGroupProps {
 const FooterLinkGroup: FC<LinkGroupProps> = ({ title, footerLinks }) => {
   return (
     <Box containerClassName="w-full lg:w-4/12 ml-auto space-y-1">
-      <LongParagraph containerClassName="block uppercase text-gray-600 underline font-semibold ">
+      <LongParagraph containerClassName="block uppercase font-bold ">
         {title}
       </LongParagraph>
       <ul className="space-y-2">
@@ -23,7 +23,7 @@ const FooterLinkGroup: FC<LinkGroupProps> = ({ title, footerLinks }) => {
           <li key={index}>
             <Link
               href={link}
-              className="text-gray-600 hover:text-purple-500 font-semibold block text-sm"
+              className="text-gray-600 font-medium block text-sm underline hover:text-purple-600"
             >
               {label}
             </Link>

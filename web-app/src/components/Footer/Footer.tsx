@@ -16,8 +16,8 @@ const Footer: FC = () => {
           {/* Platforms */}
           <HeroHalfWrapper containerClassName="px-4 space-y-2">
             <SectionSubheader
-              text="Find us Facebook!"
-              containerClassName="font-semibold"
+              text="Find us on Facebook!"
+              containerClassName="font-bold uppercase"
             />
             <SocialMediaLinks />
           </HeroHalfWrapper>
