@@ -3,7 +3,7 @@ import { Roboto } from "next/font/google";
 import Providers from "./Providers";
 import NavbarClient from "@/components/Navbar/NavbarClient";
 import "./globals.css";
-
+import BackButton from "@/components/core/ui/buttons/BackButton";
 import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
@@ -28,6 +28,7 @@ export default function RootLayout({
           <NavbarClient />
           {children}
           <Footer />
+          <BackButton />
         </Providers>
       </body>
     </html>
