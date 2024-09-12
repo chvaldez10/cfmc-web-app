@@ -26,16 +26,16 @@ function formatSundaysAndSpecialDaysData(data: any): SundaysAndSpecialDays {
 
 export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDays | null> {
   const supabase = createClient();
-  const nextSunday = getNextSunday(new Date());
-  const nextSundayMDT = nextSunday.toLocaleDateString("en-US", {
-    timeZone: "America/Denver",
-  });
+  const nextSunday = getNextSunday();
+  const formattedDate = nextSunday
+    .toISOString()
+    .replace("T", " ")
+    .replace("Z", "+00");
 
-  // should only return one instance regardless of duplicate dates
   const { data, error } = await supabase
     .from("sundays_and_special_days")
     .select("*")
-    .eq("date", nextSundayMDT)
+    .eq("date", formattedDate)
     .single();
 
   if (error) {
