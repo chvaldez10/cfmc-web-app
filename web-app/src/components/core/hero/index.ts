@@ -46,3 +46,4 @@ export { default as ImageContent } from "./molecules/multimedia/ImageContent";
 export { default as VerseOfTheDay } from "./molecules/service-items/VerseOfTheDay";
 export { default as LiturgyHeader } from "./molecules/service-items/LiturgyHeader";
 export { default as TithesAndOffering } from "./molecules/service-items/TithesAndOffering";
+export { default as CountdownTimer } from "./molecules/service-items/CountdownTimer";
