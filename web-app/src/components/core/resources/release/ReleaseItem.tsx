@@ -51,14 +51,11 @@ const ReleaseItem: FC<ReleaseItemProps> = ({
         {/* Special notes */}
         {specialNotes && specialNotes.length > 0 && (
           <>
-            <LongParagraph>Special Notes: </LongParagraph>
+            <LongParagraph>
+              <strong>{`Note (s): `}</strong>
+            </LongParagraph>
             {specialNotes.map((note) => (
-              <ReleaseNoteItem
-                key={note}
-                emoji="🔍"
-                label="Special Notes"
-                longParagraph={note}
-              />
+              <ReleaseNoteItem key={note} emoji="🔍" longParagraph={note} />
             ))}
           </>
         )}

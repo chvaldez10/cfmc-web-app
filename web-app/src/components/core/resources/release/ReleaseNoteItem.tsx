@@ -2,8 +2,8 @@ import { FC } from "react";
 import { LongParagraph } from "@/components/core/ui";
 
 interface ReleaseNoteItemProps {
-  emoji: string;
-  label: string;
+  emoji?: string | null;
+  label?: string | null;
   longParagraph: string;
 }
 
@@ -15,7 +15,14 @@ const ReleaseNoteItem: FC<ReleaseNoteItemProps> = ({
   return (
     <li>
       <LongParagraph>
-        {emoji} {label}: {longParagraph}
+        <>
+          {label && (
+            <strong>
+              {emoji} {label}:{" "}
+            </strong>
+          )}
+          {longParagraph}
+        </>
       </LongParagraph>
     </li>
   );
