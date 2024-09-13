@@ -1,6 +1,6 @@
 .countdown .content {
   gap: 8px;
-  max-width: 400px; /* Limit overall width */
+  max-width: 400px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -13,13 +13,13 @@
 }
 
 .countdown .box {
-  width: auto; /* Remove fixed width */
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto; /* Allow height to adjust */
-  max-width: none; /* Remove max-width constraint */
+  height: auto;
+  max-width: none;
 }
 
 .countdown .value {
@@ -47,7 +47,7 @@
     height: 50px;
   }
   .countdown .box {
-    height: 120px;
+    min-height: 90px;
     max-width: 120px;
   }
 }
@@ -60,7 +60,7 @@
   }
   .countdown .box {
     max-width: 130px;
-    height: 140px;
+    min-height: 110px;
   }
 }
 

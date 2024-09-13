@@ -6,7 +6,6 @@ import {
 import { NextImage } from "@/components/core/gallery";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
 import { ministryImages1 } from "@/data/hero/featuredItems";
-import { CountdownTimer } from "@/components/core/hero";
 
 export default function page() {
   return (
@@ -24,7 +23,6 @@ export default function page() {
         />
       </HeroWaveHeader>
 
-      <CountdownTimer />
       <HeroSlideClient
         header={"Have Fun While You Serve"}
         longParagraph={"Have Fun While You Serve Description"}

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ContainerWrapper, PDFViewer } from "@/components/core/hero";
+import { PDFViewer } from "@/components/core/hero";
 import {
   Box,
   SectionHeader,

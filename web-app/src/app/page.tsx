@@ -6,6 +6,7 @@ import {
   EventBlogSwiper,
   IframeMap,
   LiturgyHeader,
+  ServiceItem,
 } from "@/components/core/hero";
 
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
@@ -35,17 +36,7 @@ export default async function Home() {
 
       <LiturgyHeader />
 
-      <HeroSlideClient
-        header={"Sunday Worship"}
-        longParagraph={"2:00 PM | 419 Northmount Drive NW, Calgary, AB"}
-        containerClassName="bg-green-10 min-h-[80vh]"
-        isFloating={true}
-      >
-        <IframeMap
-          src={churchGoogleMapSrc}
-          containerClassName="h-96 lg:h-576"
-        />
-      </HeroSlideClient>
+      <ServiceItem />
 
       <HeroImageSwiper
         header={"Discipleship Month"}

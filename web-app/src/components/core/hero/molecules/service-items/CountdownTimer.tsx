@@ -10,9 +10,11 @@ import "@/styles/countdown-timer.css";
 const TEST_DATE = new Date("2024-09-15T00:00:00");
 
 const Countdown: FC = () => {
+  const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(TEST_DATE));
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       setTimeLeft(getTimeLeft(TEST_DATE));
     }, 1000);
@@ -21,6 +23,10 @@ const Countdown: FC = () => {
       clearInterval(timer);
     };
   }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Box containerClassName="countdown">
