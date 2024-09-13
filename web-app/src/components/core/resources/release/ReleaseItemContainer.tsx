@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import ReleaseItem from "@/components/core/text/ReleaseItem";
+import ReleaseItem from "@/components/core/resources/release/ReleaseItem";
 import { getReleaseNotesByYear } from "@/utils/supabase/releaseNotesActions";
 import { ReleaseNotes } from "@/types/supabaseTypes";
 interface ReleaseItemContainerProps {

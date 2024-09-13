@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState } from "react";
-import ReleaseItemContainer from "@/components/core/text/ReleaseItemContainer";
+import { ReleaseItemContainer } from "@/components/core/resources";
 import { Flex, Box } from "@/components/core/ui";
 
 const yearsTest = [2024];
