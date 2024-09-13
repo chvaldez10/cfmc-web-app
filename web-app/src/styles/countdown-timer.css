@@ -1,65 +1,66 @@
 .countdown .content {
-  width: 100%;
+  gap: 8px;
+  max-width: 400px; /* Limit overall width */
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: auto;
-  gap: 12px;
 }
+
 .countdown h2 {
-  margin-bottom: 20px;
-  font-size: 50px;
+  margin-bottom: 10px;
+  font-size: 32px;
 }
 
 .countdown .box {
-  width: calc(100% / 4);
+  width: auto; /* Remove fixed width */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 150px;
-  max-width: 150px;
+  height: auto; /* Allow height to adjust */
+  max-width: none; /* Remove max-width constraint */
 }
 
 .countdown .value {
-  font-size: 20px;
-  width: 60px;
-  height: 60px;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
   font-weight: 600;
   background-color: #5b21b6;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 4px;
   position: relative;
-  box-shadow: -2px 0px 5px 1px #232423ad;
+  box-shadow: -1px 0px 2px 1px #232423ad;
 }
 
 @media screen and (min-width: 550px) {
   .countdown .content {
-    gap: 30px;
+    gap: 15px;
   }
   .countdown .value {
-    font-size: 30px;
-    width: 80px;
-    height: 80px;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
   }
   .countdown .box {
-    height: 150px;
-    max-width: 150px;
+    height: 120px;
+    max-width: 120px;
   }
 }
 
 @media screen and (min-width: 790px) {
   .countdown .value {
-    font-size: 50px;
-    height: 120px;
-    width: 120px;
+    font-size: 28px;
+    height: 70px;
+    width: 70px;
   }
   .countdown .box {
-    max-width: 150px;
-    height: 180px;
+    max-width: 130px;
+    height: 140px;
   }
 }
 
@@ -67,16 +68,16 @@
   content: "";
   position: absolute;
   z-index: 2;
-  left: -7px;
-  width: 10px;
-  height: 20px;
+  left: -4px;
+  width: 6px;
+  height: 12px;
   background-color: #969696;
   box-shadow: inset -1px 1px 5px 1px #0e0e0ead;
 }
 
 .countdown .label {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 100;
-  letter-spacing: 4px;
-  margin-top: 10px;
+  letter-spacing: 1px;
+  margin-top: 5px;
 }

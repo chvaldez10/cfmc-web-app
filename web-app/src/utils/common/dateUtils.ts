@@ -9,3 +9,12 @@ export const getNextSunday = (): Date => {
   );
   return nextSunday;
 };
+
+export const getTimeLeft = (targetDate: Date) => {
+  const totalTimeLeft = targetDate.getTime() - new Date().getTime();
+  const days = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((totalTimeLeft / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((totalTimeLeft / (1000 * 60)) % 60);
+  const seconds = Math.floor((totalTimeLeft / 1000) % 60);
+  return { days, hours, minutes, seconds };
+};

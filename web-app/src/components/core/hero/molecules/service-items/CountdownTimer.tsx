@@ -1,26 +1,20 @@
 "use client";
 
-// code from https://github.com/timeToCode-ali/react_playground/tree/main/src/components/countdown
+// original code from https://github.com/timeToCode-ali/react_playground/tree/main/src/components/countdown
+
 import { useState, useEffect, FC } from "react";
+import { Box } from "@/components/core/ui";
+import { getTimeLeft } from "@/utils/common/dateUtils";
 import "@/styles/countdown-timer.css";
 
-const COUNTDOWN_TARGET = new Date("2024-09-15T00:00:00");
-
-const getTimeLeft = () => {
-  const totalTimeLeft = COUNTDOWN_TARGET.getTime() - new Date().getTime();
-  const days = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((totalTimeLeft / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((totalTimeLeft / (1000 * 60)) % 60);
-  const seconds = Math.floor((totalTimeLeft / 1000) % 60);
-  return { days, hours, minutes, seconds };
-};
+const TEST_DATE = new Date("2024-09-15T00:00:00");
 
 const Countdown: FC = () => {
-  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(TEST_DATE));
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
+      setTimeLeft(getTimeLeft(TEST_DATE));
     }, 1000);
 
     return () => {
@@ -29,23 +23,22 @@ const Countdown: FC = () => {
   }, []);
 
   return (
-    <div className="countdown">
-      {/* <h2>Countdown</h2> */}
-      <div className="content">
+    <Box containerClassName="countdown">
+      <Box containerClassName="content">
         {Object.entries(timeLeft).map((entry) => {
           const label = entry[0];
           const value = entry[1];
           return (
-            <div className="box" key={label}>
-              <div className="value">
+            <Box containerClassName="box" key={label}>
+              <Box containerClassName="value">
                 <span>{value}</span>
-              </div>
+              </Box>
               <span className="label"> {label} </span>
-            </div>
+            </Box>
           );
         })}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
