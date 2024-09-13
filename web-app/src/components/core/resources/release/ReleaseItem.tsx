@@ -6,6 +6,8 @@ import {
   SectionSubheader,
   SmallText,
 } from "@/components/core/ui";
+import ReleaseNoteItem from "./ReleaseNoteItem";
+
 interface ReleaseItemProps extends ReleaseNotes {}
 
 const ReleaseItem: FC<ReleaseItemProps> = ({
@@ -16,43 +18,47 @@ const ReleaseItem: FC<ReleaseItemProps> = ({
   upNext,
   specialNotes,
 }) => {
+  const formattedReleaseDate = releaseDate.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
   return (
     <Box containerClassName="bg-white-0 p-6 rounded-lg shadow-lg mx-auto space-y-2">
-      <SectionSubheader
-        text={releaseDate.toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        })}
-      />
+      <SectionSubheader text={formattedReleaseDate} />
       <SmallText containerClassName="text-purple-500">{version}</SmallText>
       <ul className="list-disc pl-4 space-y-2">
+        {/* Regular release notes */}
         {freshOutTheOven && (
-          <li>
-            <LongParagraph>
-              🧑‍🍳 Fresh Out The Oven: {freshOutTheOven}
-            </LongParagraph>
-          </li>
+          <ReleaseNoteItem
+            emoji="🧑‍🍳"
+            label="Fresh Out The Oven"
+            longParagraph={freshOutTheOven}
+          />
         )}
         {bugFixesAndImprovements && (
-          <li>
-            <LongParagraph>
-              🐛 Bug Fixes and Improvements: {bugFixesAndImprovements}
-            </LongParagraph>
-          </li>
+          <ReleaseNoteItem
+            emoji="🐛"
+            label="Bug Fixes and Improvements"
+            longParagraph={bugFixesAndImprovements}
+          />
         )}
         {upNext && (
-          <li>
-            <LongParagraph>🔜 Up Next: {upNext}</LongParagraph>
-          </li>
+          <ReleaseNoteItem emoji="🔜" label="Up Next" longParagraph={upNext} />
         )}
+
+        {/* Special notes */}
         {specialNotes && specialNotes.length > 0 && (
           <>
-            <LongParagraph>Special Notes</LongParagraph>
+            <LongParagraph>Special Notes: </LongParagraph>
             {specialNotes.map((note) => (
-              <li key={note}>
-                <LongParagraph>🔍 {note}</LongParagraph>
-              </li>
+              <ReleaseNoteItem
+                key={note}
+                emoji="🔍"
+                label="Special Notes"
+                longParagraph={note}
+              />
             ))}
           </>
         )}
