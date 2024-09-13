@@ -4,19 +4,16 @@ import {
   HeroImageSwiper,
   VerseOfTheDay,
   EventBlogSwiper,
-  IframeMap,
   LiturgyHeader,
   ServiceItem,
 } from "@/components/core/hero";
 
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
-
 import { InquiryCard, CardWithImage } from "@/components/core/cards";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
-  churchGoogleMapSrc,
 } from "@/data/hero/constants";
 
 import { NextImage } from "@/components/core/gallery";
@@ -33,11 +30,8 @@ export default async function Home() {
   return (
     <>
       <HeroCollage nextServiceSlug={eventDetails?.slug} />
-
       <LiturgyHeader />
-
       <ServiceItem />
-
       <HeroImageSwiper
         header={"Discipleship Month"}
         longParagraph={featuredMonthlyThemeVerbiage}
