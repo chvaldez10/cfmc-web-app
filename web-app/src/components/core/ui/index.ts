@@ -30,3 +30,10 @@ export { default as PurpleColoredBadge } from "./badges/PurpleColoredBadge";
 
 // shapes
 export { default as HorizontalLine } from "./shapes/HorizontalLine";
+
+// cards
+export { default as CardWithImage } from "./cards/CardWithImage";
+export { default as InquiryCard } from "./cards/InquiryCard";
+export { default as EventCard } from "./cards/atoms/EventCard";
+export { default as TeamCard } from "./cards/atoms/TeamCard";
+export { default as FullTeamCard } from "./cards/atoms/FullTeamCard";

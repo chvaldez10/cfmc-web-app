@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { VerticalCenteredModal } from "@/components/core/modals";
 import RequestForm from "@/components/core/forms/RequestForm";

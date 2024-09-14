@@ -1,5 +1,10 @@
-import { Box, Grid, SectionHeader, LongParagraph } from "@/components/core/ui";
-import { TeamCard } from "@/components/core/cards";
+import {
+  Box,
+  Grid,
+  SectionHeader,
+  LongParagraph,
+  TeamCard,
+} from "@/components/core/ui";
 import { ChurchMembers } from "@/types/supabaseTypes";
 import { HeroContentProps } from "@/types/genericTypes";
 

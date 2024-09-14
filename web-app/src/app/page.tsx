@@ -9,7 +9,7 @@ import {
 } from "@/components/core/hero";
 
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
-import { InquiryCard, CardWithImage } from "@/components/core/cards";
+import { InquiryCard, CardWithImage } from "@/components/core/ui";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,

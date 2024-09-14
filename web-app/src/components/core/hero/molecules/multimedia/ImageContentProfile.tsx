@@ -7,10 +7,10 @@ import {
   FlexCenter,
   SectionSubheader,
   LongParagraph,
+  FullTeamCard,
 } from "@/components/core/ui";
-import useModal from "@/hooks/useModal";
 import { VerticalCenteredModal } from "@/components/core/modals";
-import FullTeamCard from "@/components/core/cards/atoms/FullTeamCard";
+import useModal from "@/hooks/useModal";
 import { ChurchMembers } from "@/types/supabaseTypes";
 
 interface ImageContentProfileProps extends ChurchMembers {}
