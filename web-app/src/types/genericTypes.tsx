@@ -1,4 +1,9 @@
-import { ReactNode, ReactElement } from "react";
+import { ReactNode } from "react";
+
+/* 
+  This file is for generic types that are used in multiple places.
+  These types are not specific to any component or page.
+*/
 
 export interface ImageProps {
   src: string;
@@ -34,21 +39,4 @@ export interface FormProps {
   placeholder: string;
   required?: boolean;
   maxLength?: number;
-}
-
-export interface Verse {
-  verse: {
-    details: {
-      text: string;
-      reference: string;
-      version: string;
-      verseURL: string;
-    };
-    notice: string;
-  };
-}
-
-export interface TextProps {
-  text: string | undefined;
-  containerClassName?: string;
 }

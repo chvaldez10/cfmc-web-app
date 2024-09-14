@@ -1,5 +1,5 @@
 import { BsFillChatLeftQuoteFill } from "react-icons/bs";
-import { Verse } from "@/types/genericTypes";
+import { Verse } from "@/types/componentProps";
 import { defaultVerse } from "@/data/hero/constants";
 import { SectionSubheader, LongParagraph, Box } from "@/components/core/ui";
 import { VerticalContainerWrapper } from "@/components/core/hero";

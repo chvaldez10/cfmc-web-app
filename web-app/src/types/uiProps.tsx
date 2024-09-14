@@ -30,3 +30,8 @@ export interface IconProps {
 export interface NavDropdownItemProps extends IconProps {
   onClick?: () => void;
 }
+
+export interface TextProps {
+  text: string | undefined;
+  containerClassName?: string;
+}

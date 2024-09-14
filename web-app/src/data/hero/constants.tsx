@@ -1,4 +1,4 @@
-import { Verse } from "@/types/genericTypes";
+import { Verse } from "@/types/componentProps";
 
 /** Mission and Vision */
 export const visionStatementLong = `A God-glorifying, Christ-shepherding

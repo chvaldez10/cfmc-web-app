@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { TextProps } from "@/types/genericTypes";
+import { TextProps } from "@/types/uiProps";
 
 interface SectionHeaderProps extends TextProps {}
 
