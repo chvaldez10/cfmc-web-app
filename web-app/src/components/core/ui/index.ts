@@ -46,3 +46,6 @@ export { default as ImageGallery } from "./gallery/ImageGallery";
 
 // modals
 export { default as VerticalCenteredModal } from "./modals/VerticalCenteredModal";
+
+// loader
+export { default as LoadingSkeleton } from "./loaders/LoadingSkeleton";

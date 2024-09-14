@@ -8,8 +8,7 @@ import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
-import { EventCard } from "@/components/core/ui";
-import { LoadingSkeleton } from "@/components/core/loader";
+import { EventCard, LoadingSkeleton } from "@/components/core/ui";
 import { Flex } from "@/components/core/ui";
 import { Events } from "@/types/supabaseTypes";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
