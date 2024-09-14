@@ -1,5 +1,5 @@
 import {
-  HeroCollage,
+  HeroHome,
   HeroSlideClient,
   HeroImageSwiper,
   VerseOfTheDay,
@@ -29,7 +29,7 @@ export default async function Home() {
 
   return (
     <>
-      <HeroCollage nextServiceSlug={eventDetails?.slug} />
+      <HeroHome nextServiceSlug={eventDetails?.slug} />
       <LiturgyHeader />
       <ServiceItem />
       <HeroImageSwiper

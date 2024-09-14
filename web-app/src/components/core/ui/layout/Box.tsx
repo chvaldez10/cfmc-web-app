@@ -4,9 +4,9 @@ import { DivProps } from "@/types/genericTypes";
 interface BoxProps extends DivProps {}
 
 // Note that the Box component has no default styles. Its just to have better visualization of the layout when coding.
-const Box: FC<BoxProps> = ({ children, containerClassName, style }) => {
+const Box: FC<BoxProps> = ({ children, containerClassName, style, id }) => {
   return (
-    <div className={containerClassName} style={style}>
+    <div className={containerClassName} style={style} id={id}>
       {children}
     </div>
   );
