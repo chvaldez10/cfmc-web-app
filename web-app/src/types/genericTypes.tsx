@@ -48,17 +48,6 @@ export interface Verse {
   };
 }
 
-export interface IconProps {
-  label: string;
-  description?: string;
-  svgIcon: ReactNode;
-  url: string;
-}
-
-export interface NavDropdownItemProps extends IconProps {
-  onClick?: () => void;
-}
-
 export interface TextProps {
   text: string | undefined;
   containerClassName?: string;

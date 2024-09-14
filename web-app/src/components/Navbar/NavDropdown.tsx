@@ -1,7 +1,7 @@
 import { FC, useState, useEffect, useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import NavDropdownItem from "./NavDropdownItem";
-import { IconProps } from "@/types/genericTypes";
+import { IconProps } from "@/types/uiProps";
 
 interface NavDropdownProps {
   navDropdownItems: IconProps[];

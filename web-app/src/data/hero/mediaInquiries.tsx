@@ -6,7 +6,7 @@ import {
   FaBrain,
 } from "react-icons/fa";
 import { RiSoundModuleFill } from "react-icons/ri";
-import { IconProps } from "@/types/genericTypes";
+import { IconProps } from "@/types/uiProps";
 import { TbWorldWww } from "react-icons/tb";
 import { IoMusicalNotesOutline } from "react-icons/io5";
 

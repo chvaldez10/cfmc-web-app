@@ -5,7 +5,7 @@ import { SectionSubheader, LongParagraph } from "@/components/core/ui";
 import { VerticalCenteredModal } from "@/components/core/modals";
 import RequestForm from "@/components/core/forms/RequestForm";
 import useModal from "@/hooks/useModal";
-import { IconProps } from "@/types/genericTypes";
+import { IconProps } from "@/types/uiProps";
 
 interface InquiryCardItemProps extends IconProps {}
 

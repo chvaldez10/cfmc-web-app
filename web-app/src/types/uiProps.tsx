@@ -19,3 +19,14 @@ export interface BadgeProps {
   tagName: string;
   containerClassName?: string;
 }
+
+export interface IconProps {
+  label: string;
+  description?: string;
+  svgIcon: ReactNode;
+  url: string;
+}
+
+export interface NavDropdownItemProps extends IconProps {
+  onClick?: () => void;
+}

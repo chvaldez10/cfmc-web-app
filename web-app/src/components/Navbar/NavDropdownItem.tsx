@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { IconProps } from "@/types/genericTypes";
+import { IconProps } from "@/types/uiProps";
 import { useNavbar } from "@/contexts/NavbarContext";
 
 interface NavDropdownItemProps extends IconProps {}

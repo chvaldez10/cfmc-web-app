@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, SectionSubheader } from "@/components/core/ui/";
-import { IconProps } from "@/types/genericTypes";
+import { IconProps } from "@/types/uiProps";
 
 interface BoxIconProps {
   cardInquiries: IconProps[];
