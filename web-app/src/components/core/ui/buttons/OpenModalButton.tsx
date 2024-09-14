@@ -2,8 +2,10 @@
 
 import { FC, ReactNode } from "react";
 import { ClientButtonProps } from "@/types/uiProps";
-import { PurplePillButtonClient } from "@/components/core/ui";
-import { VerticalCenteredModal } from "@/components/core/modals";
+import {
+  PurplePillButtonClient,
+  VerticalCenteredModal,
+} from "@/components/core/ui";
 import useModal from "@/hooks/useModal";
 
 interface OpenModalButtonProps extends ClientButtonProps {

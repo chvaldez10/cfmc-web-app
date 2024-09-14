@@ -8,8 +8,8 @@ import {
   SectionSubheader,
   LongParagraph,
   FullTeamCard,
+  VerticalCenteredModal,
 } from "@/components/core/ui";
-import { VerticalCenteredModal } from "@/components/core/modals";
 import useModal from "@/hooks/useModal";
 import { ChurchMembers } from "@/types/supabaseTypes";
 

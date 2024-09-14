@@ -1,8 +1,12 @@
 import { forwardRef } from "react";
-import { SectionSubheader } from "@/components/core/ui";
-import { CloseButton } from "@/components/core/ui";
+import {
+  SectionSubheader,
+  CloseButton,
+  FlexCenter,
+  Box,
+  Flex,
+} from "@/components/core/ui";
 import { ModalProps } from "@/types/layoutProps";
-import { FlexCenter, Box, Flex } from "@/components/core/ui";
 
 interface VerticalCenteredModalProps extends ModalProps {}
 

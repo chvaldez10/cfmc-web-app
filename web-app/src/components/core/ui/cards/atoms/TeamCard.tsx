@@ -7,10 +7,10 @@ import {
   SectionSubheader,
   LongParagraph,
   SmallText,
+  VerticalCenteredModal,
 } from "@/components/core/ui";
 import { IoPerson } from "react-icons/io5";
 import useModal from "@/hooks/useModal";
-import { VerticalCenteredModal } from "@/components/core/modals";
 import FullTeamCard from "./FullTeamCard";
 import { ChurchMembers } from "@/types/supabaseTypes";
 

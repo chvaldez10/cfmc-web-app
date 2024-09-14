@@ -43,3 +43,6 @@ export { default as NextImage } from "./gallery/NextImage";
 export { default as SwiperCoverFlow } from "./gallery/SwiperCoverFlow";
 export { default as SwiperScrollbar } from "./gallery/SwiperScrollbar";
 export { default as ImageGallery } from "./gallery/ImageGallery";
+
+// modals
+export { default as VerticalCenteredModal } from "./modals/VerticalCenteredModal";

@@ -1,8 +1,11 @@
 "use client";
 
 import { FC } from "react";
-import { SectionSubheader, LongParagraph } from "@/components/core/ui";
-import { VerticalCenteredModal } from "@/components/core/modals";
+import {
+  SectionSubheader,
+  LongParagraph,
+  VerticalCenteredModal,
+} from "@/components/core/ui";
 import RequestForm from "@/components/core/forms/RequestForm";
 import useModal from "@/hooks/useModal";
 import { IconProps } from "@/types/uiProps";
