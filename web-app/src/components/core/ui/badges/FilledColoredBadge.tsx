@@ -1,6 +1,6 @@
 import { FC } from "react";
 import classNames from "classnames";
-import { BadgeProps } from "@/types/genericTypes";
+import { BadgeProps } from "@/types/uiProps";
 
 interface FilledColoredBadgeProps extends BadgeProps {
   containerClassName?: string;

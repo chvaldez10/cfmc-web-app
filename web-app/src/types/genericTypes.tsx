@@ -1,12 +1,5 @@
 import { ReactNode, ReactElement } from "react";
 
-export interface liturgyTableData {
-  date: Date;
-  title: string;
-  content: string;
-  link?: string;
-}
-
 export interface ImageProps {
   src: string;
   alt: string;
@@ -25,6 +18,7 @@ export interface HeroSectionProps extends HeroContentProps {
   containerClassName?: string | undefined;
 }
 
+// This might end up being a supabase type
 export interface ChurchLiturgy {
   header: string;
   indicationToStand: boolean;
@@ -32,6 +26,7 @@ export interface ChurchLiturgy {
   content: string;
 }
 
+// This might end up being a supabase type
 export interface FormProps {
   type: string;
   name: string;
@@ -51,12 +46,6 @@ export interface Verse {
     };
     notice: string;
   };
-}
-
-export interface BadgeProps {
-  color: string;
-  tagName: string;
-  containerClassName?: string;
 }
 
 export interface IconProps {

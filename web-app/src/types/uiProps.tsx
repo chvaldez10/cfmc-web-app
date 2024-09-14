@@ -13,3 +13,9 @@ export interface ClientButtonProps {
   children?: ReactNode;
   disabled?: boolean;
 }
+
+export interface BadgeProps {
+  color: string;
+  tagName: string;
+  containerClassName?: string;
+}
