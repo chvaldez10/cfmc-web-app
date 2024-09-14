@@ -7,7 +7,6 @@ export { default as HeroHome } from "./HeroServer/HeroSections/HeroHome";
 export { default as HeroHeader } from "./HeroServer/HeroSections/HeroHeader";
 export { default as HeroOverlappingImage } from "./HeroServer/HeroSections/HeroOverlappingImage";
 export { default as HeroImageSwiper } from "./HeroServer/HeroSections/HeroImageSwiper";
-export { default as ContactUs } from "./HeroServer/Contact/ContactUs";
 export { default as HeroWaveHeader } from "./HeroServer/HeroSections/HeroWaveHeader";
 
 // Hero client
