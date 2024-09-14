@@ -7,7 +7,7 @@ import {
   LearnMoreButton,
 } from "@/components/core/ui/";
 import { NextImage } from "@/components/core/gallery";
-import { CardWithImageProps } from "@/types/genericTypes";
+import { CardWithImageProps } from "@/types/uiProps";
 
 interface CardWithImageItemProps extends CardWithImageProps {}
 

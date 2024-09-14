@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import { ClientButtonProps } from "@/types/genericTypes";
+import { ClientButtonProps } from "@/types/uiProps";
 import { PurplePillButtonClient } from "@/components/core/ui";
 import { VerticalCenteredModal } from "@/components/core/modals";
 import useModal from "@/hooks/useModal";

@@ -1,4 +1,5 @@
-import { ImageProps, CardWithImageProps } from "@/types/genericTypes";
+import { ImageProps } from "@/types/genericTypes";
+import { CardWithImageProps } from "@/types/uiProps";
 
 export const heroCollageImages: ImageProps[] = [
   {

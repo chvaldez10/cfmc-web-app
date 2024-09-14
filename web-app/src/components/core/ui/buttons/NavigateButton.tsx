@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { useRouter } from "next/navigation";
 import { PurplePillButtonClient } from "@/components/core/ui";
-import { ClientButtonProps } from "@/types/genericTypes";
+import { ClientButtonProps } from "@/types/uiProps";
 
 interface NavigateButtonProps extends ClientButtonProps {
   url: string;

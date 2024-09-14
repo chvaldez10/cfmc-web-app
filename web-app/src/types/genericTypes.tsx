@@ -13,12 +13,6 @@ export interface ImageProps {
   containerClassName?: string | undefined;
 }
 
-export interface CardWithImageProps extends ImageProps {
-  title: string;
-  description: string;
-  url: string;
-}
-
 export interface HeroContentProps {
   header: string;
   longParagraph: string | undefined;
@@ -29,13 +23,6 @@ export interface HeroSectionProps extends HeroContentProps {
   subheader?: string;
   reverse?: boolean;
   containerClassName?: string | undefined;
-}
-
-export interface ClientButtonProps {
-  variant?: "filled" | "outline";
-  containerClassName?: string;
-  children?: ReactNode;
-  disabled?: boolean;
 }
 
 export interface ChurchLiturgy {
