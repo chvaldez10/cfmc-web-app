@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { NextImage } from "@/components/core/gallery/";
 import { Events } from "@/types/supabaseTypes";
 import {
   LongParagraph,
   SectionSubheader,
   SmallText,
   Flex,
+  NextImage,
 } from "@/components/core/ui";
 
 interface EventCardProps extends Events {}

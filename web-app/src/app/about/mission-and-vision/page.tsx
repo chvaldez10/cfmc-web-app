@@ -1,5 +1,5 @@
 import { HeroOverlappingImage, HeroSlideClient } from "@/components/core/hero";
-import { NextImage } from "@/components/core/gallery";
+import { NextImage } from "@/components/core/ui";
 import {
   missionStatementLong,
   visionStatementLong,

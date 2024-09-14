@@ -3,7 +3,7 @@ import {
   HeroSlideClient,
   BoxIcon,
 } from "@/components/core/hero";
-import { NextImage } from "@/components/core/gallery";
+import { NextImage } from "@/components/core/ui";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
 import { ministryImages1 } from "@/data/hero/featuredItems";
 

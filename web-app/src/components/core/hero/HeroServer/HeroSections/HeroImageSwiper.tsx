@@ -4,8 +4,8 @@ import {
   SectionHeader,
   SectionSubheader,
   LongParagraph,
+  SwiperCoverFlow,
 } from "@/components/core/ui/";
-import { SwiperCoverFlow } from "@/components/core/gallery";
 import { ImageProps } from "@/types/genericTypes";
 import { HeroSectionProps } from "@/types/genericTypes";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";

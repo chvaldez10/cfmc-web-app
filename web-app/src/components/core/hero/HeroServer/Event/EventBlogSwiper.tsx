@@ -1,6 +1,5 @@
 import { FlexWrapper } from "@/components/core/hero";
-import { SwiperScrollbar } from "@/components/core/gallery/";
-import { SectionHeader } from "@/components/core/ui";
+import { SectionHeader, SwiperScrollbar } from "@/components/core/ui";
 import { getEventsFromRange } from "@/utils/supabase/eventsActions";
 import { EmptySetFromSupabase } from "@/components/template";
 

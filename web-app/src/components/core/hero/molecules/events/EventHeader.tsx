@@ -1,7 +1,11 @@
 import { FC, ReactElement } from "react";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
-import { NextImage } from "@/components/core/gallery";
-import { LongParagraph, SectionHeader, Box } from "@/components/core/ui";
+import {
+  LongParagraph,
+  SectionHeader,
+  Box,
+  NextImage,
+} from "@/components/core/ui";
 import { FaCalendarCheck, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { MdPersonAdd } from "react-icons/md";

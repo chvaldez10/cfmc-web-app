@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NextImage } from "@/components/core/gallery";
+import { NextImage } from "@/components/core/ui";
 import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero/";
 import { heroCollageImages } from "@/data/hero/featuredItems";
 import {

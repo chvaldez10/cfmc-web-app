@@ -7,16 +7,13 @@ import {
   LiturgyHeader,
   ServiceItem,
 } from "@/components/core/hero";
-
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
-import { InquiryCard, CardWithImage } from "@/components/core/ui";
+import { InquiryCard, CardWithImage, NextImage } from "@/components/core/ui";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
 } from "@/data/hero/constants";
-
-import { NextImage } from "@/components/core/gallery";
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
 import { getEventById } from "@/utils/supabase/eventsActions";
 

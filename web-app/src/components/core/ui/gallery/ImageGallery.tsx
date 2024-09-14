@@ -6,7 +6,7 @@ import {
   Flex,
   Grid,
 } from "@/components/core/ui";
-import { NextImage } from "@/components/core/gallery";
+import { NextImage } from "@/components/core/ui";
 import { pastEvents1 } from "@/data/hero";
 
 const ImageGallery: FC = () => {

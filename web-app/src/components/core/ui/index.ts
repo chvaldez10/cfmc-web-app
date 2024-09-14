@@ -37,3 +37,9 @@ export { default as InquiryCard } from "./cards/InquiryCard";
 export { default as EventCard } from "./cards/atoms/EventCard";
 export { default as TeamCard } from "./cards/atoms/TeamCard";
 export { default as FullTeamCard } from "./cards/atoms/FullTeamCard";
+
+// gallery
+export { default as NextImage } from "./gallery/NextImage";
+export { default as SwiperCoverFlow } from "./gallery/SwiperCoverFlow";
+export { default as SwiperScrollbar } from "./gallery/SwiperScrollbar";
+export { default as ImageGallery } from "./gallery/ImageGallery";

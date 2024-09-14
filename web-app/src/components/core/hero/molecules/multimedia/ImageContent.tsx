@@ -3,9 +3,9 @@ import {
   Box,
   LongParagraph,
   LearnMoreButton,
+  NextImage,
 } from "@/components/core/ui";
 import ImageContentProfile from "./ImageContentProfile";
-import { NextImage } from "@/components/core/gallery";
 import { pastEvents1 } from "@/data/hero/featuredItems";
 import { getChurchMembersByID } from "@/utils/supabase/churchMembersActions";
 import { EmptySetFromSupabase } from "@/components/template/";

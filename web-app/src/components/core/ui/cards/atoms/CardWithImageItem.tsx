@@ -5,8 +5,8 @@ import {
   Box,
   Flex,
   LearnMoreButton,
+  NextImage,
 } from "@/components/core/ui/";
-import { NextImage } from "@/components/core/gallery";
 import { CardWithImageProps } from "@/types/uiProps";
 
 interface CardWithImageItemProps extends CardWithImageProps {}

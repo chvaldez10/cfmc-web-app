@@ -7,8 +7,8 @@ import {
   PurpleColoredBadge,
   LongParagraph,
   HorizontalLine,
+  NextImage,
 } from "@/components/core/ui";
-import { NextImage } from "@/components/core/gallery";
 import { ChurchMembers } from "@/types/supabaseTypes";
 
 interface FullTeamCardProps extends ChurchMembers {}
