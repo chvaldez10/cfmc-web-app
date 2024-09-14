@@ -20,7 +20,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
     <VerticalWrapper
       containerClassName={"min-h-screen"}
       itemClassName={"h-[80vh]"}
-      id="homepage-hero"
+      dataTestId="homepage-hero"
     >
       <HeroTextWrapper>
         <MainGradientHeader text={"Our Vision"} />

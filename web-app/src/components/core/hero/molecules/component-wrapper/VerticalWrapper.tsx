@@ -11,10 +11,13 @@ const VerticalWrapper: FC<VerticalWrapperProps> = ({
   children,
   containerClassName,
   itemClassName,
-  id,
+  dataTestId,
 }) => {
   return (
-    <FlexCenter containerClassName={`gap-4 ${containerClassName}`} id={id}>
+    <FlexCenter
+      containerClassName={`gap-4 ${containerClassName}`}
+      dataTestId={dataTestId}
+    >
       <ParticlesBackground />
       <FlexCenter
         containerClassName={`z-10 resize-hero-width gap-4 ${itemClassName}`}

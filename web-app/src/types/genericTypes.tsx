@@ -81,7 +81,7 @@ export interface DivProps {
   containerClassName?: string;
   onClick?: () => void;
   style?: React.CSSProperties;
-  id?: string;
+  dataTestId?: string;
 }
 
 export interface IconProps {

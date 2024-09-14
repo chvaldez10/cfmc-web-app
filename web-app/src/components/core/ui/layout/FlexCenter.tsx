@@ -8,10 +8,13 @@ interface FlexCenterProps extends DivProps {}
 const FlexCenter: FC<FlexCenterProps> = ({
   children,
   containerClassName,
-  id,
+  dataTestId,
 }) => {
   return (
-    <Box containerClassName={`div-outside-width ${containerClassName}`} id={id}>
+    <Box
+      containerClassName={`div-outside-width ${containerClassName}`}
+      dataTestId={dataTestId}
+    >
       {children}
     </Box>
   );
