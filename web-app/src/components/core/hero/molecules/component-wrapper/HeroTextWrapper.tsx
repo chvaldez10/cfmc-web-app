@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { FlexCenter } from "@/components/core/ui";
-import { DivProps } from "@/types/genericTypes";
+import { DivProps } from "@/types/layoutProps";
 
 interface HeroTextWrapperProps extends DivProps {}
 

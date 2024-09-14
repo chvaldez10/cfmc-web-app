@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { LongParagraph, SectionSubheader, Box } from "@/components/core/ui";
 import { HeroHalfWrapper } from "@/components/core/hero";
-import { DivProps } from "@/types/genericTypes";
+import { DivProps } from "@/types/layoutProps";
 
 interface EventDescriptionProps extends DivProps {}
 

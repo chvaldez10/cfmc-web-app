@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box } from "@/components/core/ui";
 import { ContainerWrapper } from "@/components/core/hero";
-import { DivProps } from "@/types/genericTypes";
+import { DivProps } from "@/types/layoutProps";
 
 interface VerticalContainerWrapperProps extends DivProps {}
 

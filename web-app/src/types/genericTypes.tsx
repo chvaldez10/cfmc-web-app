@@ -38,10 +38,6 @@ export interface ClientButtonProps {
   disabled?: boolean;
 }
 
-export interface ModalProps extends DivProps {
-  header: string;
-}
-
 export interface ChurchLiturgy {
   header: string;
   indicationToStand: boolean;
@@ -74,14 +70,6 @@ export interface BadgeProps {
   color: string;
   tagName: string;
   containerClassName?: string;
-}
-
-export interface DivProps {
-  children?: ReactNode;
-  containerClassName?: string;
-  onClick?: () => void;
-  style?: React.CSSProperties;
-  dataTestId?: string;
 }
 
 export interface IconProps {

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { DivProps } from "@/types/genericTypes";
+import { DivProps } from "@/types/layoutProps";
 
 interface SmallTextProps extends DivProps {}
 

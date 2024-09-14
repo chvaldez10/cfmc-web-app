@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { FlexCenter } from "@/components/core/ui";
-import { DivProps } from "@/types/genericTypes";
+import { DivProps } from "@/types/layoutProps";
 import { useRouter } from "next/navigation";
 
 interface NavigationTextProps extends DivProps {

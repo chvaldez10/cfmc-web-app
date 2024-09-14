@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box } from "@/components/core/ui";
-import { DivProps } from "@/types/genericTypes";
+import { DivProps } from "@/types/layoutProps";
 
 interface FlexProps extends DivProps {}
 
