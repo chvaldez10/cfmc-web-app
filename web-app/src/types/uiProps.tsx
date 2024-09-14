@@ -1,6 +1,11 @@
 import { ReactNode } from "react";
 import { ImageProps } from "./genericTypes";
 
+/* 
+  This file is for UI specific types.
+  These types are likely reused in multiple components.
+*/
+
 export interface CardWithImageProps extends ImageProps {
   title: string;
   description: string;

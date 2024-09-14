@@ -1,3 +1,8 @@
+/**
+ * This file is for Supabase specific types.
+ * These types are specific to the Supabase database.
+ */
+
 export type Events = {
   id?: number;
   name: string;

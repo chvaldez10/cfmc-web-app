@@ -1,5 +1,10 @@
 import { ReactNode } from "react";
 
+/**
+ * This file is for layout specific types.
+ * These types are specific to the layout of the page.
+ */
+
 export interface DivProps {
   children?: ReactNode;
   containerClassName?: string;
