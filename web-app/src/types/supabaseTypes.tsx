@@ -73,3 +73,12 @@ export type ReleaseNotes = {
   upNext: string;
   specialNotes?: string[];
 };
+
+export type WaffleSwitch = {
+  id?: number;
+  name: string;
+  isActive: boolean;
+  note?: string;
+  created?: Date;
+  modified?: Date;
+};
