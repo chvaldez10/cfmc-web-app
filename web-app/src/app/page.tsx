@@ -3,10 +3,10 @@ import {
   HeroSlideClient,
   HeroImageSwiper,
   VerseOfTheDay,
-  EventBlogSwiper,
   LiturgyHeader,
   ServiceItem,
 } from "@/components/core/hero";
+import { EventBlogSwiper } from "@/components/core/events";
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
 import { InquiryCard, CardWithImage, NextImage } from "@/components/core/ui";
 import {

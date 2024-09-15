@@ -1,7 +1,3 @@
-// Events
-// export { default as EventBlog } from "./HeroServer/EventBlog";
-export { default as EventBlogSwiper } from "./HeroServer/Event/EventBlogSwiper";
-
 // HeroSections
 export { default as HeroHome } from "./HeroServer/HeroSections/HeroHome";
 export { default as HeroHeader } from "./HeroServer/HeroSections/HeroHeader";
