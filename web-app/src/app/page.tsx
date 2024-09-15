@@ -16,7 +16,7 @@ import { getEventById } from "@/utils/supabase/actions/eventsActions";
 import {
   VerseOfTheDay,
   LiturgyHeader,
-  ServiceItem,
+  WorshipDetail,
 } from "@/components/core/worship";
 
 export default async function Home() {
@@ -30,7 +30,7 @@ export default async function Home() {
     <>
       <HeroHome nextServiceSlug={eventDetails?.slug} />
       <LiturgyHeader />
-      <ServiceItem />
+      <WorshipDetail />
       <HeroImageSwiper
         header={"Discipleship Month"}
         longParagraph={featuredMonthlyThemeVerbiage}

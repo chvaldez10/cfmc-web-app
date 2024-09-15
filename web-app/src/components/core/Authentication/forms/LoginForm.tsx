@@ -2,9 +2,14 @@
 
 import { FC } from "react";
 import { login, signUp } from "@/app/login/actions";
-import LoginInput from "../../forms/atoms/LoginInput";
+import { LoginInput } from "@/components/core/forms/";
 import useToastNotification from "@/hooks/useToastNotification";
-import { SectionHeader, LongParagraph, FormButton } from "@/components/core/ui";
+import {
+  SectionHeader,
+  LongParagraph,
+  FormButton,
+  Box,
+} from "@/components/core/ui";
 
 interface LoginFormProps {
   enableSignUp?: boolean;
@@ -14,8 +19,8 @@ const LoginForm: FC<LoginFormProps> = ({ enableSignUp = false }) => {
   useToastNotification();
 
   return (
-    <div className="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">
-      <div className="p-6 space-y-6 sm:p-8">
+    <Box containerClassName="bg-slate-50 w-full rounded-lg shadow sm:max-w-md xl:p-0">
+      <Box containerClassName="p-6 space-y-6 sm:p-8">
         <SectionHeader text="Welcome" />
         <LongParagraph containerClassName="text-gray-600">
           {`Please sign in if you're an admin user.`}
@@ -36,8 +41,8 @@ const LoginForm: FC<LoginFormProps> = ({ enableSignUp = false }) => {
             required
             maxLength={20}
           />
-          <div
-            className={`flex flex-row ${
+          <Box
+            containerClassName={`flex flex-row ${
               enableSignUp ? "justify-between" : "justify-end"
             }`}
           >
@@ -53,7 +58,7 @@ const LoginForm: FC<LoginFormProps> = ({ enableSignUp = false }) => {
             >
               Sign In
             </FormButton>
-          </div>
+          </Box>
 
           {enableSignUp && (
             <p className="text-sm font-light text-center">
@@ -67,8 +72,8 @@ const LoginForm: FC<LoginFormProps> = ({ enableSignUp = false }) => {
             </p>
           )}
         </form>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
