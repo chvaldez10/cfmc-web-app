@@ -6,7 +6,11 @@ import LoginInput from "../../forms/atoms/LoginInput";
 import useToastNotification from "@/hooks/useToastNotification";
 import { SectionHeader, LongParagraph, FormButton } from "@/components/core/ui";
 
-const LoginForm: FC = () => {
+interface LoginFormProps {
+  enableSignUp?: boolean;
+}
+
+const LoginForm: FC<LoginFormProps> = ({ enableSignUp = false }) => {
   useToastNotification();
 
   return (
@@ -46,16 +50,17 @@ const LoginForm: FC = () => {
             </FormButton>
           </div>
 
-          {/* Un comment when need to be used */}
-          <p className="text-sm font-light text-center">
-            Don’t have an account yet?{" "}
-            <FormButton
-              className="underline hover:text-purple-500"
-              formAction={signUp}
-            >
-              Sign Up
-            </FormButton>
-          </p>
+          {enableSignUp && (
+            <p className="text-sm font-light text-center">
+              Don’t have an account yet?{" "}
+              <FormButton
+                className="underline hover:text-purple-500"
+                formAction={signUp}
+              >
+                Sign Up
+              </FormButton>
+            </p>
+          )}
         </form>
       </div>
     </div>

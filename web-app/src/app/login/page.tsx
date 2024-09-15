@@ -1,8 +1,11 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LoginFormContainer } from "@/components/core/Authentication";
+import { getWaffleSwitch } from "@/utils/supabase/actions/waffleSwitchActions";
 
-export default function page() {
+export default async function LoginPage() {
+  const waffleSwitch = await getWaffleSwitch("enable_sign_up");
+
   return (
     <>
       <ToastContainer
