@@ -1,6 +1,6 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import LoginFormContainer from "@/components/core/forms/LoginFormContainer";
+import { LoginFormContainer } from "@/components/core/Authentication";
 
 export default function page() {
   return (

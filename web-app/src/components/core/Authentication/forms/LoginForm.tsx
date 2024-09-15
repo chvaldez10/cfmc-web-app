@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { login, signUp } from "@/app/login/actions";
-import LoginInput from "./atoms/LoginInput";
+import LoginInput from "../../forms/atoms/LoginInput";
 import useToastNotification from "@/hooks/useToastNotification";
 import { SectionHeader, LongParagraph, FormButton } from "@/components/core/ui";
 
