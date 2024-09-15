@@ -9,11 +9,14 @@ import { CountdownTimer } from "@/components/core/worship";
 import useInView from "@/hooks/useInView";
 import "@/styles/slide.css";
 
+interface WorshipDetailProps {
+  worshipStartDateTime: Date | undefined;
+}
+
 // This component takes the layout and ref use from HeroSlideClient
-const ServiceItem: FC = () => {
+const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
   const [textRef, textInView] = useInView();
   const [elementRef, elementInView] = useInView();
-
   const layoutClass = "div-col-row";
   const textAnimationClass = textInView ? "animate-slide-in-left" : "";
   const elementAnimationClass = elementInView ? "animate-slide-in-right" : "";
@@ -29,7 +32,7 @@ const ServiceItem: FC = () => {
         ref={textRef}
         className={`div-outside-width resize-width-to-half text-center gap-2 ${textAnimationClass}`}
       >
-        <CountdownTimer />
+        <CountdownTimer worshipStartDateTime={worshipStartDateTime} />
         <h2 className="font-bold text-xl md:text-2xl lg:text-4xl text-center">
           Join Us On Our Next Service
         </h2>
@@ -53,4 +56,4 @@ const ServiceItem: FC = () => {
   );
 };
 
-export default ServiceItem;
+export default WorshipDetail;

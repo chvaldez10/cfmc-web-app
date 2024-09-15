@@ -21,16 +21,19 @@ import {
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
-
   const eventDetails = await getEventById(
     sundaysAndSpecialDays?.eventId as number
   );
+  const worshipStartDateTime = eventDetails?.startDate;
 
   return (
     <>
       <HeroHome nextServiceSlug={eventDetails?.slug} />
+
       <LiturgyHeader />
-      <WorshipDetail />
+
+      <WorshipDetail worshipStartDateTime={worshipStartDateTime} />
+
       <HeroImageSwiper
         header={"Discipleship Month"}
         longParagraph={featuredMonthlyThemeVerbiage}

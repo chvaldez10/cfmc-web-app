@@ -7,22 +7,26 @@ import { Box } from "@/components/core/ui";
 import { getTimeLeft } from "@/utils/common/dateUtils";
 import "@/styles/countdown-timer.css";
 
-const TEST_DATE = new Date("2024-09-15T00:00:00");
+interface CountdownTimerProps {
+  worshipStartDateTime: Date | undefined;
+}
 
-const Countdown: FC = () => {
-  const [mounted, setMounted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(TEST_DATE));
+const Countdown: FC<CountdownTimerProps> = ({ worshipStartDateTime }) => {
+  const [mounted, setMounted] = useState<boolean>(false);
+  const [timeLeft, setTimeLeft] = useState(() =>
+    getTimeLeft(worshipStartDateTime as Date)
+  );
 
   useEffect(() => {
     setMounted(true);
     const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft(TEST_DATE));
+      setTimeLeft(getTimeLeft(worshipStartDateTime as Date));
     }, 1000);
 
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [worshipStartDateTime]);
 
   if (!mounted) {
     return null;

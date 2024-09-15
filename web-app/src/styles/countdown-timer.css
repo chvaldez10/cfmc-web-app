@@ -1,31 +1,24 @@
 .countdown .content {
-  gap: 8px;
+  gap: 16px;
   max-width: 400px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
-.countdown h2 {
-  margin-bottom: 10px;
-  font-size: 32px;
-}
-
 .countdown .box {
-  width: auto;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: auto;
-  max-width: none;
 }
 
 .countdown .value {
-  font-size: 16px;
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  font-size: 14px;
   font-weight: 600;
   background-color: #5b21b6;
   color: white;
@@ -35,33 +28,14 @@
   border-radius: 4px;
   position: relative;
   box-shadow: -1px 0px 2px 1px #232423ad;
+  min-height: 40px;
 }
 
-@media screen and (min-width: 550px) {
-  .countdown .content {
-    gap: 15px;
-  }
-  .countdown .value {
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
-  }
-  .countdown .box {
-    min-height: 90px;
-    max-width: 120px;
-  }
-}
-
-@media screen and (min-width: 790px) {
-  .countdown .value {
-    font-size: 28px;
-    height: 70px;
-    width: 70px;
-  }
-  .countdown .box {
-    max-width: 130px;
-    min-height: 110px;
-  }
+.countdown .label {
+  font-size: 10px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-top: 5px;
 }
 
 .countdown .value::after {
@@ -75,9 +49,47 @@
   box-shadow: inset -1px 1px 5px 1px #0e0e0ead;
 }
 
-.countdown .label {
-  font-size: 12px;
-  font-weight: 100;
-  letter-spacing: 1px;
-  margin-top: 5px;
+@media screen and (min-width: 640px) {
+  .countdown .value {
+    font-size: 18px;
+    width: 60px;
+    height: 60px;
+  }
+  .countdown .box {
+    min-height: 100px;
+    max-width: 100px;
+  }
+  .countdown .label {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .countdown .content {
+    gap: 20px;
+  }
+  .countdown .value {
+    font-size: 24px;
+    width: 70px;
+    height: 70px;
+  }
+  .countdown .box {
+    min-height: 110px;
+    max-width: 120px;
+  }
+  .countdown .label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .countdown .value {
+    font-size: 28px;
+    width: 80px;
+    height: 80px;
+  }
+  .countdown .box {
+    max-width: 130px;
+    min-height: 120px;
+  }
 }
