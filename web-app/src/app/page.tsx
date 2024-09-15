@@ -2,9 +2,6 @@ import {
   HeroHome,
   HeroSlideClient,
   HeroImageSwiper,
-  VerseOfTheDay,
-  LiturgyHeader,
-  ServiceItem,
 } from "@/components/core/hero";
 import { EventBlogSwiper } from "@/components/core/events";
 import { pastEvents1, communityBuilding1 } from "@/data/hero";
@@ -16,6 +13,11 @@ import {
 } from "@/data/hero/constants";
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
 import { getEventById } from "@/utils/supabase/eventsActions";
+import {
+  VerseOfTheDay,
+  LiturgyHeader,
+  ServiceItem,
+} from "@/components/core/worship";
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();

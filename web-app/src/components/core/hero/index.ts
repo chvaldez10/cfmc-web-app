@@ -19,10 +19,3 @@ export { default as VerticalContainerWrapper } from "./molecules/component-wrapp
 // atoms
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
 export { default as TeamSection } from "./molecules/atoms/TeamSection";
-
-// service items
-export { default as VerseOfTheDay } from "./molecules/service-items/VerseOfTheDay";
-export { default as LiturgyHeader } from "./molecules/service-items/LiturgyHeader";
-export { default as TithesAndOffering } from "./molecules/service-items/TithesAndOffering";
-export { default as CountdownTimer } from "./molecules/service-items/CountdownTimer";
-export { default as ServiceItem } from "./molecules/service-items/ServiceItem";

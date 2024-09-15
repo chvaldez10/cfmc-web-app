@@ -1,12 +1,12 @@
 "use client";
 
 import { FC } from "react";
-import useInView from "@/hooks/useInView";
 import { SectionSubheader } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
 import { IframeMap } from "@/components/core/events";
 import { churchGoogleMapSrc } from "@/data/hero/constants";
-import { CountdownTimer } from "@/components/core/hero";
+import { CountdownTimer } from "@/components/core/worship";
+import useInView from "@/hooks/useInView";
 import "@/styles/slide.css";
 
 const ServiceItem: FC = () => {
