@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { FlexCenter, Box } from "@/components/core/ui";
+import { FlexCenter } from "@/components/core/ui";
 
 interface PDFViewerProps {
   src: string;
 }
 
+// Note that this is a shared component
 const PDFViewer: FC<PDFViewerProps> = ({ src }) => {
   return (
     <FlexCenter containerClassName="w-full mx-auto h-[80vh]">

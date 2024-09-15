@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { PDFViewer } from "@/components/core/hero";
+import { PDFViewer } from "@/components/core/announcements";
 import {
   Box,
   SectionHeader,

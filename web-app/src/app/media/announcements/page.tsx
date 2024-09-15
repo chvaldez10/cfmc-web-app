@@ -1,8 +1,8 @@
 import {
-  HeroHeader,
   AnnouncementList,
   BirthdaySection,
-} from "@/components/core/hero";
+} from "@/components/core/announcements";
+import { HeroHeader } from "@/components/core/hero";
 import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
 
 export default async function page() {

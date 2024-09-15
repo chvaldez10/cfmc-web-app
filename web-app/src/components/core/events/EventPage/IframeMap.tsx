@@ -5,6 +5,7 @@ interface IframeMapProps {
   containerClassName?: string;
 }
 
+// Note that this is a shared component
 const IframeMap: FC<IframeMapProps> = ({ src, containerClassName }) => {
   return (
     <iframe
