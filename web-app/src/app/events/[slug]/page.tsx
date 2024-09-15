@@ -6,7 +6,7 @@ import {
   EventNotFound,
 } from "@/components/core/events";
 import { Box } from "@/components/core/ui";
-import { getEventBySlug } from "@/utils/supabase/eventsActions";
+import { getEventBySlug } from "@/utils/supabase/actions/eventsActions";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;

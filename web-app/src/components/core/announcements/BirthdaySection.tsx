@@ -2,7 +2,7 @@ import { FlexCenter, Flex, SectionHeader } from "@/components/core/ui";
 import { ContainerWrapper } from "@/components/core/hero";
 import { BalloonItem } from "@/components/core/molecules";
 import { EmptySetFromSupabase } from "@/components/template";
-import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/churchMembersActions";
+import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/actions/churchMembersActions";
 
 async function BirthdaySection() {
   const currentMonth = new Date().getMonth() + 1;

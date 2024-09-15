@@ -1,6 +1,6 @@
 import { HeroHeader } from "@/components/core/hero";
 import { BoardAndLeadership } from "@/components/core/ministry";
-import { getChurchMembersBoardMembers } from "@/utils/supabase/churchMembersActions";
+import { getChurchMembersBoardMembers } from "@/utils/supabase/actions/churchMembersActions";
 
 const headerLongParagraph =
   "Our Board and Leadership. They are the backbone of our church. They lead us in our journey to serve Jesus Christ.";

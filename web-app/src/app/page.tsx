@@ -11,8 +11,8 @@ import {
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
 } from "@/data/hero/constants";
-import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
-import { getEventById } from "@/utils/supabase/eventsActions";
+import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
+import { getEventById } from "@/utils/supabase/actions/eventsActions";
 import {
   VerseOfTheDay,
   LiturgyHeader,

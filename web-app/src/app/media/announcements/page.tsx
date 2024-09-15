@@ -3,7 +3,7 @@ import {
   BirthdaySection,
 } from "@/components/core/announcements";
 import { HeroHeader } from "@/components/core/hero";
-import { getSundaysAndSpecialDays } from "@/utils/supabase/sundayAndSpecialDaysActions";
+import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
 
 export default async function page() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();

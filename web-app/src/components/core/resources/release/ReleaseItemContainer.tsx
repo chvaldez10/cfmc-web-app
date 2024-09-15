@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import ReleaseItem from "@/components/core/resources/release/ReleaseItem";
-import { getReleaseNotesByYear } from "@/utils/supabase/releaseNotesActions";
+import { getReleaseNotesByYear } from "@/utils/supabase/actions/releaseNotesActions";
 import { ReleaseNotes } from "@/types/supabaseTypes";
 interface ReleaseItemContainerProps {
   year: number;

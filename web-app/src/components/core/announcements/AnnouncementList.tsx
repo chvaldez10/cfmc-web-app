@@ -1,5 +1,5 @@
 import { FlexCenter, Box } from "@/components/core/ui";
-import { getAnnouncements } from "@/utils/supabase/announcementsActions";
+import { getAnnouncements } from "@/utils/supabase/actions/announcementsActions";
 import AnnouncementListItem from "./AnnouncementListItem";
 
 async function AnnouncementList() {

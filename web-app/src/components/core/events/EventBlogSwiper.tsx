@@ -1,6 +1,6 @@
 import { FlexWrapper } from "@/components/core/hero";
 import { SectionHeader, SwiperScrollbar } from "@/components/core/ui";
-import { getEventsFromRange } from "@/utils/supabase/eventsActions";
+import { getEventsFromRange } from "@/utils/supabase/actions/eventsActions";
 import { EmptySetFromSupabase } from "@/components/template";
 
 async function EventBlogSwiper() {
