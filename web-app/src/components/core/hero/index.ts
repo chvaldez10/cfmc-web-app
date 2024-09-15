@@ -20,11 +20,6 @@ export { default as VerticalContainerWrapper } from "./molecules/component-wrapp
 export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
 export { default as TeamSection } from "./molecules/atoms/TeamSection";
 
-// multimedia
-export { default as VerticalTimeline } from "./molecules/multimedia/VerticalTimeline";
-export { default as BoxIcon } from "./molecules/multimedia/BoxIcon";
-export { default as ImageContent } from "./molecules/multimedia/ImageContent";
-
 // service items
 export { default as VerseOfTheDay } from "./molecules/service-items/VerseOfTheDay";
 export { default as LiturgyHeader } from "./molecules/service-items/LiturgyHeader";

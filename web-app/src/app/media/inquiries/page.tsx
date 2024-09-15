@@ -1,9 +1,5 @@
-import {
-  VerticalTimeline,
-  HeroWaveHeader,
-  BoxIcon,
-  HeroSlideClient,
-} from "@/components/core/hero";
+import { HeroWaveHeader, HeroSlideClient } from "@/components/core/hero";
+import { VerticalTimeline, BoxIcon } from "@/components/core/multimedia";
 import { Box } from "@/components/core/ui";
 import { multimediaInquiries } from "@/data/hero/mediaInquiries";
 import RequestForm from "@/components/core/forms/RequestForm";

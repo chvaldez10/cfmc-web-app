@@ -1,8 +1,7 @@
-import { SectionHeader } from "@/components/core/ui";
-import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/churchMembersActions";
-import { FlexCenter, Flex } from "@/components/core/ui";
+import { FlexCenter, Flex, SectionHeader } from "@/components/core/ui";
 import { ContainerWrapper, BalloonItem } from "@/components/core/hero";
 import { EmptySetFromSupabase } from "@/components/template";
+import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/churchMembersActions";
 
 async function BirthdaySection() {
   const currentMonth = new Date().getMonth() + 1;

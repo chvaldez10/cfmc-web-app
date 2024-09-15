@@ -1,8 +1,5 @@
-import {
-  HeroWaveHeader,
-  HeroSlideClient,
-  BoxIcon,
-} from "@/components/core/hero";
+import { HeroWaveHeader, HeroSlideClient } from "@/components/core/hero";
+import { BoxIcon } from "@/components/core/multimedia";
 import { NextImage } from "@/components/core/ui";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
 import { ministryImages1 } from "@/data/hero/featuredItems";
