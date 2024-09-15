@@ -36,15 +36,20 @@ const LoginForm: FC<LoginFormProps> = ({ enableSignUp = false }) => {
             required
             maxLength={20}
           />
-          <div className="flex flex-col items-end ">
-            {/* Un comment when need to be used */}
-            {/* <FormButton className="underline hover:text-purple-500">
+          <div
+            className={`flex flex-row ${
+              enableSignUp ? "justify-between" : "justify-end"
+            }`}
+          >
+            {enableSignUp && (
+              <FormButton className="underline hover:text-purple-500">
                 Forgot password?
-              </FormButton> */}
+              </FormButton>
+            )}
 
             <FormButton
               formAction={login}
-              className="text-purple-500 hover:underline"
+              className="text-purple-500 hover:underline "
             >
               Sign In
             </FormButton>
