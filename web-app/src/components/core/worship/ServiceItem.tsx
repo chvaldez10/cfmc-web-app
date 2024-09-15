@@ -9,6 +9,7 @@ import { CountdownTimer } from "@/components/core/worship";
 import useInView from "@/hooks/useInView";
 import "@/styles/slide.css";
 
+// This component takes the layout and ref use from HeroSlideClient
 const ServiceItem: FC = () => {
   const [textRef, textInView] = useInView();
   const [elementRef, elementInView] = useInView();
