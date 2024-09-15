@@ -15,7 +15,3 @@ export { default as HeroHalfWrapper } from "./molecules/component-wrapper/HeroHa
 export { default as HeroTextWrapper } from "./molecules/component-wrapper/HeroTextWrapper";
 export { default as ContainerWrapper } from "./molecules/component-wrapper/ContainerWrapper";
 export { default as VerticalContainerWrapper } from "./molecules/component-wrapper/VerticalContainerWrapper";
-
-// atoms
-export { default as BalloonItem } from "./molecules/atoms/BalloonItem";
-export { default as TeamSection } from "./molecules/atoms/TeamSection";

@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { SectionSubheader } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
-import { IframeMap } from "@/components/core/events";
+import { IframeMap } from "@/components/core/molecules";
 import { churchGoogleMapSrc } from "@/data/hero/constants";
 import { CountdownTimer } from "@/components/core/worship";
 import useInView from "@/hooks/useInView";
