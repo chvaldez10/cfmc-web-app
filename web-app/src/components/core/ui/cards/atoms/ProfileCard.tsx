@@ -11,12 +11,12 @@ import {
 } from "@/components/core/ui";
 import { IoPerson } from "react-icons/io5";
 import useModal from "@/hooks/useModal";
-import FullTeamCard from "./FullTeamCard";
+import FullTeamCard from "./FullProfileCard";
 import { ChurchMembers } from "@/types/supabaseTypes";
 
-interface TeamCardProps extends ChurchMembers {}
+interface ProfileCardProps extends ChurchMembers {}
 
-const TeamCard: FC<TeamCardProps> = ({ ...churchMemberData }) => {
+const ProfileCard: FC<ProfileCardProps> = ({ ...churchMemberData }) => {
   const { showModal, modalRef, handleOpenModal, handleCloseModal } = useModal();
 
   return (
@@ -55,4 +55,4 @@ const TeamCard: FC<TeamCardProps> = ({ ...churchMemberData }) => {
   );
 };
 
-export default TeamCard;
+export default ProfileCard;

@@ -11,9 +11,9 @@ import {
 } from "@/components/core/ui";
 import { ChurchMembers } from "@/types/supabaseTypes";
 
-interface FullTeamCardProps extends ChurchMembers {}
+interface FullProfileCardProps extends ChurchMembers {}
 
-const FullTeamCard: FC<FullTeamCardProps> = ({ ...churchMemberData }) => {
+const FullProfileCard: FC<FullProfileCardProps> = ({ ...churchMemberData }) => {
   return (
     <Box containerClassName="relative bg-white-0">
       <NextImage
@@ -56,4 +56,4 @@ const FullTeamCard: FC<FullTeamCardProps> = ({ ...churchMemberData }) => {
   );
 };
 
-export default FullTeamCard;
+export default FullProfileCard;

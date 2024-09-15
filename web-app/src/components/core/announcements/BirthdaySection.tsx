@@ -1,5 +1,6 @@
 import { FlexCenter, Flex, SectionHeader } from "@/components/core/ui";
-import { ContainerWrapper, BalloonItem } from "@/components/core/hero";
+import { ContainerWrapper } from "@/components/core/hero";
+import { BalloonItem } from "@/components/core/molecules";
 import { EmptySetFromSupabase } from "@/components/template";
 import { getChurchMembersBirthdayByBirthMonth } from "@/utils/supabase/churchMembersActions";
 

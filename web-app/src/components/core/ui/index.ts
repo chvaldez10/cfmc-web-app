@@ -35,8 +35,8 @@ export { default as HorizontalLine } from "./shapes/HorizontalLine";
 export { default as CardWithImage } from "./cards/CardWithImage";
 export { default as InquiryCard } from "./cards/InquiryCard";
 export { default as EventCard } from "./cards/atoms/EventCard";
-export { default as TeamCard } from "./cards/atoms/TeamCard";
-export { default as FullTeamCard } from "./cards/atoms/FullTeamCard";
+export { default as ProfileCard } from "./cards/atoms/ProfileCard";
+export { default as FullProfileCard } from "./cards/atoms/FullProfileCard";
 
 // gallery
 export { default as NextImage } from "./gallery/NextImage";

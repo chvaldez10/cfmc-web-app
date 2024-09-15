@@ -1,5 +1,5 @@
 import { HeroHeader } from "@/components/core/hero";
-import { TeamSection } from "@/components/core/hero";
+import { BoardAndLeadership } from "@/components/core/ministry";
 import { getChurchMembersBoardMembers } from "@/utils/supabase/churchMembersActions";
 
 const headerLongParagraph =
@@ -14,7 +14,7 @@ export default async function page() {
         header="Board & Leadership"
         longParagraph={headerLongParagraph}
       />
-      <TeamSection
+      <BoardAndLeadership
         boardMembers={boardMembers}
         header="Meet Our Board Members"
         longParagraph="Explore our talented board members."

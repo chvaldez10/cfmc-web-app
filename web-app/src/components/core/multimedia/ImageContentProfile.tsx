@@ -7,7 +7,7 @@ import {
   FlexCenter,
   SectionSubheader,
   LongParagraph,
-  FullTeamCard,
+  FullProfileCard,
   VerticalCenteredModal,
 } from "@/components/core/ui";
 import useModal from "@/hooks/useModal";
@@ -47,7 +47,7 @@ const ImageContentProfile: FC<ImageContentProfileProps> = ({
           onClick={handleCloseModal}
           containerClassName={"resize-modal-medium"}
         >
-          <FullTeamCard {...churchMemberData} />
+          <FullProfileCard {...churchMemberData} />
         </VerticalCenteredModal>
       )}
     </>
