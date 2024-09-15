@@ -4,7 +4,7 @@ This is the web project for the Calgary Filipino Methodist Church (CFMC) Landing
 
 ## Deploy on Vercel 🌐
 
-A beta version of the landing page is deployed on Vercel at [CFMC Landing Page](https://cfmc-landing-page.vercel.app/). You can access the release notes [here](https://cfmc-web-app.vercel.app/resources/release-notes).
+A beta version of the landing page is deployed on Vercel at [CFMC Landing Page](https://cfmc-web-app.vercel.app/). You can access the release notes [here](https://cfmc-web-app.vercel.app/resources/release-notes).
 
 ## Getting Started 🚀
 
