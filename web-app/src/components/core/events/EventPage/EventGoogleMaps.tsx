@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Box } from "@/components/core/ui";
-import { IframeMap, HeroHalfWrapper } from "@/components/core/hero";
+import { HeroHalfWrapper } from "@/components/core/hero";
+import { IframeMap } from "@/components/core/events";
 
 interface EventDescriptionProps {
   eventLocation: string | undefined;

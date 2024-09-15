@@ -4,7 +4,7 @@ import {
   EventGoogleMaps,
   EventTags,
   EventNotFound,
-} from "@/components/core/hero";
+} from "@/components/core/events";
 import { Box } from "@/components/core/ui";
 import { getEventBySlug } from "@/utils/supabase/eventsActions";
 

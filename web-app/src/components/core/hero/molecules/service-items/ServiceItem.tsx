@@ -2,8 +2,9 @@
 
 import { FC } from "react";
 import useInView from "@/hooks/useInView";
-import { SectionHeader, SectionSubheader } from "@/components/core/ui";
-import { FlexWrapper, IframeMap } from "@/components/core/hero";
+import { SectionSubheader } from "@/components/core/ui";
+import { FlexWrapper } from "@/components/core/hero";
+import { IframeMap } from "@/components/core/events";
 import { churchGoogleMapSrc } from "@/data/hero/constants";
 import { CountdownTimer } from "@/components/core/hero";
 import "@/styles/slide.css";

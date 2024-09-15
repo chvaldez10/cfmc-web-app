@@ -4,11 +4,6 @@ import { getEventsFromRange } from "@/utils/supabase/eventsActions";
 import { EmptySetFromSupabase } from "@/components/template";
 
 async function EventBlogSwiper() {
-  const currentDate = new Date();
-  const currentMonth = currentDate.getMonth() + 1;
-  const monthNumber = +currentMonth;
-  const currentYear = currentDate.getFullYear();
-
   const eventsInMonth = await getEventsFromRange();
 
   return (
