@@ -7,7 +7,7 @@ import {
   SwiperCoverFlow,
 } from "@/components/core/ui/";
 import { ImageProps } from "@/types/genericTypes";
-import { HeroSectionProps } from "@/types/genericTypes";
+import { HeroSectionProps } from "@/types/layoutProps";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 
 interface HeroImageSwiperProps extends HeroSectionProps {

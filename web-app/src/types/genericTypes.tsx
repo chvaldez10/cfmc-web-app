@@ -11,18 +11,6 @@ export interface ImageProps {
   containerClassName?: string | undefined;
 }
 
-export interface HeroContentProps {
-  header: string;
-  longParagraph: string | undefined;
-}
-
-export interface HeroSectionProps extends HeroContentProps {
-  children?: ReactNode;
-  subheader?: string;
-  reverse?: boolean;
-  containerClassName?: string | undefined;
-}
-
 // This might end up being a supabase type
 export interface ChurchLiturgy {
   header: string;

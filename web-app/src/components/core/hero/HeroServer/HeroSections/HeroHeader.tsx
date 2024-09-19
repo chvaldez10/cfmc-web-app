@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero";
 import { MainGradientHeader, SectionSubheader } from "@/components/core/ui";
-import { HeroContentProps } from "@/types/genericTypes";
+import { HeroContentProps } from "@/types/layoutProps";
 
 interface HeroHeaderProps extends HeroContentProps {}
 

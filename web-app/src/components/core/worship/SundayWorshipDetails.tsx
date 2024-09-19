@@ -1,12 +1,20 @@
 "use client";
 
 import { FC } from "react";
+
+// Components
 import { SectionSubheader, OpenModalButton } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
 import { IframeMap, PDFViewer } from "@/components/core/molecules";
-import { churchGoogleMapSrc } from "@/data/hero/constants";
 import { CountdownTimer } from "@/components/core/worship";
+
+// Constants
+import { churchGoogleMapSrc } from "@/data/hero/constants";
+
+// Hooks
 import useInView from "@/hooks/useInView";
+
+// Styles
 import "@/styles/slide.css";
 
 interface WorshipDetailProps {
@@ -14,7 +22,6 @@ interface WorshipDetailProps {
   liturgySrc: string | undefined;
 }
 
-// This component takes the layout and ref use from HeroSlideClient
 const WorshipDetail: FC<WorshipDetailProps> = ({
   worshipStartDateTime,
   liturgySrc,

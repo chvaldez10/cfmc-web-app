@@ -2,7 +2,7 @@ import { FC } from "react";
 import { SectionHeader, LongParagraph } from "@/components/core/ui";
 import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
 import { SVGWage } from "@/components/core/molecules";
-import { HeroSectionProps } from "@/types/genericTypes";
+import { HeroSectionProps } from "@/types/layoutProps";
 
 interface HeroWaveHeaderProps extends HeroSectionProps {}
 

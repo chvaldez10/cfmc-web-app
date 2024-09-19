@@ -8,7 +8,7 @@ import {
   Box,
   Flex,
 } from "@/components/core/ui";
-import { HeroContentProps } from "@/types/genericTypes";
+import { HeroContentProps } from "@/types/layoutProps";
 
 interface HeroOverlappingImageProps extends HeroContentProps {
   subheader: string;

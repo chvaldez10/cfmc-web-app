@@ -4,7 +4,7 @@ import { FC } from "react";
 import useInView from "@/hooks/useInView";
 import { SectionHeader, SectionSubheader } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
-import { HeroSectionProps } from "@/types/genericTypes";
+import { HeroSectionProps } from "@/types/layoutProps";
 import "@/styles/slide.css";
 
 interface HeroSlideClientProps extends HeroSectionProps {

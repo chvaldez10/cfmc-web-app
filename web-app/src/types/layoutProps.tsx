@@ -16,3 +16,15 @@ export interface DivProps {
 export interface ModalProps extends DivProps {
   header: string;
 }
+
+export interface HeroContentProps {
+  header: string;
+  longParagraph: string | undefined;
+}
+
+export interface HeroSectionProps extends HeroContentProps {
+  children?: ReactNode;
+  subheader?: string;
+  reverse?: boolean;
+  containerClassName?: string | undefined;
+}

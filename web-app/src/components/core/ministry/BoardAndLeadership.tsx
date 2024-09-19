@@ -6,7 +6,7 @@ import {
   ProfileCard,
 } from "@/components/core/ui";
 import { ChurchMembers } from "@/types/supabaseTypes";
-import { HeroContentProps } from "@/types/genericTypes";
+import { HeroContentProps } from "@/types/layoutProps";
 
 export interface BoardAndLeadershipProps extends HeroContentProps {
   boardMembers: ChurchMembers[] | null;
