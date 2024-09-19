@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { SectionSubheader } from "@/components/core/ui";
+import { SectionSubheader, OpenModalButton } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
 import { IframeMap } from "@/components/core/molecules";
 import { churchGoogleMapSrc } from "@/data/hero/constants";
@@ -27,7 +27,6 @@ const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
       layoutClass={layoutClass}
       isFloating={true}
     >
-      {/* Text Column */}
       <div
         ref={textRef}
         className={`div-outside-width resize-width-to-half text-center gap-2 ${textAnimationClass}`}
@@ -42,7 +41,6 @@ const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
         />
       </div>
 
-      {/* Element Column */}
       <div
         ref={elementRef}
         className={`div-outside-width resize-width-to-half ${elementAnimationClass}`}
