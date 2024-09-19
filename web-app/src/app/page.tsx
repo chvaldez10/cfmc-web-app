@@ -32,7 +32,10 @@ export default async function Home() {
 
       <LiturgyHeader />
 
-      <SundayWorshipDetails worshipStartDateTime={worshipStartDateTime} />
+      <SundayWorshipDetails
+        worshipStartDateTime={worshipStartDateTime}
+        liturgySrc={sundaysAndSpecialDays?.liturgy}
+      />
 
       <HeroImageSwiper
         header={"Discipleship Month"}

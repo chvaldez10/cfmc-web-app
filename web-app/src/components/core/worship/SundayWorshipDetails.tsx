@@ -11,10 +11,14 @@ import "@/styles/slide.css";
 
 interface WorshipDetailProps {
   worshipStartDateTime: Date | undefined;
+  liturgySrc: string | undefined;
 }
 
 // This component takes the layout and ref use from HeroSlideClient
-const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
+const WorshipDetail: FC<WorshipDetailProps> = ({
+  worshipStartDateTime,
+  liturgySrc,
+}) => {
   const [textRef, textInView] = useInView();
   const [elementRef, elementInView] = useInView();
   const layoutClass = "div-col-row";
@@ -31,7 +35,10 @@ const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
         ref={textRef}
         className={`div-outside-width resize-width-to-half text-center gap-2 ${textAnimationClass}`}
       >
+        {/* Countdown Timer */}
         <CountdownTimer worshipStartDateTime={worshipStartDateTime} />
+
+        {/* Worship Verbiage */}
         <h2 className="font-bold text-xl md:text-2xl lg:text-4xl text-center">
           Join Us On Our Next Service
         </h2>
@@ -40,18 +47,13 @@ const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
           containerClassName="text-center long-paragraph-text-color"
         />
 
+        {/* Liturgy Button */}
         <OpenModalButton
           variant="outline"
           title="Liturgy"
           containerClassName={`z-10 scale-up mx-auto`}
           itemClassName="resize-modal-large"
-          modalElement={
-            <PDFViewer
-              src={
-                "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/docs/liturgies/September%2022.pdf?t=2024-09-19T04%3A15%3A07.133Z"
-              }
-            />
-          }
+          modalElement={<PDFViewer src={liturgySrc as string} />}
         >
           View Liturgy
         </OpenModalButton>
