@@ -1,23 +1,24 @@
+// Components
 import {
   HeroHome,
   HeroSlideClient,
   HeroImageSwiper,
 } from "@/components/core/hero";
 import { EventBlogSwiper } from "@/components/core/events";
-import { pastEvents1, communityBuilding1 } from "@/data/hero";
 import { InquiryCard, CardWithImage, NextImage } from "@/components/core/ui";
+import { VerseOfTheDay, SundayWorshipDetails } from "@/components/core/worship";
+
+// Server Actions
+import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
+import { getEventById } from "@/utils/supabase/actions/eventsActions";
+
+// Constants
+import { pastEvents1, communityBuilding1 } from "@/data/hero";
 import {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
 } from "@/data/hero/constants";
-import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
-import { getEventById } from "@/utils/supabase/actions/eventsActions";
-import {
-  VerseOfTheDay,
-  LiturgyHeader,
-  SundayWorshipDetails,
-} from "@/components/core/worship";
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
@@ -29,8 +30,6 @@ export default async function Home() {
   return (
     <>
       <HeroHome nextServiceSlug={eventDetails?.slug} />
-
-      <LiturgyHeader />
 
       <SundayWorshipDetails
         worshipStartDateTime={worshipStartDateTime}
