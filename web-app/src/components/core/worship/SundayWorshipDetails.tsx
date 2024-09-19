@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { SectionSubheader, OpenModalButton } from "@/components/core/ui";
 import { FlexWrapper } from "@/components/core/hero";
-import { IframeMap } from "@/components/core/molecules";
+import { IframeMap, PDFViewer } from "@/components/core/molecules";
 import { churchGoogleMapSrc } from "@/data/hero/constants";
 import { CountdownTimer } from "@/components/core/worship";
 import useInView from "@/hooks/useInView";
@@ -39,6 +39,22 @@ const WorshipDetail: FC<WorshipDetailProps> = ({ worshipStartDateTime }) => {
           text={"2:00 PM @ 419 Northmount Drive NW"}
           containerClassName="text-center long-paragraph-text-color"
         />
+
+        <OpenModalButton
+          variant="outline"
+          title="Liturgy"
+          containerClassName={`z-10 scale-up mx-auto`}
+          itemClassName="resize-modal-large"
+          modalElement={
+            <PDFViewer
+              src={
+                "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/docs/liturgies/September%2022.pdf?t=2024-09-19T04%3A15%3A07.133Z"
+              }
+            />
+          }
+        >
+          View Liturgy
+        </OpenModalButton>
       </div>
 
       <div

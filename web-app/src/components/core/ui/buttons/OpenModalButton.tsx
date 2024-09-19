@@ -1,6 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { ClientButtonProps } from "@/types/uiProps";
 import {
   PurplePillButtonClient,
@@ -34,16 +35,18 @@ const OpenModalButton: FC<OpenModalButtonProps> = ({
       >
         {children}
       </PurplePillButtonClient>
-      {showModal && (
-        <VerticalCenteredModal
-          ref={modalRef}
-          header={title}
-          onClick={handleCloseModal}
-          containerClassName={itemClassName}
-        >
-          {modalElement}
-        </VerticalCenteredModal>
-      )}
+      {showModal &&
+        createPortal(
+          <VerticalCenteredModal
+            ref={modalRef}
+            header={title}
+            onClick={handleCloseModal}
+            containerClassName={itemClassName}
+          >
+            {modalElement}
+          </VerticalCenteredModal>,
+          document.body
+        )}
     </>
   );
 };
