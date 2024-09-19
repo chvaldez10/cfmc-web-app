@@ -17,7 +17,6 @@ export const useCountdown = (targetDate: Date) => {
       setIsTimeUp(isUp);
     };
 
-    // Move this outside the effect to avoid unnecessary re-creation
     const timer = setInterval(updateCountdown, 1000);
 
     // Initial update

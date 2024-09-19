@@ -3,8 +3,8 @@
 // original code from https://github.com/timeToCode-ali/react_playground/tree/main/src/components/countdown
 
 import { useState, useEffect, FC } from "react";
-import { Box } from "@/components/core/ui";
-import { getTimeLeft } from "@/utils/common/dateUtils";
+import { Box, SmallText } from "@/components/core/ui";
+import { useCountdown } from "@/hooks/useCountdown";
 import "@/styles/countdown-timer.css";
 
 interface CountdownTimerProps {
@@ -13,23 +13,22 @@ interface CountdownTimerProps {
 
 const Countdown: FC<CountdownTimerProps> = ({ worshipStartDateTime }) => {
   const [mounted, setMounted] = useState<boolean>(false);
-  const [timeLeft, setTimeLeft] = useState(() =>
-    getTimeLeft(worshipStartDateTime as Date)
-  );
+  const { timeLeft, isTimeUp } = useCountdown(worshipStartDateTime as Date);
 
   useEffect(() => {
     setMounted(true);
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft(worshipStartDateTime as Date));
-    }, 1000);
+  }, []);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [worshipStartDateTime]);
-
-  if (!mounted) {
+  if (!mounted || !worshipStartDateTime) {
     return null;
+  }
+
+  if (isTimeUp) {
+    return (
+      <SmallText containerClassName="text-purple-500">
+        Worship has started
+      </SmallText>
+    );
   }
 
   return (
