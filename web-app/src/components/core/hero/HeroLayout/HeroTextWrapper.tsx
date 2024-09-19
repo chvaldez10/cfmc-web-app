@@ -7,10 +7,12 @@ interface HeroTextWrapperProps extends DivProps {}
 const HeroTextWrapper: FC<HeroTextWrapperProps> = ({
   children,
   containerClassName,
+  dataTestId,
 }) => {
   return (
     <FlexCenter
       containerClassName={`z-10 xl:max-w-4xl gap-4 ${containerClassName}`}
+      dataTestId={dataTestId}
     >
       {children}
     </FlexCenter>

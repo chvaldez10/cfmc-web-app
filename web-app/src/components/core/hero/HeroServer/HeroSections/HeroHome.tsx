@@ -22,7 +22,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
       itemClassName={"h-[80vh]"}
       dataTestId="homepage-hero"
     >
-      <HeroTextWrapper>
+      <HeroTextWrapper dataTestId="homepage-hero-text-wrapper">
         <MainGradientHeader text={"Our Vision"} />
         <NavigationText
           containerClassName={"hover-animation shadow-up"}
@@ -32,7 +32,10 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         </NavigationText>
       </HeroTextWrapper>
 
-      <Flex containerClassName="div-flex-row gap-x-4 lg:gap-x-8 xl:gap-x-12">
+      <Flex
+        containerClassName="div-flex-row gap-x-4 lg:gap-x-8 xl:gap-x-12"
+        dataTestId="homepage-navigate-buttons"
+      >
         <NavigateButton
           containerClassName="z-10 scale-up"
           url={`/events/${nextServiceSlug}`}
@@ -48,7 +51,10 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         </NavigateButton>
       </Flex>
 
-      <Grid containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12">
+      <Grid
+        containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12"
+        dataTestId="homepage-hero-grid"
+      >
         {heroCollageImages.map((featuredImage, index) => (
           <div
             key={index}
