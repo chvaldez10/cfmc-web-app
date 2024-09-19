@@ -21,6 +21,7 @@ function formatSundaysAndSpecialDaysData(data: any): SundaysAndSpecialDays {
     preacherNotes: data.preacher_notes,
     sundayEventAlternateName: data.sunday_event_alternate_name,
     eventId: data.event_id,
+    liturgy: data.liturgy,
   };
 }
 
