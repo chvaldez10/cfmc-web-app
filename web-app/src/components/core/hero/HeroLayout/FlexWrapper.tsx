@@ -7,6 +7,7 @@ interface FlexWrapperProps {
   containerClassName: string | undefined;
   layoutClass: string;
   isFloating?: boolean;
+  dataTestId?: string;
 }
 
 // Wraps children in a flex center and boxes it with width 10/12 for large screens and full width for small screens
@@ -15,12 +16,14 @@ const FlexWrapper: FC<FlexWrapperProps> = ({
   containerClassName,
   layoutClass,
   isFloating = false,
+  dataTestId,
 }) => {
   return (
     <FlexCenter
       containerClassName={`p-4 lg:p-0 ${
         isFloating ? "hero-floating" : ""
       } ${containerClassName}`}
+      dataTestId={dataTestId}
     >
       <Box containerClassName={`resize-hero-width gap-4 ${layoutClass}`}>
         {children}

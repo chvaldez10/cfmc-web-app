@@ -37,10 +37,12 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
       containerClassName="bg-green-10 min-h-[90vh]"
       layoutClass={layoutClass}
       isFloating={true}
+      dataTestId="worship-details"
     >
       <div
         ref={textRef}
         className={`div-outside-width resize-width-to-half text-center gap-2 ${textAnimationClass}`}
+        data-testid="worship-details-text"
       >
         {/* Countdown Timer */}
         <CountdownTimer worshipStartDateTime={worshipStartDateTime} />
@@ -69,6 +71,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
       <div
         ref={elementRef}
         className={`div-outside-width resize-width-to-half ${elementAnimationClass}`}
+        data-testid="worship-details-map"
       >
         <IframeMap
           src={churchGoogleMapSrc}
