@@ -1,5 +1,5 @@
 import { FC, ReactElement } from "react";
-import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
+import { VStack, HeroHalfWrapper } from "@/components/core/hero";
 import {
   LongParagraph,
   SectionHeader,
@@ -48,7 +48,7 @@ const EventHeader: FC<EventHeaderProps> = ({
   });
 
   return (
-    <FlexWrapper
+    <VStack
       containerClassName="min-h-auto lg:py-4"
       layoutClass="div-col-row-reverse"
     >
@@ -72,7 +72,7 @@ const EventHeader: FC<EventHeaderProps> = ({
           {renderEventDetail(<BiCategory />, eventCategory)}
         </Box>
       </HeroHalfWrapper>
-    </FlexWrapper>
+    </VStack>
   );
 };
 

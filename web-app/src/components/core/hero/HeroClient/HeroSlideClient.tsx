@@ -3,7 +3,7 @@
 import { FC } from "react";
 import useInView from "@/hooks/useInView";
 import { SectionHeader, SectionSubheader } from "@/components/core/ui";
-import { FlexWrapper } from "@/components/core/hero";
+import { VStack } from "@/components/core/hero";
 import { HeroSectionProps } from "@/types/layoutProps";
 import "@/styles/slide.css";
 
@@ -35,7 +35,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
     : "";
 
   return (
-    <FlexWrapper
+    <VStack
       containerClassName={containerClassName}
       layoutClass={layoutClass}
       isFloating={isFloating}
@@ -59,7 +59,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       >
         {children}
       </div>
-    </FlexWrapper>
+    </VStack>
   );
 };
 

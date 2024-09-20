@@ -1,4 +1,4 @@
-import { FlexWrapper } from "@/components/core/hero";
+import { VStack } from "@/components/core/hero";
 import { SectionHeader, SwiperScrollbar } from "@/components/core/ui";
 import { getEventsFromRange } from "@/utils/supabase/actions/eventsActions";
 import { EmptySetFromSupabase } from "@/components/template";
@@ -7,7 +7,7 @@ async function EventBlogSwiper() {
   const eventsInMonth = await getEventsFromRange();
 
   return (
-    <FlexWrapper
+    <VStack
       containerClassName={"min-h-[50vh] bg-green-20"}
       layoutClass={"flex-col space-y-4 lg:space-y-8"}
     >
@@ -20,7 +20,7 @@ async function EventBlogSwiper() {
       ) : (
         <SwiperScrollbar events={eventsInMonth} />
       )}
-    </FlexWrapper>
+    </VStack>
   );
 }
 

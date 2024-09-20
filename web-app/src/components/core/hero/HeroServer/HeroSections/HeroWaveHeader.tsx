@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { SectionHeader, LongParagraph } from "@/components/core/ui";
-import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
+import { VStack, HeroHalfWrapper } from "@/components/core/hero";
 import { SVGWage } from "@/components/core/molecules";
 import { HeroSectionProps } from "@/types/layoutProps";
 
@@ -14,7 +14,7 @@ const HeroHalfHeader: FC<HeroWaveHeaderProps> = ({
 }) => {
   return (
     <>
-      <FlexWrapper
+      <VStack
         layoutClass="div-col-row"
         containerClassName={`min-h-screen ${containerClassName}`}
       >
@@ -29,7 +29,7 @@ const HeroHalfHeader: FC<HeroWaveHeaderProps> = ({
         <HeroHalfWrapper containerClassName="div-outside-width">
           {children}
         </HeroHalfWrapper>
-      </FlexWrapper>
+      </VStack>
       <SVGWage />
     </>
   );

@@ -8,7 +8,7 @@ import {
 } from "@/components/core/ui/";
 import { ImageProps } from "@/types/genericTypes";
 import { HeroSectionProps } from "@/types/layoutProps";
-import { FlexWrapper, HeroHalfWrapper } from "@/components/core/hero";
+import { VStack, HeroHalfWrapper } from "@/components/core/hero";
 
 interface HeroImageSwiperProps extends HeroSectionProps {
   swiperImages: ImageProps[];
@@ -25,10 +25,7 @@ const HeroImageSwiper: FC<HeroImageSwiperProps> = ({
   const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
 
   return (
-    <FlexWrapper
-      containerClassName={containerClassName}
-      layoutClass={layoutClass}
-    >
+    <VStack containerClassName={containerClassName} layoutClass={layoutClass}>
       {/* Text Column */}
       <HeroHalfWrapper containerClassName="div-outside-width text-center gap-4">
         <LongParagraph containerClassName="text-purple-500 ">
@@ -45,7 +42,7 @@ const HeroImageSwiper: FC<HeroImageSwiperProps> = ({
       <HeroHalfWrapper>
         <SwiperCoverFlow swiperImages={swiperImages} slidesPerView={1} />
       </HeroHalfWrapper>
-    </FlexWrapper>
+    </VStack>
   );
 };
 

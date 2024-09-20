@@ -4,7 +4,7 @@ import { FC } from "react";
 
 // Components
 import { SectionSubheader, OpenModalButton } from "@/components/core/ui";
-import { FlexWrapper } from "@/components/core/hero";
+import { VStack } from "@/components/core/hero";
 import { IframeMap, PDFViewer } from "@/components/core/molecules";
 import { CountdownTimer } from "@/components/core/worship";
 
@@ -33,7 +33,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
   const elementAnimationClass = elementInView ? "animate-slide-in-right" : "";
 
   return (
-    <FlexWrapper
+    <VStack
       containerClassName="bg-green-10 min-h-[90vh]"
       layoutClass={layoutClass}
       isFloating={true}
@@ -78,7 +78,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
           containerClassName="h-96 lg:h-576"
         />
       </div>
-    </FlexWrapper>
+    </VStack>
   );
 };
 

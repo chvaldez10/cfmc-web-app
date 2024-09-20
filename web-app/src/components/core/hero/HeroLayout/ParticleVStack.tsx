@@ -7,6 +7,7 @@ interface ParticleVStackProps extends DivProps {
   itemClassName?: string | undefined;
 }
 
+// Layout component that wraps children using the div-outside-width class and adds a particles background
 const ParticleVStack: FC<ParticleVStackProps> = ({
   children,
   containerClassName,

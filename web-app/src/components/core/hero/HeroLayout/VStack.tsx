@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import { FlexCenter, Box } from "@/components/core/ui";
 import "@/styles/hero-floating.css";
 
-interface FlexWrapperProps {
+interface VStackProps {
   children: ReactNode;
   containerClassName: string | undefined;
   layoutClass: string;
@@ -10,8 +10,8 @@ interface FlexWrapperProps {
   dataTestId?: string;
 }
 
-// Wraps children in a flex center and boxes it with width 10/12 for large screens and full width for small screens
-const FlexWrapper: FC<FlexWrapperProps> = ({
+// Layout component that wraps children using the div-outside-width class (totally not a copy of VStack from Chakra UI)
+const VStack: FC<VStackProps> = ({
   children,
   containerClassName,
   layoutClass,
@@ -32,4 +32,4 @@ const FlexWrapper: FC<FlexWrapperProps> = ({
   );
 };
 
-export default FlexWrapper;
+export default VStack;
