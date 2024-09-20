@@ -14,7 +14,6 @@ export {
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
-  liturgyVerbiage,
   tithesAndOfferingVerse,
   defaultVerseOfTheDay,
 } from "./worshipItems";
