@@ -10,7 +10,7 @@ const announcementsVerbiage = `Browse through our announcements to see what's ha
 
 export default async function page() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
-  const announcementSrc = sundaysAndSpecialDays?.announcement;
+  const announcementSrc = sundaysAndSpecialDays?.announcements;
 
   return (
     <>

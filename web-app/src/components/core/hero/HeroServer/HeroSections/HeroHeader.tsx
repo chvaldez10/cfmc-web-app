@@ -12,7 +12,7 @@ const HeroHeader: FC<HeroHeaderProps> = ({ header, longParagraph }) => {
       itemClassName={"h-[80vh]"}
       dataTestId="hero-header"
     >
-      <HeroTextWrapper dataTestId="hero-header-text">
+      <HeroTextWrapper dataTestId="hero-header-text-wrapper">
         <MainGradientHeader text={header} containerClassName="text-center" />
         <SectionSubheader
           text={longParagraph}
