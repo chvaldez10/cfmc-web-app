@@ -1,9 +1,6 @@
 import { HeroOverlappingImage, HeroSlideClient } from "@/components/core/hero";
 import { NextImage } from "@/components/core/ui";
-import {
-  missionStatementLong,
-  visionStatementLong,
-} from "@/data/hero/constants";
+import { missionStatementLong, visionStatementLong } from "@/data/hero/";
 import { pastEvents1 } from "@/data/hero/featuredItems";
 
 export default function page() {

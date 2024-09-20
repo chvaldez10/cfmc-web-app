@@ -6,7 +6,7 @@ import {
   LongParagraph,
   OpenModalButton,
 } from "@/components/core/ui";
-import { liturgyVerbiage } from "@/data/hero/constants";
+import { liturgyVerbiage } from "@/data/hero/";
 import { VerticalContainerWrapper } from "@/components/core/hero";
 
 const LiturgyHeader: FC = () => {

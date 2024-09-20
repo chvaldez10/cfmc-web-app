@@ -9,7 +9,7 @@ import {
 import { NavDropdown, NavbarLinkItem } from "@/components/Navbar/";
 import { OpenModalButton } from "@/components/core/ui";
 import { TithesAndOffering } from "@/components/core/worship";
-import { tithesAndOfferingVerse } from "@/data/hero/constants";
+import { tithesAndOfferingVerse } from "@/data/hero/";
 
 interface NavbarLinksProps {
   NavClassNames?: string | undefined;

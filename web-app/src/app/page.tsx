@@ -13,12 +13,13 @@ import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpec
 import { getEventById } from "@/utils/supabase/actions/eventsActions";
 
 // Constants
-import { pastEvents1, communityBuilding1 } from "@/data/hero";
 import {
+  pastEvents1,
+  communityBuilding1,
   featuredMonthlyThemeVerbiage,
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
-} from "@/data/hero/constants";
+} from "@/data/hero";
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
