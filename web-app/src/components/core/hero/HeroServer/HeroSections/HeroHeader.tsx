@@ -7,8 +7,12 @@ interface HeroHeaderProps extends HeroContentProps {}
 
 const HeroHeader: FC<HeroHeaderProps> = ({ header, longParagraph }) => {
   return (
-    <ParticleVStack itemClassName={"h-[80vh] min-h-screen"}>
-      <HeroTextWrapper>
+    <ParticleVStack
+      containerClassName={"min-h-screen"}
+      itemClassName={"h-[80vh]"}
+      dataTestId="hero-header"
+    >
+      <HeroTextWrapper dataTestId="hero-header-text">
         <MainGradientHeader text={header} containerClassName="text-center" />
         <SectionSubheader
           text={longParagraph}

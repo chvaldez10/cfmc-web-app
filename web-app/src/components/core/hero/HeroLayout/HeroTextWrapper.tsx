@@ -11,7 +11,7 @@ const HeroTextWrapper: FC<HeroTextWrapperProps> = ({
 }) => {
   return (
     <FlexCenter
-      containerClassName={`z-10 xl:max-w-4xl gap-4 ${containerClassName}`}
+      containerClassName={`z-10 p-4 xl:max-w-4xl gap-4 ${containerClassName}`}
       dataTestId={dataTestId}
     >
       {children}
