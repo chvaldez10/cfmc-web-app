@@ -3,3 +3,6 @@ export { default as BalloonItem } from "./atoms/BalloonItem";
 export { default as IframeMap } from "./atoms/IframeMap";
 export { default as SVGWage } from "./atoms/SVGWage";
 export { default as PDFViewer } from "./atoms/PDFViewer";
+
+/** Shared */
+export { default as PDFHeader } from "./shared/PDFHeader";

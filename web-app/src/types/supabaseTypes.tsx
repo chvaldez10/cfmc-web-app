@@ -35,6 +35,7 @@ export type SundaysAndSpecialDays = {
   sundayEventAlternateName?: string;
   eventId?: number;
   liturgy?: string;
+  announcement?: string;
 };
 
 export type Announcements = {

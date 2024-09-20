@@ -8,11 +8,14 @@ import {
 } from "@/components/core/ui";
 import { liturgyVerbiage } from "@/data/hero/";
 import { VerticalContainerWrapper } from "@/components/core/hero";
+import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
 
-const LiturgyHeader: FC = () => {
+async function PDFHeader() {
+  const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
+
   return (
     <VerticalContainerWrapper>
-      <SectionHeader text="Liturgy" />
+      <SectionHeader text="Ann" />
       <LongParagraph containerClassName="long-paragraph-text-color">
         {liturgyVerbiage}
       </LongParagraph>
@@ -33,6 +36,6 @@ const LiturgyHeader: FC = () => {
       </OpenModalButton>
     </VerticalContainerWrapper>
   );
-};
+}
 
-export default LiturgyHeader;
+export default PDFHeader;
