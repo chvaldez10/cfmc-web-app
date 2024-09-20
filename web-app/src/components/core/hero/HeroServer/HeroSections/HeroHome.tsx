@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { NextImage } from "@/components/core/ui";
-import { VerticalWrapper, HeroTextWrapper } from "@/components/core/hero/";
+import { ParticleVStack, HeroTextWrapper } from "@/components/core/hero/";
 import { heroCollageImages } from "@/data/hero/featuredItems";
 import {
   MainGradientHeader,
@@ -17,7 +17,7 @@ interface HeroCollageProps {
 
 const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
   return (
-    <VerticalWrapper
+    <ParticleVStack
       containerClassName={"min-h-screen"}
       itemClassName={"h-[80vh]"}
       dataTestId="homepage-hero"
@@ -74,7 +74,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
           </div>
         ))}
       </Grid>
-    </VerticalWrapper>
+    </ParticleVStack>
   );
 };
 

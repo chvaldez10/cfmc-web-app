@@ -3,11 +3,11 @@ import { FlexCenter } from "@/components/core/ui";
 import { DivProps } from "@/types/layoutProps";
 import ParticlesBackground from "@/components/core/background/ParticlesBackground";
 
-interface VerticalWrapperProps extends DivProps {
+interface ParticleVStackProps extends DivProps {
   itemClassName?: string | undefined;
 }
 
-const VerticalWrapper: FC<VerticalWrapperProps> = ({
+const ParticleVStack: FC<ParticleVStackProps> = ({
   children,
   containerClassName,
   itemClassName,
@@ -28,4 +28,4 @@ const VerticalWrapper: FC<VerticalWrapperProps> = ({
   );
 };
 
-export default VerticalWrapper;
+export default ParticleVStack;

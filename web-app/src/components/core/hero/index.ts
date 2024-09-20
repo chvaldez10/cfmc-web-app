@@ -9,7 +9,7 @@ export { default as HeroWaveHeader } from "./HeroServer/HeroSections/HeroWaveHea
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
 
 // Hero layouts
-export { default as VerticalWrapper } from "./HeroLayout/VerticalWrapper";
+export { default as ParticleVStack } from "./HeroLayout/ParticleVStack";
 export { default as FlexWrapper } from "./HeroLayout/FlexWrapper";
 export { default as HeroHalfWrapper } from "./HeroLayout/HeroHalfWrapper";
 export { default as HeroTextWrapper } from "./HeroLayout/HeroTextWrapper";
