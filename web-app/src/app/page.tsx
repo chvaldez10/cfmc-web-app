@@ -37,6 +37,7 @@ export default async function Home() {
         liturgySrc={sundaysAndSpecialDays?.liturgy}
       />
 
+      {/* Theme of the Month */}
       <HeroImageSwiper
         header={"Discipleship Month"}
         longParagraph={featuredMonthlyThemeVerbiage}
@@ -46,6 +47,7 @@ export default async function Home() {
         reverse={true}
       />
 
+      {/* Community Building */}
       <HeroImageSwiper
         header={"Small Groups"}
         subheader={"Community Building"}
@@ -54,6 +56,7 @@ export default async function Home() {
         containerClassName={"bg-violet-10 min-h-[80vh]"}
       />
 
+      {/* Next Big Event */}
       <HeroSlideClient
         header={"Next Big Event"}
         longParagraph={nextBigEventDescription}
