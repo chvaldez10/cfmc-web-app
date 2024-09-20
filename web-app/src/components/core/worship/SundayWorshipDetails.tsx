@@ -9,7 +9,7 @@ import { IframeMap, PDFViewer } from "@/components/core/molecules";
 import { CountdownTimer } from "@/components/core/worship";
 
 // Constants
-import { churchGoogleMapSrc } from "@/data/hero/constants";
+import { churchGoogleMapSrc } from "@/data/hero/";
 
 // Hooks
 import useInView from "@/hooks/useInView";

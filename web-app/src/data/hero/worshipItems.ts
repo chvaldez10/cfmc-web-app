@@ -1,3 +1,5 @@
+import { Verse } from "@/types/componentProps";
+
 /** Mission and Vision */
 export const visionStatementLong = `A God-glorifying, Christ-shepherding
 and Holy Spirit-filled Church in fulfilling God’s Mission in the City`;
@@ -20,3 +22,17 @@ export const liturgyVerbiage = `A church liturgy is the structured way a worship
 /** Tithes and Offerings */
 export const tithesAndOfferingVerse =
   "Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this,” says the Lord Almighty, “and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it. (Malachi 3:10)";
+
+/** Verse of the Day */
+export const defaultVerseOfTheDay: Verse = {
+  verse: {
+    details: {
+      text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+      reference: "John 3:16",
+      version: "NIV",
+      verseURL:
+        "https://www.biblegateway.com/passage/?search=John%203%3A16&version=NIV",
+    },
+    notice: "Bible Gateway",
+  },
+};

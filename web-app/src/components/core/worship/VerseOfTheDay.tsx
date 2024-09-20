@@ -1,6 +1,6 @@
 import { BsFillChatLeftQuoteFill } from "react-icons/bs";
 import { Verse } from "@/types/componentProps";
-import { defaultVerse } from "@/data/hero/constants";
+import { defaultVerseOfTheDay } from "@/data/hero/";
 import { SectionSubheader, LongParagraph, Box } from "@/components/core/ui";
 import { VerticalContainerWrapper } from "@/components/core/hero";
 async function VerseOfTheDay() {
@@ -23,7 +23,7 @@ async function VerseOfTheDay() {
     verseData = await res.json();
   } catch (error) {
     console.error("Error fetching verse of the day", error);
-    verseData = defaultVerse;
+    verseData = defaultVerseOfTheDay;
   }
 
   return (

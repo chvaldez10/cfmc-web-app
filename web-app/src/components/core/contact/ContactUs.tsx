@@ -1,5 +1,5 @@
 import React from "react";
-import { churchGoogleMapSrc } from "@/data/hero/constants";
+import { churchGoogleMapSrc } from "@/data/hero/";
 import { IframeMap } from "@/components/core/molecules";
 import ContactForm from "@/components/core/forms/ContactForm";
 import { Box } from "@/components/core/ui";

@@ -9,7 +9,6 @@ import {
   SmallText,
   HorizontalLine,
 } from "@/components/core/ui";
-import { contactUsVerbiage } from "@/data/hero/constants";
 import InputLabel from "@/components/core/forms/atoms/InputLabel";
 import TextArea from "@/components/core/forms/atoms/TextArea";
 import TextInput from "@/components/core/forms/atoms/TextInput";
@@ -21,7 +20,9 @@ const ContactForm: FC = () => {
         {/* Contact Form Header */}
         <SectionSubheader text="Contact Us" />
         <LongParagraph containerClassName="long-paragraph-text-color">
-          {contactUsVerbiage}
+          {
+            "If you have any questions or need assistance, please feel free to contact us."
+          }
         </LongParagraph>
 
         {/* Contact Form */}

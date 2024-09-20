@@ -16,7 +16,11 @@ export {
   nextBigEventDescription,
   liturgyVerbiage,
   tithesAndOfferingVerse,
+  defaultVerseOfTheDay,
 } from "./worshipItems";
 
 /** Media Inquiries */
 export { cardInquiries, mediaInquiries } from "./mediaInquiries";
+
+/** Shared */
+export { churchGoogleMapSrc } from "./shared";
