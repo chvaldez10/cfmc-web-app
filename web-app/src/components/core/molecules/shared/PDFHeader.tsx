@@ -6,31 +6,27 @@ import {
   LongParagraph,
   OpenModalButton,
 } from "@/components/core/ui";
-import { liturgyVerbiage } from "@/data/hero/";
 import { VerticalContainerWrapper } from "@/components/core/hero";
 import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
+import { HeroContentProps } from "@/types/layoutProps";
 
-async function PDFHeader() {
-  const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
+export interface PDFHeaderProps extends HeroContentProps {
+  src?: string;
+}
 
+async function PDFHeader({ header, longParagraph, src }: PDFHeaderProps) {
   return (
     <VerticalContainerWrapper>
-      <SectionHeader text="Ann" />
+      <SectionHeader text={header} />
       <LongParagraph containerClassName="long-paragraph-text-color">
-        {liturgyVerbiage}
+        {longParagraph}
       </LongParagraph>
       <OpenModalButton
         variant="outline"
         title="Liturgy"
         containerClassName={`z-10 scale-up mx-auto`}
         itemClassName="resize-modal-large"
-        modalElement={
-          <PDFViewer
-            src={
-              "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/docs/liturgies/September%2022.pdf?t=2024-09-19T04%3A15%3A07.133Z"
-            }
-          />
-        }
+        modalElement={<PDFViewer src={src as string} />}
       >
         View Liturgy
       </OpenModalButton>
