@@ -1,6 +1,6 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { LoginFormContainer } from "@/components/core/Authentication";
+import { Login } from "@/components/Authentication";
 
 export default async function LoginPage() {
   return (
@@ -12,7 +12,7 @@ export default async function LoginPage() {
         pauseOnHover={false}
         draggable={false}
       />
-      <LoginFormContainer />
+      <Login />
     </>
   );
 }

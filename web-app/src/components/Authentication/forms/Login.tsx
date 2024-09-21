@@ -10,7 +10,7 @@ const LoginFormContainer: FC = async () => {
   const enableSignUp = await getWaffleSwitch("enable_sign_up");
 
   return (
-    <FlexCenter containerClassName="px-6 py-8 mx-auto h-screen lg:py-0">
+    <FlexCenter containerClassName="px-6 py-8 mx-auto min-h-screen lg:py-0">
       {!user ? (
         <LoginForm enableSignUp={enableSignUp?.isActive ?? false} />
       ) : (
