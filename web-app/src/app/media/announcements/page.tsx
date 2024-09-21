@@ -22,6 +22,7 @@ export default async function page() {
         header={"Announcements"}
         longParagraph={announcementsVerbiage}
         src={announcementSrc}
+        buttonText={"Announcements"}
       />
       <AnnouncementList />
       <BirthdaySection />

@@ -12,9 +12,15 @@ import { HeroContentProps } from "@/types/layoutProps";
 
 export interface PDFHeaderProps extends HeroContentProps {
   src?: string;
+  buttonText: string;
 }
 
-async function PDFHeader({ header, longParagraph, src }: PDFHeaderProps) {
+async function PDFHeader({
+  header,
+  longParagraph,
+  src,
+  buttonText,
+}: PDFHeaderProps) {
   return (
     <VerticalContainerWrapper>
       <SectionHeader text={header} />
@@ -28,7 +34,7 @@ async function PDFHeader({ header, longParagraph, src }: PDFHeaderProps) {
         itemClassName="resize-modal-large"
         modalElement={<PDFViewer src={src as string} />}
       >
-        View Liturgy
+        {buttonText}
       </OpenModalButton>
     </VerticalContainerWrapper>
   );
