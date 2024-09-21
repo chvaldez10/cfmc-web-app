@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { login, signUp } from "@/app/login/actions";
+import { login, signUp } from "@/app/(main)/login/actions";
 import { LoginInput } from "@/components/core/forms/";
 import useToastNotification from "@/hooks/useToastNotification";
 import {

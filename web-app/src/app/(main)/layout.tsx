@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import Providers from "./Providers";
+import Providers from "../Providers";
 import NavbarClient from "@/components/Navbar/NavbarClient";
-import "./globals.css";
+import "../globals.css";
+
 import BackButton from "@/components/core/ui/buttons/BackButton";
 import Footer from "@/components/Footer/Footer";
 
