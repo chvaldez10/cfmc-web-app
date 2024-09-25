@@ -20,6 +20,7 @@ import {
   featureCommunityBuildingVerbiage,
   nextBigEventDescription,
 } from "@/data/hero";
+import { IMAGE_SIZE_LARGE_HERO } from "@/data/constants/shared";
 
 export default async function Home() {
   const sundaysAndSpecialDays = await getSundaysAndSpecialDays();
@@ -66,7 +67,7 @@ export default async function Home() {
       >
         <NextImage
           width={"w-full"}
-          height={"h-96 md:h-[50vh] 2xl:h-[55vh]"}
+          height={IMAGE_SIZE_LARGE_HERO}
           src={pastEvents1[1].src}
           alt={"Next Big Event Image"}
           imageClassName={"rounded-lg object-center"}

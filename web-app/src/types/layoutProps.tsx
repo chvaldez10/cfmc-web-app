@@ -20,6 +20,7 @@ export interface ModalProps extends DivProps {
 export interface HeroContentProps {
   header: string;
   longParagraph: string | undefined;
+  dataTestId?: string;
 }
 
 export interface HeroSectionProps extends HeroContentProps {
