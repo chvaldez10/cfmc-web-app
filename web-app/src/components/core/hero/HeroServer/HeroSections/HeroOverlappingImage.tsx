@@ -24,7 +24,7 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
 }) => {
   return (
     <FlexCenter
-      containerClassName="relative mx-auto lg:flex-row-reverse lg:max-w-5xl h-[50vh] lg:min-h-screen"
+      containerClassName="relative mx-auto lg:flex-row-reverse lg:max-w-5xl min-h-screen"
       dataTestId={dataTestId}
     >
       {/* Image Column */}

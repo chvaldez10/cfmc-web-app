@@ -1,8 +1,6 @@
-import { HeroOverlappingImage, HeroSlideClient } from "@/components/core/hero";
-import { NextImage } from "@/components/core/ui";
+import { HeroOverlappingImage } from "@/components/core/hero";
 import { missionStatementLong, visionStatementLong } from "@/data/hero/";
-import { pastEvents1 } from "@/data/hero/featuredItems";
-import { IMAGE_SIZE_LARGE_HERO } from "@/data/constants/shared";
+import { VerticalHeader } from "@/components/core/molecules";
 
 export default function page() {
   return (
@@ -14,20 +12,10 @@ export default function page() {
         longParagraph={missionStatementLong}
         dataTestId={"mission-statement"}
       />
-
-      <HeroSlideClient
+      <VerticalHeader
         header={"Our Vision"}
         longParagraph={visionStatementLong}
-        reverse={true}
-      >
-        <NextImage
-          width={"w-full"}
-          height={IMAGE_SIZE_LARGE_HERO}
-          src={pastEvents1[1].src}
-          alt={"Next Big Event Image"}
-          imageClassName={"rounded-lg object-center"}
-        />
-      </HeroSlideClient>
+      />
     </>
   );
 }
