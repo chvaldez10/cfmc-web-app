@@ -23,7 +23,7 @@ export default function page() {
       <HeroSlideClient
         header={"Request Form"}
         longParagraph={
-          "Please fill out the request form for all multimedia inquiries. For our safety, all attachments must be emailed to the following address: firstname.lastname@gmail.com"
+          "Fill out the request form for all multimedia inquiries. Attachments must be emailed to: firstname.lastname@gmail.com"
         }
         containerClassName="min-h-screen"
         isFloating={true}

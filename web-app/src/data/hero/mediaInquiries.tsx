@@ -35,7 +35,7 @@ export const mediaInquiries: IconProps[] = [
   {
     label: "Music",
     description:
-      "The multimedia team is involved in all music-related ministries in the church, whether it involves controlling the soundboard, recording audio, playing music, or troubleshooting audio-related issues.",
+      "Involved in music-related ministries in the church, including soundboard control, audio recording, music performance, and audio troubleshooting.",
     svgIcon: <IoMusicalNotesOutline className="w-12 h-12" />,
     url: "",
   },
@@ -43,14 +43,14 @@ export const mediaInquiries: IconProps[] = [
     label: "Presentation",
     svgIcon: <FaYoutube className="w-12 h-12" />,
     description:
-      "The multimedia team is involved in all video and presentation-related ministries in the church. We piece videos and images together, create stunning presentations, and troubleshoot video-related issues.",
+      "Involved in video and presentation-related ministries in the church, creating presentations and troubleshooting video issues.",
     url: "",
   },
   {
     label: "Web Design",
     svgIcon: <TbWorldWww className="w-12 h-12" />,
     description:
-      "Additionally, the multimedia team is known for handling unique projects. We developed and designed this website from scratch. We're still working on it, so expect more updates in the future.",
+      "Known for handling unique web design projects, including developing and designing the website.",
     url: "",
   },
 ];
