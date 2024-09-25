@@ -3,6 +3,7 @@ import { NextImage } from "@/components/core/ui";
 import { missionStatementLong, visionStatementLong } from "@/data/hero/";
 import { pastEvents1 } from "@/data/hero/featuredItems";
 import { IMAGE_SIZE_LARGE_HERO } from "@/data/constants/shared";
+
 export default function page() {
   return (
     <>

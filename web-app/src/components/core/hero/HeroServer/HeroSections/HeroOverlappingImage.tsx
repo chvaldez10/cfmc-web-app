@@ -24,7 +24,7 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
 }) => {
   return (
     <FlexCenter
-      containerClassName="relative mx-auto lg:flex-row-reverse lg:max-w-5xl h-screen"
+      containerClassName="relative mx-auto lg:flex-row-reverse lg:max-w-5xl h-[50vh] lg:min-h-screen"
       dataTestId={dataTestId}
     >
       {/* Image Column */}
@@ -41,7 +41,7 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
 
       {/* Text Column */}
       <Box containerClassName="relative md:absolute md:max-w-2xl lg:left-0 z-10 bg-white-10 lg:bg-white-0 lg:shadow-lg lg:rounded-lg">
-        <Flex containerClassName="flex flex-col p-4 md:p-6 lg:p-12 space-y-2">
+        <Flex containerClassName="flex flex-col p-4 lg:p-12 space-y-2">
           <SectionHeader text={header} containerClassName="xl:text-5xl" />
           <SectionSubheader
             text={subheader}

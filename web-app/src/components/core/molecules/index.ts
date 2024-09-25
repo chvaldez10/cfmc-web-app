@@ -7,3 +7,4 @@ export { default as HeroHomeCollage } from "./atoms/HeroHomeCollage";
 
 /** Shared */
 export { default as PDFHeader } from "./shared/PDFHeader";
+export { default as VerticalHeader } from "./shared/VerticalHeader";

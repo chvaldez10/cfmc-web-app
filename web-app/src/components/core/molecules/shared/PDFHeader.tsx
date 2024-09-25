@@ -7,7 +7,6 @@ import {
   OpenModalButton,
 } from "@/components/core/ui";
 import { VerticalContainerWrapper } from "@/components/core/hero";
-import { getSundaysAndSpecialDays } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
 import { HeroContentProps } from "@/types/layoutProps";
 
 export interface PDFHeaderProps extends HeroContentProps {
@@ -15,12 +14,12 @@ export interface PDFHeaderProps extends HeroContentProps {
   buttonText: string;
 }
 
-async function PDFHeader({
+const PDFHeader: FC<PDFHeaderProps> = ({
   header,
   longParagraph,
   src,
   buttonText,
-}: PDFHeaderProps) {
+}) => {
   return (
     <VerticalContainerWrapper>
       <SectionHeader text={header} />
@@ -38,6 +37,6 @@ async function PDFHeader({
       </OpenModalButton>
     </VerticalContainerWrapper>
   );
-}
+};
 
 export default PDFHeader;
