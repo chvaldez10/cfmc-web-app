@@ -1,7 +1,7 @@
 import { HeroOverlappingImage } from "@/components/core/hero";
 import { missionStatementLong, visionStatementLong } from "@/data/hero/";
 import { VerticalHeader } from "@/components/core/molecules";
-
+import { HeroTwoImages } from "@/components/core/hero";
 export default function page() {
   return (
     <>
@@ -12,10 +12,7 @@ export default function page() {
         longParagraph={missionStatementLong}
         dataTestId={"mission-statement"}
       />
-      <VerticalHeader
-        header={"Our Vision"}
-        longParagraph={visionStatementLong}
-      />
+      <HeroTwoImages />
     </>
   );
 }
