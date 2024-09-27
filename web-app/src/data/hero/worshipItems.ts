@@ -4,7 +4,7 @@ const currentMonth = new Date().toLocaleString("default", { month: "long" });
 
 /** Mission and Vision */
 export const visionStatementLong = `A God-glorifying, Christ-shepherding
-and Holy Spirit-filled Church in fulfilling God’s Mission in the City`;
+and Holy Spirit-filled Church in fulfilling God’s Mission in the City.`;
 
 export const missionStatementLong = `To reach out to as many people as we possibly can to share with them the good news of God's redeeming love in Jesus Christ. To lead them to that new life of faith, trust, love, and obedience to Jesus Christ. To continue nurturing them to become Christ-like in their lives.`;
 
