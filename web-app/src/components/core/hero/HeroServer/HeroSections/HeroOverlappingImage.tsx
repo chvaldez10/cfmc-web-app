@@ -47,7 +47,9 @@ const HeroOverlappingImage: FC<HeroOverlappingImageProps> = ({
             text={subheader}
             containerClassName="font-bold text-gray-800 text-xl"
           />
-          <LongParagraph>{longParagraph}</LongParagraph>
+          <LongParagraph containerClassName="long-paragraph-text-color">
+            {longParagraph}
+          </LongParagraph>
         </Flex>
       </Box>
     </FlexCenter>
