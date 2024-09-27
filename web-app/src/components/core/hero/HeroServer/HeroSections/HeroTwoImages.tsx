@@ -4,6 +4,7 @@ import {
   Flex,
   SectionSubheader,
   LongParagraph,
+  NextImage,
 } from "@/components/core/ui";
 import { visionStatementLong } from "@/data/hero";
 import { FC } from "react";
@@ -13,23 +14,40 @@ const HeroTwoImages: FC = () => (
     containerClassName="py-12 relative resize-hero-width mx-auto"
     dataTestId="hero-two-images"
   >
-    <Grid containerClassName="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <Grid containerClassName="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start lg:order-first order-last">
+    <Grid containerClassName="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+      {/* Images */}
+      <Grid containerClassName="grid grid-cols-1 sm:grid-cols-2 gap-2 items-start lg:order-first order-last">
         <Flex containerClassName="flex pt-24 justify-start sm:justify-end lg:justify-center">
-          <Box containerClassName="w-full h-64 bg-gray-300 rounded-xl" />
+          <NextImage
+            width={"w-full"}
+            height={"h-96"}
+            src={
+              "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/ministry/3.jpg"
+            }
+            alt={"Our Vision Image Bottom"}
+            imageClassName={"rounded-lg object-center"}
+          />
         </Flex>
-        <Box containerClassName="w-full h-64 bg-gray-300 rounded-xl ml-auto sm:ml-0" />
+        <NextImage
+          width={"w-full"}
+          height={"h-96"}
+          src={
+            "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/ministry/2.jpg?t=2024-09-27T03%3A30%3A08.492Z"
+          }
+          alt={"Our Vision Image Top"}
+          imageClassName={"rounded-lg object-center"}
+        />
       </Grid>
-      <Flex containerClassName="flex flex-col items-center lg:items-start gap-10">
-        <Flex containerClassName="flex flex-col items-start gap-8">
-          <Flex containerClassName="flex flex-col items-center lg:items-start gap-3">
-            <SectionSubheader
-              text={"Our Vision"}
-              containerClassName="font-bold text-gray-800 text-xl"
-            />
-            <LongParagraph>{visionStatementLong}</LongParagraph>
-          </Flex>
-        </Flex>
+
+      {/* Vision Statement */}
+      <Flex containerClassName="flex flex-col items-center lg:items-start space-y-4">
+        <SectionSubheader
+          text={"Our Vision"}
+          containerClassName="font-bold text-gray-800 text-xl"
+        />
+        <LongParagraph containerClassName="long-paragraph-text-color">
+          {visionStatementLong}
+        </LongParagraph>
       </Flex>
     </Grid>
   </Box>
