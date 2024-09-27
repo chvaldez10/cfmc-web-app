@@ -12,10 +12,10 @@ import { FC } from "react";
 
 const HeroTwoImages: FC = () => (
   <Box
-    containerClassName="py-12 px-4 relative resize-hero-width mx-auto"
+    containerClassName="py-12 px-4 bg-violet-10 shadow-t-lg"
     dataTestId="hero-two-images"
   >
-    <Grid containerClassName="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+    <Grid containerClassName="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center resize-hero-width mx-auto">
       {/* Images */}
       <Grid containerClassName="grid grid-cols-2 gap-2 items-start lg:order-first order-last">
         <Flex containerClassName="flex pt-24 justify-start sm:justify-end lg:justify-center">
