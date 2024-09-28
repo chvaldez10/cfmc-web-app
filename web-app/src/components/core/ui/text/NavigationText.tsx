@@ -18,7 +18,7 @@ const NavigationText: FC<NavigationTextProps> = ({
 
   return (
     <FlexCenter
-      containerClassName={`text-center text-lg md:text-xl lg:text-2xl px-6 bg-white-10 rounded-md max-w-2xl ${containerClassName}`}
+      containerClassName={`text-center text-lg md:text-xl lg:text-2xl px-6 bg-white-10 rounded-md max-w-3xl ${containerClassName}`}
       onClick={url ? () => router.push(url) : undefined}
     >
       {children}
