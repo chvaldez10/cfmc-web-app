@@ -34,9 +34,9 @@ export const cardInquiries: IconProps[] = [
 export const mediaInquiries: IconProps[] = [
   {
     label: "Music",
+    svgIcon: <IoMusicalNotesOutline className="w-12 h-12" />,
     description:
       "Involved in music-related ministries in the church, including soundboard control, audio recording, music performance, and audio troubleshooting.",
-    svgIcon: <IoMusicalNotesOutline className="w-12 h-12" />,
     url: "",
   },
   {

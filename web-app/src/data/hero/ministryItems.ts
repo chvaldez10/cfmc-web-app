@@ -1,2 +1,0 @@
-export const methodistChurchDescription =
-  "Methodism, 18th-century movement founded by John Wesley that sought to reform the Church of England from within. The movement, however, became separate from its parent body and developed into an autonomous church. The World Methodist Council (WMC), an association of churches in the Methodist tradition, comprises more than 40.5 million Methodists in 138 countries.";
