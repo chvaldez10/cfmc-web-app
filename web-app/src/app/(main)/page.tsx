@@ -5,7 +5,11 @@ import {
   HeroImageSwiper,
 } from "@/components/core/hero";
 import { EventBlogSwiper } from "@/components/core/events";
-import { InquiryCard, CardWithImage, NextImage } from "@/components/core/ui";
+import {
+  InquiryCard,
+  MinistryDetailCards,
+  NextImage,
+} from "@/components/core/ui";
 import { VerseOfTheDay, SundayWorshipDetails } from "@/components/core/worship";
 
 // Server Actions
@@ -78,7 +82,7 @@ export default async function Home() {
       </HeroSlideClient>
 
       <EventBlogSwiper />
-      <CardWithImage />
+      <MinistryDetailCards />
       <InquiryCard />
       <VerseOfTheDay />
     </>

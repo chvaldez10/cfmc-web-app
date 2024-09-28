@@ -9,17 +9,21 @@ import {
 } from "@/components/core/ui/";
 import { CardWithImageProps } from "@/types/uiProps";
 
-interface CardWithImageItemProps extends CardWithImageProps {}
+interface MinistryDetailCardItemProps extends CardWithImageProps {}
 
-const CardWithImageItem: FC<CardWithImageItemProps> = ({
+const MinistryDetailCardItem: FC<MinistryDetailCardItemProps> = ({
   src,
   title,
   alt,
   description,
   url,
+  dataTestId,
 }) => {
   return (
-    <Box containerClassName="bg-white-0 border flex flex-col border-gray-200 rounded-lg shadow hover-animation hover-up ">
+    <Box
+      containerClassName="bg-white-0 border flex flex-col border-gray-200 rounded-lg shadow hover-animation hover-up"
+      dataTestId={dataTestId}
+    >
       <NextImage
         width={"w-full"}
         height={"h-96"}
@@ -46,4 +50,4 @@ const CardWithImageItem: FC<CardWithImageItemProps> = ({
   );
 };
 
-export default CardWithImageItem;
+export default MinistryDetailCardItem;

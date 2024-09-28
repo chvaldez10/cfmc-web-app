@@ -32,7 +32,7 @@ export { default as PurpleColoredBadge } from "./badges/PurpleColoredBadge";
 export { default as HorizontalLine } from "./shapes/HorizontalLine";
 
 // cards
-export { default as CardWithImage } from "./cards/CardWithImage";
+export { default as MinistryDetailCards } from "./cards/MinistryDetailCards";
 export { default as InquiryCard } from "./cards/InquiryCard";
 export { default as EventCard } from "./cards/atoms/EventCard";
 export { default as ProfileCard } from "./cards/atoms/ProfileCard";

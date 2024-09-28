@@ -10,6 +10,7 @@ export interface CardWithImageProps extends ImageProps {
   title: string;
   description: string;
   url: string;
+  dataTestId: string;
 }
 
 export interface ClientButtonProps {
