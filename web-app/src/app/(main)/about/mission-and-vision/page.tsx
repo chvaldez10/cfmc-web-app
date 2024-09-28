@@ -1,6 +1,7 @@
 import { HeroOverlappingImage } from "@/components/core/hero";
-import { missionStatementLong, visionStatementLong } from "@/data/hero/";
+import { missionStatementLong } from "@/data/hero/";
 import { HeroTwoImages } from "@/components/core/hero";
+
 export default function page() {
   return (
     <>
