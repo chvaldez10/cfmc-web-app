@@ -1,6 +1,5 @@
 import { HeroOverlappingImage } from "@/components/core/hero";
 import { missionStatementLong, visionStatementLong } from "@/data/hero/";
-import { VerticalHeader } from "@/components/core/molecules";
 import { HeroTwoImages } from "@/components/core/hero";
 export default function page() {
   return (

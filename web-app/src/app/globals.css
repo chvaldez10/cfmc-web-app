@@ -90,7 +90,7 @@
 
 /* Sizing styles */
 .resize-hero-width {
-  @apply w-full md:w-9/12;
+  @apply w-11/12 md:w-9/12;
 }
 
 .resize-width-to-half {

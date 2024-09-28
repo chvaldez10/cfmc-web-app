@@ -34,7 +34,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
 
   return (
     <VStack
-      containerClassName="bg-green-10 min-h-[90vh]"
+      containerClassName="bg-green-10 min-h-screen"
       layoutClass={layoutClass}
       isFloating={true}
       dataTestId="worship-details"

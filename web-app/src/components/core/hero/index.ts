@@ -15,4 +15,3 @@ export { default as VStack } from "./HeroLayout/VStack";
 export { default as HeroHalfWrapper } from "./HeroLayout/HeroHalfWrapper";
 export { default as HeroTextWrapper } from "./HeroLayout/HeroTextWrapper";
 export { default as ContainerWrapper } from "./HeroLayout/ContainerWrapper";
-export { default as VerticalContainerWrapper } from "./HeroLayout/VerticalContainerWrapper";

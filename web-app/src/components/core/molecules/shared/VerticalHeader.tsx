@@ -5,19 +5,22 @@ import {
   LongParagraph,
   OpenModalButton,
 } from "@/components/core/ui";
-import { VerticalContainerWrapper } from "@/components/core/hero";
+import { VStack } from "@/components/core/hero";
 import { HeroContentProps } from "@/types/layoutProps";
 
 export interface VerticalHeaderProps extends HeroContentProps {}
 
 const VerticalHeader: FC<VerticalHeaderProps> = ({ header, longParagraph }) => {
   return (
-    <VerticalContainerWrapper>
+    <VStack
+      containerClassName={`min-h-[50vh] text-center`}
+      layoutClass="flex flex-col"
+    >
       <SectionHeader text={header} />
       <LongParagraph containerClassName="long-paragraph-text-color">
         {longParagraph}
       </LongParagraph>
-    </VerticalContainerWrapper>
+    </VStack>
   );
 };
 

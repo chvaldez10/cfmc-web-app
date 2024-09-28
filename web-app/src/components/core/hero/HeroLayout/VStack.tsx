@@ -20,7 +20,7 @@ const VStack: FC<VStackProps> = ({
 }) => {
   return (
     <FlexCenter
-      containerClassName={`p-4 lg:p-0 ${
+      containerClassName={`${
         isFloating ? "hero-floating" : ""
       } ${containerClassName}`}
       dataTestId={dataTestId}

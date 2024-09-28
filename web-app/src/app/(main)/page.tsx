@@ -44,7 +44,7 @@ export default async function Home() {
         longParagraph={featuredMonthlyThemeVerbiage}
         subheader={sundaysAndSpecialDays?.sundayEventName}
         swiperImages={pastEvents1}
-        containerClassName={"bg-white-10 min-h-[80vh]"}
+        containerClassName={"bg-white-10 min-h-screen"}
         reverse={true}
       />
 
@@ -54,14 +54,14 @@ export default async function Home() {
         subheader={"Community Building"}
         longParagraph={featureCommunityBuildingVerbiage}
         swiperImages={communityBuilding1}
-        containerClassName={"bg-violet-10 min-h-[80vh]"}
+        containerClassName={"bg-violet-10 min-h-screen"}
       />
 
       {/* Next Big Event */}
       <HeroSlideClient
         header={"Next Big Event"}
         longParagraph={nextBigEventDescription}
-        containerClassName="min-h-[80vh]"
+        containerClassName="min-h-screen"
         reverse={true}
         isFloating={true}
       >
