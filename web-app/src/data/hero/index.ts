@@ -1,12 +1,13 @@
 /** Featured Items */
 export {
-  pastEvents1,
-  pastEvents2,
   communityBuilding1,
   heroCollageImages,
   ministryDetailCards,
   ministryImages1,
 } from "./featuredItems";
+
+/** Past Events */
+export { pastEvents1, pastEvents2_1, pastEvents2_2 } from "./pastEvents";
 
 /** Worship Items */
 export {

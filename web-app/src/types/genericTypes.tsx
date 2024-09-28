@@ -9,6 +9,7 @@ export interface ImageProps {
   src: string;
   alt: string;
   containerClassName?: string | undefined;
+  imageClassName?: string | undefined;
 }
 
 // This might end up being a supabase type

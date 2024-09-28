@@ -6,7 +6,7 @@ import {
   NextImage,
 } from "@/components/core/ui";
 import ImageContentProfile from "./ImageContentProfile";
-import { pastEvents1 } from "@/data/hero/featuredItems";
+import { pastEvents1 } from "@/data/hero/";
 import { getChurchMembersByID } from "@/utils/supabase/actions/churchMembersActions";
 import { EmptySetFromSupabase } from "@/components/template/";
 

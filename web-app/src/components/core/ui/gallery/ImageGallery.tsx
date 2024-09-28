@@ -7,10 +7,10 @@ import {
   Grid,
 } from "@/components/core/ui";
 import { NextImage } from "@/components/core/ui";
-import { pastEvents2 } from "@/data/hero";
+import { pastEvents2_1, pastEvents2_2 } from "@/data/hero";
+import { IMAGE_SIZE_SMALL_HERO } from "@/data/constants/shared";
 
 const ImageGallery: FC = () => {
-  // TODO: Choose the images to display
   return (
     <Box containerClassName="container px-5 py-24 mx-auto space-y-4 resize-hero-width">
       <Box>
@@ -21,53 +21,32 @@ const ImageGallery: FC = () => {
       </Box>
 
       <Flex containerClassName="flex flex-row gap-2">
-        <Grid containerClassName="grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
-          <NextImage
-            height={"h-56"}
-            src={pastEvents2[0].src}
-            alt={pastEvents2[0].alt}
-            containerClassName="col-span-1 row-span-1"
-            imageClassName="rounded-lg object-center"
-          />
-          <NextImage
-            alt={pastEvents2[1].alt}
-            height={"h-56"}
-            width={"w-full"}
-            src={pastEvents2[1].src}
-            containerClassName="col-span-1 row-span-1"
-            imageClassName="rounded-lg object-center"
-          />
-          <NextImage
-            alt={pastEvents2[2].alt}
-            height={"h-56"}
-            src={pastEvents2[2].src}
-            containerClassName="col-span-2 row-span-1"
-            imageClassName="rounded-lg object-center"
-          />
+        {/* Grid 1 */}
+        <Grid containerClassName="w-full md:w-1/2 grid grid-cols-2 grid-rows-2 gap-2">
+          {pastEvents2_1.map((image) => (
+            <NextImage
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              height={IMAGE_SIZE_SMALL_HERO}
+              containerClassName={image.containerClassName}
+              imageClassName={`${image.imageClassName as string} rounded-lg`}
+            />
+          ))}
         </Grid>
-        <Grid containerClassName="hidden md:grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
-          <NextImage
-            alt={pastEvents2[3].alt}
-            height={"h-56"}
-            src={pastEvents2[3].src}
-            containerClassName="col-span-2 row-span-1"
-            imageClassName="rounded-lg object-center"
-          />
-          <NextImage
-            height={"h-56"}
-            src={pastEvents2[4].src}
-            alt={pastEvents2[4].alt}
-            containerClassName="col-span-1 row-span-1"
-            imageClassName="rounded-lg object-center"
-          />
-          <NextImage
-            alt={pastEvents2[5].alt}
-            height={"h-56"}
-            width={"w-full"}
-            src={pastEvents2[5].src}
-            containerClassName="col-span-1 row-span-1"
-            imageClassName="rounded-lg object-center"
-          />
+
+        {/* Grid 2 */}
+        <Grid containerClassName="w-full md:w-1/2 hidden md:grid grid-cols-2 grid-rows-2 gap-2">
+          {pastEvents2_2.map((image) => (
+            <NextImage
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              height={IMAGE_SIZE_SMALL_HERO}
+              containerClassName={image.containerClassName}
+              imageClassName={`${image.imageClassName as string} rounded-lg`}
+            />
+          ))}
         </Grid>
       </Flex>
     </Box>
