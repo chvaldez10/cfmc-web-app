@@ -3,7 +3,7 @@ export {
   pastEvents1,
   communityBuilding1,
   heroCollageImages,
-  cardWithImageItems,
+  ministryDetailCards,
   ministryImages1,
 } from "./featuredItems";
 

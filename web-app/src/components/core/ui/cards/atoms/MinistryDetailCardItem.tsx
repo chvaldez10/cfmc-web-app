@@ -7,9 +7,9 @@ import {
   LearnMoreButton,
   NextImage,
 } from "@/components/core/ui/";
-import { CardWithImageProps } from "@/types/uiProps";
+import { MinistryDetailCardProps } from "@/types/uiProps";
 
-interface MinistryDetailCardItemProps extends CardWithImageProps {}
+interface MinistryDetailCardItemProps extends MinistryDetailCardProps {}
 
 const MinistryDetailCardItem: FC<MinistryDetailCardItemProps> = ({
   src,

@@ -6,7 +6,7 @@ import { ImageProps } from "./genericTypes";
   These types are likely reused in multiple components.
 */
 
-export interface CardWithImageProps extends ImageProps {
+export interface MinistryDetailCardProps extends ImageProps {
   title: string;
   description: string;
   url: string;

@@ -1,5 +1,5 @@
 import { ImageProps } from "@/types/genericTypes";
-import { CardWithImageProps } from "@/types/uiProps";
+import { MinistryDetailCardProps } from "@/types/uiProps";
 
 export const heroCollageImages: ImageProps[] = [
   {
@@ -19,38 +19,42 @@ export const heroCollageImages: ImageProps[] = [
   },
 ];
 
-export const cardWithImageItems: CardWithImageProps[] = [
+export const ministryDetailCards: MinistryDetailCardProps[] = [
   {
     src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/3.jpg?t=2024-08-28T05%3A13%3A09.072Z",
-    alt: "Card Image 1",
+    alt: "Holy Communion",
     url: "/about/ministry",
     title: "Holy Communion",
     description:
       "Holy Communion is a reminder of Christ's sacrifice. We conduct this during the first Sunday of the month.",
+    dataTestId: "ministry-detail-card-holy-communion",
   },
   {
     src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/1.jpg?t=2024-08-28T05%3A16%3A31.399Z",
     title: "Fellowship",
-    alt: "Card Image 2",
+    alt: "Fellowship",
     description:
       "We have different groups for various ages: kids, youth, and adults. We hold outdoor services during the summer.",
     url: "/about/ministry",
+    dataTestId: "ministry-detail-card-fellowship",
   },
   {
     src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/3.jpeg?t=2024-08-28T05%3A16%3A58.143Z",
     title: "Get Involved",
-    alt: "Card Image 3",
+    alt: "Get Involved",
     description:
       "There are many ways to get involved. We always need help setting up Sunday worship. We look for people to hold Bible Study throughout the week. Lastly, our music and multimedia team always welcomes new members.",
     url: "/get-involved/music",
+    dataTestId: "ministry-detail-card-get-involved",
   },
   {
     src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/14.jpeg?t=2024-08-28T05%3A17%3A14.837Z",
     title: "New Member",
-    alt: "Card Image 4",
+    alt: "New Member",
     description:
       "Come join us in one of our services, fellowships, or ministries.",
     url: "/get-involved/bible-study",
+    dataTestId: "ministry-detail-card-new-member",
   },
 ];
 

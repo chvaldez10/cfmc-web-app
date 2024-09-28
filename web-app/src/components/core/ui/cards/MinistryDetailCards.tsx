@@ -1,6 +1,6 @@
 import { FC } from "react";
 import MinistryDetailCardItem from "./atoms/MinistryDetailCardItem";
-import { cardWithImageItems } from "@/data/hero/featuredItems";
+import { ministryDetailCards } from "@/data/hero/featuredItems";
 import { FlexCenter, Grid } from "@/components/core/ui";
 
 const MinistryDetailCards: FC = () => {
@@ -10,7 +10,7 @@ const MinistryDetailCards: FC = () => {
       dataTestId={"ministry-detail-cards"}
     >
       <Grid containerClassName="resize-hero-width grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4">
-        {cardWithImageItems.map((item, index) => (
+        {ministryDetailCards.map((item, index) => (
           <MinistryDetailCardItem
             key={index}
             src={item.src}
@@ -18,7 +18,7 @@ const MinistryDetailCards: FC = () => {
             alt={item.alt}
             description={item.description}
             url={item.url}
-            dataTestId={`ministry-detail-card-${item.title}`}
+            dataTestId={item.dataTestId}
           />
         ))}
       </Grid>
