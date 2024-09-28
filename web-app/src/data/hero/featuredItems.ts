@@ -81,6 +81,33 @@ export const pastEvents1: ImageProps[] = [
   },
 ];
 
+export const pastEvents2: ImageProps[] = [
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/row-1-col-1.jpg?t=2024-09-28T22%3A49%3A01.667Z",
+    alt: "past event 1",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/row-1-col-2.jpg?t=2024-09-28T22%3A49%3A03.042Z",
+    alt: "past event 2",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/row-2-col-1-2.jpg?t=2024-09-28T22%3A49%3A06.829Z",
+    alt: "past event 5",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/row-1-col-3.jpg?t=2024-09-28T22%3A49%3A04.214Z",
+    alt: "past event 3",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/row-1-col-4.jpg?t=2024-09-28T22%3A49%3A05.626Z",
+    alt: "past event 4",
+  },
+  {
+    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/row-2-col-3-4.jpg?t=2024-09-28T22%3A49%3A07.951Z",
+    alt: "past event 6",
+  },
+];
+
 export const communityBuilding1: ImageProps[] = [
   {
     src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/community_building/1.jpg?t=2024-08-28T05%3A35%3A16.546Z",

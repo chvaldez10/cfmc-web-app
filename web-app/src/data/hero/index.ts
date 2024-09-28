@@ -1,6 +1,7 @@
 /** Featured Items */
 export {
   pastEvents1,
+  pastEvents2,
   communityBuilding1,
   heroCollageImages,
   ministryDetailCards,

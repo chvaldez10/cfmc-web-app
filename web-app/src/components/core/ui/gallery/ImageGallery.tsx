@@ -7,7 +7,7 @@ import {
   Grid,
 } from "@/components/core/ui";
 import { NextImage } from "@/components/core/ui";
-import { pastEvents1 } from "@/data/hero";
+import { pastEvents2 } from "@/data/hero";
 
 const ImageGallery: FC = () => {
   // TODO: Choose the images to display
@@ -24,47 +24,47 @@ const ImageGallery: FC = () => {
         <Grid containerClassName="grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
           <NextImage
             height={"h-56"}
-            src={pastEvents1[0].src}
-            alt={pastEvents1[0].alt}
+            src={pastEvents2[0].src}
+            alt={pastEvents2[0].alt}
             containerClassName="col-span-1 row-span-1"
             imageClassName="rounded-lg object-center"
           />
           <NextImage
-            alt={pastEvents1[1].alt}
+            alt={pastEvents2[1].alt}
             height={"h-56"}
             width={"w-full"}
-            src={pastEvents1[1].src}
+            src={pastEvents2[1].src}
             containerClassName="col-span-1 row-span-1"
             imageClassName="rounded-lg object-center"
           />
           <NextImage
-            alt={pastEvents1[2].alt}
+            alt={pastEvents2[2].alt}
             height={"h-56"}
-            src={pastEvents1[2].src}
+            src={pastEvents2[2].src}
             containerClassName="col-span-2 row-span-1"
             imageClassName="rounded-lg object-center"
           />
         </Grid>
         <Grid containerClassName="hidden md:grid w-full md:w-1/2 grid-cols-2 grid-rows-2 gap-2">
           <NextImage
-            alt={pastEvents1[2].alt}
+            alt={pastEvents2[3].alt}
             height={"h-56"}
-            src={pastEvents1[2].src}
+            src={pastEvents2[3].src}
             containerClassName="col-span-2 row-span-1"
             imageClassName="rounded-lg object-center"
           />
           <NextImage
             height={"h-56"}
-            src={pastEvents1[0].src}
-            alt={pastEvents1[0].alt}
+            src={pastEvents2[4].src}
+            alt={pastEvents2[4].alt}
             containerClassName="col-span-1 row-span-1"
             imageClassName="rounded-lg object-center"
           />
           <NextImage
-            alt={pastEvents1[1].alt}
+            alt={pastEvents2[5].alt}
             height={"h-56"}
             width={"w-full"}
-            src={pastEvents1[1].src}
+            src={pastEvents2[5].src}
             containerClassName="col-span-1 row-span-1"
             imageClassName="rounded-lg object-center"
           />
