@@ -30,6 +30,7 @@ async function VerseOfTheDay() {
     <VStack
       containerClassName={`min-h-[40vh] text-center`}
       layoutClass="flex flex-col"
+      dataTestId={"verse-of-the-day"}
     >
       <BsFillChatLeftQuoteFill className="inline-block w-8 h-8 mx-auto" />
       <SectionSubheader text="Verse of the Day" />

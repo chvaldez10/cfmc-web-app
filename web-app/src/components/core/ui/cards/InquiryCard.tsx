@@ -5,7 +5,10 @@ import { cardInquiries } from "@/data/hero";
 
 const InquiryCard: FC = () => {
   return (
-    <Grid containerClassName="w-full grid gap-4 grid-cols-1 md:grid-cols-3 py-8 bg-emerald-500 text-white-0">
+    <Grid
+      containerClassName="w-full grid gap-4 grid-cols-1 md:grid-cols-3 py-8 bg-emerald-500 text-white-0"
+      dataTestId={"inquiry-cards"}
+    >
       {cardInquiries.map((item, index) => (
         <InquiryCardItem
           key={index}

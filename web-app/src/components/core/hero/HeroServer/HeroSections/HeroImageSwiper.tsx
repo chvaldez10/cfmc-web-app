@@ -21,11 +21,16 @@ const HeroImageSwiper: FC<HeroImageSwiperProps> = ({
   swiperImages,
   reverse = false,
   containerClassName = "",
+  dataTestId,
 }) => {
   const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
 
   return (
-    <VStack containerClassName={containerClassName} layoutClass={layoutClass}>
+    <VStack
+      containerClassName={containerClassName}
+      layoutClass={layoutClass}
+      dataTestId={dataTestId}
+    >
       {/* Text Column */}
       <HeroHalfWrapper containerClassName="div-outside-width text-center gap-4">
         <LongParagraph containerClassName="text-purple-500 ">

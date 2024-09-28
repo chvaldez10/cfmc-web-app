@@ -52,7 +52,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
           Join Us On Our Next Service
         </h2>
         <SectionSubheader
-          text={"2:00 PM @ 419 Northmount Drive NW"}
+          text={"2:00 PM - 419 Northmount Drive NW"}
           containerClassName="text-center long-paragraph-text-color"
         />
 

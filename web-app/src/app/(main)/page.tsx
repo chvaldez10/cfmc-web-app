@@ -46,6 +46,7 @@ export default async function Home() {
         swiperImages={pastEvents1}
         containerClassName={"bg-white-10 min-h-screen"}
         reverse={true}
+        dataTestId={"theme-of-the-month"}
       />
 
       {/* Community Building */}
@@ -55,6 +56,7 @@ export default async function Home() {
         longParagraph={featureCommunityBuildingVerbiage}
         swiperImages={communityBuilding1}
         containerClassName={"bg-violet-10 min-h-screen"}
+        dataTestId={"community-building"}
       />
 
       {/* Next Big Event */}
@@ -64,6 +66,7 @@ export default async function Home() {
         containerClassName="min-h-screen"
         reverse={true}
         isFloating={true}
+        dataTestId={"next-big-event"}
       >
         <NextImage
           width={"w-full"}

@@ -18,6 +18,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
   containerClassName = "",
   reverse = false,
   isFloating = false,
+  dataTestId,
 }) => {
   const [textRef, textInView] = useInView();
   const [elementRef, elementInView] = useInView();

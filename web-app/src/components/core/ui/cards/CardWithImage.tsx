@@ -5,7 +5,10 @@ import { FlexCenter, Grid } from "@/components/core/ui";
 
 const CardWithImage: FC = () => {
   return (
-    <FlexCenter containerClassName="mx-auto gap-4 py-4">
+    <FlexCenter
+      containerClassName="mx-auto gap-4 py-4"
+      dataTestId={"card-with-images"}
+    >
       <Grid containerClassName="resize-hero-width grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4">
         {cardWithImageItems.map((item, index) => (
           <CardWithImageItem

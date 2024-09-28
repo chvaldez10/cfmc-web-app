@@ -10,6 +10,7 @@ async function EventBlogSwiper() {
     <VStack
       containerClassName={"min-h-[60vh] md:min-h-[50vh] bg-green-20"}
       layoutClass={"flex-col space-y-4 lg:space-y-8"}
+      dataTestId={"events-swiper"}
     >
       <SectionHeader
         text={"Upcoming Events "}
