@@ -15,13 +15,11 @@ export interface BoardAndLeadershipProps extends HeroContentProps {
 async function BoardAndLeadership({
   boardMembers,
   header,
-  longParagraph,
 }: BoardAndLeadershipProps) {
   return (
     <Box containerClassName="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <Box containerClassName="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
         <SectionHeader text={header} />
-        <LongParagraph>{longParagraph}</LongParagraph>
       </Box>
       <Grid containerClassName="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
         {boardMembers?.map((churchMemberData, index) => (

@@ -1,6 +1,6 @@
-import { HeroHeader } from "@/components/core/hero";
 import { BoardAndLeadership } from "@/components/core/ministry";
 import { getChurchMembersBoardMembers } from "@/utils/supabase/actions/churchMembersActions";
+import { HeroOverlappingImage } from "@/components/core/hero";
 
 const headerLongParagraph =
   "Our Board and Leadership. They are the backbone of our church. They lead us in our journey to serve Jesus Christ.";
@@ -10,15 +10,15 @@ export default async function page() {
 
   return (
     <>
-      <HeroHeader
-        header="Board & Leadership"
+      <HeroOverlappingImage
+        header={"Board & Leaders"}
+        subheader={"Meet Our Leadership Teams"}
+        imagePath={"/background/Bible_with_leaf_resized.jpg"}
         longParagraph={headerLongParagraph}
+        dataTestId={"board-and-leadership"}
       />
-      <BoardAndLeadership
-        boardMembers={boardMembers}
-        header="Meet Our Board Members"
-        longParagraph="Explore our talented board members."
-      />
+
+      <BoardAndLeadership boardMembers={boardMembers} header="Board Members" />
     </>
   );
 }
