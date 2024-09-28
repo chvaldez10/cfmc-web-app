@@ -33,6 +33,7 @@ const MinistryDetailCardItem: FC<MinistryDetailCardItemProps> = ({
       />
 
       <Flex containerClassName="flex flex-col flex-grow p-5 gap-3">
+        {/* Ministry Name */}
         <SectionSubheader
           text={title}
           containerClassName="font-bold tracking-tight"

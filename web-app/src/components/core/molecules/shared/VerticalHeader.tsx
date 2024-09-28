@@ -8,7 +8,7 @@ export interface VerticalHeaderProps extends HeroContentProps {}
 const VerticalHeader: FC<VerticalHeaderProps> = ({ header, longParagraph }) => {
   return (
     <Flex
-      containerClassName={`resize-hero-width gap-4 flex flex-col text-center mx-auto py-8`}
+      containerClassName={`resize-hero-width gap-4 flex flex-col text-center mx-auto py-8 max-w-3xl`}
     >
       <SectionHeader text={header} />
       <LongParagraph containerClassName="long-paragraph-text-color">
