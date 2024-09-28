@@ -1,6 +1,8 @@
 import { HeroOverlappingImage } from "@/components/core/hero";
 import { VerticalHeader } from "@/components/core/molecules";
 import { methodistChurchDescription } from "@/data/hero/ministryItems";
+import { VerticalTimeline } from "@/components/core/multimedia";
+import { methodistSymbols } from "@/data/hero/ministryItems";
 
 export default function page() {
   return (
@@ -18,6 +20,7 @@ export default function page() {
         header={"Methodist Church"}
         longParagraph={methodistChurchDescription}
       />
+      <VerticalTimeline items={methodistSymbols} />
     </>
   );
 }
