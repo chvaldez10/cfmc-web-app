@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FlexCenter } from "@/components/core/ui";
 
-export default function loading() {
+export default function Loading() {
   return (
     <FlexCenter containerClassName="h-screen">
       <Image

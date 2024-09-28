@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "../Providers";
 import NavbarClient from "@/components/Navbar/NavbarClient";
+import Loading from "./loading";
 import "../globals.css";
 
 import BackButton from "@/components/core/ui/buttons/BackButton";
@@ -27,7 +29,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Providers>
           <NavbarClient />
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
           <BackButton />
         </Providers>
