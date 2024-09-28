@@ -3,6 +3,7 @@ import { VerticalTimeline, BoxIcon } from "@/components/core/multimedia";
 import { Box } from "@/components/core/ui";
 import { multimediaInquiries } from "@/data/hero/mediaInquiries";
 import RequestForm from "@/components/core/forms/RequestForm";
+import { mediaInquiries } from "@/data/hero/";
 
 export default function page() {
   return (
@@ -18,7 +19,7 @@ export default function page() {
         />
       </HeroWaveHeader>
       <Box containerClassName="py-12"></Box>
-      <VerticalTimeline />
+      <VerticalTimeline items={mediaInquiries} />
 
       <HeroSlideClient
         header={"Request Form"}

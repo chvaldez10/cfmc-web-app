@@ -1,16 +1,20 @@
 import { FC } from "react";
-import { mediaInquiries } from "@/data/hero/";
 import {
   Flex,
   Box,
   SectionSubheader,
   LongParagraph,
 } from "@/components/core/ui";
+import { IconProps } from "@/types/uiProps";
 
-const VerticalTimeline: FC = () => {
+interface VerticalTimelineProps {
+  items: IconProps[];
+}
+
+const VerticalTimeline: FC<VerticalTimelineProps> = ({ items }) => {
   return (
     <Flex containerClassName="container px-5 py-24 mx-auto flex flex-wrap">
-      {mediaInquiries.map((item, index) => (
+      {items.map((item, index) => (
         <Flex
           key={`${item.label}-vertical-timeline`}
           containerClassName="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto "
