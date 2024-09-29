@@ -1,0 +1,42 @@
+.swiper {
+  width: 240px;
+  height: 320px;
+}
+
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.slide1 {
+  background-color: rgb(206, 17, 17);
+}
+.slide2 {
+  background-color: rgb(0, 140, 255);
+}
+.slide3 {
+  background-color: rgb(10, 184, 111);
+}
+.slide4 {
+  background-color: rgb(211, 122, 7);
+}
+.slide5 {
+  background-color: rgb(118, 163, 12);
+}
+.slide6 {
+  background-color: rgb(180, 10, 47);
+}
+.slide7 {
+  background-color: rgb(35, 99, 19);
+}
+.slide8 {
+  background-color: rgb(0, 68, 255);
+}
+.slide9 {
+  background-color: rgb(218, 12, 218);
+}
