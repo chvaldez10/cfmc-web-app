@@ -37,6 +37,7 @@ export { default as InquiryCard } from "./cards/InquiryCard";
 export { default as EventCard } from "./cards/atoms/EventCard";
 export { default as ProfileCard } from "./cards/atoms/ProfileCard";
 export { default as FullProfileCard } from "./cards/atoms/FullProfileCard";
+export { default as MusicCard } from "./cards/atoms/MusicCard";
 
 // gallery
 export { default as NextImage } from "./gallery/NextImage";
