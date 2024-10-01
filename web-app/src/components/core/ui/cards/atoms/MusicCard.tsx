@@ -2,7 +2,13 @@ import { FC } from "react";
 import { NextImage } from "@/components/core/ui";
 import { FaStepBackward, FaStepForward, FaPause } from "react-icons/fa";
 
-const MusicCard: FC = () => {
+interface MusicCardProps {
+  imageSrc: string;
+  songTitle: string;
+  artist: string;
+}
+
+const MusicCard: FC<MusicCardProps> = ({ imageSrc, songTitle, artist }) => {
   return (
     <div className="bg-white-0 p-6 rounded-2xl shadow-md w-full h-full flex flex-col justify-between">
       {/* Album Cover */}
@@ -10,22 +16,20 @@ const MusicCard: FC = () => {
         <NextImage
           width={"w-full"}
           height={"h-40"}
-          src="https://images.unsplash.com/photo-1508829040592-72f179f8a73f?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Worship Song"
+          src={imageSrc}
+          alt={songTitle}
           imageClassName="rounded-lg object-cover"
         />
       </div>
 
       {/* Song Info */}
       <div className="text-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-800">
-          Shout to the Lord
-        </h2>
-        <p className="text-gray-600 text-sm">Don Moen</p>
+        <h2 className="text-xl font-semibold text-gray-800">{songTitle}</h2>
+        <p className="text-gray-600 text-sm">{artist}</p>
       </div>
 
       {/* Music Controls */}
-      <div className="flex justify-center items-center mb-4">
+      <div className="flex-center mb-4">
         <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none transition">
           <FaStepBackward className="w-4 h-4 text-gray-600" />
         </button>

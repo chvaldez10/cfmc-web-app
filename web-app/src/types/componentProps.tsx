@@ -14,3 +14,9 @@ export interface Verse {
     notice: string;
   };
 }
+
+export interface WorshipSong {
+  title: string;
+  artist: string;
+  imageSrc: string;
+}
