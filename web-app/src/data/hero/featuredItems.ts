@@ -3,18 +3,18 @@ import { MinistryDetailCardProps } from "@/types/uiProps";
 
 export const heroCollageImages: ImageProps[] = [
   {
-    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/17.jpeg?t=2024-08-28T04%3A58%3A24.795Z",
-    alt: "featured image 1",
+    src: "/header/17.jpeg",
+    alt: "featured image left",
     containerClassName: "col-span-1 row-span-1",
   },
   {
-    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/1.jpeg?t=2024-08-28T04%3A58%3A24.795Z",
-    alt: "featured image 2",
+    src: "/header/1.jpeg",
+    alt: "featured image center",
     containerClassName: "col-span-1 row-span-1 ",
   },
   {
-    src: "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/8.jpeg?t=2024-08-28T05%3A00%3A21.192Z",
-    alt: "featured image 3",
+    src: "/header/8.jpeg",
+    alt: "featured image right",
     containerClassName: "col-span-1 row-span-1 hidden lg:block",
   },
 ];
