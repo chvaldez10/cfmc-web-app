@@ -12,7 +12,7 @@ const RequestForm: FC<RequestFormProps> = ({
   defaultSelectedItem = "connect",
 }) => {
   return (
-    <form className="space-y-4 z-50 w-full">
+    <form className="space-y-4 z-50 w-full p-4">
       <TextInputLabel
         type="text"
         name="fullName"

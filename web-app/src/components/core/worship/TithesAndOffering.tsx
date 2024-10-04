@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { LongParagraph } from "@/components/core/ui/";
+import { LongParagraph, Box } from "@/components/core/ui/";
 import Link from "next/link";
 
 interface SimpleModalItemProps {
@@ -8,7 +8,7 @@ interface SimpleModalItemProps {
 
 const SimpleModalItem: FC<SimpleModalItemProps> = ({ description }) => {
   return (
-    <>
+    <Box containerClassName="p-4">
       <LongParagraph>{description}</LongParagraph>
 
       <LongParagraph>
@@ -20,7 +20,7 @@ const SimpleModalItem: FC<SimpleModalItemProps> = ({ description }) => {
           calgaryfilipinomethodistchurch@yahoo.com
         </Link>
       </LongParagraph>
-    </>
+    </Box>
   );
 };
 
