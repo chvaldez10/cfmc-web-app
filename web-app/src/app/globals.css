@@ -110,7 +110,7 @@
 }
 
 .resize-modal-medium {
-  @apply w-full h-screen md:w-5/12 md:h-auto;
+  @apply w-full h-screen md:w-7/12 md:h-auto;
 }
 
 .resize-modal-large {

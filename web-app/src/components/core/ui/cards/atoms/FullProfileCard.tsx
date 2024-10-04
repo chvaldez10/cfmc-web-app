@@ -15,7 +15,7 @@ interface FullProfileCardProps extends ChurchMembers {}
 
 const FullProfileCard: FC<FullProfileCardProps> = ({ ...churchMemberData }) => {
   return (
-    <Box containerClassName="relative bg-white-0 p-4">
+    <Box containerClassName="relative bg-white-0 p-4 h-full md:max-h-[36rem] lg:max-h-[42rem] overflow-y-auto">
       <NextImage
         width={"w-full"}
         height={"h-48"}
@@ -40,6 +40,7 @@ const FullProfileCard: FC<FullProfileCardProps> = ({ ...churchMemberData }) => {
           />
           <LongParagraph>{`${churchMemberData.role} | ${churchMemberData.headline}`}</LongParagraph>
         </Box>
+
         <HorizontalLine />
 
         {/* User Bio and important information */}
