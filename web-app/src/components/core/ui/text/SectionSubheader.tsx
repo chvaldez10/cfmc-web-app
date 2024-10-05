@@ -9,7 +9,7 @@ const SectionSubheader: FC<SectionSubheaderProps> = ({
 }) => {
   return (
     <h2
-      className={`text-lg md:text-xl lg:text-2xl 2xl:text-3xl ${containerClassName}`}
+      className={`text-lg md:text-xl lg:text-2xl 2xl:text-3xl max-w-2xl ${containerClassName}`}
       style={{ userSelect: "text" }}
     >
       {text}
