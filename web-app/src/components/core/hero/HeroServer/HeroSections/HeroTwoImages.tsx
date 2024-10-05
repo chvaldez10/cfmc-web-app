@@ -12,7 +12,7 @@ import { FC } from "react";
 
 const HeroTwoImages: FC = () => (
   <Box
-    containerClassName="py-12 px-4 bg-violet-10 shadow-t-lg"
+    containerClassName="py-12 px-4 shadow-t-lg bg-gradient-to-b from-white-10 via-purple-100 to-purple-200"
     dataTestId="hero-two-images"
   >
     <Grid containerClassName="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center resize-hero-width mx-auto">
