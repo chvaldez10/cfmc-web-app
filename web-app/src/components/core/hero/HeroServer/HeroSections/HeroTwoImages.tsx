@@ -25,7 +25,7 @@ const HeroTwoImages: FC = () => (
       >
         <NextImage
           width={"w-full"}
-          height={IMAGE_SIZE_SMALL_HERO}
+          height={"h-60 lg:h-96"}
           src={
             "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/ministry/3.jpg"
           }
@@ -35,7 +35,7 @@ const HeroTwoImages: FC = () => (
       </Flex>
       <NextImage
         width={"w-full"}
-        height={IMAGE_SIZE_SMALL_HERO}
+        height={"h-60 lg:h-96"}
         src={
           "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/ministry/2.jpg?t=2024-09-27T03%3A30%3A08.492Z"
         }
