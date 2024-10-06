@@ -23,8 +23,9 @@ export default function page() {
       <HeroSlideClient
         header={"Who We Are"}
         longParagraph={"Fill description here"}
-        containerClassName="min-h-screen bg-gradient-to-t from-white-10 via-purple-100 to-purple-200"
+        containerClassName="min-h-screen bg-gradient-to-b from-white-10 via-purple-100 to-purple-200"
         reverse={true}
+        isFloating={true}
         dataTestId={"next-big-event"}
       >
         <NextImage

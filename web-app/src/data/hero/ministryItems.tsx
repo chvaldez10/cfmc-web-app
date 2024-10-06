@@ -1,6 +1,5 @@
 import { IconProps } from "@/types/uiProps";
-import { FaFireFlameCurved } from "react-icons/fa6";
-import { FaDove } from "react-icons/fa";
+import { FaDove, FaCross } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 
 /** Methodist Church Description */
@@ -10,9 +9,9 @@ export const methodistChurchDescription =
 export const methodistSymbols: IconProps[] = [
   {
     label: "Flame",
-    svgIcon: <FaFireFlameCurved className="w-12 h-12" />,
+    svgIcon: <FaCross className="w-12 h-12" />,
     description:
-      "The flame is a reminder of Pentecost when witnesses were unified by the power of the Holy Spirit and saw “tongues, as of fire.",
+      "The cross teaches us that forgiveness takes sacrifice even on our part toward others.",
     url: "",
   },
   {

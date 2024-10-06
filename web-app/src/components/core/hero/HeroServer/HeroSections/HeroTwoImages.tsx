@@ -13,7 +13,7 @@ import { IMAGE_SIZE_SMALL_HERO } from "@/data/constants/shared";
 
 const HeroTwoImages: FC = () => (
   <VStack
-    containerClassName="min-h-screen shadow-t-lg bg-gradient-to-b from-white-10 via-purple-100 to-purple-200"
+    containerClassName="min-h-screen shadow-t-lg"
     layoutClass="div-col-row"
     dataTestId="hero-two-images"
   >
