@@ -2,6 +2,7 @@ import {
   HeroTwoImages,
   HeroSlideClient,
   HeroOverlappingImage,
+  HeroParallax,
 } from "@/components/core/hero";
 import { NextImage } from "@/components/core/ui";
 import { missionStatementLong } from "@/data/hero/";
@@ -38,6 +39,7 @@ export default function page() {
           imageClassName={"rounded-lg object-center"}
         />
       </HeroSlideClient>
+      <HeroParallax />
     </>
   );
 }

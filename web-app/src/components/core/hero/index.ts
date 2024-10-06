@@ -5,6 +5,7 @@ export { default as HeroOverlappingImage } from "./HeroServer/HeroSections/HeroO
 export { default as HeroImageSwiper } from "./HeroServer/HeroSections/HeroImageSwiper";
 export { default as HeroWaveHeader } from "./HeroServer/HeroSections/HeroWaveHeader";
 export { default as HeroTwoImages } from "./HeroServer/HeroSections/HeroTwoImages";
+export { default as HeroParallax } from "./HeroServer/HeroSections/HeroParallax";
 
 // Hero client
 export { default as HeroSlideClient } from "./HeroClient/HeroSlideClient";
