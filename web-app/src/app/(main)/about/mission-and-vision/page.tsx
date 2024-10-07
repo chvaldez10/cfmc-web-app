@@ -2,10 +2,9 @@ import {
   HeroTwoImages,
   HeroSlideClient,
   HeroOverlappingImage,
-  HeroParallax,
 } from "@/components/core/hero";
 import { NextImage } from "@/components/core/ui";
-import { missionStatementLong } from "@/data/hero/";
+import { missionStatementLong, visionStatementLong } from "@/data/hero/";
 import { IMAGE_SIZE_LARGE_HERO } from "@/data/constants/shared";
 
 export default function page() {
@@ -19,14 +18,16 @@ export default function page() {
         dataTestId={"mission-statement"}
       />
 
-      <HeroTwoImages />
+      <HeroTwoImages
+        header={"Mission and Vision"}
+        longParagraph={visionStatementLong}
+      />
 
       <HeroSlideClient
         header={"Who We Are"}
         longParagraph={"Fill description here"}
-        containerClassName="min-h-screen bg-gradient-to-b from-white-10 via-purple-100 to-purple-200"
+        containerClassName="min-h-screen "
         reverse={true}
-        isFloating={true}
         dataTestId={"next-big-event"}
       >
         <NextImage
@@ -39,7 +40,6 @@ export default function page() {
           imageClassName={"rounded-lg object-center"}
         />
       </HeroSlideClient>
-      <HeroParallax />
     </>
   );
 }

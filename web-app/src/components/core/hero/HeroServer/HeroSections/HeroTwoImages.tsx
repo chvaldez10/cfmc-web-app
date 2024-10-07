@@ -7,13 +7,14 @@ import {
   NextImage,
   SectionHeader,
 } from "@/components/core/ui";
-import { visionStatementLong } from "@/data/hero";
 import { VStack } from "@/components/core/hero";
-import { IMAGE_SIZE_SMALL_HERO } from "@/data/constants/shared";
+import { HeroContentProps } from "@/types/layoutProps";
 
-const HeroTwoImages: FC = () => (
+interface HeroTwoImagesProps extends HeroContentProps {}
+
+const HeroTwoImages: FC<HeroTwoImagesProps> = ({ header, longParagraph }) => (
   <VStack
-    containerClassName="min-h-screen shadow-t-lg"
+    containerClassName="min-h-screen shadow-t-lg bg-gradient-to-b from-white-10 via-purple-100 to-purple-200"
     layoutClass="div-col-row"
     dataTestId="hero-two-images"
   >
@@ -49,9 +50,9 @@ const HeroTwoImages: FC = () => (
       containerClassName="div-outside-width resize-width-to-half space-y-4 text-center"
       dataTestId="our-vision-verbiage"
     >
-      <SectionHeader text={"Our Vision"} containerClassName="xl:text-5xl" />
+      <SectionHeader text={header} containerClassName="xl:text-5xl" />
       <SectionSubheader
-        text={visionStatementLong}
+        text={longParagraph}
         containerClassName="long-paragraph-text-color"
       />
     </Flex>
