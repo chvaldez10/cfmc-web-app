@@ -49,7 +49,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
 
         {/* Worship Verbiage */}
         <h2 className="font-bold text-xl md:text-2xl lg:text-4xl text-center">
-          Join Us On Our Next Service
+          Join Our Next Service
         </h2>
         <SectionSubheader
           text={"2:00 PM - 419 Northmount Drive NW"}

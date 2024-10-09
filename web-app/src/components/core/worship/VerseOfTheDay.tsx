@@ -3,6 +3,7 @@ import { Verse } from "@/types/componentProps";
 import { defaultVerseOfTheDay } from "@/data/hero/";
 import { SectionSubheader, LongParagraph, Box } from "@/components/core/ui";
 import { VStack } from "@/components/core/hero";
+
 async function VerseOfTheDay() {
   let verseData: Verse;
 
