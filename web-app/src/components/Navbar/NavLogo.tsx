@@ -8,7 +8,7 @@ interface NavLogoProps {
 }
 
 const NavLogo: FC<NavLogoProps> = ({ textClassName }) => (
-  <Link href="/" className={`flex items-center rtl:space-x-reverse ml-5`}>
+  <Link href="/" className={`flex items-center rtl:space-x-reverse ml-2`}>
     <Image
       src="/branding/logo_no_bg.png"
       alt="CFMC Logo"

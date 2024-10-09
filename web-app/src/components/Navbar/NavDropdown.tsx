@@ -59,7 +59,7 @@ const NavDropdown: FC<NavDropdownProps> = ({
     >
       <button
         onClick={toggleDropdown}
-        className={`div-outside-width-justify-between md:w-auto text-base lg:text-lg gap-1 ${className}`}
+        className={`div-outside-width-justify-between md:w-auto text-base  gap-1 ${className}`}
       >
         {dropdownLabel}
         <IoIosArrowDown className={getRotationClass()} />

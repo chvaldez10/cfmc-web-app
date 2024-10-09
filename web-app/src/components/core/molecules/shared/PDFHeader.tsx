@@ -34,7 +34,7 @@ const PDFHeader: FC<PDFHeaderProps> = ({
         title="Liturgy"
         containerClassName={`z-10 scale-up mx-auto`}
         itemClassName="resize-modal-large"
-        modalElement={<PDFViewer src={src as string} />}
+        modalElement={<PDFViewer header={header} src={src as string} />}
       >
         {buttonText}
       </OpenModalButton>

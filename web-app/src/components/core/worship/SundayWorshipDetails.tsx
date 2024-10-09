@@ -62,7 +62,9 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
           title="Liturgy"
           containerClassName={`z-10 scale-up mx-auto`}
           itemClassName="resize-modal-large"
-          modalElement={<PDFViewer src={liturgySrc as string} />}
+          modalElement={
+            <PDFViewer header={"Liturgy"} src={liturgySrc as string} />
+          }
         >
           View Liturgy
         </OpenModalButton>
