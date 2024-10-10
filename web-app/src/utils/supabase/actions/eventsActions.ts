@@ -25,6 +25,7 @@ function formatEventData(data: any): Events {
     status: data.status,
     organizerName: data.organizer_name,
     slug: data.slug,
+    isSundayWorship: data.is_sunday_worship,
   };
 }
 

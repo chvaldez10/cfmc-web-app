@@ -20,6 +20,7 @@ export type Events = {
   status: string;
   organizerName: string;
   slug: string;
+  isSundayWorship: boolean;
 };
 
 export type SundaysAndSpecialDays = {
