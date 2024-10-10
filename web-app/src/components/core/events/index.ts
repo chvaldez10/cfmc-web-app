@@ -6,3 +6,4 @@ export { default as EventDescription } from "./EventPage/EventDescription";
 export { default as EventGoogleMaps } from "./EventPage/EventGoogleMaps";
 export { default as EventTags } from "./EventPage/EventTags";
 export { default as EventNotFound } from "./EventPage/EventNotFound";
+export { default as WorshipLyrics } from "./EventPage/WorshipLyrics";

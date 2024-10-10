@@ -4,6 +4,7 @@ import {
   EventGoogleMaps,
   EventTags,
   EventNotFound,
+  WorshipLyrics,
 } from "@/components/core/events";
 import { Box } from "@/components/core/ui";
 import { getEventBySlug } from "@/utils/supabase/actions/eventsActions";
@@ -30,6 +31,7 @@ export default async function page({ params }: { params: { slug: string } }) {
       <EventDescription>{eventDetails?.description}</EventDescription>
       <EventGoogleMaps eventLocation={eventDetails?.googleMapsUrl} />
       <EventTags tags={eventDetails.tags} />
+      <WorshipLyrics />
     </>
   );
 }
