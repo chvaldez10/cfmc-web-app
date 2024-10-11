@@ -22,13 +22,15 @@ const PDFHeader: FC<PDFHeaderProps> = ({
 }) => {
   return (
     <VStack
-      containerClassName={`min-h-[50vh] text-center`}
+      containerClassName={`min-h-[30vh] lg:min-h-[50vh] text-center`}
       layoutClass="flex flex-col"
     >
       <SectionHeader text={header} />
+
       <LongParagraph containerClassName="long-paragraph-text-color">
         {longParagraph}
       </LongParagraph>
+
       <OpenModalButton
         variant="outline"
         title="Liturgy"

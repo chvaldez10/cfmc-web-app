@@ -14,17 +14,24 @@ export default async function page() {
 
   return (
     <>
+      {/* Hero Header */}
       <HeroHeader
         header={"Announcements"}
         longParagraph={sundaysAndSpecialDays?.sundayEventName}
       />
+
+      {/* PDF Header */}
       <PDFHeader
         header={"Announcements"}
         longParagraph={announcementsVerbiage}
         src={announcementSrc}
         buttonText={"Announcements"}
       />
+
+      {/* Announcement List */}
       <AnnouncementList />
+
+      {/* Birthday Section */}
       <BirthdaySection />
     </>
   );
