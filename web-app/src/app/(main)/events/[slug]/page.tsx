@@ -9,6 +9,7 @@ import {
 import { Box } from "@/components/core/ui";
 import { getEventBySlug } from "@/utils/supabase/actions/eventsActions";
 import { getSundaysAndSpecialDaysById } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
+import { SundaysAndSpecialDays } from "@/types/supabaseTypes";
 
 export default async function page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -18,10 +19,10 @@ export default async function page({ params }: { params: { slug: string } }) {
     return <EventNotFound />;
   }
 
+  let sundaysAndSpecialDays: SundaysAndSpecialDays | null = null;
+
   if (eventDetails.isSundayWorship) {
-    const sundaysAndSpecialDays = await getSundaysAndSpecialDaysById(
-      eventDetails.id
-    );
+    sundaysAndSpecialDays = await getSundaysAndSpecialDaysById(eventDetails.id);
   }
 
   return (
@@ -39,7 +40,11 @@ export default async function page({ params }: { params: { slug: string } }) {
       <EventGoogleMaps eventLocation={eventDetails?.googleMapsUrl} />
       <EventTags tags={eventDetails.tags} />
 
-      {eventDetails.isSundayWorship && <WorshipLyrics />}
+      {eventDetails.isSundayWorship && (
+        <WorshipLyrics
+          hymnOfDiscipleship={sundaysAndSpecialDays?.hymnOfDiscipleship}
+        />
+      )}
     </>
   );
 }
