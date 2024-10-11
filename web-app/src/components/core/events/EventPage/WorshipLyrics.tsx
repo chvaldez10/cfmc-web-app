@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box } from "@/components/core/ui";
+import { Box, LongParagraph, SectionSubheader } from "@/components/core/ui";
 import { processLyrics } from "@/utils/common/textParser";
 
 const testLyrics = `Verse 1
@@ -34,17 +34,24 @@ Her pure sacrifice of love—`;
 
 const WorshipLyrics: FC = () => {
   const processedLyrics = processLyrics(testLyrics);
-  console.log(processedLyrics);
 
   return (
-    <Box containerClassName="resize-hero-width mx-auto px-4 pt-4 lg:px-0">
+    <Box containerClassName="resize-hero-width mx-auto px-4 pt-4 lg:px-0 space-y-4">
+      <SectionSubheader
+        text={"Hymn of Discipleship"}
+        containerClassName="font-bold"
+      />
       {Object.entries(processedLyrics).map(([section, lines], sectionIndex) => (
-        <div key={sectionIndex}>
-          <h2>{section}</h2>
+        <Box key={sectionIndex}>
+          <LongParagraph containerClassName="font-bold">
+            {section}
+          </LongParagraph>
           {lines.map((line, lineIndex) => (
-            <p key={`${sectionIndex}-${lineIndex}`}>{line}</p>
+            <LongParagraph key={`${sectionIndex}-${lineIndex}`}>
+              {line}
+            </LongParagraph>
           ))}
-        </div>
+        </Box>
       ))}
     </Box>
   );

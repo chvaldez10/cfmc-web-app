@@ -31,7 +31,8 @@ export default async function page({ params }: { params: { slug: string } }) {
       <EventDescription>{eventDetails?.description}</EventDescription>
       <EventGoogleMaps eventLocation={eventDetails?.googleMapsUrl} />
       <EventTags tags={eventDetails.tags} />
-      <WorshipLyrics />
+
+      {eventDetails.isSundayWorship && <WorshipLyrics />}
     </>
   );
 }
