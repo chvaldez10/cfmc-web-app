@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   background-repeat: repeat;
-  transform: scaleY(-1); /* Flip vertically */
+  transform: scaleY(-1);
   border: none;
 }
 
@@ -36,4 +36,11 @@
     transparent 13px
   );
   border: none;
+}
+
+/* Note that thers a styling bug where resizing to iPhone XE shows unwanted overlaps */
+@media screen and (max-width: 768px) {
+  .wave::before {
+    height: 12px;
+  }
 }
