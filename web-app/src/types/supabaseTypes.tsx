@@ -37,6 +37,7 @@ export type SundaysAndSpecialDays = {
   eventId?: number;
   liturgy?: string;
   announcements?: string;
+  hymnOfDiscipleship?: string;
 };
 
 export type Announcements = {
