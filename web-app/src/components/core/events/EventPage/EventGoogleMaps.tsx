@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Box } from "@/components/core/ui";
 import { HeroHalfWrapper } from "@/components/core/hero";
 import { IframeMap } from "@/components/core/molecules";
+import { EVENT_CONTENT_SPACE } from "@/data/constants/shared";
 
 interface EventDescriptionProps {
   eventLocation: string | undefined;
@@ -9,7 +10,7 @@ interface EventDescriptionProps {
 
 const EventGoogleMaps: FC<EventDescriptionProps> = ({ eventLocation }) => {
   return (
-    <Box containerClassName="resize-hero-width mx-auto px-4 pt-4 lg:px-0">
+    <Box containerClassName={EVENT_CONTENT_SPACE}>
       <HeroHalfWrapper containerClassName="h-56 md:h-96">
         <IframeMap src={eventLocation} />
       </HeroHalfWrapper>

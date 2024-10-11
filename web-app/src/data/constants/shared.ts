@@ -27,4 +27,4 @@ export const SECTION_KEYWORDS = [
  * Event
  */
 export const EVENT_CONTENT_SPACE =
-  "resize-hero-width mx-auto px-4 pt-4 lg:px-0 space-y-4";
+  "resize-hero-width mx-auto px-4 pt-4 lg:px-0";
