@@ -9,7 +9,7 @@ import {
   HorizontalLine,
   NextImage,
 } from "@/components/core/ui";
-import { ChurchMembers } from "@/types/supabaseTypes";
+import { ChurchMembers } from "@/types/supabase/members";
 
 interface FullProfileCardProps extends ChurchMembers {}
 

@@ -14,7 +14,7 @@ import { getEventBySlug } from "@/utils/supabase/actions/eventsActions";
 import { getSundaysAndSpecialDaysById } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
 
 // Types
-import { SundaysAndSpecialDays } from "@/types/supabaseTypes";
+import { SundaysAndSpecialDays } from "@/types/supabase/worship";
 
 type PageProps = {
   params: { slug: string };

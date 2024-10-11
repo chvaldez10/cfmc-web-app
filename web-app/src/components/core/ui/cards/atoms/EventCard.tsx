@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Events } from "@/types/supabaseTypes";
+import { Events } from "@/types/supabase/worship";
 import {
   LongParagraph,
   SectionSubheader,

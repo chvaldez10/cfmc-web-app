@@ -1,6 +1,6 @@
 "use server";
 
-import { WaffleSwitch } from "@/types/supabaseTypes";
+import { WaffleSwitch } from "@/types/supabase/core";
 import { createClient } from "@/utils/supabase/server";
 
 function formatWaffleSwitchData(data: any): WaffleSwitch {

@@ -1,6 +1,6 @@
 "use server";
 
-import { Events } from "@/types/supabaseTypes";
+import { Events } from "@/types/supabase/worship";
 import { createClient } from "@/utils/supabase/server";
 
 /*

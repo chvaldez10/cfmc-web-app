@@ -1,6 +1,6 @@
 import React from "react";
 import { LongParagraph, Flex } from "@/components/core/ui";
-import { Announcements } from "@/types/supabaseTypes";
+import { Announcements } from "@/types/supabase/worship";
 
 interface AnnouncementListItemProps extends Announcements {}
 

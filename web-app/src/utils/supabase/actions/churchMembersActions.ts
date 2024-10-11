@@ -1,7 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
-import { ChurchMembers } from "@/types/supabaseTypes";
+import { ChurchMembers } from "@/types/supabase/members";
 
 /*
   @param data: any - The data to be formatted to the ChurchMembers type

@@ -11,7 +11,7 @@ import {
   VerticalCenteredModal,
 } from "@/components/core/ui";
 import useModal from "@/hooks/useModal";
-import { ChurchMembers } from "@/types/supabaseTypes";
+import { ChurchMembers } from "@/types/supabase/members";
 
 interface ImageContentProfileProps extends ChurchMembers {}
 

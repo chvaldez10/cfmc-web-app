@@ -1,6 +1,6 @@
 "use server";
 
-import { ReleaseNotes } from "@/types/supabaseTypes";
+import { ReleaseNotes } from "@/types/supabase/core";
 import { createClient } from "@/utils/supabase/server";
 
 /*

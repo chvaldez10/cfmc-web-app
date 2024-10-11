@@ -1,7 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
-import { Announcements } from "@/types/supabaseTypes";
+import { Announcements } from "@/types/supabase/worship";
 
 function formatAnnouncementsData(data: any): Announcements {
   return {

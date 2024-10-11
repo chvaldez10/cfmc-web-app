@@ -12,7 +12,7 @@ import {
 import { IoPerson } from "react-icons/io5";
 import useModal from "@/hooks/useModal";
 import FullProfileCard from "./FullProfileCard";
-import { ChurchMembers } from "@/types/supabaseTypes";
+import { ChurchMembers } from "@/types/supabase/members";
 
 interface ProfileCardProps extends ChurchMembers {}
 

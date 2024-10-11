@@ -10,7 +10,7 @@ import "swiper/css/scrollbar";
 
 import { EventCard, LoadingSkeleton } from "@/components/core/ui";
 import { Flex } from "@/components/core/ui";
-import { Events } from "@/types/supabaseTypes";
+import { Events } from "@/types/supabase/worship";
 import useSlidesPerView from "@/hooks/useSlidesPerView";
 
 const breakpoints: { screenSize: number; slidesPerView: number }[] = [

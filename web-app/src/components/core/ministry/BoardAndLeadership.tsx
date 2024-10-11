@@ -5,7 +5,7 @@ import {
   LongParagraph,
   ProfileCard,
 } from "@/components/core/ui";
-import { ChurchMembers } from "@/types/supabaseTypes";
+import { ChurchMembers } from "@/types/supabase/members";
 import { HeroContentProps } from "@/types/layoutProps";
 
 export interface BoardAndLeadershipProps extends HeroContentProps {

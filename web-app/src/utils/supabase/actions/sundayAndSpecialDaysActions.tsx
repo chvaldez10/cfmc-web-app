@@ -1,6 +1,6 @@
 "use server";
 
-import { SundaysAndSpecialDays } from "@/types/supabaseTypes";
+import { SundaysAndSpecialDays } from "@/types/supabase/worship";
 import { getNextSunday } from "../../common/dateUtils";
 import { createClient } from "@/utils/supabase/server";
 

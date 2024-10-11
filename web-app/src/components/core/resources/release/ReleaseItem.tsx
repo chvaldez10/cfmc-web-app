@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ReleaseNotes } from "@/types/supabaseTypes";
+import { ReleaseNotes } from "@/types/supabase/core";
 import {
   LongParagraph,
   Box,
