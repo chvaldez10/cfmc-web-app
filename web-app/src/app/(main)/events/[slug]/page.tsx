@@ -1,3 +1,4 @@
+// Components
 import {
   EventHeader,
   EventDescription,
@@ -7,11 +8,19 @@ import {
   WorshipLyrics,
 } from "@/components/core/events";
 import { Box } from "@/components/core/ui";
+
+// Actions
 import { getEventBySlug } from "@/utils/supabase/actions/eventsActions";
 import { getSundaysAndSpecialDaysById } from "@/utils/supabase/actions/sundayAndSpecialDaysActions";
+
+// Types
 import { SundaysAndSpecialDays } from "@/types/supabaseTypes";
 
-export default async function page({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: { slug: string };
+};
+
+export default async function page({ params }: PageProps) {
   const { slug } = params;
   const eventDetails = await getEventBySlug(slug);
 
@@ -27,7 +36,10 @@ export default async function page({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      {/* Space between header and content */}
       <Box containerClassName="py-12"></Box>
+
+      {/* Event header */}
       <EventHeader
         eventName={eventDetails.name}
         eventStartDate={eventDetails.startDate}
@@ -36,10 +48,17 @@ export default async function page({ params }: { params: { slug: string } }) {
         eventCategory={eventDetails.category}
         eventImageUrl={eventDetails.image}
       />
+
+      {/* Event description */}
       <EventDescription>{eventDetails?.description}</EventDescription>
+
+      {/* Event Google Maps */}
       <EventGoogleMaps eventLocation={eventDetails?.googleMapsUrl} />
+
+      {/* Event tags */}
       <EventTags tags={eventDetails.tags} />
 
+      {/* Worship lyrics */}
       {eventDetails.isSundayWorship && (
         <WorshipLyrics
           hymnOfDiscipleship={sundaysAndSpecialDays?.hymnOfDiscipleship}

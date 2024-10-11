@@ -35,8 +35,10 @@ export default async function Home() {
 
   return (
     <>
+      {/* Main page containing links and image collage*/}
       <HeroHome nextServiceSlug={eventDetails?.slug} />
 
+      {/* Sunday worship details */}
       <SundayWorshipDetails
         worshipStartDateTime={worshipStartDateTime}
         liturgySrc={sundaysAndSpecialDays?.liturgy}
@@ -53,7 +55,7 @@ export default async function Home() {
         dataTestId={"theme-of-the-month"}
       />
 
-      {/* Community Building */}
+      {/* Community building */}
       <HeroImageSwiper
         header={"Small Groups"}
         subheader={"Community Building"}
@@ -63,7 +65,7 @@ export default async function Home() {
         dataTestId={"community-building"}
       />
 
-      {/* Next Big Event */}
+      {/* Next big event */}
       <HeroSlideClient
         header={"Next Big Event"}
         longParagraph={nextBigEventDescription}
@@ -81,9 +83,16 @@ export default async function Home() {
         />
       </HeroSlideClient>
 
+      {/* Swiper to browse events*/}
       <EventBlogSwiper />
+
+      {/* Ministry detail cards to show ministries and opportunities*/}
       <MinistryDetailCards />
+
+      {/* Inquiry card to provide a way for users to get in contact with the church*/}
       <InquiryCard />
+
+      {/* Verse of the Day to provide a daily devotional*/}
       <VerseOfTheDay />
     </>
   );
