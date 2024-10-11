@@ -2,7 +2,6 @@ import { FC } from "react";
 import { FilledColoredBadge, Box, Flex } from "@/components/core/ui";
 import { HeroHalfWrapper } from "@/components/core/hero";
 import { generateRandomInteger } from "@/utils/common/numberUtils";
-import { EVENT_CONTENT_SPACE } from "@/data/constants/shared";
 
 const colors = [
   "bg-blue-100 text-blue-800 border-blue-400",
@@ -28,7 +27,7 @@ interface EventTagsProps {
 
 const EventTags: FC<EventTagsProps> = ({ tags }) => {
   return (
-    <Box containerClassName={EVENT_CONTENT_SPACE}>
+    <Box containerClassName="resize-hero-width mx-auto px-4 pt-8 lg:px-0">
       <HeroHalfWrapper>
         <Flex containerClassName="flex flex-row gap-2 ">
           {tags?.map((tag) => {

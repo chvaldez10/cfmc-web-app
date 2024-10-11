@@ -52,7 +52,7 @@ const EventHeader: FC<EventHeaderProps> = ({
 
   return (
     <VStack
-      containerClassName="min-h-auto lg:py-4"
+      containerClassName="min-h-auto lg:pt-4"
       layoutClass="div-col-row-reverse"
     >
       <HeroHalfWrapper containerClassName="div-outside-width">

@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Box, LongParagraph, SectionSubheader } from "@/components/core/ui";
 import { HeroHalfWrapper } from "@/components/core/hero";
 import { EmptySetFromSupabase } from "@/components/template";
-import { EVENT_CONTENT_SPACE } from "@/data/constants/shared";
 import { processLyrics } from "@/utils/common/textParser";
 
 interface WorshipLyricsProps {
@@ -19,7 +18,7 @@ const WorshipLyrics: FC<WorshipLyricsProps> = ({ hymnOfDiscipleship }) => {
   }
 
   return (
-    <Box containerClassName={EVENT_CONTENT_SPACE}>
+    <Box containerClassName="resize-hero-width mx-auto px-4 pt-8 lg:px-0">
       <HeroHalfWrapper containerClassName="space-y-4">
         <SectionSubheader
           text={"Hymn of Discipleship"}

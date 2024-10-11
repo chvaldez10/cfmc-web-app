@@ -10,7 +10,7 @@ interface EventDescriptionProps {
 
 const EventGoogleMaps: FC<EventDescriptionProps> = ({ eventLocation }) => {
   return (
-    <Box containerClassName={EVENT_CONTENT_SPACE}>
+    <Box containerClassName="resize-hero-width mx-auto px-4 pt-8 lg:px-0">
       <HeroHalfWrapper containerClassName="h-56 md:h-96">
         <IframeMap src={eventLocation} />
       </HeroHalfWrapper>
