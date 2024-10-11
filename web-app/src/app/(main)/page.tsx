@@ -33,8 +33,6 @@ export default async function Home() {
   );
   const worshipStartDateTime = eventDetails?.startDate;
 
-  console.log(sundaysAndSpecialDays);
-
   return (
     <>
       <HeroHome nextServiceSlug={eventDetails?.slug} />
