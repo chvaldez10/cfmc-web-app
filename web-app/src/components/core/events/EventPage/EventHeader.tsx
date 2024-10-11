@@ -5,16 +5,19 @@ import {
   SectionHeader,
   Box,
   NextImage,
+  Flex,
 } from "@/components/core/ui";
 import { FaCalendarCheck, FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { MdPersonAdd } from "react-icons/md";
 
 const renderEventDetail = (icon: ReactElement, text: string) => (
-  <LongParagraph containerClassName="flex-items flex-row gap-2">
-    <Box containerClassName="text-violet-500">{icon}</Box>
-    {text}
-  </LongParagraph>
+  <Flex containerClassName="flex-items flex-row gap-2">
+    <Box containerClassName="text-violet-500 text-sm lg:text-lg leading-relaxed">
+      {icon}
+    </Box>
+    <LongParagraph>{text}</LongParagraph>
+  </Flex>
 );
 
 interface EventHeaderProps {
