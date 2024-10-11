@@ -50,3 +50,25 @@ export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDays 
 
   return formatSundaysAndSpecialDaysData(data);
 }
+
+export async function getSundaysAndSpecialDaysById(
+  eventId: number
+): Promise<SundaysAndSpecialDays | null> {
+  const supabase = createClient();
+
+  const { data, error } = await supabase
+    .from("sundays_and_special_days")
+    .select("*")
+    .eq("event_id", eventId)
+    .single();
+
+  if (error) {
+    console.error(error);
+    return null;
+  } else if (!data) {
+    console.error("No Sundays and Special Days found");
+    return null;
+  }
+
+  return formatSundaysAndSpecialDaysData(data);
+}

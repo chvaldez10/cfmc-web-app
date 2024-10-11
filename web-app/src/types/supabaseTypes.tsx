@@ -4,7 +4,7 @@
  */
 
 export type Events = {
-  id?: number;
+  id: number;
   name: string;
   startDate: Date;
   endDate: Date;
@@ -24,7 +24,7 @@ export type Events = {
 };
 
 export type SundaysAndSpecialDays = {
-  id?: number;
+  id: number;
   date: Date;
   sundayEventName: string;
   liturgicalColor: string;
@@ -40,7 +40,7 @@ export type SundaysAndSpecialDays = {
 };
 
 export type Announcements = {
-  id?: number;
+  id: number;
   date: Date;
   announcement: string;
   category: string;
@@ -68,7 +68,7 @@ export type ChurchMembers = {
 };
 
 export type ReleaseNotes = {
-  id?: number;
+  id: number;
   releaseDate: Date;
   version: string;
   freshOutTheOven: string;
@@ -78,7 +78,7 @@ export type ReleaseNotes = {
 };
 
 export type WaffleSwitch = {
-  id?: number;
+  id: number;
   name: string;
   isActive: boolean;
   note?: string;
