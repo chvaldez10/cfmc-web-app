@@ -1,4 +1,5 @@
-import { Verse, WorshipSong } from "@/types/componentProps";
+import { Verse } from "@/types/componentProps";
+import { WorshipSongs } from "@/types/supabase/worship";
 
 const currentMonth = new Date().toLocaleString("default", { month: "long" });
 
@@ -35,21 +36,24 @@ export const defaultVerseOfTheDay: Verse = {
 };
 
 /** Worship Songs */
-export const suggestedWorshipSongs: WorshipSong[] = [
+export const suggestedWorshipSongs: WorshipSongs[] = [
   {
-    title: "Shout to the Lord",
+    id: 1,
+    songTitle: "Shout to the Lord",
     artist: "Don Moen",
     imageSrc:
       "https://images.unsplash.com/photo-1508829040592-72f179f8a73f?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Give Thanks",
+    id: 2,
+    songTitle: "Give Thanks",
     artist: "Don Moen",
     imageSrc:
       "https://images.unsplash.com/photo-1508829040592-72f179f8a73f?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "God Will Make a Way",
+    id: 3,
+    songTitle: "God Will Make a Way",
     artist: "Don Moen",
     imageSrc:
       "https://images.unsplash.com/photo-1508829040592-72f179f8a73f?q=80&w=2676&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

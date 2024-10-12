@@ -1,12 +1,9 @@
 import { FC } from "react";
 import { NextImage } from "@/components/core/ui";
 import { FaStepBackward, FaStepForward, FaPause } from "react-icons/fa";
+import { WorshipSongs } from "@/types/supabase/worship";
 
-interface MusicCardProps {
-  imageSrc: string;
-  songTitle: string;
-  artist: string;
-}
+interface MusicCardProps extends WorshipSongs {}
 
 const MusicCard: FC<MusicCardProps> = ({ imageSrc, songTitle, artist }) => {
   return (

@@ -44,3 +44,10 @@ export type Announcements = {
   eventId?: number;
   isActive: boolean;
 };
+
+export type WorshipSongs = {
+  id: number;
+  songTitle: string;
+  artist: string;
+  imageSrc: string;
+};
