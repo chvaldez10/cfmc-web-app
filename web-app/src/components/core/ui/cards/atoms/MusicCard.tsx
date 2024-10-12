@@ -8,12 +8,20 @@ import {
 } from "@/components/core/ui";
 import { FaStepBackward, FaStepForward, FaPause } from "react-icons/fa";
 import { WorshipSongs } from "@/types/supabase/worship";
+import { formatTime } from "@/utils/common/dateUtils";
 
-interface MusicCardProps extends WorshipSongs {}
+interface MusicCardProps extends WorshipSongs {
+  progress: number;
+}
 
-const MusicCard: FC<MusicCardProps> = ({ imageSrc, songTitle, artist }) => {
+const MusicCard: FC<MusicCardProps> = ({
+  imageSrc,
+  songTitle,
+  artist,
+  progress,
+}) => {
   return (
-    <Flex containerClassName="bg-white-0 p-6 rounded-2xl shadow-md- wfull h-full flex flex-col justify-between">
+    <Flex containerClassName="bg-white-0 p-6 rounded-2xl shadow-md w-full h-full flex flex-col justify-between">
       {/* Album Cover */}
       <Box containerClassName="mb-4">
         <NextImage
@@ -52,11 +60,14 @@ const MusicCard: FC<MusicCardProps> = ({ imageSrc, songTitle, artist }) => {
       {/* Progress Bar */}
       <Box containerClassName="mb-2">
         <Box containerClassName="bg-gray-200 h-2 rounded-full">
-          <Box containerClassName="bg-purple-500 h-2 rounded-full w-1/2"></Box>
+          <div
+            className="bg-purple-500 h-2 rounded-full"
+            style={{ width: `${progress}%` }}
+          ></div>
         </Box>
         <Flex containerClassName="flex justify-between mt-1 text-xs text-gray-600">
-          <span>1:57</span>
-          <span>3:53</span>
+          <span>{formatTime((progress / 100) * 180)}</span>
+          <span>3:00</span>
         </Flex>
       </Box>
     </Flex>

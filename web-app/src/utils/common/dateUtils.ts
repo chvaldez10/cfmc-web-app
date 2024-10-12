@@ -22,3 +22,9 @@ export const getTimeLeft = (targetDate: Date) => {
   const seconds = Math.floor((totalTimeLeft / 1000) % 60);
   return { days, hours, minutes, seconds };
 };
+
+export const formatTime = (time: number) => {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+};
