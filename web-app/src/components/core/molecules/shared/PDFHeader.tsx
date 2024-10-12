@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { PDFViewer } from "@/components/core/molecules";
 import {
-  Box,
   SectionHeader,
   LongParagraph,
   OpenModalButton,
