@@ -6,6 +6,8 @@ import { Announcements } from "@/types/supabase/worship";
 function formatAnnouncementsData(data: any): Announcements {
   return {
     id: data.id,
+    created: new Date(data.created),
+    updated: new Date(data.updated),
     date: new Date(data.date),
     announcement: data.announcement,
     category: data.category,

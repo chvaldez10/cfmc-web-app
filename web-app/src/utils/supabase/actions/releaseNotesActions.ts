@@ -10,6 +10,8 @@ import { createClient } from "@/utils/supabase/server";
 function formatReleaseNotesData(data: any): ReleaseNotes {
   return {
     id: data.id,
+    created: new Date(data.created),
+    updated: new Date(data.updated),
     releaseDate: new Date(data.release_date),
     version: data.version,
     freshOutTheOven: data.fresh_out_the_oven,

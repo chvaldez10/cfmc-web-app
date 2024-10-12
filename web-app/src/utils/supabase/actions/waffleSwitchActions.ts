@@ -6,11 +6,11 @@ import { createClient } from "@/utils/supabase/server";
 function formatWaffleSwitchData(data: any): WaffleSwitch {
   return {
     id: data.id,
+    created: new Date(data.created),
+    updated: new Date(data.updated),
     name: data.name,
     isActive: data.is_active,
     note: data.note,
-    created: data.created,
-    modified: data.modified,
   };
 }
 

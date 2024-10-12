@@ -1,23 +1,7 @@
-export type ChurchMembers = {
-  id: number;
-  birthDate?: Date;
-  isActive: boolean;
-  isBoardMember: boolean;
-  bio?: string;
-  tags?: string[];
-  suffix?: string;
-  email?: string;
-  role: string;
-  firstName: string;
-  lastName: string;
-  phoneNumber?: string;
-  isLeader: boolean;
-  headline?: string;
-  image?: string;
-};
-
 export type ReleaseNotes = {
   id: number;
+  created: Date;
+  updated: Date;
   releaseDate: Date;
   version: string;
   freshOutTheOven: string;
@@ -28,9 +12,9 @@ export type ReleaseNotes = {
 
 export type WaffleSwitch = {
   id: number;
+  created: Date;
+  updated: Date;
   name: string;
   isActive: boolean;
   note?: string;
-  created?: Date;
-  modified?: Date;
 };

@@ -11,7 +11,9 @@ import { createClient } from "@/utils/supabase/server";
 function formatSundaysAndSpecialDaysData(data: any): SundaysAndSpecialDays {
   return {
     id: data.id,
-    date: data.date,
+    created: new Date(data.created),
+    updated: new Date(data.updated),
+    date: data.date, // TODO: format date
     sundayEventName: data.sunday_event_name,
     liturgicalColor: data.liturgical_color,
     scriptureReadings: data.scripture_readings,

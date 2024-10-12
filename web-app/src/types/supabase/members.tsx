@@ -1,5 +1,7 @@
 export type ChurchMembers = {
   id: number;
+  created: Date;
+  updated: Date;
   birthDate?: Date;
   isActive: boolean;
   isBoardMember: boolean;
@@ -13,5 +15,6 @@ export type ChurchMembers = {
   phoneNumber?: string;
   isLeader: boolean;
   headline?: string;
-  image?: string; // should be renamed to member banner image
+  image_banner?: string;
+  image_profile?: string;
 };

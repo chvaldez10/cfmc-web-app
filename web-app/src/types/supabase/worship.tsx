@@ -1,5 +1,7 @@
 export type Events = {
   id: number;
+  created: Date;
+  updated: Date;
   name: string;
   startDate: Date;
   endDate: Date;
@@ -20,6 +22,8 @@ export type Events = {
 
 export type SundaysAndSpecialDays = {
   id: number;
+  created: Date;
+  updated: Date;
   date: Date;
   sundayEventName: string;
   liturgicalColor: string;
@@ -37,6 +41,8 @@ export type SundaysAndSpecialDays = {
 
 export type Announcements = {
   id: number;
+  created: Date;
+  updated: Date;
   date: Date;
   announcement: string;
   category: string;
@@ -47,9 +53,9 @@ export type Announcements = {
 
 export type WorshipSongs = {
   id: number;
+  created?: Date;
+  updated?: Date;
   songTitle: string;
   artist?: string;
   image: string;
-  created?: Date;
-  modified?: Date;
 };

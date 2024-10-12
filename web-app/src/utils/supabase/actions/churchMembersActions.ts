@@ -11,6 +11,8 @@ import { ChurchMembers } from "@/types/supabase/members";
 function formatChurchMembersData(data: any): ChurchMembers {
   return {
     id: data.id,
+    created: new Date(data.created),
+    updated: new Date(data.updated),
     birthDate: new Date(data.birth_date),
     isActive: data.is_active,
     isBoardMember: data.is_board_member,
@@ -24,7 +26,7 @@ function formatChurchMembersData(data: any): ChurchMembers {
     phoneNumber: data.phone_number,
     isLeader: data.is_leader,
     headline: data.headline,
-    image: data.image,
+    image_banner: data.image_banner,
   };
 }
 

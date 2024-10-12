@@ -10,6 +10,8 @@ import { createClient } from "@/utils/supabase/server";
 function formatEventData(data: any): Events {
   return {
     id: data.id,
+    created: new Date(data.created),
+    updated: new Date(data.updated),
     name: data.name,
     startDate: new Date(data.start_date),
     endDate: new Date(data.end_date),

@@ -19,7 +19,7 @@ const FullProfileCard: FC<FullProfileCardProps> = ({ ...churchMemberData }) => {
       <NextImage
         width={"w-full"}
         height={"h-48"}
-        src={churchMemberData.image || ""}
+        src={churchMemberData.image_banner || ""}
         alt={`${churchMemberData.firstName} ${churchMemberData.lastName} Image`}
         imageClassName={"rounded-t-lg object-center"}
       />
