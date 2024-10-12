@@ -1,14 +1,19 @@
 "use client";
 
 import { FC, useState } from "react";
+
+// Components
 import { Flex, Box, SectionHeader, LongParagraph } from "@/components/core/ui";
+import { MusicCard } from "@/components/core/ui";
 import { VStack } from "@/components/core/hero";
+
+// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
-import { MusicCard } from "@/components/core/ui";
+// Data
 import { suggestedWorshipSongs } from "@/data/hero/worshipItems";
 
 const MusicSwiperCard: FC = () => {

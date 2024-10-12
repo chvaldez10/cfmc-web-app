@@ -21,10 +21,12 @@ export async function getFeaturedWorshipSongs(): Promise<
   WorshipSongs[] | null
 > {
   const supabase = createClient();
+
   const { data, error } = await supabase
     .from("worship_songs")
     .select("*")
-    .eq("featured", true);
+    .eq("featured", true)
+    .order("rank", { ascending: true });
 
   if (error) {
     throw new Error(error.message);

@@ -9,6 +9,7 @@ import { ChurchMembers } from "@/types/supabase/members";
 */
 
 function formatChurchMembersData(data: any): ChurchMembers {
+  // Note that if the web app scales, we should not be querying for every field.
   return {
     id: data.id,
     created: new Date(data.created),

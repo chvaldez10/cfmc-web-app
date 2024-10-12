@@ -3,7 +3,14 @@ import { HeroWaveHeader } from "@/components/core/hero";
 import { BoxIcon } from "@/components/core/multimedia";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
 
-export default function page() {
+// Utils
+import { getFeaturedWorshipSongs } from "@/utils/supabase/actions/worshipSongActions";
+
+export default async function page() {
+  const featuredWorshipSongs = await getFeaturedWorshipSongs();
+
+  console.log(featuredWorshipSongs);
+
   return (
     <>
       <HeroWaveHeader
