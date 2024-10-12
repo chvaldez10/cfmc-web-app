@@ -1,4 +1,4 @@
-import SwiperCard from "@/components/core/ui/gallery/SwiperCard";
+import { MusicSwiperCard } from "@/components/core/ui/gallery";
 import { HeroWaveHeader } from "@/components/core/hero";
 import { BoxIcon } from "@/components/core/multimedia";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
@@ -19,7 +19,7 @@ export default function page() {
         />
       </HeroWaveHeader>
 
-      <SwiperCard />
+      <MusicSwiperCard />
     </>
   );
 }

@@ -11,7 +11,7 @@ import "swiper/css/effect-cards";
 import { MusicCard } from "@/components/core/ui";
 import { suggestedWorshipSongs } from "@/data/hero/worshipItems";
 
-const SwiperCard: FC = () => {
+const MusicSwiperCard: FC = () => {
   const [progress, setProgress] = useState<number>(0);
 
   const handleCardChange = (swiper: any) => {
@@ -53,4 +53,4 @@ const SwiperCard: FC = () => {
   );
 };
 
-export default SwiperCard;
+export default MusicSwiperCard;
