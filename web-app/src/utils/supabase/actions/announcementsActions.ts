@@ -20,11 +20,13 @@ function formatAnnouncementsData(data: any): Announcements {
 export async function getAnnouncements(): Promise<Announcements[] | null> {
   const supabase = createClient();
   const { data, error } = await supabase.from("announcements").select("*");
+
   if (error) {
     throw new Error(error.message);
   } else if (!data) {
     console.error("No announcements found");
     return null;
   }
+
   return data.map((announcement: any) => formatAnnouncementsData(announcement));
 }

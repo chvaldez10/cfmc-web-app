@@ -59,6 +59,6 @@ export type WorshipSongs = {
   artist?: string;
   image: string;
   youtube?: string;
-  promoted?: boolean;
+  featured?: boolean;
   rank?: number;
 };
