@@ -58,4 +58,5 @@ export type WorshipSongs = {
   songTitle: string;
   artist?: string;
   image: string;
+  youtube?: string;
 };
