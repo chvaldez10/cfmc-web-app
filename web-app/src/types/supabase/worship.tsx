@@ -48,6 +48,8 @@ export type Announcements = {
 export type WorshipSongs = {
   id: number;
   songTitle: string;
-  artist: string;
-  imageSrc: string;
+  artist?: string;
+  imageSrc?: string;
+  created?: Date;
+  modified?: Date;
 };

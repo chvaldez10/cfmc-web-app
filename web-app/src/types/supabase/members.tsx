@@ -13,5 +13,5 @@ export type ChurchMembers = {
   phoneNumber?: string;
   isLeader: boolean;
   headline?: string;
-  image?: string;
+  image?: string; // should be renamed to member banner image
 };
