@@ -12,5 +12,7 @@ function formatWorshipSongsData(data: any): WorshipSongs {
     artist: data.artist,
     image: data.image,
     youtube: data.youtube,
+    promoted: data.promoted,
+    rank: data.rank,
   };
 }
