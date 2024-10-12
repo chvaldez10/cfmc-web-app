@@ -15,7 +15,7 @@ const VerticalCenteredModal = forwardRef<
   VerticalCenteredModalProps
 >(({ children, header, onClick, containerClassName }, modalRef) => {
   return (
-    <FlexCenter containerClassName="fixed inset-0 z-30 overflow-x-hidden overflow-y-auto">
+    <FlexCenter containerClassName="fixed inset-0 z-50 overflow-x-hidden overflow-y-auto">
       <div
         className={`border border-gray-200 rounded-lg shadow-lg bg-white-0 animate-translate-up text-gray-900 ${containerClassName}`}
         ref={modalRef}
