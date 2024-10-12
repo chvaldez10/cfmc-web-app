@@ -1,5 +1,5 @@
 import { VStack } from "@/components/core/hero";
-import { SectionHeader, SwiperScrollbar } from "@/components/core/ui";
+import { SectionHeader, EventSwiper } from "@/components/core/ui";
 import { getEventsFromRange } from "@/utils/supabase/actions/eventsActions";
 import { EmptySetFromSupabase } from "@/components/template";
 
@@ -19,7 +19,7 @@ async function EventBlogSwiper() {
       {eventsInMonth?.length === 0 ? (
         <EmptySetFromSupabase longParagraph={"No events in this month"} />
       ) : (
-        <SwiperScrollbar events={eventsInMonth} />
+        <EventSwiper events={eventsInMonth} />
       )}
     </VStack>
   );

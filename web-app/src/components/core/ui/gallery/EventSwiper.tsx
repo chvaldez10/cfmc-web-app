@@ -17,11 +17,11 @@ const breakpoints: { screenSize: number; slidesPerView: number }[] = [
   { screenSize: 1024, slidesPerView: 2 },
 ];
 
-interface SwiperScrollbarProps {
+interface EventSwiperProps {
   events: Events[] | null;
 }
 
-const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
+const EventSwiper: FC<EventSwiperProps> = ({ events }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const slidesPerView = useSlidesPerView(breakpoints);
 
@@ -62,4 +62,4 @@ const SwiperScrollbar: FC<SwiperScrollbarProps> = ({ events }) => {
   );
 };
 
-export default SwiperScrollbar;
+export default EventSwiper;
