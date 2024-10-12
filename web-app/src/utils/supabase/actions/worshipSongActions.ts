@@ -17,9 +17,7 @@ function formatWorshipSongsData(data: any): WorshipSongs {
   };
 }
 
-export async function getFeaturedWorshipSongs(): Promise<
-  WorshipSongs[] | null
-> {
+export async function getFeaturedWorshipSongs(): Promise<WorshipSongs[]> {
   const supabase = createClient();
 
   const { data, error } = await supabase
@@ -32,7 +30,6 @@ export async function getFeaturedWorshipSongs(): Promise<
     throw new Error(error.message);
   } else if (!data) {
     console.error("No featured worship songs found");
-    return null;
   }
 
   return data.map((song: any) => formatWorshipSongsData(song));

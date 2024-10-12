@@ -9,10 +9,9 @@ import { getFeaturedWorshipSongs } from "@/utils/supabase/actions/worshipSongAct
 export default async function page() {
   const featuredWorshipSongs = await getFeaturedWorshipSongs();
 
-  console.log(featuredWorshipSongs);
-
   return (
     <>
+      {/* Header */}
       <HeroWaveHeader
         header={"Music Ministry"}
         longParagraph={
@@ -26,7 +25,8 @@ export default async function page() {
         />
       </HeroWaveHeader>
 
-      <MusicSwiperCard />
+      {/* Music Swiper Card */}
+      <MusicSwiperCard featuredWorshipSongs={featuredWorshipSongs} />
     </>
   );
 }

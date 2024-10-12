@@ -13,15 +13,21 @@ import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
-// Data
-import { suggestedWorshipSongs } from "@/data/hero/worshipItems";
+// Types
+import { WorshipSongs } from "@/types/supabase/worship";
 
-const MusicSwiperCard: FC = () => {
+interface MusicSwiperCardProps {
+  featuredWorshipSongs: WorshipSongs[];
+}
+
+const MusicSwiperCard: FC<MusicSwiperCardProps> = ({
+  featuredWorshipSongs,
+}) => {
   const [progress, setProgress] = useState<number>(0);
 
   const handleCardChange = (swiper: any) => {
     const newProgress =
-      (swiper.activeIndex / (suggestedWorshipSongs.length - 1)) * 100;
+      (swiper.activeIndex / (featuredWorshipSongs.length - 1)) * 100;
     setProgress(newProgress);
   };
 
@@ -46,7 +52,7 @@ const MusicSwiperCard: FC = () => {
             className="w-full h-full"
             onSlideChange={handleCardChange}
           >
-            {suggestedWorshipSongs.map((song, index) => (
+            {featuredWorshipSongs.map((song, index) => (
               <SwiperSlide key={index} className="rounded-2xl shadow-lg">
                 <MusicCard {...song} progress={progress} />
               </SwiperSlide>
