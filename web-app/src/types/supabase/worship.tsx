@@ -49,7 +49,7 @@ export type WorshipSongs = {
   id: number;
   songTitle: string;
   artist?: string;
-  imageSrc?: string;
+  image: string;
   created?: Date;
   modified?: Date;
 };

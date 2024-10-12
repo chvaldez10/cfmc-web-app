@@ -9,7 +9,7 @@ import { IframeMap, PDFViewer } from "@/components/core/molecules";
 import { CountdownTimer } from "@/components/core/worship";
 
 // Constants
-import { churchGoogleMapSrc } from "@/data/hero/";
+import { CHURCH_GOOGLE_MAP_SRC } from "@/data/constants/shared";
 
 // Hooks
 import useInView from "@/hooks/useInView";
@@ -76,7 +76,7 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
         data-testid="worship-details-map"
       >
         <IframeMap
-          src={churchGoogleMapSrc}
+          src={CHURCH_GOOGLE_MAP_SRC}
           containerClassName="h-96 lg:h-576"
         />
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { churchGoogleMapSrc } from "@/data/hero/";
+import { CHURCH_GOOGLE_MAP_SRC } from "@/data/constants/shared";
 import { IframeMap } from "@/components/core/molecules";
 import ContactForm from "@/components/core/forms/ContactForm";
 import { Box } from "@/components/core/ui";
@@ -10,7 +10,7 @@ const ContactUs = () => {
       <Box containerClassName="relative">
         <Box containerClassName="absolute inset-0">
           <IframeMap
-            src={churchGoogleMapSrc}
+            src={CHURCH_GOOGLE_MAP_SRC}
             containerClassName="contrast-75"
           />
         </Box>

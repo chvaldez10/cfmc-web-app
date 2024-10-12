@@ -15,7 +15,7 @@ interface MusicCardProps extends WorshipSongs {
 }
 
 const MusicCard: FC<MusicCardProps> = ({
-  imageSrc,
+  image,
   songTitle,
   artist,
   progress,
@@ -27,7 +27,7 @@ const MusicCard: FC<MusicCardProps> = ({
         <NextImage
           width={"w-full"}
           height={"h-40"}
-          src={imageSrc}
+          src={image}
           alt={songTitle}
           imageClassName="rounded-lg object-cover"
         />

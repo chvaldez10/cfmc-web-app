@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Box } from "@/components/core/ui";
 import { HeroHalfWrapper } from "@/components/core/hero";
 import { IframeMap } from "@/components/core/molecules";
-import { EVENT_CONTENT_SPACE } from "@/data/constants/shared";
 
 interface EventDescriptionProps {
   eventLocation: string | undefined;
