@@ -4,7 +4,7 @@ import {
   SectionHeader,
   SectionSubheader,
   LongParagraph,
-  SwiperCoverFlow,
+  ImageSwiper,
 } from "@/components/core/ui/";
 import { ImageProps } from "@/types/genericTypes";
 import { HeroSectionProps } from "@/types/layoutProps";
@@ -45,7 +45,7 @@ const HeroImageSwiper: FC<HeroImageSwiperProps> = ({
 
       {/* Image Column */}
       <HeroHalfWrapper>
-        <SwiperCoverFlow swiperImages={swiperImages} slidesPerView={1} />
+        <ImageSwiper swiperImages={swiperImages} slidesPerView={1} />
       </HeroHalfWrapper>
     </VStack>
   );

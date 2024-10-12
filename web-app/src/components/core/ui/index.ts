@@ -41,10 +41,10 @@ export { default as MusicCard } from "./cards/atoms/MusicCard";
 
 // gallery
 export { default as NextImage } from "./gallery/NextImage";
-export { default as SwiperCoverFlow } from "./gallery/SwiperCoverFlow";
+export { default as ImageSwiper } from "./gallery/ImageSwiper";
 export { default as SwiperScrollbar } from "./gallery/SwiperScrollbar";
 export { default as ImageGallery } from "./gallery/ImageGallery";
-
+export { default as MusicSwiperCard } from "./gallery/MusicSwiperCard";
 // modals
 export { default as VerticalCenteredModal } from "./modals/VerticalCenteredModal";
 

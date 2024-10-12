@@ -1,4 +1,4 @@
-import { MusicSwiperCard } from "@/components/core/ui/gallery";
+import { MusicSwiperCard } from "@/components/core/ui/";
 import { HeroWaveHeader } from "@/components/core/hero";
 import { BoxIcon } from "@/components/core/multimedia";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";

@@ -13,12 +13,12 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
 import "@/styles/cover-flow.css";
 
-interface CoverFlowSwiperProps {
+interface ImageSwiperProps {
   swiperImages: ImageProps[];
   slidesPerView?: number;
 }
 
-const CoverFlowSwiper: FC<CoverFlowSwiperProps> = ({
+const ImageSwiper: FC<ImageSwiperProps> = ({
   swiperImages,
   slidesPerView = 1,
 }) => {
@@ -58,4 +58,4 @@ const CoverFlowSwiper: FC<CoverFlowSwiperProps> = ({
   );
 };
 
-export default CoverFlowSwiper;
+export default ImageSwiper;
