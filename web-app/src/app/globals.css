@@ -150,3 +150,9 @@
     @apply hidden;
   }
 }
+
+@media (max-width: 376px) {
+  .hidden-for-small-width {
+    @apply hidden;
+  }
+}

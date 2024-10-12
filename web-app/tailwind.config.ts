@@ -32,6 +32,7 @@ const config: Config = {
         "576": "576px",
       },
       width: {
+        "62": "15.5rem",
         "576": "576px",
       },
       screens: {
