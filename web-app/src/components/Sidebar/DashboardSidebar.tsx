@@ -3,21 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { FaTicketAlt } from "react-icons/fa";
-import { IoMdPeople } from "react-icons/io";
-
-const navElements = [
-  {
-    title: "Events",
-    href: "/dashboard/events",
-    icon: <FaTicketAlt className="w-6 h-6 mr-2" />,
-  },
-  {
-    title: "Members",
-    href: "/dashboard/members",
-    icon: <IoMdPeople className="w-6 h-6 mr-2" />,
-  },
-];
+import { sidebarItems } from "@/data/navbar/sidebarData";
 
 const DashboardSidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
@@ -47,20 +33,20 @@ const DashboardSidebar = () => {
       </div>
       <div className="flex-1 flex flex-col justify-between overflow-hidden">
         <nav className="mt-10">
-          {navElements.map((navElement) => (
-            <Link href={navElement.href} key={navElement.title}>
+          {sidebarItems.map((sidebarItem) => (
+            <Link href={sidebarItem.url} key={sidebarItem.label}>
               <div
                 className={`flex items-center py-2.5 px-4 rounded transition duration-300 hover:bg-purple-100 hover:text-purple-700 ${
                   isCollapsed ? "justify-center" : ""
                 }`}
               >
-                {navElement.icon}
+                {sidebarItem.svgIcon}
                 <span
                   className={`ml-2 transition-opacity duration-300 delay-200 ${
                     isCollapsed ? "opacity-0" : "opacity-100"
                   }`}
                 >
-                  {!isCollapsed && navElement.title}
+                  {!isCollapsed && sidebarItem.label}
                 </span>
               </div>
             </Link>
