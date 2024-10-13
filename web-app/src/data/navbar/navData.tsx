@@ -1,4 +1,5 @@
-import { ReactElement } from "react";
+import { NavbarProps } from "@/types/componentProps";
+
 import {
   FaBookOpen,
   FaChurch,
@@ -16,11 +17,7 @@ import { RiSoundModuleFill } from "react-icons/ri";
 import { IoMusicalNotesOutline } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
 
-export const aboutDropdownItems: {
-  label: string;
-  url: string;
-  svgIcon: ReactElement;
-}[] = [
+export const aboutDropdownItems: NavbarProps[] = [
   {
     label: "Mission and Vision",
     url: "/about/mission-and-vision",
@@ -43,11 +40,7 @@ export const aboutDropdownItems: {
   },
 ];
 
-export const mediaDropDownItems: {
-  label: string;
-  url: string;
-  svgIcon: ReactElement;
-}[] = [
+export const mediaDropDownItems: NavbarProps[] = [
   {
     label: "Announcements",
     url: "/media/announcements",
@@ -60,11 +53,7 @@ export const mediaDropDownItems: {
   },
 ];
 
-export const getInvolvedDropdownItems: {
-  label: string;
-  url: string;
-  svgIcon: ReactElement;
-}[] = [
+export const getInvolvedDropdownItems: NavbarProps[] = [
   {
     label: "Upcoming",
     url: "/get-involved/upcoming",
@@ -87,11 +76,7 @@ export const getInvolvedDropdownItems: {
   },
 ];
 
-export const connectDropdownItem: {
-  label: string;
-  url: string;
-  svgIcon: ReactElement;
-}[] = [
+export const connectDropdownItem: NavbarProps[] = [
   {
     label: "Contact Us",
     url: "/connect/contact-us",
