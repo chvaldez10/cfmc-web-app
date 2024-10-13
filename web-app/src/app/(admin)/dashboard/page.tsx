@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import UnderConstruction from "@/components/template/UnderConstruction";
+import AdminUnderConstruction from "@/components/template/AdminUnderConstruction";
 
 export default async function page() {
   const supabase = createClient();
@@ -11,5 +11,5 @@ export default async function page() {
     redirect("/login");
   }
 
-  return <UnderConstruction />;
+  return <AdminUnderConstruction />;
 }

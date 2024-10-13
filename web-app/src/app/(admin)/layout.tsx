@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "../Providers";
 import "../globals.css";
-
-import BackButton from "@/components/core/ui/buttons/BackButton";
+import DashboardSidebar from "@/components/Sidebar/DashboardSidebar";
 import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
@@ -12,22 +11,24 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "CFMC",
-  description: "Calgary Methodist Church Web Page",
+  title: "CFMC Admin",
+  description: "Calgary Methodist Church Admin Dashboard",
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={`${roboto.className}`}>
         <Providers>
-          {children}
+          <div className="flex h-screen overflow-hidden">
+            <DashboardSidebar />
+            <main className="flex-1 overflow-y-auto">{children}</main>
+          </div>
           <Footer />
-          <BackButton />
         </Providers>
       </body>
     </html>
