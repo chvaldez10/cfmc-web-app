@@ -4,9 +4,9 @@ import { FC, useState } from "react";
 import { ReleaseItemContainer } from "@/components/core/resources";
 import { Flex, Box } from "@/components/core/ui";
 
-const yearsTest = [2024];
+const availableYears = [2024];
 
-const FixedSidebarWithContent: FC = () => {
+const ReleaseSidebar: FC = () => {
   const currentYear = new Date().getFullYear();
   const [selectedYear, setSelectYear] = useState<number>(currentYear);
 
@@ -15,11 +15,11 @@ const FixedSidebarWithContent: FC = () => {
   };
 
   return (
-    <Flex containerClassName="w-full mx-auto p-5 md:p-0 md:w-7/12 flex flex-col md:flex-row gap-4">
-      {/* TODO: Refactor design for multiple years */}
-      <Box containerClassName="z-10 top-4 left-4 bg-white-0 w-32 p-6 rounded-lg h-full shadow-md">
+    <Flex containerClassName="resize-hero-width mx-auto p-5 md:p-0  flex flex-col md:flex-row gap-4">
+      {/* TODO: Improve design for multiple years */}
+      <Box containerClassName="z-10 top-4 left-4 bg-white-0 w-32 p-4 rounded-lg h-full shadow-md">
         <nav className="flex flex-col space-y-2">
-          {yearsTest.map((year) => (
+          {availableYears.map((year) => (
             <button
               key={year}
               onClick={() => handleYearClick(year)}
@@ -34,11 +34,11 @@ const FixedSidebarWithContent: FC = () => {
       </Box>
 
       {/* features */}
-      <Box containerClassName="md:ml-10 w-full space-y-4">
+      <Box containerClassName="md:ml-8 max-w-3xl space-y-4">
         <ReleaseItemContainer year={selectedYear} />
       </Box>
     </Flex>
   );
 };
 
-export default FixedSidebarWithContent;
+export default ReleaseSidebar;
