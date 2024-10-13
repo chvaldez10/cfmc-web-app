@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import Providers from "../Providers";
 import { DashboardSidebar } from "@/components/Sidebar";
 import "../globals.css";
-import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
   weight: "400",
@@ -28,7 +27,6 @@ export default function DashboardLayout({
             <DashboardSidebar />
             <main className="flex-1 overflow-y-auto">{children}</main>
           </div>
-          <Footer />
         </Providers>
       </body>
     </html>
