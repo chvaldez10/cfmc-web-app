@@ -17,7 +17,7 @@ const NavbarContent: FC = () => {
   const isScrolled = scrollPosition > 10;
   const changeTextColor = `${isScrolled ? "text-white-10" : ""}`;
   const changeBorderColor = `${scrollPosition > 10 ? "border-white-10" : ""}`;
-  const changeBackgroundColor = `${scrollPosition > 10 ? "bg-white-10" : ""}`;
+  const changeMenuIconColor = `${scrollPosition > 10 ? "text-white-0" : ""}`;
 
   return (
     <>
@@ -33,7 +33,7 @@ const NavbarContent: FC = () => {
         >
           <NavLogo textClassName={changeTextColor} />
 
-          <MenuToggleButton changeBackgroundColor={changeBackgroundColor} />
+          <MenuToggleButton changeMenuIconColor={changeMenuIconColor} />
 
           <Box containerClassName="hidden md:block">
             <NavbarLinks

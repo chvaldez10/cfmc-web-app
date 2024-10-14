@@ -15,7 +15,7 @@ const NavDrawer: FC = () => {
           : "translate-x-full ease-in duration-300"
       }`}
     >
-      <Box containerClassName="absolute top-7 left-7">
+      <Box containerClassName="absolute top-8 left-8">
         <CloseButton onClose={toggleMenu} />
       </Box>
       <FlexCenter containerClassName="div-outside-width min-h-screen">

@@ -1,16 +1,13 @@
 import { FC } from "react";
 import { useNavbar } from "@/contexts/NavbarContext";
+import { AiOutlineMenuFold } from "react-icons/ai";
+
 interface MenuToggleButtonProps {
-  changeBackgroundColor: string;
+  changeMenuIconColor: string;
 }
 
-const genericHamburgerLine =
-  "h-1 w-7 my-0.5 rounded-full bg-black transform-animation";
-const baseOpacity = "opacity-60 group-hover:opacity-100 ";
-const activeTransform = "opacity-50 group-hover:opacity-100";
-
 const MenuToggleButton: FC<MenuToggleButtonProps> = ({
-  changeBackgroundColor,
+  changeMenuIconColor,
 }) => {
   const { isMenuBarOpen, toggleMenu } = useNavbar();
 
@@ -18,34 +15,17 @@ const MenuToggleButton: FC<MenuToggleButtonProps> = ({
     <button
       onClick={toggleMenu}
       type="button"
-      className="div-outside-width h-12 w-12 md:hidden rounded group"
+      className={`focus:outline-none hover:bg-gray-200 p-2 rounded-full transition-colors md:hidden ${
+        isMenuBarOpen ? "mx-auto" : ""
+      }`}
       aria-controls="navbarLinks"
       aria-expanded={isMenuBarOpen}
       aria-label="Toggle navigation menu"
     >
-      {/* Top layer */}
-      <div
-        className={`${genericHamburgerLine} ${changeBackgroundColor} ${
-          isMenuBarOpen
-            ? `rotate-45 translate-y-2 ${activeTransform}`
-            : baseOpacity
-        }`}
-      />
-
-      {/* Middle layer */}
-      <div
-        className={`${genericHamburgerLine} ${changeBackgroundColor} ${
-          isMenuBarOpen ? "opacity-0" : baseOpacity
-        }`}
-      />
-
-      {/* Bottom layer */}
-      <div
-        className={`${genericHamburgerLine} ${changeBackgroundColor} ${
-          isMenuBarOpen
-            ? `-rotate-45 -translate-y-2 ${activeTransform}`
-            : baseOpacity
-        }`}
+      <AiOutlineMenuFold
+        size={24}
+        strokeWidth={16}
+        className={`${changeMenuIconColor}`}
       />
     </button>
   );
