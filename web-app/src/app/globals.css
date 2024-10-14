@@ -142,7 +142,7 @@
 
 /* Button Styling */
 .button-style {
-  @apply p-2 focus:outline-none outline-none font-semibold rounded-full text-3xl;
+  @apply p-2 focus:outline-none outline-none font-semibold rounded-full text-2xl;
 }
 
 /* Media queries */

@@ -1,4 +1,7 @@
 import { FC } from "react";
+import { FaStepBackward, FaStepForward, FaPause } from "react-icons/fa";
+
+// Components
 import {
   Flex,
   NextImage,
@@ -6,9 +9,13 @@ import {
   LongParagraph,
   SectionSubheader,
 } from "@/components/core/ui";
-import { FaStepBackward, FaStepForward, FaPause } from "react-icons/fa";
 import { WorshipSongs } from "@/types/supabase/worship";
+
+// Utils
 import { formatTime } from "@/utils/common/dateUtils";
+
+// Data
+import { DEFAULT_SONG_IMAGE } from "@/data/constants/shared";
 
 interface MusicCardProps extends WorshipSongs {
   progress: number;
@@ -27,7 +34,7 @@ const MusicCard: FC<MusicCardProps> = ({
         <NextImage
           width={"w-full"}
           height={"h-40"}
-          src={image}
+          src={image || DEFAULT_SONG_IMAGE}
           alt={songTitle}
           imageClassName="rounded-lg object-cover"
         />

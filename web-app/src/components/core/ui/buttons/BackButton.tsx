@@ -20,7 +20,7 @@ const BackButton = () => {
   return (
     <button
       onClick={() => router.back()}
-      className="fixed bottom-4 left-8 bg-white-0/30 backdrop-blur-sm text-purple-600 p-3 rounded-full shadow-lg z-50 hover:bg-white/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+      className="fixed bottom-8 left-8 bg-white-0/30 backdrop-blur-sm text-purple-600 shadow-lg z-50 hover:bg-white/50 transition-all duration-300 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 button-style"
     >
       <IoMdArrowBack className="h-6 w-6" />
     </button>

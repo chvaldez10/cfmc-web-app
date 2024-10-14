@@ -28,7 +28,7 @@ const NavbarContent: FC = () => {
       >
         <Flex
           containerClassName={` navbar-flex-wrap max-w-screen-xl mx-auto  ${
-            scrollPosition > 10 ? "p-2" : "p-6"
+            scrollPosition > 10 ? "p-4" : "p-8"
           }`}
         >
           <NavLogo textClassName={changeTextColor} />

@@ -1,6 +1,4 @@
 import { Verse } from "@/types/componentProps";
-import { WorshipSongs } from "@/types/supabase/worship";
-import { DEFAULT_SONG_IMAGE } from "@/data/constants/shared";
 
 const currentMonth = new Date().toLocaleString("default", { month: "long" });
 
