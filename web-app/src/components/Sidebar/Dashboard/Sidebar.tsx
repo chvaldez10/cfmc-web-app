@@ -11,7 +11,7 @@ import SidebarHeader from "./SidebarHeader";
 // Data
 import { sidebarItems } from "@/data/navbar/sidebarData";
 
-const DashboardSidebar: FC = () => {
+const Sidebar: FC = () => {
   const [isMenuBarOpen, setIsMenuBarOpen] = useState<boolean>(false);
 
   return (
@@ -52,4 +52,4 @@ const DashboardSidebar: FC = () => {
   );
 };
 
-export default DashboardSidebar;
+export default Sidebar;

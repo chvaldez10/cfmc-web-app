@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "../Providers";
-import { DashboardSidebar } from "@/components/Sidebar";
+import { Sidebar } from "@/components/Sidebar";
 import "../globals.css";
 
 const roboto = Roboto({
@@ -24,7 +24,7 @@ export default function DashboardLayout({
       <body className={`${roboto.className}`}>
         <Providers>
           <div className="flex h-screen overflow-hidden">
-            <DashboardSidebar />
+            <Sidebar />
             <main className="flex-1 overflow-y-auto">{children}</main>
           </div>
         </Providers>
