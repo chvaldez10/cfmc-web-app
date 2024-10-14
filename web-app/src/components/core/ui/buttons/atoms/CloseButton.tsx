@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IoMdClose } from "react-icons/io";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface CloseButtonProps {
   onClose: (() => void) | undefined;
@@ -9,11 +9,11 @@ const CloseButton: FC<CloseButtonProps> = ({ onClose }) => {
   return (
     <>
       <button
-        className="p-2 ml-auto text-3xl font-semibold outline-none focus:outline-none rounded-lg hover:bg-gray-200 "
+        className="ml-auto hover:bg-gray-200 button-style"
         onClick={onClose}
       >
         <div className="bg-transparent h-6 w-6 text-2xl block outline-none focus:outline-none">
-          <IoMdClose />
+          <AiOutlineClose />
         </div>
       </button>
     </>

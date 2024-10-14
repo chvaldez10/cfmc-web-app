@@ -140,6 +140,11 @@
   @apply text-gray-600;
 }
 
+/* Button Styling */
+.button-style {
+  @apply p-2 focus:outline-none outline-none font-semibold rounded-full text-3xl;
+}
+
 /* Media queries */
 @media (max-height: 600px) {
   .hidden-grid-1-3 {

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import { Flex } from "@/components/core/ui";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 
 interface SidebarHeaderProps {
   isMenuBarOpen: boolean;
@@ -27,17 +27,17 @@ const SidebarHeader: FC<SidebarHeaderProps> = ({
         </h2>
       )}
 
-      {/* Toggle Button */}
+      {/* Toggle Buttons */}
       <button
         onClick={toggleMenu}
-        className={`focus:outline-none hover:bg-purple-700 p-2 rounded-full transition-colors duration-300 ${
+        className={`button-style hover:bg-purple-700 ${
           isMenuBarOpen ? "mx-auto" : ""
         }`}
       >
         {isMenuBarOpen ? (
-          <AiOutlineMenu size={24} />
+          <AiOutlineMenuUnfold size={24} />
         ) : (
-          <AiOutlineClose size={24} />
+          <AiOutlineMenuFold size={24} />
         )}
       </button>
     </Flex>
