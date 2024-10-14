@@ -7,7 +7,7 @@ interface EventDescriptionProps extends DivProps {}
 
 const EventDescription: FC<EventDescriptionProps> = ({ children }) => {
   return (
-    <Box containerClassName="resize-hero-width mx-auto px-4 pt-8 lg:px-0">
+    <Box containerClassName="resize-hero-width mx-auto pt-8">
       <HeroHalfWrapper containerClassName="space-y-4">
         <SectionSubheader
           text="Event Description"
