@@ -35,9 +35,9 @@ const SidebarHeader: FC<SidebarHeaderProps> = ({
         }`}
       >
         {isMenuBarOpen ? (
-          <AiOutlineMenuUnfold size={24} />
+          <AiOutlineMenuUnfold size={24} strokeWidth={16} />
         ) : (
-          <AiOutlineMenuFold size={24} />
+          <AiOutlineMenuFold size={24} strokeWidth={16} />
         )}
       </button>
     </Flex>
