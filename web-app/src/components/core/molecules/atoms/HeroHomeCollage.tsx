@@ -21,7 +21,7 @@ const HeroHomeCollage: FC = () => {
   return (
     <Grid
       containerClassName="hidden-grid-1-3 w-full 3xl:w-7/12"
-      dataTestId="homepage-hero-grid"
+      dataTestId="homepage-hero-collage"
     >
       {heroCollageImages.map((featuredImage, index) => (
         <div

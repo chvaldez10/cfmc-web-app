@@ -1,4 +1,6 @@
 import { FC } from "react";
+
+// Components
 import { ParticleVStack, HeroTextWrapper } from "@/components/core/hero/";
 import { HeroHomeCollage } from "@/components/core/molecules";
 import {
@@ -6,8 +8,9 @@ import {
   NavigationText,
   Flex,
   NavigateButton,
-  Grid,
 } from "@/components/core/ui";
+
+// Data
 import { visionStatementLong } from "@/data/hero/";
 
 interface HeroCollageProps {
@@ -21,8 +24,10 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
       itemClassName={"h-[80vh]"}
       dataTestId="homepage-hero"
     >
-      <HeroTextWrapper dataTestId="homepage-hero-text-wrapper">
+      {/* Hero Home Text Content */}
+      <HeroTextWrapper dataTestId="hero-home-text-content">
         <MainGradientHeader text={"Our Vision"} />
+
         <NavigationText
           containerClassName={"hover-animation shadow-up"}
           url={"/about/mission-and-vision"}
@@ -31,9 +36,10 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         </NavigationText>
       </HeroTextWrapper>
 
+      {/* Hero Home Buttons */}
       <Flex
         containerClassName="div-flex-row gap-x-4 lg:gap-x-8 xl:gap-x-12"
-        dataTestId="homepage-navigate-buttons"
+        dataTestId="hero-home-buttons"
       >
         <NavigateButton
           containerClassName="z-10 scale-up"
@@ -50,7 +56,7 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         </NavigateButton>
       </Flex>
 
-      {/* 1 by 3 collage */}
+      {/* Hero Home Collage */}
       <HeroHomeCollage />
     </ParticleVStack>
   );

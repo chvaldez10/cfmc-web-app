@@ -9,11 +9,13 @@ const FlexCenter: FC<FlexCenterProps> = ({
   children,
   containerClassName,
   dataTestId,
+  onClick,
 }) => {
   return (
     <Box
       containerClassName={`div-outside-width ${containerClassName}`}
       dataTestId={dataTestId}
+      onClick={onClick}
     >
       {children}
     </Box>
