@@ -6,11 +6,11 @@ export const sidebarItems: NavbarProps[] = [
   {
     label: "Events",
     url: "/dashboard/events",
-    svgIcon: <FaTicketAlt />,
+    svgIcon: <FaTicketAlt size={24} />,
   },
   {
     label: "Members",
     url: "/dashboard/members",
-    svgIcon: <IoMdPeople />,
+    svgIcon: <IoMdPeople size={24} />,
   },
 ];
