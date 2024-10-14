@@ -1,7 +1,7 @@
 import { FC } from "react";
 import NavbarLinks from "./NavbarLinks";
 import { Box, FlexCenter } from "@/components/core/ui";
-import { CloseButton } from "@/components/core/ui";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { useNavbar } from "@/contexts/NavbarContext";
 
 const NavDrawer: FC = () => {
@@ -17,7 +17,12 @@ const NavDrawer: FC = () => {
     >
       {/* Close Button */}
       <Box containerClassName="absolute top-8 left-8">
-        <CloseButton onClose={toggleMenu} />
+        <button
+          className="ml-auto hover:bg-gray-200 button-style"
+          onClick={toggleMenu}
+        >
+          <AiOutlineMenuUnfold size={24} strokeWidth={16} />
+        </button>
       </Box>
 
       {/* Navbar Links */}

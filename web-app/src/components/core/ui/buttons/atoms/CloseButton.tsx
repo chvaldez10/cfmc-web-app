@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { AiOutlineMenuUnfold } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface CloseButtonProps {
   onClose: (() => void) | undefined;
@@ -11,7 +11,7 @@ const CloseButton: FC<CloseButtonProps> = ({ onClose }) => {
       className="ml-auto hover:bg-gray-200 button-style"
       onClick={onClose}
     >
-      <AiOutlineMenuUnfold size={24} strokeWidth={16} />
+      <AiOutlineClose size={24} strokeWidth={16} />
     </button>
   );
 };
