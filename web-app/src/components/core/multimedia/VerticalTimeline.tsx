@@ -33,7 +33,7 @@ const VerticalTimeline: FC<VerticalTimelineProps> = ({ items }) => {
           {/* Content */}
           <Flex containerClassName="flex-grow flex flex-col items-start pl-6 sm:flex-row sm:items-center md:pl-8">
             <Flex
-              containerClassName="inline-flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-500"
+              containerClassName="inline-flex h-24 w-24 flex-shrink-0 flex-center rounded-full bg-purple-100 text-purple-500"
               key={`${item.label}-vertical-timeline-icon`}
               dataTestId={`${item.label}-vertical-timeline-icon`}
             >

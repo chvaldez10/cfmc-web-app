@@ -34,21 +34,21 @@ export const cardInquiries: IconProps[] = [
 export const mediaInquiries: IconProps[] = [
   {
     label: "Music",
-    svgIcon: <IoMusicalNotesOutline className="w-12 h-12" />,
+    svgIcon: <IoMusicalNotesOutline size={32} />,
     description:
       "Involved in music-related ministries in the church, including soundboard control, audio recording, music performance, and audio troubleshooting.",
     url: "",
   },
   {
     label: "Presentation",
-    svgIcon: <FaYoutube className="w-12 h-12" />,
+    svgIcon: <FaYoutube size={32} />,
     description:
       "Involved in video and presentation-related ministries in the church, creating presentations and troubleshooting video issues.",
     url: "",
   },
   {
     label: "Web Design",
-    svgIcon: <TbWorldWww className="w-12 h-12" />,
+    svgIcon: <TbWorldWww size={32} />,
     description:
       "Known for handling unique web design projects, including developing and designing the website.",
     url: "",
