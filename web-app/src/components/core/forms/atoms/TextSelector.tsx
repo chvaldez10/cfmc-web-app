@@ -7,6 +7,7 @@ interface TextSelectorProps {
   defaultSelectedItem?: string | undefined;
 }
 
+// TODO: Add onChange event to the select element
 const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem }) => {
   return (
     <Box containerClassName="relative z-0 w-full mb-5 group">
@@ -14,6 +15,7 @@ const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem }) => {
       <select
         id="form-selector"
         className="custom-select border text-gray-500 border-gray-300 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500 block w-full p-2.5 "
+        value={defaultSelectedItem}
       >
         <option
           value={defaultSelectedItem}

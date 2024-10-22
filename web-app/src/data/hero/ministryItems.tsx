@@ -9,21 +9,21 @@ export const methodistChurchDescription =
 export const methodistSymbols: IconProps[] = [
   {
     label: "Flame",
-    svgIcon: <FaCross className="w-12 h-12" />,
+    svgIcon: <FaCross size={32} />,
     description:
       "The cross teaches us that forgiveness takes sacrifice even on our part toward others.",
     url: "",
   },
   {
     label: "Dove",
-    svgIcon: <FaDove className="w-12 h-12" />,
+    svgIcon: <FaDove size={32} />,
     description:
       "The dove represents God's Holy spirit coming down to waiting people. The three long picture panels tell the life of Jesus. At the upper left is his birth and at the lower left is Jesus with the children.",
     url: "",
   },
   {
     label: "Globe",
-    svgIcon: <CiGlobe className="w-12 h-12" />,
+    svgIcon: <CiGlobe size={32} />,
     description:
       "The globe (on which the cross and flame are superimposed) alludes to John Wesley's dictum for Methodist believers: 'The world is my parish' representing the missional purpose of the Church.",
     url: "",
