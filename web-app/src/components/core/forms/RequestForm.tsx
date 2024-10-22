@@ -5,12 +5,10 @@ import TextArea from "./atoms/TextArea";
 import { FormButton } from "@/components/core/ui";
 
 interface RequestFormProps {
-  defaultSelectedItem?: string | undefined;
+  defaultSelectedItem: string;
 }
 
-const RequestForm: FC<RequestFormProps> = ({
-  defaultSelectedItem = "connect",
-}) => {
+const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
   return (
     <form className="space-y-4 z-50 w-full p-4">
       <TextInputLabel

@@ -1,37 +1,34 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useState, ChangeEvent } from "react";
 import InputLabel from "@/components/core/forms/atoms/InputLabel";
 import Box from "@/components/core/ui/layout/Box";
 import "@/styles/text-select.css";
 
 interface TextSelectorProps {
-  defaultSelectedItem?: string | undefined;
+  defaultSelectedItem: string;
 }
 
-// TODO: Add onChange event to the select element
 const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem }) => {
+  const [selectedItem, setSelectedItem] = useState(defaultSelectedItem);
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedItem(e.target.value);
+  };
+
   return (
     <Box containerClassName="relative z-0 w-full mb-5 group">
       <InputLabel label="Select an option" htmlFor="form-selector" />
       <select
         id="form-selector"
-        className="custom-select border text-gray-500 border-gray-300 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500 block w-full p-2.5 "
-        value={defaultSelectedItem}
+        className="custom-select border text-gray-500 border-gray-300 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500 block w-full p-2.5"
+        value={selectedItem}
+        onChange={handleChange}
       >
-        <option
-          value={defaultSelectedItem}
-          selected={defaultSelectedItem === "Connect"}
-        >
-          Connect
-        </option>
-        <option value="prayer" selected={defaultSelectedItem === "Prayer"}>
-          Prayer
-        </option>
-        <option value="media" selected={defaultSelectedItem === "Media"}>
-          Media
-        </option>
-        <option value="other" selected={defaultSelectedItem === "other"}>
-          Other
-        </option>
+        <option value="Connect">Connect</option>
+        <option value="Prayer">Prayer</option>
+        <option value="Media">Media</option>
+        <option value="Other">Other</option>
       </select>
     </Box>
   );
