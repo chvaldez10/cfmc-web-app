@@ -7,9 +7,10 @@ import "@/styles/text-select.css";
 
 interface TextSelectorProps {
   defaultSelectedItem: string;
+  name: string;
 }
 
-const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem }) => {
+const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem, name }) => {
   const [selectedItem, setSelectedItem] = useState(defaultSelectedItem);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -24,6 +25,7 @@ const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem }) => {
         className="custom-select border text-gray-500 border-gray-300 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500 block w-full p-2.5"
         value={selectedItem}
         onChange={handleChange}
+        name={name}
       >
         <option value="Connect">Connect</option>
         <option value="Prayer">Prayer</option>

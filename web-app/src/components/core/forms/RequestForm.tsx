@@ -31,7 +31,10 @@ const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
         placeholder="Phone Number"
         maxLength={10}
       />
-      <TextSelector defaultSelectedItem={defaultSelectedItem} />
+      <TextSelector
+        defaultSelectedItem={defaultSelectedItem}
+        name="inquiryItem"
+      />
       <TextArea id="message" label="Message" />
       <div className="flex justify-end">
         <FormButton className="text-purple-500 hover:underline">
