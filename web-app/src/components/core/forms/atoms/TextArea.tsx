@@ -5,6 +5,7 @@ interface TextAreaProps {
   rows?: number;
   placeholder?: string;
   label: string;
+  name: string;
 }
 
 const TextArea: FC<TextAreaProps> = ({
@@ -12,6 +13,7 @@ const TextArea: FC<TextAreaProps> = ({
   rows = 4,
   placeholder = "Write your message here ...",
   label,
+  name,
 }) => {
   return (
     <div>
@@ -24,6 +26,7 @@ const TextArea: FC<TextAreaProps> = ({
       <textarea
         id={id}
         rows={rows}
+        name={name}
         className="block p-2.5 w-full text-sm text-gray-500 bg-white-50 rounded-lg border border-gray-300 focus:ring-purple-500 focus:border-purple-500 focus:outline-purple-500"
         placeholder={placeholder}
       ></textarea>
