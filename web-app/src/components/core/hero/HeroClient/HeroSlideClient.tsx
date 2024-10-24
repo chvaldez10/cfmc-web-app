@@ -40,6 +40,7 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       containerClassName={containerClassName}
       layoutClass={layoutClass}
       isFloating={isFloating}
+      dataTestId={dataTestId}
     >
       {/* Text Column */}
       <div

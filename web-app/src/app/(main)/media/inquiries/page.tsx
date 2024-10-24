@@ -30,6 +30,7 @@ export default function page() {
           "Fill out the request form for all multimedia inquiries. Attachments must be emailed to: firstname.lastname@gmail.com"
         }
         containerClassName="min-h-[60vh] lg:min-h-[50vh] bg-white-10"
+        dataTestId="hero-slide-request-form"
         isFloating={true}
       >
         <RequestForm defaultSelectedItem={"Media"} />

@@ -20,11 +20,14 @@ const VerticalCenteredModal = forwardRef<
         className={`border border-gray-200 rounded-lg shadow-lg bg-white-0 animate-translate-up text-gray-900 ${containerClassName}`}
         ref={modalRef}
       >
+        {/* Modal Header */}
         <Flex containerClassName="div-outside-width-justify-between p-4 border-b border-gray-200 bg-purple-50 md:rounded-t-lg">
           <SectionSubheader text={header} />
           <CloseButton onClose={onClick} />
         </Flex>
-        <Box containerClassName={`bg-white-0`}>{children}</Box>
+
+        {/* Modal Content */}
+        <Box containerClassName={`bg-white-0 w-full h-full`}>{children}</Box>
       </div>
     </FlexCenter>
   );

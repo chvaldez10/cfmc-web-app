@@ -29,7 +29,7 @@ const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
   }
 
   return (
-    <form className="space-y-4 z-50 w-full p-4" onSubmit={handleSubmit}>
+    <form className="space-y-4 z-50 p-4 w-full" onSubmit={handleSubmit}>
       {/* Full Name */}
       <TextInputLabel
         type="text"
