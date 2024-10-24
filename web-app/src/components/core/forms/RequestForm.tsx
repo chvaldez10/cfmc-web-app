@@ -6,7 +6,7 @@ import {
   TextSelector,
   TextArea,
 } from "@/components/core/forms/";
-import { FormButton } from "@/components/core/ui";
+import { FormButton, Flex } from "@/components/core/ui";
 import { createMemberInquiry } from "@/utils/supabase/actions/memberInquiryActions";
 import { InquiryConfirmationScreen } from "@/components/core/screens";
 
@@ -15,7 +15,7 @@ interface RequestFormProps {
 }
 
 const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(true);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -67,11 +67,11 @@ const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
       <TextArea id="inquiry-message" label="Message" rows={6} />
 
       {/* Submit Button */}
-      <div className="flex justify-end">
+      <Flex containerClassName="justify-end">
         <FormButton className="text-purple-500 hover:underline">
           Submit
         </FormButton>
-      </div>
+      </Flex>
     </form>
   );
 };

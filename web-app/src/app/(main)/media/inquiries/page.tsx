@@ -8,6 +8,7 @@ import { mediaInquiries } from "@/data/hero/";
 export default function page() {
   return (
     <>
+      {/* Inquiries Header */}
       <HeroWaveHeader
         header="Inquiries"
         longParagraph="The multimedia is involved in a wide range of projects and tasks. Please read below for more information."
@@ -18,15 +19,17 @@ export default function page() {
           header="Inquire about the Following"
         />
       </HeroWaveHeader>
-      <Box containerClassName="py-12"></Box>
+
+      {/* Inquiries Timeline */}
       <VerticalTimeline items={mediaInquiries} />
 
+      {/* Request Form */}
       <HeroSlideClient
         header={"Request Form"}
         longParagraph={
           "Fill out the request form for all multimedia inquiries. Attachments must be emailed to: firstname.lastname@gmail.com"
         }
-        containerClassName="min-h-screen"
+        containerClassName="min-h-[60vh] lg:min-h-[50vh] bg-white-10"
         isFloating={true}
       >
         <RequestForm defaultSelectedItem={"Media"} />
