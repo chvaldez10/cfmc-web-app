@@ -1,9 +1,11 @@
 "use client";
 
 import { FC, useState } from "react";
-import { FormProps } from "@/types/genericTypes";
+import { FormInputProps } from "@/types/uiProps";
 
-interface TextInputLabelProps extends FormProps {}
+interface TextInputLabelProps extends FormInputProps {
+  maxLength?: number;
+}
 
 const TextInputLabel: FC<TextInputLabelProps> = ({
   type,

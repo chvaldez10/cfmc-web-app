@@ -6,7 +6,13 @@ import {
   FlexCenter,
 } from "@/components/core/ui";
 
-const InquiryConfirmationScreen: FC = () => {
+interface InquiryConfirmationScreenProps {
+  longParagraph?: string;
+}
+
+const InquiryConfirmationScreen: FC<InquiryConfirmationScreenProps> = ({
+  longParagraph = "Thank you for your inquiry!",
+}) => {
   return (
     <FlexCenter containerClassName="text-center gap-4 w-full h-full">
       {/* Check Icon */}
@@ -14,7 +20,7 @@ const InquiryConfirmationScreen: FC = () => {
 
       {/* Thank you for your inquiry! */}
       <SectionSubheader
-        text={"Thank you for your inquiry!"}
+        text={longParagraph}
         containerClassName="long-paragraph-text-color"
       />
     </FlexCenter>

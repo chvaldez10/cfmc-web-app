@@ -1,4 +1,6 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useState } from "react";
 import Link from "next/link";
 import {
   Flex,
@@ -9,14 +11,32 @@ import {
   SmallText,
   HorizontalLine,
 } from "@/components/core/ui";
-import InputLabel from "@/components/core/forms/atoms/InputLabel";
-import TextArea from "@/components/core/forms/atoms/TextArea";
-import TextInput from "@/components/core/forms/atoms/TextInput";
+import { InputLabel, TextArea, TextInput } from "@/components/core/forms/";
+import { InquiryConfirmationScreen } from "@/components/core/screens";
+import { createMemberInquiry } from "@/utils/supabase/actions/memberInquiryActions";
 
 const ContactForm: FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    await createMemberInquiry(formData);
+    setIsSubmitted(true);
+  };
+
+  if (isSubmitted) {
+    return (
+      <InquiryConfirmationScreen longParagraph="Thank you for contacting us. We will get back to you as soon as possible." />
+    );
+  }
+
   return (
     <Flex containerClassName="container px-5 py-24 mx-auto flex">
-      <Flex containerClassName="w-full md:w-1/2 lg:w-5/12 mt-10 md:mt-0 md:ml-auto rounded-lg p-8 flex flex-col relative z-10 shadow-md bg-white-0 space-y-2">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full md:w-1/2 lg:w-5/12 mt-10 md:mt-0 md:ml-auto rounded-lg p-8 flex flex-col relative z-10 shadow-md bg-white-0 space-y-2"
+      >
         {/* Contact Form Header */}
         <SectionSubheader text="Contact Us" />
         <LongParagraph containerClassName="long-paragraph-text-color">
@@ -33,6 +53,7 @@ const ContactForm: FC = () => {
             id="email"
             name="email"
             placeholder="first.last@email.com"
+            required
           />
         </Box>
         <TextArea id="contact-message" label="Message" />
@@ -54,7 +75,7 @@ const ContactForm: FC = () => {
             Submit
           </FormButton>
         </Flex>
-      </Flex>
+      </form>
     </Flex>
   );
 };

@@ -19,13 +19,3 @@ export interface ChurchLiturgy {
   personInCharge: string;
   content: string;
 }
-
-// This might end up being a supabase type
-export interface FormProps {
-  type: string;
-  name: string;
-  id: string;
-  placeholder: string;
-  required?: boolean;
-  maxLength?: number;
-}

@@ -1,23 +1,23 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, FormEvent } from "react";
 import {
   TextInputLabel,
   TextSelector,
   TextArea,
 } from "@/components/core/forms/";
 import { FormButton, Flex } from "@/components/core/ui";
-import { createMemberInquiry } from "@/utils/supabase/actions/memberInquiryActions";
 import { InquiryConfirmationScreen } from "@/components/core/screens";
+import { createMemberInquiry } from "@/utils/supabase/actions/memberInquiryActions";
 
 interface RequestFormProps {
   defaultSelectedItem: string;
 }
 
 const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(true);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     await createMemberInquiry(formData);

@@ -41,3 +41,11 @@ export interface TextProps {
   text: string | undefined;
   containerClassName?: string;
 }
+
+export interface FormInputProps {
+  type: string;
+  name: string;
+  id: string;
+  placeholder?: string;
+  required?: boolean;
+}
