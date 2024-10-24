@@ -15,6 +15,7 @@ import { InputLabel, TextArea, TextInput } from "@/components/core/forms/";
 import { InquiryConfirmationScreen } from "@/components/core/screens";
 import { createMemberInquiry } from "@/utils/supabase/actions/memberInquiryActions";
 
+// TODO: Cleanup this form
 const ContactForm: FC = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
@@ -26,6 +27,7 @@ const ContactForm: FC = () => {
   };
 
   if (isSubmitted) {
+    // TODO: Fix this layout
     return (
       <InquiryConfirmationScreen longParagraph="Thank you for contacting us. We will get back to you as soon as possible." />
     );
