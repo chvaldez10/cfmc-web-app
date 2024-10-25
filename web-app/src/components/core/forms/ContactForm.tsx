@@ -34,21 +34,21 @@ const ContactForm: FC = () => {
   }
 
   return (
-    <Flex containerClassName="container px-5 py-24 mx-auto flex">
+    <Flex containerClassName="container px-4 mx-auto flex">
       <form
         onSubmit={handleSubmit}
         className="w-full md:w-1/2 lg:w-5/12 mt-10 md:mt-0 md:ml-auto rounded-lg p-8 flex flex-col relative z-10 shadow-md bg-white-0 space-y-2"
       >
         {/* Contact Form Header */}
-        <SectionSubheader text="Contact Us" />
+        <SectionSubheader text="Contact Us" containerClassName="font-bold" />
         <LongParagraph containerClassName="long-paragraph-text-color">
           {
             "If you have any questions or need assistance, please feel free to contact us."
           }
         </LongParagraph>
 
-        {/* Contact Form */}
-        <Box>
+        {/* Email Input */}
+        <>
           <InputLabel label="Email" htmlFor="email" />
           <TextInput
             type="email"
@@ -57,7 +57,9 @@ const ContactForm: FC = () => {
             placeholder="first.last@email.com"
             required
           />
-        </Box>
+        </>
+
+        {/* Message Input */}
         <TextArea id="contact-message" label="Message" />
         <HorizontalLine />
 
@@ -67,7 +69,9 @@ const ContactForm: FC = () => {
             {
               "For urgent matters, please call us at (555) 555-5555 or email us at "
             }
-            <Link href="mailto:info@example.com">first.last@email.com</Link>
+            <Link href="mailto:info@example.com" className="underline">
+              first.last@email.com
+            </Link>
           </>
         </SmallText>
 
