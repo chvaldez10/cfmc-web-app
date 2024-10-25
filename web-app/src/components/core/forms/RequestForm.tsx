@@ -67,7 +67,7 @@ const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
       <TextArea id="inquiry-message" label="Message" rows={6} />
 
       {/* Submit Button */}
-      <Flex containerClassName="justify-end">
+      <Flex containerClassName="flex justify-end">
         <FormButton className="text-purple-500 hover:underline">
           Submit
         </FormButton>
