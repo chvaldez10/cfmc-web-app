@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState, FormEvent } from "react";
+import { FC, useState, FormEvent, useEffect } from "react";
 import Link from "next/link";
 import {
   Flex,
@@ -16,6 +16,8 @@ import {
   TextSelector,
 } from "@/components/core/forms/";
 import { InquiryConfirmationScreen } from "@/components/core/screens";
+
+// Supabase Actions
 import { createMemberInquiry } from "@/utils/supabase/actions/memberInquiryActions";
 
 const ContactForm: FC = () => {

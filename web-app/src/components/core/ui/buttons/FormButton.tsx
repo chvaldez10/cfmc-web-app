@@ -1,4 +1,7 @@
-import { FC, ReactNode } from "react";
+"use client";
+
+import { FC, ReactNode, useEffect, useState } from "react";
+import { getWaffleSwitch } from "@/utils/supabase/actions/waffleSwitchActions";
 
 interface FormButtonProps {
   formAction?: (formData: FormData) => Promise<void>;
@@ -13,8 +16,25 @@ const FormButton: FC<FormButtonProps> = ({
   children,
   className = "",
 }) => {
+  const [enablePublicInquiry, setEnablePublicInquiry] =
+    useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchEnablePublicInquiry = async () => {
+      const enablePublicInquiry = await getWaffleSwitch(
+        "enable_public_inquiry"
+      );
+      setEnablePublicInquiry(enablePublicInquiry?.isActive ?? false);
+    };
+    fetchEnablePublicInquiry();
+  }, []);
+
   return (
-    <button formAction={formAction} className={`${baseClass} ${className}`}>
+    <button
+      formAction={formAction}
+      className={`${baseClass} ${className}`}
+      disabled={!enablePublicInquiry}
+    >
       {children}
     </button>
   );
