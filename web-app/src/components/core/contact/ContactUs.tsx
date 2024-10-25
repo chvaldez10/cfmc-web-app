@@ -7,7 +7,7 @@ import { Box, FlexCenter } from "@/components/core/ui";
 const ContactUs = () => {
   return (
     <FlexCenter containerClassName="py-4">
-      <Box containerClassName="relative py-24 min-h-[50vh] w-full md:w-10/12">
+      <Box containerClassName="relative py-24 min-h-[50vh] w-full lg:w-10/12">
         <Box containerClassName="absolute inset-0">
           <IframeMap
             src={CHURCH_GOOGLE_MAP_SRC}

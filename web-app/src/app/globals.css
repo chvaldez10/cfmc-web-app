@@ -145,6 +145,11 @@
   @apply p-2 focus:outline-none outline-none font-semibold rounded-full text-2xl duration-300 transition-all;
 }
 
+/* Contact Form Styling */
+.contact-form-style {
+  @apply w-full md:w-9/12 lg:w-6/12 mx-auto lg:mx-0 lg:ml-auto rounded-lg p-8 flex flex-col relative z-10 shadow-md bg-white-0 space-y-2 min-h-[50vh];
+}
+
 /* Media queries */
 @media (max-height: 600px) {
   .hidden-grid-1-3 {

@@ -60,7 +60,7 @@ const RequestForm: FC<RequestFormProps> = ({ defaultSelectedItem }) => {
       {/* Inquiry Item */}
       <TextSelector
         defaultSelectedItem={defaultSelectedItem}
-        name="inquiryItem"
+        name="inquiryType"
       />
 
       {/* Message */}

@@ -8,9 +8,14 @@ import "@/styles/text-select.css";
 interface TextSelectorProps {
   defaultSelectedItem: string;
   name: string;
+  containerClassName?: string;
 }
 
-const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem, name }) => {
+const TextSelector: FC<TextSelectorProps> = ({
+  defaultSelectedItem,
+  name,
+  containerClassName,
+}) => {
   const [selectedItem, setSelectedItem] = useState(defaultSelectedItem);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -18,7 +23,9 @@ const TextSelector: FC<TextSelectorProps> = ({ defaultSelectedItem, name }) => {
   };
 
   return (
-    <Box containerClassName="relative z-0 w-full mb-5 group">
+    <Box
+      containerClassName={`relative z-0 w-full mb-5 group ${containerClassName}`}
+    >
       <InputLabel label="Select an option" htmlFor="form-selector" />
       <select
         id="form-selector"
