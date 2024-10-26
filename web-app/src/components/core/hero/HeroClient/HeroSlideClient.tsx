@@ -1,10 +1,18 @@
 "use client";
 
 import { FC } from "react";
-import useInView from "@/hooks/useInView";
+
+// Components
 import { SectionHeader, SectionSubheader } from "@/components/core/ui";
 import { VStack } from "@/components/core/hero";
+
+// Hooks
+import useInView from "@/hooks/useInView";
+
+// Types
 import { HeroSectionProps } from "@/types/layoutProps";
+
+// Styles
 import "@/styles/slide.css";
 
 interface HeroSlideClientProps extends HeroSectionProps {
@@ -20,16 +28,16 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
   isFloating = false,
   dataTestId,
 }) => {
-  const [textRef, textInView] = useInView();
-  const [elementRef, elementInView] = useInView();
+  const [leftColumnRef, leftColumnInView] = useInView();
+  const [rightColumnRef, rightColumnInView] = useInView();
 
   const layoutClass = reverse ? "div-col-row-reverse" : "div-col-row";
-  const textAnimationClass = textInView
+  const leftColumnAnimationClass = leftColumnInView
     ? reverse
       ? "animate-slide-in-right"
       : "animate-slide-in-left"
     : "";
-  const elementAnimationClass = elementInView
+  const rightColumnAnimationClass = rightColumnInView
     ? reverse
       ? "animate-slide-in-left"
       : "animate-slide-in-right"
@@ -42,10 +50,10 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
       isFloating={isFloating}
       dataTestId={dataTestId}
     >
-      {/* Text Column */}
+      {/* Left Column */}
       <div
-        ref={textRef}
-        className={`div-outside-width resize-width-to-half text-center gap-4 ${textAnimationClass}`}
+        ref={leftColumnRef}
+        className={`div-outside-width resize-width-to-half text-center gap-4 ${leftColumnAnimationClass}`}
       >
         <SectionHeader text={header} />
         <SectionSubheader
@@ -54,10 +62,10 @@ const HeroSlideClient: FC<HeroSlideClientProps> = ({
         />
       </div>
 
-      {/* Element Column */}
+      {/* Right Column */}
       <div
-        ref={elementRef}
-        className={`div-outside-width resize-width-to-half ${elementAnimationClass}`}
+        ref={rightColumnRef}
+        className={`div-outside-width resize-width-to-half ${rightColumnAnimationClass}`}
       >
         {children}
       </div>

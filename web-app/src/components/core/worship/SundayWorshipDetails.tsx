@@ -26,10 +26,14 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
   worshipStartDateTime,
   liturgySrc,
 }) => {
-  const [textRef, textInView] = useInView();
-  const [elementRef, elementInView] = useInView();
-  const textAnimationClass = textInView ? "animate-slide-in-left" : "";
-  const elementAnimationClass = elementInView ? "animate-slide-in-right" : "";
+  const [leftColumnRef, leftColumnInView] = useInView();
+  const [rightColumnRef, rightColumnInView] = useInView();
+  const leftColumnAnimationClass = leftColumnInView
+    ? "animate-slide-in-left"
+    : "";
+  const rightColumnAnimationClass = rightColumnInView
+    ? "animate-slide-in-right"
+    : "";
 
   return (
     <VStack
@@ -38,16 +42,17 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
       isFloating={true}
       dataTestId="worship-details"
     >
+      {/* Left Column */}
       <div
-        ref={textRef}
-        className={`div-outside-width resize-width-to-half text-center gap-2 ${textAnimationClass}`}
+        ref={leftColumnRef}
+        className={`div-outside-width resize-width-to-half text-center gap-2 ${leftColumnAnimationClass}`}
         data-testid="worship-details-text"
       >
         {/* Countdown Timer */}
         <CountdownTimer worshipStartDateTime={worshipStartDateTime} />
 
         {/* Worship Verbiage */}
-        <h2 className="font-bold text-xl md:text-2xl lg:text-4xl text-center">
+        <h2 className="font-bold text-xl md:text-2xl lg:text-4xl">
           Join Our Next Service
         </h2>
         <SectionSubheader
@@ -69,9 +74,10 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
         </OpenModalButton>
       </div>
 
+      {/* Right Column */}
       <div
-        ref={elementRef}
-        className={`div-outside-width resize-width-to-half ${elementAnimationClass}`}
+        ref={rightColumnRef}
+        className={`div-outside-width resize-width-to-half ${rightColumnAnimationClass}`}
         data-testid="worship-details-map"
       >
         <IframeMap
