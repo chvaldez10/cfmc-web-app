@@ -4,6 +4,9 @@ import { methodistChurchDescription } from "@/data/hero/ministryItems";
 import { VerticalTimeline } from "@/components/core/multimedia";
 import { methodistSymbols } from "@/data/hero/ministryItems";
 
+const ministryDescription =
+  "Some super long paragraph about our ministry. Fill this out later. I am just testing the hero section right now. Please write something else here.";
+
 export default function page() {
   return (
     <>
@@ -11,9 +14,7 @@ export default function page() {
         header={"Ministry"}
         subheader={"Learn More About Our Ministry"}
         imagePath={"/background/Bible_with_leaf_resized.jpg"}
-        longParagraph={
-          "Some super long paragraph about our ministry. Fill this out later. I am just testing the hero section right now. Please write something else here."
-        }
+        longParagraph={ministryDescription}
         dataTestId={"mission-statement"}
       />
       <VerticalHeader

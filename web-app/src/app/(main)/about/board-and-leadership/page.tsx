@@ -10,6 +10,7 @@ export default async function page() {
 
   return (
     <>
+      {/* Board & Leadership */}
       <HeroOverlappingImage
         header={"Board & Leaders"}
         subheader={"Meet Our Leadership Teams"}
@@ -18,6 +19,7 @@ export default async function page() {
         dataTestId={"board-and-leadership"}
       />
 
+      {/* Board Members */}
       <BoardAndLeadership boardMembers={boardMembers} header="Board Members" />
     </>
   );

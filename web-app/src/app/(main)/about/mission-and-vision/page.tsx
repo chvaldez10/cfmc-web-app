@@ -10,6 +10,7 @@ import { IMAGE_SIZE_LARGE_HERO } from "@/data/constants/shared";
 export default function page() {
   return (
     <>
+      {/* Mission Statement */}
       <HeroOverlappingImage
         header={"Welcome to Our Church"}
         subheader={"Mission Statement"}
@@ -18,17 +19,19 @@ export default function page() {
         dataTestId={"mission-statement"}
       />
 
+      {/* Supporting Images */}
       <HeroTwoImages
         header={"Mission and Vision"}
         longParagraph={visionStatementLong}
       />
 
+      {/* Who We Are */}
       <HeroSlideClient
         header={"Who We Are"}
         longParagraph={"Fill description here"}
         containerClassName="min-h-screen "
         reverse={true}
-        dataTestId={"next-big-event"}
+        dataTestId={"who-we-are"}
       >
         <NextImage
           width={"w-full"}
@@ -36,7 +39,7 @@ export default function page() {
           src={
             "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/ministry/1.jpg"
           }
-          alt={"Next Big Event Image"}
+          alt={"Who We Are Image"}
           imageClassName={"rounded-lg object-center"}
         />
       </HeroSlideClient>
