@@ -27,7 +27,6 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
       {/* Hero Home Text Content */}
       <HeroTextWrapper dataTestId="hero-home-text-content">
         <MainGradientHeader text={"Our Vision"} />
-
         <NavigationText
           containerClassName={"hover-animation shadow-up"}
           url={"/about/mission-and-vision"}
@@ -41,12 +40,16 @@ const HeroCollage: FC<HeroCollageProps> = ({ nextServiceSlug }) => {
         containerClassName="div-flex-row gap-x-4 lg:gap-x-8 xl:gap-x-12"
         dataTestId="hero-home-buttons"
       >
+        {/* Disabled if no next service slug */}
         <NavigateButton
           containerClassName="z-10 scale-up"
           url={`/events/${nextServiceSlug}`}
+          disabled={!nextServiceSlug}
         >
           Next Sunday Worship
         </NavigateButton>
+
+        {/* Navigate to Announcements */}
         <NavigateButton
           variant={"outline"}
           containerClassName="z-10 scale-up"

@@ -14,6 +14,7 @@ const NavigateButton: FC<NavigateButtonProps> = ({
   containerClassName,
   children,
   url,
+  disabled = false,
 }) => {
   const router = useRouter();
 
@@ -22,6 +23,7 @@ const NavigateButton: FC<NavigateButtonProps> = ({
       onClick={() => router.push(url)}
       variant={variant}
       containerClassName={containerClassName}
+      disabled={disabled}
     >
       {children}
     </PurplePillButtonClient>
