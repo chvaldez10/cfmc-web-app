@@ -18,7 +18,7 @@ interface ImageSwiperProps {
   slidesPerView?: number;
 }
 
-const ImageSwiper: FC<ImageSwiperProps> = ({
+const ImageSwiperClient: FC<ImageSwiperProps> = ({
   swiperImages,
   slidesPerView = 1,
 }) => {
@@ -58,4 +58,4 @@ const ImageSwiper: FC<ImageSwiperProps> = ({
   );
 };
 
-export default ImageSwiper;
+export default ImageSwiperClient;

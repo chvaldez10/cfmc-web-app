@@ -1,4 +1,4 @@
-import { MusicSwiperCard } from "@/components/core/ui/";
+import { MusicSwiperCardClient } from "@/components/core/ui";
 import { HeroWaveHeader } from "@/components/core/hero";
 import { BoxIcon } from "@/components/core/multimedia";
 import { whyJoinTheMultimediaTeam } from "@/data/hero/mediaInquiries";
@@ -26,7 +26,7 @@ export default async function page() {
       </HeroWaveHeader>
 
       {/* Music Swiper Card */}
-      <MusicSwiperCard featuredWorshipSongs={featuredWorshipSongs} />
+      <MusicSwiperCardClient featuredWorshipSongs={featuredWorshipSongs} />
     </>
   );
 }

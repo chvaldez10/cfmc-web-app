@@ -21,7 +21,7 @@ interface EventSwiperProps {
   events: Events[] | null;
 }
 
-const EventSwiper: FC<EventSwiperProps> = ({ events }) => {
+const EventSwiperClient: FC<EventSwiperProps> = ({ events }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const slidesPerView = useSlidesPerView(breakpoints);
 
@@ -62,4 +62,4 @@ const EventSwiper: FC<EventSwiperProps> = ({ events }) => {
   );
 };
 
-export default EventSwiper;
+export default EventSwiperClient;

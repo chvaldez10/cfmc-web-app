@@ -41,10 +41,13 @@ export { default as MusicCard } from "./cards/atoms/MusicCard";
 
 // gallery
 export { default as NextImage } from "./gallery/NextImage";
-export { default as ImageSwiper } from "./gallery/ImageSwiper";
-export { default as EventSwiper } from "./gallery/EventSwiper";
 export { default as ImageGallery } from "./gallery/ImageGallery";
-export { default as MusicSwiperCard } from "./gallery/MusicSwiperCard";
+
+// Swipers
+export { default as ImageSwiperClient } from "./gallery/ImageSwiperClient";
+export { default as MusicSwiperCardClient } from "./gallery/MusicSwiperCardClient";
+export { default as EventSwiperClient } from "./gallery/EventSwiperClient";
+
 // modals
 export { default as VerticalCenteredModal } from "./modals/VerticalCenteredModal";
 

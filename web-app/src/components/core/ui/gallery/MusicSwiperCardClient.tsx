@@ -20,7 +20,7 @@ interface MusicSwiperCardProps {
   featuredWorshipSongs: WorshipSongs[];
 }
 
-const MusicSwiperCard: FC<MusicSwiperCardProps> = ({
+const MusicSwiperCardClient: FC<MusicSwiperCardProps> = ({
   featuredWorshipSongs,
 }) => {
   const [progress, setProgress] = useState<number>(0);
@@ -64,4 +64,4 @@ const MusicSwiperCard: FC<MusicSwiperCardProps> = ({
   );
 };
 
-export default MusicSwiperCard;
+export default MusicSwiperCardClient;
