@@ -1,11 +1,16 @@
+/* 
+Gets the next Sunday date in UTC
+*/
 export const getNextSunday = (): Date => {
   const now = new Date();
   const nextSunday = new Date(
     Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
   );
+
   nextSunday.setUTCDate(
     nextSunday.getUTCDate() + ((7 - nextSunday.getUTCDay()) % 7)
   );
+
   return nextSunday;
 };
 

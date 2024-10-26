@@ -28,14 +28,13 @@ const WorshipDetail: FC<WorshipDetailProps> = ({
 }) => {
   const [textRef, textInView] = useInView();
   const [elementRef, elementInView] = useInView();
-  const layoutClass = "div-col-row";
   const textAnimationClass = textInView ? "animate-slide-in-left" : "";
   const elementAnimationClass = elementInView ? "animate-slide-in-right" : "";
 
   return (
     <VStack
       containerClassName="bg-green-10 min-h-screen"
-      layoutClass={layoutClass}
+      layoutClass={"div-col-row"}
       isFloating={true}
       dataTestId="worship-details"
     >

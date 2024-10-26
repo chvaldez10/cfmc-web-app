@@ -13,7 +13,7 @@ function formatSundaysAndSpecialDaysData(data: any): SundaysAndSpecialDays {
     id: data.id,
     created: new Date(data.created),
     updated: new Date(data.updated),
-    date: data.date, // TODO: format date
+    date: new Date(data.date),
     sundayEventName: data.sunday_event_name,
     liturgicalColor: data.liturgical_color,
     scriptureReadings: data.scripture_readings,
@@ -32,6 +32,8 @@ function formatSundaysAndSpecialDaysData(data: any): SundaysAndSpecialDays {
 export async function getSundaysAndSpecialDays(): Promise<SundaysAndSpecialDays | null> {
   const supabase = createClient();
   const nextSunday = getNextSunday();
+
+  // Format the date to the format expected by the database UTC
   const formattedDate = nextSunday
     .toISOString()
     .replace("T", " ")
