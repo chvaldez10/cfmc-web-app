@@ -59,3 +59,4 @@ bin/
 archive/**/*
 !archive/*.*
 .vercel
+downloads/
