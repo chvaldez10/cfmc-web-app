@@ -1,27 +1,41 @@
+"""
+Download a YouTube video or audio as MP4 file.
+"""
+
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
+import ffmpeg
 import os
 
 CONST_YOUTUBE_URL = "https://www.youtube.com/watch?v=sEAeW4BbEnk&ab_channel=BELIEVERSMELODY"
 
-def download_video(download_dir: str):
+def download_video(download_dir: str, verbose: bool = False):
     try:
         print("Fetching video information...")
         yt = YouTube(CONST_YOUTUBE_URL, on_progress_callback=on_progress)
         
         # Get the highest resolution stream
-        print("Finding best quality stream...")
-        stream = yt.streams.get_highest_resolution()
+        video_stream = yt.streams.filter(type='video', file_extension='mp4').order_by('resolution').desc().first()
+        audio_stream = yt.streams.get_audio_only()
+        print(video_stream)
         
-        if stream:
-            print("\nVideo Details:")
-            print(f"Title: {yt.title}")
-            print(f"Resolution: {stream.resolution}")
-            print(f"File size: {stream.filesize / (1024*1024):.1f} MB")
+        if video_stream and audio_stream:
+            if verbose:
+                print("\nStream Details:")
+                print(f"Title: {yt.title}")
+                print(f"Video Resolution: {video_stream.resolution}")
+                print(f"Video File size: {video_stream.filesize / (1024*1024):.1f} MB")
             
             # Download the video
             print("\nDownloading video...")
-            stream.download(output_path=download_dir)
+            video_file = video_stream.download(output_path=download_dir, filename_prefix="video_")
+            print("Downloading audio...")
+            audio_file = audio_stream.download(output_path=download_dir, filename_prefix="audio_")
+            
+            # merge video and audio
+            print("Merging video and audio...")
+            ffmpeg.input(video_file).input(audio_file).output(f"{download_dir}/output.mp4", loglevel="quiet").run(overwrite_output=True)
+            
             print("✅ Download completed successfully!")
             return True
         else:
@@ -48,7 +62,7 @@ def download_audio(download_dir: str):
             
             # Download the video
             print("\nDownloading audio...")
-            stream.download(output_path=download_dir)
+            # stream.download(output_path=download_dir)
             print("✅ Download completed successfully!")
             return True
         else:
@@ -75,7 +89,7 @@ if __name__ == "__main__":
     download_dir = _create_downloads_dir_if_not_exists()
 
     # Download video
-    download_video(download_dir)
+    download_video(download_dir, verbose=True)
 
     # Download audio
-    download_audio(download_dir)
+    # download_audio(download_dir)
