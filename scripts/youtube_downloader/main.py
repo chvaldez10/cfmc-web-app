@@ -45,7 +45,19 @@ import os
 #         print(f"❌ Error: {str(e)}")
 #         return False
 
-def download_audio(download_dir: str, youtube_url: str):
+def download_audio(download_dir: str, youtube_url: str) -> bool:
+    """
+    Download the audio from a YouTube video.
+    
+    Args:
+        download_dir (str): The directory to save the downloaded file.
+        youtube_url (str): The URL of the YouTube video to download.
+    
+    Returns:
+        bool: True if the download was successful, False otherwise.
+        
+    """
+    
     try:
         print("Fetching video information...")
         yt = YouTube(youtube_url, on_progress_callback=on_progress)
@@ -53,6 +65,10 @@ def download_audio(download_dir: str, youtube_url: str):
         # Get the highest resolution stream
         print("Finding best quality stream...")
         stream = yt.streams.get_audio_only()
+        
+        if not stream:
+            print("❌ No suitable audio stream found.")
+            return False
         
         if stream:
             print("\nVideo Details:")
@@ -82,8 +98,8 @@ def _create_downloads_dir_if_not_exists():
     
     return downloads_dir
 
-# Main
-if __name__ == "__main__":
+def main() -> None:
+    """Main function for downloading a YouTube video or audio as MP4 file."""
     parser = argparse.ArgumentParser(description="Download a YouTube video or audio as MP4 file.")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--video", action="store_true", help="Download video only")
@@ -91,16 +107,14 @@ if __name__ == "__main__":
     parser.add_argument("--url", type=str, required=True, help="The URL of the YouTube video to download")
     
     args = parser.parse_args()
-    
-    # Create download directory if not exists
     download_dir = _create_downloads_dir_if_not_exists()
     
     if args.url:
         youtube_url = args.url
 
-    # Download video
-    # download_video(download_dir, verbose=True)
-
-    # Download audio
     if args.audio:
         download_audio(download_dir, youtube_url)
+
+# Main
+if __name__ == "__main__":
+    main()
