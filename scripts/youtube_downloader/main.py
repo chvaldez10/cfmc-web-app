@@ -2,11 +2,23 @@
 Download a YouTube video or audio as MP4 file.
 """
 
+import logging
+import asyncio
+from typing import Optional
+from pathlib import Path
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
 import ffmpeg
 import argparse
 import os
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.FileHandler('youtube_downloader.log'),
+                        logging.StreamHandler()
+                    ]
+                    )
 
 # def download_video(download_dir: str, verbose: bool = False):
 #     try:
