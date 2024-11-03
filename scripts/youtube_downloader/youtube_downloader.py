@@ -8,6 +8,7 @@ from pytubefix.exceptions import VideoUnavailable, RegexMatchError
 
 # local imports
 from logger import logger
+from progress import DownloadProgress
 
 class YouTubeDownloader:
     def __init__(self, download_dir: Path):
@@ -28,20 +29,23 @@ class YouTubeDownloader:
         try:
             logger.info("Fetching video information..."),
             yt = await asyncio.to_thread(
-                lambda: YouTube(url, on_progress_callback=on_progress))
+                lambda: YouTube(url, on_progress_callback=DownloadProgress(prefix="Downloading audio...")))
             
             stream = yt.streams.get_audio_only()
             
             if not stream:
-                print("❌ No suitable audio stream found.")
+                logger.error("❌ No suitable audio stream found.")
                 return False
             
-            print("\nVideo Details:")
-            print(f"Title: {yt.title}")
-            print(f"File size: {stream.filesize / (1024*1024):.1f} MB")
-            print("\nDownloading audio...")
-            print("✅ Download completed successfully!")
+            logger.info("\nVideo Details:")
+            logger.info(f"Title: {yt.title}")
+            logger.info(f"File size: {stream.filesize / (1024*1024):.1f} MB")
             
+            logger.info("\nDownloading audio...")
+            # await asyncio.to_thread(
+            #     lambda: stream.download(output_path=self.download_dir, filename_prefix="audio_"))
+            
+            # logger.info("✅ Download completed successfully!")
             return True
         except (VideoUnavailable, RegexMatchError) as e:
             print(f"❌ Error: {str(e)}")
