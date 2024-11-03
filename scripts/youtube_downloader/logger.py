@@ -9,5 +9,8 @@ def setup_logger() -> None:
                             logging.StreamHandler()
                         ]
                         )
+
+    # Return the logger for the current package/module
+    return logging.getLogger(__name__)
     
 logger = setup_logger()
