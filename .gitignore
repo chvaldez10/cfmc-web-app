@@ -53,6 +53,9 @@ ehthumbs.db
 yarn.lock
 package-lock.json
 
+# python
+__pycache__/
+
 # Personal file
 del_me*
 bin/
