@@ -1,0 +1,1 @@
+Log files are saved in the logs directory.
