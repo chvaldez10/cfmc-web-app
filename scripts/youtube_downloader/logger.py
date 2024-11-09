@@ -1,5 +1,5 @@
 import logging
-from config import LOG_FORMAT, LOG_FILENAME
+from constants import LOG_FORMAT, LOG_FILENAME
 
 def setup_logger() -> None:
     logging.basicConfig(level=logging.INFO,
