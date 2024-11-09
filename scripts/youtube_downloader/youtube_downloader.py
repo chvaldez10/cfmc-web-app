@@ -1,5 +1,8 @@
 import asyncio
 from pathlib import Path
+from datetime import datetime
+from dataclasses import dataclass
+
 
 # pytube fix
 from pytubefix import YouTube
@@ -10,11 +13,42 @@ from pytubefix.exceptions import VideoUnavailable, RegexMatchError
 from logger import logger
 from progress import DownloadProgress
 
+@dataclass
+class VideoMetadata:
+    title: str
+    duration_seconds: int
+    publish_date: datetime
+    file_size_mb: float
+    stream_quality: str
+    
+    @property
+    def duration_formatted(self) -> str:
+        return f"{self.duration_seconds // 60}:{self.duration_seconds % 60:02d}"
+    
+    def __str__(self) -> str:
+        return "\n".join([
+            "Video Details:",
+            f"Title: {self.title}",
+            f"Duration: {self.duration_formatted}",
+            f"Published: {self.publish_date.strftime('%Y-%m-%d')}",
+            f"Quality: {self.stream_quality}",
+            f"File size: {self.file_size_mb:.1f} MB"
+        ])
+
 class YouTubeDownloader:
     def __init__(self, download_dir: Path):
         self.download_dir = download_dir
         self.download_dir.mkdir(exist_ok=True)
         
+    def _get_metadata(self, yt: YouTube, stream) -> VideoMetadata:
+        return VideoMetadata(
+            title=yt.title,
+            duration_seconds=yt.length,
+            publish_date=yt.publish_date,
+            file_size_mb=stream.filesize / (1024*1024),
+            stream_quality=stream.abr if stream.type == "audio" else stream.resolution,
+        )
+            
     async def download_audio(self, url: str) -> bool:
         """
         Download the audio from a YouTube video.
@@ -37,10 +71,8 @@ class YouTubeDownloader:
                 logger.error("❌ No suitable audio stream found.")
                 return False
             
-            logger.info("Video Details:")
-            logger.info(f"Title: {yt.title}")
-            logger.info(f"File size: {stream.filesize / (1024*1024):.1f} MB")
-            logger.info("Downloading audio...")
+            metadata = self._get_metadata(yt, stream)
+            logger.info(metadata)
             
             # await asyncio.to_thread(
             #     lambda: stream.download(output_path=self.download_dir, filename_prefix="audio_"))
@@ -48,7 +80,7 @@ class YouTubeDownloader:
             logger.info("✅ Download completed successfully!")
             return True
         except (VideoUnavailable, RegexMatchError) as e:
-            print(f"❌ Error: {str(e)}")
+            logger.error(f"❌ Error: {str(e)}")
             return False
 
     # def download_video(download_dir: str, verbose: bool = False):
