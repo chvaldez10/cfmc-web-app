@@ -37,15 +37,15 @@ class YouTubeDownloader:
                 logger.error("❌ No suitable audio stream found.")
                 return False
             
-            logger.info("\nVideo Details:")
+            logger.info("Video Details:")
             logger.info(f"Title: {yt.title}")
             logger.info(f"File size: {stream.filesize / (1024*1024):.1f} MB")
+            logger.info("Downloading audio...")
             
-            logger.info("\nDownloading audio...")
             # await asyncio.to_thread(
             #     lambda: stream.download(output_path=self.download_dir, filename_prefix="audio_"))
             
-            # logger.info("✅ Download completed successfully!")
+            logger.info("✅ Download completed successfully!")
             return True
         except (VideoUnavailable, RegexMatchError) as e:
             print(f"❌ Error: {str(e)}")

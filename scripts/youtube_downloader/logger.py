@@ -16,7 +16,7 @@ def setup_logger() -> None:
     logging.basicConfig(level=logging.INFO,
                         format=LOG_FORMAT,
                         handlers=[
-                            logging.FileHandler(log_file),
+                            logging.FileHandler(log_file, encoding="utf-8"),
                             logging.StreamHandler()
                         ]
                         )

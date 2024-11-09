@@ -44,13 +44,15 @@ async def main() -> None:
     
     # Check if a URL was provided
     urls = parse_urls(first_only=args.first)
-    pretty_print_list(urls)
+    
     # Download audio
-    # if args.audio:
-    #     if args.urls:
-    #         pass
-    #     else:
-    #         await downloader.download_audio(args.url)
+    if args.audio:
+        if not urls:
+            logger.error("❌ No URLs provided.")
+        else:
+            for url in urls:
+                logger.info(f"Downloading: {url}")
+                await downloader.download_audio(url)
 
 # Main
 if __name__ == "__main__":

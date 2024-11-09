@@ -1,5 +1,6 @@
 from json import load
 from constants import URLS_FILE
+from logger import logger
 
 def parse_urls(first_only: bool = True) -> list[str]:
     """
@@ -14,10 +15,12 @@ def parse_urls(first_only: bool = True) -> list[str]:
     
     with open(URLS_FILE, "r") as file:
         urls = load(file)["urls"]
-        
+    
     if not urls:
-        raise ValueError("❌ No URLs found in the file.")
+        logger.error("❌ No URLs found in the file.")
     elif first_only:
-        return urls[0]
+        logger.info(f"✅ First URL: {urls[0]}")
+        return [urls[0]]
     else:
+        logger.info(f"✅ {len(urls)} URLs found.")
         return urls
