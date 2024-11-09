@@ -36,11 +36,16 @@ async def main() -> None:
                         action="store_true",
                         help="Download the first URL only")
     
+    # Optional argument for test mode
+    parser.add_argument("--test",
+                        action="store_true",
+                        help="Test mode")
+    
     # Parse the arguments
     args = parser.parse_args()
     
     # Initialize the downloader
-    downloader = YouTubeDownloader(DOWNLOAD_DIR)
+    downloader = YouTubeDownloader(DOWNLOAD_DIR, test_mode=args.test)
     
     # Check if a URL was provided
     urls = parse_urls(first_only=args.first)

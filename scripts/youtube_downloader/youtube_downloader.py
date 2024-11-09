@@ -11,7 +11,6 @@ from pytubefix.exceptions import VideoUnavailable, RegexMatchError
 
 # local imports
 from logger import logger
-from progress import DownloadProgress
 
 @dataclass
 class VideoMetadata:
@@ -36,9 +35,10 @@ class VideoMetadata:
         ])
 
 class YouTubeDownloader:
-    def __init__(self, download_dir: Path):
+    def __init__(self, download_dir: Path, test_mode: bool = False):
         self.download_dir = download_dir
         self.download_dir.mkdir(exist_ok=True)
+        self.test_mode = test_mode
         
     def _get_metadata(self, yt: YouTube, stream) -> VideoMetadata:
         return VideoMetadata(
@@ -63,7 +63,7 @@ class YouTubeDownloader:
         try:
             logger.info("Fetching video information..."),
             yt = await asyncio.to_thread(
-                lambda: YouTube(url, on_progress_callback=DownloadProgress(prefix="Downloading audio...")))
+                lambda: YouTube(url, on_progress_callback=on_progress))
             
             stream = yt.streams.get_audio_only()
             
@@ -74,8 +74,14 @@ class YouTubeDownloader:
             metadata = self._get_metadata(yt, stream)
             logger.info(metadata)
             
-            # await asyncio.to_thread(
-            #     lambda: stream.download(output_path=self.download_dir, filename_prefix="audio_"))
+            # construct output filename
+            output_dir = self.download_dir / "audio"
+            output_dir.mkdir(exist_ok=True)
+            filename = f"audio_{metadata.title}.mp3"
+            
+            if not self.test_mode:
+                await asyncio.to_thread(
+                    lambda: stream.download(output_path=output_dir, filename=filename))
             
             logger.info("✅ Download completed successfully!")
             return True
