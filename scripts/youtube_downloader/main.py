@@ -5,7 +5,6 @@ Download a YouTube video or audio as MP4 file.
 import argparse
 import asyncio
 from pathlib import Path
-import ffmpeg
 
 # local imports
 from constants import DOWNLOAD_DIR
@@ -51,13 +50,16 @@ async def main() -> None:
     urls = parse_urls(first_only=args.first)
     
     # Download audio
-    if args.audio:
-        if not urls:
-            logger.error("❌ No URLs provided.")
-        else:
-            for url in urls:
-                logger.info(f"Downloading: {url}")
-                await downloader.download_audio(url)
+    if not urls:
+        logger.error("❌ No URLs provided.")
+    elif args.audio:
+        for url in urls:
+            logger.info(f"Downloading: {url}")
+            await downloader.download_audio(url)
+    elif args.video:
+        for url in urls:
+            logger.info(f"Downloading: {url}")
+            await downloader.download_video(url)
 
 # Main
 if __name__ == "__main__":

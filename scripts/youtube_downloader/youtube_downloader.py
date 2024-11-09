@@ -2,7 +2,7 @@ import asyncio
 from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass
-
+import ffmpeg
 
 # pytube fix
 from pytubefix import YouTube
@@ -62,15 +62,20 @@ class YouTubeDownloader:
     
         try:
             logger.info("Fetching video information..."),
+            
+            # fetch video metadata
             yt = await asyncio.to_thread(
                 lambda: YouTube(url, on_progress_callback=on_progress))
             
+            # get audio stream
             stream = yt.streams.get_audio_only()
             
+            # check if stream is valid
             if not stream:
                 logger.error("❌ No suitable audio stream found.")
                 return False
             
+            # get video metadata
             metadata = self._get_metadata(yt, stream)
             logger.info(metadata)
             
@@ -79,49 +84,63 @@ class YouTubeDownloader:
             output_dir.mkdir(exist_ok=True)
             filename = f"audio_{metadata.title}.mp3"
             
+            # download audio if not in test mode
             if not self.test_mode:
                 await asyncio.to_thread(
                     lambda: stream.download(output_path=output_dir, filename=filename))
             
+            # log success
             logger.info("✅ Download completed successfully!")
             return True
         except (VideoUnavailable, RegexMatchError) as e:
             logger.error(f"❌ Error: {str(e)}")
             return False
 
-    # def download_video(download_dir: str, verbose: bool = False):
-    #     try:
-    #         print("Fetching video information...")
-    #         yt = YouTube(CONST_YOUTUBE_URL, on_progress_callback=on_progress)
+    async def download_video(self, url: str) -> bool:
+        """
+        Download the video from a YouTube video.
+        
+        Args:
+            url (str): The URL of the YouTube video to download.
+    
+        Returns:
+            bool: True if the download was successful, False otherwise.
+        """
+        try:
+            logger.info("Fetching video information...")
             
-    #         # Get the highest resolution stream
-    #         video_stream = yt.streams.filter(type='video', file_extension='mp4').order_by('resolution').desc().first()
-    #         audio_stream = yt.streams.get_audio_only()
-    #         print(video_stream)
+            # fetch video metadata
+            yt = await asyncio.to_thread(
+                lambda: YouTube(url, on_progress_callback=on_progress))
+                
+            # get the highest resolution stream
+            stream = yt.streams.filter(type='video', file_extension='mp4').order_by('resolution').desc().first()
             
-    #         if video_stream and audio_stream:
-    #             if verbose:
-    #                 print("\nStream Details:")
-    #                 print(f"Title: {yt.title}")
-    #                 print(f"Video Resolution: {video_stream.resolution}")
-    #                 print(f"Video File size: {video_stream.filesize / (1024*1024):.1f} MB")
+            # check if stream is valid
+            if not stream:
+                logger.error("❌ No suitable video stream found.")
+                return False
+            
+            # get video metadata
+            metadata = self._get_metadata(yt, stream)
+            logger.info(metadata)
+            
+            # construct output filename
+            output_dir = self.download_dir / "video"
+            output_dir.mkdir(exist_ok=True)
+            filename = f"video_{metadata.title}.mp4"
+            
+            # download video if not in test mode
+            if not self.test_mode:
+                await asyncio.to_thread(
+                    lambda: stream.download(output_path=output_dir, filename=filename))
                 
-    #             # Download the video
-    #             print("\nDownloading video...")
-    #             video_file = video_stream.download(output_path=download_dir, filename_prefix="video_")
-    #             print("Downloading audio...")
-    #             audio_file = audio_stream.download(output_path=download_dir, filename_prefix="audio_")
+            # merge video and audio
+            logger.info("Merging video and audio...")
+            # ffmpeg.input(video_file).input(audio_file).output(f"{download_dir}/output.mp4", loglevel="quiet").run(overwrite_output=True)
                 
-    #             # merge video and audio
-    #             print("Merging video and audio...")
-    #             ffmpeg.input(video_file).input(audio_file).output(f"{download_dir}/output.mp4", loglevel="quiet").run(overwrite_output=True)
-                
-    #             print("✅ Download completed successfully!")
-    #             return True
-    #         else:
-    #             print("❌ No suitable video stream found.")
-    #             return False
-                
-    #     except Exception as e:
-    #         print(f"❌ Error: {str(e)}")
-    #         return False
+            logger.info("✅ Download completed successfully!")
+            return True
+        except Exception as e:
+            logger.error(f"❌ Error: {str(e)}")
+            return False
