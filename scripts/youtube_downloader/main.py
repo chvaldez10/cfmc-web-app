@@ -10,8 +10,11 @@ import ffmpeg
 # local imports
 from constants import DOWNLOAD_DIR
 from youtube_downloader import YouTubeDownloader
-from text_parser import parse_text_urls
+from urls_parser import parse_urls
 from logger import logger
+
+# data
+from constants import URLS_FILE
 
 async def main() -> None:
     """Main entry point for downloading a YouTube video"""
@@ -29,8 +32,8 @@ async def main() -> None:
     
     # Optional argument for the first URL
     parser.add_argument("--first",
-                        type=str,
-                        help="The URL of the YouTube video to download")
+                        action="store_true",
+                        help="Download the first URL only")
     
     # Parse the arguments
     args = parser.parse_args()
@@ -39,7 +42,8 @@ async def main() -> None:
     downloader = YouTubeDownloader(DOWNLOAD_DIR)
     
     # Check if a URL was provided
-    urls = parse_text_urls("data/urls.txt", first_only=args.first)
+    urls = parse_urls(first_only=args.first)
+    print(urls)
     
     # Download audio
     # if args.audio:
