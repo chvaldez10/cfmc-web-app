@@ -12,6 +12,7 @@ from constants import DOWNLOAD_DIR
 from youtube_downloader import YouTubeDownloader
 from urls_parser import parse_urls
 from logger import logger
+from utils import pretty_print_list
 
 # data
 from constants import URLS_FILE
@@ -43,8 +44,7 @@ async def main() -> None:
     
     # Check if a URL was provided
     urls = parse_urls(first_only=args.first)
-    print(urls)
-    
+    pretty_print_list(urls)
     # Download audio
     # if args.audio:
     #     if args.urls:
