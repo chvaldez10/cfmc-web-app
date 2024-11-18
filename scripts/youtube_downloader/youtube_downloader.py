@@ -37,11 +37,30 @@ class VideoMetadata:
 
 class YouTubeDownloader:
     def __init__(self, download_dir: Path, test_mode: bool = False):
+        """
+        Initialize YouTubeDownloader.
+        
+        Args:
+            download_dir (Path): Directory to save downloads
+            test_mode (bool, optional): Run in test mode without actual downloads. Defaults to False.
+        """
+        
         self.download_dir = download_dir
         self.download_dir.mkdir(exist_ok=True)
         self.test_mode = test_mode
         
     def _get_metadata(self, yt: YouTube, stream) -> VideoMetadata:
+        """
+        Get video metadata.
+        
+        Args:
+            yt (YouTube): YouTube video object
+            stream: Selected stream
+        
+        Returns:
+            VideoMetadata: Extracted metadata
+        """
+        
         return VideoMetadata(
             title=yt.title,
             duration_seconds=yt.length,
@@ -49,7 +68,40 @@ class YouTubeDownloader:
             file_size_mb=stream.filesize / (1024*1024),
             stream_quality=stream.abr if stream.type == "audio" else stream.resolution,
         )
+
+    @staticmethod
+    def _run_ffmpeg_merge(video_file: Path, audio_file: Path, output_file: Path) -> bool:
+        """
+        Merge video and audio using FFmpeg.
+        """
+        
+        try:
+            cmd = [
+                'ffmpeg',
+                '-i', str(video_file),
+                '-i', str(audio_file),
+                '-c', 'copy',
+                str(output_file)
+            ]
             
+            process = subprocess.run(
+                cmd,
+                capture_output=True,
+                universal_newlines=True,
+                encoding='utf-8',  # ensure encoding is specified
+                errors='replace',  # replace invalid characters
+                timeout=600  # 10 minutes timeout
+            )
+            
+            if process.returncode != 0:
+                raise Exception(f"FFmpeg error: {process.stderr}")
+            
+            return True
+
+        except Exception as e:
+            logger.error(f"FFmpeg merge failed: {e}")
+            return False
+        
     async def download_audio(self, url: str) -> bool:
         """
         Download the audio from a YouTube video.
@@ -134,10 +186,9 @@ class YouTubeDownloader:
             # download video if not in test mode
             if not self.test_mode:
                 # Create safe filenames
-                safe_title = "".join(c if c.isalnum() else "_" for c in metadata.title).strip("_")
-                temp_video = f"video_{safe_title}.mp4"
-                temp_audio = f"audio_{safe_title}.m4a"
-                final_output = f"{safe_title}.mp4"
+                save_title = metadata.title
+                temp_video = f"video_{save_title}.mp4"
+                temp_audio = f"audio_{save_title}.m4a"
                 
                 # Download with explicit filenames
                 video_file = await asyncio.to_thread(
@@ -152,37 +203,17 @@ class YouTubeDownloader:
                     ))
                 
                 # Final output path
-                filename = output_dir / final_output
+                filename = output_dir / f"{save_title}.mp4"
                 
                 # merge video and audio
                 logger.info("Merging video and audio...")
                 logger.info(f"Video file: {video_file}")
                 logger.info(f"Audio file: {audio_file}")
-                try:
-                    cmd = [
-                        'ffmpeg',
-                        '-i', str(video_file),
-                        '-i', str(audio_file),
-                        '-c', 'copy',
-                        str(filename)
-                    ]
-                    
-                    process = subprocess.run(
-                        cmd,
-                        capture_output=True,
-                        text=True
-                    )
-                    
-                    if process.returncode != 0:
-                        raise Exception(f"FFmpeg error: {process.stderr}")
-                        
-                except Exception as e:
-                    logger.error(f"FFmpeg error: {str(e)}")
-                    raise
+                self._run_ffmpeg_merge(video_file, audio_file, filename)
                 
                 # Clean up temporary files
-                # Path(video_file).unlink()
-                # Path(audio_file).unlink()
+                Path(video_file).unlink()
+                Path(audio_file).unlink()
                 
             logger.info("✅ Download completed successfully!")
             return True
