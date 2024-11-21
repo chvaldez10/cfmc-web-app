@@ -2,12 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    {% include "base/css.html" %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
     <title>{% block page_title %} CFMC Tools {% endblock %}</title>
   </head>
 
   <body>
     {% include "nav/navbar.html" %} {% block content %} {% endblock content %}
-    {%include "base/js.html" %}
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
   </body>
 </html>
