@@ -1,4 +1,4 @@
-from helpers.downloader import download_to_local
+from helpers import download_to_local
 
 from typing import Any
 from django.conf import settings
