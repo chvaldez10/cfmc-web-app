@@ -65,3 +65,9 @@ bin/
 archive/**/*
 !archive/*.*
 downloads/
+
+# vendor static files
+staticfiles/vendors/
+
+# local static files
+local-cdn/
