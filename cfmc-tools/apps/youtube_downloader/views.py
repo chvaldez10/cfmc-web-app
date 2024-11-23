@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import YouTubeDownloadForm
+from .forms import DownloadRequestForm
 from pathlib import Path
 from youtube_downloader.utils.downloader import YouTubeDownloader
 
 async def download_view(request):
     if request.method == 'POST':
-        form = YouTubeDownloadForm(request.POST)
+        form = DownloadRequestForm(request.POST)
         if form.is_valid():
             url = form.cleaned_data['url']
             download_type = form.cleaned_data['download_type']
@@ -31,6 +31,6 @@ async def download_view(request):
             
             return redirect('download')
     else:
-        form = YouTubeDownloadForm()
+        form = DownloadRequestForm()
     
-    return render(request, 'downloader/download.html', {'form': form})
+    return render(request, 'youtube_downloader.html', {'form': form})
