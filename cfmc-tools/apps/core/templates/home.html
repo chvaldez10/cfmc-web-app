@@ -1,19 +1,25 @@
 {% extends 'base.html' %} {% block content %}
+
 <div class="container mx-auto px-4 py-8">
   <div class="text-center">
-    <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to CFMC Tools</h1>
+    {% comment %} header {% endcomment %}
+    <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome</h1>
+
     <p class="text-xl text-gray-600 mb-8">
-      A collection of useful tools for Catholic Faith and Ministry
+      A collection of useful tools for Ministry needs
     </p>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {% comment %} tools {% endcomment %}
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-2 gap-6 justify-center mx-auto max-w-6xl"
+    >
       <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
         <h2 class="text-2xl font-semibold mb-4">YouTube Downloader</h2>
         <p class="text-gray-600 mb-4">
           Download YouTube videos for ministry use
         </p>
         <a
-          href"/"
+          href="/"
           class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
           Go to Tool
