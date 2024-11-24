@@ -81,7 +81,8 @@ class YouTubeDownloader:
                 '-i', str(video_file),
                 '-i', str(audio_file),
                 '-c', 'copy',
-                str(output_file)
+                str(output_file),
+                '-y'  # overwrite existing file
             ]
             
             process = subprocess.run(
@@ -93,9 +94,22 @@ class YouTubeDownloader:
                 timeout=600  # 10 minutes timeout
             )
             
-            if process.returncode != 0:
-                raise Exception(f"FFmpeg error: {process.stderr}")
+            # Log the full ffmpeg output for debugging
+            if process.stdout:
+                logger.debug(f"FFmpeg stdout: {process.stdout}")
+            if process.stderr:
+                logger.debug(f"FFmpeg stderr: {process.stderr}")
             
+            if process.returncode != 0:
+                logger.error(f"FFmpeg failed with return code {process.returncode}")
+                logger.error(f"Error message: {process.stderr}")
+                return False
+            
+            # Verify the output file exists and has size > 0
+            if not output_file.exists() or output_file.stat().st_size == 0:
+                logger.error("Output file doesn't exist or is empty")
+                return False
+                
             return True
 
         except Exception as e:
@@ -149,6 +163,16 @@ class YouTubeDownloader:
             logger.error(f"❌ Error: {str(e)}")
             return False
 
+    def _sanitize_filename(self, filename: str) -> str:
+        """
+        Sanitize filename by removing invalid characters.
+        """
+        # Replace invalid characters with underscore
+        invalid_chars = '<>:"/\\|?*'
+        for char in invalid_chars:
+            filename = filename.replace(char, '_')
+        return filename
+
     async def download_video(self, url: str) -> bool:
         """
         Download the video from a YouTube video.
@@ -186,7 +210,7 @@ class YouTubeDownloader:
             # download video if not in test mode
             if not self.test_mode:
                 # Create safe filenames
-                save_title = metadata.title
+                save_title = self._sanitize_filename(metadata.title)
                 temp_video = f"video_{save_title}.mp4"
                 temp_audio = f"audio_{save_title}.m4a"
                 
@@ -211,7 +235,7 @@ class YouTubeDownloader:
                 logger.info(f"Audio file: {audio_file}")
                 self._run_ffmpeg_merge(video_file, audio_file, filename)
                 
-                # Clean up temporary files
+                # # Clean up temporary files
                 Path(video_file).unlink()
                 Path(audio_file).unlink()
                 
