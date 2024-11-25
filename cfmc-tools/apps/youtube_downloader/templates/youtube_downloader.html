@@ -4,13 +4,55 @@
 
   <div class="bg-white shadow-md rounded-lg p-6">
     <form class="space-y-4">
-      <div>
+      <!-- Input Type Toggle -->
+      <div class="flex space-x-4 mb-4">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            name="input_type"
+            value="single"
+            checked
+            class="form-radio"
+            onclick="toggleInputType('single')"
+          />
+          <span class="ml-2">Single URL</span>
+        </label>
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            name="input_type"
+            value="batch"
+            class="form-radio"
+            onclick="toggleInputType('batch')"
+          />
+          <span class="ml-2">Batch JSON</span>
+        </label>
+      </div>
+
+      <!-- Single URL Input -->
+      <div id="single-url-input">
         <label class="block text-gray-700 mb-2">YouTube Video URL</label>
         <input
           type="text"
           placeholder="Paste YouTube video link"
           class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+      </div>
+
+      <!-- JSON Batch Input -->
+      <div id="batch-urls-input" class="hidden">
+        <label class="block text-gray-700 mb-2">JSON Input</label>
+        <textarea
+          name="json_urls"
+          placeholder='{
+          "urls": [
+            "https://www.youtube.com/watch?v=example1",
+            "https://www.youtube.com/watch?v=example2"
+          ]
+  }'
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+          rows="6"
+        ></textarea>
       </div>
 
       <div>
@@ -30,4 +72,27 @@
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const singleInput = document.querySelector(
+      'input[name="input_type"][value="single"]'
+    );
+    singleInput.checked = true;
+    toggleInputType("single");
+  });
+
+  function toggleInputType(type) {
+    const singleInput = document.getElementById("single-url-input");
+    const batchInput = document.getElementById("batch-urls-input");
+
+    if (type === "single") {
+      singleInput.classList.remove("hidden");
+      batchInput.classList.add("hidden");
+    } else {
+      singleInput.classList.add("hidden");
+      batchInput.classList.remove("hidden");
+    }
+  }
+</script>
 {% endblock %}
