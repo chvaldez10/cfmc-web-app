@@ -1,8 +1,11 @@
 import asyncio
 from celery import shared_task
-from pathlib import Path
-from django.conf import settings
+from decouple import config
+
+# models
 from .models import DownloadRequest
+
+# utils
 from .utils.downloader import YouTubeDownloader
 
 @shared_task(bind=True, max_retries=3)
@@ -17,7 +20,8 @@ def download_youtube_content(self, download_request_id: int):
         download_request.save()
 
         # Setup downloader
-        download_dir = Path(settings.MEDIA_ROOT) / 'downloads'
+        download_dir = config('DOWNLOAD_DIR', default='downloads')
+        print(f"Download directory: {download_dir}")
         downloader = YouTubeDownloader(download_dir)
         
         # Create event loop for async operations

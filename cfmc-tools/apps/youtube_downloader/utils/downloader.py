@@ -25,7 +25,7 @@ class YouTubeDownloader:
             test_mode (bool, optional): Run in test mode without actual downloads. Defaults to False.
         """
         
-        self.download_dir = Path(config('DOWNLOAD_DIR', default='downloads'))
+        self.download_dir = download_dir
         self.allow_downloads = config('ALLOW_DOWNLOADS', default=False, cast=bool)
         
     def _get_metadata(self, yt: YouTube, stream) -> VideoMetadata:
