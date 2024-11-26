@@ -1,6 +1,7 @@
 from celery import shared_task
 from decouple import config
-from asgiref.sync import sync_to_async
+from pathlib import Path
+
 # models
 from .models import DownloadRequest
 
@@ -18,7 +19,7 @@ def download_youtube_content(download_request_id: int):
     download_request.save()
 
     # Setup downloader
-    downloader = YouTubeDownloader(config('DOWNLOAD_DIR', default='downloads'))
+    downloader = YouTubeDownloader(Path(config('DOWNLOAD_DIR', default='downloads')))
 
     # Perform download based on type
     if download_request.download_type == 'audio':

@@ -73,6 +73,15 @@ class YouTubeDownloader:
         
         if process.returncode != 0:
             raise Exception(f"FFmpeg error: {process.stderr}")
+        
+    def _sanitize_filename(self, filename: str) -> str:
+        """
+        Sanitize filename by removing invalid characters.
+        """
+        invalid_chars = '<>:"/\\|?*'
+        for char in invalid_chars:
+            filename = filename.replace(char, '_')
+        return filename
             
     def download_audio(self, url: str) -> bool:
         """
@@ -103,7 +112,7 @@ class YouTubeDownloader:
             # construct output filename
             output_dir = self.download_dir / "audio"
             output_dir.mkdir(exist_ok=True)
-            filename = f"{metadata.title}.mp3"
+            filename = f"{self._sanitize_filename(metadata.title)}.mp3"
             
             # download audio if not in test mode
             if self.allow_downloads:
@@ -148,19 +157,20 @@ class YouTubeDownloader:
             output_dir = self.download_dir / "video"
             output_dir.mkdir(exist_ok=True)
             
+            # Create safe filenames
+            save_title = self._sanitize_filename(metadata.title)
+            temp_video = f"video_{save_title}.mp4"
+            temp_audio = f"audio_{save_title}.m4a"
+
+            # Final output path
+            filename = output_dir / f"{save_title}.mp4"
+            
             # download video if not in test mode
             if self.allow_downloads:
-                # Create safe filenames
-                save_title = metadata.title
-                temp_video = f"video_{save_title}.mp4"
-                temp_audio = f"audio_{save_title}.m4a"
                 
                 # Download with explicit filenames
                 video_file = video_stream.download(output_path=output_dir, filename=temp_video)
                 audio_file = audio_stream.download(output_path=output_dir, filename=temp_audio)
-                
-                # Final output path
-                filename = output_dir / f"{save_title}.mp4"
                 
                 # merge video and audio
                 logger.info("Merging video and audio...")
