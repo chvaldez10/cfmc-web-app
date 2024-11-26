@@ -10,10 +10,7 @@ from .tasks import download_youtube_content
 async def download_view(request):
     if request.method == 'POST':
         form = DownloadRequestForm(request.POST)
-        print(f"Form data: {request.POST}")
-        print(f"Form data is valid: {form.is_valid()}")
-        
-        allow_downloads = False
+        allow_downloads = False  # for testing
         
         # validate form
         if form.is_valid() and allow_downloads:
@@ -21,7 +18,7 @@ async def download_view(request):
             download_type = form.cleaned_data['download_type']
             print(f"Download type: {download_type}")
             
-            # Setup download directory
+            # Setup download request
             download_request = DownloadRequest.objects.create(
                 url=url,
                 download_type=download_type,
@@ -29,13 +26,14 @@ async def download_view(request):
             )
             
             # Queue the download request
-            download_youtube_content.delay(download_request.id)
+            if allow_downloads:
+                download_youtube_content.delay(download_request.id)
 
             # Show success message
             messages.success(request, 'Download request submitted successfully!')
             return redirect('download')
         else:
-            messages.error(request, 'Invalid form data. Please try again.')
+            messages.error(request, 'Please enter a valid YouTube URL.')
     else:
         form = DownloadRequestForm()
     
