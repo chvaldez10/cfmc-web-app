@@ -145,3 +145,22 @@ STATIC_ROOT = BASE_DIR / 'local-cdn'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Celery
+REDIS_URL = config('REDIS_URL', default='redis://localhost:6878')
+CELERY_REDIS_BACKEND_USE_SSL = False
+
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+CELERY_BROKER_CONNECTION_RETRY = True
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+CELERY_BROKER_USE_SSL = False
+
+# Explorer
+EXPLORER_CONNECTION = {'default', 'default'}
+EXPLORER_DEFAULT_CONNECTION = 'default'
