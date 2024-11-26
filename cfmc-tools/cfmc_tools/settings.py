@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'explorer',
 
     # apps
-    'core',
-    'commando',
-    'youtube_downloader',
+    'apps.core',
+    'apps.commando',
+    'apps.youtube_downloader',
 ]
 
 MIDDLEWARE = [
