@@ -6,7 +6,7 @@ from decouple import config
 from .models import DownloadRequest
 
 # utils
-from .utils.downloader import YouTubeDownloader
+from .utils.youtube_downloader import YouTubeDownloader
 
 @shared_task(bind=True, max_retries=3)
 def download_youtube_content(self, download_request_id: int):
@@ -34,10 +34,12 @@ def download_youtube_content(self, download_request_id: int):
                 result = loop.run_until_complete(
                     downloader.download_audio(download_request.url)
                 )
-            else:
+            elif download_request.download_type == 'video':
                 result = loop.run_until_complete(
                     downloader.download_video(download_request.url)
                 )
+            else:
+                raise ValueError("Invalid download type.")
         finally:
             loop.close()
 

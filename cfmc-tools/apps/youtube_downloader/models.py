@@ -15,6 +15,9 @@ class DownloadRequest(models.Model):
     ])
     file_path = models.CharField(max_length=500, blank=True, null=True)
     error_message = models.TextField(blank=True, null=True)
+    
+    async def save(self, *args, **kwargs):
+        await super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.download_type.capitalize()} request for {self.url} - Status: {self.status}"

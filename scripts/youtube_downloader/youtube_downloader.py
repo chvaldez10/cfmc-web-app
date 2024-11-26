@@ -2,7 +2,6 @@ import asyncio
 from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass
-import ffmpeg
 import subprocess
 
 # pytube fix
