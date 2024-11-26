@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import sys
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,9 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!o2lrf$7z2&=e*sid_o$&6i#93yu%kq2@x8s2lc+ygqlyf6(*u'
+SECRET_KEY = config('DJANGO_SECRET_KEY', default='django-insecure-!o2lrf$7z2&=e*sid_o$&6i#93yu%kq2@x8s2lc+ygqlyf6(*u', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party
+    'django_celery_beat',
+    'django_celery_results',
+    'explorer',
 
     # apps
     'core',
@@ -88,6 +93,12 @@ DATABASES = {
     }
 }
 
+if config('DATABASE_URL', default=None):
+    import dj_database_url
+
+    DATABASES = {
+        'default': dj_database_url.config(default=config('DATABASE_URL', cast=str), conn_max_age=300, engine='django.db.backends.postgresql')
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

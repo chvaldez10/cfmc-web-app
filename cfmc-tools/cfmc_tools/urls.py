@@ -23,4 +23,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_page_view, name='home'),
     path('download/', include('apps.youtube_downloader.urls')),
+    path('explorer/', include('explorer.urls')),
 ]
