@@ -8,7 +8,7 @@ from .utils.downloader import YouTubeDownloader
 @shared_task(bind=True, max_retries=3)
 def download_youtube_content(self, download_request_id: int):
     """
-    Celery task to handle YouTube downloads
+    Celery task to handle YouTube downloads.
     """
     try:
         # Get the download request
@@ -37,9 +37,10 @@ def download_youtube_content(self, download_request_id: int):
         finally:
             loop.close()
 
+        # Update download request based on result
         if result['success']:
             download_request.status = 'completed'
-            download_request.file_path = result['filename']
+            download_request.file_path = result['file_path']
         else:
             download_request.status = 'failed'
             download_request.error_message = result.get('error')

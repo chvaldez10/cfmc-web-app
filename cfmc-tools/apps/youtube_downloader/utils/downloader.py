@@ -1,9 +1,7 @@
 import asyncio
 from pathlib import Path
-from datetime import datetime
-from dataclasses import dataclass
-import ffmpeg
 import subprocess
+from decouple import config
 
 # pytube fix
 from pytubefix import YouTube
@@ -14,30 +12,11 @@ from pytubefix.exceptions import VideoUnavailable, RegexMatchError
 import logging
 logger = logging.getLogger(__name__)
 
-@dataclass
-class VideoMetadata:
-    title: str
-    duration_seconds: int
-    publish_date: datetime
-    file_size_mb: float
-    stream_quality: str
-    
-    @property
-    def duration_formatted(self) -> str:
-        return f"{self.duration_seconds // 60}:{self.duration_seconds % 60:02d}"
-    
-    def __str__(self) -> str:
-        return "\n".join([
-            "Video Details:",
-            f"Title: {self.title}",
-            f"Duration: {self.duration_formatted}",
-            f"Published: {self.publish_date.strftime('%Y-%m-%d')}",
-            f"Quality: {self.stream_quality}",
-            f"File size: {self.file_size_mb:.1f} MB"
-        ])
+# helpers
+from helpers.video_metadata import VideoMetadata
 
 class YouTubeDownloader:
-    def __init__(self, download_dir: Path, test_mode: bool = False):
+    def __init__(self, download_dir: Path):
         """
         Initialize YouTubeDownloader.
         
@@ -46,9 +25,8 @@ class YouTubeDownloader:
             test_mode (bool, optional): Run in test mode without actual downloads. Defaults to False.
         """
         
-        self.download_dir = download_dir
-        self.download_dir.mkdir(exist_ok=True)
-        self.test_mode = test_mode
+        self.download_dir = Path(config('DOWNLOAD_DIR', default='downloads'))
+        self.allow_downloads = config('ALLOW_DOWNLOADS', default=False, cast=bool)
         
     def _get_metadata(self, yt: YouTube, stream) -> VideoMetadata:
         """
@@ -76,33 +54,27 @@ class YouTubeDownloader:
         Merge video and audio using FFmpeg.
         """
         
-        try:
-            cmd = [
-                'ffmpeg',
-                '-i', str(video_file),
-                '-i', str(audio_file),
-                '-c', 'copy',
-                str(output_file)
-            ]
-            
-            process = subprocess.run(
-                cmd,
-                capture_output=True,
-                universal_newlines=True,
-                encoding='utf-8',  # ensure encoding is specified
-                errors='replace',  # replace invalid characters
-                timeout=600  # 10 minutes timeout
-            )
-            
-            if process.returncode != 0:
-                raise Exception(f"FFmpeg error: {process.stderr}")
-            
-            return True
-
-        except Exception as e:
-            logger.error(f"FFmpeg merge failed: {e}")
-            return False
+        cmd = [
+            'ffmpeg',
+            '-i', str(video_file),
+            '-i', str(audio_file),
+            '-c', 'copy',
+            str(output_file),
+            '-y'  # overwrite existing file
+        ]
         
+        process = subprocess.run(
+            cmd,
+            capture_output=True,
+            universal_newlines=True,
+            encoding='utf-8',  # ensure encoding is specified
+            errors='replace',  # replace invalid characters
+            timeout=600  # 10 minutes timeout
+        )
+        
+        if process.returncode != 0:
+            raise Exception(f"FFmpeg error: {process.stderr}")
+            
     async def download_audio(self, url: str) -> bool:
         """
         Download the audio from a YouTube video.
@@ -124,10 +96,8 @@ class YouTubeDownloader:
             # get audio stream
             stream = yt.streams.get_audio_only()
             
-            # check if stream is valid
             if not stream:
-                logger.error("❌ No suitable audio stream found.")
-                return False
+                return {"success": False, "error": "No suitable audio stream found."}
             
             # get video metadata
             metadata = self._get_metadata(yt, stream)
@@ -139,16 +109,16 @@ class YouTubeDownloader:
             filename = f"{metadata.title}.mp3"
             
             # download audio if not in test mode
-            if not self.test_mode:
+            if self.allow_downloads:
                 await asyncio.to_thread(
                     lambda: stream.download(output_path=output_dir, filename=filename))
             
             # log success
             logger.info("✅ Download completed successfully!")
-            return True
+            return {"success": True, "file_path": output_dir / filename}
         except (VideoUnavailable, RegexMatchError) as e:
             logger.error(f"❌ Error: {str(e)}")
-            return False
+            return {"success": False, "error": str(e)}
 
     async def download_video(self, url: str) -> bool:
         """
@@ -173,8 +143,7 @@ class YouTubeDownloader:
             
             # check if stream is valid
             if not video_stream or not audio_stream:
-                logger.error("❌ No suitable video stream found.")
-                return False
+                return {"success": False, "error": "No suitable video stream found."}
             
             # get video metadata
             metadata = self._get_metadata(yt, video_stream)
@@ -185,7 +154,7 @@ class YouTubeDownloader:
             output_dir.mkdir(exist_ok=True)
             
             # download video if not in test mode
-            if not self.test_mode:
+            if self.allow_downloads:
                 # Create safe filenames
                 save_title = metadata.title
                 temp_video = f"video_{save_title}.mp4"
@@ -208,8 +177,6 @@ class YouTubeDownloader:
                 
                 # merge video and audio
                 logger.info("Merging video and audio...")
-                logger.info(f"Video file: {video_file}")
-                logger.info(f"Audio file: {audio_file}")
                 self._run_ffmpeg_merge(video_file, audio_file, filename)
                 
                 # Clean up temporary files
@@ -217,7 +184,7 @@ class YouTubeDownloader:
                 Path(audio_file).unlink()
                 
             logger.info("✅ Download completed successfully!")
-            return True
+            return {"success": True, "file_path": filename}
         except Exception as e:
             logger.error(f"❌ Error: {str(e)}")
-            return False
+            return {"success": False, "error": str(e)}
