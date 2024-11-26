@@ -1,4 +1,3 @@
-import asyncio
 from pathlib import Path
 import subprocess
 from decouple import config
@@ -75,7 +74,7 @@ class YouTubeDownloader:
         if process.returncode != 0:
             raise Exception(f"FFmpeg error: {process.stderr}")
             
-    async def download_audio(self, url: str) -> bool:
+    def download_audio(self, url: str) -> bool:
         """
         Download the audio from a YouTube video.
         
@@ -85,13 +84,11 @@ class YouTubeDownloader:
         Returns:
             bool: True if the download was successful, False otherwise.
         """
-    
         try:
-            logger.info("Fetching video information..."),
+            logger.info("Fetching video information...")
             
             # fetch video metadata
-            yt = await asyncio.to_thread(
-                lambda: YouTube(url, on_progress_callback=on_progress))
+            yt = YouTube(url, on_progress_callback=on_progress)
             
             # get audio stream
             stream = yt.streams.get_audio_only()
@@ -110,8 +107,7 @@ class YouTubeDownloader:
             
             # download audio if not in test mode
             if self.allow_downloads:
-                await asyncio.to_thread(
-                    lambda: stream.download(output_path=output_dir, filename=filename))
+                stream.download(output_path=output_dir, filename=filename)
             
             # log success
             logger.info("✅ Download completed successfully!")
@@ -120,7 +116,7 @@ class YouTubeDownloader:
             logger.error(f"❌ Error: {str(e)}")
             return {"success": False, "error": str(e)}
 
-    async def download_video(self, url: str) -> bool:
+    def download_video(self, url: str) -> bool:
         """
         Download the video from a YouTube video.
         
@@ -134,8 +130,7 @@ class YouTubeDownloader:
             logger.info("Fetching video information...")
             
             # fetch video metadata
-            yt = await asyncio.to_thread(
-                lambda: YouTube(url, on_progress_callback=on_progress))
+            yt = YouTube(url, on_progress_callback=on_progress)
                 
             # get the highest resolution stream
             video_stream = yt.streams.filter(type='video', file_extension='mp4').order_by('resolution').desc().first()
@@ -161,16 +156,8 @@ class YouTubeDownloader:
                 temp_audio = f"audio_{save_title}.m4a"
                 
                 # Download with explicit filenames
-                video_file = await asyncio.to_thread(
-                    lambda: video_stream.download(
-                        output_path=output_dir,
-                        filename=temp_video
-                    ))
-                audio_file = await asyncio.to_thread(
-                    lambda: audio_stream.download(
-                        output_path=output_dir,
-                        filename=temp_audio
-                    ))
+                video_file = video_stream.download(output_path=output_dir, filename=temp_video)
+                audio_file = audio_stream.download(output_path=output_dir, filename=temp_audio)
                 
                 # Final output path
                 filename = output_dir / f"{save_title}.mp4"
