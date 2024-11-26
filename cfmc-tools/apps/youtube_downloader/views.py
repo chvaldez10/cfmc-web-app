@@ -7,6 +7,8 @@ from youtube_downloader.utils.downloader import YouTubeDownloader
 async def download_view(request):
     if request.method == 'POST':
         form = DownloadRequestForm(request.POST)
+        
+        # validate form
         if form.is_valid():
             url = form.cleaned_data['url']
             download_type = form.cleaned_data['download_type']
