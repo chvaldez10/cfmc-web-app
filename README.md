@@ -1,6 +1,6 @@
-# Calgary Filipino Methodist Church Landing Page 🖥️
+# Calgary Filipino Methodist Church Web Project 🖥️
 
-This is the web project for the Calgary Filipino Methodist Church (CFMC) Landing Page, utilizing Next.js 14, Supabase, TypeScript, and Tailwind CSS.
+This is the web project for the Calgary Filipino Methodist Church (CFMC) Landing Page, utilizing Next.js 14, Supabase, TypeScript, and Tailwind CSS for the frontend, and Django, PostgreSQL, and Docker to create web tools for the church.
 
 ## Deploy on Vercel 🌐
 
@@ -8,14 +8,14 @@ A beta version of the landing page is deployed on Vercel at [CFMC Landing Page](
 
 ## Getting Started 🚀
 
-To begin, clone the repository and change the directory to the web-app folder:
+To use the frontend project, clone the repo and change the directory to the project folder:
 
 ```bash
-git clone https://github.com/chvaldez10/cfmc-landing-page.git
+git clone https://github.com/chvaldez10/cfmc-web-app.git
 cd web-app
 ```
 
-Install all node modules:
+Install all Node modules:
 
 ```bash
 npm install
@@ -34,26 +34,20 @@ Run the development server:
 npm run dev
 ```
 
-Build for production environment:
+Build for the production environment:
 
 ```bash
 npm run build
 npm run start
 ```
 
+To use the backend project, refer to the [backend README](cfmc-tools/README.md).
+
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the page.
-
-## Docker 🐳
-
-To run the Docker container:
-
-```bash
-docker compose up --build
-```
 
 ## Learn More 📚
 
-Visit our Facebook page: [CFMC Facebook](https://www.facebook.com/calgaryfilipino.methodistchurch)
+Visit our Facebook page: [CFMC Facebook](https://www.facebook.com/calgaryfilipino.methodistchurch).
 
 ## Contribute 💻
 
