@@ -1,0 +1,45 @@
+# Web Framework
+Django
+
+# Database
+psycopg2-binary
+dj-database-url
+
+# Environment Variables
+python-decouple
+
+# YouTube Downloader Dependencies
+pytubefix
+ffmpeg-python
+
+# Async Support
+asyncio
+asgiref
+
+# Task Queue
+celery
+django-celery-beat
+django-celery-results
+redis
+
+# Development & Testing
+pytest
+pytest-django
+pytest-asyncio
+
+# Utilities
+pathlib
+typing
+
+# Cache & Performance
+redis
+whitenoise
+
+# Security
+django-cors-headers
+
+# API
+djangorestframework
+
+# SQL Explorer
+django-sql-explorer
