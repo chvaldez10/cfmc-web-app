@@ -9,13 +9,15 @@ from .tasks import download_youtube_content
 
 async def download_view(request):
     if request.method == 'POST':
+        # Expecting url and download_type
         form = DownloadRequestForm(request.POST)
         
+        # GIVEN a valid form
         if form.is_valid():
             url = form.cleaned_data['url']
             download_type = form.cleaned_data['download_type']
             
-            # Use sync_to_async for creating the object
+            # WHEN creating the download request
             create_download_request = sync_to_async(DownloadRequest.objects.create)
             download_request = await create_download_request(
                 url=url,
@@ -23,18 +25,22 @@ async def download_view(request):
                 status='pending'
             )
 
-            # Queue the download request
+            # THEN queue the download request
             download_youtube_content.delay(download_request.id)
 
-            # Show success message
+            # WHEN the download request is successfully queued
+            # THEN show success message
             messages.success(request, 'Download request submitted successfully!')
             return redirect('download')
         else:
+            # WHEN the form is invalid
+            # THEN show error message
             messages.error(request, 'Please enter a valid YouTube URL.')
     else:
         form = DownloadRequestForm()
     
-    # Use sync_to_async for querying
+    # WHEN querying the recent downloads
+    # THEN return the recent downloads
     get_recent_downloads = sync_to_async(list)(
         DownloadRequest.objects.order_by('-created_at')[:10]
     )
