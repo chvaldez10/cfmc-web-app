@@ -13,7 +13,7 @@ def download_youtube_content(download_request_id: int):
     """
     Celery task to handle YouTube downloads.
     """
-    # Get the download request synchronously
+    # Get the download request
     download_request = DownloadRequest.objects.get(id=download_request_id)
     download_request.status = 'processing'
     download_request.save()
@@ -29,11 +29,14 @@ def download_youtube_content(download_request_id: int):
     else:
         raise ValueError("Invalid download type.")
 
-    # Update download request based on result
+    # WHEN the download is successful
     if result['success']:
+        # THEN update the download request to completed
         download_request.status = 'completed'
         download_request.file_path = result['file_path']
     else:
+        # WHEN the download fails
+        # THEN update the download request to failed
         download_request.status = 'failed'
         download_request.error_message = result.get('error')
 

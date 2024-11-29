@@ -114,7 +114,7 @@ class YouTubeDownloader:
             output_dir.mkdir(exist_ok=True)
             filename = f"{self._sanitize_filename(metadata.title)}.mp3"
             
-            # download audio if not in test mode
+            # download audio if allowed
             if self.allow_downloads:
                 stream.download(output_path=output_dir, filename=filename)
             
@@ -136,7 +136,6 @@ class YouTubeDownloader:
             bool: True if the download was successful, False otherwise.
         """
         try:
-            logger.info("Fetching video information...")
             
             # fetch video metadata
             yt = YouTube(url, on_progress_callback=on_progress)
@@ -150,6 +149,7 @@ class YouTubeDownloader:
                 return {"success": False, "error": "No suitable video stream found."}
             
             # get video metadata
+            logger.info("Fetching video information...")
             metadata = self._get_metadata(yt, video_stream)
             logger.info(metadata)
             
@@ -165,7 +165,7 @@ class YouTubeDownloader:
             # Final output path
             filename = output_dir / f"{save_title}.mp4"
             
-            # download video if not in test mode
+            # download video if allowed
             if self.allow_downloads:
                 
                 # Download with explicit filenames

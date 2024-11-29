@@ -3,7 +3,10 @@
   {% if recent_downloads %}
   <div class="space-y-4">
     {% for download in recent_downloads %}
-    <div class="bg-white p-4 rounded-lg shadow">
+    <div
+      class="bg-white p-4 rounded-lg shadow cursor-pointer"
+      onclick="fillForm('{{ download.url }}', '{{ download.download_type }}')"
+    >
       <div class="flex justify-between items-center">
         <div>
           <p class="text-gray-800 font-medium truncate">{{ download.url }}</p>
