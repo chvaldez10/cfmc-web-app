@@ -1,12 +1,13 @@
 from groq import Groq
 import os
 import json
+from decouple import config
 
 def load_api_key():
     """
     Load Groq API key from environment variable
     """
-    api_key = os.getenv('GROQ_API_KEY')
+    api_key = config('GROQ_API_KEY')
     if not api_key:
         raise ValueError("No Groq API key found. Set GROQ_API_KEY environment variable.")
     return api_key
@@ -24,7 +25,12 @@ def create_liturgy_parsing_prompt():
           "header": str,
           "indicationToStand": bool,
           "personIncharge": str,
-          "content": str/object
+          "description": str,
+          "song_content": {
+            "title": str,
+            "lyrics": str,
+            "hymn_number": str
+      }
         }
       ]
     }
@@ -33,19 +39,19 @@ def create_liturgy_parsing_prompt():
     - A header is the section or item in the worship service
     - "indicationToStand" is true if there's a * before the header
     - "personIncharge" is the individual or group responsible for that part
-    - "content" can be:
-      - A simple string description
-      - A detailed object for songs (with title, lyrics, etc.)
-      - Left blank if no specific content exists
+    - "description" can be one long string or a series of lines. put them all in the description field until a new header is encountered
+    - A song content can be a detailed object (with title, lyrics, hymn number)
+    - Leave blank if no specific content exists
 
     3. Handling Messy Data:
     - Be flexible with incomplete or inconsistent information
     - If unsure about a field, leave it blank or use best judgment
     - Prioritize capturing the essence of the liturgy
+    - Do not truncate content
 
     4. Lyrics Handling:
-    - For public domain hymns, include full lyrics
-    - For copyrighted songs, include minimal details
+    - For public domain hymns, include full lyrics (do not truncate)
+    - For copyrighted songs, include title and hymn number
     - Preserve original formatting and line breaks
 
     Parse the following text:
@@ -125,7 +131,7 @@ def main():
     
     # Read liturgy file
     liturgy_text = read_liturgy_file(liturgy_file_path)
-    
+
     if liturgy_text:
         # Parse with Groq
         parsed_liturgy = parse_liturgy_with_groq(liturgy_text)

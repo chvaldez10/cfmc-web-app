@@ -1,0 +1,153 @@
+{
+  "liturgy": [
+    {
+      "header": "Invitation & Gathering",
+      "indicationToStand": false,
+      "personIncharge": "",
+      "content": ""
+    },
+    {
+      "header": "Prelude",
+      "indicationToStand": false,
+      "personIncharge": "Pianist",
+      "content": {
+        "title": "Come, Thou Long Expected Jesus",
+        "lyrics": "",
+        "songbook": "OGRP#163"
+      }
+    },
+    {
+      "header": "Call To Worship:",
+      "indicationToStand": true,
+      "personIncharge": "Liturgist",
+      "content": "We gather today 1st Sunday of Advent to worship the One true sovereign living God..."
+    },
+    {
+      "header": "Invocation w/ Lord's Prayer",
+      "indicationToStand": true,
+      "personIncharge": "Liturgist",
+      "content": ""
+    },
+    {
+      "header": "Worship Thru Songs of Praise",
+      "indicationToStand": true,
+      "personIncharge": "Praise & Worship Team",
+      "content": ""
+    },
+    {
+      "header": "Welcome, Greeting & Announcement",
+      "indicationToStand": false,
+      "personIncharge": "Bro. Vincent Vinluan",
+      "content": ""
+    },
+    {
+      "header": "Lighting of the 1st Candle of Advent, Hope",
+      "indicationToStand": false,
+      "personIncharge": "Salonga Family",
+      "content": ""
+    },
+    {
+      "header": "Scripture Reading",
+      "indicationToStand": true,
+      "personIncharge": "Bro. Raiden Fate Tongol",
+      "content": "John 1:1-5, 9-14 (NIV)"
+    },
+    {
+      "header": "Response",
+      "indicationToStand": false,
+      "personIncharge": "",
+      "content": "Thanks be to God."
+    },
+    {
+      "header": "Response",
+      "indicationToStand": true,
+      "personIncharge": "",
+      "content": {
+        "title": "O Come Let Us Adore Him",
+        "lyrics": "O come all ye faithful; joyful and triumphant...\nO come let us adore Him Christ the Lord.",
+        "songbook": "OGRP#143"
+      }
+    },
+    {
+      "header": "Prayer for Our Kids & Parents",
+      "indicationToStand": false,
+      "personIncharge": "Pastor",
+      "content": ""
+    },
+    {
+      "header": "Message Thru Song",
+      "indicationToStand": false,
+      "personIncharge": "P&W Team, Sis. Zarah May Reyes",
+      "content": "",
+      "scripture": "John 1:1-4, 10-14"
+    },
+    {
+      "header": "Bread of Life:",
+      "indicationToStand": false,
+      "personIncharge": "Pastor Jonavern P. Lungub",
+      "content": "",
+      "scripture": "John 1:1-4, 10-14"
+    },
+    {
+      "header": "Celebration of the Holy Communion",
+      "indicationToStand": false,
+      "personIncharge": "",
+      "content": ""
+    },
+    {
+      "header": "Offertory",
+      "indicationToStand": false,
+      "personIncharge": "Liturgist",
+      "content": "",
+      "scripture": "Malachi 3:10 (NIV)"
+    },
+    {
+      "header": "Response",
+      "indicationToStand": true,
+      "personIncharge": "",
+      "content": {
+        "title": "Doxology",
+        "lyrics": "Praise God from whom all blessings flow,\nPraise Him all creatures here below,\nPraise Him above the heavenly host,\nPraise Father, Son and Holy Ghost. Amen.",
+        "songbook": ""
+      }
+    },
+    {
+      "header": "Offertory Prayer",
+      "indicationToStand": true,
+      "personIncharge": "Pastor",
+      "content": ""
+    },
+    {
+      "header": "Hymn of Discipleship",
+      "indicationToStand": true,
+      "personIncharge": "",
+      "content": {
+        "title": "O Come, O Come Emmanuel",
+        "lyrics": "O come, O come, Emmanuel, and ransom captive Israel...\nRejoice! Rejoice! Emmanuel\n...",
+        "songbook": "OGRP#162"
+      }
+    },
+    {
+      "header": "Sending Forth",
+      "indicationToStand": false,
+      "personIncharge": "",
+      "content": ""
+    },
+    {
+      "header": "Closing Prayer & Benediction",
+      "indicationToStand": true,
+      "personIncharge": "Pastor",
+      "content": ""
+    },
+    {
+      "header": "Postlude",
+      "indicationToStand": false,
+      "personIncharge": "Pianist",
+      "content": {
+        "title": "Love Came Down at Christmas",
+        "lyrics": "",
+        "songbook": "OGRP#181"
+      }
+    }
+  ]
+}
