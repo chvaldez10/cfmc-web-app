@@ -16,24 +16,20 @@ def create_liturgy_parsing_prompt():
     """
     Create a consistent, detailed prompt for liturgy parsing
     """
-    return """Parse this liturgy text file into a structured JSON format with the following requirements:
+    return """You are an expert at parsing liturgy text files into a structured JSON format. Your task is to carefully extract and structure the liturgy details with precision.
 
-    1. JSON Structure:
-    {
-      "liturgy": [
-        {
-          "header": str,
-          "indicationToStand": bool,
-          "personIncharge": str,
-          "description": str,
-          "song_content": {
-            "title": str,
-            "lyrics": str,
-            "hymn_number": str
-      }
+    1. JSON Structure Requirements:
+    - Create a JSON object with a "liturgy" array
+    - Each liturgy item MUST have these fields:
+      - header: str (section name)
+      - indicationToStand: bool
+      - personIncharge: str
+      - description: str (optional, can be empty)
+      - song_content: {
+        - title: str (optional),
+        - lyrics: str (optional),
+        - hymn_number: str (optional)
         }
-      ]
-    }
 
     2. Parsing Guidelines:
     - A header is the section or item in the worship service
@@ -43,18 +39,42 @@ def create_liturgy_parsing_prompt():
     - A song content can be a detailed object (with title, lyrics, hymn number)
     - Leave blank if no specific content exists
 
-    3. Handling Messy Data:
-    - Be flexible with incomplete or inconsistent information
-    - If unsure about a field, leave it blank or use best judgment
-    - Prioritize capturing the essence of the liturgy
-    - Do not truncate content
+    3. Strict Parsing Rules:
+    - DO NOT create any additional keys beyond the specified structure
+    - If a field has no content, use an empty string ""
+    - song_content can only exist if there's a song in that section
+    - description and song_content are mutually exclusive (try to choose one or the other and if unsure, choose description)
 
-    4. Lyrics Handling:
-    - For public domain hymns, include full lyrics (do not truncate)
-    - For copyrighted songs, include title and hymn number
-    - Preserve original formatting and line breaks
+    4. Content Extraction Guidelines:
+    - ABSOLUTELY DO NOT truncate any text
+    - Preserve FULL original content
+    - Capture ALL text for description or song lyrics
+    - Maintain original formatting and line breaks
+    - If text is longer, include it in full
 
-    Parse the following text:
+    5. Specific Parsing Details:
+    - Identify header by most descriptive text
+    - Check for asterisk (*) to determine "indicationToStand"
+    - Extract "personIncharge" from nearby text
+    - For songs, capture:
+      - Complete title
+      - Full lyrics
+      - Complete hymn number/songbook reference
+
+Example Desired Output:
+{
+  "liturgy": [
+    {
+      "header": "Call To Worship",
+      "indication_to_stand": true,
+      "person_in_charge": "Liturgist",
+      "description": "Full text of call to worship...",
+      "song_content": {}
+    }
+  ]
+}
+
+Please parse the following liturgy text carefully and thoroughly, following these exact specifications:
     """
 
 def read_liturgy_file(file_path):
@@ -127,7 +147,7 @@ def main():
     Main execution function
     """
     liturgy_file_path = 'liturgy.txt'
-    output_file_path = 'parsed_liturgy.json'
+    output_file_path = 'parsed_liturgy_2.json'
     
     # Read liturgy file
     liturgy_text = read_liturgy_file(liturgy_file_path)

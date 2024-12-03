@@ -1,0 +1,164 @@
+{
+  "liturgy": [
+    {
+      "header": "Invitation & Gathering",
+      "indication_to_stand": false,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {
+        "title": "Come, Thou Long Expected Jesus",
+        "lyrics": "",
+        "hymn_number": "OGRP#163"
+      }
+    },
+    {
+      "header": "Call To Worship:",
+      "indication_to_stand": true,
+      "person_in_charge": "Liturgist",
+      "description": "We gather today 1st Sunday of Advent to worship the One true sovereign living God who reveals Himself in eternally Triune as our holy gracious Heavenly Father, our merciful Lord and Savior Jesus Christ and our faithful companion the Holy Spirit, who is forever faithful and always with us, saving, transforming, purifying and empowering us. Let us offer our souls, humble our hearts, focus our minds and dedicate our bodies as living sacrifice as we worship God in Spirit and truth.",
+      "song_content": {}
+    },
+    {
+      "header": "Invocation w/ Lord's Prayer",
+      "indication_to_stand": true,
+      "person_in_charge": "Liturgist",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Worship Thru Songs of Praise",
+      "indication_to_stand": true,
+      "person_in_charge": "Praise & Worship Team",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Welcome, Greeting & Announcement",
+      "indication_to_stand": false,
+      "person_in_charge": "Bro. Vincent Vinluan",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Proclamation & Response",
+      "indication_to_stand": false,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Lighting of the 1st Candle of Advent, Hope",
+      "indication_to_stand": false,
+      "person_in_charge": "Salonga Family",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Scripture Reading",
+      "indication_to_stand": true,
+      "person_in_charge": "Bro. Raiden Fate Tongol",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Response",
+      "indication_to_stand": true,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {
+        "title": "O Come Let Us Adore Him",
+        "lyrics": "O come all ye faithful; joyful and triumphant\nO come ye o come ye to Bethlehem\nCome and behold Him; Born the King of angels\nO come let us adore Him; O come let us adore Him\nO come let us adore Him, Christ the Lord.",
+        "hymn_number": "OGRP#143"
+      }
+    },
+    {
+      "header": "Prayer for Our Kids & Parents",
+      "indication_to_stand": false,
+      "person_in_charge": "Pastor",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Message Thru Song",
+      "indication_to_stand": false,
+      "person_in_charge": "P&W Team, Sis. Zarah May Reyes",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Bread of Life:",
+      "indication_to_stand": false,
+      "person_in_charge": "Pastor Jonavern P. Lungub",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Celebration of the Holy Communion",
+      "indication_to_stand": false,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Offertory",
+      "indication_to_stand": false,
+      "person_in_charge": "Liturgist",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Response",
+      "indication_to_stand": true,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {
+        "title": "Doxology",
+        "lyrics": "Praise God from whom all blessings flow,\nPraise Him all creatures here below,\nPraise Him above the heavenly host,\nPraise Father, Son and Holy Ghost. Amen.",
+        "hymn_number": ""
+      }
+    },
+    {
+      "header": "Offertory Prayer",
+      "indication_to_stand": true,
+      "person_in_charge": "Pastor",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Hymn of Discipleship",
+      "indication_to_stand": true,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {
+        "title": "O Come, O Come Emmanuel",
+        "lyrics": "O come, O come, Emmanuel, and ransom captive Israel\nThat mourns in lonely exile here, until the Son of God appear.\n\tRefrain:\nRejoice! Rejoice! Emmanuel\nShall come to thee, O Israel.\nO come, Thou Wisdom from on high, who orders all things mightily;\nTo us the path of knowledge show, and teach us in its ways to go.\nO come, Thou Branch of Jesse's stem, unto Thine own and rescue them!\nFrom depths of hell Thy people save, and give them vict'ry o'er the grave.\nO come, Thou Key of David, come and open wide our heav'nly home;\nMake safe for us the heav'n ward road, and bar the way to death's abode.\nO come, Thou Bright and Morning Star, and bring us comfort from afar!\nDispel the shadows of the night and turn our darkness into light.\nO come, Desire of nations, bind in one the hearts of all mankind;\nBid all our sad divisions cease, and be Thyself our King of Peace.",
+        "hymn_number": "OGRP#162"
+      }
+    },
+    {
+      "header": "Sending Forth",
+      "indication_to_stand": false,
+      "person_in_charge": "",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Closing Prayer  & Benediction",
+      "indication_to_stand": true,
+      "person_in_charge": "Pastor",
+      "description": "",
+      "song_content": {}
+    },
+    {
+      "header": "Postlude",
+      "indication_to_stand": false,
+      "person_in_charge": "Pianist",
+      "description": "",
+      "song_content": {
+        "title": "Love Came Down at Christmas",
+        "lyrics": "",
+        "hymn_number": "OGRP#181"
+      }
+    }
+  ]
+}
