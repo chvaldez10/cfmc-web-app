@@ -1,4 +1,5 @@
 from django.db import models
+from utils.constants import STATUS_LIST
 
 class DownloadRequest(models.Model):
     url = models.URLField(max_length=2000)
@@ -7,12 +8,7 @@ class DownloadRequest(models.Model):
         ('video', 'Video')
     ])
     created_at = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=20, choices=[
-        ('pending', 'Pending'),
-        ('processing', 'Processing'),
-        ('completed', 'Completed'),
-        ('failed', 'Failed')
-    ])
+    status = models.CharField(max_length=20, choices=STATUS_LIST, default="pending")
     file_path = models.CharField(max_length=500, blank=True, null=True)
     error_message = models.TextField(blank=True, null=True)
     
