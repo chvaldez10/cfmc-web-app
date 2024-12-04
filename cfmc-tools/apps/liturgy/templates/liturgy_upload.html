@@ -5,6 +5,36 @@
   <div class="bg-white shadow-md rounded-lg p-4">
     <form method="post" class="space-y-4" action="{% url 'liturgy_upload' %}">
       {% csrf_token %}
+      <!-- service date and service number -->
+      <div class="flex space-x-4">
+        <div class="flex-1 w-8/12">
+          <label class="block text-sm font-medium text-gray-700"
+            >Service Date</label
+          >
+          <input
+            id="service-date"
+            type="date"
+            name="service_date"
+            class="w-full border border-gray-300 rounded p-2"
+            required
+          />
+        </div>
+        <div class="w-4/12">
+          <label class="block text-sm font-medium text-gray-700"
+            >Service Number</label
+          >
+          <input
+            id="service-number"
+            type="number"
+            name="service_number"
+            class="w-full border border-gray-300 rounded p-2"
+            value="1"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- text area -->
       <textarea
         id="liturgy-text-area"
         name="liturgy_text"
@@ -13,6 +43,8 @@
         placeholder="Enter your liturgy text here..."
         oninput="autoExpand(this)"
       ></textarea>
+
+      <!-- submit button -->
       <button
         type="submit"
         class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
@@ -24,6 +56,11 @@
 </div>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("service-date").value = today;
+  });
+
   function autoExpand(textarea) {
     // Reset the height to allow for shrinking
     textarea.style.height = "auto";
