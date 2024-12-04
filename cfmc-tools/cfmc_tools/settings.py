@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.commando',
     'apps.youtube_downloader',
+    'apps.liturgy',
 ]
 
 MIDDLEWARE = [

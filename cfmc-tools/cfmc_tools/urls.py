@@ -22,6 +22,8 @@ from .views import home_page_view
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_page_view, name='home'),
-    path('download/', include('apps.youtube_downloader.urls')),
     path('explorer/', include('explorer.urls')),
+    path('download/', include('apps.youtube_downloader.urls')),
+    path('liturgy/', include('apps.liturgy.urls')),
+    
 ]
