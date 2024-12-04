@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.db import transaction
 from asgiref.sync import sync_to_async
 
 from .models import DownloadRequest
