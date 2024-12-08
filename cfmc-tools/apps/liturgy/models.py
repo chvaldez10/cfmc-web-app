@@ -14,3 +14,6 @@ class LiturgyEntry(models.Model):
     
     def __str__(self):
         return f"Liturgy entry for {self.service_date} - Service {self.service_number}"
+
+    class Meta:
+        app_label = 'liturgy'

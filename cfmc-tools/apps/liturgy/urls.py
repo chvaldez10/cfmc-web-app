@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import liturgy_upload_view
+from .views import LiturgyUploadView
 
 urlpatterns = [
-    path('', liturgy_upload_view, name='liturgy_upload'),
+    path('', LiturgyUploadView.as_view(), name='liturgy_upload'),
 ]
