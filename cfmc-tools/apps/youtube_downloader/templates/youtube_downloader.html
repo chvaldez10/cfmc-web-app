@@ -49,34 +49,4 @@
   }
 </script>
 
-<!-- Toast Notifications -->
-<div id="toast-container" class="fixed top-0 right-0 p-6 space-y-4 z-50">
-  <div
-    id="successToast"
-    class="hidden bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300 opacity-0"
-  >
-    Download request submitted successfully!
-  </div>
-  <div
-    id="errorToast"
-    class="hidden bg-red-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300 opacity-0"
-  >
-    Please enter a valid YouTube URL.
-  </div>
-</div>
-
-<script src="{% static 'js/toast.js' %}"></script>
-
-<script>
-  {% if messages %}
-    {% for message in messages %}
-      if ("{{ message.tags }}" === "success") {
-        showToast('successToast');
-      }
-      if ("{{ message.tags }}" === "error") {
-        showToast('errorToast');
-      }
-    {% endfor %}
-  {% endif %}
-</script>
-{% endblock %}
+{% include 'includes/toast.html' %} {% endblock %}

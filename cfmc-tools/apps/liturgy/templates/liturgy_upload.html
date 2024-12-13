@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold text-gray-800">Liturgy Parser</h1>
 
@@ -54,6 +54,8 @@
     </form>
   </div>
 </div>
+
+{% include 'includes/toast.html' %}
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

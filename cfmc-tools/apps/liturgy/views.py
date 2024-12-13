@@ -34,7 +34,7 @@ class LiturgyUploadView(View):
                 entry = self.liturgy_service.create_liturgy_entry(form.cleaned_data)
                 
                 # Queue parsing task
-                parse_liturgy.delay(entry.id)
+                # parse_liturgy.delay(entry.id)
                 
                 messages.success(request, 'Liturgy text submitted for parsing!')
                 
