@@ -1,8 +1,8 @@
-from typing import Dict, Optional
-from django.db import transaction
+from typing import Dict
 
 from ..models import LiturgyEntry
 from .groq_service import GroqService
+
 
 class LiturgyService:
     def __init__(self):
@@ -43,3 +43,4 @@ class LiturgyService:
             entry.error_message = str(e)
             entry.save()
             raise
+    

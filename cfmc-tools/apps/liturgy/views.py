@@ -1,12 +1,20 @@
+from pathlib import Path
+from decouple import config
+import logging
+
+# django
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 
+# apps
 from .forms import LiturgyUploadForm
 from .services.liturgy_service import LiturgyService
 from .tasks import parse_liturgy
+
+logger = logging.getLogger(__name__)
 
 @method_decorator(csrf_protect, name='dispatch')
 class LiturgyUploadView(View):
@@ -34,7 +42,7 @@ class LiturgyUploadView(View):
                 entry = self.liturgy_service.create_liturgy_entry(form.cleaned_data)
                 
                 # Queue parsing task
-                # parse_liturgy.delay(entry.id)
+                parse_liturgy.delay(entry.id)
                 
                 messages.success(request, 'Liturgy text submitted for parsing!')
                 
