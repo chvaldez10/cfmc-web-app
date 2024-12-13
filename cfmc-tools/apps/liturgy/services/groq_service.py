@@ -2,6 +2,9 @@ from decouple import config
 from groq import Groq
 import json
 from typing import Dict, Optional
+import logging
+
+logger = logging.getLogger(__name__)
 
 class GroqService:
     def __init__(self):
@@ -77,7 +80,7 @@ class GroqService:
             ]
         }
 
-    Please parse the following liturgy text carefully and thoroughly, following these exact specifications:
+        Please parse the following liturgy text carefully and thoroughly, following these exact specifications:
     """
     
     def parse_liturgy_text(self, liturgy_text: str) -> Dict:
@@ -93,21 +96,34 @@ class GroqService:
         Raises:
             Exception: If API call fails or response is invalid
         """
-        full_prompt = self._create_parsing_prompt() + "\n\n" + liturgy_text
         
-        completion = self.client.chat.completions.create(
-            model="llama3-70b-8192",
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are an expert at parsing liturgy texts into a structured JSON format."
-                },
-                {
-                    "role": "user",
-                    "content": full_prompt
-                }
-            ],
-            response_format={"type": "json_object"}
-        )
+        try:
+            full_prompt = self._create_parsing_prompt() + "\n\n" + liturgy_text
+            
+            completion = self.client.chat.completions.create(
+                model="llama3-70b-8192",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an expert at parsing liturgy texts into a structured JSON format."
+                    },
+                    {
+                        "role": "user",
+                        "content": full_prompt
+                    }
+                ],
+                response_format={"type": "json_object"}
+            )
+            
+            parsed_liturgy = completion.choices[0].message.content
+            parsed_json = json.loads(parsed_liturgy)
+            
+            return parsed_json
         
-        return json.loads(completion.choices[0].message.content)
+        except json.JSONDecodeError:
+            logger.error("Failed to parse liturgy text. Please check the input and try again.")
+            raise ValueError("Failed to parse liturgy text. Please check the input and try again.")
+        
+        except Exception as e:
+            logger.error(f"An unexpected error occurred: {str(e)}")
+            raise ValueError(f"An unexpected error occurred: {str(e)}")
