@@ -16,27 +16,28 @@ class LiturgyUploadView(View):
         super().__init__(*args, **kwargs)
         self.liturgy_service = LiturgyService()
     
-    async def get(self, request):
+    def get(self, request):
         """Handle GET request"""
         context = {
             'form': LiturgyUploadForm(),
-            'recent_entries': await self.liturgy_service.get_recent_entries()
+            'recent_entries': self.liturgy_service.get_recent_entries()
         }
         return render(request, self.template_name, context)
     
-    async def post(self, request):
+    def post(self, request):
         """Handle POST request"""
         form = LiturgyUploadForm(request.POST)
         
         if form.is_valid():
             try:
                 # Create entry
-                entry = await self.liturgy_service.create_liturgy_entry(form.cleaned_data)
+                entry = self.liturgy_service.create_liturgy_entry(form.cleaned_data)
                 
                 # Queue parsing task
                 parse_liturgy.delay(entry.id)
                 
                 messages.success(request, 'Liturgy text submitted for parsing!')
+                
                 return redirect('liturgy_upload')
                 
             except Exception as e:
@@ -47,6 +48,7 @@ class LiturgyUploadView(View):
         # If we get here, there was an error
         context = {
             'form': form,
-            'recent_entries': await self.liturgy_service.get_recent_entries()
+            'recent_entries': self.liturgy_service.get_recent_entries()
         }
+        
         return render(request, self.template_name, context)

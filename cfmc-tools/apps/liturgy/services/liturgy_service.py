@@ -8,19 +8,18 @@ class LiturgyService:
     def __init__(self):
         self.groq_service = GroqService()
     
-    @transaction.atomic
-    async def create_liturgy_entry(self, data: Dict) -> LiturgyEntry:
+    def create_liturgy_entry(self, data: Dict) -> LiturgyEntry:
         """Create a new liturgy entry"""
-        return await LiturgyEntry.objects.acreate(
+        return LiturgyEntry.objects.create(
             service_date=data['service_date'],
             service_number=data['service_number'],
             liturgy_text=data['liturgy_text'],
             status='pending'
         )
     
-    async def get_recent_entries(self, limit: int = 10):
+    def get_recent_entries(self, limit: int = 10):
         """Get recent liturgy entries"""
-        return await LiturgyEntry.objects.order_by('-created_at')[:limit].values()
+        return list(LiturgyEntry.objects.order_by('-created_at')[:limit].values())
     
     def process_liturgy(self, entry: LiturgyEntry) -> None:
         """
