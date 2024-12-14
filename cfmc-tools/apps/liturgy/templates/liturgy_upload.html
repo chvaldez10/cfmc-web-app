@@ -16,7 +16,9 @@
             type="date"
             name="service_date"
             class="w-full border border-gray-300 rounded p-2"
+            min="{{ today|date:'Y-m-d' }}"
             required
+            oninput="validateDate(this)"
           />
         </div>
         <div class="w-4/12">
@@ -29,6 +31,8 @@
             name="service_number"
             class="w-full border border-gray-300 rounded p-2"
             value="1"
+            min="1"
+            max="10"
             required
           />
         </div>
@@ -42,6 +46,7 @@
         class="w-full border border-gray-300 rounded p-2"
         placeholder="Enter your liturgy text here..."
         oninput="autoExpand(this)"
+        required
       ></textarea>
 
       <!-- submit button -->
@@ -62,6 +67,18 @@
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("service-date").value = today;
   });
+
+  function validateDate(dateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    const selectedDate = dateInput.value;
+
+    if (selectedDate < today) {
+      dateInput.value = today;
+      alert("Service date cannot be in the past");
+      return false;
+    }
+    return true;
+  }
 
   function autoExpand(textarea) {
     // Reset the height to allow for shrinking
