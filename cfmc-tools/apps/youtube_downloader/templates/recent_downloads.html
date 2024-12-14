@@ -5,11 +5,13 @@
     {% for download in recent_downloads %}
     <div
       class="bg-white p-4 rounded-lg shadow cursor-pointer"
-      onclick="fillForm('{{ download.url }}', '{{ download.download_type }}')"
+      onclick="fillForm('{{ download.youtube_url }}', '{{ download.download_type }}')"
     >
       <div class="flex justify-between items-center">
         <div>
-          <p class="text-gray-800 font-medium truncate">{{ download.url }}</p>
+          <p class="text-gray-800 font-medium truncate">
+            {{ download.youtube_url }}
+          </p>
           <p class="text-sm text-gray-600">
             Type: {{ download.download_type }}
           </p>

@@ -13,13 +13,13 @@ async def download_view(request):
         
         # GIVEN a valid form
         if form.is_valid():
-            url = form.cleaned_data['url']
+            youtube_url = form.cleaned_data['youtube_url']
             download_type = form.cleaned_data['download_type']
             
             # WHEN creating the download request
             create_download_request = sync_to_async(DownloadRequest.objects.create)
             download_request = await create_download_request(
-                url=url,
+                youtube_url=youtube_url,
                 download_type=download_type,
                 status='pending'
             )

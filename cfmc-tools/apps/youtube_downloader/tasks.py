@@ -23,9 +23,9 @@ def download_youtube_content(download_request_id: int):
 
     # Perform download based on type
     if download_request.download_type == 'audio':
-        result = downloader.download_audio(download_request.url)
+        result = downloader.download_audio(download_request.youtube_url)
     elif download_request.download_type == 'video':
-        result = downloader.download_video(download_request.url)
+        result = downloader.download_video(download_request.youtube_url)
     else:
         raise ValueError("Invalid download type.")
 

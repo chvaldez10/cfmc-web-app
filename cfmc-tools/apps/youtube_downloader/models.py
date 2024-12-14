@@ -2,7 +2,7 @@ from django.db import models
 from utils.constants import STATUS_LIST
 
 class DownloadRequest(models.Model):
-    url = models.URLField(max_length=2000)
+    youtube_url = models.URLField(max_length=2000)
     download_type = models.CharField(max_length=10, choices=[
         ('audio', 'Audio'),
         ('video', 'Video')
@@ -13,7 +13,7 @@ class DownloadRequest(models.Model):
     error_message = models.TextField(blank=True, null=True)
     
     def __str__(self):
-        return f"{self.download_type.capitalize()} request for {self.url} - Status: {self.status}"
+        return f"{self.download_type.capitalize()} request for {self.youtube_url} - Status: {self.status}"
 
     class Meta:
         app_label = 'youtube_downloader'

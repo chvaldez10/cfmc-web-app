@@ -10,7 +10,8 @@
     id="errorToast"
     class="hidden bg-red-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300 opacity-0"
   >
-    {{ error_message|default:"An error occurred." }}
+    {% for message in messages %} {% if message.tags == 'error' %} {{ message }}
+    {% endif %} {% endfor %}
   </div>
 </div>
 
