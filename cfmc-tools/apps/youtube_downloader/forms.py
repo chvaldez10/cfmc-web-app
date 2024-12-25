@@ -1,19 +1,19 @@
 from django import forms
+from .models import DownloadRequest
 
-class DownloadRequestForm(forms.Form):
-    # TODO: Refactor this to use a model form
-    youtube_url = forms.URLField(
-        label="YouTube URL",
-        widget=forms.TextInput(attrs={
-            'placeholder': 'Paste YouTube video link',
-            'id': 'youtube-url',
-            'name': 'youtube_url'
-        })
-    )
+class DownloadRequestForm(forms.ModelForm):
+    class Meta:
+        model = DownloadRequest
+        fields = ['youtube_url', 'download_type']
+        
+    def clean_youtube_url(self):
+        youtube_url = self.cleaned_data['youtube_url']
+        if not youtube_url:
+            raise forms.ValidationError("YouTube URL is required")
+        return youtube_url
     
-    download_type = forms.ChoiceField(
-        choices=[
-            ('audio', 'Audio'),
-            ('video', 'Video')
-        ],
-    )
+    def clean_download_type(self):
+        download_type = self.cleaned_data['download_type']
+        if not download_type:
+            raise forms.ValidationError("Download type is required")
+        return download_type

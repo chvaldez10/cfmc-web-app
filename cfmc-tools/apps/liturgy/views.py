@@ -4,8 +4,8 @@ import logging
 
 # django
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.views import View
+from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 
