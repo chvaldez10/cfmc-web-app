@@ -2,9 +2,10 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "../Providers";
-import NavbarClient from "@/components/Navbar/NavbarClient";
 import Loading from "./loading";
 import "../globals.css";
+
+import NavbarClient from "@/components/Navbar/NavbarClient";
 
 import BackButton from "@/components/core/ui/buttons/BackButton";
 import Footer from "@/components/Footer/Footer";
