@@ -7,7 +7,7 @@ import { methodistSymbols } from "@/data/hero/ministryItems";
 const ministryDescription =
   "Some super long paragraph about our ministry. Fill this out later. I am just testing the hero section right now. Please write something else here.";
 
-export default function page() {
+export default async function page() {
   return (
     <>
       <HeroOverlappingImage

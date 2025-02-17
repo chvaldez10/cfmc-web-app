@@ -7,7 +7,7 @@ import { NextImage } from "@/components/core/ui";
 import { missionStatementLong, visionStatementLong } from "@/data/hero/";
 import { IMAGE_SIZE_LARGE_HERO } from "@/data/constants/shared";
 
-export default function page() {
+export default async function page() {
   return (
     <>
       {/* Mission Statement */}

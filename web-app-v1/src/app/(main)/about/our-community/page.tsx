@@ -3,7 +3,7 @@ import { HeroOverlappingImage } from "@/components/core/hero";
 const headerLongParagraph =
   "Our Community. We are a community of believers who are passionate about serving Jesus Christ.";
 
-export default function page() {
+export default async function page() {
   return (
     <>
       <HeroOverlappingImage
