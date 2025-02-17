@@ -31,8 +31,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "Inter, sans-serif",
-    body: "Inter, sans-serif",
+    heading: "Roboto, sans-serif",
+    body: "Roboto, sans-serif",
   },
 });
 

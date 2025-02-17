@@ -1,11 +1,11 @@
-// app/fonts.ts
-import { Rubik } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const rubik = Rubik({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-rubik",
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
 });
 
 export const fonts = {
-  rubik,
+  roboto,
 };

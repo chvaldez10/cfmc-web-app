@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={fonts.rubik.className}>
+      <body className={fonts.roboto.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
