@@ -1,6 +1,6 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 
-export default function Page() {
+export default function LoginPage() {
   return (
     <Flex
       flexDir="column"
@@ -8,7 +8,7 @@ export default function Page() {
       justifyContent="center"
       h="100vh"
     >
-      <Text>Hello World</Text>
+      <Box>Login</Box>
     </Flex>
   );
 }
