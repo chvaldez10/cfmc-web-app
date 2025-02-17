@@ -39,6 +39,7 @@ const theme = extendTheme({
     global: {
       ":root": {
         "--color-light-100": "#FBFBFB",
+        // "--color-brand-50": "#f2e8ff", // For testing purposes
       },
       body: {
         bg: "var(--color-light-100)",

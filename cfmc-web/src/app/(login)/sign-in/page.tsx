@@ -8,7 +8,7 @@ export default function LoginPage() {
       justifyContent="center"
       h="100vh"
     >
-      <Box>Login</Box>
+      <Box>Sign In</Box>
     </Flex>
   );
 }
