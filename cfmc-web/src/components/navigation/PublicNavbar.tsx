@@ -29,6 +29,10 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+// Types
+import { NavItem } from "@/types/ui/navbar";
+// Data
+import { NAV_ITEMS } from "@/constants/shared/publicNavbar";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -44,6 +48,10 @@ export default function WithSubnavigation() {
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
+        // position={"fixed"}
+        // w={"100%"}
+        // top={0}
+        // zIndex={1000}
         borderColor={"gray.200"}
         align={"center"}
       >
@@ -67,7 +75,7 @@ export default function WithSubnavigation() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            CFMC
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -266,51 +274,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   );
 };
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
-    href: "#",
-  },
-];
