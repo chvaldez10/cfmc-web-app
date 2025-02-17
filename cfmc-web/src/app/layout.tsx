@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Providers } from "./provider";
-import "./globals.css";
 import { fonts } from "./font";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={fonts.roboto.className}>
         <Providers>{children}</Providers>
       </body>

@@ -1,9 +1,14 @@
-import { Link } from "@chakra-ui/next-js";
+import { Flex, Text } from "@chakra-ui/react";
 
 export default function Page() {
   return (
-    <Link href="/about" color="blue.400" _hover={{ color: "blue.500" }}>
-      About
-    </Link>
+    <Flex
+      flexDir="column"
+      alignItems="center"
+      justifyContent="center"
+      h="100vh"
+    >
+      <Text>Hello World</Text>
+    </Flex>
   );
 }
