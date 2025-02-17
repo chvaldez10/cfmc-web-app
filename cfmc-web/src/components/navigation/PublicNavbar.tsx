@@ -39,7 +39,7 @@ export default function WithSubnavigation() {
   const { isOpen: isModalOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box>
+    <Box position={"fixed"} w={"100%"} top={0} zIndex={1000}>
       <Flex
         bg={"var(--color-light-100)"}
         color={"gray.600"}
@@ -48,10 +48,6 @@ export default function WithSubnavigation() {
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
-        // position={"fixed"}
-        // w={"100%"}
-        // top={0}
-        // zIndex={1000}
         borderColor={"gray.200"}
         align={"center"}
       >
