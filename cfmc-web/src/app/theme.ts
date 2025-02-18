@@ -38,8 +38,9 @@ const theme = extendTheme({
   styles: {
     global: {
       ":root": {
+        // Try not to duplicate colors. The brand colors are already defined above and is easier to use when its extended from Chakra's theme.
         "--color-light-100": "#FBFBFB",
-        // "--color-brand-50": "#f2e8ff", // For testing purposes
+        "--color-brand-50": "#f2e8ff",
       },
       body: {
         bg: "var(--color-light-100)",

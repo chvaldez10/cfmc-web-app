@@ -14,6 +14,7 @@ import {
   PopoverContent,
   useBreakpointValue,
   useDisclosure,
+  Link,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -37,6 +38,12 @@ import {
   NAV_ITEMS,
   TITHERS_AND_OFFERINGS_MODAL,
 } from "@/constants/shared/publicNavbar";
+
+// Constants
+import { Branding } from "@/constants/shared/enums";
+
+// Styles
+import styles from "./PublicNavbar.module.css";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -77,15 +84,25 @@ export default function WithSubnavigation() {
 
         {/* Desktop Navigation */}
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
+          <Link
+            href={"/"}
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={"gray.800"}
+            _hover={{
+              textDecoration: "none",
+            }}
+            className={styles.SMN_effect_59}
           >
-            CFMC
-          </Text>
+            {Branding.CHURCH_NAME_ABBREVIATION}
+          </Link>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex
+            display={{ base: "none", md: "flex" }}
+            justify={"center"}
+            alignItems={"center"}
+            ml={10}
+          >
             <DesktopNav />
           </Flex>
         </Flex>

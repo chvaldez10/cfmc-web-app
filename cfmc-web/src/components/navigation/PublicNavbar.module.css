@@ -1,0 +1,40 @@
+/* Source: https://codepen.io/kazemi/pen/aGXbMm */
+.SMN_effect_59 {
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  transition: all 0.3s ease 0s;
+  padding: 10px 20px;
+}
+
+.SMN_effect_59:before,
+.SMN_effect_59:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: var(--color-brand-50);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  transform: scale(0.1);
+  transform-origin: left top 0;
+  transition: all 0.3s ease 0s;
+}
+
+.SMN_effect_59:after {
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  transform-origin: right bottom 0;
+}
+
+.SMN_effect_59:hover:before,
+.SMN_effect_59:hover:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s linear 0s;
+}

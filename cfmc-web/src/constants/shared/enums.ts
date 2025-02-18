@@ -1,3 +1,8 @@
+export enum Branding {
+  CHURCH_NAME = "Calgary Filipino Methodist Church",
+  CHURCH_NAME_ABBREVIATION = "CFMC",
+}
+
 export enum PublicNavbarLabels {
   ABOUT = "About",
   MEDIA = "Media",
