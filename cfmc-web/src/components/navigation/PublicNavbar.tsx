@@ -34,25 +34,37 @@ import {
 import { NavItem } from "@/types/ui/navbar";
 
 // Data
-import { NAV_ITEMS } from "@/constants/shared/publicNavbar";
+import {
+  NAV_ITEMS,
+  TITHERS_AND_OFFERINGS_MODAL,
+} from "@/constants/shared/publicNavbar";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const { isOpen: isModalOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box position={"fixed"} w={"100%"} top={0} zIndex={1000}>
+    <Box
+      position={"fixed"}
+      w={"100%"}
+      top={0}
+      zIndex={1000}
+      borderBottom={1}
+      borderStyle={"solid"}
+      borderColor={"gray.200"}
+      transition={"all 0.3s ease-in-out"}
+      bg={"var(--color-light-100)"}
+    >
       <Flex
-        bg={"var(--color-light-100)"}
         color={"gray.600"}
         minH={"60px"}
+        maxW={"5xl"}
+        mx={"auto"}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={"gray.200"}
         align={"center"}
       >
+        {/* Mobile Navigation */}
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
@@ -67,6 +79,8 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
+
+        {/* Desktop Navigation */}
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
@@ -81,6 +95,7 @@ export default function WithSubnavigation() {
           </Flex>
         </Flex>
 
+        {/* Tithers & Offering Button */}
         <Box>
           <Button
             onClick={onOpen}
@@ -88,33 +103,20 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"purple.400"}
+            bg={"brand.500"}
             _hover={{
-              bg: "purple.300",
+              bg: "brand.400",
             }}
+            borderRadius={"full"}
           >
-            Tithers & Offering
+            {TITHERS_AND_OFFERINGS_MODAL.label}
           </Button>
 
-          <Modal isOpen={isModalOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalHeader>Tithers & Offering</ModalHeader>
-              <ModalCloseButton />
-              <ModalBody>
-                <Text>Tithers & Offering description goes here.</Text>
-              </ModalBody>
-              <ModalFooter>
-                <Button variant="ghost">Learn More</Button>
-                <Button colorScheme="blue" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+          <TithesAndOfferingsModal isOpen={isModalOpen} onClose={onClose} />
         </Box>
       </Flex>
 
+      {/* Mobile Navigation */}
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
@@ -122,11 +124,42 @@ export default function WithSubnavigation() {
   );
 }
 
-const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+const TithesAndOfferingsModal = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>{TITHERS_AND_OFFERINGS_MODAL.label}</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Text>{TITHERS_AND_OFFERINGS_MODAL.message}</Text>
+        </ModalBody>
+        <ModalFooter>
+          <Button variant="ghost" mr={2} _hover={{ bg: "brand.50" }}>
+            {TITHERS_AND_OFFERINGS_MODAL.buttonLabel}
+          </Button>
+          <Button
+            bg={"brand.500"}
+            mr={2}
+            onClick={onClose}
+            _hover={{ bg: "brand.400" }}
+            color={"white"}
+          >
+            Close
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  );
+};
 
+const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -139,10 +172,10 @@ const DesktopNav = () => {
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={linkColor}
+                color={"gray.600"}
                 _hover={{
                   textDecoration: "none",
-                  color: linkHoverColor,
+                  color: "gray.800",
                 }}
               >
                 {navItem.label}
@@ -153,7 +186,7 @@ const DesktopNav = () => {
               <PopoverContent
                 border={0}
                 boxShadow={"xl"}
-                bg={popoverContentBgColor}
+                bg={"white"}
                 p={4}
                 rounded={"xl"}
                 minW={"sm"}

@@ -73,3 +73,11 @@ export const NAV_ITEMS: Array<NavItem> = [
     subLabel: "Reach out to us for any inquiries or support.",
   },
 ];
+
+export const TITHERS_AND_OFFERINGS_MODAL = {
+  label: "Tithes & Offerings",
+  message:
+    "Your generous contributions help us make a difference in our community. Thank you for your support!",
+  buttonLabel: "Learn More",
+  buttonLink: "#",
+};
