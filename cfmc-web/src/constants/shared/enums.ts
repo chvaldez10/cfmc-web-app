@@ -3,6 +3,12 @@ export enum Branding {
   CHURCH_NAME_ABBREVIATION = "CFMC",
 }
 
+export enum ModalButtonLabels {
+  CLOSE = "Close",
+  SUBMIT = "Submit",
+  LEARN_MORE = "Learn More",
+}
+
 export enum PublicNavbarLabels {
   ABOUT = "About",
   MEDIA = "Media",

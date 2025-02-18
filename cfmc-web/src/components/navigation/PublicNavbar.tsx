@@ -40,10 +40,12 @@ import {
 } from "@/constants/shared/publicNavbar";
 
 // Constants
-import { Branding } from "@/constants/shared/enums";
+import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 
 // Styles
 import styles from "./PublicNavbar.module.css";
+
+const BUTTON_HEIGHT = "40px"; // Define a constant for button height
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -63,7 +65,6 @@ export default function WithSubnavigation() {
     >
       <Flex
         color={"gray.600"}
-        minH={"60px"}
         maxW={"5xl"}
         mx={"auto"}
         py={{ base: 2 }}
@@ -93,6 +94,10 @@ export default function WithSubnavigation() {
               textDecoration: "none",
             }}
             className={styles.SMN_effect_59}
+            height={BUTTON_HEIGHT}
+            paddingX={"10px"}
+            display={"flex"}
+            alignItems={"center"}
           >
             {Branding.CHURCH_NAME_ABBREVIATION}
           </Link>
@@ -120,8 +125,9 @@ export default function WithSubnavigation() {
               bg: "brand.400",
             }}
             borderRadius={"full"}
+            height={BUTTON_HEIGHT}
           >
-            Tithers & Offering
+            {TITHERS_AND_OFFERINGS_MODAL.label}
           </Button>
 
           <TithesAndOfferingsModal isOpen={isModalOpen} onClose={onClose} />
@@ -154,7 +160,7 @@ const TithesAndOfferingsModal = ({
         </ModalBody>
         <ModalFooter>
           <Button variant="ghost" mr={2} _hover={{ bg: "brand.50" }}>
-            {TITHERS_AND_OFFERINGS_MODAL.buttonLabel}
+            {ModalButtonLabels.LEARN_MORE}
           </Button>
           <Button
             bg={"brand.500"}
@@ -163,7 +169,7 @@ const TithesAndOfferingsModal = ({
             _hover={{ bg: "brand.400" }}
             color={"white"}
           >
-            Close
+            {ModalButtonLabels.CLOSE}
           </Button>
         </ModalFooter>
       </ModalContent>
@@ -175,7 +181,12 @@ const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box
+          key={navItem.label}
+          height={BUTTON_HEIGHT}
+          display={"flex"}
+          alignItems={"center"}
+        >
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
@@ -189,6 +200,9 @@ const DesktopNav = () => {
                   textDecoration: "none",
                   color: "gray.800",
                 }}
+                height={BUTTON_HEIGHT}
+                display={"flex"}
+                alignItems={"center"}
               >
                 {navItem.label}
               </Box>
