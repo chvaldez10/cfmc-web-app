@@ -12,7 +12,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   Modal,
@@ -65,11 +64,7 @@ export default function WithSubnavigation() {
         align={"center"}
       >
         {/* Mobile Navigation */}
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
+        <Flex ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
           <IconButton
             onClick={onToggle}
             icon={
@@ -85,7 +80,7 @@ export default function WithSubnavigation() {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+            color={"gray.800"}
           >
             CFMC
           </Text>
@@ -109,7 +104,7 @@ export default function WithSubnavigation() {
             }}
             borderRadius={"full"}
           >
-            {TITHERS_AND_OFFERINGS_MODAL.label}
+            Tithers & Offering
           </Button>
 
           <TithesAndOfferingsModal isOpen={isModalOpen} onClose={onClose} />
@@ -214,13 +209,13 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("purple.50", "gray.900") }}
+      _hover={{ bg: "purple.50" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "purple.400" }}
+            _groupHover={{ color: "brand.500" }}
             fontWeight={500}
           >
             {label}
@@ -236,7 +231,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"purple.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"brand.500"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Box>
@@ -268,10 +263,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
+        <Text fontWeight={600} color={"gray.600"}>
           {label}
         </Text>
         {children && (
@@ -291,7 +283,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           pl={4}
           borderLeft={1}
           borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
+          borderColor={"gray.200"}
           align={"start"}
         >
           {children &&
