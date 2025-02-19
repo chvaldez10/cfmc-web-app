@@ -7,6 +7,7 @@ export enum ModalButtonLabels {
   CLOSE = "Close",
   SUBMIT = "Submit",
   LEARN_MORE = "Learn More",
+  ANNOUNCEMENTS = "Announcements",
 }
 
 export enum PublicNavbarLabels {
