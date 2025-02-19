@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Flex,
   Button,
@@ -6,11 +8,13 @@ import {
   VStack,
   Divider,
   SlideFade,
+  Box,
 } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
 import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 import { MissionStatement } from "@/constants/shared/worship";
+import { useCountdown } from "@/hooks/useCountdown";
 
 const HomeJumbotron = () => {
   return (
@@ -100,9 +104,65 @@ const HomeJumboDetails = () => {
 };
 
 const WorshipCountdown = () => {
+  const mockDate = new Date(Date.UTC(2025, 1, 23, 21, 0, 0));
+  const { timeLeft, isTimeUp } = useCountdown(mockDate);
+
   return (
-    <VStack>
-      <Text>Worship Countdown</Text>
-    </VStack>
+    <Flex
+      direction="row"
+      gap={5}
+      textAlign="center"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box
+        p={2}
+        bg="gray.700"
+        color="white"
+        borderRadius="md"
+        textAlign="center"
+      >
+        <Text fontSize="5xl" fontFamily="mono">
+          {timeLeft.days}
+        </Text>
+        <Text>days</Text>
+      </Box>
+      <Box
+        p={2}
+        bg="gray.700"
+        color="white"
+        borderRadius="md"
+        textAlign="center"
+      >
+        <Text fontSize="5xl" fontFamily="mono">
+          {timeLeft.hours}
+        </Text>
+        <Text>hours</Text>
+      </Box>
+      <Box
+        p={2}
+        bg="gray.700"
+        color="white"
+        borderRadius="md"
+        textAlign="center"
+      >
+        <Text fontSize="5xl" fontFamily="mono">
+          {timeLeft.minutes}
+        </Text>
+        <Text>min</Text>
+      </Box>
+      <Box
+        p={2}
+        bg="gray.700"
+        color="white"
+        borderRadius="md"
+        textAlign="center"
+      >
+        <Text fontSize="5xl" fontFamily="mono">
+          {timeLeft.seconds}
+        </Text>
+        <Text>sec</Text>
+      </Box>
+    </Flex>
   );
 };
