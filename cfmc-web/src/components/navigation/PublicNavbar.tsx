@@ -37,7 +37,7 @@ import { NavItem } from "@/types/ui/navbar";
 import {
   NAV_ITEMS,
   TITHERS_AND_OFFERINGS_MODAL,
-} from "@/constants/shared/publicNavbar";
+} from "@/constants/publicNavbar";
 
 // Constants
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
