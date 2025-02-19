@@ -24,13 +24,15 @@ const HomeJumbotron = () => {
 export default HomeJumbotron;
 
 const HomeJumboDetails = () => {
+  const slideFadeProps = {
+    in: true,
+    offsetX: "0px",
+    offsetY: "-50px",
+    transition: { enter: { duration: 0.4 } },
+  };
+
   return (
-    <SlideFade
-      in={true}
-      offsetX="-50px"
-      offsetY="0px"
-      transition={{ enter: { duration: 0.4 } }}
-    >
+    <SlideFade {...slideFadeProps} offsetX="-50px" offsetY="0px">
       <VStack
         spacing={{ base: 2, md: 4 }}
         align="start"
@@ -44,9 +46,7 @@ const HomeJumboDetails = () => {
       >
         {/* Super script Header*/}
         <SlideFade
-          in={true}
-          offsetX="0px"
-          offsetY="-50px"
+          {...slideFadeProps}
           transition={{ enter: { duration: 0.4, delay: 0.4 } }}
         >
           <Flex alignItems="center" gap={2}>
@@ -66,9 +66,7 @@ const HomeJumboDetails = () => {
           </Flex>
         </SlideFade>
         <SlideFade
-          in={true}
-          offsetX="0px"
-          offsetY="-50px"
+          {...slideFadeProps}
           transition={{ enter: { duration: 0.4, delay: 0.8 } }}
         >
           <Heading as="h1" size={{ base: "xl", md: "2xl" }} color="purple.400">
@@ -76,9 +74,7 @@ const HomeJumboDetails = () => {
           </Heading>
         </SlideFade>
         <SlideFade
-          in={true}
-          offsetX="0px"
-          offsetY="-50px"
+          {...slideFadeProps}
           transition={{ enter: { duration: 0.4, delay: 1.2 } }}
         >
           <Text fontSize={{ base: "sm", md: "md" }}>
@@ -86,9 +82,7 @@ const HomeJumboDetails = () => {
           </Text>
         </SlideFade>
         <SlideFade
-          in={true}
-          offsetX="0px"
-          offsetY="-50px"
+          {...slideFadeProps}
           transition={{ enter: { duration: 0.4, delay: 1.6 } }}
         >
           <Button
