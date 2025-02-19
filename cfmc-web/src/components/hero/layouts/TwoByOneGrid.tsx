@@ -20,6 +20,7 @@ const TwoByOneGrid = ({ children, ...gridProps }: TwoByOneGridProps) => {
       justifyContent="center"
       p={8}
       minH="100vh"
+      className={gridProps.className}
       {...gridProps}
     >
       <GridItem

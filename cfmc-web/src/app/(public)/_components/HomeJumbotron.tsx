@@ -14,10 +14,13 @@ import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 import { MissionStatement } from "@/constants/shared/worship";
 import CountDownTimer from "./CountDownTimer";
+import styles from "./GradientBackground.module.css";
 
 const HomeJumbotron = () => {
+  console.log(styles.radialGradient);
+
   return (
-    <TwoByOneGrid>
+    <TwoByOneGrid className={styles.radialGradient}>
       <HomeJumboDetails />
       <WorshipCountdown />
     </TwoByOneGrid>
