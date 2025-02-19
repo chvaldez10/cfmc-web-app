@@ -27,20 +27,12 @@ const HomeJumbotron = () => {
 export default HomeJumbotron;
 
 const HomeJumboDetails = () => {
-  const slideFadeProps = {
-    in: true,
-    offsetX: "0px",
-    offsetY: "-50px",
-    transition: { enter: { duration: 0.4 } },
-  };
-
   return (
-    <SlideFade {...slideFadeProps} offsetX="-50px" offsetY="0px">
+    <SlideFadeText delay={0}>
       <VStack
         spacing={{ base: 2, md: 4 }}
         align="start"
         maxW={{ base: "full", md: "lg" }}
-        mx="auto"
         borderLeft="solid"
         borderLeftColor="purple.600"
         borderLeftWidth={{ base: "0px", md: "4px" }}
@@ -48,10 +40,7 @@ const HomeJumboDetails = () => {
         py={4}
       >
         {/* Super script Header*/}
-        <SlideFade
-          {...slideFadeProps}
-          transition={{ enter: { duration: 0.4, delay: 0.4 } }}
-        >
+        <SlideFadeText delay={0.4}>
           <Flex alignItems="center" gap={2}>
             <Divider
               orientation="horizontal"
@@ -67,27 +56,21 @@ const HomeJumboDetails = () => {
               {Branding.CHURCH_NAME}
             </Text>
           </Flex>
-        </SlideFade>
-        <SlideFade
-          {...slideFadeProps}
-          transition={{ enter: { duration: 0.4, delay: 0.8 } }}
-        >
+        </SlideFadeText>
+        {/* Our Mission Header */}
+        <SlideFadeText delay={0.8}>
           <Heading as="h1" size={{ base: "xl", md: "2xl" }} color="purple.400">
-            {MissionStatement.label}
+            {MissionStatement.OUR_MISSION}
           </Heading>
-        </SlideFade>
-        <SlideFade
-          {...slideFadeProps}
-          transition={{ enter: { duration: 0.4, delay: 1.2 } }}
-        >
+        </SlideFadeText>
+        {/* Mission Statement */}
+        <SlideFadeText delay={1.2}>
           <Text fontSize={{ base: "sm", md: "md" }}>
-            {MissionStatement.statement}
+            {MissionStatement.MISSION_STATEMENT}
           </Text>
-        </SlideFade>
-        <SlideFade
-          {...slideFadeProps}
-          transition={{ enter: { duration: 0.4, delay: 1.6 } }}
-        >
+        </SlideFadeText>
+        {/* Announcements Button */}
+        <SlideFadeText delay={1.6}>
           <Button
             colorScheme="purple"
             rightIcon={<FaArrowRight />}
@@ -96,9 +79,9 @@ const HomeJumboDetails = () => {
           >
             {ModalButtonLabels.ANNOUNCEMENTS}
           </Button>
-        </SlideFade>
+        </SlideFadeText>
       </VStack>
-    </SlideFade>
+    </SlideFadeText>
   );
 };
 
@@ -108,5 +91,26 @@ const WorshipCountdown = () => {
       <Text>Worship Countdown</Text>
       <CountDownTimer />
     </VStack>
+  );
+};
+
+const SlideFadeText = ({
+  children,
+  delay,
+}: {
+  children: React.ReactNode;
+  delay: number;
+}) => {
+  const slideFadeProps = {
+    in: true,
+    offsetX: "0px",
+    offsetY: "-50px",
+    transition: { enter: { duration: 0.4, delay } },
+  };
+
+  return (
+    <SlideFade {...slideFadeProps} offsetX="-50px" offsetY="0px">
+      {children}
+    </SlideFade>
   );
 };
