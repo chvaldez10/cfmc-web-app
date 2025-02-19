@@ -25,3 +25,10 @@ export enum PublicNavbarLabels {
   BIBLE_STUDY = "Bible Study",
   MUSIC = "Music",
 }
+
+export enum CountdownLabels {
+  DAYS = "days",
+  HOURS = "hours",
+  MINUTES = "minutes",
+  SECONDS = "seconds",
+}

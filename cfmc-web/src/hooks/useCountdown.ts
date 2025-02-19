@@ -1,22 +1,30 @@
 import { useEffect, useState } from "react";
 import { getTimeLeft } from "@/utils/dateUtils";
+import { initialCountdownValues } from "@/constants/shared/date";
 
 export const useCountdown = (targetDate: Date) => {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
-  const [isTimeUp, setIsTimeUp] = useState(false);
+  const [countdown, setCountdown] = useState({
+    timeLeft: initialCountdownValues,
+    isTimeUp: false,
+  });
 
   useEffect(() => {
-    if (!targetDate) {
+    if (
+      !targetDate ||
+      !(targetDate instanceof Date) ||
+      isNaN(targetDate.getTime())
+    ) {
+      console.warn("Invalid target date provided.");
       return;
     }
 
     const updateCountdown = () => {
       const newTimeLeft = getTimeLeft(targetDate);
-      setTimeLeft(newTimeLeft);
       const isUp = Object.values(newTimeLeft).every((value) => value <= 0);
-      setIsTimeUp(isUp);
+      setCountdown({ timeLeft: newTimeLeft, isTimeUp: isUp });
     };
 
+    // Update every second
     const timer = setInterval(updateCountdown, 1000);
 
     // Initial update
@@ -27,5 +35,5 @@ export const useCountdown = (targetDate: Date) => {
     };
   }, [targetDate]);
 
-  return { timeLeft, isTimeUp };
+  return countdown;
 };
