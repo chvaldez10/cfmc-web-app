@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTimeLeft } from "@/utils/dateUtils";
 import { initialCountdownValues } from "@/constants/shared/date";
 
-export const useCountdown = (targetDate: Date) => {
+export const useCountdown = (targetDate: Date | undefined) => {
   const [countdown, setCountdown] = useState({
     timeLeft: initialCountdownValues,
     isTimeUp: false,

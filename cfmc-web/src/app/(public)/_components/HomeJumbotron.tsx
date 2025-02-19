@@ -86,10 +86,12 @@ const HomeJumboDetails = () => {
 };
 
 const WorshipCountdown = () => {
+  const mockDate = new Date(Date.UTC(2025, 1, 23, 21, 0, 0));
+
   return (
     <VStack>
       <Text>Worship Countdown</Text>
-      <CountDownTimer />
+      <CountDownTimer worshipStartDateTime={mockDate} />
     </VStack>
   );
 };
