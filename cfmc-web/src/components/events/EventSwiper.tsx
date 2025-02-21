@@ -7,6 +7,7 @@ import {
   Text,
   Badge,
   Flex,
+  VStack,
   Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -31,33 +32,30 @@ interface EventSwiperProps {
 
 const EventSwiper = ({ events }: EventSwiperProps) => {
   const slidesPerView = useBreakpointValue({
-    base: 1,
-    sm: 1,
-    md: 2,
-    lg: 3,
-    xl: 3,
+    base: 2,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 5,
   });
 
   console.log(slidesPerView);
 
   return (
-    <>
-      <EventCard event={events[0]} />
-      <Box width="100%" overflow="hidden" py={16} px={4} mx="auto">
-        <Swiper
-          slidesPerView={slidesPerView}
-          spaceBetween={30}
-          centeredSlides={false}
-          className="eventSwiper"
-        >
-          {events.map((event) => (
-            <SwiperSlide key={event.id}>
-              <EventCard event={event} key={event.id} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Box>
-    </>
+    <Box overflow="hidden" py={16}>
+      <Swiper
+        slidesPerView={slidesPerView}
+        spaceBetween={12}
+        centeredSlides={false}
+        className="eventSwiper"
+      >
+        {events.map((event) => (
+          <SwiperSlide key={event.id}>
+            <EventCard event={event} key={event.id} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   );
 };
 
@@ -65,45 +63,78 @@ export default EventSwiper;
 
 const EventCard = ({ event }: { event: Event }) => {
   return (
+    <VStack spacing={4}>
+      <EventImage event={event} />
+      <EventDetails event={event} />
+    </VStack>
+  );
+};
+
+const EventImage = ({ event }: { event: Event }) => {
+  return (
     <Box
-      borderWidth="1px"
+      width="100%"
+      height="200px"
+      bg={`linear-gradient(to bottom, ${event.image}, ${event.image}80)`}
+      position="relative"
+      overflow="hidden"
       borderRadius="lg"
+    >
+      {event.isRecurring && (
+        <Badge colorScheme="green" position="absolute" top={2} right={2}>
+          Recurring
+        </Badge>
+      )}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        bottom="0"
+        bg="rgba(128, 128, 128, 0.5)"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        opacity="0"
+        transition="opacity 0.2s, transform 0.2s"
+        _hover={{
+          opacity: "1",
+          transform: "scale(1.05)",
+          cursor: "pointer",
+          transformOrigin: "center",
+        }}
+        borderRadius="lg"
+        width="100%"
+        height="100%"
+      >
+        <Text color="white" fontWeight="bold" fontSize="lg">
+          View Event
+        </Text>
+      </Box>
+    </Box>
+  );
+};
+
+const EventDetails = ({ event }: { event: Event }) => {
+  return (
+    <Stack
+      p={4}
+      spacing={3}
+      height={{ base: "180px", md: "200px" }}
+      borderBottomWidth="1px"
+      borderColor="gray.200"
       overflow="hidden"
       boxShadow="md"
-      _hover={{ transform: "scale(1.02)", transition: "all 0.2s" }}
-      height={{ base: "350px", md: "400px" }}
-      mx="auto"
     >
-      <Box
-        height="200px"
-        bg={`linear-gradient(to bottom, ${event.image}, ${event.image}80)`}
-        position="relative"
-      >
-        {event.isRecurring && (
-          <Badge colorScheme="green" position="absolute" top={2} right={2}>
-            Recurring
-          </Badge>
-        )}
-      </Box>
-      <Stack p={4} spacing={3} height="calc(100% - 200px)">
-        <Text fontSize="xl" fontWeight="bold" noOfLines={1}>
-          {event.name}
-        </Text>
-        <Text fontSize="sm" color="gray.600" noOfLines={3}>
-          {event.description}
-        </Text>
-        <Flex justify="space-between" align="center">
-          <Text fontSize="sm" color="gray.500" noOfLines={1}>
-            {event.city}
-          </Text>
-          <Text fontSize="sm" fontWeight="bold" noOfLines={1}>
-            {event.price}
-          </Text>
-        </Flex>
-        <Text fontSize="sm" color="gray.500" noOfLines={1}>
-          {event.startDate} - {event.endDate}
-        </Text>
-      </Stack>
-    </Box>
+      <Text fontSize="xl" fontWeight="bold" noOfLines={1}>
+        {event.name}
+      </Text>
+      <Text fontSize="sm" color="gray.600" noOfLines={3}>
+        {event.description}
+      </Text>
+      <Text fontSize="sm" color="gray.500" noOfLines={1} mt="auto">
+        {event.startDate} - {event.endDate}
+      </Text>
+    </Stack>
   );
 };
