@@ -39,7 +39,13 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
   });
 
   return (
-    <Box overflow="hidden" py={8} px={4}>
+    <Box
+      overflow="hidden"
+      py={8}
+      px={{ base: 4, md: 0 }}
+      mx="auto"
+      maxW={{ base: "full", md: "8xl" }}
+    >
       <Swiper
         spaceBetween={24}
         slidesPerView={breakpoint}
