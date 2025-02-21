@@ -1,7 +1,14 @@
 "use client";
 
 import React from "react";
+
+// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
+
+// Chakra UI
 import {
   Box,
   Text,
@@ -11,8 +18,11 @@ import {
   Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import "swiper/css";
+
+// Types
 import { Events } from "@/types/supabase/worship";
+
+// Utils
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
 
 interface EventSwiperProps {
@@ -31,11 +41,13 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
   console.log(slidesPerView);
 
   return (
-    <Box overflow="hidden" py={16}>
+    <Box overflow="hidden" py={8} px={4}>
       <Swiper
         slidesPerView={slidesPerView}
         spaceBetween={12}
         centeredSlides={false}
+        freeMode={true}
+        modules={[FreeMode]}
         className="eventSwiper"
       >
         {events.map((event) => (

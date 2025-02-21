@@ -57,7 +57,7 @@ export const mockEvents = [
     tags: [],
     category: "Retreat",
     occurrence: "recurring", // Enum value
-    image: "#805AD5",
+    image: "#179204",
     address: "Calgary",
     googleMapsUrl: "",
     status: "ACTIVE",
@@ -79,7 +79,7 @@ export const mockEvents = [
     tags: [],
     category: "Study",
     occurrence: "recurring", // Enum value
-    image: "#805AD5",
+    image: "#1422e9",
     address: "Calgary",
     googleMapsUrl: "",
     status: "ACTIVE",
