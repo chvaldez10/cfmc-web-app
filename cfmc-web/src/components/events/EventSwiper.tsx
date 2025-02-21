@@ -30,29 +30,25 @@ interface EventSwiperProps {
 }
 
 const EventSwiper = ({ events }: EventSwiperProps) => {
-  const slidesPerView = useBreakpointValue({
-    base: 2,
-    sm: 2,
-    md: 3,
-    lg: 4,
-    xl: 5,
+  const breakpoint = useBreakpointValue({
+    base: 1.2,
+    sm: 1.5,
+    md: 2.3,
+    lg: 3.2,
+    xl: 4.1,
   });
-
-  console.log(slidesPerView);
 
   return (
     <Box overflow="hidden" py={8} px={4}>
       <Swiper
-        slidesPerView={slidesPerView}
-        spaceBetween={12}
-        centeredSlides={false}
+        spaceBetween={24}
+        slidesPerView={breakpoint}
         freeMode={true}
         modules={[FreeMode]}
-        className="eventSwiper"
       >
         {events.map((event) => (
           <SwiperSlide key={event.id}>
-            <EventCard event={event} key={event.id} />
+            <EventCard event={event} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -64,10 +60,12 @@ export default EventSwiper;
 
 const EventCard = ({ event }: { event: Events }) => {
   return (
-    <VStack spacing={4}>
-      <EventImage event={event} />
-      <EventDetails event={event} />
-    </VStack>
+    <Box width="100%" height="100%">
+      <VStack spacing={4} height="100%">
+        <EventImage event={event} />
+        <EventDetails event={event} />
+      </VStack>
+    </Box>
   );
 };
 
