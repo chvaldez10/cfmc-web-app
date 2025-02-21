@@ -12,22 +12,11 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import "swiper/css";
-
-interface Event {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  startDate: string;
-  endDate: string;
-  image: string;
-  city: string;
-  isRecurring: boolean;
-  price: string;
-}
+import { Events } from "@/types/supabase/worship";
+import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
 
 interface EventSwiperProps {
-  events: Event[];
+  events: Events[];
 }
 
 const EventSwiper = ({ events }: EventSwiperProps) => {
@@ -61,7 +50,7 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
 
 export default EventSwiper;
 
-const EventCard = ({ event }: { event: Event }) => {
+const EventCard = ({ event }: { event: Events }) => {
   return (
     <VStack spacing={4}>
       <EventImage event={event} />
@@ -70,7 +59,7 @@ const EventCard = ({ event }: { event: Event }) => {
   );
 };
 
-const EventImage = ({ event }: { event: Event }) => {
+const EventImage = ({ event }: { event: Events }) => {
   return (
     <Box
       width="100%"
@@ -80,22 +69,19 @@ const EventImage = ({ event }: { event: Event }) => {
       overflow="hidden"
       borderRadius="lg"
     >
-      {event.isRecurring && (
+      {event.occurrence && (
         <Badge colorScheme="green" position="absolute" top={2} right={2}>
-          Recurring
+          {event.occurrence}
         </Badge>
       )}
-      <Box
+      <Flex
         position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
+        inset="0"
+        align="center"
+        justify="center"
         bg="rgba(128, 128, 128, 0.5)"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
         opacity="0"
+        borderRadius="lg"
         transition="opacity 0.2s, transform 0.2s"
         _hover={{
           opacity: "1",
@@ -103,19 +89,20 @@ const EventImage = ({ event }: { event: Event }) => {
           cursor: "pointer",
           transformOrigin: "center",
         }}
-        borderRadius="lg"
-        width="100%"
-        height="100%"
       >
         <Text color="white" fontWeight="bold" fontSize="lg">
           View Event
         </Text>
-      </Box>
+      </Flex>
     </Box>
   );
 };
 
-const EventDetails = ({ event }: { event: Event }) => {
+const EventDetails = ({ event }: { event: Events }) => {
+  const humanReadableStartDate = formatLocalDateTimeToHumanReadable(
+    event.startDate.toISOString()
+  );
+
   return (
     <Stack
       p={4}
@@ -132,8 +119,8 @@ const EventDetails = ({ event }: { event: Event }) => {
       <Text fontSize="sm" color="gray.600" noOfLines={3}>
         {event.description}
       </Text>
-      <Text fontSize="sm" color="gray.500" noOfLines={1} mt="auto">
-        {event.startDate} - {event.endDate}
+      <Text fontSize="sm" color="gray.500" mt="auto">
+        {humanReadableStartDate}
       </Text>
     </Stack>
   );

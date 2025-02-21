@@ -43,3 +43,36 @@ export const formatTimeToPaddedString = ({
     seconds: seconds.toString().padStart(2, "0"),
   };
 };
+
+/**
+ * Formats a UTC date string to a human-readable format.
+ * This taken from tixr's discovery page.
+ * @param utcDateString - The UTC date string to format.
+ * @returns The formatted date string.
+ */
+export function formatLocalDateTimeToHumanReadable(
+  utcDateString: string
+): string {
+  const date = new Date(utcDateString);
+  const options: Intl.DateTimeFormatOptions = {
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  };
+
+  const formattedDate = date.toLocaleString("en-US", options);
+  const timeZone = new Intl.DateTimeFormat("en-US", {
+    timeZoneName: "short",
+  })
+    .formatToParts(date)
+    .find((part) => part.type === "timeZoneName")?.value;
+
+  return (
+    formattedDate.replace(",", " at").replace("AM", "am").replace("PM", "pm") +
+    ` ${timeZone}`
+  );
+}

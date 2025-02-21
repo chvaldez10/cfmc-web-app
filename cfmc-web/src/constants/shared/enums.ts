@@ -32,3 +32,13 @@ export enum CountdownLabels {
   MINUTES = "minutes",
   SECONDS = "seconds",
 }
+
+export enum EventStatus {
+  ACTIVE = "Active",
+  INACTIVE = "Inactive",
+}
+
+export enum EventType {
+  SUNDAY_WORSHIP = "Sunday Worship",
+  EVENT = "Event",
+}
