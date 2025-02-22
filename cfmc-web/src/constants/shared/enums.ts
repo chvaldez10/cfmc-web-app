@@ -1,6 +1,10 @@
 export enum Branding {
   CHURCH_NAME = "Calgary Filipino Methodist Church",
   CHURCH_NAME_ABBREVIATION = "CFMC",
+  CHURCH_ADDRESS = "419 Northmount Dr NW, Calgary, AB",
+  CHURCH_POSTAL_CODE = "T2K 3H7",
+  CHURCH_PHONE_NUMBER = "1 (403) 123-4567",
+  CHURCH_EMAIL = "info@email.com",
 }
 
 export enum ModalButtonLabels {
