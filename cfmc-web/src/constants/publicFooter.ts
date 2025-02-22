@@ -36,3 +36,18 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
     ],
   },
 ];
+
+export const FOOTER_INQUIRIES: Array<{ label: string; description: string }> = [
+  {
+    label: "Connect with us",
+    description: "Connect with us to get the latest news and updates.",
+  },
+  {
+    label: "Prayer Request",
+    description: "Prayer Request for the church and its members.",
+  },
+  {
+    label: "Media Request",
+    description: "Media Request for the church and its services.",
+  },
+];

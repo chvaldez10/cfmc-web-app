@@ -1,8 +1,19 @@
 import { Box, Flex, Text, Link, VStack, Stack } from "@chakra-ui/react";
 import { FOOTER_ITEMS } from "@/constants/publicFooter";
 import { Branding } from "@/constants/shared/enums";
-
+import FooterInquiries from "./FooterInquiries";
 const Footer = () => {
+  return (
+    <>
+      <FooterInquiries />
+      <FooterDetails />
+    </>
+  );
+};
+
+export default Footer;
+
+const FooterDetails = () => {
   return (
     <Box color="gray.800" py={10}>
       <Flex
@@ -67,5 +78,3 @@ const Footer = () => {
     </Box>
   );
 };
-
-export default Footer;
