@@ -8,13 +8,10 @@ dj-database-url
 # Environment Variables
 python-decouple
 
-# YouTube Downloader Dependencies
-# pytubefix
-ffmpeg-python
+# YouTube Downloader
 yt-dlp
 
 # Async Support
-asyncio
 asgiref
 
 # Task Queue
@@ -26,7 +23,6 @@ redis
 # Development & Testing
 pytest
 pytest-django
-pytest-asyncio
 
 # Utilities
 pathlib
