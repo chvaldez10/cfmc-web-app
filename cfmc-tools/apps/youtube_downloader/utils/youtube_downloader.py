@@ -110,8 +110,31 @@ class YouTubeDownloader:
         try:
             logger.info("Fetching video information...")
             
+            # First get info without downloading to check available formats
+            with yt_dlp.YoutubeDL({'quiet': True}) as ydl:
+                info_dict = ydl.extract_info(url, download=False)
+                
+                # Log available formats
+                if 'formats' in info_dict:
+                    logger.info("Available formats:")
+                    for format in info_dict['formats']:
+                        if 'height' in format and format['height'] is not None:
+                            logger.info(f"Format: {format['format_id']}, Resolution: {format['width']}x{format['height']}")
+                
+                # Find best format with at least 1080p if available
+                best_format = 'best'
+                for format in info_dict.get('formats', []):
+                    if 'height' in format and format['height'] is not None and format['height'] >= 1080:
+                        best_format = "bestvideo[height>=1080]+bestaudio/best[height>=1080]/best"
+                        logger.info("Selected format with at least 1080p resolution")
+                        break
+                
+                if best_format == 'best':
+                    logger.warning("No 1080p resolution available, using best available quality")
+            
+            # Now download with the selected format
             options = {
-                'format': 'best',
+                'format': best_format,
                 'outtmpl': f'{self.download_dir}/videos/%(title)s.%(ext)s',
             }
             
