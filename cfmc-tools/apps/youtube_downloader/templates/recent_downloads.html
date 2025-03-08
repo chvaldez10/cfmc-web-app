@@ -20,15 +20,6 @@
             Created: {{ download.created_at|date:"M d, Y H:i" }}
           </p>
         </div>
-        {% if download.status == 'completed' and download.file_path %}
-        <a
-          href="{{ download.file_path }}"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-          download
-        >
-          Download
-        </a>
-        {% endif %}
       </div>
     </div>
     {% endfor %}

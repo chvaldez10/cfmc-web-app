@@ -1,11 +1,6 @@
 from pathlib import Path
-import subprocess
+import yt_dlp
 from decouple import config
-
-# pytube fix
-from pytubefix import YouTube
-from pytubefix.cli import on_progress
-from pytubefix.exceptions import VideoUnavailable, RegexMatchError
 
 # django
 import logging
@@ -26,54 +21,33 @@ class YouTubeDownloader:
         
         self.download_dir = download_dir
         self.allow_downloads = config('ALLOW_DOWNLOADS', default=False, cast=bool)
+        # Create download directory if it doesn't exist
+        self.download_dir.mkdir(parents=True, exist_ok=True)
         
-    def _get_metadata(self, yt: YouTube, stream) -> VideoMetadata:
+    def _get_metadata(self, yt: yt_dlp.YoutubeDL, info) -> VideoMetadata:
         """
         Get video metadata.
         
         Args:
-            yt (YouTube): YouTube video object
-            stream: Selected stream
+            yt (yt_dlp.YoutubeDL): yt_dlp object
+            info: yt_dlp info dictionary
         
         Returns:
             VideoMetadata: Extracted metadata
         """
         
+        # Calculate file size safely, handling None values
+        filesize = info.get('filesize')
+        filesize_mb = filesize / (1024*1024) if filesize is not None else 0
+        
         return VideoMetadata(
-            title=yt.title,
-            duration_seconds=yt.length,
-            publish_date=yt.publish_date,
-            file_size_mb=stream.filesize / (1024*1024),
-            stream_quality=stream.abr if stream.type == "audio" else stream.resolution,
+            title=info['title'],
+            duration_seconds=info['duration'],
+            publish_date=info['upload_date'],
+            file_size_mb=filesize_mb,
+            stream_quality=info['format'] if 'format' in info else info['acodec'],
         )
 
-    @staticmethod
-    def _run_ffmpeg_merge(video_file: Path, audio_file: Path, output_file: Path) -> bool:
-        """
-        Merge video and audio using FFmpeg.
-        """
-        
-        cmd = [
-            'ffmpeg',
-            '-i', str(video_file),
-            '-i', str(audio_file),
-            '-c', 'copy',
-            str(output_file),
-            '-y'  # overwrite existing file
-        ]
-        
-        process = subprocess.run(
-            cmd,
-            capture_output=True,
-            universal_newlines=True,
-            encoding='utf-8',  # ensure encoding is specified
-            errors='replace',  # replace invalid characters
-            timeout=600  # 10 minutes timeout
-        )
-        
-        if process.returncode != 0:
-            raise Exception(f"FFmpeg error: {process.stderr}")
-        
     def _sanitize_filename(self, filename: str) -> str:
         """
         Sanitize filename by removing invalid characters.
@@ -96,32 +70,30 @@ class YouTubeDownloader:
         try:
             logger.info("Fetching video information...")
             
-            # fetch video metadata
-            yt = YouTube(url, on_progress_callback=on_progress)
+            options = {
+                'format': 'bestaudio/best',
+                'postprocessors': [{
+                    'key': 'FFmpegExtractAudio',
+                    'preferredcodec': 'mp3',
+                    'preferredquality': '192',
+                }],
+                'outtmpl': f'{self.download_dir}/audio/%(title)s.%(ext)s',
+            }
             
-            # get audio stream
-            stream = yt.streams.get_audio_only()
-            
-            if not stream:
-                return {"success": False, "error": "No suitable audio stream found."}
-            
-            # get video metadata
-            metadata = self._get_metadata(yt, stream)
-            logger.info(metadata)
-            
-            # construct output filename
-            output_dir = self.download_dir / "audio"
-            output_dir.mkdir(exist_ok=True)
-            filename = f"{self._sanitize_filename(metadata.title)}.mp3"
-            
-            # download audio if allowed
-            if self.allow_downloads:
-                stream.download(output_path=output_dir, filename=filename)
-            
-            # log success
-            logger.info("✅ Download completed successfully!")
-            return {"success": True, "file_path": output_dir / filename}
-        except (VideoUnavailable, RegexMatchError) as e:
+            with yt_dlp.YoutubeDL(options) as ydl:
+                download_flag = self.allow_downloads
+                info = ydl.extract_info(url, download=download_flag)
+                # The file extension will be changed to mp3 by the postprocessor
+                filename = ydl.prepare_filename(info).replace(f".{info['ext']}", ".mp3")
+                
+                # get video metadata
+                metadata = self._get_metadata(ydl, info)
+                logger.info(metadata)
+                
+                # log success
+                logger.info("✅ Download completed successfully!")
+                return {"success": True, "file_path": filename}
+        except Exception as e:
             logger.error(f"❌ Error: {str(e)}")
             return {"success": False, "error": str(e)}
 
@@ -136,52 +108,25 @@ class YouTubeDownloader:
             bool: True if the download was successful, False otherwise.
         """
         try:
-            
-            # fetch video metadata
-            yt = YouTube(url, on_progress_callback=on_progress)
-                
-            # get the highest resolution stream
-            video_stream = yt.streams.filter(type='video', file_extension='mp4').order_by('resolution').desc().first()
-            audio_stream = yt.streams.get_audio_only()
-            
-            # check if stream is valid
-            if not video_stream or not audio_stream:
-                return {"success": False, "error": "No suitable video stream found."}
-            
-            # get video metadata
             logger.info("Fetching video information...")
-            metadata = self._get_metadata(yt, video_stream)
-            logger.info(metadata)
             
-            # construct output filename
-            output_dir = self.download_dir / "video"
-            output_dir.mkdir(exist_ok=True)
+            options = {
+                'format': 'best',
+                'outtmpl': f'{self.download_dir}/videos/%(title)s.%(ext)s',
+            }
             
-            # Create safe filenames
-            save_title = self._sanitize_filename(metadata.title)
-            temp_video = f"video_{save_title}.mp4"
-            temp_audio = f"audio_{save_title}.m4a"
-
-            # Final output path
-            filename = output_dir / f"{save_title}.mp4"
-            
-            # download video if allowed
-            if self.allow_downloads:
+            with yt_dlp.YoutubeDL(options) as ydl:
+                download_flag = self.allow_downloads
+                info = ydl.extract_info(url, download=download_flag)
+                filename = ydl.prepare_filename(info)
                 
-                # Download with explicit filenames
-                video_file = video_stream.download(output_path=output_dir, filename=temp_video)
-                audio_file = audio_stream.download(output_path=output_dir, filename=temp_audio)
+                # get video metadata
+                metadata = self._get_metadata(ydl, info)
+                logger.info(metadata)
                 
-                # merge video and audio
-                logger.info("Merging video and audio...")
-                self._run_ffmpeg_merge(video_file, audio_file, filename)
-                
-                # Clean up temporary files
-                Path(video_file).unlink()
-                Path(audio_file).unlink()
-                
-            logger.info("✅ Download completed successfully!")
-            return {"success": True, "file_path": filename}
+                # log success
+                logger.info("✅ Download completed successfully!")
+                return {"success": True, "file_path": filename}
         except Exception as e:
             logger.error(f"❌ Error: {str(e)}")
             return {"success": False, "error": str(e)}

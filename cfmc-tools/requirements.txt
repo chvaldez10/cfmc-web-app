@@ -9,8 +9,9 @@ dj-database-url
 python-decouple
 
 # YouTube Downloader Dependencies
-pytubefix
+# pytubefix
 ffmpeg-python
+yt-dlp
 
 # Async Support
 asyncio
