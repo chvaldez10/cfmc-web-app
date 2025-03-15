@@ -136,6 +136,10 @@ class YouTubeDownloader:
             options = {
                 'format': best_format,
                 'outtmpl': f'{self.download_dir}/videos/%(title)s.%(ext)s',
+                'postprocessors': [{
+                    'key': 'FFmpegVideoConvertor',
+                    'preferedformat': 'mp4',
+                }],
             }
             
             with yt_dlp.YoutubeDL(options) as ydl:
