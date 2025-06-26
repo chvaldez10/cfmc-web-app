@@ -10,6 +10,8 @@ import {
   SlideFade,
 } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
+
+// Components
 import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 import { MissionStatement } from "@/constants/shared/worship";

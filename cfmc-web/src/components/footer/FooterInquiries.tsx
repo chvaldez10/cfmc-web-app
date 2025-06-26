@@ -5,7 +5,6 @@ import {
   Box,
   Text,
   Icon,
-  Grid,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -15,42 +14,11 @@ import {
   ModalFooter,
   Button,
 } from "@chakra-ui/react";
-import { FOOTER_INQUIRIES } from "../../constants/publicFooter";
-import { FaStar } from "react-icons/fa"; // Example icon
+import { FOOTER_INQUIRIES } from "@/constants/publicFooter";
+import { ThreeByOneGrid } from "@/components/hero";
+import InquiryCard from "@/components/cards/InquiryCard";
 
-function InquiryCard({
-  label,
-  description,
-  onClick,
-}: {
-  label: string;
-  description: string;
-  onClick: () => void;
-}) {
-  return (
-    <Box
-      bg="orange.500"
-      p={5}
-      borderRadius="md"
-      color="white"
-      position="relative"
-      cursor="pointer"
-      onClick={onClick}
-    >
-      <Icon top={2} right={2} position="absolute">
-        <FaStar />
-      </Icon>
-      <Box mt={8}>
-        <Text fontSize="xl" fontWeight="bold">
-          {label}
-        </Text>
-        <Text mt={2}>{description}</Text>
-      </Box>
-    </Box>
-  );
-}
-
-function FooterInquiries() {
+const FooterInquiries: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedInquiry, setSelectedInquiry] = useState<{
     label: string;
@@ -69,16 +37,23 @@ function FooterInquiries() {
 
   return (
     <>
-      <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={4}>
-        {FOOTER_INQUIRIES.map((inquiry, index) => (
-          <InquiryCard
-            key={index}
-            label={inquiry.label}
-            description={inquiry.description}
-            onClick={() => handleOpenModal(inquiry)}
-          />
-        ))}
-      </Grid>
+      <ThreeByOneGrid>
+        <InquiryCard
+          label={FOOTER_INQUIRIES[0].label}
+          description={FOOTER_INQUIRIES[0].description}
+          onClick={() => handleOpenModal(FOOTER_INQUIRIES[0])}
+        />
+        <InquiryCard
+          label={FOOTER_INQUIRIES[1].label}
+          description={FOOTER_INQUIRIES[1].description}
+          onClick={() => handleOpenModal(FOOTER_INQUIRIES[1])}
+        />
+        <InquiryCard
+          label={FOOTER_INQUIRIES[2].label}
+          description={FOOTER_INQUIRIES[2].description}
+          onClick={() => handleOpenModal(FOOTER_INQUIRIES[2])}
+        />
+      </ThreeByOneGrid>
 
       <Modal isOpen={isOpen} onClose={handleCloseModal}>
         <ModalOverlay />
@@ -97,6 +72,6 @@ function FooterInquiries() {
       </Modal>
     </>
   );
-}
+};
 
 export default FooterInquiries;

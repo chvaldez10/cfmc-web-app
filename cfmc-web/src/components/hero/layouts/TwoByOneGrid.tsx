@@ -1,15 +1,21 @@
-import { ReactNode } from "react";
+import { ReactElement } from "react";
 import { Grid, GridItem, GridProps } from "@chakra-ui/react";
 
 interface TwoByOneGridProps extends GridProps {
-  children: [ReactNode, ReactNode]; // Expecting exactly two children
+  children: [ReactElement, ReactElement];
+  variant?: "center" | "top";
 }
 
-const TwoByOneGrid = ({ children, ...gridProps }: TwoByOneGridProps) => {
-  // Runtime check to ensure exactly two children are provided
+const TwoByOneGrid = ({
+  children,
+  variant = "center",
+  ...gridProps
+}: TwoByOneGridProps) => {
   if (children.length !== 2) {
     throw new Error("TwoByOneGrid expects exactly two children.");
   }
+
+  const verticalAlign = variant === "top" ? "flex-start" : "center";
 
   return (
     <Grid
@@ -25,7 +31,7 @@ const TwoByOneGrid = ({ children, ...gridProps }: TwoByOneGridProps) => {
     >
       <GridItem
         display="flex"
-        alignItems="center"
+        alignItems={verticalAlign}
         justifyContent="center"
         p={4}
       >
@@ -34,7 +40,7 @@ const TwoByOneGrid = ({ children, ...gridProps }: TwoByOneGridProps) => {
 
       <GridItem
         display="flex"
-        alignItems="center"
+        alignItems={verticalAlign}
         justifyContent="center"
         p={4}
       >
