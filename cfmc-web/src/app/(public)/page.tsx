@@ -1,5 +1,5 @@
 // Components
-import HomeJumbotron from "./_components/HomeJumbotron";
+import HomeJumbotron from "./_sections/HomeJumbotron";
 import EventSwiper from "@/components/events/EventSwiper";
 
 // Data

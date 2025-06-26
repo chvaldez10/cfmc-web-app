@@ -13,7 +13,7 @@ import { FaArrowRight } from "react-icons/fa";
 import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 import { MissionStatement } from "@/constants/shared/worship";
-import CountDownTimer from "./CountDownTimer";
+import { CountDownTimer } from "@/components/hero";
 import styles from "./GradientBackground.module.css";
 
 const HomeJumbotron = () => {
@@ -89,7 +89,7 @@ const HomeJumboDetails = () => {
 };
 
 const WorshipCountdown = () => {
-  const mockDate = new Date(Date.UTC(2025, 1, 23, 21, 0, 0));
+  const mockDate = new Date(Date.UTC(2025, 6, 23, 29, 0, 0));
 
   return (
     <VStack>
