@@ -1,6 +1,6 @@
 // Components
 import HomeJumbotron from "./_sections/HomeJumbotron";
-import EventSwiper from "@/components/events/EventSwiper";
+import EventSwiper from "@/components/features/events/EventSwiper";
 
 // Data
 import { mockEvents } from "@/data/mock/mockEvents";

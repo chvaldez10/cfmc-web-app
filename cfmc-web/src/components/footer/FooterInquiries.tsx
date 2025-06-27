@@ -1,20 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Button,
-} from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { FOOTER_INQUIRIES } from "@/constants/publicFooter";
 import { ThreeByOneGrid } from "@/components/hero";
-import InquiryCard from "@/components/cards/InquiryCard";
+import InquiryCard from "@/components/ui/InquiryCard";
+import ReusableModal from "@/components/ui/Modal";
 
 const FooterInquiries: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,21 +47,20 @@ const FooterInquiries: React.FC = () => {
         />
       </ThreeByOneGrid>
 
-      <Modal isOpen={isOpen} onClose={handleCloseModal}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{selectedInquiry?.label}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text>{selectedInquiry?.description}</Text>
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="blue" onClick={handleCloseModal}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <ReusableModal
+        isOpen={isOpen}
+        onClose={handleCloseModal}
+        title={selectedInquiry?.label || ""}
+        footerActions={[
+          {
+            label: "Close",
+            onClick: handleCloseModal,
+            variant: "blue",
+          },
+        ]}
+      >
+        <Text>{selectedInquiry?.description}</Text>
+      </ReusableModal>
     </>
   );
 };
