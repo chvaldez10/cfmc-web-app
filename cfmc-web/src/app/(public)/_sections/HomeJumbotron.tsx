@@ -91,7 +91,8 @@ const HomeJumboDetails = () => {
 };
 
 const WorshipCountdown = () => {
-  const mockDate = new Date(Date.UTC(2025, 6, 23, 29, 0, 0));
+  // TODO: Remove this mock date and note that month is 0-indexed
+  const mockDate = new Date(Date.UTC(2025, 5, 29, 20, 0, 0)); // 2 PM MDT
 
   return (
     <VStack>

@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 import {
-  Box,
   Text,
-  Icon,
   Modal,
   ModalOverlay,
   ModalContent,

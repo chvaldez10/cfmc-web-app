@@ -1,4 +1,4 @@
-import { Box, Icon, Text } from "@chakra-ui/react";
+import { Box, Icon, Text, Flex } from "@chakra-ui/react";
 import { FaStar } from "react-icons/fa";
 
 interface InquiryCardProps {
@@ -14,22 +14,39 @@ const InquiryCard: React.FC<InquiryCardProps> = ({
 }) => (
   <Box
     bg="purple.500"
-    p={5}
-    borderRadius="md"
+    p={{ base: 4, md: 6 }}
+    borderRadius="xl"
     color="white"
-    position="relative"
     cursor="pointer"
+    boxShadow="md"
+    minH={{ base: "40", md: "56" }}
+    transition="all 0.2s"
+    _hover={{
+      bg: "purple.600",
+      transform: "scale(1.02)",
+      boxShadow: "lg",
+    }}
     onClick={onClick}
-    _hover={{ bg: "purple.600" }}
-    transition="background-color 0.2s"
   >
-    <Icon as={FaStar} position="absolute" top={2} right={2} />
-    <Box mt={8}>
-      <Text fontSize="xl" fontWeight="bold">
+    <Flex align="center" justify="space-between" mb={4}>
+      <Text fontSize={{ base: "lg", md: "xl" }} fontWeight="bold">
         {label}
       </Text>
-      <Text mt={2}>{description}</Text>
-    </Box>
+      <Box
+        bg="whiteAlpha.300"
+        borderRadius="full"
+        p={2}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Icon as={FaStar} boxSize={5} />
+      </Box>
+    </Flex>
+
+    <Text fontSize={{ base: "sm", md: "md" }} opacity={0.9}>
+      {description}
+    </Text>
   </Box>
 );
 
