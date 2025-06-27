@@ -9,19 +9,23 @@ import {
   ModalFooter,
   Button,
   ButtonProps,
+  useBreakpointValue,
+  Flex,
+  Text,
 } from "@chakra-ui/react";
+
+interface FooterAction extends ButtonProps {
+  label: string;
+  onClick?: () => void;
+  isPrimary?: boolean;
+}
 
 interface ReusableModalProps {
   isOpen: boolean;
-  onClose: () => void;
-  title: string;
+  onClose?: () => void;
+  title?: string;
   children: React.ReactNode;
-  footerActions?: {
-    label: string;
-    onClick: () => void;
-    variant?: ButtonProps["colorScheme"];
-    isLoading?: boolean;
-  }[];
+  footerActions?: FooterAction[];
   size?:
     | "xs"
     | "sm"
@@ -36,6 +40,9 @@ interface ReusableModalProps {
     | "full";
   closeOnOverlayClick?: boolean;
   closeOnEsc?: boolean;
+  renderHeader?: () => React.ReactNode;
+  renderFooter?: () => React.ReactNode;
+  hideCloseButton?: boolean;
 }
 
 const ReusableModal: React.FC<ReusableModalProps> = ({
@@ -43,39 +50,59 @@ const ReusableModal: React.FC<ReusableModalProps> = ({
   onClose,
   title,
   children,
-  footerActions = [],
+  footerActions,
   size = "md",
   closeOnOverlayClick = true,
   closeOnEsc = true,
+  renderHeader,
+  renderFooter,
+  hideCloseButton = false,
 }) => {
+  const modalSize = useBreakpointValue({ base: size, md: size });
+
   return (
     <ChakraModal
       isOpen={isOpen}
-      onClose={onClose}
-      size={size}
+      onClose={onClose ?? (() => {})}
+      size={modalSize}
       closeOnOverlayClick={closeOnOverlayClick}
       closeOnEsc={closeOnEsc}
+      isCentered
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{title}</ModalHeader>
-        <ModalCloseButton />
+        {renderHeader ? (
+          renderHeader()
+        ) : title ? (
+          <ModalHeader>{title}</ModalHeader>
+        ) : null}
+
+        {!hideCloseButton && <ModalCloseButton />}
+
         <ModalBody>{children}</ModalBody>
-        {footerActions.length > 0 && (
+
+        {renderFooter ? (
+          renderFooter()
+        ) : footerActions?.length ? (
           <ModalFooter>
-            {footerActions.map((action, index) => (
-              <Button
-                key={index}
-                colorScheme={action.variant || "blue"}
-                onClick={action.onClick}
-                isLoading={action.isLoading}
-                ml={index > 0 ? 3 : 0}
-              >
-                {action.label}
-              </Button>
-            ))}
+            <Flex w="full" justify="flex-end" gap={3} flexWrap="wrap">
+              {footerActions.map((action, index) => (
+                <Button
+                  key={index}
+                  onClick={action.onClick}
+                  colorScheme={
+                    action.isPrimary ? action.colorScheme ?? "blue" : undefined
+                  }
+                  variant={action.isPrimary ? "solid" : "ghost"}
+                  isLoading={action.isLoading}
+                  {...action}
+                >
+                  {action.label}
+                </Button>
+              ))}
+            </Flex>
           </ModalFooter>
-        )}
+        ) : null}
       </ModalContent>
     </ChakraModal>
   );

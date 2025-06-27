@@ -8,7 +8,7 @@ import InquiryCard from "@/components/ui/InquiryCard";
 import ReusableModal from "@/components/ui/Modal";
 
 const FooterInquiries: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedInquiry, setSelectedInquiry] = useState<{
     label: string;
     description: string;
