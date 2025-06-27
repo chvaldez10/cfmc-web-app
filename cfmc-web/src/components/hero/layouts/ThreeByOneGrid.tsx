@@ -20,12 +20,11 @@ const ThreeByOneGrid = ({
   return (
     <Grid
       templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }}
-      //   gap={4}
+      gap={8}
       position="relative"
       overflow="hidden"
       justifyContent="center"
-      //   p={8}
-      //   minH="50vh"
+      p={4}
       className={gridProps.className}
       {...gridProps}
     >
@@ -35,7 +34,7 @@ const ThreeByOneGrid = ({
           display="flex"
           alignItems={verticalAlign}
           justifyContent="center"
-          p={4}
+          data-testid={`three-by-one-grid-item-${index}`}
         >
           {child}
         </GridItem>

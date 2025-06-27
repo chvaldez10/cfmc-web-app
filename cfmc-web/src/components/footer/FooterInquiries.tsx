@@ -39,16 +39,19 @@ const FooterInquiries: React.FC = () => {
         <InquiryCard
           label={FOOTER_INQUIRIES[0].label}
           description={FOOTER_INQUIRIES[0].description}
+          icon={FOOTER_INQUIRIES[0].icon}
           onClick={() => handleOpenModal(FOOTER_INQUIRIES[0])}
         />
         <InquiryCard
           label={FOOTER_INQUIRIES[1].label}
           description={FOOTER_INQUIRIES[1].description}
+          icon={FOOTER_INQUIRIES[1].icon}
           onClick={() => handleOpenModal(FOOTER_INQUIRIES[1])}
         />
         <InquiryCard
           label={FOOTER_INQUIRIES[2].label}
           description={FOOTER_INQUIRIES[2].description}
+          icon={FOOTER_INQUIRIES[2].icon}
           onClick={() => handleOpenModal(FOOTER_INQUIRIES[2])}
         />
       </ThreeByOneGrid>
