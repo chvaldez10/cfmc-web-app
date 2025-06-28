@@ -42,9 +42,10 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
     <Box
       overflow="hidden"
       py={8}
-      px={{ base: 4, "2xl": 0 }}
+      px={{ base: 4, md: 8 }}
       mx="auto"
       maxW={{ base: "full", md: "8xl" }}
+      id="events-swiper"
     >
       <Swiper
         spaceBetween={24}

@@ -70,6 +70,7 @@ export default function WithSubnavigation() {
         py={{ base: 2 }}
         px={{ base: 4 }}
         align={"center"}
+        id="public-navbar"
       >
         {/* Mobile Navigation */}
         <Flex ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
