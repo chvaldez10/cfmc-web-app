@@ -15,13 +15,6 @@ import {
   useBreakpointValue,
   useDisclosure,
   Link,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  ModalCloseButton,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -40,7 +33,10 @@ import {
 } from "@/constants/publicNavbar";
 
 // Constants
-import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
+import { Branding } from "@/constants/shared/enums";
+
+// Components
+import { TithesAndOfferingsModal } from "@/components/ui/modals";
 
 // Styles
 import styles from "./PublicNavbar.module.css";
@@ -142,41 +138,6 @@ export default function WithSubnavigation() {
     </Box>
   );
 }
-
-const TithesAndOfferingsModal = ({
-  isOpen,
-  onClose,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-}) => {
-  return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>{TITHERS_AND_OFFERINGS_MODAL.label}</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <Text>{TITHERS_AND_OFFERINGS_MODAL.message}</Text>
-        </ModalBody>
-        <ModalFooter>
-          <Button variant="ghost" mr={2} _hover={{ bg: "brand.50" }}>
-            {ModalButtonLabels.LEARN_MORE}
-          </Button>
-          <Button
-            bg={"brand.500"}
-            mr={2}
-            onClick={onClose}
-            _hover={{ bg: "brand.400" }}
-            color={"white"}
-          >
-            {ModalButtonLabels.CLOSE}
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
-  );
-};
 
 const DesktopNav = () => {
   return (
