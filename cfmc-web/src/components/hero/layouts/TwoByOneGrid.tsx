@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Box, Grid, GridItem, GridProps, Container } from "@chakra-ui/react";
+import { Box, Grid, GridItem, GridProps } from "@chakra-ui/react";
 
 interface TwoByOneGridProps extends GridProps {
   children: [ReactElement, ReactElement];

@@ -11,7 +11,6 @@ import {
   ButtonProps,
   useBreakpointValue,
   Flex,
-  Text,
 } from "@chakra-ui/react";
 
 interface FooterAction extends ButtonProps {
@@ -20,7 +19,7 @@ interface FooterAction extends ButtonProps {
   isPrimary?: boolean;
 }
 
-interface ReusableModalProps {
+interface BaseModalProps {
   isOpen: boolean;
   onClose?: () => void;
   title?: string;
@@ -45,7 +44,7 @@ interface ReusableModalProps {
   hideCloseButton?: boolean;
 }
 
-const ReusableModal: React.FC<ReusableModalProps> = ({
+const BaseModal: React.FC<BaseModalProps> = ({
   isOpen,
   onClose,
   title,
@@ -108,4 +107,4 @@ const ReusableModal: React.FC<ReusableModalProps> = ({
   );
 };
 
-export default ReusableModal;
+export default BaseModal;

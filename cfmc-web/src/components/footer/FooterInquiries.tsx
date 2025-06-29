@@ -5,7 +5,7 @@ import { Text } from "@chakra-ui/react";
 import { FOOTER_INQUIRIES } from "@/constants/publicFooter";
 import { ThreeByOneGrid } from "@/components/hero";
 import InquiryCard from "@/components/ui/InquiryCard";
-import ReusableModal from "@/components/ui/Modal";
+import { BaseModal } from "@/components/ui/modals";
 
 const FooterInquiries: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -47,7 +47,7 @@ const FooterInquiries: React.FC = () => {
         />
       </ThreeByOneGrid>
 
-      <ReusableModal
+      <BaseModal
         isOpen={isOpen}
         onClose={handleCloseModal}
         title={selectedInquiry?.label || ""}
@@ -55,12 +55,12 @@ const FooterInquiries: React.FC = () => {
           {
             label: "Close",
             onClick: handleCloseModal,
-            variant: "blue",
+            colorScheme: "purple",
           },
         ]}
       >
         <Text>{selectedInquiry?.description}</Text>
-      </ReusableModal>
+      </BaseModal>
     </>
   );
 };
