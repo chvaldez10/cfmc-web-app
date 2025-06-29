@@ -43,7 +43,7 @@ import styles from "./PublicNavbar.module.css";
 
 const BUTTON_HEIGHT = "40px"; // Define a constant for button height
 
-export default function WithSubnavigation() {
+export default function PublicNavbar() {
   const { isOpen, onToggle } = useDisclosure();
   const { isOpen: isModalOpen, onOpen, onClose } = useDisclosure();
 
@@ -165,6 +165,7 @@ const DesktopNav = () => {
                 height={BUTTON_HEIGHT}
                 display={"flex"}
                 alignItems={"center"}
+                data-testid={`${navItem.label}-desktop-nav-item`}
               >
                 {navItem.label}
               </Box>
