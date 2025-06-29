@@ -1,5 +1,5 @@
 // Components
-import HomeJumbotron from "./_sections/HomeJumbotron";
+import { HomeJumbotron, PassedLiveStream } from "./_sections";
 import EventSwiper from "@/components/features/events/EventSwiper";
 
 // Data
@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <>
       <HomeJumbotron />
+      <PassedLiveStream />
       <EventSwiper events={mockEvents} />
     </>
   );
