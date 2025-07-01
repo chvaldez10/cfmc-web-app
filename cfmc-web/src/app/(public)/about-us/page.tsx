@@ -1,10 +1,10 @@
-import { Box } from "@chakra-ui/react";
 import { ColumnLayout } from "@/components/hero";
+import PromoCards from "./_sections/PromoCards";
 
 export default function AboutUsPage() {
   return (
     <ColumnLayout>
-      <Box>About Us</Box>
+      <PromoCards />
     </ColumnLayout>
   );
 }
