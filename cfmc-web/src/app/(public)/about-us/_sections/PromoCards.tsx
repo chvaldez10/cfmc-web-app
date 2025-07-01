@@ -7,7 +7,7 @@ import { CARD_DATA } from "@/constants/about";
 
 export default function PromoCards() {
   return (
-    <Box as="section" aria-labelledby="promo-cards-heading">
+    <Box as="section" aria-labelledby="promo-cards-heading" pt={20}>
       <Heading
         id="promo-cards-heading"
         as="h2"
@@ -21,9 +21,9 @@ export default function PromoCards() {
 
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3 }}
-        spacing={{ base: 4, md: 6 }}
-        py={8}
-        px={{ base: 4, md: 0 }}
+        spacing={{ base: 6, md: 8 }}
+        // maxW="8xl"
+        // px={{ base: 4, md: 6 }}
       >
         {CARD_DATA.map((cardData) => (
           <PromoCard key={cardData.id} card={cardData} />
