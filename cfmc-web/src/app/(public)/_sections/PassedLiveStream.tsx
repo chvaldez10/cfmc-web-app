@@ -3,128 +3,115 @@
 import {
   Box,
   Heading,
-  Container,
   Text,
   Button,
   Stack,
-  VStack,
   Icon,
   Tooltip,
   useColorModeValue,
   createIcon,
 } from "@chakra-ui/react";
 import { LiveStreamLabels } from "@/constants/shared/enums";
+import ColumnLayout from "@/components/hero/layouts/ColumnLayout";
 
 export default function PassedLiveStream() {
   const arrowColor = useColorModeValue("gray.800", "gray.300");
 
   return (
-    <Container
-      as="section"
-      maxW={"4xl"}
-      id="live-stream"
-      aria-labelledby="live-stream-heading"
-      minH={"100vh"}
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <VStack textAlign={"center"} spacing={{ base: 8, md: 10 }} w="100%">
-        {/* Heading */}
-        <Heading
-          id="live-stream-heading"
-          fontWeight={600}
-          fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
-        >
-          {LiveStreamLabels.HEADING}
-        </Heading>
+    <ColumnLayout id="live-stream" ariaLabelledBy="live-stream-heading">
+      {/* Heading */}
+      <Heading
+        id="live-stream-heading"
+        fontWeight={600}
+        fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+        lineHeight={"110%"}
+      >
+        {LiveStreamLabels.HEADING}
+      </Heading>
 
-        {/* Description */}
-        <Text color={"gray.600"} fontSize={{ base: "lg", md: "xl" }}>
-          {LiveStreamLabels.DESCRIPTION}
-        </Text>
+      {/* Description */}
+      <Text color={"gray.600"} fontSize={{ base: "lg", md: "xl" }}>
+        {LiveStreamLabels.DESCRIPTION}
+      </Text>
 
-        {/* Facebook Video Embed */}
+      {/* Facebook Video Embed */}
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        my={8}
+        id="live-stream-video"
+      >
         <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          my={8}
-          id="live-stream-video"
-        >
+          as="iframe"
+          title="Facebook video player"
+          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcalgaryfilipino.methodistchurch%2Fvideos%2F735868682324021%2F&show_text=false&width=560&t=0"
+          width={{ base: "100%", sm: "560px" }}
+          height={{ base: "auto", sm: "314px" }}
+          minH={{ base: "200px", sm: "314px" }}
+          style={{
+            border: "none",
+            overflow: "hidden",
+            borderRadius: "12px",
+            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+          }}
+          scrolling="no"
+          frameBorder="0"
+          allowFullScreen={true}
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        />
+      </Box>
+
+      <Stack
+        direction={"column"}
+        spacing={4}
+        align={"center"}
+        position={"relative"}
+      >
+        {/* Arrow and label as Tooltip on desktop */}
+        <Tooltip label={LiveStreamLabels.TOOLTIP_TEXT} hasArrow>
           <Box
-            as="iframe"
-            title="Facebook video player"
-            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcalgaryfilipino.methodistchurch%2Fvideos%2F735868682324021%2F&show_text=false&width=560&t=0"
-            width={{ base: "100%", sm: "560px" }}
-            height={{ base: "auto", sm: "314px" }}
-            minH={{ base: "200px", sm: "314px" }}
-            style={{
-              border: "none",
-              overflow: "hidden",
-              borderRadius: "12px",
-              boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-            }}
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen={true}
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          />
-        </Box>
+            id="live-stream-arrow"
+            position="absolute"
+            right={-34}
+            // top="5px"
+          >
+            <Icon
+              as={Arrow}
+              color={arrowColor}
+              w={71}
+              transform="rotate(-30deg)"
+            />
+          </Box>
+        </Tooltip>
 
-        <Stack
-          direction={"column"}
-          spacing={4}
-          align={"center"}
-          position={"relative"}
+        {/* Button */}
+        <Button
+          colorScheme="purple"
+          bg="purple.400"
+          rounded="full"
+          px={8}
+          py={6}
+          fontSize="lg"
+          _hover={{
+            bg: "purple.500",
+            transform: "translateY(-2px)",
+            boxShadow: "lg",
+          }}
+          transition="all 0.2s"
         >
-          {/* Arrow and label as Tooltip on desktop */}
-          <Tooltip label={LiveStreamLabels.TOOLTIP_TEXT} hasArrow>
-            <Box
-              id="live-stream-arrow"
-              position="absolute"
-              right={-34}
-              // top="5px"
-            >
-              <Icon
-                as={Arrow}
-                color={arrowColor}
-                w={71}
-                transform="rotate(-30deg)"
-              />
-            </Box>
-          </Tooltip>
+          {LiveStreamLabels.BUTTON_TEXT}
+        </Button>
 
-          {/* Button */}
-          <Button
-            colorScheme="purple"
-            bg="purple.400"
-            rounded="full"
-            px={8}
-            py={6}
-            fontSize="lg"
-            _hover={{
-              bg: "purple.500",
-              transform: "translateY(-2px)",
-              boxShadow: "lg",
-            }}
-            transition="all 0.2s"
-          >
-            {LiveStreamLabels.BUTTON_TEXT}
-          </Button>
-
-          <Text
-            fontSize={"sm"}
-            color={useColorModeValue("gray.600", "gray.400")}
-            fontStyle="italic"
-          >
-            {LiveStreamLabels.SUBTEXT}
-          </Text>
-        </Stack>
-      </VStack>
-    </Container>
+        <Text
+          fontSize={"sm"}
+          color={useColorModeValue("gray.600", "gray.400")}
+          fontStyle="italic"
+        >
+          {LiveStreamLabels.SUBTEXT}
+        </Text>
+      </Stack>
+    </ColumnLayout>
   );
 }
 
