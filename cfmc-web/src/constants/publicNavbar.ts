@@ -9,7 +9,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicNavbarLabels.MISSION,
         subLabel: "Our mission is to help the community and foster growth.",
-        href: "#",
+        href: "/about-us/mission",
       },
       {
         label: PublicNavbarLabels.VISION,

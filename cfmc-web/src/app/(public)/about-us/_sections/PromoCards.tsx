@@ -26,7 +26,7 @@ export default function PromoCards() {
         // px={{ base: 4, md: 6 }}
       >
         {CARD_DATA.map((cardData) => (
-          <PromoCard key={cardData.id} card={cardData} />
+          <PromoCard key={cardData.title} card={cardData} />
         ))}
       </SimpleGrid>
     </Box>

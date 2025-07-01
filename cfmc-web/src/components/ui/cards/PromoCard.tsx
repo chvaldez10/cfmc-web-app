@@ -24,7 +24,7 @@ const PromoCard = ({ card }: PromoCardProps) => {
   const textColor = useColorModeValue("gray.800", "gray.100");
 
   return (
-    <Box as="article" role="article" aria-labelledby={`${card.id}-title`}>
+    <Box as="article" role="article" aria-labelledby={`${card.title}-title`}>
       <VStack
         spacing={5}
         bg={card.bg}
@@ -71,7 +71,7 @@ const PromoCard = ({ card }: PromoCardProps) => {
         {/* Title & Subtitle */}
         <Box textAlign="center">
           <Heading
-            id={`${card.id}-title`}
+            id={`${card.title}-title`}
             fontSize={{ base: "xl", md: "2xl" }}
             fontWeight="bold"
             lineHeight="short"

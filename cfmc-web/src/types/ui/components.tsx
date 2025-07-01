@@ -1,5 +1,4 @@
 export interface CardDataProps {
-  id: string;
   bg: string;
   icon: React.ComponentType;
   title: string;
