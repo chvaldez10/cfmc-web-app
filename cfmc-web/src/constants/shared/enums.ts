@@ -47,3 +47,11 @@ export enum EventType {
   SUNDAY_WORSHIP = "Sunday Worship",
   EVENT = "Event",
 }
+
+export enum LiveStreamLabels {
+  HEADING = "Watch our Latest Service",
+  DESCRIPTION = "We hold our worship services every Sunday at 2:00 PM.",
+  BUTTON_TEXT = "Visit Our Facebook Page",
+  SUBTEXT = "Can't make it in person? Watch our live stream on Facebook",
+  SERVICE_TIME = "2:00 PM",
+}
