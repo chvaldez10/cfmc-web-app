@@ -16,7 +16,7 @@ export default function PromoCards() {
         mb={8}
         color={useColorModeValue("gray.800", "white")}
       >
-        Our Solutions
+        About Us
       </Heading>
 
       <SimpleGrid
