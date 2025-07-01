@@ -1,9 +1,10 @@
-import { Flex, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { ColumnLayout } from "@/components/hero";
 
 export default function AboutUsPage() {
   return (
-    <Flex flexDir="column" alignItems="center" justifyContent="center">
+    <ColumnLayout>
       <Box>About Us</Box>
-    </Flex>
+    </ColumnLayout>
   );
 }

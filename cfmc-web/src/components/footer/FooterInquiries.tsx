@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Text } from "@chakra-ui/react";
 import { FOOTER_INQUIRIES } from "@/constants/publicFooter";
 import { ThreeByOneGrid } from "@/components/hero";
-import InquiryCard from "@/components/ui/InquiryCard";
+import { InquiryCard } from "@/components/ui/cards";
 import { BaseModal } from "@/components/ui/modals";
 
 const FooterInquiries: React.FC = () => {
