@@ -7,6 +7,7 @@ import {
   Text,
   Button,
   Stack,
+  VStack,
   Icon,
   useColorModeValue,
   createIcon,
@@ -15,21 +16,30 @@ import { LiveStreamLabels } from "@/constants/shared/enums";
 
 export default function PassedLiveStream() {
   return (
-    <Container maxW={"4xl"} id="live-stream">
-      <Stack
-        as={Box}
-        textAlign={"center"}
-        spacing={{ base: 8, md: 12 }}
-        py={{ base: 20, md: 36 }}
-      >
+    <Container
+      as="section"
+      maxW={"4xl"}
+      id="live-stream"
+      aria-labelledby="live-stream-heading"
+      minH={"100vh"}
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <VStack textAlign={"center"} spacing={{ base: 8, md: 10 }} w="100%">
+        {/* Heading */}
         <Heading
+          id="live-stream-heading"
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
         >
           {LiveStreamLabels.HEADING}
         </Heading>
-        <Text color={"gray.500"} fontSize={{ base: "lg", md: "xl" }}>
+
+        {/* Description */}
+        <Text color={"gray.600"} fontSize={{ base: "lg", md: "xl" }}>
           {LiveStreamLabels.DESCRIPTION}
         </Text>
 
@@ -43,6 +53,7 @@ export default function PassedLiveStream() {
         >
           <Box
             as="iframe"
+            title="Facebook video player"
             src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcalgaryfilipino.methodistchurch%2Fvideos%2F735868682324021%2F&show_text=false&width=560&t=0"
             width={{ base: "100%", sm: "560px" }}
             height={{ base: "auto", sm: "314px" }}
@@ -67,6 +78,20 @@ export default function PassedLiveStream() {
           alignSelf={"center"}
           position={"relative"}
         >
+          {/* Arrow and label as Tooltip on desktop */}
+          <Box id="live-stream-arrow">
+            <Icon
+              as={Arrow}
+              color={useColorModeValue("gray.800", "gray.300")}
+              w={71}
+              position={"absolute"}
+              right={-15}
+              top={"20px"}
+              transform="rotate(-30deg)"
+            />
+          </Box>
+
+          {/* Button */}
           <Button
             colorScheme={"purple"}
             bg={"purple.400"}
@@ -91,30 +116,8 @@ export default function PassedLiveStream() {
           >
             {LiveStreamLabels.SUBTEXT}
           </Text>
-
-          {/* Arrow pointing to the button - Hidden on mobile */}
-          <Box id="live-stream-arrow" display={{ base: "none", md: "block" }}>
-            <Icon
-              as={Arrow}
-              color={useColorModeValue("gray.800", "gray.300")}
-              w={71}
-              position={"absolute"}
-              right={-15}
-              top={"15px"}
-            />
-            <Text
-              fontSize={"lg"}
-              fontFamily={"Caveat"}
-              position={"absolute"}
-              right={"-125px"}
-              top={"-15px"}
-              transform={"rotate(10deg)"}
-            >
-              Every Sunday at {LiveStreamLabels.SERVICE_TIME}
-            </Text>
-          </Box>
         </Stack>
-      </Stack>
+      </VStack>
     </Container>
   );
 }
