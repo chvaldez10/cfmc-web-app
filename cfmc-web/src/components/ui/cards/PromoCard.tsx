@@ -30,14 +30,13 @@ const PromoCard = ({ card }: PromoCardProps) => {
   return (
     <Box as="article" role="article" aria-labelledby={`${card.id}-title`}>
       <VStack
-        align="flex-start"
         spacing={5}
         bg={card.bg}
         p={{ base: 5, md: 6 }}
         borderRadius="2xl"
         color="black"
         h="100%"
-        minH="280px"
+        minH="320px"
         position="relative"
         overflow="hidden"
         transition="all 0.3s ease"
@@ -64,17 +63,6 @@ const PromoCard = ({ card }: PromoCardProps) => {
           pointerEvents: "none",
         }}
       >
-        {/* Top: Brand */}
-        <Text
-          fontWeight="bold"
-          fontSize="sm"
-          textTransform="uppercase"
-          letterSpacing="wide"
-          opacity={0.8}
-        >
-          CFMC
-        </Text>
-
         {/* Icon */}
         <Box
           className="card-icon"
@@ -98,14 +86,16 @@ const PromoCard = ({ card }: PromoCardProps) => {
           >
             {card.title}
           </Heading>
-          <Heading
-            fontSize={{ base: "lg", md: "xl" }}
-            lineHeight="short"
-            fontWeight="semibold"
-            opacity={0.9}
-          >
-            {card.subtitle}
-          </Heading>
+          {card.subtitle && (
+            <Heading
+              fontSize={{ base: "lg", md: "xl" }}
+              lineHeight="short"
+              fontWeight="semibold"
+              opacity={0.9}
+            >
+              {card.subtitle}
+            </Heading>
+          )}
         </Box>
 
         {/* Description */}
@@ -117,7 +107,7 @@ const PromoCard = ({ card }: PromoCardProps) => {
 
         {/* Footer Section */}
         <Box mt="auto" pt={4} w="100%" borderTop={`1px solid ${borderColor}`}>
-          {card.footerLink ? (
+          {card.footerLink && (
             <Link
               href={card.footerLink.href}
               fontWeight="semibold"
@@ -144,20 +134,7 @@ const PromoCard = ({ card }: PromoCardProps) => {
             >
               {card.footerLink.label} →
             </Link>
-          ) : card.stat ? (
-            <Box>
-              <Text
-                fontWeight="bold"
-                fontSize={{ base: "lg", md: "xl" }}
-                lineHeight="1"
-              >
-                {card.stat.label}
-              </Text>
-              <Text fontSize="sm" opacity={0.8} mt={1}>
-                {card.stat.text}
-              </Text>
-            </Box>
-          ) : null}
+          )}
         </Box>
       </VStack>
     </Box>
