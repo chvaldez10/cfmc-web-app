@@ -52,6 +52,7 @@ export enum LiveStreamLabels {
   HEADING = "Watch our Latest Service",
   DESCRIPTION = "We hold our worship services every Sunday at 2:00 PM.",
   BUTTON_TEXT = "Visit Our Facebook Page",
-  SUBTEXT = "Can't make it in person? Watch our live stream on Facebook",
+  SUBTEXT = "Can't make it in person? Watch our live stream online",
   SERVICE_TIME = "2:00 PM",
+  TOOLTIP_TEXT = "Navigate to our Facebook page",
 }

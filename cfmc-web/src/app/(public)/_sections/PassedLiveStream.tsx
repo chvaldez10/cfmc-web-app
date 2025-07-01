@@ -9,12 +9,15 @@ import {
   Stack,
   VStack,
   Icon,
+  Tooltip,
   useColorModeValue,
   createIcon,
 } from "@chakra-ui/react";
 import { LiveStreamLabels } from "@/constants/shared/enums";
 
 export default function PassedLiveStream() {
+  const arrowColor = useColorModeValue("gray.800", "gray.300");
+
   return (
     <Container
       as="section"
@@ -75,27 +78,30 @@ export default function PassedLiveStream() {
           direction={"column"}
           spacing={4}
           align={"center"}
-          alignSelf={"center"}
           position={"relative"}
         >
           {/* Arrow and label as Tooltip on desktop */}
-          <Box id="live-stream-arrow">
-            <Icon
-              as={Arrow}
-              color={useColorModeValue("gray.800", "gray.300")}
-              w={71}
-              position={"absolute"}
-              right={-15}
-              top={"20px"}
-              transform="rotate(-30deg)"
-            />
-          </Box>
+          <Tooltip label={LiveStreamLabels.TOOLTIP_TEXT} hasArrow>
+            <Box
+              id="live-stream-arrow"
+              position="absolute"
+              right={-34}
+              // top="5px"
+            >
+              <Icon
+                as={Arrow}
+                color={arrowColor}
+                w={71}
+                transform="rotate(-30deg)"
+              />
+            </Box>
+          </Tooltip>
 
           {/* Button */}
           <Button
-            colorScheme={"purple"}
-            bg={"purple.400"}
-            rounded={"full"}
+            colorScheme="purple"
+            bg="purple.400"
+            rounded="full"
             px={8}
             py={6}
             fontSize="lg"
