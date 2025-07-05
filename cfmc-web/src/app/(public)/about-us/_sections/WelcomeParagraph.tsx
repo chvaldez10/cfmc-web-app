@@ -12,7 +12,7 @@ export default function WelcomeParagraph() {
       aria-labelledby="welcome-heading"
       py={{ base: 8, md: 12 }}
     >
-      <VStack spacing={6} maxW="4xl" mx="auto" px={{ base: 4, md: 6 }}>
+      <VStack spacing={6}>
         <Text
           id="welcome-heading"
           fontSize={{ base: "lg", md: "xl" }}
@@ -43,19 +43,6 @@ export default function WelcomeParagraph() {
           journey. Whether you're new to the area, exploring your faith, or
           looking for a spiritual home, we invite you to join us and experience
           the warmth and love of our congregation.
-        </Text>
-
-        <Text
-          fontSize={{ base: "md", md: "lg" }}
-          lineHeight="tall"
-          color={textColor}
-          textAlign="center"
-          opacity={0.9}
-        >
-          Through our various ministries, outreach programs, and worship
-          services, we strive to make a positive impact in our community while
-          nurturing the spiritual development of our members. We believe in the
-          power of faith to transform lives and bring hope to those in need.
         </Text>
       </VStack>
     </Box>

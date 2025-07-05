@@ -56,13 +56,13 @@ export default function PageHeader({
           zIndex: 0,
           borderRadius: "3xl",
           background: `
-            radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.25) 0%, transparent 60%),
-            radial-gradient(circle at 60% 60%, rgba(139, 92, 246, 0.22) 0%, transparent 55%),
-            radial-gradient(circle at 70% 30%, rgba(192, 132, 252, 0.18) 0%, transparent 50%),
-            radial-gradient(circle at 30% 70%, rgba(233, 213, 255, 0.15) 0%, transparent 60%),
-            radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.18) 0%, transparent 70%)
+            radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.15) 0%, transparent 60%),
+            radial-gradient(circle at 60% 60%, rgba(139, 92, 246, 0.13) 0%, transparent 55%),
+            radial-gradient(circle at 70% 30%, rgba(192, 132, 252, 0.11) 0%, transparent 50%),
+            radial-gradient(circle at 30% 70%, rgba(233, 213, 255, 0.09) 0%, transparent 60%),
+            radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.11) 0%, transparent 70%)
           `,
-          filter: "blur(12px)",
+          filter: "blur(8px)",
           pointerEvents: "none",
           WebkitMaskImage:
             "linear-gradient(to bottom, black 80%, transparent 100%)",
@@ -88,7 +88,7 @@ export default function PageHeader({
           fontWeight="extrabold"
           lineHeight="short"
           letterSpacing="-0.5px"
-          textShadow="0 2px 4px rgba(0,0,0,0.1)"
+          textShadow="0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.6)"
           fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
         >
           {title}
@@ -104,7 +104,7 @@ export default function PageHeader({
             fontWeight="medium"
             mt={2}
             px={{ base: 2, md: 0 }}
-            textShadow="0 1px 2px rgba(0,0,0,0.05)"
+            textShadow="0 1px 2px rgba(0,0,0,0.05), 0 1px 2px rgba(255,255,255,0.6)"
           >
             {subtitle}
           </Text>

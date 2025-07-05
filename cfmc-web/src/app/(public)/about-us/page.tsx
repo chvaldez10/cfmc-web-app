@@ -11,7 +11,7 @@ export default function AboutUsPage() {
         subtitle="Discover our mission, values, and the community that makes us who we are"
         size="xl"
       />
-      <ColumnLayout maxW="5xl">
+      <ColumnLayout maxW="4xl">
         <WelcomeParagraph />
         <AboutContent />
       </ColumnLayout>
