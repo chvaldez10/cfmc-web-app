@@ -12,7 +12,6 @@ export default function AboutUsPage() {
         size="xl"
       />
       <ColumnLayout maxW="4xl">
-        <WelcomeParagraph />
         <AboutContent />
       </ColumnLayout>
     </>

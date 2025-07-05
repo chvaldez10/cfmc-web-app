@@ -75,7 +75,7 @@ export const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: PublicNavbarLabels.CONTACT_US,
-    href: "#",
+    href: "/contact-us",
     subLabel: "Reach out to us for any inquiries or support.",
   },
 ];
