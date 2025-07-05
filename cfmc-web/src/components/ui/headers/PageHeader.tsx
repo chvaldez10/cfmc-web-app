@@ -24,7 +24,7 @@ export default function PageHeader({
   align = "center",
   height = "50vh",
 }: PageHeaderProps) {
-  const titleColor = useColorModeValue("gray.800", "white");
+  const titleColor = useColorModeValue("black", "white");
   const subtitleColor = useColorModeValue("gray.600", "gray.300");
 
   const alignmentMap: Record<

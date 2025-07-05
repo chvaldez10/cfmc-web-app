@@ -1,6 +1,7 @@
 import { ColumnLayout } from "@/components/hero";
 import { PageHeader } from "@/components/ui/headers";
-import PromoCards from "./_sections/PromoCards";
+import WelcomeParagraph from "./_sections/WelcomeParagraph";
+import AboutContent from "./_sections/AboutContent";
 
 export default function AboutUsPage() {
   return (
@@ -11,7 +12,8 @@ export default function AboutUsPage() {
         size="xl"
       />
       <ColumnLayout maxW="5xl">
-        <PromoCards />
+        <WelcomeParagraph />
+        <AboutContent />
       </ColumnLayout>
     </>
   );
