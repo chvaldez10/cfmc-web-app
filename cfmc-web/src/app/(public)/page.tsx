@@ -1,5 +1,6 @@
 // Components
 import { HomeJumbotron, PassedLiveStream } from "./_sections";
+import { FooterInquiries } from "@/components/footer";
 import EventSwiper from "@/components/features/events/EventSwiper";
 
 // Data
@@ -11,6 +12,7 @@ export default function Page() {
       <HomeJumbotron />
       <PassedLiveStream />
       <EventSwiper events={mockEvents} />
+      <FooterInquiries />
     </>
   );
 }

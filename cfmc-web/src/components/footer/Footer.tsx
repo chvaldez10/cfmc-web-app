@@ -5,7 +5,6 @@ import FooterInquiries from "./FooterInquiries";
 const Footer = () => {
   return (
     <>
-      <FooterInquiries />
       <FooterDetails />
     </>
   );
