@@ -36,12 +36,6 @@ export default function ContactContent() {
         mx="auto"
         px={{ base: 4, md: 6 }}
       >
-        <ContentSection title="Contact Us">
-          We'd love to hear from you! Whether you're new to Calgary, exploring
-          faith, looking for a church family, or simply have a question—we're
-          here to help.
-        </ContentSection>
-
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} w="full">
           {/* Contact Information */}
           <VStack spacing={6} align="stretch">

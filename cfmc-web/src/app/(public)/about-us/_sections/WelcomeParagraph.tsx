@@ -17,7 +17,6 @@ export default function WelcomeParagraph() {
       as="section"
       aria-labelledby="welcome-heading"
       py={{ base: 10, md: 16 }}
-      //   px={{ base: 4, md: 6 }}
     >
       <VStack spacing={6} maxW="4xl" mx="auto" textAlign="center">
         <Heading

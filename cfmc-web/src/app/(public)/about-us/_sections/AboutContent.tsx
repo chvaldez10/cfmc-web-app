@@ -11,11 +11,7 @@ import { ABOUT_CONTENT } from "@/constants/about";
 
 export default function AboutContent() {
   return (
-    <Box
-      as="section"
-      aria-labelledby="about-content-heading"
-      py={{ base: 8, md: 12 }}
-    >
+    <Box as="section" aria-labelledby="about-content-heading" py={8}>
       <VStack spacing={{ base: 8, md: 12 }}>
         {ABOUT_CONTENT.map((item) => (
           <AboutContentItem key={item.title} {...item} />
@@ -43,7 +39,8 @@ const AboutContentItem = ({ title, description }: AboutContentItemProps) => {
       w="full"
       boxShadow={{ base: "sm", md: "md" }}
       borderLeft="6px solid"
-      borderLeftColor={accentColor}
+      borderRight="6px solid"
+      borderColor={accentColor}
     >
       <Heading
         as="h2"

@@ -22,7 +22,6 @@ export default function PageHeader({
   subtitle,
   size = "lg",
   align = "center",
-  height = "50vh",
 }: PageHeaderProps) {
   const titleColor = useColorModeValue("black", "white");
   const subtitleColor = useColorModeValue("gray.600", "gray.300");
@@ -41,7 +40,7 @@ export default function PageHeader({
       position="relative"
       w="full"
       borderRadius="3xl"
-      h={height}
+      h="70vh"
       overflow="hidden"
       role="presentation"
       aria-hidden="true"
