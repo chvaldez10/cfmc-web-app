@@ -1,14 +1,13 @@
 import { ColumnLayout } from "@/components/hero";
-import { ParagraphHeader, PageHeader } from "@/components/ui/headers";
+import { ParagraphHeader } from "@/components/ui/headers";
 import AboutContent from "./_sections/AboutContent";
 
 export default function AboutUsPage() {
   return (
     <>
-      <PageHeader
+      <ParagraphHeader
         title="About Us"
-        subtitle="Discover our mission, values, and the community that makes us who we are"
-        size="xl"
+        description="Discover our mission, values, and the community that makes us who we are"
       />
       <ColumnLayout maxW="5xl">
         <AboutContent />

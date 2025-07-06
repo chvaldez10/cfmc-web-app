@@ -1,2 +1,2 @@
-export { default as PageHeader } from "./PageHeader";
+export { default as SmokyHeader } from "./SmokyHeader";
 export { default as ParagraphHeader } from "./ParagraphHeader";

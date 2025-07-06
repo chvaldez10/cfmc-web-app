@@ -110,6 +110,7 @@ export default function ContactForm() {
         duration: 5000,
         isClosable: true,
       });
+      console.error(error);
     } finally {
       setIsSubmitting(false);
     }
@@ -136,8 +137,8 @@ export default function ContactForm() {
             Send us a Message
           </Box>
           <Box fontSize="sm" color="gray.600">
-            We'd love to hear from you! Fill out the form below and we'll get
-            back to you soon.
+            We&apos;d love to hear from you! Fill out the form below and
+            we&apos;ll get back to you soon.
           </Box>
         </Box>
 

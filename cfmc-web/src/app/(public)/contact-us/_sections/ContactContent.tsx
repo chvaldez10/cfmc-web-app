@@ -10,12 +10,12 @@ import {
   useColorModeValue,
   SimpleGrid,
 } from "@chakra-ui/react";
+
 import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
   FaFacebook,
-  FaInstagram,
 } from "react-icons/fa";
 import ContentSection from "@/components/ui/sections/ContentSection";
 import ContactForm from "./ContactForm";
@@ -151,7 +151,7 @@ export default function ContactContent() {
 
             <ContentSection title="Visit Us">
               Feel free to reach out or visit us during our worship services or
-              weekly gatherings. You're always welcome here!
+              weekly gatherings. You&apos;re always welcome here!
             </ContentSection>
           </VStack>
 
