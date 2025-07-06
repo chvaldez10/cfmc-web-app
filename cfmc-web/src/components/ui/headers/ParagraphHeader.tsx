@@ -22,8 +22,15 @@ export default function SectionTextBlock({
   const accentColor = useColorModeValue("purple.600", "purple.300");
 
   return (
-    <Box as="section" aria-labelledby="section-heading" h="50vh">
-      <VStack spacing={6} textAlign="center" justify="center" h="100%">
+    <Box
+      as="section"
+      aria-labelledby="section-heading"
+      minH={{ base: "50vh", md: "40vh" }}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <VStack spacing={6} textAlign="center">
         <Heading
           id={`${title}-heading`}
           fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}

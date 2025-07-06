@@ -9,10 +9,11 @@ import {
 import { PublicNavbarLabels } from "./shared/enums";
 
 const aquaMeadow = "linear-gradient(135deg, #ECFDF5 0%, #5EEAD4 100%)";
+const plumCloud = "linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%)";
 
 export const CARD_DATA: CardDataProps[] = [
   {
-    bg: aquaMeadow,
+    bg: plumCloud,
     icon: FaCross,
     title: PublicNavbarLabels.MISSION,
     description:
@@ -20,7 +21,7 @@ export const CARD_DATA: CardDataProps[] = [
     footerLink: { label: "Learn More", href: "/about-us/mission" },
   },
   {
-    bg: aquaMeadow,
+    bg: plumCloud,
     icon: FaEye,
     title: PublicNavbarLabels.VISION,
     description:
@@ -28,7 +29,7 @@ export const CARD_DATA: CardDataProps[] = [
     footerLink: { label: "Learn More", href: "/" },
   },
   {
-    bg: aquaMeadow,
+    bg: plumCloud,
     icon: FaHandsHelping,
     title: PublicNavbarLabels.MINISTRIES,
     description:
@@ -36,7 +37,7 @@ export const CARD_DATA: CardDataProps[] = [
     footerLink: { label: "View Ministries", href: "/" },
   },
   {
-    bg: aquaMeadow,
+    bg: plumCloud,
     icon: FaUsers,
     title: PublicNavbarLabels.LEADERSHIP,
     description:
@@ -44,7 +45,7 @@ export const CARD_DATA: CardDataProps[] = [
     footerLink: { label: "Learn More", href: "/" },
   },
   {
-    bg: aquaMeadow,
+    bg: plumCloud,
     icon: FaHeart,
     title: PublicNavbarLabels.COMMUNITY,
     description:

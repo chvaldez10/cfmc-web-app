@@ -16,7 +16,7 @@ const FooterDetails = () => {
   return (
     <Box color="gray.800" py={10}>
       <Flex
-        maxW="1200px"
+        maxW="8xl"
         mx="auto"
         px={6}
         direction={{ base: "column", md: "row" }}

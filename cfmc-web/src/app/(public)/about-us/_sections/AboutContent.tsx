@@ -11,7 +11,7 @@ import { ABOUT_CONTENT } from "@/constants/about";
 
 export default function AboutContent() {
   return (
-    <Box as="section" aria-labelledby="about-content-heading" py={8}>
+    <Box as="section" aria-labelledby="about-content-heading">
       <VStack spacing={{ base: 8, md: 12 }}>
         {ABOUT_CONTENT.map((item) => (
           <AboutContentItem key={item.title} {...item} />

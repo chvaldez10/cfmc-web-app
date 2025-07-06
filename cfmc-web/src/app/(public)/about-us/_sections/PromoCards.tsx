@@ -11,6 +11,7 @@ export default function PromoCards() {
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3 }}
         spacing={{ base: 6, md: 8 }}
+        maxW="4xl"
       >
         {CARD_DATA.map((cardData) => (
           <PromoCard key={cardData.title} card={cardData} />
