@@ -7,17 +7,19 @@ import {
   useColorModeValue,
   Heading,
 } from "@chakra-ui/react";
+import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
 
-interface SectionTextBlockProps {
+interface ParagraphHeaderProps {
   title: string;
   description: string;
   textAlign?: "left" | "center" | "right";
 }
 
-export default function SectionTextBlock({
+export default function ParagraphHeader({
   title,
   description,
-}: SectionTextBlockProps) {
+  textAlign = "center",
+}: ParagraphHeaderProps) {
   const textColor = useColorModeValue("gray.800", "gray.100");
   const accentColor = useColorModeValue("purple.600", "purple.300");
 
@@ -25,14 +27,13 @@ export default function SectionTextBlock({
     <Box
       as="section"
       aria-labelledby="section-heading"
-      minH={{ base: "50vh", md: "40vh" }}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
+      mt={NAVBAR_HEIGHT}
+      py={{ base: 12, md: 16, lg: 20 }}
+      px={{ base: 4, md: 6 }}
     >
-      <VStack spacing={6} textAlign="center">
+      <VStack spacing={6} textAlign={textAlign} maxW="4xl" mx="auto">
         <Heading
-          id={`${title}-heading`}
+          id="section-heading"
           fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
           fontWeight="extrabold"
           color={accentColor}

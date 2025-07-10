@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { PublicNavbarLabels } from "./shared/enums";
 
-const aquaMeadow = "linear-gradient(135deg, #ECFDF5 0%, #5EEAD4 100%)";
+// const aquaMeadow = "linear-gradient(135deg, #ECFDF5 0%, #5EEAD4 100%)";
 const plumCloud = "linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%)";
 
 export const CARD_DATA: CardDataProps[] = [

@@ -41,7 +41,12 @@ import { TithesAndOfferingsModal } from "@/components/ui/modals";
 // Styles
 import styles from "./PublicNavbar.module.css";
 
-const BUTTON_HEIGHT = "40px"; // Define a constant for button height
+const BUTTON_HEIGHT = "40px";
+const NAVBAR_PADDING = 2;
+const NAVBAR_BORDER = 1;
+export const NAVBAR_HEIGHT = `${
+  parseInt(BUTTON_HEIGHT) + NAVBAR_PADDING * 8 + NAVBAR_BORDER
+}px`;
 
 export default function PublicNavbar() {
   const { isOpen, onToggle } = useDisclosure();

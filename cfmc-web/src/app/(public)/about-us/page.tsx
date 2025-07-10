@@ -1,6 +1,6 @@
 import { ColumnLayout } from "@/components/hero";
 import { ParagraphHeader } from "@/components/ui/headers";
-import { AboutContent, PromoCards } from "./_sections";
+import { PromoCards } from "./_sections";
 
 export default function AboutUsPage() {
   return (
