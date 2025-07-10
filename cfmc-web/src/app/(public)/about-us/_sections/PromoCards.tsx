@@ -10,8 +10,10 @@ export default function PromoCards() {
     <Box as="section" aria-labelledby="promo-cards-heading" id="promo-cards">
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3 }}
-        spacing={{ base: 6, md: 8 }}
-        maxW="4xl"
+        spacing={{ base: 4, md: 8 }}
+        maxW={{ base: "sm", md: "4xl" }}
+        mx="auto"
+        px={{ base: 4, md: 0 }}
       >
         {CARD_DATA.map((cardData) => (
           <PromoCard key={cardData.title} card={cardData} />

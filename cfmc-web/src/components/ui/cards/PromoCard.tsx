@@ -26,13 +26,13 @@ const PromoCard = ({ card }: PromoCardProps) => {
   return (
     <Box as="article" role="article" aria-labelledby={`${card.title}-title`}>
       <VStack
-        spacing={5}
+        spacing={{ base: 3, md: 5 }}
         bg={card.bg}
-        p={{ base: 5, md: 6 }}
+        p={{ base: 4, md: 6 }}
         borderRadius="2xl"
         color={textColor}
         h="100%"
-        minH="320px"
+        minH={{ base: "280px", md: "320px" }}
         position="relative"
         overflow="hidden"
         transition="all 0.3s ease"
@@ -60,28 +60,28 @@ const PromoCard = ({ card }: PromoCardProps) => {
         <Box
           className="card-icon"
           transition="transform 0.3s ease"
-          p={3}
+          p={{ base: 2, md: 3 }}
           borderRadius="full"
           bg="whiteAlpha.300"
           backdropFilter="blur(12px)"
         >
-          <Icon as={card.icon} boxSize={8} aria-hidden />
+          <Icon as={card.icon} boxSize={{ base: 6, md: 8 }} aria-hidden />
         </Box>
 
         {/* Title & Subtitle */}
         <Box textAlign="center">
           <Heading
             id={`${card.title}-title`}
-            fontSize={{ base: "xl", md: "2xl" }}
+            fontSize={{ base: "lg", md: "2xl" }}
             fontWeight="bold"
             lineHeight="short"
-            mb={1}
+            mb={{ base: 0.5, md: 1 }}
           >
             {card.title}
           </Heading>
           {card.subtitle && (
             <Text
-              fontSize={{ base: "md", md: "lg" }}
+              fontSize={{ base: "sm", md: "lg" }}
               fontWeight="medium"
               opacity={0.85}
             >
@@ -93,11 +93,11 @@ const PromoCard = ({ card }: PromoCardProps) => {
         {/* Description */}
         {card.description && (
           <Text
-            fontSize="sm"
+            fontSize={{ base: "xs", md: "sm" }}
             lineHeight="1.6"
             opacity={0.75}
             textAlign="center"
-            px={1}
+            px={{ base: 0, md: 1 }}
             flex={1}
           >
             {card.description}
@@ -108,14 +108,14 @@ const PromoCard = ({ card }: PromoCardProps) => {
         {card.footerLink && (
           <Box
             mt="auto"
-            pt={4}
+            pt={{ base: 3, md: 4 }}
             w="100%"
             borderTop={`1px solid ${dividerColor}`}
           >
             <Link
               href={card.footerLink.href}
               fontWeight="semibold"
-              fontSize="sm"
+              fontSize={{ base: "xs", md: "sm" }}
               color={textColor}
               display="inline-block"
               position="relative"
