@@ -68,11 +68,19 @@ export const ABOUT_CONTENT: { title: string; description: string }[] = [
   {
     title: "Our Community",
     description:
-      "The community of Calgary Filipino Methodist Church is a warm, Christ-centered family of believers rooted in Filipino faith and culture. United in love and service, we gather to worship, grow in God’s Word, and support one another through life’s journeys. Our fellowship is marked by hospitality, prayer, and joyful worship, as we seek to reflect Christ’s light in our homes, church, and the wider Calgary community. Together, we are building a legacy of faith for future generations.",
+      "The community of Calgary Filipino Methodist Church is a warm, Christ-centered family of believers rooted in Filipino faith and culture. United in love and service, we gather to worship, grow in God's Word, and support one another through life's journeys. Our fellowship is marked by hospitality, prayer, and joyful worship, as we seek to reflect Christ's light in our homes, church, and the wider Calgary community. Together, we are building a legacy of faith for future generations.",
   },
   {
     title: "Our Ministry",
     description:
       "The ministry of Calgary Filipino Methodist Church flows from our deep love for God and commitment to serve others. Rooted in Scripture and empowered by the Holy Spirit, we serve through vibrant worship, discipleship, fellowship, and outreach. Our ministries nurture faith across all ages—from children to seniors—through Bible studies, prayer gatherings, care groups, and special events. We are passionate about building strong families, mentoring the next generation, and reaching our community with the compassion and truth of Jesus Christ. Every act of service is an opportunity to glorify God and extend His grace to others.",
+  },
+];
+
+export const CONTACT_US_CONTENT: { title: string; description: string }[] = [
+  {
+    title: "Contact Us",
+    description:
+      "We'd love to hear from you! Whether you're new to Calgary, exploring faith, looking for a church family, or simply have a question—we're here to help.",
   },
 ];
