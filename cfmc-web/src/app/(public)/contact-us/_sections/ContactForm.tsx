@@ -12,6 +12,7 @@ import {
   Select,
   FormErrorMessage,
   useToast,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -36,12 +37,12 @@ export default function ContactForm() {
   const toast = useToast();
 
   const accentColor = useColorModeValue("purple.600", "purple.400");
-  const bgColor = useColorModeValue("white", "gray.700");
+  const textColor = useColorModeValue("gray.700", "gray.200");
+  const bgColor = useColorModeValue("gray.50", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.600");
 
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: "" }));
     }
@@ -50,23 +51,14 @@ export default function ContactForm() {
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -75,17 +67,12 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual form submission logic
-      // For now, simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. We'll get back to you soon.",
@@ -94,7 +81,6 @@ export default function ContactForm() {
         isClosable: true,
       });
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -118,33 +104,35 @@ export default function ContactForm() {
 
   return (
     <Box
-      bg={bgColor}
+      bg={bgColor} // 🆕 matches ContactDetails
       p={{ base: 6, md: 8 }}
-      borderRadius="xl"
+      borderRadius="2xl" // 🆕 same as ContactDetails
       w="full"
       border="1px solid"
       borderColor={borderColor}
       boxShadow="sm"
     >
       <VStack spacing={6} as="form" onSubmit={handleSubmit}>
-        <Box textAlign="center" w="full">
-          <Box
-            fontSize={{ base: "lg", md: "xl" }}
+        {/* Heading Section */}
+        <Box textAlign="left" w="full">
+          <Text
+            fontSize={{ base: "2xl", md: "3xl" }} // 🆕 matched heading size
             fontWeight="bold"
             color={accentColor}
-            mb={2}
+            mb={1}
           >
             Send us a Message
-          </Box>
-          <Box fontSize="sm" color="gray.600">
+          </Text>
+          <Text fontSize="sm" color={textColor}>
             We&apos;d love to hear from you! Fill out the form below and
             we&apos;ll get back to you soon.
-          </Box>
+          </Text>
         </Box>
 
+        {/* Form Fields */}
         <VStack spacing={4} w="full">
           <FormControl isInvalid={!!errors.name}>
-            <FormLabel>Name *</FormLabel>
+            <FormLabel color={textColor}>Name *</FormLabel>
             <Input
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
@@ -155,7 +143,7 @@ export default function ContactForm() {
           </FormControl>
 
           <FormControl isInvalid={!!errors.email}>
-            <FormLabel>Email *</FormLabel>
+            <FormLabel color={textColor}>Email *</FormLabel>
             <Input
               type="email"
               value={formData.email}
@@ -167,7 +155,7 @@ export default function ContactForm() {
           </FormControl>
 
           <FormControl>
-            <FormLabel>Phone (Optional)</FormLabel>
+            <FormLabel color={textColor}>Phone (Optional)</FormLabel>
             <Input
               type="tel"
               value={formData.phone}
@@ -178,7 +166,7 @@ export default function ContactForm() {
           </FormControl>
 
           <FormControl isInvalid={!!errors.subject}>
-            <FormLabel>Subject *</FormLabel>
+            <FormLabel color={textColor}>Subject *</FormLabel>
             <Select
               value={formData.subject}
               onChange={(e) => handleInputChange("subject", e.target.value)}
@@ -197,7 +185,7 @@ export default function ContactForm() {
           </FormControl>
 
           <FormControl isInvalid={!!errors.message}>
-            <FormLabel>Message *</FormLabel>
+            <FormLabel color={textColor}>Message *</FormLabel>
             <Textarea
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
@@ -210,6 +198,7 @@ export default function ContactForm() {
           </FormControl>
         </VStack>
 
+        {/* Submit Button */}
         <Button
           type="submit"
           colorScheme="purple"
@@ -217,6 +206,7 @@ export default function ContactForm() {
           w="full"
           isLoading={isSubmitting}
           loadingText="Sending..."
+          borderRadius="lg"
           _hover={{
             transform: "translateY(-1px)",
             boxShadow: "lg",
