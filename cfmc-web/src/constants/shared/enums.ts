@@ -5,6 +5,7 @@ export enum Branding {
   CHURCH_POSTAL_CODE = "T2K 3H7",
   CHURCH_PHONE_NUMBER = "1 (403) 123-4567",
   CHURCH_EMAIL = "info@email.com",
+  CHURCH_FACEBOOK_URL = "https://www.facebook.com/calgaryfilipino.methodistchurch",
 }
 
 export enum ModalButtonLabels {
