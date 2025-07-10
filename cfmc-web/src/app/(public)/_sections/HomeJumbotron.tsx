@@ -15,7 +15,7 @@ import { FaArrowRight } from "react-icons/fa";
 import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 import { MissionStatement } from "@/constants/shared/worship";
-import { CountDownTimer } from "@/components/hero";
+import { WorshipCountdown } from "@/components/features/date";
 
 // Styles
 import styles from "./GradientBackground.module.css";
@@ -90,18 +90,6 @@ const HomeJumboDetails = () => {
         </SlideFadeText>
       </VStack>
     </SlideFadeText>
-  );
-};
-
-const WorshipCountdown = () => {
-  // TODO: Remove this mock date and note that month is 0-indexed
-  const mockDate = new Date(Date.UTC(2025, 6, 6, 20, 0, 0)); // 2 PM MDT
-
-  return (
-    <VStack>
-      <Text>Worship Countdown</Text>
-      <CountDownTimer worshipStartDateTime={mockDate} />
-    </VStack>
   );
 };
 
