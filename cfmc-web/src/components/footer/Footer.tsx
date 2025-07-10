@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Link, VStack, Stack } from "@chakra-ui/react";
 import { FOOTER_ITEMS } from "@/constants/publicFooter";
-import { Branding } from "@/constants/shared/enums";
+import { Branding, FooterLabels } from "@/constants/shared/enums";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ export default Footer;
 
 const FooterDetails = () => {
   return (
-    <Box color="gray.800" py={10}>
+    <Box color="gray.800" py={16}>
       <Flex
         maxW="8xl"
         mx="auto"
@@ -28,13 +28,13 @@ const FooterDetails = () => {
             {Branding.CHURCH_NAME_ABBREVIATION}
           </Text>
           <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
-            Address
+            {FooterLabels.ADDRESS}
           </Text>
           <Text fontSize={{ base: "sm", md: "md" }}>
             {Branding.CHURCH_ADDRESS} {Branding.CHURCH_POSTAL_CODE}
           </Text>
           <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
-            Contact
+            {FooterLabels.CONTACT}
           </Text>
           <Text fontSize={{ base: "sm", md: "md" }}>
             {Branding.CHURCH_PHONE_NUMBER}
@@ -70,7 +70,7 @@ const FooterDetails = () => {
       <Box borderTop="1px" borderColor="gray.300" mt={10} pt={4}>
         <Flex justify="center" align="center">
           <Text mb={{ base: 4, md: 0 }} fontSize={{ base: "sm", md: "md" }}>
-            © 2025 {Branding.CHURCH_NAME}
+            {FooterLabels.COPYRIGHT_NOTICE} {Branding.CHURCH_NAME}
           </Text>
         </Flex>
       </Box>

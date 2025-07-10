@@ -56,3 +56,10 @@ export enum LiveStreamLabels {
   SERVICE_TIME = "2:00 PM",
   TOOLTIP_TEXT = "Navigate to our Facebook page",
 }
+
+export enum FooterLabels {
+  ADDRESS = "Address",
+  CONTACT = "Contact",
+  NAVIGATION = "Navigation",
+  COPYRIGHT = "© 2025",
+}
