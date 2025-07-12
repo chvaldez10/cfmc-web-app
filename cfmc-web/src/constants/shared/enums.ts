@@ -64,3 +64,14 @@ export enum FooterLabels {
   NAVIGATION = "Navigation",
   COPYRIGHT_NOTICE = "© 2025",
 }
+
+export enum ContactUsOptions {
+  WORSHIP_SERVICES = "Worship Services",
+  MINISTRIES_AND_PROGRAMS = "Ministries & Programs",
+  YOUTH_MINISTRY = "Youth Ministry",
+  PRAYER_REQUEST = "Prayer Request",
+  VOLUNTEER = "Volunteer",
+  PASTORAL_CARE = "Pastoral Care",
+  EVENTS = "Events",
+  GENERAL_QUESTION = "General Question",
+}
