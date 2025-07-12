@@ -50,6 +50,20 @@ export default function ContactForm() {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const focusBorderColor = useColorModeValue("purple.500", "purple.300");
 
+  // Mock function to populate form with sample data for testing
+  const mockSuccessfulInput = () => {
+    const mockData: FormData = {
+      name: "John Doe",
+      email: "john.doe@example.com",
+      phone: "(403) 555-0123",
+      subject: ContactUsOptions.WORSHIP_SERVICES,
+      message:
+        "I would like to know more about your Sunday worship services and what time they start. Also, do you have any programs for children?",
+    };
+
+    setFormData(mockData);
+  };
+
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
@@ -85,6 +99,7 @@ export default function ContactForm() {
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
+
       toast({
         title: ContactFormToastMessages.SUCCESS_TITLE,
         description: ContactFormToastMessages.SUCCESS_DESCRIPTION,
@@ -110,7 +125,6 @@ export default function ContactForm() {
         isClosable: true,
         position: "top",
       });
-      console.error(error);
     } finally {
       setIsSubmitting(false);
     }
@@ -239,6 +253,29 @@ export default function ContactForm() {
             </FormControl>
           </VStack>
         </VStack>
+
+        {/* Mock Data Button (for testing) */}
+        <Button
+          type="button"
+          colorScheme="teal"
+          size="md"
+          w="full"
+          onClick={mockSuccessfulInput}
+          borderRadius="lg"
+          py={4}
+          fontSize="sm"
+          fontWeight="medium"
+          _hover={{
+            transform: "translateY(-1px)",
+            boxShadow: "md",
+          }}
+          _active={{
+            transform: "translateY(0)",
+          }}
+          transition="all 0.2s"
+        >
+          🎯 Load Mock Data (Testing)
+        </Button>
 
         {/* Submit Button */}
         <Button
