@@ -3,45 +3,61 @@ import { Box, Grid, GridItem, GridProps } from "@chakra-ui/react";
 
 interface TwoByOneGridProps extends GridProps {
   children: [ReactElement, ReactElement];
-  variant?: "center" | "top";
+  variant?: "center" | "start";
   outerBackground?: string;
+  reverse?: boolean;
 }
 
 const TwoByOneGrid = ({
   children,
   variant = "center",
   outerBackground,
+  reverse = false,
   ...gridProps
 }: TwoByOneGridProps) => {
   if (children.length !== 2) {
     throw new Error("TwoByOneGrid expects exactly two children.");
   }
 
-  const verticalAlign = variant === "top" ? "flex-start" : "center";
+  const [firstChild, secondChild] = reverse
+    ? [children[1], children[0]]
+    : children;
+
+  const alignment = variant === "start" ? "start" : "center";
 
   return (
-    <Box className={outerBackground} w="full">
-      <Box mx="auto" maxW={{ base: "full", md: "8xl" }} px={{ base: 4, md: 8 }}>
+    <Box className={outerBackground} w="full" minH="100vh">
+      <Box
+        mx="auto"
+        px={{ base: 4, md: 8 }}
+        maxW={{ base: "full", md: "7xl" }}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        minH="100vh"
+      >
         <Grid
           templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-          gap={4}
-          minH="100vh"
+          gap={{ base: 8, md: 8, lg: 12 }}
+          w="full"
           className={gridProps.className}
           {...gridProps}
         >
           <GridItem
             display="flex"
-            alignItems={verticalAlign}
-            justifyContent="center"
+            alignItems="center"
+            justifyContent={{ base: "center", md: alignment }}
+            w="full"
           >
-            {children[0]}
+            {firstChild}
           </GridItem>
           <GridItem
             display="flex"
-            alignItems={verticalAlign}
-            justifyContent="center"
+            alignItems="center"
+            justifyContent={{ base: "center", md: alignment }}
+            w="full"
           >
-            {children[1]}
+            {secondChild}
           </GridItem>
         </Grid>
       </Box>

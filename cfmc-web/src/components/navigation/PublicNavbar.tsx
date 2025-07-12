@@ -66,7 +66,7 @@ export default function PublicNavbar() {
     >
       <Flex
         color={"gray.600"}
-        maxW={"8xl"}
+        maxW={"7xl"}
         mx={"auto"}
         py={{ base: 2 }}
         px={{ base: 4 }}

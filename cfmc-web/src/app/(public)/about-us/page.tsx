@@ -4,7 +4,7 @@ import { PromoCards } from "./_sections";
 
 export default function AboutUsPage() {
   return (
-    <ColumnLayout maxW="8xl">
+    <ColumnLayout maxW="7xl">
       <ParagraphHeader
         title="About Us"
         description="Discover our mission, values, and the community that makes us who we are"

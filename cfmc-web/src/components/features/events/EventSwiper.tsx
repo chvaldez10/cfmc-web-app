@@ -44,7 +44,7 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
       py={8}
       px={{ base: 4, md: 8 }}
       mx="auto"
-      maxW={{ base: "full", md: "8xl" }}
+      maxW={{ base: "full", md: "7xl" }}
       id="events-swiper"
     >
       <Swiper

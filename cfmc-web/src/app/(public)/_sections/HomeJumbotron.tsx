@@ -24,6 +24,7 @@ const HomeJumbotron = () => {
   return (
     <TwoByOneGrid
       outerBackground={styles.radialGradient}
+      variant="start"
       id="home-jumbotron-content"
     >
       <HomeJumboDetails />

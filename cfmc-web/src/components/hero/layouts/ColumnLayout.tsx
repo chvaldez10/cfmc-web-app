@@ -47,7 +47,7 @@ export default function ColumnLayout({
   id,
   ariaLabelledBy,
   children,
-  maxW = "4xl",
+  maxW = "7xl",
   minH = "100vh",
   bg,
   bgGradient,
