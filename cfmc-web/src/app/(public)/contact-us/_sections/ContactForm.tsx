@@ -108,27 +108,12 @@ export default function ContactForm() {
       p={{ base: 6, md: 8 }}
       borderRadius="2xl" // 🆕 same as ContactDetails
       w="full"
+      h="full"
       border="1px solid"
       borderColor={borderColor}
       boxShadow="sm"
     >
       <VStack spacing={6} as="form" onSubmit={handleSubmit}>
-        {/* Heading Section */}
-        <Box textAlign="left" w="full">
-          <Text
-            fontSize={{ base: "2xl", md: "3xl" }} // 🆕 matched heading size
-            fontWeight="bold"
-            color={accentColor}
-            mb={1}
-          >
-            Send us a Message
-          </Text>
-          <Text fontSize="sm" color={textColor}>
-            We&apos;d love to hear from you! Fill out the form below and
-            we&apos;ll get back to you soon.
-          </Text>
-        </Box>
-
         {/* Form Fields */}
         <VStack spacing={4} w="full">
           <FormControl isInvalid={!!errors.name}>
