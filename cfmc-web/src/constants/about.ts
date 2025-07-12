@@ -1,11 +1,5 @@
 import { CardDataProps } from "@/types/ui/components";
-import {
-  FaCross,
-  FaEye,
-  FaHandsHelping,
-  FaUsers,
-  FaHeart,
-} from "react-icons/fa";
+import { FaCross, FaHandsHelping, FaUsers, FaHeart } from "react-icons/fa";
 import { PublicNavbarLabels } from "./shared/enums";
 
 // const aquaMeadow = "linear-gradient(135deg, #ECFDF5 0%, #5EEAD4 100%)";
@@ -15,19 +9,12 @@ export const CARD_DATA: CardDataProps[] = [
   {
     bg: plumCloud,
     icon: FaCross,
-    title: PublicNavbarLabels.MISSION,
+    title: PublicNavbarLabels.MISSION_VISION,
     description:
       "To serve our community and spread love through faith, following Christ's teachings of compassion, service, and unconditional love for all God's children.",
-    footerLink: { label: "Learn More", href: "/about-us/mission" },
+    footerLink: { label: "Learn More", href: "/about-us/mission-vision" },
   },
-  {
-    bg: plumCloud,
-    icon: FaEye,
-    title: PublicNavbarLabels.VISION,
-    description:
-      "To inspire hope and foster spiritual growth by creating a welcoming environment where individuals can discover their purpose and deepen their relationship with God.",
-    footerLink: { label: "Learn More", href: "/" },
-  },
+
   {
     bg: plumCloud,
     icon: FaHandsHelping,

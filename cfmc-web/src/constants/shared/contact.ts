@@ -26,7 +26,7 @@ export enum ContactFormValidationMessages {
 }
 
 export enum ContactFormToastMessages {
-  SUCCESS_TITLE = "Thank you for reaching out! 🙏",
+  SUCCESS_TITLE = "Thank you for reaching out!",
   SUCCESS_DESCRIPTION = "We've received your message and will get back to you within 24 hours.",
   ERROR_TITLE = "Oops! Something went wrong",
   ERROR_DESCRIPTION = "Please try again or call us directly. We're here to help!",

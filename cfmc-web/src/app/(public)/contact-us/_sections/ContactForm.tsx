@@ -100,11 +100,13 @@ export default function ContactForm() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
+      console.log("formData", formData);
+
       toast({
         title: ContactFormToastMessages.SUCCESS_TITLE,
         description: ContactFormToastMessages.SUCCESS_DESCRIPTION,
         status: "success",
-        duration: 6000,
+        duration: 5000,
         isClosable: true,
         position: "top",
       });
@@ -119,7 +121,7 @@ export default function ContactForm() {
     } catch (error) {
       toast({
         title: ContactFormToastMessages.ERROR_TITLE,
-        description: ContactFormToastMessages.ERROR_DESCRIPTION,
+        description: error as string,
         status: "error",
         duration: 5000,
         isClosable: true,

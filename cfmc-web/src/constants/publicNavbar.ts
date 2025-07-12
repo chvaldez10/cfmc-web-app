@@ -7,14 +7,9 @@ export const NAV_ITEMS: Array<NavItem> = [
     href: "/about-us",
     children: [
       {
-        label: PublicNavbarLabels.MISSION,
+        label: PublicNavbarLabels.MISSION_VISION,
         subLabel: "Our mission is to help the community and foster growth.",
-        href: "/about-us/mission",
-      },
-      {
-        label: PublicNavbarLabels.VISION,
-        subLabel: "Our vision is to help the community and foster growth.",
-        href: "#",
+        href: "/about-us/mission-vision",
       },
       {
         label: PublicNavbarLabels.MINISTRIES,
