@@ -41,25 +41,54 @@ export const ABOUT_US_PAGE_CARDS: CardDataProps[] = [
   },
 ];
 
-export const ABOUT_CONTENT: { title: string; description: string }[] = [
-  {
+export interface AboutContentItem {
+  title: string;
+  description: string;
+}
+
+export const ABOUT_CONTENT: Record<string, AboutContentItem> = {
+  VISION_STATEMENT: {
     title: "Vision Statement",
     description:
-      "To be a Christ-centered, Spirit-empowered Filipino Methodist Church in Calgary—nurturing faith, building strong families, and reaching the community with the love and hope of Jesus Christ.",
+      "A church that glorifies God alone by being Bible-believing, Christ-centered, and Holy Spirit-led in doing the Great Commission and Great Commandment.",
   },
-  {
+  VISION_STATEMENT_EXTENDED: {
+    title: "Vision Statement",
+    description:
+      "Calgary Filipino Methodist Church envisions itself as a God-glorifying, Christ-shepherding, and Holy Spirit-filled church in fulfilling God's Mission in the city.",
+  },
+  MISSION_STATEMENT: {
     title: "Mission Statement",
     description:
-      "To glorify God by making disciples of Jesus Christ, nurturing a loving and prayerful Filipino faith community, equipping believers for service, and sharing the Gospel in Calgary and beyond.",
+      "A church that shares God's good news of Christ's redeeming love by reaching out to people, experiencing new life in Him, and growing in Christlikeness.",
   },
-  {
+  MISSION_STATEMENT_EXTENDED: {
+    title: "Mission Statement",
+    description:
+      "To reach out to as many people as we possibly can to share with them the good news of God's redeeming love in Jesus Christ. To lead them to that new life of faith, trust, love, and obedience to Jesus Christ. And to continue nurturing them to become Christ-like in their lives.",
+  },
+  STATEMENT_OF_COMMITMENT: {
+    title: "Statement of Commitment",
+    description:
+      " We, the members of Calgary Filipino Methodist Church, an ethnic congregation, in response to God's love in Jesus Christ and by the power of the Holy Spirit, seek to be faithful in our discipleship and ministry to the community. In order to faithfully carry out the mission of Jesus Christ in the world through ministries among our brethren, and in accordance with the Doctrines and Social Principles of the Methodist Church, we shall establish and implement these governing by-laws.",
+  },
+  CFMC_MOTTO: {
+    title: "CFMC Motto",
+    description: "Love God, Love People. Proclaim the Good News of Christ.",
+  },
+  CFMC_MOTTO_EXTENDED: {
+    title: "CFMC Motto",
+    description:
+      "Calgary Filipino Methodist Church exists to love God who first loved us, and to love people by faithfully, holistically, boldly, and joyfully proclaiming the Good News of Christ to all.",
+  },
+  OUR_COMMUNITY: {
     title: "Our Community",
     description:
       "The community of Calgary Filipino Methodist Church is a warm, Christ-centered family of believers rooted in Filipino faith and culture. United in love and service, we gather to worship, grow in God's Word, and support one another through life's journeys. Our fellowship is marked by hospitality, prayer, and joyful worship, as we seek to reflect Christ's light in our homes, church, and the wider Calgary community. Together, we are building a legacy of faith for future generations.",
   },
-  {
+  OUR_MINISTRY: {
     title: "Our Ministry",
     description:
       "The ministry of Calgary Filipino Methodist Church flows from our deep love for God and commitment to serve others. Rooted in Scripture and empowered by the Holy Spirit, we serve through vibrant worship, discipleship, fellowship, and outreach. Our ministries nurture faith across all ages—from children to seniors—through Bible studies, prayer gatherings, care groups, and special events. We are passionate about building strong families, mentoring the next generation, and reaching our community with the compassion and truth of Jesus Christ. Every act of service is an opportunity to glorify God and extend His grace to others.",
   },
-];
+};
