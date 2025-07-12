@@ -5,13 +5,13 @@ import { PublicNavbarLabels } from "./shared/enums";
 // const aquaMeadow = "linear-gradient(135deg, #ECFDF5 0%, #5EEAD4 100%)";
 const plumCloud = "linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%)";
 
-export const CARD_DATA: CardDataProps[] = [
+export const ABOUT_US_PAGE_CARDS: CardDataProps[] = [
   {
     bg: plumCloud,
     icon: FaCross,
     title: PublicNavbarLabels.MISSION_VISION,
     description:
-      "To serve our community and spread love through faith, following Christ's teachings of compassion, service, and unconditional love for all God's children.",
+      "Calgary Filipino Methodist Church exists to love God who first loved us and love people by faithfully, holistically, boldly and joyfully proclaiming the Good News of Christ to all.",
     footerLink: { label: "Learn More", href: "/about-us/mission-vision" },
   },
 
@@ -61,13 +61,5 @@ export const ABOUT_CONTENT: { title: string; description: string }[] = [
     title: "Our Ministry",
     description:
       "The ministry of Calgary Filipino Methodist Church flows from our deep love for God and commitment to serve others. Rooted in Scripture and empowered by the Holy Spirit, we serve through vibrant worship, discipleship, fellowship, and outreach. Our ministries nurture faith across all ages—from children to seniors—through Bible studies, prayer gatherings, care groups, and special events. We are passionate about building strong families, mentoring the next generation, and reaching our community with the compassion and truth of Jesus Christ. Every act of service is an opportunity to glorify God and extend His grace to others.",
-  },
-];
-
-export const CONTACT_US_CONTENT: { title: string; description: string }[] = [
-  {
-    title: "Contact Us",
-    description:
-      "We'd love to hear from you! Whether you're new to Calgary, exploring faith, looking for a church family, or simply have a question—we're here to help.",
   },
 ];

@@ -1,32 +1,13 @@
 "use client";
 
-import {
-  Box,
-  Text,
-  VStack,
-  Heading,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { ABOUT_CONTENT } from "@/constants/about";
+import { Box, Text, Heading, useColorModeValue } from "@chakra-ui/react";
 
-export default function AboutContent() {
-  return (
-    <Box as="section" aria-labelledby="about-content-heading">
-      <VStack spacing={{ base: 8, md: 12 }}>
-        {ABOUT_CONTENT.map((item) => (
-          <AboutContentItem key={item.title} {...item} />
-        ))}
-      </VStack>
-    </Box>
-  );
-}
-
-interface AboutContentItemProps {
+interface ContentCardProps {
   title: string;
   description: string;
 }
 
-const AboutContentItem = ({ title, description }: AboutContentItemProps) => {
+export const ContentCard = ({ title, description }: ContentCardProps) => {
   const textColor = useColorModeValue("gray.700", "gray.200");
   const accentColor = useColorModeValue("purple.600", "purple.400");
   const sectionBg = useColorModeValue("gray.50", "gray.800");

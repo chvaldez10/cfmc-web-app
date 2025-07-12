@@ -32,3 +32,11 @@ export enum ContactFormToastMessages {
   ERROR_DESCRIPTION = "Please try again or call us directly. We're here to help!",
   LOADING_TEXT = "Sending your message...",
 }
+
+export const CONTACT_US_CONTENT: { title: string; description: string }[] = [
+  {
+    title: "Contact Us",
+    description:
+      "We'd love to hear from you! Whether you're new to Calgary, exploring faith, looking for a church family, or simply have a question—we're here to help.",
+  },
+];

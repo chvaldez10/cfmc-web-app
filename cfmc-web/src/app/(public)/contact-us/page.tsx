@@ -1,6 +1,6 @@
 import { ColumnLayout } from "@/components/hero";
 import { ParagraphHeader } from "@/components/ui/headers";
-import { CONTACT_US_CONTENT } from "@/constants/about";
+import { CONTACT_US_CONTENT } from "@/constants/shared/contact";
 import ContactForm from "./_sections/ContactForm";
 
 export default function ContactUsPage() {

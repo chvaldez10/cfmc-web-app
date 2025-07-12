@@ -3,7 +3,7 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 
 import { PromoCard } from "@/components/ui/cards";
-import { CARD_DATA } from "@/constants/about";
+import { ABOUT_US_PAGE_CARDS } from "@/constants/about";
 
 export default function PromoCards() {
   return (
@@ -15,7 +15,7 @@ export default function PromoCards() {
         mx="auto"
         px={{ base: 4, md: 0 }}
       >
-        {CARD_DATA.map((cardData) => (
+        {ABOUT_US_PAGE_CARDS.map((cardData) => (
           <PromoCard key={cardData.title} card={cardData} />
         ))}
       </SimpleGrid>
