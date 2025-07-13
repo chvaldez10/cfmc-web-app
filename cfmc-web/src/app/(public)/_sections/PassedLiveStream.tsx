@@ -30,7 +30,7 @@ export default function PassedLiveStream() {
       <Heading
         id="live-stream-heading"
         fontWeight={600}
-        fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+        fontSize={{ sm: "4xl", base: "2xl", md: "6xl" }}
         lineHeight={"110%"}
         color={headingColor}
       >

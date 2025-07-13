@@ -73,8 +73,8 @@ const VisionMissionParallax = () => {
             }}
           >
             <Heading
-              as="h2"
-              size={{ base: "2xl", md: "3xl" }}
+              id="vision-mission-heading"
+              size={{ base: "2xl", md: "4xl" }}
               textAlign="center"
               color="purple.600"
               mb={4}

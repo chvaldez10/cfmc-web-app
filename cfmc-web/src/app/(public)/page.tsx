@@ -2,7 +2,6 @@
 import {
   HomeJumbotron,
   PassedLiveStream,
-  MissionVision,
   DiscoverMinistries,
   VisionMissionParallax,
   LayeredParallaxSection,
@@ -19,7 +18,6 @@ export default function Page() {
     <>
       <HomeJumbotron />
       <PassedLiveStream />
-      <MissionVision />
       <VisionMissionParallax />
       <LayeredParallaxSection />
       <ParagraphHeader
