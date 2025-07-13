@@ -6,144 +6,205 @@ import {
   Heading,
   VStack,
   Icon,
-  Link,
+  Button,
   useColorModeValue,
+  forwardRef,
+  type BoxProps,
 } from "@chakra-ui/react";
 import { CardDataProps } from "@/types/ui/components";
+import NextLink from "next/link";
+import { memo } from "react";
 
-interface PromoCardProps {
+interface PromoCardProps extends Omit<BoxProps, "onClick"> {
   card: CardDataProps;
+  variant?: "default" | "elevated";
 }
 
-const PromoCard = ({ card }: PromoCardProps) => {
-  const cardHoverOverlay = useColorModeValue(
-    "rgba(0, 0, 0, 0.05)",
-    "rgba(255, 255, 255, 0.08)"
-  );
-  const dividerColor = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
-  const textColor = useColorModeValue("gray.800", "gray.100");
+const PromoCard = memo(
+  forwardRef<PromoCardProps, "div">(
+    ({ card, variant = "default", ...rest }, ref) => {
+      const cardHoverOverlay = useColorModeValue(
+        "rgba(0, 0, 0, 0.08)",
+        "rgba(255, 255, 255, 0.12)"
+      );
 
-  return (
-    <Box as="article" role="article" aria-labelledby={`${card.title}-title`}>
-      <VStack
-        spacing={{ base: 3, md: 5 }}
-        bg={card.bg}
-        p={{ base: 4, md: 6 }}
-        borderRadius="2xl"
-        color={textColor}
-        h="100%"
-        minH={{ base: "280px", md: "320px" }}
-        position="relative"
-        overflow="hidden"
-        transition="all 0.3s ease"
-        _hover={{
-          transform: "translateY(-4px)",
-          boxShadow: "xl",
-          "& .card-icon": {
-            transform: "scale(1.1)",
-          },
-          _before: {
-            opacity: 1,
-          },
-        }}
-        _before={{
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          bg: cardHoverOverlay,
-          opacity: 0,
-          transition: "opacity 0.3s ease",
-          pointerEvents: "none",
-        }}
-      >
-        {/* Icon */}
+      const textColor = useColorModeValue("gray.800", "gray.100");
+      const borderColor = useColorModeValue("gray.200", "gray.700");
+      const shadowColor = useColorModeValue(
+        "rgba(0, 0, 0, 0.1)",
+        "rgba(0, 0, 0, 0.3)"
+      );
+
+      const isElevated = variant === "elevated";
+      const baseShadow = isElevated
+        ? `0 4px 6px ${shadowColor}, 0 1px 3px ${shadowColor}`
+        : "none";
+      const hoverShadow = isElevated
+        ? `0 8px 25px ${shadowColor}, 0 4px 10px ${shadowColor}`
+        : `0 4px 12px ${shadowColor}`;
+
+      return (
         <Box
-          className="card-icon"
-          transition="transform 0.3s ease"
-          p={{ base: 2, md: 3 }}
-          borderRadius="full"
-          bg="whiteAlpha.300"
-          backdropFilter="blur(12px)"
+          ref={ref}
+          as="article"
+          role="button"
+          tabIndex={0}
+          aria-labelledby={`${card.title}-title`}
+          aria-describedby={`${card.title}-description`}
+          cursor="pointer"
+          position="relative"
+          borderRadius="2xl"
+          bg={card.bg}
+          border="1px solid"
+          borderColor={borderColor}
+          boxShadow={baseShadow}
+          transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+          _hover={{
+            transform: "translateY(-4px)",
+            boxShadow: hoverShadow,
+            borderColor: useColorModeValue("gray.300", "gray.600"),
+          }}
+          _focus={{
+            outline: "none",
+            transform: "translateY(-4px)",
+            boxShadow: hoverShadow,
+            borderColor: "purple.500",
+            ring: "2px",
+            ringColor: "purple.200",
+            ringOffset: "2px",
+          }}
+          _active={{
+            transform: "translateY(-2px)",
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              window.location.href = card.footerLink.href;
+            }
+          }}
+          {...rest}
         >
-          <Icon as={card.icon} boxSize={{ base: 6, md: 8 }} aria-hidden />
-        </Box>
-
-        {/* Title & Subtitle */}
-        <Box textAlign="center">
-          <Heading
-            id={`${card.title}-title`}
-            fontSize={{ base: "lg", md: "2xl" }}
-            fontWeight="bold"
-            lineHeight="short"
-            mb={{ base: 0.5, md: 1 }}
-          >
-            {card.title}
-          </Heading>
-          {card.subtitle && (
-            <Text
-              fontSize={{ base: "sm", md: "lg" }}
-              fontWeight="medium"
-              opacity={0.85}
-            >
-              {card.subtitle}
-            </Text>
-          )}
-        </Box>
-
-        {/* Description */}
-        {card.description && (
-          <Text
-            fontSize={{ base: "xs", md: "sm" }}
-            lineHeight="1.6"
-            opacity={0.75}
-            textAlign="center"
-            px={{ base: 0, md: 1 }}
-            flex={1}
-          >
-            {card.description}
-          </Text>
-        )}
-
-        {/* Footer Link */}
-        {card.footerLink && (
+          {/* Hover overlay */}
           <Box
-            mt="auto"
-            pt={{ base: 3, md: 4 }}
-            w="100%"
-            borderTop={`1px solid ${dividerColor}`}
+            position="absolute"
+            inset={0}
+            bg={cardHoverOverlay}
+            opacity={0}
+            transition="opacity 0.3s ease"
+            pointerEvents="none"
+            borderRadius="2xl"
+            _groupHover={{ opacity: 1 }}
+          />
+
+          <VStack
+            spacing={{ base: 4, md: 6 }}
+            p={{ base: 6, md: 8 }}
+            h="100%"
+            minH={{ base: "300px", md: "340px" }}
+            position="relative"
+            zIndex={1}
+            align="stretch"
+            justify="space-between"
           >
-            <Link
-              href={card.footerLink.href}
-              fontWeight="semibold"
-              fontSize={{ base: "xs", md: "sm" }}
-              color={textColor}
-              display="inline-block"
-              position="relative"
-              textDecoration="none"
-              _hover={{
-                textDecoration: "none",
-                _after: {
-                  width: "100%",
-                },
-              }}
-              _after={{
-                content: '""',
-                position: "absolute",
-                bottom: "-2px",
-                left: 0,
-                width: "0%",
-                height: "2px",
-                bg: textColor,
-                transition: "width 0.3s ease",
-              }}
-            >
-              {card.footerLink.label} →
-            </Link>
-          </Box>
-        )}
-      </VStack>
-    </Box>
-  );
-};
+            {/* Header Section */}
+            <VStack spacing={{ base: 3, md: 4 }} align="center">
+              {/* Icon */}
+              <Box
+                p={{ base: 3, md: 4 }}
+                borderRadius="full"
+                bg="whiteAlpha.400"
+                backdropFilter="blur(12px)"
+                border="1px solid"
+                borderColor="whiteAlpha.300"
+                transition="all 0.3s ease"
+                _groupHover={{
+                  transform: "scale(1.1) rotate(5deg)",
+                  bg: "whiteAlpha.500",
+                }}
+              >
+                <Icon
+                  as={card.icon}
+                  boxSize={{ base: 7, md: 9 }}
+                  color={textColor}
+                  aria-hidden
+                />
+              </Box>
+
+              {/* Title & Subtitle */}
+              <VStack spacing={2} textAlign="center">
+                <Heading
+                  id={`${card.title}-title`}
+                  fontSize={{ base: "xl", md: "2xl" }}
+                  fontWeight="bold"
+                  lineHeight="tight"
+                  color={textColor}
+                  letterSpacing="tight"
+                >
+                  {card.title}
+                </Heading>
+                {card.subtitle && (
+                  <Text
+                    fontSize={{ base: "sm", md: "md" }}
+                    fontWeight="medium"
+                    color={textColor}
+                    opacity={0.8}
+                  >
+                    {card.subtitle}
+                  </Text>
+                )}
+              </VStack>
+            </VStack>
+
+            {/* Description */}
+            {card.description && (
+              <Text
+                id={`${card.title}-description`}
+                fontSize={{ base: "sm", md: "md" }}
+                lineHeight="1.6"
+                color={textColor}
+                opacity={0.85}
+                textAlign="center"
+                flex={1}
+                display="flex"
+                alignItems="center"
+              >
+                {card.description}
+              </Text>
+            )}
+
+            {/* Call-to-Action Button */}
+            <Box pt={2}>
+              <Button
+                as={NextLink}
+                href={card.footerLink.href}
+                size={{ base: "sm", md: "md" }}
+                colorScheme="purple"
+                variant="solid"
+                w="full"
+                borderRadius="lg"
+                fontWeight="semibold"
+                transition="all 0.2s ease"
+                _hover={{
+                  transform: "translateY(-1px)",
+                  boxShadow: "lg",
+                }}
+                _active={{
+                  transform: "translateY(0)",
+                }}
+                _focus={{
+                  boxShadow: "0 0 0 3px rgba(147, 51, 234, 0.3)",
+                }}
+              >
+                {card.footerLink.label}
+              </Button>
+            </Box>
+          </VStack>
+        </Box>
+      );
+    }
+  )
+);
+
+PromoCard.displayName = "PromoCard";
 
 export default PromoCard;
