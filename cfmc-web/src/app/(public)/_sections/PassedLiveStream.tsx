@@ -16,6 +16,7 @@ import ColumnLayout from "@/components/hero/layouts/ColumnLayout";
 
 export default function PassedLiveStream() {
   const arrowColor = useColorModeValue("gray.800", "gray.300");
+  const headingColor = useColorModeValue("purple.600", "purple.400");
 
   return (
     <ColumnLayout id="live-stream" ariaLabelledBy="live-stream-heading">
@@ -25,6 +26,7 @@ export default function PassedLiveStream() {
         fontWeight={600}
         fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
         lineHeight={"110%"}
+        color={headingColor}
       >
         {LiveStreamLabels.HEADING}
       </Heading>

@@ -7,12 +7,10 @@ function MissionVisionCards() {
       <ContentCard
         title="Mission"
         description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
-        colorScheme="green"
       />
       <ContentCard
         title="Vision"
         description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
-        colorScheme="green"
       />
     </TwoByOneGrid>
   );

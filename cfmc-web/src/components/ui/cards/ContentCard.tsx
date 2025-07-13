@@ -11,13 +11,13 @@ import {
 interface ContentCardProps extends BoxProps {
   title: string;
   description: string;
-  colorScheme?: "green" | "purple";
+  colorScheme?: "purple" | "green";
 }
 
 export const ContentCard = ({
   title,
   description,
-  colorScheme = "green",
+  colorScheme = "purple",
   ...rest
 }: ContentCardProps) => {
   // Palette definitions
