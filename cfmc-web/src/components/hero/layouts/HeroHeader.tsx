@@ -7,7 +7,10 @@ import {
   Text,
   VStack,
   useColorModeValue,
+  Box,
 } from "@chakra-ui/react";
+
+import styles from "@/app/(public)/_sections/GradientBackground.module.css";
 
 interface HeroHeaderProps {
   title: string;
@@ -34,66 +37,73 @@ export default function HeroHeader({
   const defaultDescriptionColor = useColorModeValue("gray.600", "gray.300");
 
   return (
-    <Container maxW="7xl" minH="100vh" bg={background} px={{ base: 4, md: 8 }}>
-      <Flex
-        direction="column"
-        justify="center"
-        align="center"
+    <Box className={styles.radialGradient} w="full">
+      <Container
+        maxW="7xl"
         minH="100vh"
-        textAlign="center"
+        bg={background}
+        px={{ base: 4, md: 8 }}
       >
-        <VStack spacing={{ base: 6, md: 8 }} maxW="4xl" mx="auto" w="full">
-          {/* Title Section */}
-          <VStack spacing={{ base: 4, md: 6 }}>
-            <Heading
-              as="h1"
-              size="2xl"
-              fontWeight="bold"
-              fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
-              lineHeight="1.1"
-              color={titleColor || defaultTitleColor}
-              letterSpacing="tight"
-            >
-              {title}{" "}
-              {titleHighlight && (
+        <Flex
+          direction="column"
+          justify="center"
+          align="center"
+          minH="100vh"
+          textAlign="center"
+        >
+          <VStack spacing={{ base: 6, md: 8 }} maxW="4xl" mx="auto" w="full">
+            {/* Title Section */}
+            <VStack spacing={{ base: 4, md: 6 }}>
+              <Heading
+                as="h1"
+                size="2xl"
+                fontWeight="bold"
+                fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
+                lineHeight="1.1"
+                color={titleColor || defaultTitleColor}
+                letterSpacing="tight"
+              >
+                {title}{" "}
+                {titleHighlight && (
+                  <Text
+                    as="span"
+                    bgGradient={`linear(to-r, ${highlightColor}, ${highlightColor})`}
+                    bgClip="text"
+                    fontWeight="extrabold"
+                  >
+                    {titleHighlight}
+                  </Text>
+                )}
+              </Heading>
+
+              {/* Description */}
+              {description && (
                 <Text
-                  as="span"
-                  bgGradient={`linear(to-r, ${highlightColor}, ${highlightColor})`}
-                  bgClip="text"
-                  fontWeight="extrabold"
+                  fontSize={{ base: "lg", md: "xl" }}
+                  color={descriptionColor || defaultDescriptionColor}
+                  maxW="3xl"
+                  lineHeight="1.6"
+                  fontWeight="medium"
                 >
-                  {titleHighlight}
+                  {description}
                 </Text>
               )}
-            </Heading>
+            </VStack>
 
-            {/* Description */}
-            {description && (
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                color={descriptionColor || defaultDescriptionColor}
-                maxW="3xl"
-                lineHeight="1.6"
-                fontWeight="medium"
+            {/* Custom Content Area */}
+            {children && (
+              <Flex
+                w="full"
+                mt={{ base: 8, md: 12 }}
+                justify="center"
+                align="center"
               >
-                {description}
-              </Text>
+                {children}
+              </Flex>
             )}
           </VStack>
-
-          {/* Custom Content Area */}
-          {children && (
-            <Flex
-              w="full"
-              mt={{ base: 8, md: 12 }}
-              justify="center"
-              align="center"
-            >
-              {children}
-            </Flex>
-          )}
-        </VStack>
-      </Flex>
-    </Container>
+        </Flex>
+      </Container>
+    </Box>
   );
 }
