@@ -11,15 +11,29 @@ import {
 interface ContentCardProps extends BoxProps {
   title: string;
   description: string;
+  colorScheme?: "green" | "purple";
 }
 
 export const ContentCard = ({
   title,
   description,
+  colorScheme = "green",
   ...rest
 }: ContentCardProps) => {
+  // Palette definitions
+  const palette = {
+    green: {
+      accent: useColorModeValue("green.700", "green.500"),
+      gradient: "linear(to-r, green.500, green.700)",
+    },
+    purple: {
+      accent: useColorModeValue("purple.600", "purple.400"),
+      gradient: "linear(to-r, purple.400, purple.600)",
+    },
+  };
+  const { accent, gradient } = palette[colorScheme];
+
   const textColor = useColorModeValue("gray.700", "gray.200");
-  const accentColor = useColorModeValue("purple.600", "purple.400");
   const bgColor = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
   const shadowColor = useColorModeValue(
@@ -60,7 +74,7 @@ export const ContentCard = ({
         left={0}
         right={0}
         h="4px"
-        bgGradient="linear(to-r, purple.400, purple.600)"
+        bgGradient={gradient}
         borderRadius="xl"
       />
 
@@ -68,7 +82,7 @@ export const ContentCard = ({
         <Heading
           as="h2"
           fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
-          color={accentColor}
+          color={accent}
           mb={6}
           fontWeight="extrabold"
           lineHeight="tight"

@@ -1,6 +1,4 @@
-import { ColumnLayout, HeroHeader } from "@/components/hero";
-import { TwoByOneGrid } from "@/components/hero/";
-import { ContentCard } from "@/components/ui/cards";
+import { HeroHeader } from "@/components/hero";
 
 export default function MissionVisionPage() {
   return (
@@ -10,17 +8,6 @@ export default function MissionVisionPage() {
         titleHighlight="Vision"
         description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
       ></HeroHeader>
-
-      <TwoByOneGrid py={{ base: 4, md: 8 }}>
-        <ContentCard
-          title="Mission"
-          description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
-        />
-        <ContentCard
-          title="Vision"
-          description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
-        />
-      </TwoByOneGrid>
     </>
   );
 }
