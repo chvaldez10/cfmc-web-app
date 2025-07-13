@@ -16,7 +16,6 @@ import {
   useToast,
   Tooltip,
   useColorModeValue,
-  IconButton,
 } from "@chakra-ui/react";
 import {
   FaEnvelope,
