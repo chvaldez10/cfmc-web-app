@@ -4,14 +4,12 @@ import { Box, Grid, GridItem, GridProps } from "@chakra-ui/react";
 interface TwoByOneGridProps extends GridProps {
   children: [ReactElement, ReactElement];
   variant?: "center" | "start";
-  outerBackground?: string;
   reverse?: boolean;
 }
 
 const TwoByOneGrid = ({
   children,
   variant = "center",
-  outerBackground,
   reverse = false,
   ...gridProps
 }: TwoByOneGridProps) => {

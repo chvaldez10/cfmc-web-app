@@ -4,7 +4,7 @@ export interface CardDataProps {
   /** Background color or gradient for the card */
   bg: string;
   /** Icon component to display */
-  icon: ComponentType<any>;
+  icon: ComponentType<{ size?: string | number; className?: string }>;
   /** Main title of the card */
   title: string;
   /** Optional subtitle */

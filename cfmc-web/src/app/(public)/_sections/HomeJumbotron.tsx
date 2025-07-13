@@ -29,11 +29,7 @@ const HomeJumbotron = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <TwoByOneGrid
-        outerBackground={styles.radialGradient}
-        variant="start"
-        id="home-jumbotron-content"
-      >
+      <TwoByOneGrid variant="start" id="home-jumbotron-content">
         <HomeJumboDetails />
         <WorshipCountdown />
       </TwoByOneGrid>

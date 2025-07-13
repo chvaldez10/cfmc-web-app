@@ -1,3 +1,5 @@
+import { ComponentType } from "react";
+
 import {
   Modal,
   ModalContent,
@@ -28,7 +30,7 @@ import { useState } from "react";
 
 // Types
 interface DonationMethod {
-  icon: any;
+  icon: ComponentType<{ size?: string | number; className?: string }>;
   title: string;
   description: string;
   email?: string;
@@ -217,7 +219,7 @@ const InfoSection = () => {
         fontWeight="semibold"
         lineHeight="tall"
       >
-        💝 Your generous contributions help us continue God's work in our
+        💝 Your generous contributions help us continue God&apos;s work in our
         community and beyond. Thank you for your support!
       </Text>
     </Box>
@@ -236,7 +238,7 @@ const IntroductionSection = () => {
         lineHeight="tall"
         fontWeight="medium"
       >
-        Support God's mission through CFMC with your generous contributions
+        Support God&apos;s mission through CFMC with your generous contributions
       </Text>
       <Text fontSize="sm" color="gray.500" mt={2}>
         Choose from multiple convenient donation methods

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, SimpleGrid, Heading } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 
 import { PromoCard } from "@/components/ui/cards";
 import { ABOUT_US_PAGE_CARDS } from "@/constants/about";
