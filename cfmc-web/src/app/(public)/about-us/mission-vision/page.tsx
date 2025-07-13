@@ -11,7 +11,7 @@ export default function MissionVisionPage() {
         description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
       ></HeroHeader>
 
-      <TwoByOneGrid minH="50vh">
+      <TwoByOneGrid py={{ base: 4, md: 8 }}>
         <ContentCard
           title="Mission"
           description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."

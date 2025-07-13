@@ -26,42 +26,42 @@ const TwoByOneGrid = ({
   const alignment = variant === "start" ? "start" : "center";
 
   return (
-    <Box className={outerBackground} w="full" minH="100vh">
-      <Box
-        mx="auto"
-        px={{ base: 4, md: 8 }}
-        maxW={{ base: "full", md: "7xl" }}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        minH="100vh"
+    // <Box className={outerBackground} w="full" minH="100vh">
+    <Box
+      mx="auto"
+      px={{ base: 4, md: 8 }}
+      maxW={{ base: "full", md: "7xl" }}
+      h="100%"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Grid
+        templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+        gap={{ base: 8, md: 8, lg: 12 }}
+        w="full"
+        className={gridProps.className}
+        {...gridProps}
       >
-        <Grid
-          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-          gap={{ base: 8, md: 8, lg: 12 }}
+        <GridItem
+          display="flex"
+          alignItems="center"
+          justifyContent={{ base: "center", md: alignment }}
           w="full"
-          className={gridProps.className}
-          {...gridProps}
         >
-          <GridItem
-            display="flex"
-            alignItems="center"
-            justifyContent={{ base: "center", md: alignment }}
-            w="full"
-          >
-            {firstChild}
-          </GridItem>
-          <GridItem
-            display="flex"
-            alignItems="center"
-            justifyContent={{ base: "center", md: alignment }}
-            w="full"
-          >
-            {secondChild}
-          </GridItem>
-        </Grid>
-      </Box>
+          {firstChild}
+        </GridItem>
+        <GridItem
+          display="flex"
+          alignItems="center"
+          justifyContent={{ base: "center", md: alignment }}
+          w="full"
+        >
+          {secondChild}
+        </GridItem>
+      </Grid>
     </Box>
+    // </Box>
   );
 };
 

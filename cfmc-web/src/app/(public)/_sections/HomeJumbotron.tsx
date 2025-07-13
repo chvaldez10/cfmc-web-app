@@ -22,14 +22,23 @@ import styles from "./GradientBackground.module.css";
 
 const HomeJumbotron = () => {
   return (
-    <TwoByOneGrid
-      outerBackground={styles.radialGradient}
-      variant="start"
-      id="home-jumbotron-content"
+    <VStack
+      id="home-jumbotron-container"
+      w="full"
+      className={styles.radialGradient}
+      minH="100vh"
+      justifyContent="center"
+      alignItems="center"
     >
-      <HomeJumboDetails />
-      <WorshipCountdown />
-    </TwoByOneGrid>
+      <TwoByOneGrid
+        outerBackground={styles.radialGradient}
+        variant="start"
+        id="home-jumbotron-content"
+      >
+        <HomeJumboDetails />
+        <WorshipCountdown />
+      </TwoByOneGrid>
+    </VStack>
   );
 };
 

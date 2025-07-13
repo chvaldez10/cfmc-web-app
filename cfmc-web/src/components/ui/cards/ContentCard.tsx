@@ -21,8 +21,7 @@ export const ContentCard = ({ title, description }: ContentCardProps) => {
     <Box
       p={{ base: 8, md: 10 }}
       w="full"
-      h="full"
-      minH="fit-content"
+      minH="50vh"
       bg={bgColor}
       borderRadius="xl"
       border="1px solid"
