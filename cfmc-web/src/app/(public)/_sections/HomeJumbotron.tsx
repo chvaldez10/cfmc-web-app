@@ -24,7 +24,6 @@ const HomeJumbotron = () => {
   return (
     <VStack
       id="home-jumbotron-container"
-      w="full"
       className={styles.radialGradient}
       minH="100vh"
       justifyContent="center"
@@ -50,7 +49,7 @@ const HomeJumboDetails = () => {
       <VStack
         spacing={{ base: 2, md: 4 }}
         align="start"
-        maxW={{ base: "full", md: "lg" }}
+        w="full"
         borderLeft="solid"
         borderLeftColor="purple.600"
         borderLeftWidth={{ base: "0px", md: "4px" }}

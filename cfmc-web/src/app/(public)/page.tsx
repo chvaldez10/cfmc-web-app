@@ -16,6 +16,7 @@ export default function Page() {
       <ParagraphHeader
         title="Our Community"
         description="The community of Calgary Filipino Methodist Church is a warm, Christ-centered family of believers rooted in Filipino faith and culture. United in love and service, we gather to worship, grow in God's Word, and support one another through life's journeys. Our fellowship is marked by hospitality, prayer, and joyful worship, as we seek to reflect Christ's light in our homes, church, and the wider Calgary community. Together, we are building a legacy of faith for future generations."
+        mt="0"
       />
       <EventSwiper events={mockEvents} />
       <FooterInquiries />

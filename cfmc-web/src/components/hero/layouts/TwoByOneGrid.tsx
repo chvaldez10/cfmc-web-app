@@ -26,11 +26,10 @@ const TwoByOneGrid = ({
   const alignment = variant === "start" ? "start" : "center";
 
   return (
-    // <Box className={outerBackground} w="full" minH="100vh">
     <Box
       mx="auto"
-      px={{ base: 4, md: 8 }}
       maxW={{ base: "full", md: "7xl" }}
+      px={{ base: 4, md: 0 }}
       h="100%"
       display="flex"
       alignItems="center"
@@ -39,7 +38,6 @@ const TwoByOneGrid = ({
       <Grid
         templateColumns={{ base: "1fr", md: "1fr 1fr" }}
         gap={{ base: 8, md: 8, lg: 12 }}
-        w="full"
         className={gridProps.className}
         {...gridProps}
       >
@@ -47,7 +45,6 @@ const TwoByOneGrid = ({
           display="flex"
           alignItems="center"
           justifyContent={{ base: "center", md: alignment }}
-          w="full"
         >
           {firstChild}
         </GridItem>
@@ -55,13 +52,11 @@ const TwoByOneGrid = ({
           display="flex"
           alignItems="center"
           justifyContent={{ base: "center", md: alignment }}
-          w="full"
         >
           {secondChild}
         </GridItem>
       </Grid>
     </Box>
-    // </Box>
   );
 };
 

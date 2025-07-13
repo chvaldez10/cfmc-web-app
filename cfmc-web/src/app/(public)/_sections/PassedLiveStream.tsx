@@ -19,7 +19,13 @@ export default function PassedLiveStream() {
   const headingColor = useColorModeValue("purple.600", "purple.400");
 
   return (
-    <ColumnLayout id="live-stream" ariaLabelledBy="live-stream-heading">
+    <ColumnLayout
+      id="live-stream"
+      ariaLabelledBy="live-stream-heading"
+      containerProps={{
+        px: { base: 4, md: 0 },
+      }}
+    >
       {/* Heading */}
       <Heading
         id="live-stream-heading"

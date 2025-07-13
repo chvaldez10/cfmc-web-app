@@ -22,7 +22,7 @@ const ThreeByOneGrid = ({
 
   return (
     <Box className={outerBackground} w="full">
-      <Box mx="auto" maxW={{ base: "full", md: "7xl" }} px={{ base: 4, md: 8 }}>
+      <Box mx="auto" maxW={{ base: "full", md: "7xl" }} px={{ base: 4, md: 0 }}>
         <Grid
           templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
           gap={8}

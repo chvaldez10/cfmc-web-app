@@ -18,7 +18,7 @@ const FooterDetails = () => {
       <Flex
         maxW="7xl"
         mx="auto"
-        px={6}
+        px={{ base: 4, md: 0 }}
         direction={{ base: "column", md: "row" }}
         justify="space-between"
         wrap="wrap"

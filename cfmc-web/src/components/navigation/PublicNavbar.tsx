@@ -69,7 +69,7 @@ export default function PublicNavbar() {
         maxW={"7xl"}
         mx={"auto"}
         py={{ base: 2 }}
-        px={{ base: 4 }}
+        px={{ base: 4, md: 0 }}
         align={"center"}
         id="public-navbar"
       >
