@@ -15,16 +15,16 @@ function DiscoverMinistries() {
         color="gray.800"
         _dark={{ color: "gray.100" }}
       >
-        Discover Our Ministries
+        Get Involved
       </Heading>
       <TwoByOneGrid py={{ base: 4, md: 8 }}>
         <ContentCard
-          title="Discipleship Ministry"
-          description="Discipleship Ministry is a ministry that helps people grow in their faith and become more like Jesus."
+          title="Music Ministry"
+          description="Join our choir and help us lead worship through song."
         />
         <ContentCard
-          title="Music Ministry"
-          description="Music Ministry is a ministry that helps people grow in their faith and become more like Jesus."
+          title="Bread Ministry"
+          description="Help us prepare and distribute bread to the community."
         />
       </TwoByOneGrid>
     </>

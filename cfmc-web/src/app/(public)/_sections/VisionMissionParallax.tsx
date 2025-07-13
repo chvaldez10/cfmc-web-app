@@ -13,6 +13,8 @@ import {
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
+import { ABOUT_CONTENT } from "@/constants/about";
+
 const VisionMissionParallax = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -114,7 +116,7 @@ const VisionMissionParallax = () => {
                 <HStack spacing={3}>
                   <Box w="3" h="8" bg="purple.500" borderRadius="full" />
                   <Heading as="h3" size="lg" color="purple.600">
-                    VISION
+                    {ABOUT_CONTENT.VISION_STATEMENT.title}
                   </Heading>
                 </HStack>
                 <Text
@@ -122,9 +124,7 @@ const VisionMissionParallax = () => {
                   lineHeight="tall"
                   color="gray.700"
                 >
-                  A church that glorifies God alone by being Bible-believing,
-                  Christ-centered, and Holy Spirit-led in doing the Great
-                  Commission and Great Commandment.
+                  {ABOUT_CONTENT.VISION_STATEMENT.description}
                 </Text>
               </VStack>
             </Box>
@@ -155,7 +155,7 @@ const VisionMissionParallax = () => {
                 <HStack spacing={3}>
                   <Box w="3" h="8" bg="blue.500" borderRadius="full" />
                   <Heading as="h3" size="lg" color="blue.600">
-                    MISSION
+                    {ABOUT_CONTENT.MISSION_STATEMENT.title}
                   </Heading>
                 </HStack>
                 <Text
@@ -163,9 +163,7 @@ const VisionMissionParallax = () => {
                   lineHeight="tall"
                   color="gray.700"
                 >
-                  A church that shares God's good news of Christ's redeeming
-                  love by reaching out to people, experiencing new life in Him,
-                  and growing in Christlikeness.
+                  {ABOUT_CONTENT.MISSION_STATEMENT.description}
                 </Text>
               </VStack>
             </Box>
@@ -196,7 +194,7 @@ const VisionMissionParallax = () => {
                 <HStack spacing={3}>
                   <Box w="3" h="8" bg="green.500" borderRadius="full" />
                   <Heading as="h3" size="lg" color="green.600">
-                    Statement of Commitment
+                    {ABOUT_CONTENT.STATEMENT_OF_COMMITMENT.title}
                   </Heading>
                 </HStack>
                 <Text
@@ -204,14 +202,7 @@ const VisionMissionParallax = () => {
                   lineHeight="tall"
                   color="gray.700"
                 >
-                  We, the members of Calgary Filipino Methodist Church, an
-                  ethnic congregation, in response to God's love in Jesus Christ
-                  and by the power of the Holy Spirit, seek to be faithful in
-                  our discipleship and ministry to the community. In order to
-                  faithfully carry out the mission of Jesus Christ in the world
-                  through ministries among our brethren, and in accordance with
-                  the Doctrines and Social Principles of the Methodist Church,
-                  we shall establish and implement these governing by-laws.
+                  {ABOUT_CONTENT.STATEMENT_OF_COMMITMENT.description}
                 </Text>
               </VStack>
             </Box>

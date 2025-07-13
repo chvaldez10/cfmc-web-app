@@ -19,6 +19,8 @@ import {
   FaCross,
 } from "react-icons/fa";
 
+import { ministries } from "@/constants/ministries";
+
 const LayeredParallaxSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -87,16 +89,14 @@ const LayeredParallaxSection = () => {
                 size={{ base: "xl", md: "2xl" }}
                 color="purple.600"
               >
-                Love & Compassion
+                {ministries.DISCIPLESHIP.title}
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="tall"
                 color="gray.700"
               >
-                We demonstrate God's love through acts of compassion, kindness,
-                and service to our community. Every interaction is an
-                opportunity to reflect Christ's unconditional love and grace.
+                {ministries.DISCIPLESHIP.description}
               </Text>
             </VStack>
           </Box>
@@ -134,16 +134,14 @@ const LayeredParallaxSection = () => {
                 size={{ base: "xl", md: "2xl" }}
                 color="blue.600"
               >
-                Service & Ministry
+                {ministries.MENS_FELLOWSHIP.title}
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="tall"
                 color="gray.700"
               >
-                Through various ministries and outreach programs, we serve our
-                community with dedication and purpose. Each ministry is designed
-                to meet spiritual, emotional, and physical needs.
+                {ministries.MENS_FELLOWSHIP.description}
               </Text>
             </VStack>
           </Box>
@@ -181,16 +179,14 @@ const LayeredParallaxSection = () => {
                 size={{ base: "xl", md: "2xl" }}
                 color="green.600"
               >
-                Prayer & Worship
+                {ministries.WOMENS_FELLOWSHIP.title}
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="tall"
                 color="gray.700"
               >
-                Our worship services are centered on God's Word, filled with
-                prayer, and designed to draw us closer to Christ. We believe in
-                the power of corporate worship and individual prayer.
+                {ministries.WOMENS_FELLOWSHIP.description}
               </Text>
             </VStack>
           </Box>
@@ -228,16 +224,14 @@ const LayeredParallaxSection = () => {
                 size={{ base: "xl", md: "2xl" }}
                 color="purple.600"
               >
-                Faith & Discipleship
+                {ministries.CHILDREN.title}
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="tall"
                 color="gray.700"
               >
-                We are committed to growing in faith and making disciples.
-                Through Bible study, fellowship, and mentoring, we help each
-                other mature in Christ and live out our faith daily.
+                {ministries.CHILDREN.description}
               </Text>
             </VStack>
           </Box>
@@ -249,8 +243,8 @@ const LayeredParallaxSection = () => {
             y: useTransform(scrollYProgress, [0.75, 0.95], [100, 0]),
             opacity: useTransform(
               scrollYProgress,
-              [0.75, 0.85, 0.95],
-              [0, 1, 1]
+              [0, 0.1, 0.8, 1],
+              [0, 1, 1, 0]
             ),
           }}
         >
@@ -272,16 +266,14 @@ const LayeredParallaxSection = () => {
                 size={{ base: "xl", md: "2xl" }}
                 color="blue.600"
               >
-                Join Our Community
+                {ministries.OUTREACH.title}
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 lineHeight="tall"
                 color="gray.700"
               >
-                Experience the love, fellowship, and spiritual growth that comes
-                from being part of our church family. We welcome you to join us
-                in worship, service, and discipleship.
+                {ministries.OUTREACH.description}
               </Text>
             </VStack>
           </Box>
@@ -336,3 +328,43 @@ const LayeredParallaxSection = () => {
 };
 
 export default LayeredParallaxSection;
+
+// 1. Control When Element Appears/Disappears:
+// // Appears early, disappears late
+// opacity: useTransform(scrollYProgress, [0, 0.1, 0.8, 1], [0, 1, 1, 0])
+
+// // Appears late, disappears early
+// opacity: useTransform(scrollYProgress, [0, 0.5, 0.6, 1], [0, 1, 1, 0])
+
+// // Stays visible longer
+// opacity: useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0])
+
+// 2. Control Movement Speed:
+// // Moves faster (larger range)
+// y: useTransform(scrollYProgress, [0, 1], [0, -200])
+
+// // Moves slower (smaller range)
+// y: useTransform(scrollYProgress, [0, 1], [0, -50])
+
+// // Moves in opposite direction
+// y: useTransform(scrollYProgress, [0, 1], [0, 100])
+
+// 3. Control Movement Timing:
+// // Moves early in scroll
+// y: useTransform(scrollYProgress, [0, 0.5], [0, -100])
+
+// // Moves late in scroll
+// y: useTransform(scrollYProgress, [0.5, 1], [0, -100])
+
+// // Moves in middle of scroll
+// y: useTransform(scrollYProgress, [0.3, 0.7], [0, -100])
+
+// 4. Create Different Effects:
+// // Fade in only (no fade out)
+// opacity: useTransform(scrollYProgress, [0, 0.3], [0, 1])
+
+// // Fade out only (no fade in)
+// opacity: useTransform(scrollYProgress, [0.7, 1], [1, 0])
+
+// // Quick flash effect
+// opacity: useTransform(scrollYProgress, [0.4, 0.5, 0.6, 0.7], [0, 1, 1, 0])

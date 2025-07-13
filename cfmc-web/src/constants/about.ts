@@ -48,7 +48,7 @@ export interface AboutContentItem {
 
 export const ABOUT_CONTENT: Record<string, AboutContentItem> = {
   VISION_STATEMENT: {
-    title: "Vision Statement",
+    title: "Vision",
     description:
       "A church that glorifies God alone by being Bible-believing, Christ-centered, and Holy Spirit-led in doing the Great Commission and Great Commandment.",
   },
@@ -58,7 +58,7 @@ export const ABOUT_CONTENT: Record<string, AboutContentItem> = {
       "Calgary Filipino Methodist Church envisions itself as a God-glorifying, Christ-shepherding, and Holy Spirit-filled church in fulfilling God's Mission in the city.",
   },
   MISSION_STATEMENT: {
-    title: "Mission Statement",
+    title: "Mission",
     description:
       "A church that shares God's good news of Christ's redeeming love by reaching out to people, experiencing new life in Him, and growing in Christlikeness.",
   },
