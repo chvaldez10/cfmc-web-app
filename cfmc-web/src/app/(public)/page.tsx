@@ -4,6 +4,8 @@ import {
   PassedLiveStream,
   MissionVision,
   DiscoverMinistries,
+  VisionMissionParallax,
+  LayeredParallaxSection,
 } from "./_sections";
 import { FooterInquiries } from "@/components/footer";
 import EventSwiper from "@/components/features/events/EventSwiper";
@@ -18,6 +20,8 @@ export default function Page() {
       <HomeJumbotron />
       <PassedLiveStream />
       <MissionVision />
+      <VisionMissionParallax />
+      <LayeredParallaxSection />
       <ParagraphHeader
         title="Our Community"
         description="The community of Calgary Filipino Methodist Church is a warm, Christ-centered family of believers rooted in Filipino faith and culture. United in love and service, we gather to worship, grow in God's Word, and support one another through life's journeys. Our fellowship is marked by hospitality, prayer, and joyful worship, as we seek to reflect Christ's light in our homes, church, and the wider Calgary community. Together, we are building a legacy of faith for future generations."
