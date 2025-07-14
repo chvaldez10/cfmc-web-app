@@ -1,3 +1,5 @@
+import { ComponentType } from "react";
+
 import {
   FaHeart,
   FaHandsHelping,
@@ -8,7 +10,7 @@ import {
 export interface LayeredParallaxSectionData {
   title: string;
   description: string;
-  icon: any;
+  icon: ComponentType<{ size?: string | number; className?: string }>;
   iconColor: string;
   borderColor: string;
   titleColor: string;

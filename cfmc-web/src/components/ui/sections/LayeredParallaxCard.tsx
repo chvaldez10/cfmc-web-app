@@ -7,7 +7,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, ReactNode } from "react";
 import { IconType } from "react-icons";
 
 interface LayeredParallaxCardProps {
