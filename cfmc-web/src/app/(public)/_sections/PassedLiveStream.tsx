@@ -38,7 +38,7 @@ export default function PassedLiveStream() {
       </Heading>
 
       {/* Description */}
-      <Text color={"gray.600"} fontSize={{ base: "lg", md: "xl" }}>
+      <Text color={"gray.700"} fontSize={{ base: "lg", md: "xl" }}>
         {LiveStreamLabels.DESCRIPTION}
       </Text>
 
@@ -96,13 +96,13 @@ export default function PassedLiveStream() {
         {/* Button */}
         <Button
           colorScheme="purple"
-          bg="purple.400"
+          bg="gray.800"
           rounded="full"
           px={8}
           py={6}
           fontSize="lg"
           _hover={{
-            bg: "purple.500",
+            bg: "gray.900",
             transform: "translateY(-2px)",
             boxShadow: "lg",
           }}
@@ -113,7 +113,7 @@ export default function PassedLiveStream() {
 
         <Text
           fontSize={"sm"}
-          color={useColorModeValue("gray.600", "gray.400")}
+          color={useColorModeValue("gray.700", "gray.400")}
           fontStyle="italic"
         >
           {LiveStreamLabels.SUBTEXT}

@@ -56,7 +56,7 @@ const HomeJumboDetails = () => {
           <Flex alignItems="center" gap={2}>
             <Divider
               orientation="horizontal"
-              borderColor="purple.500"
+              borderColor="purple.600"
               borderWidth="2px"
               width="12px"
             />
@@ -71,17 +71,17 @@ const HomeJumboDetails = () => {
         </SlideFadeText>
         {/* Our Mission Header */}
         <SlideFadeText delay={0.8}>
-          <Heading as="h1" size={{ base: "xl", md: "2xl" }} color="purple.400">
+          <Heading as="h1" size={{ base: "xl", md: "2xl" }} color="purple.600">
             {ABOUT_CONTENT.WHAT_WE_BELIEVE.title}
           </Heading>
         </SlideFadeText>
-        {/* Mission Statement */}
+        {/* What We Believe */}
         <SlideFadeText delay={1.2}>
-          <Text fontSize={{ base: "sm", md: "md" }}>
+          <Text fontSize={{ base: "sm", md: "md" }} color="gray.700">
             {ABOUT_CONTENT.WHAT_WE_BELIEVE.description}
           </Text>
         </SlideFadeText>
-        {/* Announcements Button */}
+        {/* Learn More Button */}
         <SlideFadeText delay={1.6}>
           <LearnMoreButton
             href="/about-us/beliefs"

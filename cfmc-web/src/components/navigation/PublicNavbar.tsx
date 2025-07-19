@@ -122,9 +122,9 @@ export default function PublicNavbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"brand.500"}
+            bg={"purple.600"}
             _hover={{
-              bg: "brand.400",
+              bg: "purple.500",
             }}
             borderRadius={"full"}
             height={BUTTON_HEIGHT}

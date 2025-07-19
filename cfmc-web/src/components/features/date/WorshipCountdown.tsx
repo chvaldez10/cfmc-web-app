@@ -11,14 +11,14 @@ export default function WorshipCountdown() {
         <Text
           fontSize={{ base: "lg", md: "xl" }}
           fontWeight="bold"
-          color="purple.400"
+          color="purple.600"
           textAlign="center"
         >
           Next Sunday Service
         </Text>
         <Text
           fontSize={{ base: "md", md: "lg" }}
-          color="gray.600"
+          color="gray.700"
           textAlign="center"
         >
           Join us every Sunday at 2:00 PM
