@@ -11,11 +11,11 @@ export enum Branding {
 export enum ModalButtonLabels {
   CLOSE = "Close",
   SUBMIT = "Submit",
-  LEARN_MORE = "Learn More",
+  LEARN_MORE = "Learn more",
   ANNOUNCEMENTS = "Announcements",
 }
 
-export enum PublicNavbarLabels {
+export enum PublicLabels {
   ABOUT = "About",
   MEDIA = "Media",
   GET_INVOLVED = "Get Involved",
@@ -45,7 +45,7 @@ export enum EventStatus {
 }
 
 export enum EventType {
-  SUNDAY_WORSHIP = "Sunday Worship",
+  SUNDAY_WORSHIP = "Sunday worship",
   EVENT = "Event",
 }
 

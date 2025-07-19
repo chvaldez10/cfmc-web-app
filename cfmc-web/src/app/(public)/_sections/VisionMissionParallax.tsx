@@ -13,7 +13,7 @@ import {
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
-import { ABOUT_CONTENT } from "@/constants/about";
+import { ABOUT_CONTENT } from "@/constants/shared/about";
 
 const VisionMissionParallax = () => {
   const containerRef = useRef<HTMLDivElement>(null);

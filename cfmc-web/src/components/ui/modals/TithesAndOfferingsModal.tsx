@@ -37,7 +37,7 @@ interface DonationMethod {
   details?: string;
 }
 
-import { PublicNavbarLabels } from "@/constants/shared/enums";
+import { PublicLabels } from "@/constants/shared/enums";
 
 interface DonationMethodCardProps {
   method: DonationMethod;
@@ -322,7 +322,7 @@ const TithesAndOfferingsModal = ({
           color="brand.600"
           pb={2}
         >
-          {PublicNavbarLabels.TITHE_AND_OFFERINGS}
+          {PublicLabels.TITHE_AND_OFFERINGS}
         </ModalHeader>
         <ModalCloseButton
           size="lg"

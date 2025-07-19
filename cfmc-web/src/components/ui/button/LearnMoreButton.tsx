@@ -7,12 +7,7 @@ function LearnMoreButton({ href, label }: { href: string; label: string }) {
   const textColor = useColorModeValue("gray.800", "gray.100");
 
   return (
-    <Box
-      mt="auto"
-      pt={{ base: 3, md: 4 }}
-      w="100%"
-      borderTop={`1px solid ${dividerColor}`}
-    >
+    <Box mt="auto" w="100%" borderTop={`1px solid ${dividerColor}`}>
       <Link
         href={href}
         fontWeight="semibold"

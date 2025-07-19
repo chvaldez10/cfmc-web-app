@@ -9,13 +9,13 @@ import {
   Divider,
   SlideFade,
 } from "@chakra-ui/react";
-import { FaArrowRight } from "react-icons/fa";
 
 // Components
 import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
-import { MissionStatement } from "@/constants/shared/worship";
+import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { WorshipCountdown } from "@/components/features/date";
+import { LearnMoreButton } from "@/components/ui/button";
 
 // Styles
 import styles from "./GradientBackground.module.css";
@@ -73,25 +73,21 @@ const HomeJumboDetails = () => {
         {/* Our Mission Header */}
         <SlideFadeText delay={0.8}>
           <Heading as="h1" size={{ base: "xl", md: "2xl" }} color="purple.400">
-            {MissionStatement.OUR_MISSION}
+            {ABOUT_CONTENT.WHAT_WE_BELIEVE.title}
           </Heading>
         </SlideFadeText>
         {/* Mission Statement */}
         <SlideFadeText delay={1.2}>
           <Text fontSize={{ base: "sm", md: "md" }}>
-            {MissionStatement.MISSION_STATEMENT}
+            {ABOUT_CONTENT.WHAT_WE_BELIEVE.description}
           </Text>
         </SlideFadeText>
         {/* Announcements Button */}
         <SlideFadeText delay={1.6}>
-          <Button
-            colorScheme="purple"
-            rightIcon={<FaArrowRight />}
-            variant="solid"
-            size={{ base: "sm", md: "md" }}
-          >
-            {ModalButtonLabels.ANNOUNCEMENTS}
-          </Button>
+          <LearnMoreButton
+            href="/about-us/beliefs"
+            label={ModalButtonLabels.LEARN_MORE}
+          />
         </SlideFadeText>
       </VStack>
     </SlideFadeText>

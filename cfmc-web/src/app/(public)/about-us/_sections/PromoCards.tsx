@@ -3,7 +3,7 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 
 import { PromoCard } from "@/components/ui/cards";
-import { ABOUT_US_PAGE_CARDS } from "@/constants/about";
+import { ABOUT_US_PAGE_CARDS } from "@/constants/shared/about";
 
 export default function PromoCards() {
   return (
