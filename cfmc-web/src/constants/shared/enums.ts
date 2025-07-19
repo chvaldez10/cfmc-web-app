@@ -11,7 +11,7 @@ export enum Branding {
 export enum ModalButtonLabels {
   CLOSE = "Close",
   SUBMIT = "Submit",
-  LEARN_MORE = "Learn more",
+  LEARN_MORE = "Learn More",
   ANNOUNCEMENTS = "Announcements",
 }
 
@@ -21,6 +21,7 @@ export enum PublicLabels {
   GET_INVOLVED = "Get Involved",
   CONTACT_US = "Contact Us",
   MISSION_VISION = "Mission & Vision",
+  OUR_MISSION_AND_VISION = "Our Mission & Vision",
   MINISTRIES = "Ministries",
   LEADERSHIP = "Leadership",
   COMMUNITY = "Community",

@@ -3,6 +3,7 @@
 import { Box, Container, VStack, useColorModeValue } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { PublicLabels } from "@/constants/shared/enums";
 
 import { ParallaxCard1 } from "@/components/ui/cards";
 import {
@@ -51,7 +52,7 @@ const VisionMissionParallax = () => {
           {/* Main Heading */}
           <ParallaxSectionHeading
             scrollYProgress={scrollYProgress}
-            title="Our Vision & Mission"
+            title={PublicLabels.OUR_MISSION_AND_VISION}
             id="vision-mission-heading"
             colorScheme="purple"
             size={{ base: "2xl", md: "4xl" }}
