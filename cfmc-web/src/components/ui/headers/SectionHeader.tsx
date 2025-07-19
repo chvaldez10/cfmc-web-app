@@ -9,19 +9,19 @@ import {
 } from "@chakra-ui/react";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
 
-interface ParagraphHeaderProps {
+interface SectionHeaderProps {
   title: string;
   description: string;
   textAlign?: "left" | "center" | "right";
   mt?: string;
 }
 
-export default function ParagraphHeader({
+export default function SectionHeader({
   title,
   description,
   textAlign = "center",
   mt,
-}: ParagraphHeaderProps) {
+}: SectionHeaderProps) {
   const textColor = useColorModeValue("gray.800", "gray.100");
   const accentColor = useColorModeValue("purple.600", "purple.300");
 
