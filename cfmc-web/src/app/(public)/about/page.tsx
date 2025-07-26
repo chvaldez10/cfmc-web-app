@@ -2,7 +2,7 @@
 
 import { ColumnLayout } from "@/components/hero";
 import { SectionHeader } from "@/components/ui/headers";
-import { PromoCards } from "./_sections";
+import { PromoCards } from "@/components/ui/cards";
 
 export default function AboutUsPage() {
   return (
