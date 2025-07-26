@@ -10,7 +10,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-import styles from "@/app/(public)/_sections/GradientBackground.module.css";
+import styles from "@/styles/GradientBackground.module.css";
 
 interface HeroHeaderProps {
   title: string;

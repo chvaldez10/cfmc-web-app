@@ -1,4 +1,4 @@
-import { Article } from "@/app/(public)/about-us/_sections";
+import { Article } from "@/components/ui/text";
 import whatWeBelieve from "@/constants/whatWeBelieve";
 
 export default function BeliefsPage() {

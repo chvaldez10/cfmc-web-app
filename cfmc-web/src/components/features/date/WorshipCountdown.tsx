@@ -3,7 +3,7 @@ import CountDownTimer from "./CountDownTimer";
 
 export default function WorshipCountdown() {
   // TODO: Remove this mock date and note that month is 0-indexed
-  const mockDate = new Date(Date.UTC(2025, 6, 26, 20, 0, 0)); // 2 PM MDT
+  const mockDate = new Date(Date.UTC(2025, 7, 2, 20, 0, 0)); // 2 PM MDT
 
   return (
     <VStack spacing={4} align="center">

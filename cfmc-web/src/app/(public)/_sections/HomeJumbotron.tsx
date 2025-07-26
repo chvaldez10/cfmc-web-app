@@ -17,7 +17,7 @@ import { WorshipCountdown } from "@/components/features/date";
 import { LearnMoreButton } from "@/components/ui/button";
 
 // Styles
-import styles from "./GradientBackground.module.css";
+import styles from "@/styles/GradientBackground.module.css";
 
 const HomeJumbotron = () => {
   return (
@@ -84,7 +84,7 @@ const HomeJumboDetails = () => {
         {/* Learn More Button */}
         <SlideFadeText delay={1.6}>
           <LearnMoreButton
-            href="/about-us/beliefs"
+            href="/beliefs"
             label={ModalButtonLabels.LEARN_MORE}
           />
         </SlideFadeText>

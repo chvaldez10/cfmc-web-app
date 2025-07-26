@@ -1,3 +1,5 @@
+"use client";
+
 import { ColumnLayout } from "@/components/hero";
 import { SectionHeader } from "@/components/ui/headers";
 import { PromoCards } from "./_sections";

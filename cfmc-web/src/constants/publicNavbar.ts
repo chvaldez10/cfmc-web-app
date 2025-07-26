@@ -4,12 +4,12 @@ import { PublicLabels } from "./shared/enums";
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: PublicLabels.ABOUT,
-    href: "/about-us",
+    href: "/about",
     children: [
       {
         label: PublicLabels.MISSION_VISION,
         subLabel: "Our mission is to help the community and foster growth.",
-        href: "/about-us/mission-vision",
+        href: "/mission",
       },
       {
         label: PublicLabels.MINISTRIES,
@@ -70,7 +70,7 @@ export const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: PublicLabels.CONTACT_US,
-    href: "/contact-us",
+    href: "/contact",
     subLabel: "Reach out to us for any inquiries or support.",
   },
 ];
