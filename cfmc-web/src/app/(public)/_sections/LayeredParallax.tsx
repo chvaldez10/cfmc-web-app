@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -114,6 +114,7 @@ const LayeredParallaxSection = () => {
       position="relative"
       overflow="hidden"
       minH="250vh"
+      width="100%"
     >
       {/* Background gradient overlay */}
       <Box
@@ -127,31 +128,24 @@ const LayeredParallaxSection = () => {
         zIndex="0"
       />
 
-      <Container
-        maxW="7xl"
-        px={{ base: 4, md: 8 }}
-        position="relative"
-        zIndex="1"
-      >
-        {/* Render parallax sections */}
-        {PARALLAX_SECTIONS.map((section, index) => (
-          <ParallaxCard
-            key={section.id}
-            icon={section.icon}
-            iconColor={section.iconColor}
-            title={section.title}
-            description={section.description}
-            borderColor={section.borderColor}
-            titleColor={section.titleColor}
-            zIndex={section.zIndex}
-            motionStyle={{
-              top: section.topPosition,
-              y: sectionTransforms[index].y,
-              opacity: sectionTransforms[index].opacity,
-            }}
-          />
-        ))}
-      </Container>
+      {/* Render parallax sections directly without Container wrapper */}
+      {PARALLAX_SECTIONS.map((section, index) => (
+        <ParallaxCard
+          key={section.id}
+          icon={section.icon}
+          iconColor={section.iconColor}
+          title={section.title}
+          description={section.description}
+          borderColor={section.borderColor}
+          titleColor={section.titleColor}
+          zIndex={section.zIndex}
+          motionStyle={{
+            top: section.topPosition,
+            y: sectionTransforms[index].y,
+            opacity: sectionTransforms[index].opacity,
+          }}
+        />
+      ))}
 
       {/* Floating background elements */}
       {FLOATING_ELEMENTS.map((element, index) => (
