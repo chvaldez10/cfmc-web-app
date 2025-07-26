@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 
 interface FloatingElementProps {
   top?: string;
@@ -9,7 +9,7 @@ interface FloatingElementProps {
   height: string;
   backgroundColor: string;
   opacity: number;
-  motionY: any;
+  motionY: MotionValue<number>;
 }
 
 const FloatingElement = ({

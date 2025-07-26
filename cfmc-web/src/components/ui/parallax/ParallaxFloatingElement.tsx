@@ -1,4 +1,9 @@
-import { motion, useTransform, MotionValue } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useMotionValue,
+  MotionValue,
+} from "framer-motion";
 
 // Predefined position options for convenience
 type PresetPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
@@ -31,7 +36,7 @@ interface ParallaxFloatingElementProps {
   // Motion: either provide scrollYProgress + yRange OR pre-calculated motionY
   scrollYProgress?: MotionValue<number>;
   yRange?: [number, number];
-  motionY?: any;
+  motionY?: MotionValue<number>;
 
   // Styling
   opacity?: number;
@@ -110,16 +115,16 @@ const ParallaxFloatingElement = ({
     }
   };
 
-  // Handle motion
-  const getMotionY = () => {
-    if (motionY) {
-      return motionY;
-    } else if (scrollYProgress) {
-      return useTransform(scrollYProgress, [0, 1], yRange);
-    } else {
-      return 0;
-    }
-  };
+  // Handle motion - always call hooks to avoid conditional usage
+  // Create a fallback static MotionValue if scrollYProgress is not provided
+  const fallbackProgress = useMotionValue(0);
+  const sourceProgress = scrollYProgress || fallbackProgress;
+
+  // Always call useTransform, but only use result when scrollYProgress exists
+  const calculatedMotionY = useTransform(sourceProgress, [0, 1], yRange);
+
+  // Use motionY if provided, otherwise use calculated motion only if scrollYProgress exists
+  const finalMotionY = motionY || (scrollYProgress ? calculatedMotionY : 0);
 
   return (
     <motion.div
@@ -131,7 +136,7 @@ const ParallaxFloatingElement = ({
         backgroundColor: getBackgroundColor(),
         opacity,
         zIndex,
-        y: getMotionY(),
+        y: finalMotionY,
         ...style,
       }}
     />

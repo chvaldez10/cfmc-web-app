@@ -6,7 +6,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 import { IconType } from "react-icons";
 
 interface ParallaxCardProps {
@@ -16,7 +16,7 @@ interface ParallaxCardProps {
   description: string;
   borderColor: string;
   titleColor: string;
-  motionStyle: any;
+  motionStyle: MotionStyle;
   zIndex: number;
 }
 

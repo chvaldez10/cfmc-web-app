@@ -5,14 +5,14 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 
 interface CallToActionCardProps {
   title: string;
   description: string;
   borderColor: string;
   titleColor: string;
-  motionStyle: any;
+  motionStyle: MotionStyle;
 }
 
 const CallToActionCard = ({
