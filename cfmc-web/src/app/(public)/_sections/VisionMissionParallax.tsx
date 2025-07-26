@@ -6,10 +6,8 @@ import { useRef } from "react";
 import { PublicLabels } from "@/constants/shared/enums";
 
 import { ParallaxCard1 } from "@/components/ui/cards";
-import {
-  ParallaxDecorativeElement,
-  ParallaxSectionHeading,
-} from "@/components/ui/sections";
+import { ParallaxSectionHeading } from "@/components/ui/sections";
+import { ParallaxFloatingElement } from "@/components/ui/parallax";
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 
 const VisionMissionParallax = () => {
@@ -30,7 +28,7 @@ const VisionMissionParallax = () => {
       overflow="hidden"
     >
       {/* Background decorative elements */}
-      <ParallaxDecorativeElement
+      <ParallaxFloatingElement
         scrollYProgress={scrollYProgress}
         position="top-left"
         size={200}
@@ -38,7 +36,7 @@ const VisionMissionParallax = () => {
         yRange={[0, -200]}
         opacity={0.3}
       />
-      <ParallaxDecorativeElement
+      <ParallaxFloatingElement
         scrollYProgress={scrollYProgress}
         position="bottom-right"
         size={150}

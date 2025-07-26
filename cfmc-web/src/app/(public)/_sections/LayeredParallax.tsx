@@ -4,7 +4,10 @@ import { Box, Container, useColorModeValue } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-import { ParallaxCard, FloatingElement } from "@/components/ui/parallax";
+import {
+  ParallaxCard,
+  ParallaxFloatingElement,
+} from "@/components/ui/parallax";
 import {
   PARALLAX_SECTIONS,
   FLOATING_ELEMENTS,
@@ -75,14 +78,18 @@ const LayeredParallaxSection = () => {
 
       {/* Floating background elements */}
       {FLOATING_ELEMENTS.map((element) => (
-        <FloatingElement
+        <ParallaxFloatingElement
           key={element.id}
-          top={element.position.top}
-          left={element.position.left}
-          right={element.position.right}
-          bottom={element.position.bottom}
-          width={element.size.width}
-          height={element.size.height}
+          position={{
+            top: element.position.top,
+            left: element.position.left,
+            right: element.position.right,
+            bottom: element.position.bottom,
+          }}
+          size={{
+            width: element.size.width,
+            height: element.size.height,
+          }}
           backgroundColor={element.backgroundColor}
           opacity={element.opacity}
           motionY={useTransform(
