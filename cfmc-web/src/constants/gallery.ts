@@ -1,4 +1,10 @@
-export const GALLERY_ITEMS = [
+export interface GalleryItem {
+  id: number;
+  image: string;
+  title: string;
+}
+
+export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 1,
     image: "/gallery/IMG_3790.jpg",

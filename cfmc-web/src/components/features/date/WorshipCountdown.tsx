@@ -1,6 +1,7 @@
 import { VStack, Text } from "@chakra-ui/react";
 import CountDownTimer from "./CountDownTimer";
 import { GalleryCollage } from "@/components/ui/gallery";
+import { GALLERY_ITEMS } from "@/constants/gallery";
 
 export default function WorshipCountdown() {
   // TODO: Remove this mock date
@@ -24,11 +25,9 @@ export default function WorshipCountdown() {
         Experience worship with our community
       </Text>
       <GalleryCollage
-        maxImages={8}
-        // Adjust image size: smaller = more compact, larger = more prominent
+        galleryItems={GALLERY_ITEMS}
         imageSize={{ base: "70px", md: "90px" }}
-        // Adjust spacing: smaller = tighter layout, larger = more spread out
-        spacing={{ base: 60, md: 80 }}
+        spacing={{ base: 80, md: 100 }}
       />
       <CountDownTimer worshipStartDateTime={mockDate} />
     </VStack>

@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { Box, Image, useBreakpointValue } from "@chakra-ui/react";
-import { GALLERY_ITEMS } from "@/constants/gallery";
 import { ImageModal } from "@/components/ui/modals";
+import { GalleryItem } from "@/constants/gallery";
 
 const MAX_IMAGES = 8;
 
 interface GalleryCollageProps {
-  maxImages?: number;
+  galleryItems: GalleryItem[];
   imageSize?: { base: string; md: string };
   spacing?: { base: number; md: number };
 }
@@ -19,11 +19,11 @@ interface SelectedImage {
 }
 
 const GalleryCollage = ({
-  maxImages = MAX_IMAGES,
+  galleryItems,
   imageSize = { base: "80px", md: "100px" },
   spacing = { base: 70, md: 90 },
 }: GalleryCollageProps) => {
-  const displayImages = GALLERY_ITEMS.slice(0, maxImages);
+  const displayImages = galleryItems.slice(0, MAX_IMAGES);
   const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(
     null
   );
