@@ -1,1 +1,1 @@
-export { default as GalleryCollage } from "./HomeGallery";
+export { default as GalleryCollage } from "./GalleryCollage";

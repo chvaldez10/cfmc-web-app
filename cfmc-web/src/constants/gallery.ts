@@ -34,4 +34,9 @@ export const GALLERY_ITEMS = [
     image: "/gallery/IMG_3790.jpg",
     title: "Gallery Item 7",
   },
+  {
+    id: 8,
+    image: "/gallery/IMG_3790.jpg",
+    title: "Gallery Item 8",
+  },
 ];
