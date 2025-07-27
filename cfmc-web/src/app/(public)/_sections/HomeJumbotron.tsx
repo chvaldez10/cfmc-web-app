@@ -84,7 +84,7 @@ const HomeJumboDetails = () => {
         {/* Learn More Button */}
         <SlideFadeText delay={1.6}>
           <LearnMoreButton
-            href="/beliefs"
+            href="/about/beliefs"
             label={ModalButtonLabels.LEARN_MORE}
           />
         </SlideFadeText>
