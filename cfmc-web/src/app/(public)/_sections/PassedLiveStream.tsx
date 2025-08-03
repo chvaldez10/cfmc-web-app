@@ -53,7 +53,7 @@ export default function PassedLiveStream() {
         <Box
           as="iframe"
           title="Facebook video player"
-          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcalgaryfilipino.methodistchurch%2Fvideos%2F735868682324021%2F&show_text=false&width=560&t=0"
+          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcalgaryfilipino.methodistchurch%2Fvideos%2F761376986382386%2F&show_text=false&width=560&t=0"
           width={{ base: "100%", sm: "560px" }}
           height={{ base: "auto", sm: "314px" }}
           minH={{ base: "200px", sm: "314px" }}

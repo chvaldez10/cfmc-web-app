@@ -17,7 +17,7 @@ function DiscoverMinistries() {
       >
         Get Involved
       </Heading>
-      <TwoByOneGrid py={{ base: 4, md: 8 }}>
+      <TwoByOneGrid py={{ base: 4, md: 8 }} w="full">
         <ContentCard
           title="Music Ministry"
           description="Join our choir and help us lead worship through song."
