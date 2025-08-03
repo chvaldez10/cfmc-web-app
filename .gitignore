@@ -71,3 +71,6 @@ vendors/
 
 # local static files
 local-cdn/
+
+# Supabase
+supabase/.temp

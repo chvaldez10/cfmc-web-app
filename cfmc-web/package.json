@@ -15,6 +15,9 @@
     "@chakra-ui/react": "^2.10.9",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.53.0",
     "framer-motion": "^12.19.1",
     "next": "^15.3.4",
     "react": "^19.1.0",
@@ -29,6 +32,7 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.29.0",
     "eslint-config-next": "^15.3.4",
+    "supabase": "^2.33.9",
     "typescript": "^5.8.3"
   }
 }
