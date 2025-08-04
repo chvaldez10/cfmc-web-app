@@ -1,8 +1,8 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { HOME_JUMBO_LIMIT } from "@/constants/gallery";
 
-// TODO: Consolidate types
 export type TransformedGalleryItem = {
   id: number;
   title: string;
@@ -10,35 +10,37 @@ export type TransformedGalleryItem = {
   altText: string;
 };
 
-export async function getGalleryItems(): Promise<TransformedGalleryItem[]> {
+export async function getGalleryItems(
+  type: string
+): Promise<TransformedGalleryItem[]> {
   const supabase = await createClient();
 
-  const { data: imageRecords, error } = await supabase
+  const { data: imageRecords, error: dbError } = await supabase
     .from("gallery_images")
     .select("id, title, image_path, alt_text")
-    .order("display_order", { ascending: true });
+    .eq("type", type)
+    .order("display_order", { ascending: true })
+    .limit(HOME_JUMBO_LIMIT);
 
-  if (error) {
-    console.error("Database Error:", error.message);
-    return [];
+  if (dbError) {
+    console.error("Database Error:", dbError.message);
+    throw new Error("Failed to fetch gallery items");
   }
 
-  if (!imageRecords) {
-    return [];
-  }
+  return Promise.all(
+    (imageRecords || []).map(
+      async (record): Promise<TransformedGalleryItem> => {
+        const { data: publicUrlData } = supabase.storage
+          .from("images")
+          .getPublicUrl(record.image_path);
 
-  const galleryItems: TransformedGalleryItem[] = imageRecords.map((record) => {
-    const { data: publicUrlData } = supabase.storage
-      .from("images")
-      .getPublicUrl(record.image_path);
-
-    return {
-      id: record.id,
-      title: record.title,
-      image: publicUrlData.publicUrl,
-      altText: record.alt_text || record.title,
-    };
-  });
-
-  return galleryItems;
+        return {
+          id: record.id,
+          title: record.title,
+          image: publicUrlData.publicUrl,
+          altText: record.alt_text || record.title,
+        };
+      }
+    )
+  );
 }

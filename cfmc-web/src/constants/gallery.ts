@@ -55,3 +55,5 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "Gallery Item 8",
   },
 ];
+
+export const HOME_JUMBO_LIMIT = 8;

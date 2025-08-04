@@ -4,7 +4,9 @@
 
 You are an **expert software architect and developer advocate**. Your task is to create a **production-ready, best-practices guide** for engineers building scalable features with our tech stack. Assume your audience is a team of mid-to-senior engineers who will follow this document as the **blueprint for all future development.**
 
-### **Goal**
+---
+
+## **Goal**
 
 Generate a **comprehensive and opinionated guide** that explains:
 
@@ -14,7 +16,9 @@ Generate a **comprehensive and opinionated guide** that explains:
 
 This guide must emphasize **scalability, maintainability, type safety, and security**.
 
-### **Our Established Tech Stack**
+---
+
+## **Our Established Tech Stack**
 
 - **Framework:** Next.js (App Router, using Server Components + SSR + Edge Middleware)
 - **Backend & Database:** Supabase (Postgres, Auth, Storage, Realtime)
@@ -23,161 +27,247 @@ This guide must emphasize **scalability, maintainability, type safety, and secur
 
 ---
 
-### **Core Principles to Cover**
+## **Core Principles to Cover**
 
-#### **1. Architectural Philosophy: Server-Centric & Type-Safe**
+### **1. Architectural Philosophy: Server-Centric & Type-Safe**
 
 - Explain the **synergy between Next.js Server Components and Supabase**.
 - Show how server-side data fetching:
 
   - Reduces bundle size & client hydration cost.
   - Prevents secrets from leaking to the browser.
-  - Makes data access faster and more secure.
+  - Improves security by keeping queries on the server.
 
-- Diagram or explain the **request lifecycle**:
+- Describe the **request lifecycle** clearly:
 
-  - Request → Middleware/Auth check → Server Component → Supabase query (server) → Rendered HTML/stream to client.
+  ```
+  Request → Middleware/Auth check → Server Component → Supabase query (server) → Rendered HTML/stream to client
+  ```
+
+- Anti-pattern: Fetching sensitive data in Client Components, which risks leaking tokens or exposing DB logic.
 
 ---
 
-#### **2. Database Development & Schema Management**
+### **2. Database Development & Schema Management**
 
-- **Schema First Approach**: Every feature starts with a schema migration.
-- Provide a **template `CREATE TABLE` statement** with best practices:
+- **Schema First Approach**: Every feature starts with a migration.
+- Template for `CREATE TABLE` with best practices:
 
-  - UUID primary keys.
-  - `created_at`, `updated_at` with `DEFAULT now()`.
-  - RLS enabled by default.
+  ```sql
+  create table profiles (
+    id uuid primary key default gen_random_uuid(),
+    user_id uuid references auth.users not null,
+    display_name text not null,
+    created_at timestamp with time zone default now(),
+    updated_at timestamp with time zone default now()
+  );
+  ```
 
-- **RLS Policies**:
+- **Row-Level Security (RLS)**:
 
-  - Explain why RLS is **non-negotiable** (data security at the database level).
-  - Provide a sample `SELECT` policy for authenticated users.
+  - Enable RLS immediately on new tables.
+  - Example `SELECT` policy:
 
-- **Seeding Data**:
+    ```sql
+    alter table profiles enable row level security;
 
-  - Example `INSERT` script for dev/test environments.
-  - Encourage version-controlled seeds (predictable local setup).
+    create policy "Users can view their own profile"
+      on profiles for select
+      using (auth.uid() = user_id);
+    ```
 
+- **Seeding Data**: Use SQL `INSERT` scripts, checked into version control, for predictable local/test environments.
 - **Type Generation**:
 
-  - Supabase CLI command: `supabase gen types typescript --project-id your-project-id > types/database.types.ts`.
-  - Explain that type generation must run **after every schema migration**.
-  - Enforce "type trust": no query should return `any`.
+  ```bash
+  supabase gen types typescript --project-id your-project-id > src/types/supabase/database.types.ts
+  ```
+
+  - Must be run after **every schema migration**.
+  - Golden rule: **no query should return `any`**.
 
 ---
 
-#### **3. The Data Access Layer: A Single Source of Truth**
+### **3. The Data Access Layer: A Single Source of Truth**
 
-- Define principle: **Separate data fetching from UI logic.**
-- Folder convention: `lib/data/featureName.ts`.
-- Show how a `"use server"` module:
+- Keep data-fetching logic separate from UI.
+- Convention: `src/lib/data/featureName.ts`.
+- Example:
 
-  - Uses generated DB types.
-  - Queries Supabase with full type safety.
-  - Transforms DB rows into **UI-friendly DTOs** (Data Transfer Objects).
+  ```ts
+  "use server";
 
-- Example: `getUserProfile(userId)` function returning a type-safe object for UI.
-- Explain why this abstraction improves **testability, maintainability, and scaling**.
+  import { createClient } from "@/lib/supabase/server";
+  import type { Database } from "@/types/supabase/database.types";
+
+  export async function getUserProfile(userId: string) {
+    const supabase = createClient();
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("id, display_name")
+      .eq("user_id", userId)
+      .single();
+
+    if (error) throw error;
+
+    return data satisfies Pick<
+      Database["public"]["Tables"]["profiles"]["Row"],
+      "id" | "display_name"
+    >;
+  }
+  ```
+
+- Why: Improves **testability**, keeps data access consistent, and allows easy refactoring.
+- Anti-pattern: Writing Supabase queries directly in multiple UI components.
 
 ---
 
-#### **4. UI & Component Implementation**
+### **4. UI & Component Implementation**
 
 - **Server Components**:
 
-  - Example showing how a server component imports and calls a data access function.
-  - Demonstrate passing data to Chakra UI components.
+  ```tsx
+  import { getUserProfile } from "@/lib/data/profiles";
+  import { Text } from "@chakra-ui/react";
+
+  export default async function ProfilePage({
+    params,
+  }: {
+    params: { id: string };
+  }) {
+    const profile = await getUserProfile(params.id);
+
+    return <Text>{profile.display_name}</Text>;
+  }
+  ```
 
 - **Chakra UI Integration**:
 
-  - How to build reusable, type-safe UI primitives (e.g., `Card`, `Table`) that consume Supabase data.
+  - Build reusable, type-safe UI primitives.
+  - Example: `<Card>` that accepts typed props instead of free-form data.
 
 - **Suspense & Error Boundaries**:
 
-  - Show modern handling of loading/error states at the **layout level**.
-  - Best practices for large-scale apps (avoid per-component spinners).
+  - Handle loading at the layout level with `Suspense`.
+  - Provide error fallback UIs using Next.js error boundaries.
+
+- Anti-pattern: Using local `useState` for loading flags on every component → results in scattered UX.
 
 ---
 
-#### **5. Authentication & Authorization**
+### **5. Authentication & Authorization**
 
-- **Server-Side Auth First**: Never rely on client-only auth checks.
-- **Integration Pattern**:
+- **Server-Side Auth First**: Never rely only on client checks.
+- Use `@supabase/ssr` + `middleware.ts` to inject session.
+- Example (Server Action with session check):
 
-  - Use `@supabase/ssr` and `middleware.ts` for SSR auth.
-  - Make user sessions available in Server Components and Server Actions.
+  ```ts
+  "use server";
 
-- **Authorization Checks**:
+  import { createClient } from "@/lib/supabase/server";
+  import { redirect } from "next/navigation";
 
-  - Example: check session + enforce RLS at query layer.
-  - Pattern: `if (!session) redirect("/login")`.
+  export async function getSessionUser() {
+    const supabase = createClient();
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
 
-- **Chakra UI + Auth**:
+    if (!session) redirect("/login");
+    return session.user;
+  }
+  ```
 
-  - Example auth modal, conditional UI rendering (login/logout states).
+- **AuthN vs AuthZ**:
 
-- Clarify difference between **authN (who you are)** vs **authZ (what you can do)**.
+  - AuthN = identity (Supabase Auth).
+  - AuthZ = permissions (enforced via RLS + code checks).
+
+- Anti-pattern: Implementing business logic access control only on the client.
 
 ---
 
-#### **6. Real-Time Features**
+### **6. Real-Time Features**
 
-- How to integrate **Supabase Realtime** safely:
+- Supabase Realtime should be used **on the client only**.
+- Pattern: fetch initial state on the server → hydrate with realtime subscription.
+- Example hook:
 
-  - Only subscribe on the **client side** (React hooks).
-  - Use it to hydrate or refresh already secure server-fetched data.
+  ```ts
+  import { useEffect } from "react";
+  import { createClient } from "@/lib/supabase/client";
 
-- Example: Live chat or notifications with a `useRealtime` hook.
-- Pitfall: never rely on client-only realtime data without server validation.
+  export function useRealtimeProfiles(callback: (payload: any) => void) {
+    const supabase = createClient();
+
+    useEffect(() => {
+      const channel = supabase
+        .channel("profiles-changes")
+        .on(
+          "postgres_changes",
+          { event: "*", schema: "public", table: "profiles" },
+          callback
+        )
+        .subscribe();
+
+      return () => {
+        supabase.removeChannel(channel);
+      };
+    }, []);
+  }
+  ```
+
+- Anti-pattern: Using realtime data without validating against RLS-protected queries.
 
 ---
 
-#### **7. Project Structure & Conventions**
+### **7. Project Structure & Conventions**
 
 - Recommended folder layout:
 
-  ├───src
-  │ ├───app
-  │ │ ├───(login)
-  │ │ │ ├───sign-in
-  │ │ │ └───sign-up
-  │ │ └───(public)
-  │ │ ├───about
-  │ │ │ ├───beliefs
-  │ │ │ └───mission-vision
-  │ │ ├───contact
-  │ │ │ └───_sections
-  │ │ └───_sections
-  │ ├───components
-  │ │ ├───features
-  │ │ │ ├───date
-  │ │ │ └───events
-  │ │ ├───footer
-  │ │ ├───hero
-  │ │ │ └───layouts
-  │ │ ├───navigation
-  │ │ └───ui
-  │ │ ├───button
-  │ │ ├───cards
-  │ │ ├───gallery
-  │ │ ├───headers
-  │ │ ├───modals
-  │ │ ├───parallax
-  │ │ ├───sections
-  │ │ └───text
-  │ ├───constants
-  │ │ └───shared
-  │ ├───data
-  │ │ └───mock
-  │ ├───hooks
-  │ ├───lib
-  │ │ └───supabase
-  │ ├───styles
-  │ ├───types
-  │ │ ├───supabase
-  │ │ └───ui
-  │ └───utils
+  ```
+  src
+  ├── app
+  │   ├── (login)
+  │   │   ├── sign-in
+  │   │   └── sign-up
+  │   └── (public)
+  │       ├── about
+  │       │   ├── beliefs
+  │       │   └── mission-vision
+  │       ├── contact
+  │       │   └── _sections
+  │       └── _sections
+  ├── components
+  │   ├── features
+  │   │   ├── date
+  │   │   └── events
+  │   ├── footer
+  │   ├── hero
+  │   │   └── layouts
+  │   ├── navigation
+  │   └── ui
+  │       ├── button
+  │       ├── cards
+  │       ├── gallery
+  │       ├── headers
+  │       ├── modals
+  │       ├── parallax
+  │       ├── sections
+  │       └── text
+  ├── constants
+  │   └── shared
+  ├── data
+  │   └── mock
+  ├── hooks
+  ├── lib
+  │   └── supabase
+  ├── styles
+  ├── types
+  │   ├── supabase
+  │   └── ui
+  └── utils
+  ```
 
 - Naming conventions:
 
@@ -187,9 +277,7 @@ This guide must emphasize **scalability, maintainability, type safety, and secur
 
 ---
 
-#### **8. Code Quality & Scalability Summary**
-
-Conclude with a **short rulebook**:
+### **8. Code Quality & Scalability Summary**
 
 1. **Security First**: Always define RLS policies.
 2. **Server is King**: Default to Server Components for data fetching.
@@ -200,4 +288,16 @@ Conclude with a **short rulebook**:
 
 ---
 
-⚡️ Deliverable: A **structured, long-form guide** that can be used as internal documentation and as a teaching tool for onboarding new engineers. The document must mix **principles, examples, and anti-patterns** so developers understand not just _what_ to do, but _why_ and _why not_.
+### **9. Sources**
+
+Use Supabase official documentation only:
+
+- [https://supabase.com/docs/guides/auth/server-side](https://supabase.com/docs/guides/auth/server-side)
+- [https://supabase.com/docs/guides/auth/server-side/nextjs](https://supabase.com/docs/guides/auth/server-side/nextjs)
+- [https://supabase.com/docs/guides/auth/server-side/creating-a-client?queryGroups=environment\&environment=client](https://supabase.com/docs/guides/auth/server-side/creating-a-client?queryGroups=environment&environment=client)
+- [https://supabase.com/docs/guides/getting-started/quickstarts/nextjs](https://supabase.com/docs/guides/getting-started/quickstarts/nextjs)
+- [https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs)
+
+---
+
+⚡️ **Deliverable:** A **structured, long-form guide** that can be used as internal documentation and as a teaching tool for onboarding new engineers. It must mix **principles, examples, and anti-patterns** so developers understand not just _what_ to do, but _why_ and _why not_.

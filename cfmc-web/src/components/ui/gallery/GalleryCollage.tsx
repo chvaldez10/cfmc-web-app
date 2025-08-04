@@ -10,9 +10,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { ImageModal } from "@/components/ui/modals";
-import { GalleryItem } from "@/constants/gallery";
-
-const MAX_IMAGES = 8;
+import { GalleryItem, HOME_JUMBO_LIMIT } from "@/constants/gallery";
 
 interface GalleryCollageProps {
   galleryItems: GalleryItem[];
@@ -77,7 +75,7 @@ const GalleryCollage = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const displayImages = useMemo(
-    () => galleryItems.slice(0, MAX_IMAGES),
+    () => galleryItems.slice(0, HOME_JUMBO_LIMIT),
     [galleryItems]
   );
 
