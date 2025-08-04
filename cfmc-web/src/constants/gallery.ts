@@ -2,6 +2,7 @@ export interface GalleryItem {
   id: number;
   image: string;
   title: string;
+  altText?: string;
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
