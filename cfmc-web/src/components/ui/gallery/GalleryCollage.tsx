@@ -83,6 +83,7 @@ const GalleryCollage = ({
     null
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(-1);
 
   // Start with 'idle' state instead of loading
