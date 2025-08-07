@@ -1,19 +1,12 @@
 import { VStack, Text } from "@chakra-ui/react";
 import CountDownTimer from "./CountDownTimer";
 import { GalleryCollage } from "@/components/ui/gallery";
-import { GALLERY_ITEMS, GalleryItem } from "@/constants/gallery";
 import { getGalleryItems } from "@/lib/supabase/actions";
 
 export default async function WorshipCountdown() {
   // TODO: Remove this mock date
   const mockDate = new Date(Date.UTC(2025, 7, 2, 20, 0, 0)); // 2 PM MDT, 0-indexed month
   const galleryItems = await getGalleryItems("home_jumbo");
-
-  // Fetch gallery items from Supabase and fallback to mock data if no items are found
-  const displayItems: GalleryItem[] =
-    galleryItems.length > 0
-      ? galleryItems
-      : GALLERY_ITEMS.map((item) => ({ ...item, altText: item.title }));
 
   return (
     <VStack spacing={4} align="center" w="100%">
@@ -33,7 +26,7 @@ export default async function WorshipCountdown() {
         Experience worship with our community
       </Text>
       <GalleryCollage
-        galleryItems={displayItems}
+        galleryItems={galleryItems}
         imageSize={{ base: "70px", md: "90px" }}
         spacing={{ base: 80, md: 100 }}
       />
