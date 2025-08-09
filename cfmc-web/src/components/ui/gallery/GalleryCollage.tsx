@@ -114,7 +114,7 @@ const GalleryCollage = ({
           }
           return prev;
         });
-      }, 8000);
+      }, 7000);
     });
 
     return () => {

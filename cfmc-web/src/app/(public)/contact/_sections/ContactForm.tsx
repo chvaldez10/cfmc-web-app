@@ -9,10 +9,12 @@ import {
   Textarea,
   Button,
   useColorModeValue,
-  Select,
+  Checkbox,
+  CheckboxGroup,
   FormErrorMessage,
   useToast,
   Text,
+  Flex,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -20,8 +22,16 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
-  subject: string;
+  subject: string[];
   message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  subject?: string;
+  message?: string;
 }
 
 import { ContactUsOptions } from "@/constants/shared/enums";
@@ -37,42 +47,39 @@ export default function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    subject: "",
+    subject: [],
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const toast = useToast();
 
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const mutedTextColor = useColorModeValue("gray.600", "gray.400");
-  const bgColor = useColorModeValue("gray.50", "gray.800");
+  // Consistent color scheme following design system
+  const textColor = useColorModeValue("gray.800", "gray.100");
+  const labelColor = useColorModeValue("gray.700", "gray.200");
+  const mutedTextColor = useColorModeValue("gray.500", "gray.400");
+  const sectionHeaderColor = useColorModeValue("gray.600", "gray.300");
+  const bgColor = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const focusBorderColor = useColorModeValue("purple.500", "purple.300");
+  const errorColor = useColorModeValue("red.500", "red.300");
 
-  // Mock function to populate form with sample data for testing
-  const mockSuccessfulInput = () => {
-    const mockData: FormData = {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      phone: "(403) 555-0123",
-      subject: ContactUsOptions.WORSHIP_SERVICES,
-      message:
-        "I would like to know more about your Sunday worship services and what time they start. Also, do you have any programs for children?",
-    };
-
-    setFormData(mockData);
-  };
-
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = (
+    field: keyof FormData,
+    value: string | string[]
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: "" }));
     }
   };
 
+  const handleCheckboxChange = (values: string[]) => {
+    handleInputChange("subject", values);
+  };
+
   const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {};
+    const newErrors: FormErrors = {};
 
     if (!formData.name.trim())
       newErrors.name = ContactFormValidationMessages.ENTER_NAME;
@@ -81,7 +88,7 @@ export default function ContactForm() {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = ContactFormValidationMessages.VALID_EMAIL;
     }
-    if (!formData.subject.trim())
+    if (formData.subject.length === 0)
       newErrors.subject = ContactFormValidationMessages.SELECT_SUBJECT;
     if (!formData.message.trim())
       newErrors.message = ContactFormValidationMessages.SHARE_MESSAGE;
@@ -115,7 +122,7 @@ export default function ContactForm() {
         name: "",
         email: "",
         phone: "",
-        subject: "",
+        subject: [],
         message: "",
       });
     } catch (error) {
@@ -135,20 +142,25 @@ export default function ContactForm() {
   return (
     <Box
       bg={bgColor}
-      p={{ base: 6, md: 8 }}
+      p={{ base: 6, md: 8, lg: 10 }}
       borderRadius="2xl"
       w="full"
       border="1px solid"
       borderColor={borderColor}
-      boxShadow="sm"
-      _hover={{ boxShadow: "md" }}
-      transition="all 0.2s"
+      boxShadow="lg"
+      _hover={{ boxShadow: "xl" }}
+      transition="all 0.3s ease"
     >
-      <VStack spacing={8} as="form" onSubmit={handleSubmit}>
-        <VStack spacing={5} w="full">
-          <VStack spacing={4} w="full">
+      <VStack spacing={{ base: 6, md: 8 }} as="form" onSubmit={handleSubmit}>
+        <VStack spacing={6} w="full">
+          <VStack spacing={5} w="full">
             <FormControl isInvalid={!!errors.name} isRequired>
-              <FormLabel color={textColor} fontSize="sm" fontWeight="medium">
+              <FormLabel
+                color={labelColor}
+                fontSize="sm"
+                fontWeight="semibold"
+                mb={2}
+              >
                 {ContactFormLabels.FULL_NAME}
               </FormLabel>
               <Input
@@ -159,11 +171,23 @@ export default function ContactForm() {
                 focusBorderColor={focusBorderColor}
                 _placeholder={{ color: mutedTextColor }}
               />
-              <FormErrorMessage fontSize="sm">{errors.name}</FormErrorMessage>
+              <FormErrorMessage
+                fontSize="xs"
+                color={errorColor}
+                mt={1}
+                fontWeight="medium"
+              >
+                {errors.name}
+              </FormErrorMessage>
             </FormControl>
 
             <FormControl isInvalid={!!errors.email} isRequired>
-              <FormLabel color={textColor} fontSize="sm" fontWeight="medium">
+              <FormLabel
+                color={labelColor}
+                fontSize="sm"
+                fontWeight="semibold"
+                mb={2}
+              >
                 {ContactFormLabels.EMAIL_ADDRESS}
               </FormLabel>
               <Input
@@ -175,13 +199,31 @@ export default function ContactForm() {
                 focusBorderColor={focusBorderColor}
                 _placeholder={{ color: mutedTextColor }}
               />
-              <FormErrorMessage fontSize="sm">{errors.email}</FormErrorMessage>
+              <FormErrorMessage
+                fontSize="xs"
+                color={errorColor}
+                mt={1}
+                fontWeight="medium"
+              >
+                {errors.email}
+              </FormErrorMessage>
             </FormControl>
 
             <FormControl>
-              <FormLabel color={textColor} fontSize="sm" fontWeight="medium">
+              <FormLabel
+                color={labelColor}
+                fontSize="sm"
+                fontWeight="semibold"
+                mb={2}
+              >
                 {ContactFormLabels.PHONE_NUMBER}
-                <Text as="span" color={mutedTextColor} fontSize="xs" ml={1}>
+                <Text
+                  as="span"
+                  color={mutedTextColor}
+                  fontSize="xs"
+                  ml={2}
+                  fontWeight="normal"
+                >
                   {ContactFormLabels.OPTIONAL}
                 </Text>
               </FormLabel>
@@ -199,44 +241,96 @@ export default function ContactForm() {
         </VStack>
 
         {/* Message Details */}
-        <VStack spacing={5} w="full">
+        <VStack spacing={6} w="full">
           <Text
             alignSelf="flex-start"
             fontSize="sm"
-            fontWeight="semibold"
-            color={mutedTextColor}
+            fontWeight="bold"
+            color={sectionHeaderColor}
             textTransform="uppercase"
-            letterSpacing="wide"
+            letterSpacing="wider"
+            mb={1}
           >
             {ContactFormLabels.HOW_CAN_WE_HELP}
           </Text>
 
-          <VStack spacing={4} w="full">
-            <FormControl isInvalid={!!errors.subject} isRequired>
-              <FormLabel color={textColor} fontSize="sm" fontWeight="medium">
-                {ContactFormLabels.WHAT_CAN_WE_HELP}
-              </FormLabel>
-              <Select
-                value={formData.subject}
-                onChange={(e) => handleInputChange("subject", e.target.value)}
-                placeholder={ContactFormPlaceholders.CHOOSE_OPTION}
-                size="lg"
-                focusBorderColor={focusBorderColor}
-                _placeholder={{ color: mutedTextColor }}
+          <VStack spacing={5} w="full">
+            <FormControl isInvalid={!!errors.subject}>
+              <FormLabel
+                color={labelColor}
+                fontSize="sm"
+                fontWeight="semibold"
+                mb={3}
               >
-                {Object.values(ContactUsOptions).map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
-              <FormErrorMessage fontSize="sm">
+                {ContactFormLabels.WHAT_CAN_WE_HELP}
+                <Text
+                  as="span"
+                  color="red.500"
+                  fontSize="sm"
+                  ml={1}
+                  fontWeight="normal"
+                >
+                  *
+                </Text>
+              </FormLabel>
+              <CheckboxGroup
+                value={formData.subject}
+                onChange={handleCheckboxChange}
+              >
+                <VStack spacing={4} align="start" w="full">
+                  {Object.values(ContactUsOptions).map((option) => (
+                    <Flex key={option} align="start" w="full" gap={3}>
+                      <Checkbox
+                        value={option}
+                        size="md"
+                        colorScheme="purple"
+                        flexShrink={0}
+                      />
+                      <Box
+                        minWidth={0}
+                        onClick={() => {
+                          const currentValues = formData.subject;
+                          const newValues = currentValues.includes(option)
+                            ? currentValues.filter((v) => v !== option)
+                            : [...currentValues, option];
+                          handleCheckboxChange(newValues);
+                        }}
+                        cursor="pointer"
+                      >
+                        <Text
+                          fontSize="sm"
+                          color={textColor}
+                          fontWeight="medium"
+                          lineHeight="1.5"
+                          textOverflow="ellipsis"
+                          overflow="hidden"
+                          whiteSpace="nowrap"
+                          alignSelf="flex-start"
+                        >
+                          {option}
+                        </Text>
+                      </Box>
+                    </Flex>
+                  ))}
+                </VStack>
+              </CheckboxGroup>
+              <FormErrorMessage
+                fontSize="xs"
+                color={errorColor}
+                mt={2}
+                fontWeight="medium"
+              >
                 {errors.subject}
               </FormErrorMessage>
             </FormControl>
 
             <FormControl isInvalid={!!errors.message} isRequired>
-              <FormLabel color={textColor} fontSize="sm" fontWeight="medium">
+              <FormLabel
+                color={labelColor}
+                fontSize="sm"
+                fontWeight="semibold"
+                mb={2}
+              >
                 {ContactFormLabels.YOUR_MESSAGE}
               </FormLabel>
               <Textarea
@@ -249,35 +343,17 @@ export default function ContactForm() {
                 focusBorderColor={focusBorderColor}
                 _placeholder={{ color: mutedTextColor }}
               />
-              <FormErrorMessage fontSize="sm">
+              <FormErrorMessage
+                fontSize="xs"
+                color={errorColor}
+                mt={1}
+                fontWeight="medium"
+              >
                 {errors.message}
               </FormErrorMessage>
             </FormControl>
           </VStack>
         </VStack>
-
-        {/* Mock Data Button (for testing) */}
-        <Button
-          type="button"
-          colorScheme="teal"
-          size="md"
-          w="full"
-          onClick={mockSuccessfulInput}
-          borderRadius="lg"
-          py={4}
-          fontSize="sm"
-          fontWeight="medium"
-          _hover={{
-            transform: "translateY(-1px)",
-            boxShadow: "md",
-          }}
-          _active={{
-            transform: "translateY(0)",
-          }}
-          transition="all 0.2s"
-        >
-          🎯 Load Mock Data (Testing)
-        </Button>
 
         {/* Submit Button */}
         <Button
@@ -285,20 +361,27 @@ export default function ContactForm() {
           colorScheme="purple"
           size="lg"
           w="full"
+          h="56px"
           isLoading={isSubmitting}
           loadingText={ContactFormToastMessages.LOADING_TEXT}
-          borderRadius="lg"
-          py={6}
+          borderRadius="xl"
           fontSize="md"
-          fontWeight="semibold"
+          fontWeight="bold"
+          letterSpacing="wide"
           _hover={{
             transform: "translateY(-2px)",
-            boxShadow: "lg",
+            boxShadow: "xl",
+            bg: "purple.600",
           }}
           _active={{
             transform: "translateY(0)",
+            bg: "purple.700",
           }}
-          transition="all 0.2s"
+          _focus={{
+            boxShadow: `0 0 0 3px ${focusBorderColor}40`,
+          }}
+          transition="all 0.2s ease"
+          mt={4}
         >
           {ContactFormLabels.SEND_MESSAGE}
         </Button>

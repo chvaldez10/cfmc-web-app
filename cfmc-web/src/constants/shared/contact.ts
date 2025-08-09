@@ -21,7 +21,7 @@ export enum ContactFormValidationMessages {
   ENTER_NAME = "Please enter your name",
   ENTER_EMAIL = "Please enter your email address",
   VALID_EMAIL = "Please enter a valid email address",
-  SELECT_SUBJECT = "Please select a subject",
+  SELECT_SUBJECT = "Please select at least one option",
   SHARE_MESSAGE = "Please share your message with us",
 }
 

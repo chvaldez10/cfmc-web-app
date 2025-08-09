@@ -67,12 +67,13 @@ export enum FooterLabels {
 }
 
 export enum ContactUsOptions {
-  WORSHIP_SERVICES = "Worship Services",
-  MINISTRIES_AND_PROGRAMS = "Ministries & Programs",
-  YOUTH_MINISTRY = "Youth Ministry",
-  PRAYER_REQUEST = "Prayer Request",
-  VOLUNTEER = "Volunteer",
-  PASTORAL_CARE = "Pastoral Care",
-  EVENTS = "Events",
-  GENERAL_QUESTION = "General Question",
+  NEED_A_PRAYER = "Request Prayer Support",
+  PASTORAL_VISIT = "Request a Pastoral Visit (Home or Hospital)",
+  HOME_BIBLE_STUDY = "Join a Home Bible Study or Discipleship Group",
+  DESIRE_CHURCH_MEMBERSHIP = "Interested in Church Membership",
+  BAPTISM = "Baptism Inquiry",
+  PASTORAL_COUNSELING = "Request Pastoral Counseling",
+  BLESSING_DEDICATION = "Request a Blessing or Dedication (Home, Vehicle, Business, Project)",
+  FUNERAL_MEMORIAL_SERVICE = "Funeral or Memorial Service Request",
+  MARRIAGE_OFFICIANT = "Marriage Officiant Request",
 }
