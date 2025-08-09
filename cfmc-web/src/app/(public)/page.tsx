@@ -13,11 +13,11 @@ import { SectionHeader } from "@/components/ui/headers";
 // Data
 import { mockEvents } from "@/data/mock/mockEvents";
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <HomeJumbotron />
-      <PassedLiveStream />
+      {/* <PassedLiveStream /> */}
       <VisionMissionParallax />
       <LayeredParallax />
       <SectionHeader

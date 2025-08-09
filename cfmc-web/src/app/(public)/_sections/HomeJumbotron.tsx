@@ -10,7 +10,7 @@ import JumboSlideInText from "./JumboSlideInText";
 // Styles
 import styles from "@/styles/GradientBackground.module.css";
 
-const HomeJumbotron = () => {
+export default async function HomeJumbotron() {
   return (
     <VStack
       id="home-jumbotron-container"
@@ -25,6 +25,4 @@ const HomeJumbotron = () => {
       </TwoByOneGrid>
     </VStack>
   );
-};
-
-export default HomeJumbotron;
+}

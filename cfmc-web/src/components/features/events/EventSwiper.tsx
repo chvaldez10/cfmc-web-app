@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -116,10 +116,6 @@ const EventImage = ({ event }: { event: Events }) => {
 };
 
 const EventDetails = ({ event }: { event: Events }) => {
-  const humanReadableStartDate = formatLocalDateTimeToHumanReadable(
-    event.startDate.toISOString()
-  );
-
   return (
     <Stack
       p={4}
@@ -136,9 +132,35 @@ const EventDetails = ({ event }: { event: Events }) => {
       <Text fontSize="sm" color="gray.600" noOfLines={3}>
         {event.description}
       </Text>
-      <Text fontSize="sm" color="gray.500" mt="auto">
-        {humanReadableStartDate}
-      </Text>
+      <ClientSideEventDate startDate={event.startDate} />
     </Stack>
+  );
+};
+
+// Client-side component to handle date formatting and prevent hydration mismatch
+const ClientSideEventDate = ({ startDate }: { startDate: Date }) => {
+  const [formattedDate, setFormattedDate] = useState<string>("");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    setFormattedDate(
+      formatLocalDateTimeToHumanReadable(startDate.toISOString())
+    );
+  }, [startDate]);
+
+  // Show a placeholder during SSR or before client hydration
+  if (!isClient) {
+    return (
+      <Text fontSize="sm" color="gray.500" mt="auto">
+        Loading date...
+      </Text>
+    );
+  }
+
+  return (
+    <Text fontSize="sm" color="gray.500" mt="auto">
+      {formattedDate}
+    </Text>
   );
 };
