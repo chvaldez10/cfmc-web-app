@@ -41,6 +41,7 @@ import {
   ContactFormValidationMessages,
   ContactFormToastMessages,
 } from "@/constants/shared/contact";
+import { submitContactForm } from "@/lib/supabase/actions/contact_submissions";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -105,30 +106,44 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      console.log("formData", formData);
-
-      toast({
-        title: ContactFormToastMessages.SUCCESS_TITLE,
-        description: ContactFormToastMessages.SUCCESS_DESCRIPTION,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
+      const result = await submitContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        subject: formData.subject,
+        message: formData.message,
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: [],
-        message: "",
-      });
+      if (result.success) {
+        toast({
+          title: ContactFormToastMessages.SUCCESS_TITLE,
+          description: ContactFormToastMessages.SUCCESS_DESCRIPTION,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
+
+        // Reset form on successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: [],
+          message: "",
+        });
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
+      console.error("Form submission error:", error);
+
       toast({
         title: ContactFormToastMessages.ERROR_TITLE,
-        description: error as string,
+        description:
+          error instanceof Error
+            ? error.message
+            : ContactFormToastMessages.ERROR_DESCRIPTION,
         status: "error",
         duration: 5000,
         isClosable: true,

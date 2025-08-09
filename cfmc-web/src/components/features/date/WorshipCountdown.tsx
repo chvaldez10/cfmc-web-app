@@ -1,7 +1,7 @@
 import { VStack, Text } from "@chakra-ui/react";
 import CountDownTimer from "./CountDownTimer";
 import { GalleryCollage } from "@/components/ui/gallery";
-import { getGalleryItems } from "@/lib/supabase/actions";
+import { getGalleryItems } from "@/lib/supabase/actions/gallery_images";
 
 export default async function WorshipCountdown() {
   // TODO: Remove this mock date
