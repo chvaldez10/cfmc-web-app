@@ -17,7 +17,7 @@ export default async function Page() {
   return (
     <>
       <HomeJumbotron />
-      {/* <PassedLiveStream /> */}
+      <PassedLiveStream />
       <VisionMissionParallax />
       <LayeredParallax />
       <SectionHeader
