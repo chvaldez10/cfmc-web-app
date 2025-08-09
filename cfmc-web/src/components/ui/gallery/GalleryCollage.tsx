@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import {
   Box,
-  Image,
   useBreakpointValue,
   Skeleton,
   Text,
@@ -23,7 +22,12 @@ interface SelectedImage {
   alt: string;
 }
 
-type ImageState = "idle" | "loading" | "loaded" | "error";
+enum ImageState {
+  IDLE = "idle",
+  LOADING = "loading",
+  LOADED = "loaded",
+  ERROR = "error",
+}
 
 interface ImageLoadingState {
   [key: string]: ImageState;
@@ -83,11 +87,40 @@ const GalleryCollage = ({
     null
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(-1);
 
-  // Start with 'idle' state instead of loading
+  // Initialize all images as loading to show skeletons immediately
   const [loadingStates, setLoadingStates] = useState<ImageLoadingState>({});
+
+  // Update loading states when displayImages change
+  useEffect(() => {
+    const initialStates: ImageLoadingState = {};
+    displayImages.forEach((item) => {
+      initialStates[item.id.toString()] = ImageState.LOADING;
+    });
+    setLoadingStates(initialStates);
+
+    // Fallback timeout to mark images as loaded if they take too long
+    const timeoutIds = displayImages.map((item) => {
+      return setTimeout(() => {
+        setLoadingStates((prev) => {
+          if (prev[item.id.toString()] === ImageState.LOADING) {
+            return {
+              ...prev,
+              [item.id.toString()]: ImageState.LOADED,
+            };
+          }
+          return prev;
+        });
+      }, 8000);
+    });
+
+    return () => {
+      timeoutIds.forEach(clearTimeout);
+    };
+  }, [displayImages]);
 
   // Get responsive values
   const currentSpacing = useBreakpointValue(spacing) || spacing.md;
@@ -96,25 +129,18 @@ const GalleryCollage = ({
   // Use the custom hook for layout calculations
   const gridTransforms = useGalleryLayout(displayImages.length, currentSpacing);
 
-  // Improved image state handlers
-  const handleImageLoadStart = useCallback((imageId: number) => {
-    setLoadingStates((prev) => ({
-      ...prev,
-      [imageId.toString()]: "loading",
-    }));
-  }, []);
-
+  // Enhanced image state handlers
   const handleImageLoad = useCallback((imageId: number) => {
     setLoadingStates((prev) => ({
       ...prev,
-      [imageId.toString()]: "loaded",
+      [imageId.toString()]: ImageState.LOADED,
     }));
   }, []);
 
   const handleImageError = useCallback((imageId: number) => {
     setLoadingStates((prev) => ({
       ...prev,
-      [imageId.toString()]: "error",
+      [imageId.toString()]: ImageState.ERROR,
     }));
   }, []);
 
@@ -148,13 +174,29 @@ const GalleryCollage = ({
     [handleImageClick]
   );
 
-  // Retry failed image loads
-  const handleRetryImage = useCallback((imageId: number) => {
-    setLoadingStates((prev) => ({
-      ...prev,
-      [imageId.toString()]: "loading",
-    }));
-  }, []);
+  // Enhanced retry logic for failed image loads
+  const handleRetryImage = useCallback(
+    (imageId: number) => {
+      setLoadingStates((prev) => ({
+        ...prev,
+        [imageId.toString()]: ImageState.LOADING,
+      }));
+      // Force reload by adding timestamp to URL if needed
+      setTimeout(() => {
+        const imgElement = document.querySelector(
+          `img[alt="Gallery image: ${
+            displayImages.find((item) => item.id === imageId)?.title
+          }"]`
+        ) as HTMLImageElement;
+        if (imgElement) {
+          const originalSrc = imgElement.src;
+          imgElement.src = "";
+          imgElement.src = originalSrc;
+        }
+      }, 100);
+    },
+    [displayImages]
+  );
 
   // Calculate container dimensions based on content
   const numColumns = Math.ceil(displayImages.length / 2);
@@ -177,11 +219,12 @@ const GalleryCollage = ({
       >
         {displayImages.map((item, index) => {
           const transform = gridTransforms[index];
-          const imageState = loadingStates[item.id.toString()] || "idle";
-          const shouldShowSkeleton = imageState === "loading";
-          const shouldShowError = imageState === "error";
+          const imageState =
+            loadingStates[item.id.toString()] || ImageState.IDLE;
+          const shouldShowSkeleton = imageState === ImageState.LOADING;
+          const shouldShowError = imageState === ImageState.ERROR;
           const isInteractive =
-            imageState === "loaded" || imageState === "idle";
+            imageState === ImageState.LOADED || imageState === ImageState.IDLE;
 
           return (
             <Box
@@ -211,14 +254,20 @@ const GalleryCollage = ({
               onClick={() => isInteractive && handleImageClick(item, index)}
               onKeyDown={(e) => isInteractive && handleKeyDown(e, item, index)}
             >
-              {/* Skeleton Loading State */}
+              {/* Enhanced Skeleton Loading State */}
               {shouldShowSkeleton && (
                 <Skeleton
                   width={currentImageSize}
                   height={currentImageSize}
                   borderRadius="8px"
-                  startColor="gray.200"
-                  endColor="gray.300"
+                  startColor="gray.100"
+                  endColor="gray.200"
+                  speed={1.2}
+                  boxShadow="0 8px 20px rgba(0, 0, 0, 0.15)"
+                  border="3px solid white"
+                  position="absolute"
+                  top="0"
+                  left="0"
                 />
               )}
 
@@ -261,7 +310,8 @@ const GalleryCollage = ({
 
               {/* Actual Image */}
               {!shouldShowError && (
-                <Image
+                <Box
+                  as="img"
                   src={item.image}
                   alt={`Gallery image: ${item.title}`}
                   width={currentImageSize}
@@ -272,13 +322,15 @@ const GalleryCollage = ({
                   border="3px solid white"
                   filter="sepia(8%) brightness(0.96) contrast(1.02)"
                   opacity={shouldShowSkeleton ? 0 : 1}
-                  transition="opacity 0.3s ease"
-                  onLoadStart={() => handleImageLoadStart(item.id)}
-                  onLoad={() => handleImageLoad(item.id)}
-                  onError={() => handleImageError(item.id)}
+                  transition="opacity 0.3s ease-in-out"
                   loading="lazy"
                   decoding="async"
-                  sizes={`(max-width: 768px) ${imageSize.base}, ${imageSize.md}`}
+                  onLoad={() => handleImageLoad(item.id)}
+                  onError={() => handleImageError(item.id)}
+                  style={{
+                    objectFit: "cover",
+                    display: "block",
+                  }}
                 />
               )}
             </Box>
