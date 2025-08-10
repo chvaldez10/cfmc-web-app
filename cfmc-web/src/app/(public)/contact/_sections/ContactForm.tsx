@@ -136,8 +136,6 @@ export default function ContactForm() {
         throw new Error(result.message);
       }
     } catch (error) {
-      console.error("Form submission error:", error);
-
       toast({
         title: ContactFormToastMessages.ERROR_TITLE,
         description:

@@ -23,31 +23,24 @@ export async function submitContactForm(
     const supabase = await createClient();
 
     // Insert the contact submission into the database
-    const { data, error } = await supabase
-      .from("contact_submissions")
-      .insert({
-        name: formData.name.trim(),
-        email: formData.email.trim().toLowerCase(),
-        phone: formData.phone?.trim() || null,
-        subject: formData.subject,
-        message: formData.message.trim(),
-        status: "new",
-      })
-      .select("id")
-      .single();
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: formData.name.trim(),
+      email: formData.email.trim().toLowerCase(),
+      phone: formData.phone?.trim() || null,
+      subject: formData.subject,
+      message: formData.message.trim(),
+      status: "new",
+    });
 
     if (error) {
-      console.error("Database error:", error);
       throw new Error("Failed to save contact submission");
     }
 
     return {
       success: true,
       message: "Your message has been submitted successfully!",
-      submissionId: data.id,
     };
   } catch (error) {
-    console.error("Contact form submission error:", error);
     return {
       success: false,
       message: "Failed to submit your message. Please try again later.",
