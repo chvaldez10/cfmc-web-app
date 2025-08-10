@@ -1,4 +1,4 @@
-import { Database } from "@/lib/database.types";
+import type { Database } from "@/lib/database.types";
 
 export type GalleryImageRow =
   Database["public"]["Tables"]["gallery_images"]["Row"];

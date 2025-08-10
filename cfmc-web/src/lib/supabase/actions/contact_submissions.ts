@@ -43,50 +43,7 @@ export async function submitContactForm(
   } catch (error) {
     return {
       success: false,
-      message: "Failed to submit your message. Please try again later.",
+      message: `Failed to submit your message. ${error}`,
     };
-  }
-}
-
-export async function getContactSubmissions(
-  status?: string,
-  limit: number = 50
-): Promise<any[]> {
-  const supabase = await createClient();
-
-  let query = supabase
-    .from("contact_submissions")
-    .select("*")
-    .order("created_at", { ascending: false })
-    .limit(limit);
-
-  if (status) {
-    query = query.eq("status", status);
-  }
-
-  const { data, error } = await query;
-
-  if (error) {
-    console.error("Failed to fetch contact submissions:", error);
-    throw new Error("Failed to fetch contact submissions");
-  }
-
-  return data || [];
-}
-
-export async function updateContactSubmissionStatus(
-  id: string,
-  status: "new" | "in_progress" | "resolved" | "spam"
-): Promise<void> {
-  const supabase = await createClient();
-
-  const { error } = await supabase
-    .from("contact_submissions")
-    .update({ status })
-    .eq("id", id);
-
-  if (error) {
-    console.error("Failed to update contact submission status:", error);
-    throw new Error("Failed to update contact submission status");
   }
 }
