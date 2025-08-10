@@ -5,7 +5,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -27,17 +26,15 @@ import {
 import { NavItem } from "@/types/ui/navbar";
 
 // Data
-import {
-  NAV_ITEMS,
-  TITHERS_AND_OFFERINGS_MODAL,
-} from "@/constants/publicNavbar";
+import { NAV_ITEMS } from "@/constants/publicNavbar";
 
 // Constants
-import { Branding, PublicLabels } from "@/constants/shared/enums";
+import { Branding } from "@/constants/shared/enums";
 
 // Components
 import { TithesAndOfferingsModal } from "@/components/ui/modals";
 import { TithesButton } from "@/components/ui/button";
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 // Styles
 import styles from "./PublicNavbar.module.css";
@@ -70,7 +67,7 @@ export default function PublicNavbar() {
         maxW={"7xl"}
         mx={"auto"}
         py={{ base: 2 }}
-        px={{ base: 4, md: 0 }}
+        px={COMMON_X_PADDING}
         align={"center"}
         id="public-navbar"
       >

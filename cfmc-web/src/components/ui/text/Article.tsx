@@ -12,9 +12,9 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-// Using a simple book icon with Chakra UI
-import { SectionHeader } from "@/components/ui/headers";
 import { ColumnLayout } from "@/components/hero";
+import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
+import { COMMON_Y_PADDING } from "@/constants/shared/ui";
 
 interface ArticleItem {
   header: string;
@@ -23,18 +23,11 @@ interface ArticleItem {
 }
 
 interface ArticleProps {
-  title: string;
-  description: string;
   items: ArticleItem[];
   showDividers?: boolean;
 }
 
-export default function Article({
-  title,
-  description,
-  items,
-  showDividers = true,
-}: ArticleProps) {
+export default function Article({ items, showDividers = true }: ArticleProps) {
   const textColor = useColorModeValue("gray.800", "gray.100");
   const accentColor = useColorModeValue("purple.600", "purple.300");
   const borderColor = useColorModeValue("gray.200", "gray.700");
@@ -43,9 +36,7 @@ export default function Article({
   const bibleRefText = useColorModeValue("purple.800", "purple.200");
 
   return (
-    <ColumnLayout maxW="5xl">
-      <SectionHeader title={title} description={description} />
-
+    <ColumnLayout maxW="5xl" mt={NAVBAR_HEIGHT} py={COMMON_Y_PADDING}>
       {/* Article Content */}
       <VStack spacing={{ base: 8, md: 10 }} align="stretch">
         {items.map((item, index) => {

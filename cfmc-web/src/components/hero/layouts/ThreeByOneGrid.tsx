@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Box, Grid, GridItem, GridProps } from "@chakra-ui/react";
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 interface ThreeByOneGridProps extends GridProps {
   children: [ReactElement, ReactElement, ReactElement];
@@ -22,7 +23,7 @@ const ThreeByOneGrid = ({
 
   return (
     <Box className={outerBackground} w="full">
-      <Box mx="auto" maxW={{ base: "full", md: "7xl" }} px={{ base: 4, md: 0 }}>
+      <Box mx="auto" maxW={{ base: "full", md: "7xl" }} px={COMMON_X_PADDING}>
         <Grid
           templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
           gap={8}

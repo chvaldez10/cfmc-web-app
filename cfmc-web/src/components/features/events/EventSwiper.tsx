@@ -25,6 +25,8 @@ import { Events } from "@/types/supabase/worship";
 // Utils
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
 
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
+
 interface EventSwiperProps {
   events: Events[];
 }
@@ -42,7 +44,7 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
     <Box
       overflow="hidden"
       py={8}
-      px={{ base: 4, md: 0 }}
+      px={COMMON_X_PADDING}
       mx="auto"
       maxW={{ base: "full", md: "7xl" }}
       id="events-swiper"

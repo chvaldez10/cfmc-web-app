@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { LiveStreamLabels } from "@/constants/shared/enums";
 import ColumnLayout from "@/components/hero/layouts/ColumnLayout";
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 export default function PassedLiveStream() {
   const arrowColor = useColorModeValue("gray.800", "gray.300");
@@ -23,7 +24,7 @@ export default function PassedLiveStream() {
       id="live-stream"
       ariaLabelledBy="live-stream-heading"
       containerProps={{
-        px: { base: 4, md: 0 },
+        px: COMMON_X_PADDING,
       }}
     >
       {/* Heading */}

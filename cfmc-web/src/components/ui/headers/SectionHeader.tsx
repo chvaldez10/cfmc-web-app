@@ -8,6 +8,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
+import { COMMON_X_PADDING, COMMON_Y_PADDING } from "@/constants/shared/ui";
 
 interface SectionHeaderProps {
   title: string;
@@ -30,8 +31,8 @@ export default function SectionHeader({
       as="section"
       aria-labelledby="section-heading"
       mt={mt ?? NAVBAR_HEIGHT}
-      py={{ base: 12, md: 16, lg: 20 }}
-      px={{ base: 4, md: 0 }}
+      py={COMMON_Y_PADDING}
+      px={COMMON_X_PADDING}
       maxW={{ base: "full", md: "7xl" }}
       mx="auto"
     >

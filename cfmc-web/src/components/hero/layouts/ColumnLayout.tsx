@@ -37,6 +37,7 @@ interface ColumnLayoutProps {
   color?: string;
   // Responsive options
   responsive?: boolean;
+  mt?: string;
   // Custom container props
   containerProps?: Partial<ContainerProps>;
   // Custom VStack props
@@ -62,6 +63,7 @@ export default function ColumnLayout({
   border,
   borderColor,
   color,
+  mt,
   containerProps = {},
   vStackProps = {},
 }: ColumnLayoutProps) {
@@ -85,6 +87,7 @@ export default function ColumnLayout({
       border={border}
       borderColor={borderColor}
       color={color}
+      mt={mt}
       {...containerProps}
     >
       <VStack textAlign={textAlign} spacing={spacing} w="100%" {...vStackProps}>

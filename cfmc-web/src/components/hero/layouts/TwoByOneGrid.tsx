@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Box, Grid, GridItem, GridProps } from "@chakra-ui/react";
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 interface TwoByOneGridProps extends GridProps {
   children: [ReactElement, ReactElement];
@@ -27,7 +28,7 @@ const TwoByOneGrid = ({
     <Box
       mx="auto"
       maxW={{ base: "full", md: "7xl" }}
-      px={{ base: 4, md: 0 }}
+      px={COMMON_X_PADDING}
       h="100%"
       display="flex"
       alignItems="center"
