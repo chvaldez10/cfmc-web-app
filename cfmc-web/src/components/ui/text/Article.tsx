@@ -4,17 +4,22 @@ import {
   Box,
   Text,
   VStack,
+  HStack,
   useColorModeValue,
   Heading,
   Divider,
+  Badge,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
-import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
+// Using a simple book icon with Chakra UI
 import { SectionHeader } from "@/components/ui/headers";
 import { ColumnLayout } from "@/components/hero";
 
 interface ArticleItem {
   header: string;
   content: string;
+  bibleReferences?: string[];
 }
 
 interface ArticleProps {
@@ -23,21 +28,6 @@ interface ArticleProps {
   items: ArticleItem[];
   showDividers?: boolean;
 }
-
-const parseContentWithBibleReferences = (content: string) => {
-  // Split content on "Bible references:" to separate main text from references
-  const parts = content.split(/Bible references?:\s*/i);
-
-  if (parts.length === 1) {
-    // No Bible references found
-    return { mainText: content, bibleReferences: null };
-  }
-
-  const mainText = parts[0].trim();
-  const bibleReferences = parts[1].trim();
-
-  return { mainText, bibleReferences };
-};
 
 export default function Article({
   title,
@@ -53,15 +43,12 @@ export default function Article({
   const bibleRefText = useColorModeValue("purple.800", "purple.200");
 
   return (
-    <ColumnLayout>
+    <ColumnLayout maxW="5xl">
       <SectionHeader title={title} description={description} />
 
       {/* Article Content */}
       <VStack spacing={{ base: 8, md: 10 }} align="stretch">
         {items.map((item, index) => {
-          const { mainText, bibleReferences } = parseContentWithBibleReferences(
-            item.content
-          );
           const isIntroSection =
             index === 0 && item.header === "What We Believe";
 
@@ -92,11 +79,11 @@ export default function Article({
                   fontStyle={isIntroSection ? "italic" : "normal"}
                   textAlign={isIntroSection ? "center" : "left"}
                 >
-                  {mainText}
+                  {item.content}
                 </Text>
 
                 {/* Bible References */}
-                {bibleReferences && (
+                {item.bibleReferences && item.bibleReferences.length > 0 && (
                   <Box
                     p={{ base: 4, md: 5 }}
                     bg={bibleRefBg}
@@ -106,24 +93,50 @@ export default function Article({
                     borderLeft="4px solid"
                     borderLeftColor={accentColor}
                   >
-                    <VStack spacing={2} align="start">
-                      <Text
-                        fontSize="sm"
-                        fontWeight="semibold"
-                        color={bibleRefText}
-                        textTransform="uppercase"
-                        letterSpacing="wide"
-                      >
-                        Bible References
-                      </Text>
-                      <Text
-                        fontSize={{ base: "sm", md: "md" }}
-                        lineHeight="relaxed"
-                        color={bibleRefText}
-                        fontFamily="monospace"
-                      >
-                        {bibleReferences}
-                      </Text>
+                    <VStack spacing={3} align="start">
+                      <HStack spacing={2}>
+                        <Box
+                          as="svg"
+                          width={4}
+                          height={4}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke={bibleRefText}
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                        </Box>
+                        <Text
+                          fontSize="sm"
+                          fontWeight="semibold"
+                          color={bibleRefText}
+                          textTransform="uppercase"
+                          letterSpacing="wide"
+                        >
+                          Bible References
+                        </Text>
+                      </HStack>
+                      <Wrap spacing={2}>
+                        {item.bibleReferences.map((reference, refIndex) => (
+                          <WrapItem key={refIndex}>
+                            <Badge
+                              variant="subtle"
+                              colorScheme="purple"
+                              fontSize={{ base: "xs", md: "sm" }}
+                              px={3}
+                              py={1}
+                              borderRadius="full"
+                              fontFamily="monospace"
+                              fontWeight="medium"
+                            >
+                              {reference}
+                            </Badge>
+                          </WrapItem>
+                        ))}
+                      </Wrap>
                     </VStack>
                   </Box>
                 )}
