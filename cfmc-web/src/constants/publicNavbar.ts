@@ -4,7 +4,6 @@ import { PublicLabels } from "./shared/enums";
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: PublicLabels.ABOUT,
-    href: "/about",
     children: [
       {
         label: PublicLabels.MISSION_VISION,

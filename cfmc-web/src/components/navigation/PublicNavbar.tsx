@@ -33,10 +33,11 @@ import {
 } from "@/constants/publicNavbar";
 
 // Constants
-import { Branding } from "@/constants/shared/enums";
+import { Branding, PublicLabels } from "@/constants/shared/enums";
 
 // Components
 import { TithesAndOfferingsModal } from "@/components/ui/modals";
+import { TithesButton } from "@/components/ui/button";
 
 // Styles
 import styles from "./PublicNavbar.module.css";
@@ -114,26 +115,10 @@ export default function PublicNavbar() {
           </Flex>
         </Flex>
 
-        {/* Tithers & Offering Button */}
-        <Box>
-          <Button
-            onClick={onOpen}
-            display={"inline-flex"}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"purple.600"}
-            _hover={{
-              bg: "purple.500",
-            }}
-            borderRadius={"full"}
-            height={BUTTON_HEIGHT}
-          >
-            {TITHERS_AND_OFFERINGS_MODAL.label}
-          </Button>
+        {/* Responsive Tithes Button */}
+        <TithesButton onClick={onOpen} buttonHeight={BUTTON_HEIGHT} />
 
-          <TithesAndOfferingsModal isOpen={isModalOpen} onClose={onClose} />
-        </Box>
+        <TithesAndOfferingsModal isOpen={isModalOpen} onClose={onClose} />
       </Flex>
 
       {/* Mobile Navigation */}
@@ -157,9 +142,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
-                as="a"
                 p={2}
-                href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={"gray.600"}
@@ -254,8 +237,6 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Box
         py={2}
-        as="a"
-        href={href ?? "#"}
         justifyContent="space-between"
         alignItems="center"
         _hover={{
