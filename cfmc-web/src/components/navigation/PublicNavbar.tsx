@@ -142,6 +142,8 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
+                as="a"
+                href={navItem.href}
                 p={2}
                 fontSize={"sm"}
                 fontWeight={500}
@@ -242,6 +244,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         _hover={{
           textDecoration: "none",
         }}
+        as="a"
+        href={href}
+        data-testid={`${label}-mobile-nav-item`}
       >
         <Text fontWeight={600} color={"gray.600"}>
           {label}

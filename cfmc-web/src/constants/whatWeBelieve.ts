@@ -1,13 +1,14 @@
-const whatWeBelieve = [
-  {
-    header: "What We Believe",
-    content:
-      "(On the heading & summary of our beliefs, visible on first glance)",
-  },
+export const WHAT_WE_BELIEVE_HEADER = {
+  title: "What We Believe",
+  description:
+    "Discover our core theological beliefs and foundational principles that guide our faith community.",
+};
+
+export const whatWeBelieve = [
   {
     header: "About God…",
     content:
-      "There is one true, eternal, living, holy God, the Creator and preserver of all things. In the Godhead, there are Three Persons: the Father, the Son, and the Holy Spirit. God alone is worthy of our worship, our total allegiance, trust, and obedience. Bible references: The Holy Trinity - Genesis 1:1-2; Exodus 3:13-15; Deuteronomy 6:4; Matthew 28:19; John 1:1-3; 5:19-23; 8:58; 14:9-11; 15:26; 16:13-15; II Corinthians 13:14.",
+      "There is one true, eternal, living, holy God, the Creator and preserver of all things. In the Godheasd, there are Three Persons: the Father, the Son, and the Holy Spirit. God alone is worthy of our worship, our total allegiance, trust, and obedience. Bible references: The Holy Trinity - Genesis 1:1-2; Exodus 3:13-15; Deuteronomy 6:4; Matthew 28:19; John 1:1-3; 5:19-23; 8:58; 14:9-11; 15:26; 16:13-15; II Corinthians 13:14.",
   },
   {
     header: "About The Lord Jesus Christ …",
