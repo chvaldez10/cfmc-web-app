@@ -101,6 +101,26 @@ export const findNextSunday = (): Date => {
 };
 
 /**
+ * Gets the previous Sunday date in UTC
+ * @returns The previous Sunday date in UTC at midnight
+ */
+export const findPreviousSunday = (): Date => {
+  const now = new Date();
+  const currentDay = now.getUTCDay(); // 0 = Sunday, 1 = Monday, etc.
+
+  // Calculate days to go back to previous Sunday
+  // If today is Sunday (0), we want last Sunday (7 days ago)
+  // If today is Monday (1), we want yesterday (1 day ago), etc.
+  const daysToGoBack = currentDay === 0 ? 7 : currentDay;
+
+  // Create previous Sunday date
+  const previousSunday = new Date(now);
+  previousSunday.setUTCDate(now.getUTCDate() - daysToGoBack);
+  previousSunday.setUTCHours(0, 0, 0, 0);
+  return previousSunday;
+};
+
+/**
  * Gets the next Sunday worship service date with specific time
  * @param worshipHour - Hour of worship service (0-23) in UTC
  * @param worshipMinute - Minute of worship service (0-59) in UTC
@@ -128,6 +148,21 @@ export const findNextSundayWorshipService = (
   const nextSunday = findNextSunday();
   nextSunday.setUTCHours(worshipHour, worshipMinute, 0, 0);
   return nextSunday;
+};
+
+/**
+ * Gets the previous Sunday worship service date with specific time
+ * @param worshipHour - Hour of worship service (0-23) in UTC
+ * @param worshipMinute - Minute of worship service (0-59) in UTC
+ * @returns The previous Sunday worship service date in UTC
+ */
+export const findPreviousSundayWorshipService = (
+  worshipHour: number = WORSHIP_HOUR,
+  worshipMinute: number = WORSHIP_MINUTE
+): Date => {
+  const previousSunday = findPreviousSunday();
+  previousSunday.setUTCHours(worshipHour, worshipMinute, 0, 0);
+  return previousSunday;
 };
 
 /**

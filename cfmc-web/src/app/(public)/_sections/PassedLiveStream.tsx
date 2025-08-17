@@ -10,14 +10,31 @@ import {
   Tooltip,
   useColorModeValue,
   createIcon,
+  Spinner,
 } from "@chakra-ui/react";
+import { useState, useEffect, useTransition } from "react";
 import { LiveStreamLabels } from "@/constants/shared/enums";
 import ColumnLayout from "@/components/hero/layouts/ColumnLayout";
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { getPreviousSundayWorshipService } from "@/lib/supabase/actions/sundays-special-days";
+import type { SundaysAndSpecialDays } from "@/lib/supabase/actions/sundays-special-days";
 
 export default function PassedLiveStream() {
+  const [previousSundayData, setPreviousSundayData] =
+    useState<SundaysAndSpecialDays | null>(null);
+  const [isPending, startTransition] = useTransition();
+
   const arrowColor = useColorModeValue("gray.800", "gray.300");
   const headingColor = useColorModeValue("purple.600", "purple.400");
+
+  useEffect(() => {
+    startTransition(async () => {
+      const data = await getPreviousSundayWorshipService();
+      setPreviousSundayData(data);
+    });
+  }, []);
+
+  const livestreamUrl = previousSundayData?.livestream_url;
 
   return (
     <ColumnLayout
@@ -51,24 +68,59 @@ export default function PassedLiveStream() {
         my={8}
         id="live-stream-video"
       >
-        <Box
-          as="iframe"
-          title="Facebook video player"
-          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcalgaryfilipino.methodistchurch%2Fvideos%2F1484659766218336%2F&show_text=false&width=560&t=0"
-          width={{ base: "100%", sm: "560px" }}
-          height={{ base: "auto", sm: "314px" }}
-          minH={{ base: "200px", sm: "314px" }}
-          style={{
-            border: "none",
-            overflow: "hidden",
-            borderRadius: "12px",
-            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-          }}
-          scrolling="no"
-          frameBorder="0"
-          allowFullScreen={true}
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        />
+        {isPending ? (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width={{ base: "100%", sm: "560px" }}
+            height={{ base: "200px", sm: "314px" }}
+            borderRadius="12px"
+            boxShadow="0 10px 25px rgba(0, 0, 0, 0.1)"
+            bg="gray.50"
+          >
+            <Spinner size="xl" color="purple.500" />
+          </Box>
+        ) : !livestreamUrl ? (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width={{ base: "100%", sm: "560px" }}
+            height={{ base: "200px", sm: "314px" }}
+            borderRadius="12px"
+            boxShadow="0 10px 25px rgba(0, 0, 0, 0.1)"
+            bg="gray.100"
+            flexDirection="column"
+            gap={4}
+          >
+            <Text color="gray.600" textAlign="center" fontSize="lg">
+              No livestream available
+            </Text>
+            <Text color="gray.500" textAlign="center" fontSize="sm">
+              Please check back later or contact us for assistance
+            </Text>
+          </Box>
+        ) : (
+          <Box
+            as="iframe"
+            title="Facebook video player"
+            src={livestreamUrl}
+            width={{ base: "100%", sm: "560px" }}
+            height={{ base: "auto", sm: "314px" }}
+            minH={{ base: "200px", sm: "314px" }}
+            style={{
+              border: "none",
+              overflow: "hidden",
+              borderRadius: "12px",
+              boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+            }}
+            scrolling="no"
+            frameBorder="0"
+            allowFullScreen={true}
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          />
+        )}
       </Box>
 
       <Stack
