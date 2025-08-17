@@ -84,7 +84,7 @@ export function formatLocalDateTimeToHumanReadable(
  * Gets the next Sunday date in UTC
  * @returns The next Sunday date in UTC at midnight
  */
-export const getNextSunday = (): Date => {
+export const findNextSunday = (): Date => {
   const now = new Date();
   const currentDay = now.getUTCDay(); // 0 = Sunday, 1 = Monday, etc.
 
@@ -106,11 +106,47 @@ export const getNextSunday = (): Date => {
  * @param worshipMinute - Minute of worship service (0-59) in UTC
  * @returns The next Sunday worship service date in UTC
  */
-export const getNextSundayWorshipService = (
+export const findNextSundayWorshipService = (
   worshipHour: number = WORSHIP_HOUR,
   worshipMinute: number = WORSHIP_MINUTE
 ): Date => {
-  const nextSunday = getNextSunday();
+  const now = new Date();
+  const currentDay = now.getUTCDay();
+
+  // EDGE CASE: If today is Sunday and worship hasn't started yet
+  if (currentDay === 0) {
+    const todaysWorship = new Date(now);
+    todaysWorship.setUTCHours(worshipHour, worshipMinute, 0, 0);
+
+    // If today's worship service hasn't started yet, return today's service
+    if (now < todaysWorship) {
+      return todaysWorship;
+    }
+  }
+
+  // Otherwise, get next Sunday's service
+  const nextSunday = findNextSunday();
   nextSunday.setUTCHours(worshipHour, worshipMinute, 0, 0);
   return nextSunday;
+};
+
+/**
+ * Safely converts a date string from database to Date object
+ * with fallback to calculated next Sunday worship service
+ * Critical for when database coverage ends (e.g., 2025 data exists, 2026 doesn't)
+ * @param dateString - ISO date string from database (can be null/undefined)
+ * @returns Date object for worship service
+ */
+export const getWorshipDateFromString = (dateString?: string | null): Date => {
+  if (dateString) {
+    const parsedDate = new Date(dateString);
+    // Validate the parsed date
+    if (!isNaN(parsedDate.getTime())) {
+      return parsedDate;
+    }
+  }
+
+  // CRITICAL FALLBACK: When DB has no data for this date (e.g., transitioning years)
+  // Always fall back to calculated next Sunday at 20:00 UTC
+  return findNextSundayWorshipService();
 };

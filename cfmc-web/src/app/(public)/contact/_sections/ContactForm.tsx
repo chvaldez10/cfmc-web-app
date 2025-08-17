@@ -41,7 +41,7 @@ import {
   ContactFormValidationMessages,
   ContactFormToastMessages,
 } from "@/constants/shared/contact";
-import { submitContactForm } from "@/lib/supabase/actions/contact_submissions";
+import { submitContactForm } from "@/lib/supabase/actions/contact-submissions";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({

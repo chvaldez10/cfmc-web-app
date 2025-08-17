@@ -1,12 +1,14 @@
 import { VStack, Text } from "@chakra-ui/react";
 import CountDownTimer from "./CountDownTimer";
 import { GalleryCollage } from "@/components/ui/gallery";
-import { getGalleryItems } from "@/lib/supabase/actions/gallery_images";
+import { getGalleryItems } from "@/lib/supabase/actions/gallery-images";
+import { getNextSundayWorshipService } from "@/lib/supabase/actions/sundays-special-days";
+import { getWorshipDateFromString } from "@/utils/dateUtils";
 
 export default async function WorshipCountdown() {
-  // TODO: Remove this mock date
-  const mockDate = new Date(Date.UTC(2025, 7, 17, 20, 0, 0)); // 2 PM MDT, 0-indexed month
   const galleryItems = await getGalleryItems("home_jumbo");
+  const sundayData = await getNextSundayWorshipService();
+  const worshipDateTime = getWorshipDateFromString(sundayData?.date);
 
   return (
     <VStack spacing={4} align="center" w="100%">
@@ -30,7 +32,7 @@ export default async function WorshipCountdown() {
         imageSize={{ base: "70px", md: "90px" }}
         spacing={{ base: 80, md: 100 }}
       />
-      <CountDownTimer worshipStartDateTime={mockDate} />
+      <CountDownTimer worshipStartDateTime={worshipDateTime} />
     </VStack>
   );
 }
