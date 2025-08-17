@@ -1,3 +1,6 @@
+const WORSHIP_HOUR = 20;
+const WORSHIP_MINUTE = 0;
+
 /**
  * Calculates the time left until the target date.
  * @param targetDate - The date to count down to.
@@ -76,3 +79,38 @@ export function formatLocalDateTimeToHumanReadable(
     ` ${timeZone}`
   );
 }
+
+/**
+ * Gets the next Sunday date in UTC
+ * @returns The next Sunday date in UTC at midnight
+ */
+export const getNextSunday = (): Date => {
+  const now = new Date();
+  const currentDay = now.getUTCDay(); // 0 = Sunday, 1 = Monday, etc.
+
+  // Calculate days until next Sunday
+  // For example, if today is Monday (1), we want 6 days until next Sunday
+  const daysUntilNextSunday = currentDay === 0 ? 7 : 7 - currentDay;
+
+  // Create next Sunday date
+  const nextSunday = new Date(now);
+  nextSunday.setUTCDate(now.getUTCDate() + daysUntilNextSunday);
+  nextSunday.setUTCHours(0, 0, 0, 0);
+
+  return nextSunday;
+};
+
+/**
+ * Gets the next Sunday worship service date with specific time
+ * @param worshipHour - Hour of worship service (0-23) in UTC
+ * @param worshipMinute - Minute of worship service (0-59) in UTC
+ * @returns The next Sunday worship service date in UTC
+ */
+export const getNextSundayWorshipService = (
+  worshipHour: number = WORSHIP_HOUR,
+  worshipMinute: number = WORSHIP_MINUTE
+): Date => {
+  const nextSunday = getNextSunday();
+  nextSunday.setUTCHours(worshipHour, worshipMinute, 0, 0);
+  return nextSunday;
+};

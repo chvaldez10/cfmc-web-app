@@ -5,7 +5,7 @@ import { getGalleryItems } from "@/lib/supabase/actions/gallery_images";
 
 export default async function WorshipCountdown() {
   // TODO: Remove this mock date
-  const mockDate = new Date(Date.UTC(2025, 7, 2, 20, 0, 0)); // 2 PM MDT, 0-indexed month
+  const mockDate = new Date(Date.UTC(2025, 7, 17, 20, 0, 0)); // 2 PM MDT, 0-indexed month
   const galleryItems = await getGalleryItems("home_jumbo");
 
   return (
