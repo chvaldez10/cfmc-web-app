@@ -14,6 +14,10 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizePackageImports: ["framer-motion"],
+  },
+  transpilePackages: ["framer-motion"],
 };
 
 export default nextConfig;
