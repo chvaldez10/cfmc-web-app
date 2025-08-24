@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHeart, FaHandsHelping, FaCross, FaBullhorn } from "react-icons/fa";
 
 import type { TextBlock } from "@/types/ui/components";
 
@@ -21,34 +20,21 @@ interface StickyParallaxProps {
   textBlocks: TextBlock[];
   colorScheme: "purple" | "green" | "blue" | "red" | "orange";
   reverse?: boolean;
-  iconName?: "FaCross" | "FaHandsHelping" | "FaBullhorn" | "FaHeart";
   imageSrc: string;
   imageAlt: string;
   zIndex?: number;
 }
-
-// Icon mapping
-const iconMap = {
-  FaCross,
-  FaHandsHelping,
-  FaBullhorn,
-  FaHeart,
-};
 
 const StickyParallax = ({
   title,
   textBlocks,
   colorScheme,
   reverse = false,
-  iconName,
   imageSrc,
   imageAlt,
   zIndex = 1,
 }: StickyParallaxProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  // Resolve icon component from name
-  const IconComponent = iconName ? iconMap[iconName] : null;
 
   const textColor = useColorModeValue("gray.600", "gray.300");
   const quoteColor = useColorModeValue("gray.700", "gray.200");
@@ -140,24 +126,6 @@ const StickyParallax = ({
               onLoad={() => setImageLoaded(true)}
               priority={zIndex === 1} // Prioritize first image
             />
-            {/* Overlay with icon */}
-            {IconComponent && (
-              <Box
-                position="absolute"
-                top="4"
-                right="4"
-                p="3"
-                bg="rgba(255, 255, 255, 0.9)"
-                backdropFilter="blur(10px)"
-                rounded="full"
-                shadow="lg"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <IconComponent size="24" color={colorSchemes[colorScheme].bg} />
-              </Box>
-            )}
           </Box>
 
           {/* Content */}

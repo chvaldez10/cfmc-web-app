@@ -11,7 +11,6 @@ interface SectionData {
   textBlocks: TextBlock[];
   colorScheme: "purple" | "green" | "blue" | "red" | "orange";
   reverse?: boolean;
-  iconName?: "FaCross" | "FaHandsHelping" | "FaBullhorn" | "FaHeart";
   imageSrc: string;
   imageAlt: string;
 }
@@ -31,7 +30,6 @@ const SECTIONS_DATA: SectionData[] = [
       },
     ],
     colorScheme: "purple",
-    iconName: "FaCross",
     imageSrc: "/gallery/IMG_4523.JPG",
     imageAlt: "Vision - CFMC Community Gathering",
   },
@@ -53,7 +51,6 @@ const SECTIONS_DATA: SectionData[] = [
     ],
     colorScheme: "green",
     reverse: true,
-    iconName: "FaHandsHelping",
     imageSrc: "/gallery/IMG_3790.jpg",
     imageAlt: "Mission - CFMC Service and Outreach",
   },
@@ -70,7 +67,6 @@ const SECTIONS_DATA: SectionData[] = [
       },
     ],
     colorScheme: "purple",
-    iconName: "FaBullhorn",
     imageSrc: "/gallery/IMG_4855.JPEG",
     imageAlt: "CFMC Motto - Love God, Love People",
   },
@@ -96,7 +92,6 @@ export default function MissionVisionPage() {
             textBlocks={section.textBlocks}
             colorScheme={section.colorScheme}
             reverse={section.reverse}
-            iconName={section.iconName}
             imageSrc={section.imageSrc}
             imageAlt={section.imageAlt}
             zIndex={index + 1}
