@@ -44,28 +44,37 @@ export const ABOUT_US_PAGE_CARDS: CardDataProps[] = [
 export interface AboutContentItem {
   title: string;
   description: string;
+  isQuote?: boolean;
 }
 
 export const ABOUT_CONTENT: Record<string, AboutContentItem> = {
   VISION_STATEMENT: {
-    title: "Vision",
+    title: "Our Vision",
     description:
       "A church that glorifies God alone by being Bible-believing, Christ-centered, and Holy Spirit-led in doing the Great Commission and Great Commandment.",
   },
-  VISION_STATEMENT_EXTENDED: {
-    title: "Vision Statement",
+  VISION_STATEMENT_QUOTE: {
+    title: "Vision Statement Quote",
+    isQuote: true,
     description:
-      "Calgary Filipino Methodist Church envisions itself as a God-glorifying, Christ-shepherding, and Holy Spirit-filled church in fulfilling God's Mission in the city.",
+      "Calgary Filipino Methodist Church envisions itself as a God-glorifying, Christ-shepherding and Holy Spirit-filled Church in fulfilling God's Mission in the City.",
   },
   MISSION_STATEMENT: {
-    title: "Mission",
+    title: "Our Mission",
     description:
       "A church that shares God's good news of Christ's redeeming love by reaching out to people, experiencing new life in Him, and growing in Christlikeness.",
   },
-  MISSION_STATEMENT_EXTENDED: {
-    title: "Mission Statement",
+  MISSION_STATEMENT_QUOTE: {
+    title: "Mission Statement Quote",
+    isQuote: true,
     description:
-      "To reach out to as many people as we possibly can to share with them the good news of God's redeeming love in Jesus Christ. To lead them to that new life of faith, trust, love, and obedience to Jesus Christ. And to continue nurturing them to become Christ-like in their lives.",
+      "To reach out to as many people as we possibly can to share with them the good news of God's redeeming love in Jesus Christ. To lead them to that new life of faith, trust, love and obedience to Jesus Christ. And to continue nurturing them to become Christ-like in their lives.",
+  },
+  MISSION_STATEMENT_QUOTE_2: {
+    title: "Mission Statement Quote",
+    isQuote: true,
+    description:
+      "We, the members of Calgary Filipino Methodist Church, an ethnic congregation, in response to God's love in Jesus Christ, and by the power of the Holy Spirit, seek to be faithful in our discipleship and ministry to the community. And in order to faithfully carry out the mission of Jesus Christ in the world through ministries among our brethren, and in accordance with the Doctrines and Social Principles of the Methodist Church, shall establish and implement these governing by-laws.",
   },
   STATEMENT_OF_COMMITMENT: {
     title: "Statement of Commitment",
@@ -76,10 +85,11 @@ export const ABOUT_CONTENT: Record<string, AboutContentItem> = {
     title: "CFMC Motto",
     description: "Love God, Love People. Proclaim the Good News of Christ.",
   },
-  CFMC_MOTTO_EXTENDED: {
-    title: "CFMC Motto",
+  CFMC_MOTTO_QUOTE: {
+    title: "CFMC Motto Quote",
+    isQuote: true,
     description:
-      "Calgary Filipino Methodist Church exists to love God who first loved us, and to love people by faithfully, holistically, boldly, and joyfully proclaiming the Good News of Christ to all.",
+      "Calgary Filipino Methodist Church exists to love God who first loved us and love people by faithfully, holistically, boldly and joyfully proclaiming the Good News of Christ to all.",
   },
   OUR_COMMUNITY: {
     title: "Our Community",

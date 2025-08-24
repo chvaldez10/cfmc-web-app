@@ -11,7 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import { FaHeart, FaHandsHelping, FaCross, FaBullhorn } from "react-icons/fa";
+import { FaHandsHelping, FaCross, FaBullhorn } from "react-icons/fa";
 
 interface TextBlock {
   text: string;
@@ -35,18 +35,20 @@ interface SectionData {
   icon?: React.ComponentType<{ size: string; color: string }>;
 }
 
+import { ABOUT_CONTENT } from "@/constants/shared/about";
+
 // Data for mission and vision sections
 const SECTIONS_DATA: SectionData[] = [
   {
-    title: "Our Vision",
+    title: ABOUT_CONTENT.VISION_STATEMENT.title,
     textBlocks: [
       {
-        text: "A church that glorifies God alone by being a Bible-believing, Christ-centered and Holy Spirit-led in doing the Great Commission and Great Commandment.",
-        isQuote: false,
+        text: ABOUT_CONTENT.VISION_STATEMENT.description,
+        isQuote: ABOUT_CONTENT.VISION_STATEMENT.isQuote || false,
       },
       {
-        text: "Calgary Filipino Methodist Church envisions itself as a God-glorifying, Christ-shepherding and Holy Spirit-filled Church in fulfilling God's Mission in the City.",
-        isQuote: true,
+        text: ABOUT_CONTENT.VISION_STATEMENT_QUOTE.description,
+        isQuote: ABOUT_CONTENT.VISION_STATEMENT_QUOTE.isQuote || false,
       },
     ],
     colorScheme: "purple",
@@ -56,16 +58,16 @@ const SECTIONS_DATA: SectionData[] = [
     title: "Our Mission",
     textBlocks: [
       {
-        text: "A church that shares God's good news of Christ's redeeming love by reaching out to people, experiencing new life in Him and growing in Christlikeness.",
-        isQuote: false,
+        text: ABOUT_CONTENT.MISSION_STATEMENT.description,
+        isQuote: ABOUT_CONTENT.MISSION_STATEMENT.isQuote || false,
       },
       {
-        text: "To reach out to as many people as we possibly can to share with them the good news of God's redeeming love in Jesus Christ. To lead them to that new life of faith, trust, love and obedience to Jesus Christ. And to continue nurturing them to become Christ-like in their lives.",
-        isQuote: true,
+        text: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE.description,
+        isQuote: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE.isQuote || false,
       },
       {
-        text: "We, the members of Calgary Filipino Methodist Church, an ethnic congregation, in response to God's love in Jesus Christ, and by the power of the Holy Spirit, seek to be faithful in our discipleship and ministry to the community. And in order to faithfully carry out the mission of Jesus Christ in the world through ministries among our brethren, and in accordance with the Doctrines and Social Principles of the Methodist Church, shall establish and implement these governing by-laws.",
-        isQuote: true,
+        text: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE_2.description,
+        isQuote: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE_2.isQuote || false,
       },
     ],
     colorScheme: "green",
@@ -73,15 +75,15 @@ const SECTIONS_DATA: SectionData[] = [
     icon: FaHandsHelping,
   },
   {
-    title: "CFMC Motto",
+    title: ABOUT_CONTENT.CFMC_MOTTO.title,
     textBlocks: [
       {
-        text: "Love God, Love People. Proclaim the Good News of Christ.",
-        isQuote: true,
+        text: ABOUT_CONTENT.CFMC_MOTTO.description,
+        isQuote: ABOUT_CONTENT.CFMC_MOTTO.isQuote || false,
       },
       {
-        text: "Calgary Filipino Methodist Church exists to love God who first loved us and love people by faithfully, holistically, boldly and joyfully proclaiming the Good News of Christ to all.",
-        isQuote: false,
+        text: ABOUT_CONTENT.CFMC_MOTTO_QUOTE.description,
+        isQuote: ABOUT_CONTENT.CFMC_MOTTO_QUOTE.isQuote || false,
       },
     ],
     colorScheme: "purple",
