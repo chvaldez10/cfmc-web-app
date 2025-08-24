@@ -15,10 +15,12 @@ import { useState } from "react";
 
 import type { TextBlock } from "@/types/ui/components";
 
+import { AllowedColorSchemes } from "@/constants/shared/enums";
+
 interface StickyParallaxProps {
   title: string;
   textBlocks: TextBlock[];
-  colorScheme: "purple" | "green" | "blue" | "red" | "orange";
+  colorScheme: AllowedColorSchemes;
   reverse?: boolean;
   imageSrc: string;
   imageAlt: string;

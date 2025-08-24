@@ -3,7 +3,7 @@
 import { Box, Container, VStack, useColorModeValue } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { PublicLabels } from "@/constants/shared/enums";
+import { AllowedColorSchemes, PublicLabels } from "@/constants/shared/enums";
 
 import { ParallaxCard1 } from "@/components/ui/cards";
 import { ParallaxSectionHeading } from "@/components/ui/sections";
@@ -62,7 +62,7 @@ const VisionMissionParallax = () => {
           {/* Vision Section */}
           <ParallaxCard1
             content={ABOUT_CONTENT.VISION_STATEMENT}
-            colorScheme="purple"
+            colorScheme={AllowedColorSchemes.PURPLE}
             motionStyle={{
               y: useTransform(scrollYProgress, [0, 1], [100, -50]),
               opacity: useTransform(
@@ -76,7 +76,7 @@ const VisionMissionParallax = () => {
           {/* Mission Section */}
           <ParallaxCard1
             content={ABOUT_CONTENT.MISSION_STATEMENT}
-            colorScheme="red"
+            colorScheme={AllowedColorSchemes.RED}
             motionStyle={{
               y: useTransform(scrollYProgress, [0, 1], [150, -100]),
               opacity: useTransform(
@@ -90,7 +90,7 @@ const VisionMissionParallax = () => {
           {/* Statement of Commitment */}
           <ParallaxCard1
             content={ABOUT_CONTENT.STATEMENT_OF_COMMITMENT}
-            colorScheme="green"
+            colorScheme={AllowedColorSchemes.GREEN}
             motionStyle={{
               y: useTransform(scrollYProgress, [0, 1], [200, -150]),
               opacity: useTransform(

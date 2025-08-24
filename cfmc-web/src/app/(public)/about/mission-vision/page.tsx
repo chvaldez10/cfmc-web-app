@@ -3,13 +3,14 @@ import { Box } from "@chakra-ui/react";
 
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { StickyParallax } from "@/components/ui/parallax";
+import { AllowedColorSchemes } from "@/constants/shared/enums";
 
 import type { TextBlock } from "@/types/ui/components";
 
 interface SectionData {
   title: string;
   textBlocks: TextBlock[];
-  colorScheme: "purple" | "green" | "blue" | "red" | "orange";
+  colorScheme: AllowedColorSchemes;
   reverse?: boolean;
   imageSrc: string;
   imageAlt: string;
@@ -29,7 +30,7 @@ const SECTIONS_DATA: SectionData[] = [
         isQuote: ABOUT_CONTENT.VISION_STATEMENT_QUOTE.isQuote || false,
       },
     ],
-    colorScheme: "purple",
+    colorScheme: AllowedColorSchemes.PURPLE,
     imageSrc: "/gallery/IMG_4523.JPG",
     imageAlt: "Vision - CFMC Community Gathering",
   },
@@ -49,7 +50,7 @@ const SECTIONS_DATA: SectionData[] = [
         isQuote: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE_2.isQuote || false,
       },
     ],
-    colorScheme: "green",
+    colorScheme: AllowedColorSchemes.GREEN,
     reverse: true,
     imageSrc: "/gallery/IMG_3790.jpg",
     imageAlt: "Mission - CFMC Service and Outreach",
@@ -66,7 +67,7 @@ const SECTIONS_DATA: SectionData[] = [
         isQuote: ABOUT_CONTENT.CFMC_MOTTO_QUOTE.isQuote || false,
       },
     ],
-    colorScheme: "purple",
+    colorScheme: AllowedColorSchemes.PURPLE,
     imageSrc: "/gallery/IMG_4855.JPEG",
     imageAlt: "CFMC Motto - Love God, Love People",
   },

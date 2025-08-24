@@ -13,9 +13,11 @@ import type { MotionStyle } from "framer-motion";
 
 import { AboutContentItem } from "@/constants/shared/about";
 
+import { AllowedColorSchemes } from "@/constants/shared/enums";
+
 interface AnimatedContentCardProps {
   content: AboutContentItem;
-  colorScheme: "purple" | "green" | "red";
+  colorScheme: AllowedColorSchemes;
   motionStyle: MotionStyle;
   maxW?: string;
 }

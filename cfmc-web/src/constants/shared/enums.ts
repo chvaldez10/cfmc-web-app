@@ -78,3 +78,9 @@ export enum ContactUsOptions {
   FUNERAL_MEMORIAL_SERVICE = "Funeral or Memorial Service Request",
   MARRIAGE_OFFICIANT = "Marriage Officiant Request",
 }
+
+export enum AllowedColorSchemes {
+  PURPLE = "purple",
+  GREEN = "green",
+  RED = "red",
+}
