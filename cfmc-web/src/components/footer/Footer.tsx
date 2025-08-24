@@ -4,11 +4,7 @@ import { Branding, FooterLabels } from "@/constants/shared/enums";
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 const Footer = () => {
-  return (
-    <>
-      <FooterDetails />
-    </>
-  );
+  return <FooterDetails />;
 };
 
 export default Footer;

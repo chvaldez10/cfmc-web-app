@@ -45,10 +45,6 @@ const SECTIONS_DATA: SectionData[] = [
         text: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE.description,
         isQuote: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE.isQuote || false,
       },
-      {
-        text: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE_2.description,
-        isQuote: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE_2.isQuote || false,
-      },
     ],
     colorScheme: AllowedColorSchemes.GREEN,
     reverse: true,
@@ -74,7 +70,7 @@ const SECTIONS_DATA: SectionData[] = [
 ];
 
 export default function MissionVisionPage() {
-  const sectionHeight = (SECTIONS_DATA.length - 1) * 100 + 80;
+  const sectionHeight = (SECTIONS_DATA.length - 1) * 100 + 120; // Increased from 80 to 120
 
   return (
     <>

@@ -41,29 +41,65 @@ const StickyParallax = ({
   const textColor = useColorModeValue("gray.600", "gray.300");
   const quoteColor = useColorModeValue("gray.700", "gray.200");
   const headingColor = useColorModeValue("gray.900", "white");
-  const bgColor = useColorModeValue("white", "gray.800");
   const quoteBgColor = useColorModeValue("gray.50", "gray.800");
 
   const colorSchemes = {
     purple: {
       bg: useColorModeValue("brand.500", "brand.400"),
       gradient: "linear(to-br, brand.400, brand.600)",
+      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeColors: {
+        primary: useColorModeValue(
+          "rgba(139, 69, 255, 0.25)",
+          "rgba(139, 69, 255, 0.35)"
+        ),
+        secondary: useColorModeValue(
+          "rgba(168, 85, 247, 0.15)",
+          "rgba(168, 85, 247, 0.25)"
+        ),
+        accent: useColorModeValue(
+          "rgba(196, 181, 253, 0.1)",
+          "rgba(196, 181, 253, 0.15)"
+        ),
+      },
     },
     green: {
       bg: useColorModeValue("secondary.500", "secondary.400"),
       gradient: "linear(to-br, secondary.400, secondary.600)",
-    },
-    blue: {
-      bg: useColorModeValue("blue.500", "blue.400"),
-      gradient: "linear(to-br, blue.400, blue.600)",
+      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeColors: {
+        primary: useColorModeValue(
+          "rgba(34, 197, 94, 0.25)",
+          "rgba(34, 197, 94, 0.35)"
+        ),
+        secondary: useColorModeValue(
+          "rgba(74, 222, 128, 0.15)",
+          "rgba(74, 222, 128, 0.25)"
+        ),
+        accent: useColorModeValue(
+          "rgba(134, 239, 172, 0.1)",
+          "rgba(134, 239, 172, 0.15)"
+        ),
+      },
     },
     red: {
       bg: useColorModeValue("red.500", "red.400"),
       gradient: "linear(to-br, red.400, red.600)",
-    },
-    orange: {
-      bg: useColorModeValue("orange.500", "orange.400"),
-      gradient: "linear(to-br, orange.400, orange.600)",
+      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeColors: {
+        primary: useColorModeValue(
+          "rgba(239, 68, 68, 0.25)",
+          "rgba(239, 68, 68, 0.35)"
+        ),
+        secondary: useColorModeValue(
+          "rgba(248, 113, 113, 0.15)",
+          "rgba(248, 113, 113, 0.25)"
+        ),
+        accent: useColorModeValue(
+          "rgba(252, 165, 165, 0.1)",
+          "rgba(252, 165, 165, 0.15)"
+        ),
+      },
     },
   };
 
@@ -75,9 +111,45 @@ const StickyParallax = ({
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg={bgColor}
+      bg={colorSchemes[colorScheme].smokeBg}
       overflow="hidden"
       zIndex={zIndex}
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        background: `
+          radial-gradient(
+            circle 300px at center,
+            ${colorSchemes[colorScheme].smokeColors.accent} 0%,
+            ${colorSchemes[colorScheme].smokeColors.secondary} 35%,
+            ${colorSchemes[colorScheme].smokeColors.primary} 70%,
+            transparent 100%
+          )
+        `,
+        filter: "blur(30px)",
+        animation: "radial-pulse 20s ease-in-out infinite",
+        zIndex: -1,
+      }}
+      sx={{
+        "@keyframes radial-pulse": {
+          "0%": {
+            transform: "scale(0.8)",
+            opacity: 0.9,
+          },
+          "50%": {
+            transform: "scale(1.3)",
+            opacity: 0.4,
+          },
+          "100%": {
+            transform: "scale(0.8)",
+            opacity: 0.9,
+          },
+        },
+      }}
     >
       <Container
         maxW="7xl"
