@@ -6,7 +6,20 @@ import {
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { IMAGE_PRESETS } from "@/constants/gallery";
 
-export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: SectionData[] =
+/**
+ * Option 2: Next.js Built-in Caching
+ *
+ * How it works:
+ * 1. This runs ONCE at module load time (build time in production)
+ * 2. Next.js bundles the result into the final JavaScript
+ * 3. No runtime processing - just importing a pre-computed constant
+ * 4. Perfect for static content that never changes
+ *
+ * Performance: ⚡ Instant (no runtime processing)
+ * Memory: ✅ Efficient (only final data exists)
+ * Caching: 🏗️ Handled by Next.js bundler
+ */
+export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
   generateSectionsData(
     [
       {

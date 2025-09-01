@@ -24,28 +24,19 @@ export interface SectionConfig {
   visual: SectionVisualConfig;
 }
 
-// Memoization cache for performance
-const sectionDataCache = new Map<string, SectionData[]>();
-
 /**
  * Generates section data for StickyParallax components
- * Optimized with memoization for better performance
+ *
+ * When used with Option 2 (Next.js Built-in Caching):
+ * - No manual caching needed
+ * - Called once at module load time
+ * - Result is bundled by Next.js
  */
 export function generateSectionsData(
   sections: SectionConfig[],
   contentSource: Record<string, AboutContentItem>
 ): SectionData[] {
-  // Create cache key from section configs
-  const cacheKey =
-    JSON.stringify(sections) + Object.keys(contentSource).join(",");
-
-  // Return cached result if available
-  if (sectionDataCache.has(cacheKey)) {
-    return sectionDataCache.get(cacheKey)!;
-  }
-
-  // Generate new result
-  const result = sections.map((section) => {
+  return sections.map((section) => {
     const { content, visual } = section;
 
     // Generate text blocks from content keys
@@ -66,10 +57,6 @@ export function generateSectionsData(
       imageAlt: visual.imageAlt,
     };
   });
-
-  // Cache and return result
-  sectionDataCache.set(cacheKey, result);
-  return result;
 }
 
 /**
