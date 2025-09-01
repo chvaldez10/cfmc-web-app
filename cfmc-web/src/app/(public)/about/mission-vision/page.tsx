@@ -77,7 +77,7 @@ export default function MissionVisionPage() {
       <HeroHeader
         title="Mission and"
         titleHighlight="Vision"
-        description="We are a community of believers who are committed to sharing the love of Jesus Christ with the world."
+        description="Love God, Love People. Proclaim the Good News of Christ."
       />
 
       {/* Stacking Sections Container */}
