@@ -24,14 +24,6 @@ export interface SectionConfig {
   visual: SectionVisualConfig;
 }
 
-/**
- * Generates section data for StickyParallax components
- *
- * When used with Option 2 (Next.js Built-in Caching):
- * - No manual caching needed
- * - Called once at module load time
- * - Result is bundled by Next.js
- */
 export function generateSectionsData(
   sections: SectionConfig[],
   contentSource: Record<string, AboutContentItem>
