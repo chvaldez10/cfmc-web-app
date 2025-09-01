@@ -1,12 +1,11 @@
 import { VStack, Text } from "@chakra-ui/react";
 import CountDownTimer from "./CountDownTimer";
 import { GalleryCollage } from "@/components/ui/gallery";
-import { getGalleryItems } from "@/lib/supabase/actions/gallery-images";
+import { HOME_JUMBO_GALLERY_ITEMS } from "@/constants/gallery";
 import { getNextSundayWorshipService } from "@/lib/supabase/actions/sundays-special-days";
 import { getWorshipDateFromString } from "@/utils/dateUtils";
 
 export default async function WorshipCountdown() {
-  const galleryItems = await getGalleryItems("home_jumbo");
   const sundayData = await getNextSundayWorshipService();
   const worshipDateTime = getWorshipDateFromString(sundayData?.date);
 
@@ -27,8 +26,9 @@ export default async function WorshipCountdown() {
       >
         Experience worship with our community
       </Text>
+      {/* Static gallery data - no runtime fetch needed */}
       <GalleryCollage
-        galleryItems={galleryItems}
+        galleryItems={HOME_JUMBO_GALLERY_ITEMS}
         imageSize={{ base: "70px", md: "90px" }}
         spacing={{ base: 80, md: 100 }}
       />

@@ -15,7 +15,8 @@ export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
         },
         visual: {
           ...VISUAL_PRESETS.PURPLE_LEFT,
-          ...IMAGE_PRESETS.SEVENTH_ANNIVERSARY_IMAGE,
+          image: IMAGE_PRESETS.SEVENTH_ANNIVERSARY_IMAGE.image,
+          altText: IMAGE_PRESETS.SEVENTH_ANNIVERSARY_IMAGE.altText,
         },
       },
       {
@@ -24,7 +25,8 @@ export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
         },
         visual: {
           ...VISUAL_PRESETS.GREEN_RIGHT,
-          ...IMAGE_PRESETS.CHRISTMAS_CHOIR_IMAGE,
+          image: IMAGE_PRESETS.CHRISTMAS_CHOIR_IMAGE.image,
+          altText: IMAGE_PRESETS.CHRISTMAS_CHOIR_IMAGE.altText,
         },
       },
       {
@@ -33,7 +35,8 @@ export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
         },
         visual: {
           ...VISUAL_PRESETS.PURPLE_LEFT,
-          ...IMAGE_PRESETS.SUMMER_CAMP_2025_OUTSIDE_OF_CHAPEL,
+          image: IMAGE_PRESETS.SUMMER_CAMP_2025_OUTSIDE_OF_CHAPEL.image,
+          altText: IMAGE_PRESETS.SUMMER_CAMP_2025_OUTSIDE_OF_CHAPEL.altText,
         },
       },
     ],

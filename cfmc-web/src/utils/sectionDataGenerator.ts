@@ -12,8 +12,8 @@ export interface SectionData {
 
 export interface SectionVisualConfig {
   colorScheme: AllowedColorSchemes;
-  imageSrc: string;
-  imageAlt: string;
+  image: string;
+  altText: string;
   reverse?: boolean;
 }
 
@@ -45,8 +45,8 @@ export function generateSectionsData(
       textBlocks,
       colorScheme: visual.colorScheme,
       reverse: visual.reverse,
-      imageSrc: visual.imageSrc,
-      imageAlt: visual.imageAlt,
+      imageSrc: visual.image,
+      imageAlt: visual.altText,
     };
   });
 }

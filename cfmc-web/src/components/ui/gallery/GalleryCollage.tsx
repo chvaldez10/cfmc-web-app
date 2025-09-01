@@ -12,7 +12,7 @@ import { ImageModal } from "@/components/ui/modals";
 import { GalleryItem, HOME_JUMBO_LIMIT } from "@/constants/gallery";
 
 interface GalleryCollageProps {
-  galleryItems: GalleryItem[];
+  galleryItems: readonly GalleryItem[];
   imageSize?: { base: string; md: string };
   spacing?: { base: number; md: number };
 }
