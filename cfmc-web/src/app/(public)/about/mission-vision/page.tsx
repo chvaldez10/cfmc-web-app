@@ -1,73 +1,49 @@
 import { HeroHeader } from "@/components/hero";
 import { Box } from "@chakra-ui/react";
 
-import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { StickyParallax } from "@/components/ui/parallax";
-import { AllowedColorSchemes } from "@/constants/shared/enums";
+import { ABOUT_CONTENT } from "@/constants/shared/about";
+import {
+  generateSectionsData,
+  VISUAL_PRESETS,
+  IMAGE_PRESETS,
+  type SectionData,
+} from "@/utils/sectionDataGenerator";
 
-import type { TextBlock } from "@/types/ui/components";
-
-interface SectionData {
-  title: string;
-  textBlocks: TextBlock[];
-  colorScheme: AllowedColorSchemes;
-  reverse?: boolean;
-  imageSrc: string;
-  imageAlt: string;
-}
-
-// Data for mission and vision sections
-const SECTIONS_DATA: SectionData[] = [
-  {
-    title: ABOUT_CONTENT.VISION_STATEMENT.title,
-    textBlocks: [
-      {
-        text: ABOUT_CONTENT.VISION_STATEMENT.description,
-        isQuote: ABOUT_CONTENT.VISION_STATEMENT.isQuote || false,
+// Data for mission and vision sections - much cleaner!
+const SECTIONS_DATA: SectionData[] = generateSectionsData(
+  [
+    {
+      content: {
+        contentKeys: ["VISION_STATEMENT", "VISION_STATEMENT_QUOTE"],
       },
-      {
-        text: ABOUT_CONTENT.VISION_STATEMENT_QUOTE.description,
-        isQuote: ABOUT_CONTENT.VISION_STATEMENT_QUOTE.isQuote || false,
+      visual: {
+        ...VISUAL_PRESETS.PURPLE_LEFT,
+        ...IMAGE_PRESETS.COMMUNITY_GATHERING,
       },
-    ],
-    colorScheme: AllowedColorSchemes.PURPLE,
-    imageSrc: "/gallery/IMG_4523.JPG",
-    imageAlt: "Vision - CFMC Community Gathering",
-  },
-  {
-    title: "Our Mission",
-    textBlocks: [
-      {
-        text: ABOUT_CONTENT.MISSION_STATEMENT.description,
-        isQuote: ABOUT_CONTENT.MISSION_STATEMENT.isQuote || false,
+    },
+    {
+      content: {
+        contentKeys: ["MISSION_STATEMENT", "MISSION_STATEMENT_QUOTE"],
+        title: "Our Mission", // Override title
       },
-      {
-        text: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE.description,
-        isQuote: ABOUT_CONTENT.MISSION_STATEMENT_QUOTE.isQuote || false,
+      visual: {
+        ...VISUAL_PRESETS.GREEN_RIGHT,
+        ...IMAGE_PRESETS.SERVICE_OUTREACH,
       },
-    ],
-    colorScheme: AllowedColorSchemes.GREEN,
-    reverse: true,
-    imageSrc: "/gallery/IMG_3790.jpg",
-    imageAlt: "Mission - CFMC Service and Outreach",
-  },
-  {
-    title: ABOUT_CONTENT.CFMC_MOTTO.title,
-    textBlocks: [
-      {
-        text: ABOUT_CONTENT.CFMC_MOTTO.description,
-        isQuote: ABOUT_CONTENT.CFMC_MOTTO.isQuote || false,
+    },
+    {
+      content: {
+        contentKeys: ["CFMC_MOTTO", "CFMC_MOTTO_QUOTE"],
       },
-      {
-        text: ABOUT_CONTENT.CFMC_MOTTO_QUOTE.description,
-        isQuote: ABOUT_CONTENT.CFMC_MOTTO_QUOTE.isQuote || false,
+      visual: {
+        ...VISUAL_PRESETS.PURPLE_LEFT,
+        ...IMAGE_PRESETS.WORSHIP_SERVICE,
       },
-    ],
-    colorScheme: AllowedColorSchemes.PURPLE,
-    imageSrc: "/gallery/IMG_4855.JPEG",
-    imageAlt: "CFMC Motto - Love God, Love People",
-  },
-];
+    },
+  ],
+  ABOUT_CONTENT
+);
 
 export default function MissionVisionPage() {
   const sectionHeight = (SECTIONS_DATA.length - 1) * 100 + 120; // Increased from 80 to 120

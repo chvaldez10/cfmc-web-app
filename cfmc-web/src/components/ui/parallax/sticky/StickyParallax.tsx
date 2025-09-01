@@ -8,16 +8,7 @@ import StickyAnimatedBackground from "./StickyAnimatedBackground";
 import StickyLayoutContainer from "./StickyLayoutContainer";
 import StickyImageContainer from "./StickyImageContainer";
 import StickyContentSection from "./StickyContentSection";
-
-interface StickyParallaxProps {
-  title: string;
-  textBlocks: TextBlock[];
-  colorScheme: AllowedColorSchemes;
-  reverse?: boolean;
-  imageSrc: string;
-  imageAlt: string;
-  zIndex?: number;
-}
+import { StickyParallaxProps } from "@/types/ui/components";
 
 const StickyParallax = ({
   title,

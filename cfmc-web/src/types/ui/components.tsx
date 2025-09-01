@@ -1,5 +1,5 @@
 import { ComponentType } from "react";
-
+import { AllowedColorSchemes } from "@/constants/shared/enums";
 export interface CardDataProps {
   bg: string;
   icon: ComponentType<{ size?: string | number; className?: string }>;
@@ -13,7 +13,24 @@ export interface CardDataProps {
   variant?: "default" | "elevated" | "minimal";
 }
 
+// TODO: This is a duplicate of AboutContentItem
 export interface TextBlock {
   text: string;
   isQuote?: boolean;
+}
+
+export interface AboutContentItem {
+  title: string;
+  description: string;
+  isQuote?: boolean;
+}
+
+export interface StickyParallaxProps {
+  title: string;
+  textBlocks: TextBlock[];
+  colorScheme: AllowedColorSchemes;
+  reverse?: boolean;
+  imageSrc: string;
+  imageAlt: string;
+  zIndex?: number;
 }

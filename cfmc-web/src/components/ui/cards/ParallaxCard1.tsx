@@ -11,8 +11,7 @@ import {
 import { motion } from "framer-motion";
 import type { MotionStyle } from "framer-motion";
 
-import { AboutContentItem } from "@/constants/shared/about";
-
+import { AboutContentItem } from "@/types/ui/components";
 import { AllowedColorSchemes } from "@/constants/shared/enums";
 
 interface AnimatedContentCardProps {

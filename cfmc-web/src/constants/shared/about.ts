@@ -1,6 +1,7 @@
 import { CardDataProps } from "@/types/ui/components";
 import { FaCross, FaHandsHelping, FaUsers, FaHeart } from "react-icons/fa";
 import { PublicLabels } from "./enums";
+import { AboutContentItem } from "@/types/ui/components";
 
 // const aquaMeadow = "linear-gradient(135deg, #ECFDF5 0%, #5EEAD4 100%)";
 const plumCloud = "linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%)";
@@ -40,12 +41,6 @@ export const ABOUT_US_PAGE_CARDS: CardDataProps[] = [
     footerLink: { label: "Join Us", href: "/" },
   },
 ];
-
-export interface AboutContentItem {
-  title: string;
-  description: string;
-  isQuote?: boolean;
-}
 
 export const ABOUT_CONTENT: Record<string, AboutContentItem> = {
   VISION_STATEMENT: {
