@@ -2,17 +2,10 @@
 
 import { cache } from "react";
 import { createClient } from "@/lib/supabase/server";
-import { HOME_JUMBO_LIMIT } from "@/constants/gallery";
-
-export type TransformedGalleryItem = {
-  id: number;
-  title: string;
-  image: string;
-  altText: string;
-};
+import { HOME_JUMBO_LIMIT, GalleryItem } from "@/constants/gallery";
 
 export const getGalleryItems = cache(
-  async (type: string): Promise<TransformedGalleryItem[]> => {
+  async (type: string): Promise<GalleryItem[]> => {
     const supabase = await createClient();
 
     const { data: imageRecords, error: dbError } = await supabase
@@ -28,20 +21,18 @@ export const getGalleryItems = cache(
     }
 
     return Promise.all(
-      (imageRecords || []).map(
-        async (record): Promise<TransformedGalleryItem> => {
-          const { data: publicUrlData } = supabase.storage
-            .from("images")
-            .getPublicUrl(record.image_path);
+      (imageRecords || []).map(async (record): Promise<GalleryItem> => {
+        const { data: publicUrlData } = supabase.storage
+          .from("images")
+          .getPublicUrl(record.image_path);
 
-          return {
-            id: record.id,
-            title: record.title,
-            image: publicUrlData.publicUrl,
-            altText: record.alt_text || record.title,
-          };
-        }
-      )
+        return {
+          id: record.id,
+          title: record.title,
+          image: publicUrlData.publicUrl,
+          altText: record.alt_text || record.title,
+        };
+      })
     );
   }
 );

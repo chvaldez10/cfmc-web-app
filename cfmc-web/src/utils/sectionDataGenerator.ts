@@ -76,29 +76,3 @@ export const VISUAL_PRESETS = {
     reverse: true,
   },
 } as const;
-
-/**
- * Gallery image presets for common images
- */
-export const IMAGE_PRESETS = {
-  COMMUNITY_GATHERING: {
-    imageSrc: "/gallery/IMG_4523.JPG",
-    imageAlt: "CFMC Community Gathering",
-  },
-  SERVICE_OUTREACH: {
-    imageSrc: "/gallery/IMG_3790.jpg",
-    imageAlt: "CFMC Service and Outreach",
-  },
-  WORSHIP_SERVICE: {
-    imageSrc: "/gallery/IMG_4855.JPEG",
-    imageAlt: "CFMC Worship Service",
-  },
-  FELLOWSHIP: {
-    imageSrc: "/gallery/IMG_6559.JPEG",
-    imageAlt: "CFMC Fellowship",
-  },
-  PRAYER_MINISTRY: {
-    imageSrc: "/gallery/IMG_9061.JPEG",
-    imageAlt: "CFMC Prayer and Ministry",
-  },
-} as const;

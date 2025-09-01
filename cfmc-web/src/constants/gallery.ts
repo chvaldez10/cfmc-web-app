@@ -5,55 +5,25 @@ export interface GalleryItem {
   altText?: string;
 }
 
-export const GALLERY_ITEMS: GalleryItem[] = [
-  {
-    id: 1,
-    image:
+/**
+ * Gallery image presets for common images
+ */
+export const IMAGE_PRESETS = {
+  SEVENTH_ANNIVERSARY_IMAGE: {
+    imageSrc:
       "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-1.JPG",
-    title: "Gallery Item 1",
+    imageAlt: "7th Anniversary Image",
   },
-  {
-    id: 2,
-    image:
+  CHRISTMAS_CHOIR_IMAGE: {
+    imageSrc:
       "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-2.jpg",
-    title: "Gallery Item 2",
+    imageAlt: "Christmas Choir Image",
   },
-  {
-    id: 3,
-    image:
-      "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-3.JPEG",
-    title: "Gallery Item 3",
-  },
-  {
-    id: 4,
-    image:
-      "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-4.JPEG",
-    title: "Gallery Item 4",
-  },
-  {
-    id: 5,
-    image:
+  SUMMER_CAMP_2025_OUTSIDE_OF_CHAPEL: {
+    imageSrc:
       "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-5.JPEG",
-    title: "Gallery Item 5",
+    imageAlt: "Summer Camp 2025 Outside of Chapel",
   },
-  {
-    id: 6,
-    image:
-      "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-6.JPEG",
-    title: "Gallery Item 6",
-  },
-  {
-    id: 7,
-    image:
-      "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-7.JPEG",
-    title: "Gallery Item 7",
-  },
-  {
-    id: 8,
-    image:
-      "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/gallery-8.JPG",
-    title: "Gallery Item 8",
-  },
-];
+} as const;
 
 export const HOME_JUMBO_LIMIT = 8;
