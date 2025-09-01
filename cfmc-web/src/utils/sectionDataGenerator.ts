@@ -17,23 +17,16 @@ export interface SectionVisualConfig {
   reverse?: boolean;
 }
 
-export interface SectionContentConfig {
-  title?: string; // Optional override for the title
-  contentKeys: string[]; // Keys from ABOUT_CONTENT or other content sources
-  customContent?: AboutContentItem[]; // Custom content not from ABOUT_CONTENT
-}
-
 export interface SectionConfig {
-  content: SectionContentConfig;
+  content: {
+    contentKeys: string[];
+  };
   visual: SectionVisualConfig;
 }
 
 /**
  * Generates section data for StickyParallax components
- *
- * @param sections - Array of section configurations
- * @param contentSource - Source object for content (e.g., ABOUT_CONTENT, MISSION_CONTENT)
- * @returns Array of SectionData for use with StickyParallax
+ * Simplified to match your exact usage pattern
  */
 export function generateSectionsData(
   sections: SectionConfig[],
@@ -42,133 +35,17 @@ export function generateSectionsData(
   return sections.map((section) => {
     const { content, visual } = section;
 
-    // Generate text blocks from content keys and custom content
-    const textBlocks: TextBlock[] = [];
+    // Generate text blocks from content keys
+    const textBlocks: TextBlock[] = content.contentKeys.map((key) => ({
+      text: contentSource[key].description,
+      isQuote: contentSource[key].isQuote || false,
+    }));
 
-    // Add content from keys
-    content.contentKeys.forEach((key) => {
-      const contentItem = contentSource[key];
-      if (contentItem) {
-        textBlocks.push({
-          text: contentItem.description,
-          isQuote: contentItem.isQuote || false,
-        });
-      }
-    });
-
-    // Add custom content
-    if (content.customContent) {
-      content.customContent.forEach((item) => {
-        textBlocks.push({
-          text: item.description,
-          isQuote: item.isQuote || false,
-        });
-      });
-    }
-
-    // Determine the title
-    const title =
-      content.title ||
-      (content.contentKeys.length > 0
-        ? contentSource[content.contentKeys[0]]?.title
-        : "Untitled");
+    // Title is always from the first content key
+    const title = contentSource[content.contentKeys[0]].title;
 
     return {
-      title: title || "Untitled",
-      textBlocks,
-      colorScheme: visual.colorScheme,
-      reverse: visual.reverse,
-      imageSrc: visual.imageSrc,
-      imageAlt: visual.imageAlt,
-    };
-  });
-}
-
-/**
- * Quick generator for simple sections with single content items
- */
-export function generateSimpleSections(
-  configs: Array<{
-    contentKey: string;
-    visual: SectionVisualConfig;
-    titleOverride?: string;
-  }>,
-  contentSource: Record<string, AboutContentItem>
-): SectionData[] {
-  return generateSectionsData(
-    configs.map((config) => ({
-      content: {
-        contentKeys: [config.contentKey],
-        title: config.titleOverride,
-      },
-      visual: config.visual,
-    })),
-    contentSource
-  );
-}
-
-/**
- * Merges multiple content sources into a single object
- * Useful when you need content from multiple files (e.g., ABOUT_CONTENT + MISSION_CONTENT)
- *
- * @param sources - Array of content source objects to merge
- * @returns Merged content object
- */
-export function mergeContentSources(
-  ...sources: Record<string, AboutContentItem>[]
-): Record<string, AboutContentItem> {
-  return Object.assign({}, ...sources);
-}
-
-/**
- * Generator for sections with mixed content sources
- * Each section can specify its own content source
- */
-export interface SectionConfigWithSource {
-  content: SectionContentConfig;
-  visual: SectionVisualConfig;
-  contentSource: Record<string, AboutContentItem>;
-}
-
-export function generateSectionsFromMultipleSources(
-  sections: SectionConfigWithSource[]
-): SectionData[] {
-  return sections.map((section) => {
-    const { content, visual, contentSource } = section;
-
-    // Generate text blocks from content keys and custom content
-    const textBlocks: TextBlock[] = [];
-
-    // Add content from keys
-    content.contentKeys.forEach((key) => {
-      const contentItem = contentSource[key];
-      if (contentItem) {
-        textBlocks.push({
-          text: contentItem.description,
-          isQuote: contentItem.isQuote || false,
-        });
-      }
-    });
-
-    // Add custom content
-    if (content.customContent) {
-      content.customContent.forEach((item) => {
-        textBlocks.push({
-          text: item.description,
-          isQuote: item.isQuote || false,
-        });
-      });
-    }
-
-    // Determine the title
-    const title =
-      content.title ||
-      (content.contentKeys.length > 0
-        ? contentSource[content.contentKeys[0]]?.title
-        : "Untitled");
-
-    return {
-      title: title || "Untitled",
+      title,
       textBlocks,
       colorScheme: visual.colorScheme,
       reverse: visual.reverse,

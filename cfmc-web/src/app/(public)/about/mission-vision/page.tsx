@@ -1,53 +1,10 @@
-import { HeroHeader } from "@/components/hero";
 import { Box } from "@chakra-ui/react";
-
+import { HeroHeader } from "@/components/hero";
 import { StickyParallax } from "@/components/ui/parallax";
-import { ABOUT_CONTENT } from "@/constants/shared/about";
-import {
-  generateSectionsData,
-  VISUAL_PRESETS,
-  IMAGE_PRESETS,
-  type SectionData,
-} from "@/utils/sectionDataGenerator";
-
-// Data for mission and vision sections - much cleaner!
-const SECTIONS_DATA: SectionData[] = generateSectionsData(
-  [
-    {
-      content: {
-        contentKeys: ["VISION_STATEMENT", "VISION_STATEMENT_QUOTE"],
-      },
-      visual: {
-        ...VISUAL_PRESETS.PURPLE_LEFT,
-        ...IMAGE_PRESETS.COMMUNITY_GATHERING,
-      },
-    },
-    {
-      content: {
-        contentKeys: ["MISSION_STATEMENT", "MISSION_STATEMENT_QUOTE"],
-        title: "Our Mission", // Override title
-      },
-      visual: {
-        ...VISUAL_PRESETS.GREEN_RIGHT,
-        ...IMAGE_PRESETS.SERVICE_OUTREACH,
-      },
-    },
-    {
-      content: {
-        contentKeys: ["CFMC_MOTTO", "CFMC_MOTTO_QUOTE"],
-      },
-      visual: {
-        ...VISUAL_PRESETS.PURPLE_LEFT,
-        ...IMAGE_PRESETS.WORSHIP_SERVICE,
-      },
-    },
-  ],
-  ABOUT_CONTENT
-);
+import { SECTIONS_DATA } from "./page.data";
 
 export default function MissionVisionPage() {
-  const sectionHeight = (SECTIONS_DATA.length - 1) * 100 + 120; // Increased from 80 to 120
-
+  const sectionHeight = (SECTIONS_DATA.length - 1) * 100 + 120;
   return (
     <>
       <HeroHeader
