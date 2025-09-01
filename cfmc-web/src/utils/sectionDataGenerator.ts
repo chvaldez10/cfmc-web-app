@@ -24,15 +24,28 @@ export interface SectionConfig {
   visual: SectionVisualConfig;
 }
 
+// Memoization cache for performance
+const sectionDataCache = new Map<string, SectionData[]>();
+
 /**
  * Generates section data for StickyParallax components
- * Simplified to match your exact usage pattern
+ * Optimized with memoization for better performance
  */
 export function generateSectionsData(
   sections: SectionConfig[],
   contentSource: Record<string, AboutContentItem>
 ): SectionData[] {
-  return sections.map((section) => {
+  // Create cache key from section configs
+  const cacheKey =
+    JSON.stringify(sections) + Object.keys(contentSource).join(",");
+
+  // Return cached result if available
+  if (sectionDataCache.has(cacheKey)) {
+    return sectionDataCache.get(cacheKey)!;
+  }
+
+  // Generate new result
+  const result = sections.map((section) => {
     const { content, visual } = section;
 
     // Generate text blocks from content keys
@@ -53,6 +66,10 @@ export function generateSectionsData(
       imageAlt: visual.imageAlt,
     };
   });
+
+  // Cache and return result
+  sectionDataCache.set(cacheKey, result);
+  return result;
 }
 
 /**
