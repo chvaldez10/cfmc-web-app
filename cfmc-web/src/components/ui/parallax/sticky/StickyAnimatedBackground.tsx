@@ -1,0 +1,124 @@
+"use client";
+
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import { AllowedColorSchemes } from "@/constants/shared/enums";
+
+interface StickyAnimatedBackgroundProps {
+  colorScheme: AllowedColorSchemes;
+  zIndex?: number;
+  children: React.ReactNode;
+}
+
+const StickyAnimatedBackground = ({
+  colorScheme,
+  zIndex = 1,
+  children,
+}: StickyAnimatedBackgroundProps) => {
+  const colorSchemes = {
+    [AllowedColorSchemes.PURPLE]: {
+      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeColors: {
+        primary: useColorModeValue(
+          "rgba(139, 69, 255, 0.25)",
+          "rgba(139, 69, 255, 0.35)"
+        ),
+        secondary: useColorModeValue(
+          "rgba(168, 85, 247, 0.15)",
+          "rgba(168, 85, 247, 0.25)"
+        ),
+        accent: useColorModeValue(
+          "rgba(196, 181, 253, 0.1)",
+          "rgba(196, 181, 253, 0.15)"
+        ),
+      },
+    },
+    [AllowedColorSchemes.GREEN]: {
+      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeColors: {
+        primary: useColorModeValue(
+          "rgba(34, 197, 94, 0.25)",
+          "rgba(34, 197, 94, 0.35)"
+        ),
+        secondary: useColorModeValue(
+          "rgba(74, 222, 128, 0.15)",
+          "rgba(74, 222, 128, 0.25)"
+        ),
+        accent: useColorModeValue(
+          "rgba(134, 239, 172, 0.1)",
+          "rgba(134, 239, 172, 0.15)"
+        ),
+      },
+    },
+    [AllowedColorSchemes.RED]: {
+      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeColors: {
+        primary: useColorModeValue(
+          "rgba(239, 68, 68, 0.25)",
+          "rgba(239, 68, 68, 0.35)"
+        ),
+        secondary: useColorModeValue(
+          "rgba(248, 113, 113, 0.15)",
+          "rgba(248, 113, 113, 0.25)"
+        ),
+        accent: useColorModeValue(
+          "rgba(252, 165, 165, 0.1)",
+          "rgba(252, 165, 165, 0.15)"
+        ),
+      },
+    },
+  };
+
+  return (
+    <Box
+      position="sticky"
+      top="0"
+      minH="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bg={colorSchemes[colorScheme].smokeBg}
+      overflow="hidden"
+      zIndex={zIndex}
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        background: `
+          radial-gradient(
+            circle 300px at center,
+            ${colorSchemes[colorScheme].smokeColors.accent} 0%,
+            ${colorSchemes[colorScheme].smokeColors.secondary} 35%,
+            ${colorSchemes[colorScheme].smokeColors.primary} 70%,
+            transparent 100%
+          )
+        `,
+        filter: "blur(30px)",
+        animation: "radial-pulse 20s ease-in-out infinite",
+        zIndex: -1,
+      }}
+      sx={{
+        "@keyframes radial-pulse": {
+          "0%": {
+            transform: "scale(0.8)",
+            opacity: 0.9,
+          },
+          "50%": {
+            transform: "scale(1.3)",
+            opacity: 0.4,
+          },
+          "100%": {
+            transform: "scale(0.8)",
+            opacity: 0.9,
+          },
+        },
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+export default StickyAnimatedBackground;

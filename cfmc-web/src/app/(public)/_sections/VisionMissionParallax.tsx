@@ -32,7 +32,7 @@ const VisionMissionParallax = () => {
         scrollYProgress={scrollYProgress}
         position="top-left"
         size={200}
-        color="purple"
+        color={AllowedColorSchemes.PURPLE}
         yRange={[0, -200]}
         opacity={0.3}
       />
@@ -40,7 +40,7 @@ const VisionMissionParallax = () => {
         scrollYProgress={scrollYProgress}
         position="bottom-right"
         size={150}
-        color="blue"
+        color={AllowedColorSchemes.GREEN}
         yRange={[0, 150]}
         opacity={0.25}
       />
@@ -52,7 +52,7 @@ const VisionMissionParallax = () => {
             scrollYProgress={scrollYProgress}
             title={PublicLabels.OUR_MISSION_AND_VISION}
             id="vision-mission-heading"
-            colorScheme="purple"
+            colorScheme={AllowedColorSchemes.PURPLE}
             size={{ base: "2xl", md: "4xl" }}
             yRange={[0, -100]}
             opacityRange={[0, 1, 1, 0]}

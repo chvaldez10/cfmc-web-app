@@ -31,7 +31,10 @@ const ParallaxCard1 = ({
   const cardBg = useColorModeValue("white", "gray.800");
 
   return (
-    <motion.div style={motionStyle}>
+    <motion.div
+      style={motionStyle}
+      data-testid={`parallax-card-${content.title}`}
+    >
       <Box
         bg={cardBg}
         p={{ base: 6, md: 8 }}
