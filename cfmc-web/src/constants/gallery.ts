@@ -5,12 +5,7 @@ export interface GalleryItem {
   altText: string;
 }
 
-/**
- * Gallery image presets - unified GalleryItem format
- * Used for both gallery displays and sticky parallax sections
- */
 export const IMAGE_PRESETS = {
-  // Anniversary & Celebrations
   SEVENTH_ANNIVERSARY_IMAGE: {
     id: 1,
     image:
