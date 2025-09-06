@@ -40,7 +40,7 @@ This guide must emphasize **scalability, maintainability, type safety, and secur
 
 - Describe the **request lifecycle** clearly:
 
-  ```
+  ```bash
   Request → Middleware/Auth check → Server Component → Supabase query (server) → Rendered HTML/stream to client
   ```
 
@@ -225,7 +225,7 @@ This guide must emphasize **scalability, maintainability, type safety, and secur
 
 - Recommended folder layout:
 
-  ```
+  ```bash
   src
   ├── app
   │   ├── (login)
