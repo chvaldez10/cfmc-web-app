@@ -1,10 +1,10 @@
 import {
   generateSectionsData,
   VISUAL_PRESETS,
-  SectionData,
 } from "@/utils/sectionDataGenerator";
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { IMAGE_PRESETS } from "@/constants/gallery";
+import { SectionData } from "@/types/ui/components";
 
 export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
   generateSectionsData(

@@ -1,9 +1,5 @@
 "use client";
 
-import type { TextBlock } from "@/types/ui/components";
-
-import { AllowedColorSchemes } from "@/constants/shared/enums";
-
 import StickyAnimatedBackground from "./StickyAnimatedBackground";
 import StickyLayoutContainer from "./StickyLayoutContainer";
 import StickyImageContainer from "./StickyImageContainer";

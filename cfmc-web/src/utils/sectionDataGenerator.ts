@@ -1,21 +1,6 @@
 import { AllowedColorSchemes } from "@/constants/shared/enums";
 import type { TextBlock, AboutContentItem } from "@/types/ui/components";
-
-export interface SectionData {
-  title: string;
-  textBlocks: TextBlock[];
-  colorScheme: AllowedColorSchemes;
-  reverse?: boolean;
-  imageSrc: string;
-  imageAlt: string;
-}
-
-export interface SectionVisualConfig {
-  colorScheme: AllowedColorSchemes;
-  image: string;
-  altText: string;
-  reverse?: boolean;
-}
+import type { SectionData, SectionVisualConfig } from "@/types/ui/components";
 
 export interface SectionConfig {
   content: {

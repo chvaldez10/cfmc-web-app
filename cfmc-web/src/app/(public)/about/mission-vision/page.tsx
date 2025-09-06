@@ -13,7 +13,6 @@ export default function MissionVisionPage() {
         description="Love God, Love People. Proclaim the Good News of Christ."
       />
 
-      {/* Stacking Sections Container */}
       <Box position="relative" height={`${sectionHeight}vh`}>
         {SECTIONS_DATA.map((section, index) => (
           <StickyParallax
