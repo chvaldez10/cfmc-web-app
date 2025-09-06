@@ -16,7 +16,7 @@ export interface Ministry {
   }>;
 }
 
-export const ministries = {
+export const MINISTRIES_CONTENT = {
   DISCIPLESHIP: {
     id: "discipleship",
     title: "Discipleship Ministries",
@@ -134,7 +134,7 @@ export const ministries = {
 };
 
 // Helper function to get all ministries as an array (for mapping/iterating)
-export const ministriesArray: Ministry[] = Object.values(ministries);
+export const ministriesArray: Ministry[] = Object.values(MINISTRIES_CONTENT);
 
 // Type for ministry keys
-export type MinistryKey = keyof typeof ministries;
+export type MinistryKey = keyof typeof MINISTRIES_CONTENT;

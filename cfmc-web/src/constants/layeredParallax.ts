@@ -6,7 +6,7 @@ import {
   FaCross,
   FaGlobeAmericas,
 } from "react-icons/fa";
-import { ministries } from "./ministries";
+import { MINISTRIES_CONTENT } from "./ministries";
 
 export interface ParallaxSectionConfig {
   id: string;
@@ -47,8 +47,8 @@ export const PARALLAX_SECTIONS: ParallaxSectionConfig[] = [
     id: "discipleship",
     icon: FaHeart,
     iconColor: "red.500",
-    title: ministries.DISCIPLESHIP.title,
-    description: ministries.DISCIPLESHIP.description,
+    title: MINISTRIES_CONTENT.DISCIPLESHIP.title,
+    description: MINISTRIES_CONTENT.DISCIPLESHIP.description,
     borderColor: "purple.200",
     titleColor: "purple.600",
     topPosition: "0vh",
@@ -62,8 +62,8 @@ export const PARALLAX_SECTIONS: ParallaxSectionConfig[] = [
     id: "mens-fellowship",
     icon: FaHandsHelping,
     iconColor: "blue.500",
-    title: ministries.MENS_FELLOWSHIP.title,
-    description: ministries.MENS_FELLOWSHIP.description,
+    title: MINISTRIES_CONTENT.MENS_FELLOWSHIP.title,
+    description: MINISTRIES_CONTENT.MENS_FELLOWSHIP.description,
     borderColor: "blue.200",
     titleColor: "blue.600",
     topPosition: "0vh",
@@ -77,8 +77,8 @@ export const PARALLAX_SECTIONS: ParallaxSectionConfig[] = [
     id: "womens-fellowship",
     icon: FaPrayingHands,
     iconColor: "green.500",
-    title: ministries.WOMENS_FELLOWSHIP.title,
-    description: ministries.WOMENS_FELLOWSHIP.description,
+    title: MINISTRIES_CONTENT.WOMENS_FELLOWSHIP.title,
+    description: MINISTRIES_CONTENT.WOMENS_FELLOWSHIP.description,
     borderColor: "green.200",
     titleColor: "green.600",
     topPosition: "0vh",
@@ -92,8 +92,8 @@ export const PARALLAX_SECTIONS: ParallaxSectionConfig[] = [
     id: "children",
     icon: FaCross,
     iconColor: "purple.500",
-    title: ministries.CHILDREN.title,
-    description: ministries.CHILDREN.description,
+    title: MINISTRIES_CONTENT.CHILDREN.title,
+    description: MINISTRIES_CONTENT.CHILDREN.description,
     borderColor: "purple.300",
     titleColor: "purple.600",
     topPosition: "0vh",
@@ -107,8 +107,8 @@ export const PARALLAX_SECTIONS: ParallaxSectionConfig[] = [
     id: "outreach",
     icon: FaGlobeAmericas,
     iconColor: "teal.500",
-    title: ministries.OUTREACH.title,
-    description: ministries.OUTREACH.description,
+    title: MINISTRIES_CONTENT.OUTREACH.title,
+    description: MINISTRIES_CONTENT.OUTREACH.description,
     borderColor: "teal.200",
     titleColor: "teal.600",
     topPosition: "0vh",
