@@ -17,19 +17,19 @@ export interface Ministry {
 }
 
 export const MINISTRIES_CONTENT = {
-  DISCIPLESHIP: {
-    id: "discipleship",
-    title: "Discipleship Ministries",
+  DISCIPLESHIP_MINISTRY: {
+    id: "discipleship-ministry",
+    title: "Discipleship Ministry",
     description:
-      "Making disciples of all nations through teaching and baptism, following the Great Commission.",
+      "Making disciples of all nations through teaching and baptism, following the Great Commission.", // Added a comma for flow.
     verse: {
       text: "Then Jesus came to them and said, 'All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.'",
       reference: "Matthew 28:18-20 (NIV)",
     },
   },
-  CHILDREN: {
-    id: "children",
-    title: "Children Ministry",
+  CHILDREN_MINISTRY: {
+    id: "children-ministry",
+    title: "Children's Ministry",
     description:
       "Nurturing the faith of our youngest members and helping them grow in Christ.",
     verse: {
@@ -41,9 +41,9 @@ export const MINISTRIES_CONTENT = {
       phone: "368-995-8928",
     },
   },
-  YOUTH: {
-    id: "youth",
-    title: "Youth & Young Adults Fellowship",
+  YOUTH_MINISTRY: {
+    id: "youth-ministry",
+    title: "Youth & Young Adults Ministry",
     description:
       "Empowering young believers to set an example in speech, conduct, love, faith, and purity.",
     verse: {
@@ -55,11 +55,11 @@ export const MINISTRIES_CONTENT = {
       phone: "587-888-4216",
     },
   },
-  MENS_FELLOWSHIP: {
-    id: "mens-fellowship",
-    title: "Men's Fellowship",
+  MENS_MINISTRY: {
+    id: "mens-ministry",
+    title: "Men's Fellowship Ministry",
     description:
-      "Building men of God who pursue righteousness, godliness, faith, love, endurance and gentleness.",
+      "Building men of God who pursue righteousness, godliness, faith, love, endurance, and gentleness.",
     verse: {
       text: "But you, man of God, flee from all this, and pursue righteousness, godliness, faith, love, endurance and gentleness. Fight the good fight of the faith. Take hold of the eternal life to which you were called when you made your good confession in the presence of many witnesses.",
       reference: "1 Timothy 6:11-12 (NIV)",
@@ -69,9 +69,9 @@ export const MINISTRIES_CONTENT = {
       phone: "587-223-5710",
     },
   },
-  WOMENS_FELLOWSHIP: {
-    id: "womens-fellowship",
-    title: "Women's Fellowship",
+  WOMENS_MINISTRY: {
+    id: "womens-ministry",
+    title: "Women's Fellowship Ministry",
     description:
       "Celebrating women who fear the Lord and encouraging spiritual growth and community.",
     verse: {
@@ -83,9 +83,9 @@ export const MINISTRIES_CONTENT = {
       phone: "403-771-1826",
     },
   },
-  PRAISE_WORSHIP: {
-    id: "praise-worship",
-    title: "Praise & Worship Team",
+  PRAISE_WORSHIP_MINISTRY: {
+    id: "praise-worship-ministry",
+    title: "Praise & Worship Ministry",
     description:
       "Leading the congregation in joyful worship and thanksgiving through music and song.",
     verse: {
@@ -103,25 +103,25 @@ export const MINISTRIES_CONTENT = {
       },
     ],
   },
-  MULTIMEDIA: {
-    id: "multimedia",
-    title: "Multimedia Team",
+  MULTIMEDIA_MINISTRY: {
+    id: "multimedia-ministry",
+    title: "Multimedia Ministry",
     description:
-      "Spreading the good news through technology and media, ensuring the message reaches those who need to hear.",
+      "Spreading the good news through technology and media, ensuring the message reaches those who need to hear it.",
     verse: {
-      text: "How, then, can they call on the one they have not believed in? And how can they believe in the one of whom they have not heard? And how can they hear without someone preaching to them? And how can anyone preach unless they are sent? As it is written: 'How beautiful are the feet of those who bring good news!'",
-      reference: "Romans 10: 14-15 (NIV)",
+      text: "How, then, can they call on the one they have not believed in? And how can they believe in the one of whom they have not heard? And how can anyone preach unless they are sent? As it is written: 'How beautiful are the feet of those who bring good news!'",
+      reference: "Romans 10:14-15 (NIV)",
     },
     contact: {
       name: "Bro. Christian Valdez",
       phone: "204-898-7498",
     },
   },
-  OUTREACH: {
-    id: "outreach",
+  OUTREACH_MINISTRY: {
+    id: "outreach-ministry",
     title: "Outreach Ministry",
     description:
-      "Serving the least of these through practical acts of love and compassion, including free bread distribution.",
+      "Serving 'the least of these' through practical acts of love and compassion, including free bread distribution.",
     verse: {
       text: "The King will reply, 'Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.'",
       reference: "Matthew 25:40 (NIV)",
@@ -133,8 +133,5 @@ export const MINISTRIES_CONTENT = {
   },
 };
 
-// Helper function to get all ministries as an array (for mapping/iterating)
 export const ministriesArray: Ministry[] = Object.values(MINISTRIES_CONTENT);
-
-// Type for ministry keys
 export type MinistryKey = keyof typeof MINISTRIES_CONTENT;
