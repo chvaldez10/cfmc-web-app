@@ -1,12 +1,33 @@
+import { Box } from "@chakra-ui/react";
 import { HeroHeader } from "@/components/hero";
+import { StickyParallax } from "@/components/ui/parallax";
+import { MINISTRIES_STICKY_PARALLAX_SECTIONS as SECTIONS_DATA } from "./page.data";
 
-export default function MissionVisionPage() {
+export default function MinistriesPage() {
+  const sectionHeight = (SECTIONS_DATA.length - 1) * 100 + 120;
+
   return (
     <>
       <HeroHeader
         title="Ministries"
         description="Our ministries aim to serve and uplift."
       />
+
+      <Box position="relative" height={`${sectionHeight}vh`}>
+        {" "}
+        {SECTIONS_DATA.map((section, index) => (
+          <StickyParallax
+            key={section.title}
+            title={section.title}
+            textBlocks={section.textBlocks}
+            colorScheme={section.colorScheme}
+            reverse={section.reverse}
+            imageSrc={section.imageSrc}
+            imageAlt={section.imageAlt}
+            zIndex={index + 1}
+          />
+        ))}{" "}
+      </Box>
     </>
   );
 }

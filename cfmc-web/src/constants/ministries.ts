@@ -1,8 +1,9 @@
 export interface Ministry {
-  id: string;
+  id?: string;
   title: string;
   description: string;
-  verse: {
+  isQuote?: boolean;
+  verse?: {
     text: string;
     reference: string;
   };
@@ -21,11 +22,17 @@ export const MINISTRIES_CONTENT = {
     id: "discipleship-ministry",
     title: "Discipleship Ministry",
     description:
-      "Making disciples of all nations through teaching and baptism, following the Great Commission.", // Added a comma for flow.
+      "Making disciples of all nations through teaching and baptism, following the Great Commission.",
     verse: {
       text: "Then Jesus came to them and said, 'All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.'",
       reference: "Matthew 28:18-20 (NIV)",
     },
+  },
+  DISCIPLESHIP_MINISTRY_QUOTE: {
+    title: "Discipleship Ministry Summary",
+    isQuote: true,
+    description:
+      "We're called to make disciples of all nations through teaching and baptism. Christ's command in Matthew 28:18-20 reminds us that He has given us all authority and will be with us always as we fulfill this Great Commission.",
   },
   CHILDREN_MINISTRY: {
     id: "children-ministry",
@@ -41,6 +48,12 @@ export const MINISTRIES_CONTENT = {
       phone: "368-995-8928",
     },
   },
+  CHILDREN_MINISTRY_QUOTE: {
+    title: "Children's Ministry Summary",
+    isQuote: true,
+    description:
+      "Our children are precious to God, and we're committed to nurturing their faith from an early age. As Jesus said, 'Let the little children come to me' - the kingdom of heaven belongs to them. Reach out to Deaconess Wendy Valdez at 368-995-8928 to get involved.",
+  },
   YOUTH_MINISTRY: {
     id: "youth-ministry",
     title: "Youth & Young Adults Ministry",
@@ -54,6 +67,12 @@ export const MINISTRIES_CONTENT = {
       name: "Pastor Jonavern",
       phone: "587-888-4216",
     },
+  },
+  YOUTH_MINISTRY_QUOTE: {
+    title: "Youth & Young Adults Ministry Summary",
+    isQuote: true,
+    description:
+      "Our young people aren't just the future of the church - they're powerful witnesses today. We encourage them to be examples in how they speak, live, love, believe, and stay pure. Age doesn't limit God's call on their lives. Connect with Pastor Jonavern at 587-888-4216.",
   },
   MENS_MINISTRY: {
     id: "mens-ministry",
@@ -69,6 +88,12 @@ export const MINISTRIES_CONTENT = {
       phone: "587-223-5710",
     },
   },
+  MENS_MINISTRY_QUOTE: {
+    title: "Men's Fellowship Ministry Summary",
+    isQuote: true,
+    description:
+      "Real strength comes from pursuing righteousness, godliness, faith, love, endurance, and gentleness. We're called to fight the good fight of faith and hold onto eternal life. Join us in building each other up as men of God. Contact Bro. June Tugade at 587-223-5710.",
+  },
   WOMENS_MINISTRY: {
     id: "womens-ministry",
     title: "Women's Fellowship Ministry",
@@ -82,6 +107,12 @@ export const MINISTRIES_CONTENT = {
       name: "Sis. Luz Tugade",
       phone: "403-771-1826",
     },
+  },
+  WOMENS_MINISTRY_QUOTE: {
+    title: "Women's Fellowship Ministry Summary",
+    isQuote: true,
+    description:
+      "True beauty comes from a heart that fears the Lord. While charm may deceive and outward beauty fades, a woman who reverences God will be greatly praised. We celebrate this truth while growing together in faith and community. Contact Sis. Luz Tugade at 403-771-1826.",
   },
   PRAISE_WORSHIP_MINISTRY: {
     id: "praise-worship-ministry",
@@ -103,6 +134,12 @@ export const MINISTRIES_CONTENT = {
       },
     ],
   },
+  PRAISE_WORSHIP_MINISTRY_QUOTE: {
+    title: "Praise & Worship Ministry Summary",
+    isQuote: true,
+    description:
+      "Come, let us sing for joy to the Lord! We lead our congregation in worship, creating space for hearts to connect with God through music and song. There's something powerful about voices united in thanksgiving to our Rock of salvation. Connect with Deaconess Nelia Soriano at 403-880-9753 or Sis. Zarah May Reyes at 403-771-8852.",
+  },
   MULTIMEDIA_MINISTRY: {
     id: "multimedia-ministry",
     title: "Multimedia Ministry",
@@ -117,6 +154,12 @@ export const MINISTRIES_CONTENT = {
       phone: "204-898-7498",
     },
   },
+  MULTIMEDIA_MINISTRY_QUOTE: {
+    title: "Multimedia Ministry Summary",
+    isQuote: true,
+    description:
+      "How can people believe in someone they've never heard of? We use technology and media to ensure the good news reaches everyone who needs to hear it. Beautiful are the feet of those who bring good news - even when those feet are digital. Contact Bro. Christian Valdez at 204-898-7498.",
+  },
   OUTREACH_MINISTRY: {
     id: "outreach-ministry",
     title: "Outreach Ministry",
@@ -130,6 +173,12 @@ export const MINISTRIES_CONTENT = {
       name: "Bro. Vincent Vinluan",
       phone: "403-629-7784",
     },
+  },
+  OUTREACH_MINISTRY_QUOTE: {
+    title: "Outreach Ministry Summary",
+    isQuote: true,
+    description:
+      "When we serve 'the least of these,' we're serving Christ himself. Through practical acts of love - like our free bread distribution - we show God's compassion to our community. Every act of service is an act of worship. Contact Bro. Vincent Vinluan at 403-629-7784.",
   },
 };
 

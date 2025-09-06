@@ -6,12 +6,12 @@ import { MINISTRIES_CONTENT } from "@/constants/ministries";
 import { IMAGE_PRESETS } from "@/constants/gallery";
 import { SectionData } from "@/types/ui/components";
 
-export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
+export const MINISTRIES_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
   generateSectionsData(
     [
       {
         content: {
-          contentKeys: ["DISCIPLESHIP"],
+          contentKeys: ["DISCIPLESHIP_MINISTRY", "DISCIPLESHIP_MINISTRY_QUOTE"],
         },
         visual: {
           ...VISUAL_PRESETS.PURPLE_LEFT,
@@ -21,7 +21,7 @@ export const MISSION_VISION_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
       },
       {
         content: {
-          contentKeys: ["CHILDREN"],
+          contentKeys: ["CHILDREN_MINISTRY", "CHILDREN_MINISTRY_QUOTE"],
         },
         visual: {
           ...VISUAL_PRESETS.GREEN_RIGHT,
