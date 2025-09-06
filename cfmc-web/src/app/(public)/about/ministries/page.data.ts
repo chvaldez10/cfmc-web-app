@@ -15,8 +15,8 @@ export const MINISTRIES_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
         },
         visual: {
           ...VISUAL_PRESETS.PURPLE_LEFT,
-          image: IMAGE_PRESETS.SEVENTH_ANNIVERSARY_IMAGE.image,
-          altText: IMAGE_PRESETS.SEVENTH_ANNIVERSARY_IMAGE.altText,
+          image: IMAGE_PRESETS.GROUP_PIC_KURIAKOS_2025_2.image,
+          altText: IMAGE_PRESETS.GROUP_PIC_KURIAKOS_2025_2.altText,
         },
       },
       {
