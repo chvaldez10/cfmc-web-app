@@ -1,0 +1,32 @@
+import { Event } from "@/types/events";
+
+export const mockEvent: Event = {
+  id: 1,
+  slug: "test-event",
+  name: "Summer Music Festival",
+  category: "Worship",
+  description:
+    "Join us for an incredible summer music festival featuring local and international artists. This outdoor event will showcase a diverse range of musical genres, from contemporary Christian music to traditional hymns. Experience an unforgettable evening of worship, fellowship, and celebration under the stars. Food trucks and vendors will be available on-site. Bring your family and friends for this community-wide celebration of faith and music.",
+  organizer_name: "Calgary Filipino Methodist Church",
+  address: "123 Festival Park, Calgary, AB T2P 2M5",
+  start_date: "2025-07-12T18:00:00Z",
+  end_date: "2025-07-12T23:00:00Z",
+  google_maps_url:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.0886!2d-114.0881!3d51.0486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717071c2c6a63f%3A0x4dc97df0a6b5f5b5!2sCalgary%2C%20AB!5e0!3m2!1sen!2sca!4v1000000000000!5m2!1sen!2sca",
+  image: "/gallery/IMG_3790.jpg", // legacy single image (backwards compatibility)
+  images: [
+    "/gallery/IMG_3790.jpg",
+    "/gallery/IMG_4523.JPG",
+    "/gallery/IMG_4855.JPEG",
+    "/gallery/IMG_6559.JPEG",
+    "/gallery/IMG_9061.JPEG",
+  ],
+  occurrence: "once",
+  status: "published",
+  tags: ["festival", "music", "summer"],
+  created: null,
+  updated: null,
+  created_at: "2025-06-01T12:00:00Z",
+  updated_at: "2025-06-05T12:00:00Z",
+  is_sunday_worship: null,
+};
