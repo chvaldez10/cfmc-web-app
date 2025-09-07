@@ -25,8 +25,8 @@ export const MINISTRIES_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
         },
         visual: {
           ...VISUAL_PRESETS.GREEN_RIGHT,
-          image: IMAGE_PRESETS.CHRISTMAS_CHOIR_IMAGE.image,
-          altText: IMAGE_PRESETS.CHRISTMAS_CHOIR_IMAGE.altText,
+          image: IMAGE_PRESETS.CHILDREN_MINISTRY_IMAGE_1.image,
+          altText: IMAGE_PRESETS.CHILDREN_MINISTRY_IMAGE_1.altText,
         },
       },
     ],
