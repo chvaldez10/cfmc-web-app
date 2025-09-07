@@ -11,12 +11,55 @@ export const MINISTRIES_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
     [
       {
         content: {
-          contentKeys: ["DISCIPLESHIP_MINISTRY", "DISCIPLESHIP_MINISTRY_QUOTE"],
+          contentKeys: ["OUTREACH_MINISTRY", "OUTREACH_MINISTRY_QUOTE"],
         },
         visual: {
           ...VISUAL_PRESETS.PURPLE_LEFT,
-          image: IMAGE_PRESETS.GROUP_PIC_KURIAKOS_2025_2.image,
-          altText: IMAGE_PRESETS.GROUP_PIC_KURIAKOS_2025_2.altText,
+          image: IMAGE_PRESETS.OUTREACH_MINISTRY_IMAGE_1.image,
+          altText: IMAGE_PRESETS.OUTREACH_MINISTRY_IMAGE_1.altText,
+        },
+      },
+      {
+        content: {
+          contentKeys: [
+            "PRAISE_WORSHIP_MINISTRY",
+            "PRAISE_WORSHIP_MINISTRY_QUOTE",
+          ],
+        },
+        visual: {
+          ...VISUAL_PRESETS.GREEN_RIGHT,
+          image: IMAGE_PRESETS.PRAISE_WORSHIP_MINISTRY_IMAGE_1.image,
+          altText: IMAGE_PRESETS.PRAISE_WORSHIP_MINISTRY_IMAGE_1.altText,
+        },
+      },
+      {
+        content: {
+          contentKeys: ["MENS_MINISTRY", "MENS_MINISTRY_QUOTE"],
+        },
+        visual: {
+          ...VISUAL_PRESETS.PURPLE_LEFT,
+          image: IMAGE_PRESETS.MENS_MINISTRY_IMAGE_1.image,
+          altText: IMAGE_PRESETS.MENS_MINISTRY_IMAGE_1.altText,
+        },
+      },
+      {
+        content: {
+          contentKeys: ["WOMENS_MINISTRY", "WOMENS_MINISTRY_QUOTE"],
+        },
+        visual: {
+          ...VISUAL_PRESETS.GREEN_RIGHT,
+          image: IMAGE_PRESETS.WOMENS_MINISTRY_IMAGE_1.image,
+          altText: IMAGE_PRESETS.WOMENS_MINISTRY_IMAGE_1.altText,
+        },
+      },
+      {
+        content: {
+          contentKeys: ["YOUTH_MINISTRY", "YOUTH_MINISTRY_QUOTE"],
+        },
+        visual: {
+          ...VISUAL_PRESETS.PURPLE_LEFT,
+          image: IMAGE_PRESETS.YOUTH_MINISTRY_IMAGE_1.image,
+          altText: IMAGE_PRESETS.YOUTH_MINISTRY_IMAGE_1.altText,
         },
       },
       {

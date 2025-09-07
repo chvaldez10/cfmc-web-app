@@ -69,6 +69,36 @@ export const IMAGE_PRESETS = {
     title: "Children Ministry",
     altText: "Children Ministry Image",
   },
+  OUTREACH_MINISTRY_IMAGE_1: {
+    id: 11,
+    image: `${IMAGE_PREFIX}/ministries/outreach-image-1.JPG`,
+    title: "Outreach Ministry",
+    altText: "Outreach Ministry Image",
+  },
+  MENS_MINISTRY_IMAGE_1: {
+    id: 12,
+    image: `${IMAGE_PREFIX}/ministries/mens-ministry-image-1.JPG`,
+    title: "Mens Ministry",
+    altText: "Mens Ministry Image",
+  },
+  WOMENS_MINISTRY_IMAGE_1: {
+    id: 12,
+    image: `${IMAGE_PREFIX}/ministries/womens-ministry-image-1.JPG`,
+    title: "Womens Ministry",
+    altText: "Womens Ministry Image",
+  },
+  YOUTH_MINISTRY_IMAGE_1: {
+    id: 12,
+    image: `${IMAGE_PREFIX}/ministries/youth-ministry-image-1.JPEG`,
+    title: "Youth Ministry",
+    altText: "Youth Ministry Image",
+  },
+  PRAISE_WORSHIP_MINISTRY_IMAGE_1: {
+    id: 12,
+    image: `${IMAGE_PREFIX}/ministries/praise-worship-ministry-image-1.JPEG`,
+    title: "Praise Worship Ministry",
+    altText: "Praise Worship Ministry Image",
+  },
 } as const satisfies Record<string, GalleryItem>;
 
 export const HOME_JUMBO_GALLERY_ITEMS = Object.values(
