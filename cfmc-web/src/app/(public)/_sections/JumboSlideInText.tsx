@@ -17,7 +17,7 @@ const JumboSlideInText = () => {
   return (
     <SlideFadeText delay={0}>
       <VStack
-        spacing={{ base: 2, md: 4 }}
+        gap={{ base: 2, md: 4 }}
         align="start"
         w="full"
         borderLeft="solid"

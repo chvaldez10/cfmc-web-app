@@ -28,7 +28,7 @@ const StickyContentSection = ({
     <VStack
       align={{ base: "center", md: "start" }}
       textAlign={{ base: "center", md: "left" }}
-      spacing={6}
+      gap={6}
       flex="1"
       px={{ base: 4, md: 0 }}
       pl={{ md: reverse ? 0 : 16 }}
@@ -45,7 +45,7 @@ const StickyContentSection = ({
         {title}
       </Heading>
 
-      <VStack spacing={4} align="stretch" w="full" maxW="2xl">
+      <VStack gap={4} align="stretch" w="full" maxW="2xl">
         {textBlocks.map((block, index) => {
           if (block.isQuote) {
             return (

@@ -32,7 +32,7 @@ const CallToActionCard = ({
         textAlign="center"
         mb="20vh"
       >
-        <VStack spacing={6}>
+        <VStack gap={6}>
           <Heading as="h2" size={{ base: "xl", md: "2xl" }} color={titleColor}>
             {title}
           </Heading>

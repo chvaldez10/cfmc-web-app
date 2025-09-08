@@ -10,7 +10,7 @@ export default async function WorshipCountdown() {
   const worshipDateTime = getWorshipDateFromString(sundayData?.date);
 
   return (
-    <VStack spacing={4} align="center" w="100%">
+    <VStack gap={4} align="center" w="100%">
       <Text
         fontSize={{ base: "lg", md: "xl" }}
         fontWeight="bold"
@@ -30,7 +30,7 @@ export default async function WorshipCountdown() {
       <GalleryCollage
         galleryItems={HOME_JUMBO_GALLERY_ITEMS}
         imageSize={{ base: "70px", md: "90px" }}
-        spacing={{ base: 80, md: 100 }}
+        gap={{ base: 80, md: 100 }}
       />
       <CountDownTimer worshipStartDateTime={worshipDateTime} />
     </VStack>

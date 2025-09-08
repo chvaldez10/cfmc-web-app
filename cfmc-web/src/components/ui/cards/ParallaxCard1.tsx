@@ -37,8 +37,8 @@ const ParallaxCard1 = ({
         maxW={maxW}
         mx="auto"
       >
-        <VStack spacing={4} align="start">
-          <HStack spacing={3}>
+        <VStack gap={4} align="start">
+          <HStack gap={3}>
             <Box w="3" h="8" bg={`${colorScheme}.500`} borderRadius="full" />
             <Heading as="h3" size="lg" color={`${colorScheme}.600`}>
               {content.title}

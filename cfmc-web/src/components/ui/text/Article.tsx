@@ -37,14 +37,14 @@ export default function Article({ items, showDividers = true }: ArticleProps) {
   return (
     <ColumnLayout maxW="5xl" mt={NAVBAR_HEIGHT} py={COMMON_Y_PADDING}>
       {/* Article Content */}
-      <VStack spacing={{ base: 8, md: 10 }} align="stretch">
+      <VStack gap={{ base: 8, md: 10 }} align="stretch">
         {items.map((item, index) => {
           const isIntroSection =
             index === 0 && item.header === "What We Believe";
 
           return (
             <Box key={index}>
-              <VStack spacing={{ base: 4, md: 6 }} align="stretch">
+              <VStack gap={{ base: 4, md: 6 }} align="stretch">
                 {/* Section Header */}
                 {!isIntroSection && (
                   <Heading
@@ -83,8 +83,8 @@ export default function Article({ items, showDividers = true }: ArticleProps) {
                     borderLeft="4px solid"
                     borderLeftColor={accentColor}
                   >
-                    <VStack spacing={3} align="start">
-                      <HStack spacing={2}>
+                    <VStack gap={3} align="start">
+                      <HStack gap={2}>
                         <Box
                           as="svg"
                           width={4}
@@ -109,7 +109,7 @@ export default function Article({ items, showDividers = true }: ArticleProps) {
                           Bible References
                         </Text>
                       </HStack>
-                      <Wrap spacing={2}>
+                      <Wrap gap={2}>
                         {item.bibleReferences.map((reference, refIndex) => (
                           <WrapItem key={refIndex}>
                             <Badge

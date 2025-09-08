@@ -61,7 +61,7 @@ const EventDetails = ({
         transition: "all 0.3s ease",
       }}
     >
-      <VStack align="start" spacing={8}>
+      <VStack align="start" gap={8}>
         <Heading
           as="h3"
           size="lg"
@@ -78,8 +78,8 @@ const EventDetails = ({
         </Heading>
 
         {/* Date & Time */}
-        <VStack align="start" spacing={4} w="full">
-          <HStack spacing={4}>
+        <VStack align="start" gap={4} w="full">
+          <HStack gap={4}>
             <Box
               p={3}
               bg={iconBg}
@@ -90,7 +90,7 @@ const EventDetails = ({
             >
               <Icon as={CalendarIcon} color={accentColor} boxSize={5} />
             </Box>
-            <VStack align="start" spacing={1}>
+            <VStack align="start" gap={1}>
               <Text
                 fontWeight="bold"
                 fontSize="sm"
@@ -113,8 +113,8 @@ const EventDetails = ({
         </VStack>
 
         {/* Location */}
-        <VStack align="start" spacing={4} w="full">
-          <HStack spacing={4}>
+        <VStack align="start" gap={4} w="full">
+          <HStack gap={4}>
             <Box
               p={3}
               bg={iconBg}
@@ -125,7 +125,7 @@ const EventDetails = ({
             >
               <Icon as={MdLocationOn} color={accentColor} boxSize={5} />
             </Box>
-            <VStack align="start" spacing={1}>
+            <VStack align="start" gap={1}>
               <Text
                 fontWeight="bold"
                 fontSize="sm"
@@ -148,8 +148,8 @@ const EventDetails = ({
         </VStack>
 
         {/* Event Status */}
-        <VStack align="start" spacing={4} w="full">
-          <HStack spacing={4}>
+        <VStack align="start" gap={4} w="full">
+          <HStack gap={4}>
             <Box
               p={3}
               bg={iconBg}
@@ -160,7 +160,7 @@ const EventDetails = ({
             >
               <Icon as={InfoIcon} color={accentColor} boxSize={5} />
             </Box>
-            <VStack align="start" spacing={1}>
+            <VStack align="start" gap={1}>
               <Text
                 fontWeight="bold"
                 fontSize="sm"

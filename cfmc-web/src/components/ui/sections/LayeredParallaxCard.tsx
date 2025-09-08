@@ -62,7 +62,7 @@ const LayeredParallaxCard = ({
         mx="auto"
         mb="20vh"
       >
-        <VStack spacing={6} align="center" textAlign="center">
+        <VStack gap={6} align="center" textAlign="center">
           <Icon as={icon} w={12} h={12} color={iconColor} />
           <Heading as="h2" size={{ base: "xl", md: "2xl" }} color={titleColor}>
             {title}

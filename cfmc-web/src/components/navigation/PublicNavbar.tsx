@@ -128,7 +128,7 @@ export default function PublicNavbar() {
 
 const DesktopNav = () => {
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} gap={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box
           key={navItem.label}
@@ -233,7 +233,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack gap={4} onClick={children && onToggle}>
       <Box
         py={2}
         justifyContent="space-between"

@@ -34,8 +34,8 @@ const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
 
   return (
     <Box mt={8}>
-      <VStack align="start" spacing={6} w="full">
-        <VStack align="start" spacing={2}>
+      <VStack align="start" gap={6} w="full">
+        <VStack align="start" gap={2}>
           <Heading
             as="h3"
             size="lg"

@@ -163,9 +163,9 @@ export default function ContactForm() {
       _hover={{ boxShadow: "xl" }}
       transition="all 0.3s ease"
     >
-      <VStack spacing={{ base: 6, md: 8 }} as="form" onSubmit={handleSubmit}>
-        <VStack spacing={6} w="full">
-          <VStack spacing={5} w="full">
+      <VStack gap={{ base: 6, md: 8 }} as="form" onSubmit={handleSubmit}>
+        <VStack gap={6} w="full">
+          <VStack gap={5} w="full">
             <FormControl isInvalid={!!errors.name} isRequired>
               <FormLabel
                 color={labelColor}
@@ -253,7 +253,7 @@ export default function ContactForm() {
         </VStack>
 
         {/* Message Details */}
-        <VStack spacing={6} w="full">
+        <VStack gap={6} w="full">
           <Text
             alignSelf="flex-start"
             fontSize="sm"
@@ -266,7 +266,7 @@ export default function ContactForm() {
             {ContactFormLabels.HOW_CAN_WE_HELP}
           </Text>
 
-          <VStack spacing={5} w="full">
+          <VStack gap={5} w="full">
             <FormControl isInvalid={!!errors.subject}>
               <FormLabel
                 color={labelColor}
@@ -289,7 +289,7 @@ export default function ContactForm() {
                 value={formData.subject}
                 onChange={handleCheckboxChange}
               >
-                <VStack spacing={4} align="start" w="full">
+                <VStack gap={4} align="start" w="full">
                   {Object.values(ContactUsOptions).map((option) => (
                     <Flex key={option} align="start" w="full" gap={3}>
                       <Checkbox

@@ -45,7 +45,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
 
         <Stack
           direction={{ base: "column", xl: "row" }}
-          spacing={{ base: 8, lg: 12 }}
+          gap={{ base: 8, lg: 12 }}
           align="start"
           w="full"
         >

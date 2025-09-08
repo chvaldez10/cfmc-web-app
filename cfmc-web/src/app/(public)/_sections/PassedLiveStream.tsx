@@ -124,7 +124,7 @@ export default function PassedLiveStream() {
 
       <Stack
         direction={"column"}
-        spacing={4}
+        gap={4}
         align={"center"}
         position={"relative"}
       >

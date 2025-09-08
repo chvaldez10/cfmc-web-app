@@ -30,7 +30,7 @@ export default function SectionHeader({
       maxW={{ base: "full", md: "7xl" }}
       mx="auto"
     >
-      <VStack spacing={6} textAlign={textAlign} maxW="4xl" mx="auto">
+      <VStack gap={6} textAlign={textAlign} maxW="4xl" mx="auto">
         <Heading
           id="section-heading"
           fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}

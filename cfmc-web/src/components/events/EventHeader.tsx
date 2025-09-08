@@ -22,10 +22,10 @@ const EventHeader = ({
   const descriptionColor = "gray.600";
 
   return (
-    <VStack align="start" spacing={8} w="full">
+    <VStack align="start" gap={8} w="full">
       {/* Header Section */}
-      <VStack align="start" spacing={6} w="full">
-        <HStack wrap="wrap" spacing={3}>
+      <VStack align="start" gap={6} w="full">
+        <HStack wrap="wrap" gap={3}>
           <Badge
             colorScheme="purple"
             fontSize="sm"
@@ -74,7 +74,7 @@ const EventHeader = ({
       </VStack>
 
       {/* Description Section */}
-      <VStack align="start" spacing={6} w="full">
+      <VStack align="start" gap={6} w="full">
         <Box>
           <Heading
             as="h2"
@@ -117,7 +117,7 @@ const EventHeader = ({
           borderLeftColor="purple.500"
           w="full"
         >
-          <VStack align="start" spacing={2}>
+          <VStack align="start" gap={2}>
             <Text
               fontSize="sm"
               fontWeight="semibold"

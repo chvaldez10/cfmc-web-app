@@ -63,7 +63,7 @@ export default function PageHeader({
       }}
     >
       <VStack
-        spacing={4}
+        gap={4}
         align={alignmentMap[align]}
         w="full"
         position="relative"

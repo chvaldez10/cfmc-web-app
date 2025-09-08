@@ -128,7 +128,7 @@ const DonationMethodCard = ({
       position="relative"
       overflow="hidden"
     >
-      <HStack spacing={4} align="start">
+      <HStack gap={4} align="start">
         <Box
           p={3}
           bg="brand.100"
@@ -139,7 +139,7 @@ const DonationMethodCard = ({
           <Icon as={method.icon} boxSize={{ base: 5, md: 6 }} />
         </Box>
 
-        <VStack align="start" spacing={2} flex={1}>
+        <VStack align="start" gap={2} flex={1}>
           <Text
             fontWeight="bold"
             fontSize={{ base: "lg", md: "xl" }}
@@ -330,12 +330,12 @@ const TithesAndOfferingsModal = ({
           _hover={{ bg: "gray.200" }}
         />
         <ModalBody pb={6} px={6}>
-          <VStack spacing={6} align="stretch">
+          <VStack gap={6} align="stretch">
             <IntroductionSection />
             <Divider borderColor={borderColor} />
 
             {/* Donation Methods */}
-            <VStack spacing={4} align="stretch">
+            <VStack gap={4} align="stretch">
               {donationMethods.map((method, index) => (
                 <DonationMethodCard
                   key={index}

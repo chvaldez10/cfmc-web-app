@@ -90,7 +90,7 @@ export default function ColumnLayout({
       mt={mt}
       {...containerProps}
     >
-      <VStack textAlign={textAlign} spacing={spacing} w="100%" {...vStackProps}>
+      <VStack textAlign={textAlign} gap={spacing} w="100%" {...vStackProps}>
         {children}
       </VStack>
     </Container>

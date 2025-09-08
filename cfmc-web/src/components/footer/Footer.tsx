@@ -20,7 +20,7 @@ const FooterDetails = () => {
         justify="space-between"
         wrap="wrap"
       >
-        <VStack align="start" spacing={4} mb={{ base: 8, md: 0 }}>
+        <VStack align="start" gap={4} mb={{ base: 8, md: 0 }}>
           <Text fontWeight="bold" fontSize={{ base: "lg", md: "xl" }}>
             {Branding.CHURCH_NAME_ABBREVIATION}
           </Text>
@@ -43,10 +43,10 @@ const FooterDetails = () => {
 
         <Stack
           direction={{ base: "column", md: "row" }}
-          spacing={{ base: 8, md: 16 }}
+          gap={{ base: 8, md: 16 }}
         >
           {FOOTER_ITEMS.map((footerItem, index) => (
-            <VStack align="start" spacing={4} key={index}>
+            <VStack align="start" gap={4} key={index}>
               <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
                 {footerItem.label}
               </Text>

@@ -46,7 +46,7 @@ const VisionMissionParallax = () => {
       />
 
       <Container maxW="7xl" px={{ base: 4, md: 8 }}>
-        <VStack spacing={{ base: 12, md: 16 }} align="center">
+        <VStack gap={{ base: 12, md: 16 }} align="center">
           {/* Main Heading */}
           <ParallaxSectionHeading
             scrollYProgress={scrollYProgress}

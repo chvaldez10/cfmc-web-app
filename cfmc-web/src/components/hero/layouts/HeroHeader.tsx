@@ -43,9 +43,9 @@ export default function HeroHeader({
           minH="100vh"
           textAlign="center"
         >
-          <VStack spacing={{ base: 6, md: 8 }} maxW="4xl" mx="auto" w="full">
+          <VStack gap={{ base: 6, md: 8 }} maxW="4xl" mx="auto" w="full">
             {/* Title Section */}
-            <VStack spacing={{ base: 4, md: 6 }}>
+            <VStack gap={{ base: 4, md: 6 }}>
               <Heading
                 as="h1"
                 size="2xl"

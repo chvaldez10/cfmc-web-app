@@ -70,7 +70,7 @@ export default EventSwiper;
 const EventCard = ({ event }: { event: Events }) => {
   return (
     <Box width="100%" height="100%">
-      <VStack spacing={4} height="100%">
+      <VStack gap={4} height="100%">
         <EventImage event={event} />
         <EventDetails event={event} />
       </VStack>
@@ -121,7 +121,7 @@ const EventDetails = ({ event }: { event: Events }) => {
   return (
     <Stack
       p={4}
-      spacing={3}
+      gap={3}
       height={{ base: "180px", md: "200px" }}
       borderBottomWidth="1px"
       borderColor="gray.200"

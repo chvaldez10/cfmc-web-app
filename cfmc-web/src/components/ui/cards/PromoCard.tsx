@@ -90,7 +90,7 @@ const PromoCard = memo(
           />
 
           <VStack
-            spacing={{ base: 4, md: 6 }}
+            gap={{ base: 4, md: 6 }}
             p={{ base: 6, md: 8 }}
             h="100%"
             minH={{ base: "300px", md: "340px" }}
@@ -100,7 +100,7 @@ const PromoCard = memo(
             justify="space-between"
           >
             {/* Header Section */}
-            <VStack spacing={{ base: 3, md: 4 }} align="center">
+            <VStack gap={{ base: 3, md: 4 }} align="center">
               {/* Icon */}
               <Box
                 p={{ base: 3, md: 4 }}
@@ -124,7 +124,7 @@ const PromoCard = memo(
               </Box>
 
               {/* Title & Subtitle */}
-              <VStack spacing={2} textAlign="center">
+              <VStack gap={2} textAlign="center">
                 <Heading
                   id={`${card.title}-title`}
                   fontSize={{ base: "xl", md: "2xl" }}

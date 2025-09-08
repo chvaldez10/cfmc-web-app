@@ -19,8 +19,8 @@ export default function EventsPage() {
   return (
     <Box bg={bgColor} minH="100vh" py={16}>
       <Container maxW="6xl" px={{ base: 4, md: 8 }}>
-        <VStack spacing={8} textAlign="center">
-          <VStack spacing={6}>
+        <VStack gap={8} textAlign="center">
+          <VStack gap={6}>
             <Heading
               size="2xl"
               color={accentColor}
@@ -45,7 +45,7 @@ export default function EventsPage() {
             borderColor="gray.200"
             maxW="md"
           >
-            <VStack spacing={6}>
+            <VStack gap={6}>
               <Heading size="lg" color={accentColor}>
                 Featured Event
               </Heading>

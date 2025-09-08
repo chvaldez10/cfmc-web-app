@@ -71,7 +71,7 @@ const ParallaxCard = ({
         }}
       >
         <VStack
-          spacing={{ base: 6, md: 8, lg: 10 }}
+          gap={{ base: 6, md: 8, lg: 10 }}
           align="center"
           textAlign="center"
           zIndex="1"
