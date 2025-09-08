@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, VStack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, VStack } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { AllowedColorSchemes, PublicLabels } from "@/constants/shared/enums";
@@ -17,7 +17,7 @@ const VisionMissionParallax = () => {
     offset: ["start end", "end start"],
   });
 
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const bgColor = "gray.50";
 
   return (
     <Box

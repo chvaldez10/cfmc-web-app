@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Text,
-  Heading,
-  useColorModeValue,
-  BoxProps,
-} from "@chakra-ui/react";
+import { Box, Text, Heading, BoxProps } from "@chakra-ui/react";
 
 interface ContentCardProps extends BoxProps {
   title: string;
@@ -23,23 +17,20 @@ export const ContentCard = ({
   // Palette definitions
   const palette = {
     green: {
-      accent: useColorModeValue("green.700", "green.500"),
+      accent: "green.700",
       gradient: "linear(to-r, green.500, green.700)",
     },
     purple: {
-      accent: useColorModeValue("purple.600", "purple.400"),
+      accent: "purple.600",
       gradient: "linear(to-r, purple.400, purple.600)",
     },
   };
   const { accent, gradient } = palette[colorScheme];
 
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
-  const shadowColor = useColorModeValue(
-    "rgba(0, 0, 0, 0.1)",
-    "rgba(0, 0, 0, 0.3)"
-  );
+  const textColor = "gray.700";
+  const bgColor = "white";
+  const borderColor = "gray.200";
+  const shadowColor = "rgba(0, 0, 0, 0.1)";
 
   const defaultShadow = `0 4px 6px ${shadowColor}, 0 1px 3px ${shadowColor}`;
   const hoverShadow = `0 8px 25px ${shadowColor}, 0 4px 10px ${shadowColor}`;

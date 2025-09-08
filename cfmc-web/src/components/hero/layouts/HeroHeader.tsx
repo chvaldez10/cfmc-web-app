@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Flex,
-  Container,
-  Heading,
-  Text,
-  VStack,
-  useColorModeValue,
-  Box,
-} from "@chakra-ui/react";
+import { Flex, Container, Heading, Text, VStack, Box } from "@chakra-ui/react";
 
 import styles from "@/styles/GradientBackground.module.css";
 
@@ -33,8 +25,8 @@ export default function HeroHeader({
   highlightColor = "purple.400",
   descriptionColor,
 }: HeroHeaderProps) {
-  const defaultTitleColor = useColorModeValue("gray.800", "white");
-  const defaultDescriptionColor = useColorModeValue("gray.600", "gray.300");
+  const defaultTitleColor = "gray.800";
+  const defaultDescriptionColor = "gray.600";
 
   return (
     <Box className={styles.radialGradient} w="full">

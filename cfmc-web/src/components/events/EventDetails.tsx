@@ -8,7 +8,6 @@ import {
   Heading,
   Icon,
   Badge,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { CalendarIcon, InfoIcon } from "@chakra-ui/icons";
 import { MdLocationOn } from "react-icons/md";
@@ -27,11 +26,11 @@ const EventDetails = ({
   address,
   status,
 }: EventDetailsProps) => {
-  const cardBg = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const accentColor = useColorModeValue("purple.600", "purple.300");
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const iconBg = useColorModeValue("purple.50", "purple.900");
+  const cardBg = "white";
+  const borderColor = "gray.200";
+  const accentColor = "purple.600";
+  const textColor = "gray.700";
+  const iconBg = "purple.50";
 
   const formatDateRange = (startDate: string, endDate: string) => {
     const start = formatLocalDateTimeToHumanReadable(startDate);

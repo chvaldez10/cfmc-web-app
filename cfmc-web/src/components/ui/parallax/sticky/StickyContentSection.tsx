@@ -1,6 +1,6 @@
 "use client";
 
-import { Heading, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Heading, Text, VStack } from "@chakra-ui/react";
 
 import type { TextBlock } from "@/types/ui/components";
 import { AllowedColorSchemes } from "@/constants/shared/enums";
@@ -18,14 +18,11 @@ const StickyContentSection = ({
   colorScheme,
   reverse = false,
 }: StickyContentSectionProps) => {
-  const textColor = useColorModeValue("gray.600", "gray.300");
-  const quoteColor = useColorModeValue("gray.700", "gray.200");
-  const headingColor = useColorModeValue("gray.900", "white");
-  const quoteBgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue(
-    `${colorScheme}.500`,
-    `${colorScheme}.400`
-  );
+  const textColor = "gray.600";
+  const quoteColor = "gray.700";
+  const headingColor = "gray.900";
+  const quoteBgColor = "white";
+  const borderColor = `${colorScheme}.500`;
 
   return (
     <VStack

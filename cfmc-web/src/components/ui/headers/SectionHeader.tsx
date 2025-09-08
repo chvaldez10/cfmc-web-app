@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Text,
-  VStack,
-  useColorModeValue,
-  Heading,
-} from "@chakra-ui/react";
+import { Box, Text, VStack, Heading } from "@chakra-ui/react";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
 import { COMMON_X_PADDING, COMMON_Y_PADDING } from "@/constants/shared/ui";
 
@@ -23,8 +17,8 @@ export default function SectionHeader({
   textAlign = "center",
   mt,
 }: SectionHeaderProps) {
-  const textColor = useColorModeValue("gray.800", "gray.100");
-  const accentColor = useColorModeValue("purple.600", "purple.300");
+  const textColor = "gray.800";
+  const accentColor = "purple.600";
 
   return (
     <Box

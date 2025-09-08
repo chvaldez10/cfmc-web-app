@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -20,7 +20,7 @@ const LayeredParallaxSection = () => {
     offset: ["start end", "end start"],
   });
 
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const bgColor = "gray.50";
 
   // Pre-calculate all transform values individually (no loops with hooks)
   // Section transforms - 5 sections

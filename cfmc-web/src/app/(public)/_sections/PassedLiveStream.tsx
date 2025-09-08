@@ -8,7 +8,6 @@ import {
   Stack,
   Icon,
   Tooltip,
-  useColorModeValue,
   createIcon,
   Spinner,
 } from "@chakra-ui/react";
@@ -24,8 +23,8 @@ export default function PassedLiveStream() {
     useState<SundaysAndSpecialDays | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  const arrowColor = useColorModeValue("gray.800", "gray.300");
-  const headingColor = useColorModeValue("purple.600", "purple.400");
+  const arrowColor = "gray.800";
+  const headingColor = "purple.600";
 
   useEffect(() => {
     startTransition(async () => {
@@ -164,11 +163,7 @@ export default function PassedLiveStream() {
           {LiveStreamLabels.BUTTON_TEXT}
         </Button>
 
-        <Text
-          fontSize={"sm"}
-          color={useColorModeValue("gray.700", "gray.400")}
-          fontStyle="italic"
-        >
+        <Text fontSize={"sm"} color="gray.700" fontStyle="italic">
           {LiveStreamLabels.SUBTEXT}
         </Text>
       </Stack>

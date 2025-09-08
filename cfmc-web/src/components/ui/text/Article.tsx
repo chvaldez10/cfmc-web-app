@@ -5,7 +5,6 @@ import {
   Text,
   VStack,
   HStack,
-  useColorModeValue,
   Heading,
   Divider,
   Badge,
@@ -28,12 +27,12 @@ interface ArticleProps {
 }
 
 export default function Article({ items, showDividers = true }: ArticleProps) {
-  const textColor = useColorModeValue("gray.800", "gray.100");
-  const accentColor = useColorModeValue("purple.600", "purple.300");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
-  const bibleRefBg = useColorModeValue("purple.50", "purple.900");
-  const bibleRefBorder = useColorModeValue("purple.200", "purple.700");
-  const bibleRefText = useColorModeValue("purple.800", "purple.200");
+  const textColor = "gray.800";
+  const accentColor = "purple.600";
+  const borderColor = "gray.200";
+  const bibleRefBg = "purple.50";
+  const bibleRefBorder = "purple.200";
+  const bibleRefText = "purple.800";
 
   return (
     <ColumnLayout maxW="5xl" mt={NAVBAR_HEIGHT} py={COMMON_Y_PADDING}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Text, Heading, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text, Heading } from "@chakra-ui/react";
 
 interface ContentSectionProps {
   title: string;
@@ -15,10 +15,10 @@ export default function ContentSection({
   variant = "default",
   size = "md",
 }: ContentSectionProps) {
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const accentColor = useColorModeValue("purple.600", "purple.400");
-  const sectionBg = useColorModeValue("gray.50", "gray.800");
-  const highlightedBg = useColorModeValue("purple.50", "purple.900");
+  const textColor = "gray.700";
+  const accentColor = "purple.600";
+  const sectionBg = "gray.50";
+  const highlightedBg = "purple.50";
 
   const bgColor = variant === "highlighted" ? highlightedBg : sectionBg;
   const borderColor = variant === "highlighted" ? "purple.500" : accentColor;

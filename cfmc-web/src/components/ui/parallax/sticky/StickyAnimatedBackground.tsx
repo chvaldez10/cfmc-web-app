@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { AllowedColorSchemes } from "@/constants/shared/enums";
 
 interface StickyAnimatedBackgroundProps {
@@ -16,54 +16,27 @@ const StickyAnimatedBackground = ({
 }: StickyAnimatedBackgroundProps) => {
   const colorSchemes = {
     [AllowedColorSchemes.PURPLE]: {
-      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeBg: "var(--color-light-100)",
       smokeColors: {
-        primary: useColorModeValue(
-          "rgba(139, 69, 255, 0.25)",
-          "rgba(139, 69, 255, 0.35)"
-        ),
-        secondary: useColorModeValue(
-          "rgba(168, 85, 247, 0.15)",
-          "rgba(168, 85, 247, 0.25)"
-        ),
-        accent: useColorModeValue(
-          "rgba(196, 181, 253, 0.1)",
-          "rgba(196, 181, 253, 0.15)"
-        ),
+        primary: "rgba(139, 69, 255, 0.25)",
+        secondary: "rgba(168, 85, 247, 0.15)",
+        accent: "rgba(196, 181, 253, 0.1)",
       },
     },
     [AllowedColorSchemes.GREEN]: {
-      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeBg: "var(--color-light-100)",
       smokeColors: {
-        primary: useColorModeValue(
-          "rgba(34, 197, 94, 0.25)",
-          "rgba(34, 197, 94, 0.35)"
-        ),
-        secondary: useColorModeValue(
-          "rgba(74, 222, 128, 0.15)",
-          "rgba(74, 222, 128, 0.25)"
-        ),
-        accent: useColorModeValue(
-          "rgba(134, 239, 172, 0.1)",
-          "rgba(134, 239, 172, 0.15)"
-        ),
+        primary: "rgba(34, 197, 94, 0.25)",
+        secondary: "rgba(74, 222, 128, 0.15)",
+        accent: "rgba(134, 239, 172, 0.1)",
       },
     },
     [AllowedColorSchemes.RED]: {
-      smokeBg: useColorModeValue("var(--color-light-100)", "gray.800"),
+      smokeBg: "var(--color-light-100)",
       smokeColors: {
-        primary: useColorModeValue(
-          "rgba(239, 68, 68, 0.25)",
-          "rgba(239, 68, 68, 0.35)"
-        ),
-        secondary: useColorModeValue(
-          "rgba(248, 113, 113, 0.15)",
-          "rgba(248, 113, 113, 0.25)"
-        ),
-        accent: useColorModeValue(
-          "rgba(252, 165, 165, 0.1)",
-          "rgba(252, 165, 165, 0.15)"
-        ),
+        primary: "rgba(239, 68, 68, 0.25)",
+        secondary: "rgba(248, 113, 113, 0.15)",
+        accent: "rgba(252, 165, 165, 0.1)",
       },
     },
   };

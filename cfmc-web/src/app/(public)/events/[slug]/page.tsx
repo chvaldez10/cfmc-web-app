@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, Stack } from "@chakra-ui/react";
 import {
   EventImageCarousel,
   EventHeader,
@@ -10,7 +10,7 @@ import {
 import { mockEvent } from "./page.data";
 
 export default function EventPage({ params }: { params: { slug: string } }) {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const bgColor = "gray.50";
 
   // In a real app, you would fetch the event data based on params.slug
   const event = mockEvent;

@@ -1,11 +1,4 @@
-import {
-  Box,
-  VStack,
-  Icon,
-  Heading,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, VStack, Icon, Heading, Text } from "@chakra-ui/react";
 import { motion, MotionStyle } from "framer-motion";
 import { IconType } from "react-icons";
 
@@ -30,19 +23,11 @@ const ParallaxCard = ({
   motionStyle,
   zIndex,
 }: ParallaxCardProps) => {
-  const textColor = useColorModeValue("gray.800", "gray.100");
-  const overlayBg = useColorModeValue(
-    "linear-gradient(135deg, rgba(237, 233, 254, 0.9), rgba(219, 234, 254, 0.85), rgba(220, 252, 231, 0.9))",
-    "linear-gradient(135deg, rgba(88, 28, 135, 0.8), rgba(30, 64, 175, 0.75), rgba(5, 46, 22, 0.8))"
-  );
-  const contentBorder = useColorModeValue(
-    "rgba(255, 255, 255, 0.4)",
-    "rgba(255, 255, 255, 0.1)"
-  );
-  const contentShadow = useColorModeValue(
-    "0 8px 32px rgba(0, 0, 0, 0.1)",
-    "0 8px 32px rgba(0, 0, 0, 0.3)"
-  );
+  const textColor = "gray.800";
+  const overlayBg =
+    "linear-gradient(135deg, rgba(237, 233, 254, 0.9), rgba(219, 234, 254, 0.85), rgba(220, 252, 231, 0.9))";
+  const contentBorder = "rgba(255, 255, 255, 0.4)";
+  const contentShadow = "0 8px 32px rgba(0, 0, 0, 0.1)";
 
   return (
     <motion.div
