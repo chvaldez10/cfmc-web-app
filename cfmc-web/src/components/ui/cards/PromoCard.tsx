@@ -7,12 +7,11 @@ import {
   VStack,
   Icon,
   Button,
-  forwardRef,
   type BoxProps,
 } from "@chakra-ui/react";
 import { CardDataProps } from "@/types/ui/components";
 import NextLink from "next/link";
-import { memo } from "react";
+import { memo, forwardRef } from "react";
 
 interface PromoCardProps extends Omit<BoxProps, "onClick"> {
   card: CardDataProps;
@@ -20,7 +19,7 @@ interface PromoCardProps extends Omit<BoxProps, "onClick"> {
 }
 
 const PromoCard = memo(
-  forwardRef<PromoCardProps, "div">(
+  forwardRef<HTMLDivElement, PromoCardProps>(
     ({ card, variant = "default", ...rest }, ref) => {
       const cardHoverOverlay = "rgba(0, 0, 0, 0.08)";
 
@@ -167,29 +166,29 @@ const PromoCard = memo(
 
             {/* Call-to-Action Button */}
             <Box pt={2}>
-              <Button
-                as={NextLink}
-                href={card.footerLink.href}
-                size={{ base: "sm", md: "md" }}
-                colorScheme="purple"
-                variant="solid"
-                w="full"
-                borderRadius="lg"
-                fontWeight="semibold"
-                transition="all 0.2s ease"
-                _hover={{
-                  transform: "translateY(-1px)",
-                  boxShadow: "lg",
-                }}
-                _active={{
-                  transform: "translateY(0)",
-                }}
-                _focus={{
-                  boxShadow: "0 0 0 3px rgba(147, 51, 234, 0.3)",
-                }}
-              >
-                {card.footerLink.label}
-              </Button>
+              <NextLink href={card.footerLink.href} passHref>
+                <Button
+                  size={{ base: "sm", md: "md" }}
+                  colorScheme="purple"
+                  variant="solid"
+                  w="full"
+                  borderRadius="lg"
+                  fontWeight="semibold"
+                  transition="all 0.2s ease"
+                  _hover={{
+                    transform: "translateY(-1px)",
+                    boxShadow: "lg",
+                  }}
+                  _active={{
+                    transform: "translateY(0)",
+                  }}
+                  _focus={{
+                    boxShadow: "0 0 0 3px rgba(147, 51, 234, 0.3)",
+                  }}
+                >
+                  {card.footerLink.label}
+                </Button>
+              </NextLink>
             </Box>
           </VStack>
         </Box>
