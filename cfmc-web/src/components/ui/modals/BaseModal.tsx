@@ -1,16 +1,12 @@
 import React from "react";
 import {
-  Modal as ChakraModal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
+  Dialog,
   Button,
   ButtonProps,
   useBreakpointValue,
   Flex,
+  Portal,
+  CloseButton,
 } from "@chakra-ui/react";
 
 interface FooterAction extends ButtonProps {
@@ -60,50 +56,59 @@ const BaseModal: React.FC<BaseModalProps> = ({
   const modalSize = useBreakpointValue({ base: size, md: size });
 
   return (
-    <ChakraModal
-      isOpen={isOpen}
-      onClose={onClose ?? (() => {})}
+    <Dialog.Root
+      open={isOpen}
+      onOpenChange={(details) => !details.open && onClose?.()}
       size={modalSize}
-      closeOnOverlayClick={closeOnOverlayClick}
-      closeOnEsc={closeOnEsc}
-      isCentered
+      closeOnInteractOutside={closeOnOverlayClick}
+      closeOnEscape={closeOnEsc}
     >
-      <ModalOverlay />
-      <ModalContent>
-        {renderHeader ? (
-          renderHeader()
-        ) : title ? (
-          <ModalHeader>{title}</ModalHeader>
-        ) : null}
+      <Portal>
+        <Dialog.Backdrop />
+        <Dialog.Positioner>
+          <Dialog.Content>
+            {renderHeader ? (
+              renderHeader()
+            ) : title ? (
+              <Dialog.Header>{title}</Dialog.Header>
+            ) : null}
 
-        {!hideCloseButton && <ModalCloseButton />}
+            {!hideCloseButton && (
+              <Dialog.CloseTrigger asChild>
+                <CloseButton />
+              </Dialog.CloseTrigger>
+            )}
 
-        <ModalBody>{children}</ModalBody>
+            <Dialog.Body>{children}</Dialog.Body>
 
-        {renderFooter ? (
-          renderFooter()
-        ) : footerActions?.length ? (
-          <ModalFooter>
-            <Flex w="full" justify="flex-end" gap={3} flexWrap="wrap">
-              {footerActions.map((action, index) => (
-                <Button
-                  key={index}
-                  onClick={action.onClick}
-                  colorScheme={
-                    action.isPrimary ? action.colorScheme ?? "blue" : undefined
-                  }
-                  variant={action.isPrimary ? "solid" : "ghost"}
-                  isLoading={action.isLoading}
-                  {...action}
-                >
-                  {action.label}
-                </Button>
-              ))}
-            </Flex>
-          </ModalFooter>
-        ) : null}
-      </ModalContent>
-    </ChakraModal>
+            {renderFooter ? (
+              renderFooter()
+            ) : footerActions?.length ? (
+              <Dialog.Footer>
+                <Flex w="full" justify="flex-end" gap={3} flexWrap="wrap">
+                  {footerActions.map((action, index) => (
+                    <Button
+                      key={index}
+                      onClick={action.onClick}
+                      colorScheme={
+                        action.isPrimary
+                          ? action.colorScheme ?? "blue"
+                          : undefined
+                      }
+                      variant={action.isPrimary ? "solid" : "ghost"}
+                      isLoading={action.isLoading}
+                      {...action}
+                    >
+                      {action.label}
+                    </Button>
+                  ))}
+                </Flex>
+              </Dialog.Footer>
+            ) : null}
+          </Dialog.Content>
+        </Dialog.Positioner>
+      </Portal>
+    </Dialog.Root>
   );
 };
 

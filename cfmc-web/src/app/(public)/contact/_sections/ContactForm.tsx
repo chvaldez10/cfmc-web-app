@@ -11,10 +11,10 @@ import {
   Checkbox,
   CheckboxGroup,
   FormErrorMessage,
-  useToast,
   Text,
   Flex,
 } from "@chakra-ui/react";
+import { toaster } from "@/components/ui/toaster";
 import { useState } from "react";
 
 interface FormData {
@@ -52,7 +52,6 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
-  const toast = useToast();
 
   // Consistent color scheme following design system
   const textColor = "gray.800";
@@ -114,13 +113,10 @@ export default function ContactForm() {
       });
 
       if (result.success) {
-        toast({
+        toaster.create({
           title: ContactFormToastMessages.SUCCESS_TITLE,
           description: ContactFormToastMessages.SUCCESS_DESCRIPTION,
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
+          type: "success",
         });
 
         // Reset form on successful submission
@@ -135,16 +131,13 @@ export default function ContactForm() {
         throw new Error(result.message);
       }
     } catch (error) {
-      toast({
+      toaster.create({
         title: ContactFormToastMessages.ERROR_TITLE,
         description:
           error instanceof Error
             ? error.message
             : ContactFormToastMessages.ERROR_DESCRIPTION,
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
+        type: "error",
       });
     } finally {
       setIsSubmitting(false);

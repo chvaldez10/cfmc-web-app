@@ -1,13 +1,7 @@
 import { ComponentType } from "react";
 
 import {
-  Modal,
-  ModalContent,
-  ModalOverlay,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
+  Dialog,
   Button,
   Text,
   VStack,
@@ -15,9 +9,10 @@ import {
   Box,
   Icon,
   Separator,
-  useToast,
-  Tooltip,
+  Portal,
+  CloseButton,
 } from "@chakra-ui/react";
+import { toaster } from "@/components/ui/toaster";
 import {
   FaEnvelope,
   FaMailBulk,
@@ -59,43 +54,41 @@ const EmailCopySection = ({
 }) => {
   const isCopied = copiedIndex === index;
   return (
-    <Tooltip label={email} placement="top" hasArrow>
-      <Box
-        mt={3}
-        p={3}
-        bg="white"
-        borderRadius="lg"
-        border="1px"
-        borderColor="gray.300"
-        w="full"
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-        cursor="pointer"
-        tabIndex={0}
-        onClick={() => onCopyEmail(email, index)}
-        _hover={{ bg: "gray.50" }}
-        _active={{ bg: "gray.100" }}
-        transition="background 0.2s"
-        aria-label={`Copy email: ${email}`}
+    <Box
+      mt={3}
+      p={3}
+      bg="white"
+      borderRadius="lg"
+      border="1px"
+      borderColor="gray.300"
+      w="full"
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      cursor="pointer"
+      tabIndex={0}
+      onClick={() => onCopyEmail(email, index)}
+      _hover={{ bg: "gray.50" }}
+      _active={{ bg: "gray.100" }}
+      transition="background 0.2s"
+      aria-label={`Copy email: ${email}`}
+    >
+      <Text
+        fontSize={{ base: "sm", md: "md" }}
+        color={isCopied ? "green.600" : "brand.600"}
+        fontWeight="medium"
       >
-        <Text
-          fontSize={{ base: "sm", md: "md" }}
-          color={isCopied ? "green.600" : "brand.600"}
-          fontWeight="medium"
-        >
-          {isCopied ? "Copied!" : "Copy email"}
-        </Text>
-        <Box
-          as="span"
-          ml={2}
-          color={isCopied ? "green.500" : "gray.500"}
-          fontSize="lg"
-        >
-          {isCopied ? <FaCheck /> : <FaCopy />}
-        </Box>
+        {isCopied ? "Copied!" : "Copy email"}
+      </Text>
+      <Box
+        as="span"
+        ml={2}
+        color={isCopied ? "green.500" : "gray.500"}
+        fontSize="lg"
+      >
+        {isCopied ? <FaCheck /> : <FaCopy />}
       </Box>
-    </Tooltip>
+    </Box>
   );
 };
 
@@ -255,7 +248,6 @@ const TithesAndOfferingsModal = ({
   onClose: () => void;
 }) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
-  const toast = useToast();
 
   // Color mode values for better theming
   const bgColor = "white";
@@ -265,13 +257,10 @@ const TithesAndOfferingsModal = ({
     navigator.clipboard.writeText(email);
     setCopiedIndex(index);
 
-    toast({
-      title: "Email copied!",
-      description: "The e-transfer email has been copied to your clipboard.",
-      status: "success",
-      duration: 2000,
-      isClosable: true,
-      position: "top",
+    // Show success toast notification
+    toaster.create({
+      description: "Email copied to clipboard!",
+      type: "success",
     });
 
     // Reset copied state after 2 seconds
@@ -299,75 +288,79 @@ const TithesAndOfferingsModal = ({
   ];
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      isCentered
+    <Dialog.Root
+      open={isOpen}
+      onOpenChange={(details) => !details.open && onClose()}
       size={{ base: "sm", md: "md", lg: "lg" }}
-      scrollBehavior="inside"
     >
-      <ModalOverlay bg="blackAlpha.600" backdropFilter="blur(4px)" />
-      <ModalContent
-        mx={4}
-        bg={bgColor}
-        borderRadius="xl"
-        boxShadow="2xl"
-        maxH="90vh"
-      >
-        <ModalHeader
-          fontSize={{ base: "xl", md: "2xl" }}
-          textAlign="center"
-          fontWeight="bold"
-          color="brand.600"
-          pb={2}
-        >
-          {PublicLabels.TITHE_AND_OFFERINGS}
-        </ModalHeader>
-        <ModalCloseButton
-          size="lg"
-          borderRadius="full"
-          bg="gray.100"
-          _hover={{ bg: "gray.200" }}
-        />
-        <ModalBody pb={6} px={6}>
-          <VStack gap={6} align="stretch">
-            <IntroductionSection />
-            <Separator borderColor={borderColor} />
-
-            {/* Donation Methods */}
-            <VStack gap={4} align="stretch">
-              {donationMethods.map((method, index) => (
-                <DonationMethodCard
-                  key={index}
-                  method={method}
-                  index={index}
-                  onCopyEmail={handleCopyEmail}
-                  copiedIndex={copiedIndex}
-                />
-              ))}
-            </VStack>
-
-            <InfoSection />
-          </VStack>
-        </ModalBody>
-        <ModalFooter pt={2} pb={6} px={6}>
-          <Button
-            bg="brand.500"
-            color="white"
-            onClick={onClose}
-            _hover={{ bg: "brand.400", transform: "translateY(-1px)" }}
-            _active={{ bg: "brand.600" }}
-            size={{ base: "md", md: "lg" }}
-            w={{ base: "full", md: "auto" }}
-            px={8}
-            borderRadius="lg"
-            fontWeight="semibold"
-            transition="all 0.2s"
+      <Portal>
+        <Dialog.Backdrop bg="blackAlpha.600" backdropFilter="blur(4px)" />
+        <Dialog.Positioner>
+          <Dialog.Content
+            mx={4}
+            bg={bgColor}
+            borderRadius="xl"
+            boxShadow="2xl"
+            maxH="90vh"
           >
-            Close
-          </Button>
-        </ModalFooter>
-      </ModalContent>
+            <Dialog.Header
+              fontSize={{ base: "xl", md: "2xl" }}
+              textAlign="center"
+              fontWeight="bold"
+              color="brand.600"
+              pb={2}
+            >
+              {PublicLabels.TITHE_AND_OFFERINGS}
+            </Dialog.Header>
+            <Dialog.CloseTrigger asChild>
+              <CloseButton
+                size="lg"
+                borderRadius="full"
+                bg="gray.100"
+                _hover={{ bg: "gray.200" }}
+              />
+            </Dialog.CloseTrigger>
+            <Dialog.Body pb={6} px={6}>
+              <VStack gap={6} align="stretch">
+                <IntroductionSection />
+                <Separator borderColor={borderColor} />
+
+                {/* Donation Methods */}
+                <VStack gap={4} align="stretch">
+                  {donationMethods.map((method, index) => (
+                    <DonationMethodCard
+                      key={index}
+                      method={method}
+                      index={index}
+                      onCopyEmail={handleCopyEmail}
+                      copiedIndex={copiedIndex}
+                    />
+                  ))}
+                </VStack>
+
+                <InfoSection />
+              </VStack>
+            </Dialog.Body>
+            <Dialog.Footer pt={2} pb={6} px={6}>
+              <Button
+                bg="brand.500"
+                color="white"
+                onClick={onClose}
+                _hover={{ bg: "brand.400", transform: "translateY(-1px)" }}
+                _active={{ bg: "brand.600" }}
+                size={{ base: "md", md: "lg" }}
+                w={{ base: "full", md: "auto" }}
+                px={8}
+                borderRadius="lg"
+                fontWeight="semibold"
+                transition="all 0.2s"
+              >
+                Close
+              </Button>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Positioner>
+      </Portal>
 
       <style jsx>{`
         @keyframes gradient {
@@ -382,7 +375,7 @@ const TithesAndOfferingsModal = ({
           }
         }
       `}</style>
-    </Modal>
+    </Dialog.Root>
   );
 };
 
