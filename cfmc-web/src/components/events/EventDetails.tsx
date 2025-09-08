@@ -9,7 +9,7 @@ import {
   Icon,
   Badge,
 } from "@chakra-ui/react";
-import { CalendarIcon, InfoIcon } from "@chakra-ui/icons";
+import { FaCalendar, FaInfoCircle } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
 
@@ -88,7 +88,7 @@ const EventDetails = ({
               alignItems="center"
               justifyContent="center"
             >
-              <Icon as={CalendarIcon} color={accentColor} boxSize={5} />
+              <Icon as={FaCalendar} color={accentColor} boxSize={5} />
             </Box>
             <VStack align="start" gap={1}>
               <Text
@@ -158,7 +158,7 @@ const EventDetails = ({
               alignItems="center"
               justifyContent="center"
             >
-              <Icon as={InfoIcon} color={accentColor} boxSize={5} />
+              <Icon as={FaInfoCircle} color={accentColor} boxSize={5} />
             </Box>
             <VStack align="start" gap={1}>
               <Text

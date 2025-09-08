@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Image, IconButton, useBreakpointValue } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { IoClose } from "react-icons/io5";
 import BaseModal from "./BaseModal";
 
 interface ImageModalProps {
@@ -32,7 +32,6 @@ const ImageModal: React.FC<ImageModalProps> = ({
         <Box position="absolute" top={4} right={4} zIndex={10}>
           <IconButton
             aria-label="Close"
-            icon={<CloseIcon />}
             onClick={onClose}
             variant="solid"
             colorScheme="blackAlpha"
@@ -43,7 +42,9 @@ const ImageModal: React.FC<ImageModalProps> = ({
             _hover={{
               bg: "rgba(0, 0, 0, 0.8)",
             }}
-          />
+          >
+            <IoClose />
+          </IconButton>
         </Box>
       )}
     >

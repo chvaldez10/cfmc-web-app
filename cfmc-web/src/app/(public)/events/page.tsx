@@ -9,7 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { IoArrowForward } from "react-icons/io5";
 
 export default function EventsPage() {
   const bgColor = "gray.50";
@@ -58,7 +58,7 @@ export default function EventsPage() {
                 href="/events/test-event"
                 colorScheme="purple"
                 size="lg"
-                rightIcon={<ArrowForwardIcon />}
+                rightIcon={<IoArrowForward />}
                 borderRadius="full"
                 px={8}
                 _hover={{

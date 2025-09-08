@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
@@ -121,7 +121,6 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
         <>
           <IconButton
             aria-label="Previous image"
-            icon={<ChevronLeftIcon />}
             position="absolute"
             left={4}
             top="50%"
@@ -139,11 +138,12 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
             boxShadow="lg"
             transition="all 0.2s"
             onClick={() => swiperRef.current?.slidePrev()}
-          />
+          >
+            <FaChevronLeft />
+          </IconButton>
 
           <IconButton
             aria-label="Next image"
-            icon={<ChevronRightIcon />}
             position="absolute"
             right={4}
             top="50%"
@@ -161,7 +161,9 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
             boxShadow="lg"
             transition="all 0.2s"
             onClick={() => swiperRef.current?.slideNext()}
-          />
+          >
+            <FaChevronRight />
+          </IconButton>
         </>
       )}
 

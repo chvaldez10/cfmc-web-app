@@ -15,12 +15,9 @@ import {
   useDisclosure,
   Link,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { IoClose } from "react-icons/io5";
+import { FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // Types
 import { NavItem } from "@/types/ui/navbar";
@@ -75,12 +72,11 @@ export default function PublicNavbar() {
         <Flex ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
           <IconButton
             onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
-          />
+          >
+            {isOpen ? <IoClose size={12} /> : <GiHamburgerMenu size={20} />}
+          </IconButton>
         </Flex>
 
         {/* Desktop Navigation */}
@@ -212,7 +208,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"brand.500"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"brand.500"} w={5} h={5} as={FaChevronRight} />
         </Flex>
       </Stack>
     </Box>
@@ -250,7 +246,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         </Text>
         {children && (
           <Icon
-            as={ChevronDownIcon}
+            as={FaChevronDown}
             transition={"all .25s ease-in-out"}
             transform={isOpen ? "rotate(180deg)" : ""}
             w={6}
