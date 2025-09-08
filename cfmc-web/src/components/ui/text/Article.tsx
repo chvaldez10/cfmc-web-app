@@ -6,7 +6,7 @@ import {
   VStack,
   HStack,
   Heading,
-  Divider,
+  Separator,
   Badge,
   Wrap,
   WrapItem,
@@ -134,7 +134,7 @@ export default function Article({ items, showDividers = true }: ArticleProps) {
 
               {/* Divider between sections */}
               {showDividers && index < items.length - 1 && (
-                <Divider
+                <Separator
                   borderColor={borderColor}
                   borderWidth="1px"
                   mt={{ base: 8, md: 10 }}

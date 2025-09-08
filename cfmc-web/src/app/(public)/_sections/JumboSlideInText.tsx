@@ -5,7 +5,7 @@ import {
   Heading,
   Text,
   VStack,
-  Divider,
+  Separator,
   SlideFade,
 } from "@chakra-ui/react";
 
@@ -29,7 +29,7 @@ const JumboSlideInText = () => {
         {/* Super script Header*/}
         <SlideFadeText delay={0.4}>
           <Flex alignItems="center" gap={2}>
-            <Divider
+            <Separator
               orientation="horizontal"
               borderColor="purple.600"
               borderWidth="2px"

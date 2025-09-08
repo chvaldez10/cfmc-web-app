@@ -14,7 +14,7 @@ import {
   HStack,
   Box,
   Icon,
-  Divider,
+  Separator,
   useToast,
   Tooltip,
 } from "@chakra-ui/react";
@@ -332,7 +332,7 @@ const TithesAndOfferingsModal = ({
         <ModalBody pb={6} px={6}>
           <VStack gap={6} align="stretch">
             <IntroductionSection />
-            <Divider borderColor={borderColor} />
+            <Separator borderColor={borderColor} />
 
             {/* Donation Methods */}
             <VStack gap={4} align="stretch">
