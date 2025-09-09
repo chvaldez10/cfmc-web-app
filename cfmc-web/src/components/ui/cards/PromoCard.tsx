@@ -7,7 +7,6 @@ import {
   VStack,
   Icon,
   Button,
-  useColorModeValue,
   forwardRef,
   type BoxProps,
 } from "@chakra-ui/react";
@@ -23,17 +22,11 @@ interface PromoCardProps extends Omit<BoxProps, "onClick"> {
 const PromoCard = memo(
   forwardRef<PromoCardProps, "div">(
     ({ card, variant = "default", ...rest }, ref) => {
-      const cardHoverOverlay = useColorModeValue(
-        "rgba(0, 0, 0, 0.08)",
-        "rgba(255, 255, 255, 0.12)"
-      );
+      const cardHoverOverlay = "rgba(0, 0, 0, 0.08)";
 
-      const textColor = useColorModeValue("gray.800", "gray.100");
-      const borderColor = useColorModeValue("gray.200", "gray.700");
-      const shadowColor = useColorModeValue(
-        "rgba(0, 0, 0, 0.1)",
-        "rgba(0, 0, 0, 0.3)"
-      );
+      const textColor = "gray.800";
+      const borderColor = "gray.200";
+      const shadowColor = "rgba(0, 0, 0, 0.1)";
 
       const isElevated = variant === "elevated";
       const baseShadow = isElevated
@@ -62,7 +55,7 @@ const PromoCard = memo(
           _hover={{
             transform: "translateY(-4px)",
             boxShadow: hoverShadow,
-            borderColor: useColorModeValue("gray.300", "gray.600"),
+            borderColor: "gray.300",
           }}
           _focus={{
             outline: "none",

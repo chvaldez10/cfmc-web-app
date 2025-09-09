@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Heading,
-  Text,
-  VStack,
-  HStack,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, VStack, HStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import type { MotionStyle } from "framer-motion";
 
@@ -27,7 +20,7 @@ const ParallaxCard1 = ({
   motionStyle,
   maxW = "4xl",
 }: AnimatedContentCardProps) => {
-  const cardBg = useColorModeValue("white", "gray.800");
+  const cardBg = "white";
 
   return (
     <motion.div

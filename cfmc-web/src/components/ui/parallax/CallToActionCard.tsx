@@ -1,10 +1,4 @@
-import {
-  Box,
-  VStack,
-  Heading,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, VStack, Heading, Text } from "@chakra-ui/react";
 import { motion, MotionStyle } from "framer-motion";
 
 interface CallToActionCardProps {
@@ -22,7 +16,7 @@ const CallToActionCard = ({
   titleColor,
   motionStyle,
 }: CallToActionCardProps) => {
-  const cardBg = useColorModeValue("white", "gray.800");
+  const cardBg = "white";
 
   return (
     <motion.div style={motionStyle}>

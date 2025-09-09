@@ -4,7 +4,6 @@ import {
   Box,
   AspectRatio,
   Heading,
-  useColorModeValue,
   Skeleton,
   Text,
   VStack,
@@ -18,9 +17,9 @@ interface EventMapProps {
 
 const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const accentColor = useColorModeValue("purple.600", "purple.300");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const textColor = useColorModeValue("gray.600", "gray.300");
+  const accentColor = "purple.600";
+  const borderColor = "gray.200";
+  const textColor = "gray.600";
 
   // Set loaded to true after a short delay to ensure iframe renders
   useEffect(() => {

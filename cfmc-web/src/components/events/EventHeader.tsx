@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  VStack,
-  HStack,
-  Badge,
-  Heading,
-  useColorModeValue,
-  Box,
-  Text,
-} from "@chakra-ui/react";
+import { VStack, HStack, Badge, Heading, Box, Text } from "@chakra-ui/react";
 
 interface EventHeaderProps {
   name: string;
@@ -25,9 +17,9 @@ const EventHeader = ({
   description,
   organizerName,
 }: EventHeaderProps) => {
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const accentColor = useColorModeValue("purple.600", "purple.300");
-  const descriptionColor = useColorModeValue("gray.600", "gray.300");
+  const textColor = "gray.700";
+  const accentColor = "purple.600";
+  const descriptionColor = "gray.600";
 
   return (
     <VStack align="start" spacing={8} w="full">
@@ -119,7 +111,7 @@ const EventHeader = ({
         {/* Organizer Information */}
         <Box
           p={6}
-          bg={useColorModeValue("purple.50", "purple.900")}
+          bg={"purple.50"}
           borderRadius="xl"
           borderLeft="4px solid"
           borderLeftColor="purple.500"

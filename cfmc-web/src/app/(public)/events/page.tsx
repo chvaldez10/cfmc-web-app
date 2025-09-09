@@ -7,15 +7,14 @@ import {
   Text,
   Button,
   VStack,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export default function EventsPage() {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
-  const accentColor = useColorModeValue("purple.600", "purple.300");
-  const textColor = useColorModeValue("gray.700", "gray.200");
+  const bgColor = "gray.50";
+  const accentColor = "purple.600";
+  const textColor = "gray.700";
 
   return (
     <Box bg={bgColor} minH="100vh" py={16}>
@@ -39,11 +38,11 @@ export default function EventsPage() {
 
           <Box
             p={8}
-            bg={useColorModeValue("white", "gray.800")}
+            bg={"white"}
             borderRadius="2xl"
             boxShadow="xl"
             border="1px solid"
-            borderColor={useColorModeValue("gray.200", "gray.600")}
+            borderColor={"gray.200"}
             maxW="md"
           >
             <VStack spacing={6}>

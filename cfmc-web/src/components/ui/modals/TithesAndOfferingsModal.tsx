@@ -17,7 +17,6 @@ import {
   Divider,
   useToast,
   Tooltip,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   FaEnvelope,
@@ -107,10 +106,10 @@ const DonationMethodCard = ({
   onCopyEmail,
   copiedIndex,
 }: DonationMethodCardProps) => {
-  const cardBg = useColorModeValue("gray.50", "gray.700");
-  const cardHoverBg = useColorModeValue("gray.100", "gray.600");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const textColor = useColorModeValue("gray.600", "gray.300");
+  const cardBg = "gray.50";
+  const cardHoverBg = "gray.100";
+  const borderColor = "gray.200";
+  const textColor = "gray.600";
 
   return (
     <Box
@@ -189,8 +188,8 @@ const DonationMethodCard = ({
 
 // Info Section Component
 const InfoSection = () => {
-  const infoBg = useColorModeValue("blue.50", "blue.900");
-  const infoBorder = useColorModeValue("blue.200", "blue.700");
+  const infoBg = "blue.50";
+  const infoBorder = "blue.200";
 
   return (
     <Box
@@ -228,7 +227,7 @@ const InfoSection = () => {
 
 // Introduction Section Component
 const IntroductionSection = () => {
-  const textColor = useColorModeValue("gray.600", "gray.300");
+  const textColor = "gray.600";
 
   return (
     <Box textAlign="center">
@@ -258,9 +257,9 @@ const TithesAndOfferingsModal = ({
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const toast = useToast();
 
-  // Color mode values for better theming
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
+  // Color values for theming
+  const bgColor = "white";
+  const borderColor = "gray.200";
 
   const handleCopyEmail = (email: string, index: number) => {
     navigator.clipboard.writeText(email);

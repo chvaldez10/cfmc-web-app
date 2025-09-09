@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Heading,
-  Text,
-  VStack,
-  useColorModeValue,
-  Box,
-  ResponsiveValue,
-} from "@chakra-ui/react";
+import { Heading, Text, VStack, Box, ResponsiveValue } from "@chakra-ui/react";
 
 interface PageHeaderProps {
   title: string;
@@ -23,8 +16,8 @@ export default function PageHeader({
   size = "lg",
   align = "center",
 }: PageHeaderProps) {
-  const titleColor = useColorModeValue("black", "white");
-  const subtitleColor = useColorModeValue("gray.600", "gray.300");
+  const titleColor = "black";
+  const subtitleColor = "gray.600";
 
   const alignmentMap: Record<
     NonNullable<PageHeaderProps["align"]>,

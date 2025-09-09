@@ -1,11 +1,4 @@
-import {
-  Box,
-  Heading,
-  Text,
-  VStack,
-  Icon,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, VStack, Icon } from "@chakra-ui/react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { IconType } from "react-icons";
 
@@ -42,7 +35,7 @@ const LayeredParallaxCard = ({
     offset: ["start end", "end start"],
   });
 
-  const cardBg = useColorModeValue("white", "gray.800");
+  const cardBg = "white";
 
   return (
     <motion.div

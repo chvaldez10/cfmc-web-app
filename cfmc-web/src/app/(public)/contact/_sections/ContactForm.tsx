@@ -8,7 +8,6 @@ import {
   Input,
   Textarea,
   Button,
-  useColorModeValue,
   Checkbox,
   CheckboxGroup,
   FormErrorMessage,
@@ -56,14 +55,14 @@ export default function ContactForm() {
   const toast = useToast();
 
   // Consistent color scheme following design system
-  const textColor = useColorModeValue("gray.800", "gray.100");
-  const labelColor = useColorModeValue("gray.700", "gray.200");
-  const mutedTextColor = useColorModeValue("gray.500", "gray.400");
-  const sectionHeaderColor = useColorModeValue("gray.600", "gray.300");
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const focusBorderColor = useColorModeValue("purple.500", "purple.300");
-  const errorColor = useColorModeValue("red.500", "red.300");
+  const textColor = "gray.800";
+  const labelColor = "gray.700";
+  const mutedTextColor = "gray.500";
+  const sectionHeaderColor = "gray.600";
+  const bgColor = "white";
+  const borderColor = "gray.200";
+  const focusBorderColor = "purple.500";
+  const errorColor = "red.500";
 
   const handleInputChange = (
     field: keyof FormData,

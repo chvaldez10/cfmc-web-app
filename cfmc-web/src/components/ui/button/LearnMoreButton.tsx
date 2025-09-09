@@ -1,10 +1,10 @@
 "use client";
 
-import { Box, Link, useColorModeValue } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 
 function LearnMoreButton({ href, label }: { href: string; label: string }) {
-  const dividerColor = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
-  const textColor = useColorModeValue("gray.800", "gray.100");
+  const dividerColor = "blackAlpha.200";
+  const textColor = "gray.800";
 
   return (
     <Box mt="auto" w="100%" borderTop={`1px solid ${dividerColor}`}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, Stack } from "@chakra-ui/react";
 import {
   EventImageCarousel,
   EventHeader,
@@ -8,11 +8,22 @@ import {
   EventMap,
 } from "@/components/events";
 import { mockEvent } from "./page.data";
+import { use } from "react";
 
-export default function EventPage({ params }: { params: { slug: string } }) {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+export default function EventPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const bgColor = "gray.50";
 
-  // In a real app, you would fetch the event data based on params.slug
+  // Await the async params in Next.js 15
+  const resolvedParams = use(params);
+  const resolvedSearchParams = use(searchParams);
+
+  // In a real app, you would fetch the event data based on resolvedParams.slug
   const event = mockEvent;
 
   return (
