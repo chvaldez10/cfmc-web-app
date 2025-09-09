@@ -1,14 +1,13 @@
 "use client";
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { Provider } from "@/components/ui/provider";
 import { Toaster } from "@/components/ui/toaster";
-import theme from "./theme";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ChakraProvider theme={theme}>
+    <Provider>
       {children}
       <Toaster />
-    </ChakraProvider>
+    </Provider>
   );
 }

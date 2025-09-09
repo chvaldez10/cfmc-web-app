@@ -12,7 +12,6 @@
     "@chakra-ui/cli": "^3.26.0",
     "@chakra-ui/react": "^3.26.0",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.57.2",
