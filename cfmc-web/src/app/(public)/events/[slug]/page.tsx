@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Stack } from "@chakra-ui/react";
+import { Box, Container, Stack, VStack } from "@chakra-ui/react";
 import {
   EventImageCarousel,
   EventDescription,
@@ -11,6 +11,7 @@ import { mockEvent } from "./page.data";
 import { use } from "react";
 
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 export default function EventPage({
   params,
@@ -33,7 +34,7 @@ export default function EventPage({
       bg={bgColor}
       mt={NAVBAR_HEIGHT}
       minH="100vh"
-      py={{ base: 4, md: 8 }}
+      py={{ base: 6, md: 10, lg: 12 }}
       position="relative"
       _before={{
         content: '""',
@@ -48,20 +49,16 @@ export default function EventPage({
         pointerEvents: "none",
       }}
     >
-      <Container
-        maxW="8xl"
-        px={{ base: 4, md: 8, lg: 12 }}
-        position="relative"
-        zIndex={1}
-      >
+      <Container maxW="7xl" position="relative" zIndex={1}>
         {/* Event Images Carousel */}
         <EventImageCarousel images={event.images} eventName={event.name} />
 
         <Stack
           direction={{ base: "column", xl: "row" }}
-          spacing={{ base: 8, lg: 12 }}
+          spacing={{ base: 10, md: 12, lg: 16 }}
           align="start"
           w="full"
+          mt={{ base: 2, md: 4 }}
         >
           {/* Main Event Information */}
           <Box flex="2" minW={0}>
@@ -75,18 +72,20 @@ export default function EventPage({
           </Box>
 
           {/* Event Details Sidebar */}
-          <Box flex="1" minW={{ base: "full", xl: "350px" }}>
-            <EventDetails
-              startDate={event.start_date}
-              endDate={event.end_date}
-              address={event.address}
-              status={event.status}
-            />
+          <Box flex="1" minW={{ base: "full", xl: "380px" }}>
+            <VStack spacing={{ base: 6, md: 8 }} align="stretch">
+              <EventDetails
+                startDate={event.start_date}
+                endDate={event.end_date}
+                address={event.address}
+                status={event.status}
+              />
 
-            <EventMap
-              googleMapsUrl={event.google_maps_url}
-              address={event.address}
-            />
+              <EventMap
+                googleMapsUrl={event.google_maps_url}
+                address={event.address}
+              />
+            </VStack>
           </Box>
         </Stack>
       </Container>

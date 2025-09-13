@@ -9,15 +9,14 @@ import {
   Icon,
   Badge,
 } from "@chakra-ui/react";
-import { CalendarIcon, InfoIcon } from "@chakra-ui/icons";
-import { MdLocationOn } from "react-icons/md";
+import { MdLocationOn, MdDateRange, MdInfo } from "react-icons/md";
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
 
 interface EventDetailsProps {
   startDate: string;
   endDate: string;
   address: string;
-  status: string;
+  status?: string;
 }
 
 const EventDetails = ({
@@ -28,9 +27,10 @@ const EventDetails = ({
 }: EventDetailsProps) => {
   const cardBg = "white";
   const borderColor = "gray.200";
-  const accentColor = "purple.600";
-  const textColor = "gray.700";
-  const iconBg = "purple.50";
+  const headingColor = "gray.800";
+  const labelColor = "gray.700";
+  const textColor = "gray.600";
+  const iconBg = "gray.50";
 
   const formatDateRange = (startDate: string, endDate: string) => {
     const start = formatLocalDateTimeToHumanReadable(startDate);
@@ -48,37 +48,36 @@ const EventDetails = ({
   return (
     <Box
       bg={cardBg}
-      p={8}
+      p={{ base: 6, md: 8 }}
       borderRadius="2xl"
       border="1px"
       borderColor={borderColor}
       boxShadow="xl"
-      top={8}
-      backdropFilter="blur(10px)"
-      _hover={{
-        boxShadow: "2xl",
-        transform: "translateY(-2px)",
-        transition: "all 0.3s ease",
-      }}
     >
-      <VStack align="start" spacing={8}>
+      <VStack align="start" spacing={6}>
         <Heading
           as="h3"
           size="lg"
-          color={accentColor}
+          color={headingColor}
           fontWeight="bold"
-          textAlign="center"
-          w="full"
-          pb={4}
-          borderBottom="2px solid"
-          borderBottomColor="purple.100"
-          _dark={{ borderBottomColor: "purple.800" }}
+          mb={2}
+          position="relative"
+          _after={{
+            content: '""',
+            position: "absolute",
+            bottom: "-8px",
+            left: 0,
+            width: "60px",
+            height: "3px",
+            bg: "purple.600",
+            borderRadius: "full",
+          }}
         >
           Event Details
         </Heading>
 
         {/* Date & Time */}
-        <VStack align="start" spacing={4} w="full">
+        <VStack align="start" spacing={3} w="full" pt={4}>
           <HStack spacing={4}>
             <Box
               p={3}
@@ -88,13 +87,13 @@ const EventDetails = ({
               alignItems="center"
               justifyContent="center"
             >
-              <Icon as={CalendarIcon} color={accentColor} boxSize={5} />
+              <Icon as={MdDateRange} color={labelColor} boxSize={5} />
             </Box>
             <VStack align="start" spacing={1}>
               <Text
                 fontWeight="bold"
                 fontSize="sm"
-                color={accentColor}
+                color={labelColor}
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
@@ -113,7 +112,7 @@ const EventDetails = ({
         </VStack>
 
         {/* Location */}
-        <VStack align="start" spacing={4} w="full">
+        <VStack align="start" spacing={3} w="full">
           <HStack spacing={4}>
             <Box
               p={3}
@@ -123,13 +122,13 @@ const EventDetails = ({
               alignItems="center"
               justifyContent="center"
             >
-              <Icon as={MdLocationOn} color={accentColor} boxSize={5} />
+              <Icon as={MdLocationOn} color={labelColor} boxSize={5} />
             </Box>
             <VStack align="start" spacing={1}>
               <Text
                 fontWeight="bold"
                 fontSize="sm"
-                color={accentColor}
+                color={labelColor}
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
@@ -143,43 +142,6 @@ const EventDetails = ({
               >
                 {address}
               </Text>
-            </VStack>
-          </HStack>
-        </VStack>
-
-        {/* Event Status */}
-        <VStack align="start" spacing={4} w="full">
-          <HStack spacing={4}>
-            <Box
-              p={3}
-              bg={iconBg}
-              borderRadius="full"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Icon as={InfoIcon} color={accentColor} boxSize={5} />
-            </Box>
-            <VStack align="start" spacing={1}>
-              <Text
-                fontWeight="bold"
-                fontSize="sm"
-                color={accentColor}
-                textTransform="uppercase"
-                letterSpacing="wide"
-              >
-                Status
-              </Text>
-              <Badge
-                colorScheme="green"
-                fontSize="sm"
-                px={3}
-                py={1}
-                borderRadius="full"
-                fontWeight="semibold"
-              >
-                {status}
-              </Badge>
             </VStack>
           </HStack>
         </VStack>

@@ -23,9 +23,9 @@ const EventDescription = ({
   const quoteBgColor = "white";
 
   return (
-    <VStack align="start" spacing={8} w="full">
+    <VStack align="start" spacing={{ base: 6, md: 8, lg: 10 }} w="full">
       {/* Header Section */}
-      <VStack align="start" spacing={6} w="full">
+      <VStack align="start" spacing={5} w="full">
         <EventBadges category={category} tags={tags} />
 
         <Heading
@@ -57,7 +57,7 @@ const EventDescription = ({
               left: 0,
               width: "60px",
               height: "3px",
-              bg: "purple.500",
+              bg: "purple.600",
               borderRadius: "full",
             }}
           >
@@ -81,7 +81,7 @@ const EventDescription = ({
           bg={quoteBgColor}
           borderRadius="xl"
           borderLeft="4px solid"
-          borderLeftColor="purple.500"
+          borderLeftColor="purple.600"
           w="full"
         >
           <VStack align="start" spacing={2}>

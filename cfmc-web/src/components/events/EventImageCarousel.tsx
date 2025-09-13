@@ -44,7 +44,7 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
       w="full"
       maxW="1400px"
       mx="auto"
-      mb={12}
+      mb={{ base: 8, md: 12, lg: 16 }}
       position="relative"
       overflow="hidden"
       borderRadius="2xl"

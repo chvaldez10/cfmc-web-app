@@ -17,6 +17,7 @@ interface EventMapProps {
 
 const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const headingColor = "gray.800";
   const accentColor = "purple.600";
   const borderColor = "gray.200";
   const textColor = "gray.600";
@@ -33,23 +34,23 @@ const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
   if (!googleMapsUrl) return null;
 
   return (
-    <Box mt={8}>
-      <VStack align="start" spacing={6} w="full">
+    <Box mt={{ base: 6, md: 8 }}>
+      <VStack align="start" spacing={4} w="full">
         <VStack align="start" spacing={2}>
           <Heading
             as="h3"
             size="lg"
-            color={accentColor}
+            color={headingColor}
             fontWeight="bold"
             position="relative"
             _after={{
               content: '""',
               position: "absolute",
-              bottom: "-6px",
+              bottom: "-8px",
               left: 0,
-              width: "40px",
-              height: "2px",
-              bg: "purple.500",
+              width: "60px",
+              height: "3px",
+              bg: accentColor,
               borderRadius: "full",
             }}
           >
