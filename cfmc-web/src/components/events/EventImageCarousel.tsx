@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Box,
-  AspectRatio,
-  Skeleton,
-  useBreakpointValue,
-  IconButton,
-} from "@chakra-ui/react";
+import { Box, AspectRatio, Skeleton, IconButton } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useState, useRef } from "react";
@@ -30,10 +24,6 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
   >({});
 
   const swiperRef = useRef<SwiperType | null>(null);
-  const breakpoint = useBreakpointValue({ base: 1, md: 1 });
-  const aspectRatio = useBreakpointValue({ base: 16 / 10, md: 21 / 9 });
-  const buttonSize = useBreakpointValue({ base: "md", md: "lg" });
-  const buttonPosition = useBreakpointValue({ base: 2, md: 4 });
 
   const handleImageLoad = (imageSrc: string) => {
     setImageLoadStates((prev) => ({ ...prev, [imageSrc]: true }));
@@ -42,20 +32,16 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
   return (
     <Box
       w="full"
-      maxW="1400px"
+      maxW="1200px"
       mx="auto"
-      mb={{ base: 8, md: 12, lg: 16 }}
-      position="relative"
-      overflow="hidden"
+      mb={12}
       borderRadius="2xl"
-      boxShadow="2xl"
-      bg="white"
-      _dark={{ bg: "gray.800" }}
+      overflow="hidden"
     >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
-        slidesPerView={breakpoint}
+        slidesPerView={1}
         navigation={false} // Disable built-in navigation, use custom
         pagination={{
           clickable: true,
@@ -77,7 +63,7 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <AspectRatio ratio={aspectRatio}>
+            <AspectRatio ratio={2}>
               <Box position="relative" w="full" h="full">
                 {!imageLoadStates[image] && (
                   <Skeleton
@@ -117,29 +103,21 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-
       {/* Custom Navigation Buttons */}
+      // If swiper worms correct, remove this
       {images.length > 1 && (
         <>
           <IconButton
             aria-label="Previous image"
             icon={<IoChevronBack />}
             position="absolute"
-            left={buttonPosition}
+            left={4}
             top="50%"
             transform="translateY(-50%)"
             zIndex={10}
-            size={buttonSize}
+            size="lg"
             isRound
             bg="whiteAlpha.900"
-            _dark={{ bg: "blackAlpha.800" }}
-            _hover={{
-              bg: "white",
-              _dark: { bg: "black" },
-              transform: "translateY(-50%) scale(1.1)",
-            }}
-            boxShadow="lg"
-            transition="all 0.2s"
             onClick={() => swiperRef.current?.slidePrev()}
           />
 
@@ -147,26 +125,17 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
             aria-label="Next image"
             icon={<IoChevronForward />}
             position="absolute"
-            right={buttonPosition}
+            right={4}
             top="50%"
             transform="translateY(-50%)"
             zIndex={10}
-            size={buttonSize}
+            size="lg"
             isRound
             bg="whiteAlpha.900"
-            _dark={{ bg: "blackAlpha.800" }}
-            _hover={{
-              bg: "white",
-              _dark: { bg: "black" },
-              transform: "translateY(-50%) scale(1.1)",
-            }}
-            boxShadow="lg"
-            transition="all 0.2s"
             onClick={() => swiperRef.current?.slideNext()}
           />
         </>
       )}
-
       {/* Custom pagination styles */}
       <style jsx global>{`
         .swiper-pagination {

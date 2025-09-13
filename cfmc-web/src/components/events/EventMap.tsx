@@ -34,7 +34,7 @@ const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
   if (!googleMapsUrl) return null;
 
   return (
-    <Box mt={{ base: 6, md: 8 }}>
+    <Box mt={8}>
       <VStack align="start" spacing={4} w="full">
         <VStack align="start" spacing={2}>
           <Heading
@@ -62,18 +62,11 @@ const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
         </VStack>
 
         <Box
-          position="relative"
           w="full"
           borderRadius="2xl"
           overflow="hidden"
-          boxShadow="xl"
           border="1px solid"
           borderColor={borderColor}
-          transition="all 0.3s ease"
-          _hover={{
-            boxShadow: "2xl",
-            transform: "translateY(-1px)",
-          }}
         >
           <AspectRatio ratio={16 / 9}>
             <>
