@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
@@ -32,6 +32,8 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const breakpoint = useBreakpointValue({ base: 1, md: 1 });
   const aspectRatio = useBreakpointValue({ base: 16 / 10, md: 21 / 9 });
+  const buttonSize = useBreakpointValue({ base: "md", md: "lg" });
+  const buttonPosition = useBreakpointValue({ base: 2, md: 4 });
 
   const handleImageLoad = (imageSrc: string) => {
     setImageLoadStates((prev) => ({ ...prev, [imageSrc]: true }));
@@ -121,13 +123,13 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
         <>
           <IconButton
             aria-label="Previous image"
-            icon={<ChevronLeftIcon />}
+            icon={<IoChevronBack />}
             position="absolute"
-            left={4}
+            left={buttonPosition}
             top="50%"
             transform="translateY(-50%)"
             zIndex={10}
-            size="lg"
+            size={buttonSize}
             isRound
             bg="whiteAlpha.900"
             _dark={{ bg: "blackAlpha.800" }}
@@ -143,13 +145,13 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
 
           <IconButton
             aria-label="Next image"
-            icon={<ChevronRightIcon />}
+            icon={<IoChevronForward />}
             position="absolute"
-            right={4}
+            right={buttonPosition}
             top="50%"
             transform="translateY(-50%)"
             zIndex={10}
-            size="lg"
+            size={buttonSize}
             isRound
             bg="whiteAlpha.900"
             _dark={{ bg: "blackAlpha.800" }}

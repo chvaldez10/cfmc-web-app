@@ -1,8 +1,9 @@
 "use client";
 
 import { VStack, HStack, Badge, Heading, Box, Text } from "@chakra-ui/react";
+import EventBadges from "./EventBadges";
 
-interface EventHeaderProps {
+interface EventDescriptionProps {
   name: string;
   category: string;
   tags: string[];
@@ -10,64 +11,30 @@ interface EventHeaderProps {
   organizerName: string;
 }
 
-const EventHeader = ({
+const EventDescription = ({
   name,
   category,
   tags,
   description,
   organizerName,
-}: EventHeaderProps) => {
+}: EventDescriptionProps) => {
   const textColor = "gray.700";
-  const accentColor = "purple.600";
   const descriptionColor = "gray.600";
+  const quoteBgColor = "white";
 
   return (
     <VStack align="start" spacing={8} w="full">
       {/* Header Section */}
       <VStack align="start" spacing={6} w="full">
-        <HStack wrap="wrap" spacing={3}>
-          <Badge
-            colorScheme="purple"
-            fontSize="sm"
-            px={4}
-            py={2}
-            borderRadius="full"
-            fontWeight="semibold"
-            textTransform="uppercase"
-            letterSpacing="wide"
-          >
-            {category}
-          </Badge>
-          {tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant="outline"
-              colorScheme="gray"
-              fontSize="sm"
-              px={3}
-              py={1}
-              borderRadius="full"
-              fontWeight="medium"
-            >
-              #{tag}
-            </Badge>
-          ))}
-        </HStack>
+        <EventBadges category={category} tags={tags} />
 
         <Heading
           as="h1"
           size={{ base: "2xl", md: "3xl", lg: "4xl" }}
-          color={accentColor}
+          color="gray.800"
           fontWeight="black"
           lineHeight="shorter"
           letterSpacing="tight"
-          bgGradient={`linear(to-r, ${accentColor}, purple.400)`}
-          bgClip="text"
-          _hover={{
-            bgGradient: "linear(to-r, purple.500, purple.600)",
-            transform: "translateY(-1px)",
-            transition: "all 0.2s ease",
-          }}
         >
           {name}
         </Heading>
@@ -79,7 +46,7 @@ const EventHeader = ({
           <Heading
             as="h2"
             size="lg"
-            color={accentColor}
+            color="gray.800"
             mb={4}
             fontWeight="bold"
             position="relative"
@@ -111,7 +78,7 @@ const EventHeader = ({
         {/* Organizer Information */}
         <Box
           p={6}
-          bg={"purple.50"}
+          bg={quoteBgColor}
           borderRadius="xl"
           borderLeft="4px solid"
           borderLeftColor="purple.500"
@@ -122,7 +89,6 @@ const EventHeader = ({
               fontSize="sm"
               fontWeight="semibold"
               color="purple.600"
-              _dark={{ color: "purple.300" }}
               textTransform="uppercase"
               letterSpacing="wide"
             >
@@ -138,4 +104,4 @@ const EventHeader = ({
   );
 };
 
-export default EventHeader;
+export default EventDescription;

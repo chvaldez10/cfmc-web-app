@@ -3,12 +3,14 @@
 import { Box, Container, Stack } from "@chakra-ui/react";
 import {
   EventImageCarousel,
-  EventHeader,
+  EventDescription,
   EventDetails,
   EventMap,
 } from "@/components/events";
 import { mockEvent } from "./page.data";
 import { use } from "react";
+
+import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
 
 export default function EventPage({
   params,
@@ -29,6 +31,7 @@ export default function EventPage({
   return (
     <Box
       bg={bgColor}
+      mt={NAVBAR_HEIGHT}
       minH="100vh"
       py={{ base: 4, md: 8 }}
       position="relative"
@@ -62,7 +65,7 @@ export default function EventPage({
         >
           {/* Main Event Information */}
           <Box flex="2" minW={0}>
-            <EventHeader
+            <EventDescription
               name={event.name}
               category={event.category}
               tags={event.tags}

@@ -1,6 +1,6 @@
 // Event Components
 export { default as EventImageCarousel } from "./EventImageCarousel";
-export { default as EventHeader } from "./EventHeader";
+export { default as EventDescription } from "./EventDescription";
 export { default as EventDetails } from "./EventDetails";
 export { default as EventMap } from "./EventMap";
 
