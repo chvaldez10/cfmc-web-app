@@ -1,11 +1,10 @@
 "use client";
 
-import { Box, AspectRatio, Skeleton, IconButton } from "@chakra-ui/react";
+import { Box, AspectRatio, Skeleton } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
@@ -32,7 +31,6 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
   return (
     <Box
       w="full"
-      maxW="1200px"
       mx="auto"
       mb={12}
       borderRadius="2xl"
@@ -104,39 +102,7 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* Custom Navigation Buttons */}
-      {/* If swiper works correctly, remove this */}
-      {images.length > 1 && (
-        <>
-          <IconButton
-            aria-label="Previous image"
-            icon={<IoChevronBack />}
-            position="absolute"
-            left={4}
-            top="50%"
-            transform="translateY(-50%)"
-            zIndex={10}
-            size="lg"
-            isRound
-            bg="whiteAlpha.900"
-            onClick={() => swiperRef.current?.slidePrev()}
-          />
 
-          <IconButton
-            aria-label="Next image"
-            icon={<IoChevronForward />}
-            position="absolute"
-            right={4}
-            top="50%"
-            transform="translateY(-50%)"
-            zIndex={10}
-            size="lg"
-            isRound
-            bg="whiteAlpha.900"
-            onClick={() => swiperRef.current?.slideNext()}
-          />
-        </>
-      )}
       {/* Custom pagination styles */}
       <style jsx global>{`
         .swiper-pagination {

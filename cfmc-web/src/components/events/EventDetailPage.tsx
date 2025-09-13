@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Stack, VStack } from "@chakra-ui/react";
+import { Box, Stack, VStack } from "@chakra-ui/react";
 import {
   EventImageCarousel,
   EventDescription,
@@ -8,6 +8,7 @@ import {
   EventMap,
 } from "@/components/events";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
+import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 interface EventDetailPageProps {
   event: {
@@ -28,7 +29,7 @@ interface EventDetailPageProps {
 const EventDetailPage = ({ event }: EventDetailPageProps) => {
   return (
     <Box bg="gray.50" mt={NAVBAR_HEIGHT} minH="100vh" py={8}>
-      <Container maxW="7xl">
+      <Box mx="auto" maxW="7xl" px={COMMON_X_PADDING}>
         <EventImageCarousel images={event.images} eventName={event.name} />
 
         <Stack
@@ -62,7 +63,7 @@ const EventDetailPage = ({ event }: EventDetailPageProps) => {
             </VStack>
           </Box>
         </Stack>
-      </Container>
+      </Box>
     </Box>
   );
 };
