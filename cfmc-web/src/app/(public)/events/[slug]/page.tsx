@@ -1,20 +1,18 @@
-"use client";
-
 import { EventDetailPage } from "@/components/events";
-import { mockEvent } from "./page.data";
-import { use } from "react";
+import { getEventBySlug } from "@/lib/supabase/actions/events";
+import { notFound } from "next/navigation";
 
-export default function EventPage({
+export default async function EventPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  // Await the async params in Next.js 15
-  const _resolvedParams = use(params);
-  const _resolvedSearchParams = use(searchParams);
-  const event = mockEvent;
+  const resolvedParams = await params;
+  const event = await getEventBySlug(resolvedParams.slug);
+
+  if (!event) {
+    notFound();
+  }
 
   return <EventDetailPage event={event} />;
 }
