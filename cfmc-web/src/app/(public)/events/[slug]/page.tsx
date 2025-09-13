@@ -12,11 +12,8 @@ export default function EventPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   // Await the async params in Next.js 15
-  const resolvedParams = use(params);
-  const resolvedSearchParams = use(searchParams);
-
-  // TODO: Replace with real data fetching based on resolvedParams.slug
-  // const event = await fetchEvent(resolvedParams.slug);
+  const _resolvedParams = use(params);
+  const _resolvedSearchParams = use(searchParams);
   const event = mockEvent;
 
   return <EventDetailPage event={event} />;

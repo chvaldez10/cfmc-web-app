@@ -1,6 +1,6 @@
 "use client";
 
-import { VStack, HStack, Badge, Heading, Box, Text } from "@chakra-ui/react";
+import { VStack, Heading, Box, Text } from "@chakra-ui/react";
 import EventBadges from "./EventBadges";
 
 interface EventDescriptionProps {

@@ -53,7 +53,6 @@ const EventDetailPage = ({ event }: EventDetailPageProps) => {
                 startDate={event.start_date}
                 endDate={event.end_date}
                 address={event.address}
-                status={event.status}
               />
 
               <EventMap

@@ -1,30 +1,16 @@
 "use client";
 
-import {
-  Box,
-  VStack,
-  HStack,
-  Text,
-  Heading,
-  Icon,
-  Badge,
-} from "@chakra-ui/react";
-import { MdLocationOn, MdDateRange, MdInfo } from "react-icons/md";
+import { Box, VStack, HStack, Text, Heading, Icon } from "@chakra-ui/react";
+import { MdLocationOn, MdDateRange } from "react-icons/md";
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
 
 interface EventDetailsProps {
   startDate: string;
   endDate: string;
   address: string;
-  status?: string;
 }
 
-const EventDetails = ({
-  startDate,
-  endDate,
-  address,
-  status,
-}: EventDetailsProps) => {
+const EventDetails = ({ startDate, endDate, address }: EventDetailsProps) => {
   const cardBg = "white";
   const borderColor = "gray.200";
   const headingColor = "gray.800";

@@ -37,6 +37,7 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
       mb={12}
       borderRadius="2xl"
       overflow="hidden"
+      position="relative"
     >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -104,7 +105,7 @@ const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
         ))}
       </Swiper>
       {/* Custom Navigation Buttons */}
-      // If swiper worms correct, remove this
+      {/* If swiper works correctly, remove this */}
       {images.length > 1 && (
         <>
           <IconButton
