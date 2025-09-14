@@ -21,7 +21,7 @@ export default function NotFoundPage() {
           404
         </Heading>
         <Text fontSize="xl" color={textColor} maxW="lg">
-          We're sorry — the page you're looking for isn't here.
+          We&apos;re sorry — the page you&apos;re looking for isn&apos;t here.
         </Text>
         <Button
           as={Link}
