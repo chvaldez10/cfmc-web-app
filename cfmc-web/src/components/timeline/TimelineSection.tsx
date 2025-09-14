@@ -33,7 +33,7 @@ export default function TimelineSection({
   };
 
   return (
-    <Box position="relative" textAlign="start">
+    <Box position="relative">
       {/* Section Header */}
       <Flex align="center" mb={8}>
         <Circle
