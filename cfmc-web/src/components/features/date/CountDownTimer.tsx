@@ -1,7 +1,6 @@
 "use client";
 
 import { Flex, Text, VStack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import { CountdownLabels } from "@/constants/shared/enums";
 import { useCountdown } from "@/hooks/useCountdown";
 import { formatTimeToPaddedString } from "@/utils/dateUtils";
@@ -12,14 +11,9 @@ interface CountDownTimerProps {
 
 const CountDownTimer = ({ worshipStartDateTime }: CountDownTimerProps) => {
   const { timeLeft, isTimeUp } = useCountdown(worshipStartDateTime);
-  const [mounted, setMounted] = useState(false);
   const formattedTime = formatTimeToPaddedString(timeLeft);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted || !worshipStartDateTime) {
+  if (!worshipStartDateTime) {
     return null;
   }
 
