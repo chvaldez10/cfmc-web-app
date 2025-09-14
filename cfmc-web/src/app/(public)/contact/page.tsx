@@ -1,5 +1,3 @@
-"use client";
-
 import { ColumnLayout } from "@/components/hero";
 import { SectionHeader } from "@/components/ui/headers";
 import { CONTACT_US_CONTENT } from "@/constants/shared/contact";
