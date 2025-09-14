@@ -11,18 +11,38 @@ export const NAV_ITEMS: Array<NavItem> = [
         href: "/about/mission-vision",
       },
       {
-        label: PublicLabels.MINISTRIES,
-        subLabel: "Our ministries aim to serve and uplift.",
-        href: "/about/ministries",
-      },
-      {
         label: PublicLabels.LEADERSHIP,
         subLabel: "Our leadership guides us with integrity and vision.",
         href: "#",
       },
       {
-        label: PublicLabels.COMMUNITY,
-        subLabel: "Our community thrives on collaboration and support.",
+        label: PublicLabels.HISTORY,
+        subLabel: "Our history is a testament to our journey.",
+        href: "/about/history",
+      },
+    ],
+  },
+  {
+    label: PublicLabels.GET_INVOLVED,
+    children: [
+      {
+        label: PublicLabels.UPCOMING_EVENTS,
+        subLabel: "Join us for our upcoming events and activities.",
+        href: "#",
+      },
+      {
+        label: PublicLabels.MINISTRIES,
+        subLabel: "Our ministries aim to serve and uplift.",
+        href: "/about/ministries",
+      },
+      {
+        label: PublicLabels.BIBLE_STUDY,
+        subLabel: "Engage in our enriching Bible study sessions.",
+        href: "#",
+      },
+      {
+        label: PublicLabels.MUSIC,
+        subLabel: "Enjoy uplifting music and performances.",
         href: "#",
       },
     ],
@@ -38,31 +58,6 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicLabels.INQUIRE,
         subLabel: "Feel free to inquire about our services.",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: PublicLabels.GET_INVOLVED,
-    children: [
-      {
-        label: PublicLabels.UPCOMING_EVENTS,
-        subLabel: "Join us for our upcoming events and activities.",
-        href: "#",
-      },
-      {
-        label: PublicLabels.BIBLE_STUDY,
-        subLabel: "Engage in our enriching Bible study sessions.",
-        href: "#",
-      },
-      {
-        label: PublicLabels.MEDIA,
-        subLabel: "Explore our media resources and content.",
-        href: "#",
-      },
-      {
-        label: PublicLabels.MUSIC,
-        subLabel: "Enjoy uplifting music and performances.",
         href: "#",
       },
     ],

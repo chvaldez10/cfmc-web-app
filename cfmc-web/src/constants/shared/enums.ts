@@ -32,6 +32,7 @@ export enum PublicLabels {
   MUSIC = "Music",
   TITHE_AND_OFFERINGS = "Tithes and Offerings",
   GIVE = "Give",
+  HISTORY = "History",
 }
 
 export enum CountdownLabels {
