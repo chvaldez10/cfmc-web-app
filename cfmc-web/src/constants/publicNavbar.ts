@@ -33,7 +33,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicLabels.MINISTRIES,
         subLabel: "Our ministries aim to serve and uplift.",
-        href: "/about/ministries",
+        href: "/get-involved/ministries",
       },
       {
         label: PublicLabels.BIBLE_STUDY,

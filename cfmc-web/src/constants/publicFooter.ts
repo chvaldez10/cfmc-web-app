@@ -23,7 +23,7 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
       },
       {
         label: "Ministries",
-        href: "/ministries",
+        href: "/get-involved/ministries",
       },
     ],
   },
