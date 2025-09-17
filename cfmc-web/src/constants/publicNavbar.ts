@@ -13,7 +13,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicLabels.LEADERSHIP,
         subLabel: "Our leadership guides us with integrity and vision.",
-        href: "#",
+        href: "/about/leadership",
       },
       {
         label: PublicLabels.HISTORY,
