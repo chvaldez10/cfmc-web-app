@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { VStack, Heading, Text, SimpleGrid } from "@chakra-ui/react";
 import { ChurchMembers } from "@/data/mock/leadership";
@@ -31,13 +29,13 @@ export const ProfileSection = ({
         >
           {title}
         </Heading>
-        {/* <Text
+        <Text
           fontSize={{ base: "md", md: "lg" }}
           color="gray.700"
           lineHeight="tall"
         >
           {description}
-        </Text> */}
+        </Text>
       </VStack>
 
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} w="100%">

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { VStack, Divider } from "@chakra-ui/react";
 import {
