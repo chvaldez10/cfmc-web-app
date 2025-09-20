@@ -31,7 +31,7 @@ export const getFeaturedEvents = cache(async (): Promise<Events[] | null> => {
     .from("events")
     .select("*")
     .eq("is_featured", true)
-    .order("created", { ascending: false });
+    .order("start_date", { ascending: true });
 
   if (dbError) {
     console.error("Database Error:", dbError.message);

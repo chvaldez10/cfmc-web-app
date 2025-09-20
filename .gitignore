@@ -63,7 +63,6 @@ package-lock.json
 del_me*
 bin/
 archive/**/*
-!archive/*.*
 downloads/
 
 # vendor static files
