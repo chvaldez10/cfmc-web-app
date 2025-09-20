@@ -1,4 +1,6 @@
-export const mockEvents = [
+import { Events } from "@/types/supabase/worship";
+
+export const mockEvents: Events[] = [
   {
     id: 1,
     created: "2026-01-25T00:00:00Z",
@@ -8,8 +10,6 @@ export const mockEvents = [
     end_date: "2026-01-25T00:00:00Z",
     description:
       "Join us for a heartfelt worship service filled with music and fellowship. This event is designed to bring together individuals from all walks of life, fostering a sense of community and belonging. Attendees will experience uplifting music, inspiring messages, and the warmth of fellowship as we gather to celebrate our faith. Whether you are a long-time member of our church or a newcomer seeking a place to connect, this service promises to be a memorable occasion filled with joy, reflection, and spiritual growth. We invite you to come and be part of this enriching experience that aims to strengthen our bonds and deepen our understanding of faith together.",
-    updated_at: "2026-01-25T00:00:00Z",
-    created_at: "2026-01-25T00:00:00Z",
     tags: [],
     category: "Worship",
     occurrence: "one-time", // Enum value
@@ -32,8 +32,6 @@ export const mockEvents = [
     end_date: "2026-02-10T00:00:00Z",
     description:
       "A day of fun, food, and fellowship for the whole church community.",
-    updated_at: "2026-02-10T00:00:00Z",
-    created_at: "2026-02-10T00:00:00Z",
     tags: [],
     category: "Community",
     occurrence: "recurring", // Enum value
@@ -45,6 +43,7 @@ export const mockEvents = [
     slug: "annual-church-picnic",
     is_sunday_worship: false,
     is_featured: false,
+    images: [],
   },
   {
     id: 3,
@@ -55,8 +54,6 @@ export const mockEvents = [
     end_date: "2026-02-28T00:00:00Z",
     description:
       "An inspiring weekend retreat for youth to grow in faith and build lasting friendships.",
-    updated_at: "2026-02-28T00:00:00Z",
-    created_at: "2026-02-25T00:00:00Z",
     tags: [],
     category: "Retreat",
     occurrence: "recurring", // Enum value
@@ -68,6 +65,7 @@ export const mockEvents = [
     slug: "youth-retreat",
     is_sunday_worship: false,
     is_featured: false,
+    images: [],
   },
   {
     id: 4,
@@ -78,8 +76,6 @@ export const mockEvents = [
     end_date: "2026-03-30T00:00:00Z",
     description:
       "Join us for a deep dive into the scriptures every Wednesday evening.",
-    updated_at: "2026-03-30T00:00:00Z",
-    created_at: "2026-03-01T00:00:00Z",
     tags: [],
     category: "Study",
     occurrence: "recurring", // Enum value
@@ -91,6 +87,7 @@ export const mockEvents = [
     slug: "bible-study-series",
     is_sunday_worship: false,
     is_featured: false,
+    images: [],
   },
   {
     id: 5,
@@ -101,8 +98,6 @@ export const mockEvents = [
     end_date: "2026-03-10T00:00:00Z",
     description:
       "Help us support local missions with a delightful dinner and auction.",
-    updated_at: "2026-03-10T00:00:00Z",
-    created_at: "2026-03-10T00:00:00Z",
     tags: [],
     category: "Fundraiser",
     occurrence: "one-time", // Enum value
@@ -125,8 +120,6 @@ export const mockEvents = [
     end_date: "2026-03-15T00:00:00Z",
     description:
       "Join us as we serve our community through various outreach projects.",
-    updated_at: "2026-03-15T00:00:00Z",
-    created_at: "2026-03-15T00:00:00Z",
     tags: [],
     category: "Service",
     occurrence: "one-time", // Enum value
@@ -149,8 +142,6 @@ export const mockEvents = [
     end_date: "2026-12-24T00:00:00Z",
     description:
       "Celebrate the birth of Christ with a special candlelight service.",
-    updated_at: "2026-12-24T00:00:00Z",
-    created_at: "2026-12-24T00:00:00Z",
     tags: [],
     category: "Worship",
     occurrence: "one-time", // Enum value
@@ -173,8 +164,6 @@ export const mockEvents = [
     end_date: "2026-03-20T00:00:00Z",
     description:
       "Join us for a joyous celebration of the resurrection of Jesus with music and fellowship.",
-    updated_at: "2026-03-20T00:00:00Z",
-    created_at: "2026-03-20T00:00:00Z",
     tags: [],
     category: "Worship",
     occurrence: "one-time", // Enum value
@@ -196,8 +185,6 @@ export const mockEvents = [
     start_date: "2026-02-15T00:00:00Z",
     end_date: "2026-02-15T00:00:00Z",
     description: "A special evening of worship and activities for families.",
-    updated_at: "2026-02-15T00:00:00Z",
-    created_at: "2026-02-15T00:00:00Z",
     tags: [],
     category: "Worship",
     occurrence: "one-time", // Enum value
@@ -219,8 +206,6 @@ export const mockEvents = [
     start_date: "2026-11-25T00:00:00Z",
     end_date: "2026-11-25T00:00:00Z",
     description: "A service of gratitude and thanksgiving for God's blessings.",
-    updated_at: "2026-11-25T00:00:00Z",
-    created_at: "2026-11-25T00:00:00Z",
     tags: [],
     category: "Worship",
     occurrence: "one-time", // Enum value
@@ -232,5 +217,6 @@ export const mockEvents = [
     slug: "thanksgiving-service",
     is_sunday_worship: false,
     is_featured: false,
+    images: [],
   },
 ];
