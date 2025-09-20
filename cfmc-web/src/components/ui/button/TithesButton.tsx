@@ -56,7 +56,7 @@ const TithesButton = ({
       borderRadius="full"
       height={buttonHeight}
     >
-      {PublicLabels.TITHE_AND_OFFERINGS}
+      {PublicLabels.TITHES_AND_OFFERINGS}
     </Button>
   );
 };

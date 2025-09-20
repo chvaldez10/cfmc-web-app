@@ -30,7 +30,7 @@ export enum PublicLabels {
   UPCOMING_EVENTS = "Upcoming Events",
   BIBLE_STUDY = "Bible Study",
   MUSIC = "Music",
-  TITHE_AND_OFFERINGS = "Tithes and Offerings",
+  TITHES_AND_OFFERINGS = "Tithes and Offerings",
   GIVE = "Give",
   HISTORY = "History",
 }

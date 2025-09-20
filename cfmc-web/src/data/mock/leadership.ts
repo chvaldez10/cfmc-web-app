@@ -102,6 +102,16 @@ export const LeadershipMembers: ChurchMembers[] = [
   },
   {
     isActive: true,
+    isBoardMember: true,
+    isMinisterialTeam: true,
+    isLeader: true,
+    firstName: "Judith",
+    lastName: "Lugo",
+    role: "Secretary",
+    headline: "Secretary (Board)",
+  },
+  {
+    isActive: true,
     isBoardMember: false,
     isMinisterialTeam: true,
     isLeader: true,

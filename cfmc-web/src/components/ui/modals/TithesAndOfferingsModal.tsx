@@ -37,6 +37,7 @@ interface DonationMethod {
 }
 
 import { PublicLabels } from "@/constants/shared/enums";
+import { TITHERS_AND_OFFERINGS_MODAL } from "@/constants/publicNavbar";
 
 interface DonationMethodCardProps {
   method: DonationMethod;
@@ -218,9 +219,7 @@ const InfoSection = () => {
         fontWeight="semibold"
         lineHeight="tall"
       >
-        💝 Your generous contributions help us continue God&apos;s work in our
-        community and beyond. Thank you for your support! Official Receipt will
-        be issued before February 28 of the following year for tax purposes.
+        {TITHERS_AND_OFFERINGS_MODAL.message}
       </Text>
     </Box>
   );
@@ -322,7 +321,7 @@ const TithesAndOfferingsModal = ({
           color="brand.600"
           pb={2}
         >
-          {PublicLabels.TITHE_AND_OFFERINGS}
+          {PublicLabels.TITHES_AND_OFFERINGS}
         </ModalHeader>
         <ModalCloseButton
           size="lg"
