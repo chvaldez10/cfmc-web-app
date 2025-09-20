@@ -31,7 +31,7 @@ const EventMap = ({ googleMapsUrl, address }: EventMapProps) => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!googleMapsUrl) return null;
+  if (!googleMapsUrl.trim()) return null;
 
   return (
     <Box mt={8}>

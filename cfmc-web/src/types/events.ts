@@ -9,7 +9,7 @@ export interface Event {
   start_date: string;
   end_date: string;
   google_maps_url: string;
-  image: string; // legacy single image (backwards compatibility)
+  image: string;
   images: string[];
   occurrence: string;
   status: string;
@@ -19,4 +19,5 @@ export interface Event {
   created_at: string;
   updated_at: string;
   is_sunday_worship: boolean | null;
+  is_featured: boolean | null;
 }

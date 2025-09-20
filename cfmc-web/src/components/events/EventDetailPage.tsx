@@ -9,21 +9,10 @@ import {
 } from "@/components/events";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { Event } from "@/types/events";
 
 interface EventDetailPageProps {
-  event: {
-    name: string;
-    category: string;
-    tags: string[];
-    description: string;
-    organizer_name: string;
-    start_date: string;
-    end_date: string;
-    address: string;
-    status?: string;
-    images: string[];
-    google_maps_url: string;
-  };
+  event: Event;
 }
 
 const EventDetailPage = ({ event }: EventDetailPageProps) => {
