@@ -24,7 +24,9 @@ import { Events } from "@/types/supabase/worship";
 
 // Utils
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";
+import { getFeaturedEvents } from "@/lib/supabase/actions/events";
 
+// Constants
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
 interface EventSwiperProps {
@@ -39,6 +41,16 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
     lg: 3.2,
     xl: 4.1,
   });
+
+  const [featuredEvents, setFeaturedEvents] = useState<Events[]>([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const events = await getFeaturedEvents();
+      setFeaturedEvents(events || []);
+    };
+    fetchEvents();
+  }, []);
 
   return (
     <Box
@@ -134,22 +146,20 @@ const EventDetails = ({ event }: { event: Events }) => {
       <Text fontSize="sm" color="gray.600" noOfLines={3}>
         {event.description}
       </Text>
-      <ClientSideEventDate startDate={event.startDate} />
+      <ClientSideEventDate start_date={event.start_date} />
     </Stack>
   );
 };
 
 // Client-side component to handle date formatting and prevent hydration mismatch
-const ClientSideEventDate = ({ startDate }: { startDate: Date }) => {
+const ClientSideEventDate = ({ start_date }: { start_date: string }) => {
   const [formattedDate, setFormattedDate] = useState<string>("");
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setFormattedDate(
-      formatLocalDateTimeToHumanReadable(startDate.toISOString())
-    );
-  }, [startDate]);
+    setFormattedDate(formatLocalDateTimeToHumanReadable(start_date));
+  }, [start_date]);
 
   // Show a placeholder during SSR or before client hydration
   if (!isClient) {

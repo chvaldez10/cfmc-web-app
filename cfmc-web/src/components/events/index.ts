@@ -6,4 +6,4 @@ export { default as EventMap } from "./EventMap";
 export { default as EventDetailPage } from "./EventDetailPage";
 
 // Re-export types
-export type { Event } from "@/types/events";
+export type { Events } from "@/types/supabase/worship";

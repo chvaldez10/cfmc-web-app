@@ -1,6 +1,6 @@
-import { Event } from "@/types/events";
+import { Events } from "@/types/supabase/worship";
 
-export const mockEvent: Event = {
+export const mockEvent: Events = {
   id: 1,
   slug: "test-event",
   name: "Summer Music Festival",
@@ -24,14 +24,13 @@ export const mockEvent: Event = {
   occurrence: "once",
   status: "published",
   tags: ["festival", "music", "summer"],
-  created: null,
-  updated: null,
-  created_at: "2025-06-01T12:00:00Z",
-  updated_at: "2025-06-05T12:00:00Z",
+  created: "2025-06-01T12:00:00Z",
+  updated: "2025-06-05T12:00:00Z",
   is_sunday_worship: null,
+  is_featured: null,
 };
 
-export const mockAnniversaryEvent: Event = {
+export const mockAnniversaryEvent: Events = {
   id: 6,
   slug: "cfmc-seventh-anniversary",
   name: "CFMC 7th Anniversary",
@@ -54,9 +53,8 @@ export const mockAnniversaryEvent: Event = {
   occurrence: "once",
   status: "published",
   tags: ["anniversary", "worship"],
-  created: null,
-  updated: null,
-  created_at: "2024-11-01T12:00:00Z",
-  updated_at: "2024-11-05T12:00:00Z",
+  created: "2024-11-01T12:00:00Z",
+  updated: "2024-11-05T12:00:00Z",
   is_sunday_worship: true,
+  is_featured: null,
 };

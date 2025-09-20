@@ -9,10 +9,10 @@ import {
 } from "@/components/events";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
-import { Event } from "@/types/events";
+import { Events } from "@/types/supabase/worship";
 
 interface EventDetailPageProps {
-  event: Event;
+  event: Events;
 }
 
 const EventDetailPage = ({ event }: EventDetailPageProps) => {

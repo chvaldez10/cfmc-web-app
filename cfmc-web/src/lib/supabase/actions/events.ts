@@ -2,11 +2,10 @@
 
 import { cache } from "react";
 import { createClient } from "@/lib/supabase/server";
-import { Event } from "@/types/events";
-import { Tables } from "@/lib/database.types";
+import { Events } from "@/types/supabase/worship";
 
 export const getEventBySlug = cache(
-  async (slug: string): Promise<Event | null> => {
+  async (slug: string): Promise<Events | null> => {
     const supabase = await createClient();
 
     const { data, error: dbError } = await supabase
@@ -25,14 +24,14 @@ export const getEventBySlug = cache(
   }
 );
 
-export const getFeaturedEvents = cache(async (): Promise<Event[] | null> => {
+export const getFeaturedEvents = cache(async (): Promise<Events[] | null> => {
   const supabase = await createClient();
 
   const { data, error: dbError } = await supabase
     .from("events")
     .select("*")
     .eq("is_featured", true)
-    .order("created_at", { ascending: false });
+    .order("created", { ascending: false });
 
   if (dbError) {
     console.error("Database Error:", dbError.message);

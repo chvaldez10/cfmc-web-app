@@ -1,22 +1,23 @@
-// TODO: this should not be hard coded and instead extracted from supabase
-export type Events = {
+// Add types here for supabase tables
+
+export interface Events {
   id: number;
-  created: Date;
-  updated: Date;
-  name: string;
-  startDate: Date;
-  endDate: Date;
-  updatedAt?: Date;
-  createdAt?: Date;
-  tags?: string[];
-  category: string;
-  occurrence: string; // Should be enum (one-time, recurring)
-  description: string;
-  image: string;
-  address: string;
-  googleMapsUrl?: string;
-  status: string;
-  organizerName: string;
   slug: string;
-  isSundayWorship: boolean;
-};
+  name: string;
+  category: string;
+  description: string;
+  organizer_name: string;
+  address: string;
+  start_date: string;
+  end_date: string;
+  google_maps_url: string;
+  image: string;
+  images: string[];
+  occurrence: string;
+  status: string;
+  tags: string[];
+  created: string;
+  updated: string | null;
+  is_sunday_worship: boolean | null;
+  is_featured: boolean | null;
+}
