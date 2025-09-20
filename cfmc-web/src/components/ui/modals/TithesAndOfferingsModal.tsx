@@ -219,7 +219,8 @@ const InfoSection = () => {
         lineHeight="tall"
       >
         💝 Your generous contributions help us continue God&apos;s work in our
-        community and beyond. Thank you for your support!
+        community and beyond. Thank you for your support! Official Receipt will
+        be issued before February 28 of the following year for tax purposes.
       </Text>
     </Box>
   );
