@@ -16,6 +16,7 @@ import {
   Flex,
   VStack,
   Stack,
+  Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
 
@@ -29,11 +30,7 @@ import { getFeaturedEvents } from "@/lib/supabase/actions/events";
 // Constants
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
 
-interface EventSwiperProps {
-  events: Events[];
-}
-
-const EventSwiper = ({ events }: EventSwiperProps) => {
+const EventSwiper = () => {
   const breakpoint = useBreakpointValue({
     base: 1.2,
     sm: 1.5,
@@ -67,7 +64,7 @@ const EventSwiper = ({ events }: EventSwiperProps) => {
         freeMode={true}
         modules={[FreeMode]}
       >
-        {events.map((event) => (
+        {featuredEvents.map((event) => (
           <SwiperSlide key={event.id}>
             <EventCard event={event} />
           </SwiperSlide>
@@ -91,15 +88,27 @@ const EventCard = ({ event }: { event: Events }) => {
 };
 
 const EventImage = ({ event }: { event: Events }) => {
+  const [imgError, setImgError] = useState<boolean>(false);
+
   return (
     <Box
       width="100%"
       height="200px"
-      bg={`linear-gradient(to bottom, ${event.image}, ${event.image}80)`}
+      bg="linear-gradient(to bottom, #805AD5, #805AD5)"
       position="relative"
       overflow="hidden"
       borderRadius="lg"
     >
+      {!imgError && event.image && (
+        <Image
+          src={event.image}
+          alt={event.name}
+          objectFit="cover"
+          width="100%"
+          height="100%"
+          onError={() => setImgError(true)}
+        />
+      )}
       {event.occurrence && (
         <Badge colorScheme="green" position="absolute" top={2} right={2}>
           {event.occurrence}

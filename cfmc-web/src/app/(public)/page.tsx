@@ -10,7 +10,6 @@ import EventSwiper from "@/components/features/events/EventSwiper";
 import { SectionHeader } from "@/components/ui/headers";
 
 // Data
-import { mockEvents } from "@/data/mock/mockEvents";
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 
 export default async function Page() {
@@ -25,7 +24,7 @@ export default async function Page() {
         description={ABOUT_CONTENT.GET_INVOLVED.description}
         mt="0"
       />
-      <EventSwiper events={mockEvents} />
+      <EventSwiper />
       <FooterInquiries />
     </>
   );
