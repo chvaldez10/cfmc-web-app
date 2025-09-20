@@ -17,6 +17,7 @@ import ColumnLayout from "@/components/hero/layouts/ColumnLayout";
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
 import { getPreviousSundayWorshipService } from "@/lib/supabase/actions/sundays-special-days";
 import type { SundaysAndSpecialDays } from "@/lib/supabase/actions/sundays-special-days";
+import { Branding } from "@/constants/shared/enums";
 
 export default function PassedLiveStream() {
   const [previousSundayData, setPreviousSundayData] =
@@ -159,6 +160,7 @@ export default function PassedLiveStream() {
             boxShadow: "lg",
           }}
           transition="all 0.2s"
+          onClick={() => window.open(Branding.CHURCH_FACEBOOK_URL, "_blank")}
         >
           {LiveStreamLabels.BUTTON_TEXT}
         </Button>
