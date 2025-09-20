@@ -16,9 +16,13 @@ import {
   Flex,
   VStack,
   Stack,
-  Image,
+  Skeleton,
   useBreakpointValue,
 } from "@chakra-ui/react";
+
+// Next.js
+import Image from "next/image";
+import Link from "next/link";
 
 // Types
 import { Events } from "@/types/supabase/worship";
@@ -49,6 +53,18 @@ const EventSwiper = () => {
     fetchEvents();
   }, []);
 
+  // Preload first 3 images for better UX
+  useEffect(() => {
+    if (featuredEvents.length > 0) {
+      featuredEvents.slice(0, 3).forEach((event) => {
+        if (event.image) {
+          const img = new window.Image();
+          img.src = event.image;
+        }
+      });
+    }
+  }, [featuredEvents]);
+
   return (
     <Box
       overflow="hidden"
@@ -64,9 +80,9 @@ const EventSwiper = () => {
         freeMode={true}
         modules={[FreeMode]}
       >
-        {featuredEvents.map((event) => (
+        {featuredEvents.map((event, index) => (
           <SwiperSlide key={event.id}>
-            <EventCard event={event} />
+            <EventCard event={event} isFirstSlide={index === 0} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -76,19 +92,44 @@ const EventSwiper = () => {
 
 export default EventSwiper;
 
-const EventCard = ({ event }: { event: Events }) => {
+const EventCard = ({
+  event,
+  isFirstSlide = false,
+}: {
+  event: Events;
+  isFirstSlide?: boolean;
+}) => {
   return (
-    <Box width="100%" height="100%">
-      <VStack spacing={4} height="100%">
-        <EventImage event={event} />
-        <EventDetails event={event} />
-      </VStack>
-    </Box>
+    <Link
+      href={`/events/${event.slug}`}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <Box
+        width="100%"
+        height="100%"
+        cursor="pointer"
+        role="group"
+        transition="transform 0.2s"
+        _hover={{ transform: "translateY(-2px)" }}
+      >
+        <VStack spacing={4} height="100%">
+          <EventImage event={event} priority={isFirstSlide} />
+          <EventDetails event={event} />
+        </VStack>
+      </Box>
+    </Link>
   );
 };
 
-const EventImage = ({ event }: { event: Events }) => {
+const EventImage = ({
+  event,
+  priority = false,
+}: {
+  event: Events;
+  priority?: boolean;
+}) => {
   const [imgError, setImgError] = useState<boolean>(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false);
 
   return (
     <Box
@@ -99,21 +140,50 @@ const EventImage = ({ event }: { event: Events }) => {
       overflow="hidden"
       borderRadius="lg"
     >
+      {/* Loading skeleton */}
+      {!imgLoaded && !imgError && event.image && (
+        <Skeleton
+          width="100%"
+          height="100%"
+          borderRadius="lg"
+          startColor="#805AD5"
+          endColor="#9F7AEA"
+        />
+      )}
+
+      {/* Image */}
       {!imgError && event.image && (
         <Image
           src={event.image}
           alt={event.name}
-          objectFit="cover"
-          width="100%"
-          height="100%"
-          onError={() => setImgError(true)}
+          fill
+          style={{
+            objectFit: "cover",
+            opacity: imgLoaded ? 1 : 0,
+            transition: "opacity 0.3s ease-in-out",
+          }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={priority}
+          onLoad={() => setImgLoaded(true)}
+          onError={() => {
+            setImgError(true);
+            setImgLoaded(true);
+          }}
         />
       )}
+
       {event.occurrence && (
-        <Badge colorScheme="green" position="absolute" top={2} right={2}>
+        <Badge
+          colorScheme="green"
+          position="absolute"
+          top={2}
+          right={2}
+          zIndex={2}
+        >
           {event.occurrence}
         </Badge>
       )}
+
       <Flex
         position="absolute"
         inset="0"
@@ -123,10 +193,10 @@ const EventImage = ({ event }: { event: Events }) => {
         opacity="0"
         borderRadius="lg"
         transition="opacity 0.2s, transform 0.2s"
-        _hover={{
+        zIndex={1}
+        _groupHover={{
           opacity: "1",
           transform: "scale(1.05)",
-          cursor: "pointer",
           transformOrigin: "center",
         }}
       >
