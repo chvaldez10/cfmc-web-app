@@ -7,7 +7,6 @@ export default async function EventPage({
 }: {
   params: { slug: string };
 }) {
-  // const resolvedParams = await params;
   const event = await getEventBySlug(params.slug);
 
   if (!event) {
