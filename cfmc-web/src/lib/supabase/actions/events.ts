@@ -16,6 +16,9 @@ export const getEventBySlug = cache(
       .single();
 
     if (dbError) {
+      if (dbError.code === "PGRST116") {
+        return null;
+      }
       console.error("Database Error:", dbError.message);
       throw new Error("Failed to fetch event");
     }

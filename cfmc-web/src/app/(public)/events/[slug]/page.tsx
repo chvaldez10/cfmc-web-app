@@ -5,10 +5,10 @@ import { notFound } from "next/navigation";
 export default async function EventPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const resolvedParams = await params;
-  const event = await getEventBySlug(resolvedParams.slug);
+  // const resolvedParams = await params;
+  const event = await getEventBySlug(params.slug);
 
   if (!event) {
     notFound();

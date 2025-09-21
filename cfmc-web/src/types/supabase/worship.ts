@@ -1,5 +1,3 @@
-// Add types here for supabase tables
-
 export interface Events {
   id: number;
   slug: string;
