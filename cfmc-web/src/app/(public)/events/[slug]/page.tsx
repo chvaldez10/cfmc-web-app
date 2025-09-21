@@ -17,7 +17,7 @@ export default async function EventPage({
     }
 
     return <EventDetailPage event={event} />;
-  } catch (error) {
+  } catch (_error) {
     notFound();
   }
 }
