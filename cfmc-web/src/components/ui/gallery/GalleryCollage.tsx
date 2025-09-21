@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useCallback, useRef } from "react";
 import { Box, useBreakpointValue, Text, IconButton } from "@chakra-ui/react";
+import { MdRefresh } from "react-icons/md";
 import { ImageModal } from "@/components/ui/modals";
 import { GalleryItem, HOME_JUMBO_LIMIT } from "@/constants/gallery";
 
@@ -181,7 +182,10 @@ const GalleryCollage = ({
                 outline: "2px solid blue",
                 outlineOffset: "2px",
               }}
-              onClick={() => handleImageClick(item)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleImageClick(item);
+              }}
               onKeyDown={(e) => handleKeyDown(e, item)}
             >
               {/* Error State */}
@@ -209,15 +213,14 @@ const GalleryCollage = ({
                   </Text>
                   <IconButton
                     aria-label="Retry loading image"
+                    icon={<MdRefresh />}
                     size="xs"
                     variant="outline"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleRetryImage(item.id);
                     }}
-                  >
-                    ↻
-                  </IconButton>
+                  />
                 </Box>
               ) : (
                 /* Actual Image */

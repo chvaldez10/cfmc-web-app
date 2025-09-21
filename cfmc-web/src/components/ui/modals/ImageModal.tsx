@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Image, IconButton, useBreakpointValue } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { Box, Image, useBreakpointValue } from "@chakra-ui/react";
 import BaseModal from "./BaseModal";
 
 interface ImageModalProps {
@@ -24,45 +23,28 @@ const ImageModal: React.FC<ImageModalProps> = ({
     <BaseModal
       isOpen={isOpen}
       onClose={onClose}
+      title="Gallery Image"
       size={modalSize}
-      hideCloseButton={true}
       closeOnOverlayClick={true}
       closeOnEsc={true}
-      renderHeader={() => (
-        <Box position="absolute" top={4} right={4} zIndex={10}>
-          <IconButton
-            aria-label="Close"
-            icon={<CloseIcon />}
-            onClick={onClose}
-            variant="solid"
-            colorScheme="blackAlpha"
-            bg="rgba(0, 0, 0, 0.6)"
-            color="white"
-            size="sm"
-            borderRadius="full"
-            _hover={{
-              bg: "rgba(0, 0, 0, 0.8)",
-            }}
-          />
-        </Box>
-      )}
     >
       <Box
         display="flex"
         alignItems="center"
         justifyContent="center"
-        minH={{ base: "100vh", md: "70vh" }}
+        minH={{ base: "calc(100vh - 120px)", md: "50vh" }}
         w="full"
-        p={{ base: 0, md: 4 }}
+        p={{ base: 2, md: 4 }}
+        mt={{ base: 4, md: 2 }}
       >
         <Image
           src={imageSrc}
           alt={imageAlt}
           maxW="100%"
-          maxH={{ base: "100vh", md: "70vh" }}
+          maxH={{ base: "calc(100vh - 140px)", md: "50vh" }}
           objectFit="contain"
-          borderRadius={{ base: 0, md: "lg" }}
-          boxShadow={{ base: "none", md: "2xl" }}
+          borderRadius={{ base: "md", md: "lg" }}
+          boxShadow={{ base: "sm", md: "2xl" }}
         />
       </Box>
     </BaseModal>
