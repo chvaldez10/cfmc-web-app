@@ -1,13 +1,7 @@
 "use client";
 
-import { useState, useMemo, useCallback, useRef, useEffect } from "react";
-import {
-  Box,
-  useBreakpointValue,
-  Skeleton,
-  Text,
-  IconButton,
-} from "@chakra-ui/react";
+import { useState, useMemo, useCallback, useRef } from "react";
+import { Box, useBreakpointValue, Text, IconButton } from "@chakra-ui/react";
 import { ImageModal } from "@/components/ui/modals";
 import { GalleryItem, HOME_JUMBO_LIMIT } from "@/constants/gallery";
 
@@ -23,7 +17,6 @@ interface SelectedImage {
 }
 
 enum ImageState {
-  IDLE = "idle",
   LOADING = "loading",
   LOADED = "loaded",
   ERROR = "error",
@@ -87,40 +80,7 @@ const GalleryCollage = ({
     null
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(-1);
-
-  // Initialize all images as loading to show skeletons immediately
   const [loadingStates, setLoadingStates] = useState<ImageLoadingState>({});
-
-  // Update loading states when displayImages change
-  useEffect(() => {
-    const initialStates: ImageLoadingState = {};
-    displayImages.forEach((item) => {
-      initialStates[item.id.toString()] = ImageState.LOADING;
-    });
-    setLoadingStates(initialStates);
-
-    // Fallback timeout to mark images as loaded if they take too long
-    const timeoutIds = displayImages.map((item) => {
-      return setTimeout(() => {
-        setLoadingStates((prev) => {
-          if (prev[item.id.toString()] === ImageState.LOADING) {
-            return {
-              ...prev,
-              [item.id.toString()]: ImageState.LOADED,
-            };
-          }
-          return prev;
-        });
-      }, 7000);
-    });
-
-    return () => {
-      timeoutIds.forEach(clearTimeout);
-    };
-  }, [displayImages]);
 
   // Get responsive values
   const currentSpacing = useBreakpointValue(spacing) || spacing.md;
@@ -129,7 +89,7 @@ const GalleryCollage = ({
   // Use the custom hook for layout calculations
   const gridTransforms = useGalleryLayout(displayImages.length, currentSpacing);
 
-  // Enhanced image state handlers
+  // Simple image state handlers
   const handleImageLoad = useCallback((imageId: number) => {
     setLoadingStates((prev) => ({
       ...prev,
@@ -145,9 +105,8 @@ const GalleryCollage = ({
   }, []);
 
   const handleImageClick = useCallback(
-    (image: { image: string; title: string }, index: number) => {
+    (image: { image: string; title: string }) => {
       setSelectedImage({ src: image.image, alt: image.title });
-      setSelectedImageIndex(index);
       setIsModalOpen(true);
     },
     []
@@ -156,47 +115,26 @@ const GalleryCollage = ({
   const handleModalClose = useCallback(() => {
     setIsModalOpen(false);
     setSelectedImage(null);
-    setSelectedImageIndex(-1);
   }, []);
 
   // Keyboard navigation
   const handleKeyDown = useCallback(
-    (
-      event: React.KeyboardEvent,
-      image: { image: string; title: string },
-      index: number
-    ) => {
+    (event: React.KeyboardEvent, image: { image: string; title: string }) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        handleImageClick(image, index);
+        handleImageClick(image);
       }
     },
     [handleImageClick]
   );
 
-  // Enhanced retry logic for failed image loads
-  const handleRetryImage = useCallback(
-    (imageId: number) => {
-      setLoadingStates((prev) => ({
-        ...prev,
-        [imageId.toString()]: ImageState.LOADING,
-      }));
-      // Force reload by adding timestamp to URL if needed
-      setTimeout(() => {
-        const imgElement = document.querySelector(
-          `img[alt="Gallery image: ${
-            displayImages.find((item) => item.id === imageId)?.title
-          }"]`
-        ) as HTMLImageElement;
-        if (imgElement) {
-          const originalSrc = imgElement.src;
-          imgElement.src = "";
-          imgElement.src = originalSrc;
-        }
-      }, 100);
-    },
-    [displayImages]
-  );
+  // Simple retry logic for failed image loads
+  const handleRetryImage = useCallback((imageId: number) => {
+    setLoadingStates((prev) => ({
+      ...prev,
+      [imageId.toString()]: ImageState.LOADING,
+    }));
+  }, []);
 
   // Calculate container dimensions based on content
   const numColumns = Math.ceil(displayImages.length / 2);
@@ -219,12 +157,8 @@ const GalleryCollage = ({
       >
         {displayImages.map((item, index) => {
           const transform = gridTransforms[index];
-          const imageState =
-            loadingStates[item.id.toString()] || ImageState.IDLE;
-          const shouldShowSkeleton = imageState === ImageState.LOADING;
+          const imageState = loadingStates[item.id.toString()];
           const shouldShowError = imageState === ImageState.ERROR;
-          const isInteractive =
-            imageState === ImageState.LOADED || imageState === ImageState.IDLE;
 
           return (
             <Box
@@ -235,44 +169,23 @@ const GalleryCollage = ({
               left={transform.left}
               zIndex={transform.zIndex}
               transition="all 0.3s ease"
-              cursor={isInteractive ? "pointer" : "default"}
-              tabIndex={isInteractive ? 0 : -1}
+              cursor="pointer"
+              tabIndex={0}
               role="button"
               aria-label={`View ${item.title} in full size`}
-              _hover={
-                isInteractive
-                  ? {
-                      transform: `rotate(${transform.rotate}) scale(1.05)`,
-                      zIndex: 15,
-                    }
-                  : {}
-              }
+              _hover={{
+                transform: `rotate(${transform.rotate}) scale(1.05)`,
+                zIndex: 15,
+              }}
               _focus={{
                 outline: "2px solid blue",
                 outlineOffset: "2px",
               }}
-              onClick={() => isInteractive && handleImageClick(item, index)}
-              onKeyDown={(e) => isInteractive && handleKeyDown(e, item, index)}
+              onClick={() => handleImageClick(item)}
+              onKeyDown={(e) => handleKeyDown(e, item)}
             >
-              {/* Enhanced Skeleton Loading State */}
-              {shouldShowSkeleton && (
-                <Skeleton
-                  width={currentImageSize}
-                  height={currentImageSize}
-                  borderRadius="8px"
-                  startColor="gray.100"
-                  endColor="gray.200"
-                  speed={1.2}
-                  boxShadow="0 8px 20px rgba(0, 0, 0, 0.15)"
-                  border="3px solid white"
-                  position="absolute"
-                  top="0"
-                  left="0"
-                />
-              )}
-
               {/* Error State */}
-              {shouldShowError && (
+              {shouldShowError ? (
                 <Box
                   width={currentImageSize}
                   height={currentImageSize}
@@ -306,10 +219,8 @@ const GalleryCollage = ({
                     ↻
                   </IconButton>
                 </Box>
-              )}
-
-              {/* Actual Image */}
-              {!shouldShowError && (
+              ) : (
+                /* Actual Image */
                 <Box
                   as="img"
                   src={item.image}
@@ -321,8 +232,6 @@ const GalleryCollage = ({
                   boxShadow="0 8px 20px rgba(0, 0, 0, 0.25)"
                   border="3px solid white"
                   filter="sepia(8%) brightness(0.96) contrast(1.02)"
-                  opacity={shouldShowSkeleton ? 0 : 1}
-                  transition="opacity 0.3s ease-in-out"
                   loading="lazy"
                   decoding="async"
                   onLoad={() => handleImageLoad(item.id)}
