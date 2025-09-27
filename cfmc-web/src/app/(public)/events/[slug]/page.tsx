@@ -17,7 +17,8 @@ export default async function EventPage({
     }
 
     return <EventDetailPage event={event} />;
-  } catch (_error) {
+  } catch (error) {
+    console.error("Error fetching event:", error);
     notFound();
   }
 }
