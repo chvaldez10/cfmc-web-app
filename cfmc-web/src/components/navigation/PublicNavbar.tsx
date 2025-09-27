@@ -29,15 +29,14 @@ import { NavItem } from "@/types/ui/navbar";
 import { NAV_ITEMS } from "@/constants/publicNavbar";
 
 // Constants
-import { Branding } from "@/constants/shared/enums";
 
 // Components
 import { TithesAndOfferingsModal } from "@/components/ui/modals";
 import { TithesButton } from "@/components/ui/button";
 import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import Logo from "@/components/ui/logo/logo";
 
 // Styles
-import styles from "./PublicNavbar.module.css";
 
 const BUTTON_HEIGHT = "40px";
 const NAVBAR_PADDING = 2;
@@ -71,53 +70,9 @@ export default function PublicNavbar() {
         align={"center"}
         id="public-navbar"
       >
-        {/* Mobile Navigation */}
-        <Flex ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-
-        {/* Desktop Navigation */}
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Link
-            href={"/"}
-            _hover={{
-              textDecoration: "none",
-              transform: "scale(1.05)",
-            }}
-            transition={"all 0.2s ease-in-out"}
-            className={styles.SMN_effect_59}
-            height={BUTTON_HEIGHT}
-            paddingX={"10px"}
-            display={"flex"}
-            alignItems={"center"}
-            borderRadius={"md"}
-          >
-            <Image
-              src="/branding/logo.svg"
-              alt={`${Branding.CHURCH_NAME_ABBREVIATION} Logo`}
-              height={{ base: "32px", md: "36px" }}
-              width="auto"
-              objectFit="contain"
-              loading="eager"
-              fallback={
-                <Text
-                  fontFamily={"heading"}
-                  color={"gray.800"}
-                  fontSize={{ base: "lg", md: "xl" }}
-                  fontWeight="bold"
-                >
-                  {Branding.CHURCH_NAME_ABBREVIATION}
-                </Text>
-              }
-            />
-          </Link>
+        {/* Logo - Always on the left */}
+        <Flex flex={{ base: 1 }} justify={{ base: "start", md: "start" }}>
+          <Logo />
 
           <Flex
             display={{ base: "none", md: "flex" }}
@@ -127,6 +82,18 @@ export default function PublicNavbar() {
           >
             <DesktopNav />
           </Flex>
+        </Flex>
+
+        {/* Mobile Hamburger - Now on the right */}
+        <Flex display={{ base: "flex", md: "none" }}>
+          <IconButton
+            onClick={onToggle}
+            icon={
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            }
+            variant={"ghost"}
+            aria-label={"Toggle Navigation"}
+          />
         </Flex>
 
         {/* Responsive Tithes Button */}
