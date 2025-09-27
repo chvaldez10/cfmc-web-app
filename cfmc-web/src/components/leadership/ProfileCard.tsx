@@ -14,7 +14,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { FaUser } from "react-icons/fa";
-import { ChurchMembers } from "@/data/mock/leadership";
+import { ChurchMembers } from "@/types/supabase/members";
 
 interface ProfileCardProps {
   member: ChurchMembers;

@@ -1,6 +1,6 @@
 import React from "react";
 import { VStack, Heading, Text, SimpleGrid } from "@chakra-ui/react";
-import { ChurchMembers } from "@/data/mock/leadership";
+import { ChurchMembers } from "@/types/supabase/members";
 import { ProfileCard } from "./ProfileCard";
 
 interface ProfileSectionProps {

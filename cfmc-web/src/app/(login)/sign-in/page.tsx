@@ -37,7 +37,7 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Partial<LoginFormData>>({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ email?: string } | null>(null);
   const toast = useToast();
 
   useEffect(() => {
@@ -150,7 +150,7 @@ export default function LoginPage() {
           <VStack spacing={6} align="stretch">
             <Box textAlign="center">
               <Heading size="lg" color="brand.600" mb={2}>
-                You're Already Signed In
+                You&apos;re Already Signed In
               </Heading>
               <Text color="gray.600">
                 Welcome back, {user?.email || "User"}!
@@ -312,7 +312,7 @@ export default function LoginPage() {
 
           <Box textAlign="center">
             <Text color="gray.600" fontSize="sm">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Text
                 as="span"
                 color="brand.500"
