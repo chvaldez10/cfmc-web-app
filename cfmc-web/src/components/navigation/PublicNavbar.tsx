@@ -11,9 +11,9 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useBreakpointValue,
   useDisclosure,
   Link,
+  Image,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -87,19 +87,36 @@ export default function PublicNavbar() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Link
             href={"/"}
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={"gray.800"}
             _hover={{
               textDecoration: "none",
+              transform: "scale(1.05)",
             }}
+            transition={"all 0.2s ease-in-out"}
             className={styles.SMN_effect_59}
             height={BUTTON_HEIGHT}
             paddingX={"10px"}
             display={"flex"}
             alignItems={"center"}
+            borderRadius={"md"}
           >
-            {Branding.CHURCH_NAME_ABBREVIATION}
+            <Image
+              src="/branding/logo.svg"
+              alt={`${Branding.CHURCH_NAME_ABBREVIATION} Logo`}
+              height={{ base: "32px", md: "36px" }}
+              width="auto"
+              objectFit="contain"
+              loading="eager"
+              fallback={
+                <Text
+                  fontFamily={"heading"}
+                  color={"gray.800"}
+                  fontSize={{ base: "lg", md: "xl" }}
+                  fontWeight="bold"
+                >
+                  {Branding.CHURCH_NAME_ABBREVIATION}
+                </Text>
+              }
+            />
           </Link>
 
           <Flex
