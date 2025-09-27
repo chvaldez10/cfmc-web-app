@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
 
-export default async function PrivatePage() {
+export default async function MemberPage() {
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.getUser();
@@ -10,5 +10,5 @@ export default async function PrivatePage() {
     redirect("/login");
   }
 
-  return <p>dashboard member</p>;
+  return <>dashboard member</>;
 }
