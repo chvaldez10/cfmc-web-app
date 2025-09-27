@@ -12,8 +12,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useDisclosure,
-  Link,
-  Image,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
