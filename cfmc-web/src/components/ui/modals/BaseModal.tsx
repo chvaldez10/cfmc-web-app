@@ -11,7 +11,10 @@ import {
   ButtonProps,
   useBreakpointValue,
   Flex,
+  IconButton,
+  Box,
 } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
 
 interface FooterAction extends ButtonProps {
   label: string;
@@ -76,7 +79,19 @@ const BaseModal: React.FC<BaseModalProps> = ({
           <ModalHeader>{title}</ModalHeader>
         ) : null}
 
-        {!hideCloseButton && <ModalCloseButton />}
+        {!hideCloseButton && (
+          <Box position="absolute" top={4} right={4} zIndex={1}>
+            <IconButton
+              aria-label="Close modal"
+              icon={<CloseIcon />}
+              size="sm"
+              variant="ghost"
+              onClick={onClose}
+              _hover={{ bg: "gray.100" }}
+              borderRadius="full"
+            />
+          </Box>
+        )}
 
         <ModalBody>{children}</ModalBody>
 

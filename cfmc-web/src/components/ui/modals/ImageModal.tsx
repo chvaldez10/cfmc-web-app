@@ -15,9 +15,9 @@ const ImageModal: React.FC<ImageModalProps> = ({
   imageSrc,
   imageAlt,
 }) => {
-  const modalSize = useBreakpointValue({ base: "full", md: "4xl" }) as
+  const modalSize = useBreakpointValue({ base: "full", md: "6xl" }) as
     | "full"
-    | "4xl";
+    | "6xl";
 
   return (
     <BaseModal
@@ -32,19 +32,17 @@ const ImageModal: React.FC<ImageModalProps> = ({
         display="flex"
         alignItems="center"
         justifyContent="center"
-        minH={{ base: "calc(100vh - 120px)", md: "50vh" }}
+        minH={{ base: "80vh", md: "70vh" }}
         w="full"
-        p={{ base: 2, md: 4 }}
-        mt={{ base: 4, md: 2 }}
       >
         <Image
           src={imageSrc}
           alt={imageAlt}
           maxW="100%"
-          maxH={{ base: "calc(100vh - 140px)", md: "50vh" }}
+          maxH={{ base: "75vh", md: "65vh" }}
           objectFit="contain"
-          borderRadius={{ base: "md", md: "lg" }}
-          boxShadow={{ base: "sm", md: "2xl" }}
+          borderRadius="lg"
+          boxShadow="2xl"
         />
       </Box>
     </BaseModal>
