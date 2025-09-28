@@ -189,8 +189,37 @@ export default function CreateMemberPage() {
 
       const reader = new FileReader();
       reader.onload = (e) => {
-        setSelectedImage(e.target?.result as string);
-        onCropModalOpen();
+        const imageDataUrl = e.target?.result as string;
+        setSelectedImage(imageDataUrl);
+
+        // Set up initial crop area after image loads
+        const img = new window.Image();
+        img.onload = () => {
+          // Calculate display size (max 500px as per modal)
+          const maxDisplaySize = 500;
+          const scale = Math.min(
+            maxDisplaySize / img.width,
+            maxDisplaySize / img.height,
+            1
+          );
+          const displayWidth = img.width * scale;
+          const displayHeight = img.height * scale;
+
+          // Set crop area to center square (60% of smaller dimension)
+          const cropSize = Math.min(displayWidth, displayHeight) * 0.6;
+          const cropX = (displayWidth - cropSize) / 2;
+          const cropY = (displayHeight - cropSize) / 2;
+
+          setCropArea({
+            x: Math.max(0, cropX),
+            y: Math.max(0, cropY),
+            width: cropSize,
+            height: cropSize,
+          });
+
+          onCropModalOpen();
+        };
+        img.src = imageDataUrl;
       };
       reader.readAsDataURL(file);
     }
@@ -198,73 +227,120 @@ export default function CreateMemberPage() {
 
   // Handle image cropping
   const handleCrop = useCallback(() => {
-    if (!imageRef.current || !canvasRef.current) return;
+    if (!imageRef.current || !canvasRef.current || !selectedImage) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const image = imageRef.current;
+    const displayedImage = imageRef.current;
 
     if (!ctx) return;
 
-    // Set canvas size to crop area
-    canvas.width = cropArea.width;
-    canvas.height = cropArea.height;
+    // Create a new image object to ensure we have the full resolution data
+    const sourceImage = new window.Image();
 
-    // Draw cropped image
-    ctx.drawImage(
-      image,
-      cropArea.x,
-      cropArea.y,
-      cropArea.width,
-      cropArea.height,
-      0,
-      0,
-      cropArea.width,
-      cropArea.height
-    );
+    sourceImage.onload = () => {
+      // Calculate the scaling between displayed image and actual image
+      const displayedWidth = displayedImage.offsetWidth;
+      const displayedHeight = displayedImage.offsetHeight;
+      const actualWidth = sourceImage.naturalWidth;
+      const actualHeight = sourceImage.naturalHeight;
 
-    // Convert to blob
-    canvas.toBlob(
-      (blob) => {
-        if (blob) {
-          const croppedFile = new File([blob], "cropped-headshot.jpg", {
-            type: "image/jpeg",
-          });
-          setFormData((prev) => ({ ...prev, image_profile: croppedFile }));
-          setCroppedImage(canvas.toDataURL());
-          onCropModalClose();
+      // Calculate scale factors
+      const scaleX = actualWidth / displayedWidth;
+      const scaleY = actualHeight / displayedHeight;
 
-          toast({
-            title: "Image cropped successfully",
-            description: "Your headshot has been prepared for upload",
-            status: "success",
-            duration: 2000,
-          });
-        }
-      },
-      "image/jpeg",
-      0.9
-    );
-  }, [cropArea, onCropModalClose, toast]);
+      // Apply scaling to crop coordinates
+      const actualCropX = cropArea.x * scaleX;
+      const actualCropY = cropArea.y * scaleY;
+      const actualCropWidth = cropArea.width * scaleX;
+      const actualCropHeight = cropArea.height * scaleY;
+
+      // Set canvas to desired output size (square, max 400px for efficiency)
+      const outputSize = Math.min(
+        400,
+        Math.max(actualCropWidth, actualCropHeight)
+      );
+      canvas.width = outputSize;
+      canvas.height = outputSize;
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the cropped portion onto canvas
+      ctx.drawImage(
+        sourceImage,
+        actualCropX,
+        actualCropY,
+        actualCropWidth,
+        actualCropHeight,
+        0,
+        0,
+        outputSize,
+        outputSize
+      );
+
+      // Convert to blob
+      canvas.toBlob(
+        (blob) => {
+          if (blob) {
+            const croppedFile = new File([blob], "cropped-headshot.jpg", {
+              type: "image/jpeg",
+            });
+            setFormData((prev) => ({ ...prev, image_profile: croppedFile }));
+            setCroppedImage(canvas.toDataURL());
+            onCropModalClose();
+
+            toast({
+              title: "Image cropped successfully",
+              description: "Your headshot has been prepared for upload",
+              status: "success",
+              duration: 2000,
+            });
+          }
+        },
+        "image/jpeg",
+        0.9
+      );
+    };
+
+    sourceImage.onerror = () => {
+      toast({
+        title: "Crop failed",
+        description: "Unable to process the selected image",
+        status: "error",
+        duration: 3000,
+      });
+    };
+
+    // Load the original image data
+    sourceImage.src = selectedImage;
+  }, [cropArea, onCropModalClose, toast, selectedImage]);
 
   // Handle drag for cropping
   const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
     const rect = imageRef.current?.getBoundingClientRect();
     if (!rect) return;
 
-    const startX = e.clientX - rect.left;
-    const startY = e.clientY - rect.top;
+    const startX = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const startY = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
 
     const handleMouseMove = (e: MouseEvent) => {
-      const currentX = e.clientX - rect.left;
-      const currentY = e.clientY - rect.top;
+      e.preventDefault();
+      const currentX = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+      const currentY = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
 
-      setCropArea({
+      const newCropArea = {
         x: Math.min(startX, currentX),
         y: Math.min(startY, currentY),
         width: Math.abs(currentX - startX),
         height: Math.abs(currentY - startY),
-      });
+      };
+
+      // Ensure minimum crop size during dragging
+      if (newCropArea.width >= 30 && newCropArea.height >= 30) {
+        setCropArea(newCropArea);
+      }
     };
 
     const handleMouseUp = () => {
@@ -423,7 +499,34 @@ export default function CreateMemberPage() {
                       <HStack>
                         <Button
                           size="sm"
-                          onClick={onCropModalOpen}
+                          onClick={() => {
+                            if (selectedImage) {
+                              const img = new window.Image();
+                              img.onload = () => {
+                                const maxDisplaySize = 500;
+                                const scale = Math.min(
+                                  maxDisplaySize / img.width,
+                                  maxDisplaySize / img.height,
+                                  1
+                                );
+                                const displayWidth = img.width * scale;
+                                const displayHeight = img.height * scale;
+                                const cropSize =
+                                  Math.min(displayWidth, displayHeight) * 0.6;
+                                const cropX = (displayWidth - cropSize) / 2;
+                                const cropY = (displayHeight - cropSize) / 2;
+
+                                setCropArea({
+                                  x: Math.max(0, cropX),
+                                  y: Math.max(0, cropY),
+                                  width: cropSize,
+                                  height: cropSize,
+                                });
+                                onCropModalOpen();
+                              };
+                              img.src = selectedImage;
+                            }
+                          }}
                           colorScheme="purple"
                           variant="outline"
                         >
@@ -1014,8 +1117,8 @@ export default function CreateMemberPage() {
                       width={`${cropArea.width}px`}
                       height={`${cropArea.height}px`}
                       border="2px dashed"
-                      borderColor="blue.500"
-                      bg="rgba(59, 130, 246, 0.1)"
+                      borderColor="purple.500"
+                      bg="rgba(147, 51, 234, 0.1)"
                       pointerEvents="none"
                     />
                   </>
