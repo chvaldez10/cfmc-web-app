@@ -4,10 +4,6 @@ import React, { useState, useRef, useCallback } from "react";
 import {
   Box,
   Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -150,7 +146,10 @@ export default function CreateMemberPage() {
   };
 
   // Handle input changes
-  const handleInputChange = (field: keyof FormData, value: any) => {
+  const handleInputChange = (
+    field: keyof FormData,
+    value: string | boolean | string[] | Date | undefined
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }));
@@ -1094,8 +1093,8 @@ export default function CreateMemberPage() {
             <VStack spacing={4}>
               <Text color="gray.600">
                 Click and drag to select the area for the profile picture. Aim
-                for a square crop that focuses on the person's face and upper
-                shoulders.
+                for a square crop that focuses on the person&apos;s face and
+                upper shoulders.
               </Text>
               <Box position="relative" display="inline-block">
                 {selectedImage && (
