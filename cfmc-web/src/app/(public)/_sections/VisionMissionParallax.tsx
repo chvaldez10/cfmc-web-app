@@ -86,21 +86,6 @@ const VisionMissionParallax = () => {
               ),
             }}
           />
-
-          {/* Statement of Commitment */}
-          <ParallaxCard1
-            content={ABOUT_CONTENT.STATEMENT_OF_COMMITMENT}
-            colorScheme={AllowedColorSchemes.GREEN}
-            motionStyle={{
-              y: useTransform(scrollYProgress, [0, 1], [200, -150]),
-              opacity: useTransform(
-                scrollYProgress,
-                [0.2, 0.4, 0.6, 0.8],
-                [0, 1, 1, 0]
-              ),
-            }}
-            maxW="5xl"
-          />
         </VStack>
       </Container>
     </Box>
