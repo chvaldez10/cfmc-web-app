@@ -1,3 +1,7 @@
+import { FaEnvelope, FaMailBulk, FaHandshake } from "react-icons/fa";
+import { DonationMethod } from "@/types/ui/components";
+import { Branding } from "./enums";
+
 export enum ContactFormLabels {
   FULL_NAME = "Full Name",
   EMAIL_ADDRESS = "Email Address",
@@ -38,5 +42,25 @@ export const CONTACT_US_CONTENT: { title: string; description: string }[] = [
     title: "Contact Us",
     description:
       "We'd love to hear from you! Whether you're new to Calgary, exploring faith, looking for a church family, or simply have a question—we're here to help.",
+  },
+];
+
+export const DONATION_METHODS: DonationMethod[] = [
+  {
+    icon: FaEnvelope,
+    title: "E-Transfer",
+    description: "Send directly to our church email",
+    email: Branding.CHURCH_EMAIL,
+  },
+  {
+    icon: FaMailBulk,
+    title: "Mail",
+    description: "Send checks or money orders by mail",
+    details: "Address: " + Branding.CHURCH_ADDRESS,
+  },
+  {
+    icon: FaHandshake,
+    title: "In-Person",
+    description: "Give during Sunday Worship Service",
   },
 ];

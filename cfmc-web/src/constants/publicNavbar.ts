@@ -72,6 +72,6 @@ export const NAV_ITEMS: Array<NavItem> = [
 export const TITHERS_AND_OFFERINGS_MODAL = {
   label: PublicLabels.TITHES_AND_OFFERINGS,
   message:
-    "💝 Your generous contributions help us continue God&apos;s work in our community and beyond. Thank you for your support! Official receipt will be issued before February 28 of the following year for tax purposes.",
+    "💝 Your generous contributions help us continue God's work in our community and beyond. Thank you for your support! Official receipt will be issued before February 28 of the following year for tax purposes.",
   buttonLink: "#",
 };

@@ -50,3 +50,11 @@ export interface SectionVisualConfig {
   altText: string;
   reverse?: boolean;
 }
+
+export interface DonationMethod {
+  icon: ComponentType<{ size?: string | number; className?: string }>;
+  title: string;
+  description: string;
+  email?: string;
+  details?: string;
+}

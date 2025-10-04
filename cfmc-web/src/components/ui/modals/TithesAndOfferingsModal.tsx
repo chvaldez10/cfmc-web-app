@@ -18,26 +18,15 @@ import {
   useToast,
   Tooltip,
 } from "@chakra-ui/react";
-import {
-  FaEnvelope,
-  FaMailBulk,
-  FaHandshake,
-  FaCopy,
-  FaCheck,
-} from "react-icons/fa";
+import { FaCopy, FaCheck } from "react-icons/fa";
 import { useState } from "react";
 
 // Types
-interface DonationMethod {
-  icon: ComponentType<{ size?: string | number; className?: string }>;
-  title: string;
-  description: string;
-  email?: string;
-  details?: string;
-}
+import { DonationMethod } from "@/types/ui/components";
 
 import { PublicLabels } from "@/constants/shared/enums";
 import { TITHERS_AND_OFFERINGS_MODAL } from "@/constants/publicNavbar";
+import { DONATION_METHODS } from "@/constants/shared/contact";
 
 interface DonationMethodCardProps {
   method: DonationMethod;
@@ -278,26 +267,6 @@ const TithesAndOfferingsModal = ({
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 
-  const donationMethods: DonationMethod[] = [
-    {
-      icon: FaEnvelope,
-      title: "E-Transfer",
-      description: "Send directly to our church email",
-      email: "calgaryfilipinomethodistchurch@yahoo.com",
-    },
-    {
-      icon: FaMailBulk,
-      title: "Mail",
-      description: "Send checks or money orders by mail",
-      details: "Address: 123 Church Street, Calgary, AB",
-    },
-    {
-      icon: FaHandshake,
-      title: "In-Person",
-      description: "Give during Sunday Worship Service",
-    },
-  ];
-
   return (
     <Modal
       isOpen={isOpen}
@@ -305,6 +274,7 @@ const TithesAndOfferingsModal = ({
       isCentered
       size={{ base: "sm", md: "md", lg: "lg" }}
       scrollBehavior="inside"
+      data-testid="tithes-and-offerings-modal"
     >
       <ModalOverlay bg="blackAlpha.600" backdropFilter="blur(4px)" />
       <ModalContent
@@ -313,6 +283,7 @@ const TithesAndOfferingsModal = ({
         borderRadius="xl"
         boxShadow="2xl"
         maxH="90vh"
+        data-testid="tithes-and-offerings-modal-content"
       >
         <ModalHeader
           fontSize={{ base: "xl", md: "2xl" }}
@@ -336,7 +307,7 @@ const TithesAndOfferingsModal = ({
 
             {/* Donation Methods */}
             <VStack spacing={4} align="stretch">
-              {donationMethods.map((method, index) => (
+              {DONATION_METHODS.map((method, index) => (
                 <DonationMethodCard
                   key={index}
                   method={method}
