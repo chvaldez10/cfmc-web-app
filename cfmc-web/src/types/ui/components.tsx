@@ -55,6 +55,6 @@ export interface DonationMethod {
   icon: ComponentType<{ size?: string | number; className?: string }>;
   title: string;
   description: string;
-  email?: string;
+  onCopyItem?: string;
   details?: string;
 }

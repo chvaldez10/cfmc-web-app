@@ -31,25 +31,25 @@ import { DONATION_METHODS } from "@/constants/shared/contact";
 interface DonationMethodCardProps {
   method: DonationMethod;
   index: number;
-  onCopyEmail: (email: string, index: number) => void;
+  onCopyItem: (item: string, index: number) => void;
   copiedIndex: number | null;
 }
 
-// Email Copy Section Component
-const EmailCopySection = ({
-  email,
+// Copy Item Section Component
+const CopyItemSection = ({
+  item,
   index,
-  onCopyEmail,
+  onCopyItem,
   copiedIndex,
 }: {
-  email: string;
+  item: string;
   index: number;
-  onCopyEmail: (email: string, index: number) => void;
+  onCopyItem: (item: string, index: number) => void;
   copiedIndex: number | null;
 }) => {
   const isCopied = copiedIndex === index;
   return (
-    <Tooltip label={email} placement="top" hasArrow>
+    <Tooltip label={item} placement="top" hasArrow>
       <Box
         mt={3}
         p={3}
@@ -63,18 +63,18 @@ const EmailCopySection = ({
         justifyContent="space-between"
         cursor="pointer"
         tabIndex={0}
-        onClick={() => onCopyEmail(email, index)}
+        onClick={() => onCopyItem(item, index)}
         _hover={{ bg: "gray.50" }}
         _active={{ bg: "gray.100" }}
         transition="background 0.2s"
-        aria-label={`Copy email: ${email}`}
+        aria-label={`Copy: ${item}`}
       >
         <Text
           fontSize={{ base: "sm", md: "md" }}
           color={isCopied ? "green.600" : "brand.600"}
           fontWeight="medium"
         >
-          {isCopied ? "Copied!" : "Copy email"}
+          {isCopied ? "Copied!" : "Copy to clipboard"}
         </Text>
         <Box
           as="span"
@@ -93,7 +93,7 @@ const EmailCopySection = ({
 const DonationMethodCard = ({
   method,
   index,
-  onCopyEmail,
+  onCopyItem,
   copiedIndex,
 }: DonationMethodCardProps) => {
   const cardBg = "gray.50";
@@ -145,12 +145,12 @@ const DonationMethodCard = ({
             {method.description}
           </Text>
 
-          {/* Email section with copy functionality */}
-          {method.email && (
-            <EmailCopySection
-              email={method.email}
+          {/* Copy item section with copy functionality */}
+          {method.onCopyItem && (
+            <CopyItemSection
+              item={method.onCopyItem}
               index={index}
-              onCopyEmail={onCopyEmail}
+              onCopyItem={onCopyItem}
               copiedIndex={copiedIndex}
             />
           )}
@@ -250,13 +250,13 @@ const TithesAndOfferingsModal = ({
   const bgColor = "white";
   const borderColor = "gray.200";
 
-  const handleCopyEmail = (email: string, index: number) => {
-    navigator.clipboard.writeText(email);
+  const handleCopyItem = (item: string, index: number) => {
+    navigator.clipboard.writeText(item);
     setCopiedIndex(index);
 
     toast({
-      title: "Email copied!",
-      description: "The e-transfer email has been copied to your clipboard.",
+      title: "Copied!",
+      description: "The information has been copied to your clipboard.",
       status: "success",
       duration: 2000,
       isClosable: true,
@@ -312,7 +312,7 @@ const TithesAndOfferingsModal = ({
                   key={index}
                   method={method}
                   index={index}
-                  onCopyEmail={handleCopyEmail}
+                  onCopyItem={handleCopyItem}
                   copiedIndex={copiedIndex}
                 />
               ))}
