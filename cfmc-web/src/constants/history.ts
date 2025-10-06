@@ -7,6 +7,7 @@ export interface TimelineEvent {
 export interface HistorySection {
   historySectionTitle: string;
   events: TimelineEvent[];
+  isActive?: boolean;
 }
 
 export interface ChurchHistoryRoot {

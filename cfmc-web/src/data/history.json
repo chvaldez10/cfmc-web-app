@@ -14,12 +14,19 @@
           "description": "May 24, 1738: John Wesley experienced his 'heart strangely warmed' at Aldersgate Street, London, marking the beginning of Methodism as a revival movement."
         },
         {
-          "description": "April 2, 1739: John Wesley began field preaching, proclaiming 'glad tidings of salvation' to about three thousand people."
+          "description": "April 2, 1739: John Wesley began field preaching, proclaiming 'glad tidings of salvation' to about three thousand people, embodying his revolutionary approach: 'The world is my parish' - taking the gospel to the streets, fields, and wherever people gathered, breaking from traditional church boundaries."
+        },
+        {
+          "description": "Wesley's extensive travels: Over 250,000 miles on horseback across England, Scotland, Wales, and Ireland, preaching over 40,000 sermons in his lifetime."
+        },
+        {
+          "description": "Wesley's message of personal salvation and social holiness transformed communities, emphasizing both individual conversion and social reform, including opposition to slavery and support for education."
         },
         {
           "description": "Wesley's ultimate goal for Methodism: 'To reform the nation and, in particular, the church; to spread scriptural holiness over the land.'"
         }
-      ]
+      ],
+      "isActive": false
     },
     {
       "historySectionTitle": "Early Methodism in America: Humble beginnings in America, 1760-1816",
@@ -39,35 +46,32 @@
         {
           "description": "Became the largest and most influential religious denomination in the United States in the early 19th century."
         }
-      ]
+      ],
+      "isActive": false
     },
     {
       "historySectionTitle": "Early Methodism in Canada",
       "events": [
         {
-          "description": "1766: Laurence Coughlan, a follower of Wesley, began preaching in Newfoundland."
+          "description": "1766: Laurence Coughlan, a follower of Wesley, began preaching in Newfoundland, establishing the first Methodist presence in Canada."
         },
         {
-          "description": "1772-1775: Yorkshire settlers around Chignecto, Nova Scotia, brought their Methodist faith, leading to organized worship."
+          "description": "1772-1775: Yorkshire settlers around Chignecto, Nova Scotia, brought their Methodist faith, leading to organized worship and the foundation of Canadian Methodism."
+        },
+        {
+          "description": "1840s: Rev. Robert Rundle, a Methodist missionary, became one of the most influential figures in Canadian Methodism, establishing missions across Western Canada and working with Indigenous communities."
+        },
+        {
+          "description": "Rev. Rundle's legacy: Known for his extensive travels across the Canadian West, establishing Methodist missions and translating the gospel message for Indigenous peoples, leaving a lasting impact on Canadian Methodist history."
+        },
+        {
+          "description": "Methodist missionaries played a crucial role in Canadian frontier life, establishing schools, hospitals, and churches that became centers of community life across the developing nation."
         }
-      ]
+      ],
+      "isActive": false
     },
     {
-      "historySectionTitle": "Early Methodism in the Philippines",
-      "events": [
-        {
-          "description": "March 5, 1899: Bishop James M. Thoburn established a Methodist Episcopal Church mission in the Philippines, holding the first service at Teatro Filipino in Manila."
-        },
-        {
-          "description": "Captain Plummer became a main benefactor and founding member of what would become the Methodist Episcopal Church (Central Church)."
-        },
-        {
-          "description": "Methodism spread throughout the Philippines and globally through overseas Filipino workers."
-        }
-      ]
-    },
-    {
-      "historySectionTitle": "Filipino Methodist Immigrants in Canada",
+      "historySectionTitle": "Filipino Methodist in Canada",
       "events": [
         {
           "description": "September 27, 1998: Rev. Rolando Vinluan established the first Filipino-Canadian Methodist Church, 'the Pacific Community Methodist Church,' in Winnipeg, Manitoba."
@@ -88,12 +92,13 @@
           "description": "June 29, 2022: Rev. Jonavern Lungub joined CFMC as Administrative Pastor and Missionary."
         },
         {
-          "description": "May 23, 2023: Pastor Jonavern transferred his ordination credentials to the Global Methodist Church."
+          "description": "May 23, 2023: Pastor Jonavern transferred his ordination credentials to maintain his ministerial standing."
         },
         {
           "description": "June 4, 2023: CFMC, in partnership with EFMC, helped plant Red Deer Filipino Methodist Church in Red Deer City, Alberta."
         }
-      ]
+      ],
+      "isActive": true
     }
   ]
 }
