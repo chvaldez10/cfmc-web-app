@@ -75,6 +75,10 @@ const StickyAnimatedBackground = ({
         zIndex: -1,
       }}
       sx={{
+        "@media (max-height: 700px) and (max-width: 768px)": {
+          position: "relative",
+          minHeight: "auto",
+        },
         "@keyframes radial-pulse": {
           "0%": {
             transform: "scale(0.8)",
