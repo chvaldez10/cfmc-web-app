@@ -18,12 +18,6 @@ const StickyContentSection = ({
   colorScheme,
   reverse = false,
 }: StickyContentSectionProps) => {
-  const textColor = "gray.700";
-  const quoteColor = "gray.800";
-  const headingColor = "gray.900";
-  const quoteBgColor = "white";
-  const borderColor = `${colorScheme}.500`;
-
   return (
     <VStack
       align={{ base: "center", md: "start" }}
@@ -40,7 +34,7 @@ const StickyContentSection = ({
         as="h1"
         fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
         fontWeight="bold"
-        color={headingColor}
+        color="gray.900"
         lineHeight="shorter"
         mb={{ base: 2, md: 0 }}
       >
@@ -55,13 +49,13 @@ const StickyContentSection = ({
                 key={index}
                 fontSize={{ base: "sm", md: "md", lg: "lg" }}
                 fontStyle="italic"
-                color={quoteColor}
+                color="gray.800"
                 pl={{ base: 4, md: 6 }}
                 pr={{ base: 4, md: 6 }}
                 py={{ base: 5, md: 6 }}
                 borderLeft="4px solid"
-                borderLeftColor={borderColor}
-                bg={quoteBgColor}
+                borderLeftColor={`${colorScheme}.500`}
+                bg="white"
                 borderRadius="md"
                 lineHeight="tall"
                 wordBreak="break-word"
@@ -77,7 +71,7 @@ const StickyContentSection = ({
               key={index}
               fontSize={{ base: "md", md: "lg", lg: "xl" }}
               fontWeight="normal"
-              color={textColor}
+              color="gray.700"
               lineHeight="tall"
               wordBreak="break-word"
             >

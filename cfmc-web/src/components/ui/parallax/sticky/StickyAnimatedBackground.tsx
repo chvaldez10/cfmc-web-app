@@ -45,13 +45,15 @@ const StickyAnimatedBackground = ({
     <Box
       position="sticky"
       top="0"
-      minH={{ base: "auto", md: "100vh" }}
+      minH={{ base: "100vh", md: "100vh" }}
+      height="fit-content"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg={colorSchemes[colorScheme].smokeBg}
+      bg="var(--color-light-100)"
       overflow="hidden"
       zIndex={zIndex}
+      w="full"
       _before={{
         content: '""',
         position: "absolute",
