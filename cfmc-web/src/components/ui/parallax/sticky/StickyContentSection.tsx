@@ -18,8 +18,8 @@ const StickyContentSection = ({
   colorScheme,
   reverse = false,
 }: StickyContentSectionProps) => {
-  const textColor = "gray.600";
-  const quoteColor = "gray.700";
+  const textColor = "gray.700";
+  const quoteColor = "gray.800";
   const headingColor = "gray.900";
   const quoteBgColor = "white";
   const borderColor = `${colorScheme}.500`;
@@ -28,39 +28,44 @@ const StickyContentSection = ({
     <VStack
       align={{ base: "center", md: "start" }}
       textAlign={{ base: "center", md: "left" }}
-      spacing={6}
+      spacing={{ base: 6, md: 8 }}
       flex="1"
       px={{ base: 4, md: 0 }}
       pl={{ md: reverse ? 0 : 16 }}
       pr={{ md: reverse ? 16 : 0 }}
       maxW="100%"
+      w="full"
     >
       <Heading
         as="h1"
-        fontSize={{ base: "2xl", md: "4xl" }}
-        fontWeight="medium"
+        fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+        fontWeight="bold"
         color={headingColor}
         lineHeight="shorter"
+        mb={{ base: 2, md: 0 }}
       >
         {title}
       </Heading>
 
-      <VStack spacing={4} align="stretch" w="full" maxW="2xl">
+      <VStack spacing={{ base: 5, md: 6 }} align="stretch" w="full" maxW="3xl">
         {textBlocks.map((block, index) => {
           if (block.isQuote) {
             return (
               <Text
                 key={index}
-                fontSize={{ base: "md", md: "lg" }}
+                fontSize={{ base: "sm", md: "md", lg: "lg" }}
                 fontStyle="italic"
                 color={quoteColor}
-                pl={6}
-                py={4}
+                pl={{ base: 4, md: 6 }}
+                pr={{ base: 4, md: 6 }}
+                py={{ base: 5, md: 6 }}
                 borderLeft="4px solid"
                 borderLeftColor={borderColor}
                 bg={quoteBgColor}
                 borderRadius="md"
-                lineHeight="relaxed"
+                lineHeight="tall"
+                wordBreak="break-word"
+                shadow="sm"
               >
                 {block.text}
               </Text>
@@ -70,10 +75,11 @@ const StickyContentSection = ({
           return (
             <Text
               key={index}
-              fontSize={{ base: "md", md: "lg" }}
-              fontWeight="medium"
+              fontSize={{ base: "md", md: "lg", lg: "xl" }}
+              fontWeight="normal"
               color={textColor}
-              lineHeight="relaxed"
+              lineHeight="tall"
+              wordBreak="break-word"
             >
               {block.text}
             </Text>

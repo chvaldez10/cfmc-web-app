@@ -45,7 +45,7 @@ const StickyAnimatedBackground = ({
     <Box
       position="sticky"
       top="0"
-      minH="100vh"
+      minH={{ base: "auto", md: "100vh" }}
       display="flex"
       alignItems="center"
       justifyContent="center"
