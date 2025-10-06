@@ -1,5 +1,3 @@
-import { ComponentType } from "react";
-
 import {
   Modal,
   ModalContent,

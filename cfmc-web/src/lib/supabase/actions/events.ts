@@ -47,3 +47,26 @@ export const getFeaturedEvents = cache(async (): Promise<Events[] | null> => {
 
   return data;
 });
+
+export const getUpcomingEvents = cache(async (): Promise<Events[] | null> => {
+  const supabase = await createClient();
+  const now = new Date().toISOString();
+
+  const { data, error: dbError } = await supabase
+    .from("events")
+    .select("*")
+    .gte("start_date", now)
+    .eq("status", "published")
+    .order("start_date", { ascending: true });
+
+  if (dbError) {
+    console.error("Database Error:", dbError.message);
+    throw new Error("Failed to fetch upcoming events");
+  }
+
+  if (!data) {
+    return null;
+  }
+
+  return data;
+});
