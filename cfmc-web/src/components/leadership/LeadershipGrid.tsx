@@ -2,17 +2,17 @@ import React from "react";
 import { VStack, Divider } from "@chakra-ui/react";
 import {
   LEADERSHIP_CONTENT_INTROS,
-  LeadershipMembers,
+  PastoralTeam,
 } from "@/data/mock/leadership";
 import { ProfileSection } from "./ProfileSection";
 
 export const LeadershipGrid = () => {
   // Filter members by category
-  const boardMembers = LeadershipMembers.filter(
+  const boardMembers = PastoralTeam.filter(
     (member) => member.isBoardMember && member.isActive
   );
 
-  const ministerialTeamOnly = LeadershipMembers.filter(
+  const ministerialTeamOnly = PastoralTeam.filter(
     (member) =>
       member.isMinisterialTeam && !member.isBoardMember && member.isActive
   );
@@ -20,11 +20,7 @@ export const LeadershipGrid = () => {
   return (
     <VStack spacing={16} w="100%">
       {/* Board Members Section */}
-      <ProfileSection
-        title="Board Members"
-        description={LEADERSHIP_CONTENT_INTROS[0].description}
-        members={boardMembers}
-      />
+      <ProfileSection title="Pastoral Team" members={boardMembers} />
 
       {/* Divider */}
       {ministerialTeamOnly.length > 0 && (

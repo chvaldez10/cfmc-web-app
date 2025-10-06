@@ -5,7 +5,7 @@ import { ProfileCard } from "./ProfileCard";
 
 interface ProfileSectionProps {
   title: string;
-  description: string;
+  description?: string;
   members: ChurchMembers[];
 }
 
@@ -29,13 +29,15 @@ export const ProfileSection = ({
         >
           {title}
         </Heading>
-        <Text
-          fontSize={{ base: "md", md: "lg" }}
-          color="gray.700"
-          lineHeight="tall"
-        >
-          {description}
-        </Text>
+        {description && (
+          <Text
+            fontSize={{ base: "md", md: "lg" }}
+            color="gray.700"
+            lineHeight="tall"
+          >
+            {description}
+          </Text>
+        )}
       </VStack>
 
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} w="100%">
