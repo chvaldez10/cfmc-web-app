@@ -20,6 +20,12 @@ export const NAV_ITEMS: Array<NavItem> = [
         subLabel: "Our history is a testament to our journey.",
         href: "/about/history",
       },
+      {
+        label: PublicLabels.WHAT_WE_BELIEVE,
+        subLabel:
+          "Our theological beliefs and foundational principles that guide our faith community.",
+        href: "/about/beliefs",
+      },
     ],
   },
   {
