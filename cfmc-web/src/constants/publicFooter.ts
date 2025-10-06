@@ -19,7 +19,7 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
       },
       {
         label: "Upcoming Events",
-        href: "/events",
+        href: "/get-involved/upcoming-events",
       },
       {
         label: "Ministries",

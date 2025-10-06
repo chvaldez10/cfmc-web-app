@@ -28,7 +28,7 @@ const FooterDetails = () => {
             {FooterLabels.ADDRESS}
           </Text>
           <Text fontSize={{ base: "sm", md: "md" }}>
-            {Branding.CHURCH_ADDRESS} {Branding.CHURCH_POSTAL_CODE}
+            Place of Worship: {Branding.CHURCH_ADDRESS}
           </Text>
           <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
             {FooterLabels.CONTACT}

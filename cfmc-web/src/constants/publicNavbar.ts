@@ -28,7 +28,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicLabels.UPCOMING_EVENTS,
         subLabel: "Join us for our upcoming events and activities.",
-        href: "#",
+        href: "/get-involved/upcoming-events",
       },
       {
         label: PublicLabels.MINISTRIES,
