@@ -17,22 +17,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string[];
-  message: string;
-}
+// Types
+import { FormData, FormErrors } from "@/types/ui/forms";
 
-interface FormErrors {
-  name?: string;
-  email?: string;
-  phone?: string;
-  subject?: string;
-  message?: string;
-}
-
+// Constants
 import { ContactUsOptions } from "@/constants/shared/enums";
 import {
   ContactFormLabels,
@@ -40,9 +28,12 @@ import {
   ContactFormValidationMessages,
   ContactFormToastMessages,
 } from "@/constants/shared/contact";
+
+// Actions
 import { submitContactForm } from "@/lib/supabase/actions/contact-submissions";
 
 export default function ContactForm() {
+  // States
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -64,6 +55,7 @@ export default function ContactForm() {
   const focusBorderColor = "purple.500";
   const errorColor = "red.500";
 
+  // Handlers
   const handleInputChange = (
     field: keyof FormData,
     value: string | string[]
@@ -76,25 +68,6 @@ export default function ContactForm() {
 
   const handleCheckboxChange = (values: string[]) => {
     handleInputChange("subject", values);
-  };
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-
-    if (!formData.name.trim())
-      newErrors.name = ContactFormValidationMessages.ENTER_NAME;
-    if (!formData.email.trim()) {
-      newErrors.email = ContactFormValidationMessages.ENTER_EMAIL;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = ContactFormValidationMessages.VALID_EMAIL;
-    }
-    if (formData.subject.length === 0)
-      newErrors.subject = ContactFormValidationMessages.SELECT_SUBJECT;
-    if (!formData.message.trim())
-      newErrors.message = ContactFormValidationMessages.SHARE_MESSAGE;
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -149,6 +122,26 @@ export default function ContactForm() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Validators
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim())
+      newErrors.name = ContactFormValidationMessages.ENTER_NAME;
+    if (!formData.email.trim()) {
+      newErrors.email = ContactFormValidationMessages.ENTER_EMAIL;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = ContactFormValidationMessages.VALID_EMAIL;
+    }
+    if (formData.subject.length === 0)
+      newErrors.subject = ContactFormValidationMessages.SELECT_SUBJECT;
+    if (!formData.message.trim())
+      newErrors.message = ContactFormValidationMessages.SHARE_MESSAGE;
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   return (
