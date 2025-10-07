@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Link } from "@chakra-ui/react";
 
 function LearnMoreButton({ href, label }: { href: string; label: string }) {

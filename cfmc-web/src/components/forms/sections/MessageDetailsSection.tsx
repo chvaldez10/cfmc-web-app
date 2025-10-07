@@ -8,7 +8,6 @@ import {
   ContactFormLabels,
   ContactFormPlaceholders,
 } from "@/constants/shared/contact";
-import { FORM_COLORS } from "@/constants/theme/formStyles";
 
 interface MessageDetailsSectionProps {
   formData: FormData;
@@ -27,7 +26,7 @@ export default function MessageDetailsSection({
         alignSelf="flex-start"
         fontSize="sm"
         fontWeight="bold"
-        color={FORM_COLORS.sectionHeader}
+        color="gray.600"
         textTransform="uppercase"
         letterSpacing="wider"
         mb={1}
@@ -43,9 +42,6 @@ export default function MessageDetailsSection({
           onChange={(values) => onInputChange("subject", values)}
           error={errors.subject}
           isRequired
-          labelColor={FORM_COLORS.label}
-          textColor={FORM_COLORS.text}
-          errorColor={FORM_COLORS.error}
         />
 
         <FormTextarea
@@ -56,10 +52,6 @@ export default function MessageDetailsSection({
           error={errors.message}
           isRequired
           rows={5}
-          labelColor={FORM_COLORS.label}
-          mutedTextColor={FORM_COLORS.mutedText}
-          focusBorderColor={FORM_COLORS.focusBorder}
-          errorColor={FORM_COLORS.error}
         />
       </VStack>
     </VStack>

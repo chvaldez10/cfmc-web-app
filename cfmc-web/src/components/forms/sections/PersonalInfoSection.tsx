@@ -7,7 +7,6 @@ import {
   ContactFormLabels,
   ContactFormPlaceholders,
 } from "@/constants/shared/contact";
-import { FORM_COLORS } from "@/constants/theme/formStyles";
 
 interface PersonalInfoSectionProps {
   formData: FormData;
@@ -29,10 +28,6 @@ export default function PersonalInfoSection({
         placeholder={ContactFormPlaceholders.ENTER_FULL_NAME}
         error={errors.name}
         isRequired
-        labelColor={FORM_COLORS.label}
-        mutedTextColor={FORM_COLORS.mutedText}
-        focusBorderColor={FORM_COLORS.focusBorder}
-        errorColor={FORM_COLORS.error}
       />
 
       <FormInput
@@ -43,10 +38,6 @@ export default function PersonalInfoSection({
         placeholder={ContactFormPlaceholders.EMAIL_EXAMPLE}
         error={errors.email}
         isRequired
-        labelColor={FORM_COLORS.label}
-        mutedTextColor={FORM_COLORS.mutedText}
-        focusBorderColor={FORM_COLORS.focusBorder}
-        errorColor={FORM_COLORS.error}
       />
 
       <FormInput
@@ -56,10 +47,6 @@ export default function PersonalInfoSection({
         onChange={(value) => onInputChange("phone", value)}
         placeholder={ContactFormPlaceholders.PHONE_EXAMPLE}
         isOptional
-        labelColor={FORM_COLORS.label}
-        mutedTextColor={FORM_COLORS.mutedText}
-        focusBorderColor={FORM_COLORS.focusBorder}
-        errorColor={FORM_COLORS.error}
       />
     </VStack>
   );

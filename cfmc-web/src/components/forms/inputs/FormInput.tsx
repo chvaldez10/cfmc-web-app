@@ -17,10 +17,6 @@ interface FormInputProps {
   isRequired?: boolean;
   isOptional?: boolean;
   type?: "text" | "email" | "tel";
-  labelColor?: string;
-  mutedTextColor?: string;
-  focusBorderColor?: string;
-  errorColor?: string;
 }
 
 export default function FormInput({
@@ -32,19 +28,15 @@ export default function FormInput({
   isRequired = false,
   isOptional = false,
   type = "text",
-  labelColor = "gray.700",
-  mutedTextColor = "gray.500",
-  focusBorderColor = "purple.500",
-  errorColor = "red.500",
 }: FormInputProps) {
   return (
     <FormControl isInvalid={!!error} isRequired={isRequired}>
-      <FormLabel color={labelColor} fontSize="sm" fontWeight="semibold" mb={2}>
+      <FormLabel color="gray.700" fontSize="sm" fontWeight="semibold" mb={2}>
         {label}
         {isOptional && (
           <Text
             as="span"
-            color={mutedTextColor}
+            color="gray.500"
             fontSize="xs"
             ml={2}
             fontWeight="normal"
@@ -59,12 +51,12 @@ export default function FormInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         size="lg"
-        focusBorderColor={focusBorderColor}
-        _placeholder={{ color: mutedTextColor }}
+        focusBorderColor="purple.500"
+        _placeholder={{ color: "gray.500" }}
       />
       <FormErrorMessage
         fontSize="xs"
-        color={errorColor}
+        color="red.500"
         mt={1}
         fontWeight="medium"
       >

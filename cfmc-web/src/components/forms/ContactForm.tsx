@@ -1,27 +1,38 @@
 "use client";
 
-import { Box, VStack, Button } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { useContactForm } from "@/hooks/useContactForm";
 import { PersonalInfoSection, MessageDetailsSection } from "./sections";
+import { SubmitButton } from "@/components/ui/button";
 import {
   ContactFormLabels,
   ContactFormToastMessages,
 } from "@/constants/shared/contact";
-import { FORM_COLORS, FORM_STYLES } from "@/constants/theme/formStyles";
 
 export default function ContactForm() {
   const { formData, errors, isSubmitting, handleInputChange, handleSubmit } =
     useContactForm();
 
   return (
-    <Box {...FORM_STYLES.container}>
+    <Box
+      bg="white"
+      p={{ base: 6, md: 8, lg: 10 }}
+      borderRadius="2xl"
+      w="full"
+      border="1px solid"
+      borderColor="gray.200"
+      boxShadow="lg"
+      _hover={{ boxShadow: "xl" }}
+      transition="all 0.3s ease"
+    >
       <VStack
-        spacing={FORM_STYLES.spacing.main}
+        spacing={{ base: 6, md: 8 }}
         as="form"
         onSubmit={handleSubmit}
+        data-testid="contact-form"
       >
         {/* Personal Information Section */}
-        <VStack spacing={FORM_STYLES.spacing.section} w="full">
+        <VStack spacing={6} w="full" data-testid="personal-info-section">
           <PersonalInfoSection
             formData={formData}
             errors={errors}
@@ -37,35 +48,12 @@ export default function ContactForm() {
         />
 
         {/* Submit Button */}
-        <Button
-          type="submit"
-          colorScheme="purple"
-          size="lg"
-          w="full"
-          h="56px"
+        <SubmitButton
           isLoading={isSubmitting}
           loadingText={ContactFormToastMessages.LOADING_TEXT}
-          borderRadius="xl"
-          fontSize="md"
-          fontWeight="bold"
-          letterSpacing="wide"
-          _hover={{
-            transform: "translateY(-2px)",
-            boxShadow: "xl",
-            bg: "purple.600",
-          }}
-          _active={{
-            transform: "translateY(0)",
-            bg: "purple.700",
-          }}
-          _focus={{
-            boxShadow: `0 0 0 3px ${FORM_COLORS.focusBorder}40`,
-          }}
-          transition="all 0.2s ease"
-          mt={4}
         >
           {ContactFormLabels.SEND_MESSAGE}
-        </Button>
+        </SubmitButton>
       </VStack>
     </Box>
   );

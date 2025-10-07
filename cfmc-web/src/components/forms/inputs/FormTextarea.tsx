@@ -15,10 +15,6 @@ interface FormTextareaProps {
   error?: string;
   isRequired?: boolean;
   rows?: number;
-  labelColor?: string;
-  mutedTextColor?: string;
-  focusBorderColor?: string;
-  errorColor?: string;
 }
 
 export default function FormTextarea({
@@ -29,14 +25,10 @@ export default function FormTextarea({
   error,
   isRequired = false,
   rows = 5,
-  labelColor = "gray.700",
-  mutedTextColor = "gray.500",
-  focusBorderColor = "purple.500",
-  errorColor = "red.500",
 }: FormTextareaProps) {
   return (
     <FormControl isInvalid={!!error} isRequired={isRequired}>
-      <FormLabel color={labelColor} fontSize="sm" fontWeight="semibold" mb={2}>
+      <FormLabel color="gray.700" fontSize="sm" fontWeight="semibold" mb={2}>
         {label}
       </FormLabel>
       <Textarea
@@ -46,12 +38,12 @@ export default function FormTextarea({
         size="lg"
         rows={rows}
         resize="vertical"
-        focusBorderColor={focusBorderColor}
-        _placeholder={{ color: mutedTextColor }}
+        focusBorderColor="purple.500"
+        _placeholder={{ color: "gray.500" }}
       />
       <FormErrorMessage
         fontSize="xs"
-        color={errorColor}
+        color="red.500"
         mt={1}
         fontWeight="medium"
       >

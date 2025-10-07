@@ -19,9 +19,6 @@ interface FormCheckboxGroupProps {
   onChange: (values: string[]) => void;
   error?: string;
   isRequired?: boolean;
-  labelColor?: string;
-  textColor?: string;
-  errorColor?: string;
 }
 
 export default function FormCheckboxGroup({
@@ -31,9 +28,6 @@ export default function FormCheckboxGroup({
   onChange,
   error,
   isRequired = false,
-  labelColor = "gray.700",
-  textColor = "gray.800",
-  errorColor = "red.500",
 }: FormCheckboxGroupProps) {
   const handleLabelClick = (option: string) => {
     const newValues = value.includes(option)
@@ -44,7 +38,7 @@ export default function FormCheckboxGroup({
 
   return (
     <FormControl isInvalid={!!error}>
-      <FormLabel color={labelColor} fontSize="sm" fontWeight="semibold" mb={3}>
+      <FormLabel color="gray.700" fontSize="sm" fontWeight="semibold" mb={3}>
         {label}
         {isRequired && (
           <Text
@@ -75,7 +69,7 @@ export default function FormCheckboxGroup({
               >
                 <Text
                   fontSize="sm"
-                  color={textColor}
+                  color="gray.800"
                   fontWeight="medium"
                   lineHeight="1.5"
                   textOverflow="ellipsis"
@@ -92,7 +86,7 @@ export default function FormCheckboxGroup({
       </CheckboxGroup>
       <FormErrorMessage
         fontSize="xs"
-        color={errorColor}
+        color="red.500"
         mt={2}
         fontWeight="medium"
       >
