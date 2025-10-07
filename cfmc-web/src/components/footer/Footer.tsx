@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Link, VStack, Stack } from "@chakra-ui/react";
 import { FOOTER_ITEMS } from "@/constants/publicFooter";
 import { Branding, FooterLabels } from "@/constants/shared/enums";
-import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/shared/ui";
 
 const Footer = () => {
   return <FooterDetails />;
@@ -13,7 +13,7 @@ const FooterDetails = () => {
   return (
     <Box color="gray.800" py={16}>
       <Flex
-        maxW="7xl"
+        maxW={COMMON_MAX_WIDTH}
         mx="auto"
         px={COMMON_X_PADDING}
         direction={{ base: "column", md: "row" }}

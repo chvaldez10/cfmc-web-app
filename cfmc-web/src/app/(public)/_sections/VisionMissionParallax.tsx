@@ -9,6 +9,7 @@ import { ParallaxCard1 } from "@/components/ui/cards";
 import { ParallaxSectionHeading } from "@/components/ui/sections";
 import { ParallaxFloatingElement } from "@/components/ui/parallax";
 import { ABOUT_CONTENT } from "@/constants/shared/about";
+import { COMMON_MAX_WIDTH } from "@/constants/shared/ui";
 
 const VisionMissionParallax = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,7 +46,7 @@ const VisionMissionParallax = () => {
         opacity={0.25}
       />
 
-      <Container maxW="7xl" px={{ base: 4, md: 8 }}>
+      <Container maxW={COMMON_MAX_WIDTH} px={{ base: 4, md: 8 }}>
         <VStack spacing={{ base: 12, md: 16 }} align="center">
           {/* Main Heading */}
           <ParallaxSectionHeading

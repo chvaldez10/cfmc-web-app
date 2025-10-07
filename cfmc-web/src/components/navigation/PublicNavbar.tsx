@@ -27,11 +27,11 @@ import { NavItem } from "@/types/ui/navbar";
 import { NAV_ITEMS } from "@/constants/publicNavbar";
 
 // Constants
+import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/shared/ui";
 
 // Components
 import { TithesAndOfferingsModal } from "@/components/ui/modals";
 import { TithesButton } from "@/components/ui/button";
-import { COMMON_X_PADDING } from "@/constants/shared/ui";
 import Logo from "@/components/ui/logo/logo";
 
 // Styles
@@ -61,7 +61,7 @@ export default function PublicNavbar() {
     >
       <Flex
         color={"gray.600"}
-        maxW={"7xl"}
+        maxW={COMMON_MAX_WIDTH}
         mx={"auto"}
         py={{ base: 2 }}
         px={COMMON_X_PADDING}

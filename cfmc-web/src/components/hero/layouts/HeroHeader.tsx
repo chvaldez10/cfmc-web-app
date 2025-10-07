@@ -1,6 +1,7 @@
 "use client";
 
 import { Flex, Container, Heading, Text, VStack, Box } from "@chakra-ui/react";
+import { COMMON_MAX_WIDTH } from "@/constants/shared/ui";
 
 import styles from "@/styles/GradientBackground.module.css";
 
@@ -31,7 +32,7 @@ export default function HeroHeader({
   return (
     <Box className={styles.radialGradient} w="full">
       <Container
-        maxW="7xl"
+        maxW={COMMON_MAX_WIDTH}
         minH="100vh"
         bg={background}
         px={{ base: 4, md: 8 }}

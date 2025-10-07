@@ -8,7 +8,7 @@ import {
   EventMap,
 } from "@/components/events";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
-import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/shared/ui";
 import { Events } from "@/types/supabase/worship";
 
 interface EventDetailPageProps {
@@ -18,7 +18,7 @@ interface EventDetailPageProps {
 const EventDetailPage = ({ event }: EventDetailPageProps) => {
   return (
     <Box bg="gray.50" mt={NAVBAR_HEIGHT} minH="100vh" py={8}>
-      <Box mx="auto" maxW="7xl" px={COMMON_X_PADDING}>
+      <Box mx="auto" maxW={COMMON_MAX_WIDTH} px={COMMON_X_PADDING}>
         <EventImageCarousel images={event.images} eventName={event.name} />
 
         <Stack

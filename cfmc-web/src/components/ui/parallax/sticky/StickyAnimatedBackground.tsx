@@ -75,6 +75,7 @@ const StickyAnimatedBackground = ({
         zIndex: -1,
       }}
       sx={{
+        // This is for mobile devices that are 700px tall or less and 768px wide or less.
         "@media (max-height: 700px) and (max-width: 768px)": {
           position: "relative",
           minHeight: "auto",

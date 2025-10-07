@@ -1,6 +1,7 @@
 "use client";
 
 import { Container, Flex } from "@chakra-ui/react";
+import { COMMON_MAX_WIDTH } from "@/constants/shared/ui";
 
 interface StickyLayoutContainerProps {
   reverse?: boolean;
@@ -13,7 +14,7 @@ const StickyLayoutContainer = ({
 }: StickyLayoutContainerProps) => {
   return (
     <Container
-      maxW="7xl"
+      maxW={COMMON_MAX_WIDTH}
       px={{ base: 4, md: 8 }}
       py={{ base: 8, md: 12 }}
       height="fit-content"
