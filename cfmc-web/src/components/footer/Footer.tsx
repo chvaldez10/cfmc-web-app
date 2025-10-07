@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Link, VStack, Stack } from "@chakra-ui/react";
 import { FOOTER_ITEMS } from "@/constants/publicFooter";
 import { Branding, FooterLabels } from "@/constants/shared/enums";
-import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/shared/ui";
+import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 
 const Footer = () => {
   return <FooterDetails />;

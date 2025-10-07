@@ -1,7 +1,7 @@
 "use client";
 
 import { Container, Flex } from "@chakra-ui/react";
-import { COMMON_MAX_WIDTH } from "@/constants/shared/ui";
+import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 
 interface StickyLayoutContainerProps {
   reverse?: boolean;

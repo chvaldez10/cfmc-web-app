@@ -1,7 +1,7 @@
 "use client";
 
 import { Flex, Container, Heading, Text, VStack, Box } from "@chakra-ui/react";
-import { COMMON_MAX_WIDTH } from "@/constants/shared/ui";
+import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 
 import styles from "@/styles/GradientBackground.module.css";
 

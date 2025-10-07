@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Box, Grid, GridItem, GridProps } from "@chakra-ui/react";
-import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { COMMON_X_PADDING } from "@/constants/theme/ui";
 
 interface TwoByOneGridProps extends GridProps {
   children: [ReactElement, ReactElement];

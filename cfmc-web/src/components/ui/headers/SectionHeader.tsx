@@ -2,7 +2,7 @@
 
 import { Box, Text, VStack, Heading } from "@chakra-ui/react";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
-import { COMMON_X_PADDING, COMMON_Y_PADDING } from "@/constants/shared/ui";
+import { COMMON_X_PADDING, COMMON_Y_PADDING } from "@/constants/theme/ui";
 
 interface SectionHeaderProps {
   title: string;

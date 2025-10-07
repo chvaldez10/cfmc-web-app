@@ -8,7 +8,7 @@ import {
   EventMap,
 } from "@/components/events";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
-import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/shared/ui";
+import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 import { Events } from "@/types/supabase/worship";
 
 interface EventDetailPageProps {

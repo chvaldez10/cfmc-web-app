@@ -18,7 +18,7 @@ import { Events } from "@/types/supabase/worship";
 import { getFeaturedEvents } from "@/lib/supabase/actions/events";
 
 // Constants
-import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { COMMON_X_PADDING } from "@/constants/theme/ui";
 
 // Components
 import EventCard from "./EventCard";

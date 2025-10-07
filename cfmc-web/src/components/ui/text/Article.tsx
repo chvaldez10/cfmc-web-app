@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { ColumnLayout } from "@/components/hero";
 import { NAVBAR_HEIGHT } from "@/components/navigation/PublicNavbar";
-import { COMMON_Y_PADDING } from "@/constants/shared/ui";
+import { COMMON_Y_PADDING } from "@/constants/theme/ui";
 
 interface ArticleItem {
   header: string;

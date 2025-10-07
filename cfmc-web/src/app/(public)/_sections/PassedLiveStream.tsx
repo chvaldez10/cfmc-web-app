@@ -14,7 +14,7 @@ import {
 import { useState, useEffect, useTransition } from "react";
 import { LiveStreamLabels } from "@/constants/shared/enums";
 import ColumnLayout from "@/components/hero/layouts/ColumnLayout";
-import { COMMON_X_PADDING } from "@/constants/shared/ui";
+import { COMMON_X_PADDING } from "@/constants/theme/ui";
 import { getPreviousSundayWorshipService } from "@/lib/supabase/actions/sundays-special-days";
 import type { SundaysAndSpecialDays } from "@/lib/supabase/actions/sundays-special-days";
 import { Branding } from "@/constants/shared/enums";

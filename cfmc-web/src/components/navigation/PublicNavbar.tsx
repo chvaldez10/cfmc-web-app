@@ -27,7 +27,7 @@ import { NavItem } from "@/types/ui/navbar";
 import { NAV_ITEMS } from "@/constants/publicNavbar";
 
 // Constants
-import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/shared/ui";
+import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 
 // Components
 import { TithesAndOfferingsModal } from "@/components/ui/modals";

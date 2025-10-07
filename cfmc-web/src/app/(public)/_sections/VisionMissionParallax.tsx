@@ -9,7 +9,7 @@ import { ParallaxCard1 } from "@/components/ui/cards";
 import { ParallaxSectionHeading } from "@/components/ui/sections";
 import { ParallaxFloatingElement } from "@/components/ui/parallax";
 import { ABOUT_CONTENT } from "@/constants/shared/about";
-import { COMMON_MAX_WIDTH } from "@/constants/shared/ui";
+import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 
 const VisionMissionParallax = () => {
   const containerRef = useRef<HTMLDivElement>(null);
