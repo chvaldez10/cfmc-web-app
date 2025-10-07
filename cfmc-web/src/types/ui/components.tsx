@@ -33,6 +33,7 @@ export interface StickyParallaxProps {
   imageSrc: string;
   imageAlt: string;
   zIndex?: number;
+  disableStickyOnMobile?: boolean;
 }
 
 export interface SectionData {

@@ -7,12 +7,14 @@ interface StickyAnimatedBackgroundProps {
   colorScheme: AllowedColorSchemes;
   zIndex?: number;
   children: React.ReactNode;
+  disableStickyOnMobile?: boolean;
 }
 
 const StickyAnimatedBackground = ({
   colorScheme,
   zIndex = 1,
   children,
+  disableStickyOnMobile = false,
 }: StickyAnimatedBackgroundProps) => {
   const colorSchemes = {
     [AllowedColorSchemes.PURPLE]: {
@@ -43,7 +45,9 @@ const StickyAnimatedBackground = ({
 
   return (
     <Box
-      position="sticky"
+      position={
+        disableStickyOnMobile ? { base: "relative", md: "sticky" } : "sticky"
+      }
       top="0"
       minH={{ base: "100vh", md: "100vh" }}
       height="fit-content"
@@ -54,6 +58,7 @@ const StickyAnimatedBackground = ({
       overflow="hidden"
       zIndex={zIndex}
       w="full"
+      data-testid={`sticky-animated-background-${zIndex}`}
       _before={{
         content: '""',
         position: "absolute",
@@ -76,10 +81,10 @@ const StickyAnimatedBackground = ({
       }}
       sx={{
         // This is for mobile devices that are 700px tall or less and 768px wide or less.
-        "@media (max-height: 700px) and (max-width: 768px)": {
-          position: "relative",
-          minHeight: "auto",
-        },
+        // "@media (max-height: 700px) and (max-width: 768px)": {
+        //   position: "relative",
+        //   minHeight: "auto",
+        // },
         "@keyframes radial-pulse": {
           "0%": {
             transform: "scale(0.8)",

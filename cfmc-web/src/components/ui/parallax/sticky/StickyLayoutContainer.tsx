@@ -26,11 +26,6 @@ const StickyLayoutContainer = ({
         gap={{ base: 6, md: 16 }}
         height="fit-content"
         minH={{ base: "auto", md: "100vh" }}
-        sx={{
-          "@media (max-height: 700px) and (max-width: 768px)": {
-            minHeight: "auto",
-          },
-        }}
       >
         {children}
       </Flex>

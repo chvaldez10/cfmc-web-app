@@ -14,9 +14,14 @@ const StickyParallax = ({
   imageSrc,
   imageAlt,
   zIndex = 1,
+  disableStickyOnMobile = false,
 }: StickyParallaxProps) => {
   return (
-    <StickyAnimatedBackground colorScheme={colorScheme} zIndex={zIndex}>
+    <StickyAnimatedBackground
+      colorScheme={colorScheme}
+      zIndex={zIndex}
+      disableStickyOnMobile={disableStickyOnMobile}
+    >
       <StickyLayoutContainer reverse={reverse}>
         <StickyImageContainer
           imageSrc={imageSrc}
