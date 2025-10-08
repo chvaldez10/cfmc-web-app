@@ -120,3 +120,9 @@ export enum EventStatus {
   FEATURED = "featured",
   UPCOMING = "upcoming",
 }
+
+export enum Inquiries {
+  CONNECT = "connect",
+  PRAYER = "prayer",
+  MEDIA = "media",
+}

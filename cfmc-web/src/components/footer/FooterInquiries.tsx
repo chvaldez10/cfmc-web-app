@@ -12,16 +12,16 @@ import {
   ContactUsOptions,
   MediaRequest,
 } from "@/constants/shared/enums";
-
-type InquiryType = "connect" | "prayer" | "media";
+import { InquiryType } from "@/types/ui/components";
+import { Inquiries } from "@/constants/shared/enums";
 
 const getPreSelectedSubject = (type: InquiryType): string[] => {
   switch (type) {
-    case "connect":
+    case Inquiries.CONNECT:
       return [ConnectWithUsOption.CONNECT_WITH_US];
-    case "prayer":
+    case Inquiries.PRAYER:
       return [ContactUsOptions.REQUEST_PRAYER_SUPPORT];
-    case "media":
+    case Inquiries.MEDIA:
       return [MediaRequest.MEDIA_REQUEST];
     default:
       return [];
@@ -56,19 +56,21 @@ const FooterInquiries: React.FC = () => {
           label={FOOTER_INQUIRIES[0].label}
           description={FOOTER_INQUIRIES[0].description}
           icon={FOOTER_INQUIRIES[0].icon}
-          onClick={() => handleOpenModal(FOOTER_INQUIRIES[0], "connect")}
+          onClick={() =>
+            handleOpenModal(FOOTER_INQUIRIES[0], Inquiries.CONNECT)
+          }
         />
         <InquiryCard
           label={FOOTER_INQUIRIES[1].label}
           description={FOOTER_INQUIRIES[1].description}
           icon={FOOTER_INQUIRIES[1].icon}
-          onClick={() => handleOpenModal(FOOTER_INQUIRIES[1], "prayer")}
+          onClick={() => handleOpenModal(FOOTER_INQUIRIES[1], Inquiries.PRAYER)}
         />
         <InquiryCard
           label={FOOTER_INQUIRIES[2].label}
           description={FOOTER_INQUIRIES[2].description}
           icon={FOOTER_INQUIRIES[2].icon}
-          onClick={() => handleOpenModal(FOOTER_INQUIRIES[2], "media")}
+          onClick={() => handleOpenModal(FOOTER_INQUIRIES[2], Inquiries.MEDIA)}
         />
       </ThreeByOneGrid>
 
@@ -77,7 +79,6 @@ const FooterInquiries: React.FC = () => {
         onClose={handleCloseModal}
         title={selectedInquiry?.label || ""}
         size={{ base: "full", sm: "md", md: "lg", lg: "xl" }}
-        closeOnOverlayClick={false}
       >
         <VStack spacing={4} align="stretch">
           <Text color="gray.600" fontSize={{ base: "sm", md: "md" }}>

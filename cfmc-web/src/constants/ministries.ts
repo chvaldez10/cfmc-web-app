@@ -23,6 +23,3 @@ export const MINISTRIES_CONTENT = ministriesContentData as Record<
   string,
   Ministry
 >;
-
-export const ministriesArray: Ministry[] = Object.values(MINISTRIES_CONTENT);
-export type MinistryKey = keyof typeof MINISTRIES_CONTENT;

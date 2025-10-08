@@ -1,5 +1,11 @@
 import { ComponentType } from "react";
-import { AllowedColorSchemes, EventStatus } from "@/constants/shared/enums";
+import {
+  AllowedColorSchemes,
+  EventStatus,
+  Inquiries,
+} from "@/constants/shared/enums";
+import { MINISTRIES_CONTENT, Ministry } from "@/constants/ministries";
+
 export interface CardDataProps {
   bg: string;
   icon: ComponentType<{ size?: string | number; className?: string }>;
@@ -61,3 +67,8 @@ export interface DonationMethod {
 }
 
 export type EventStatusType = `${EventStatus}`;
+
+export const ministriesArray: Ministry[] = Object.values(MINISTRIES_CONTENT);
+export type MinistryKey = keyof typeof MINISTRIES_CONTENT;
+
+export type InquiryType = `${Inquiries}`;
