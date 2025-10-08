@@ -14,7 +14,7 @@ export const mockAnnouncements = [
   {
     id: 3,
     announcement: "Wedding Anniversary: Randy & Angie Ramos",
-    category: "Anniversary",
+    category: "Wedding Anniversary",
     created: "2025-10-01",
     updated: "2025-10-01",
     date: "2025-10-30",

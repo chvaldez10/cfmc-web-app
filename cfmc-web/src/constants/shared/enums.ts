@@ -99,21 +99,22 @@ export enum AllowedColorSchemes {
 export enum AnnouncementCategory {
   ALL = "All",
   BIRTHDAY = "Birthday",
-  ANNIVERSARY = "Anniversary",
+  WEDDING_ANNIVERSARY = "Wedding Anniversary",
   PRAYER_REQUEST = "Prayer Request",
   EVENT = "Event",
 }
 
 export const ANNOUNCEMENT_CATEGORY_COLORS: Record<string, string> = {
   [AnnouncementCategory.BIRTHDAY]: AllowedColorSchemes.PURPLE,
-  [AnnouncementCategory.ANNIVERSARY]: AllowedColorSchemes.YELLOW,
+  [AnnouncementCategory.WEDDING_ANNIVERSARY]: AllowedColorSchemes.YELLOW,
   [AnnouncementCategory.PRAYER_REQUEST]: AllowedColorSchemes.GREEN,
   [AnnouncementCategory.EVENT]: AllowedColorSchemes.RED,
 };
 
 export const ANNOUNCEMENT_CATEGORY_GRADIENTS: Record<string, string> = {
   [AnnouncementCategory.BIRTHDAY]: "linear(to-r, purple.400, purple.600)",
-  [AnnouncementCategory.ANNIVERSARY]: "linear(to-r, yellow.400, yellow.600)",
+  [AnnouncementCategory.WEDDING_ANNIVERSARY]:
+    "linear(to-r, yellow.400, yellow.600)",
   [AnnouncementCategory.PRAYER_REQUEST]: "linear(to-r, green.400, green.600)",
   [AnnouncementCategory.EVENT]: "linear(to-r, red.400, red.600)",
 };

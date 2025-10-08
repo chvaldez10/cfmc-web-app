@@ -68,6 +68,7 @@ export function formatLocalDateTimeToHumanReadable(
   };
 
   const formattedDate = date.toLocaleString("en-US", options);
+
   const timeZone = new Intl.DateTimeFormat("en-US", {
     timeZoneName: "short",
   })
@@ -184,4 +185,18 @@ export const getWorshipDateFromString = (dateString?: string | null): Date => {
   // CRITICAL FALLBACK: When DB has no data for this date (e.g., transitioning years)
   // Always fall back to calculated next Sunday at 20:00 UTC
   return findNextSundayWorshipService();
+};
+
+/**
+ * Formats a date string to a human-readable format.
+ * @param dateString - The date string to format.
+ * @returns The formatted date string.
+ */
+export const formatDateToMonthDayYear = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 };
