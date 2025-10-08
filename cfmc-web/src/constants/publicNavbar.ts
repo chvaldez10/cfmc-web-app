@@ -59,7 +59,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicLabels.ANNOUNCEMENTS,
         subLabel: "Stay updated with the latest announcements.",
-        href: "/media/announcements",
+        href: "/church-media/announcements",
       },
       {
         label: PublicLabels.INQUIRE,
