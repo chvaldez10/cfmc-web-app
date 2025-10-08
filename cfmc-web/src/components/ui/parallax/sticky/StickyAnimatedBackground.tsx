@@ -41,6 +41,14 @@ const StickyAnimatedBackground = ({
         accent: "rgba(252, 165, 165, 0.1)",
       },
     },
+    [AllowedColorSchemes.YELLOW]: {
+      smokeBg: "var(--color-light-100)",
+      smokeColors: {
+        primary: "rgba(234, 179, 8, 0.25)",
+        secondary: "rgba(250, 204, 21, 0.15)",
+        accent: "rgba(253, 224, 71, 0.1)",
+      },
+    },
   };
 
   return (

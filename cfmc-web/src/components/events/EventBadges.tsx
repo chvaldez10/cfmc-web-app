@@ -1,31 +1,33 @@
 import { HStack, Badge } from "@chakra-ui/react";
+import { CategoryBadge } from "@/components/ui/badge";
 
 interface EventBadgeProps {
   category: string;
   tags: string[];
+  categoryColorScheme?: string;
 }
 
-function EventBadges({ category, tags }: EventBadgeProps) {
+function EventBadges({
+  category,
+  tags,
+  categoryColorScheme = "purple",
+}: EventBadgeProps) {
   return (
     <HStack wrap="wrap" spacing={3}>
-      <Badge
-        colorScheme="purple"
-        fontSize="sm"
-        px={4}
-        py={2}
-        borderRadius="full"
-        fontWeight="semibold"
+      <CategoryBadge
+        colorScheme={categoryColorScheme}
+        label={category}
         textTransform="uppercase"
         letterSpacing="wide"
-      >
-        {category}
-      </Badge>
+        px={4}
+        py={2}
+      />
       {tags.map((tag) => (
         <Badge
           key={tag}
           variant="outline"
           colorScheme="gray"
-          fontSize="sm"
+          fontSize={{ base: "xs", md: "sm" }}
           px={3}
           py={1}
           borderRadius="full"
