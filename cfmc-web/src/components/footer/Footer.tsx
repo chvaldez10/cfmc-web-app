@@ -11,7 +11,7 @@ export default Footer;
 
 const FooterDetails = () => {
   return (
-    <Box color="gray.800" py={16}>
+    <Box color="gray.800" py={16} data-testid="footer-details">
       <Flex
         maxW={COMMON_MAX_WIDTH}
         mx="auto"
