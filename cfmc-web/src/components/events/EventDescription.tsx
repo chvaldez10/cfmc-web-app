@@ -28,7 +28,12 @@ const EventDescription = ({
       <VStack align="start" spacing={5} w="full">
         <EventBadges category={category} tags={tags} />
 
-        <Heading as="h1" size="4xl" color="gray.800" fontWeight="black">
+        <Heading
+          as="h1"
+          size={{ base: "2xl", md: "3xl", lg: "4xl" }}
+          color="gray.800"
+          fontWeight="black"
+        >
           {name}
         </Heading>
       </VStack>

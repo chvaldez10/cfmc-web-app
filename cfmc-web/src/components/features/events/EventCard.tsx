@@ -30,10 +30,7 @@ type EventCardProps = {
 
 const EventCard = ({ event, isFirstSlide = false }: EventCardProps) => {
   return (
-    <Link
-      href={`/events/${event.slug}`}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <Link href={`/events/${event.slug}`}>
       <Box
         width="100%"
         height="100%"
@@ -104,7 +101,7 @@ const EventImage = ({
         />
       )}
 
-      {event.occurrence && (
+      {event.status && (
         <Badge
           colorScheme="green"
           position="absolute"
@@ -112,7 +109,7 @@ const EventImage = ({
           right={2}
           zIndex={2}
         >
-          {event.occurrence}
+          {event.status}
         </Badge>
       )}
 

@@ -1,3 +1,5 @@
+import { EventStatusType } from "@/types/ui/components";
+
 export interface Events {
   id: number;
   slug: string;
@@ -12,7 +14,7 @@ export interface Events {
   image: string;
   images: string[];
   occurrence: string;
-  status: string;
+  status: EventStatusType;
   tags: string[];
   created: string;
   updated: string | null;

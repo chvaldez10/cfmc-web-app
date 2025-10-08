@@ -56,7 +56,7 @@ export const getUpcomingEvents = cache(async (): Promise<Events[] | null> => {
     .from("events")
     .select("*")
     .gte("start_date", now)
-    .eq("status", "published")
+    .eq("status", "upcoming")
     .order("start_date", { ascending: true });
 
   if (dbError) {

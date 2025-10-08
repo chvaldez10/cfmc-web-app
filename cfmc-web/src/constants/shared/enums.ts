@@ -43,11 +43,6 @@ export enum CountdownLabels {
   SECONDS = "seconds",
 }
 
-export enum EventStatus {
-  ACTIVE = "Active",
-  INACTIVE = "Inactive",
-}
-
 export enum EventType {
   SUNDAY_WORSHIP = "Sunday worship",
   EVENT = "Event",
@@ -118,3 +113,10 @@ export const ANNOUNCEMENT_CATEGORY_GRADIENTS: Record<string, string> = {
   [AnnouncementCategory.PRAYER_REQUEST]: "linear(to-r, green.400, green.600)",
   [AnnouncementCategory.EVENT]: "linear(to-r, red.400, red.600)",
 };
+
+export enum EventStatus {
+  ARCHIVED = "archived",
+  INACTIVE = "inactive",
+  FEATURED = "featured",
+  UPCOMING = "upcoming",
+}

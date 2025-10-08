@@ -1,5 +1,5 @@
 import { ComponentType } from "react";
-import { AllowedColorSchemes } from "@/constants/shared/enums";
+import { AllowedColorSchemes, EventStatus } from "@/constants/shared/enums";
 export interface CardDataProps {
   bg: string;
   icon: ComponentType<{ size?: string | number; className?: string }>;
@@ -59,3 +59,5 @@ export interface DonationMethod {
   onCopyItem?: string;
   details?: string;
 }
+
+export type EventStatusType = `${EventStatus}`;
