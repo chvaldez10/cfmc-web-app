@@ -64,7 +64,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: PublicLabels.INQUIRE,
         subLabel: "Feel free to inquire about our services.",
-        href: "#",
+        href: "/church-media/inquiry",
       },
     ],
   },
