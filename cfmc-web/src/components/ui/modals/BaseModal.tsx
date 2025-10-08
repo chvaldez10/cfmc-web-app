@@ -21,6 +21,19 @@ interface FooterAction extends ButtonProps {
   isPrimary?: boolean;
 }
 
+type ModalSize =
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl"
+  | "6xl"
+  | "full";
+
 interface BaseModalProps {
   isOpen: boolean;
   onClose?: () => void;
@@ -28,17 +41,15 @@ interface BaseModalProps {
   children: React.ReactNode;
   footerActions?: FooterAction[];
   size?:
-    | "xs"
-    | "sm"
-    | "md"
-    | "lg"
-    | "xl"
-    | "2xl"
-    | "3xl"
-    | "4xl"
-    | "5xl"
-    | "6xl"
-    | "full";
+    | ModalSize
+    | {
+        base?: ModalSize;
+        sm?: ModalSize;
+        md?: ModalSize;
+        lg?: ModalSize;
+        xl?: ModalSize;
+        "2xl"?: ModalSize;
+      };
   closeOnOverlayClick?: boolean;
   closeOnEsc?: boolean;
   renderHeader?: () => React.ReactNode;
@@ -59,7 +70,9 @@ const BaseModal: React.FC<BaseModalProps> = ({
   renderFooter,
   hideCloseButton = false,
 }) => {
-  const modalSize = useBreakpointValue({ base: size, md: size });
+  const modalSize = useBreakpointValue(
+    typeof size === "object" ? size : { base: size, md: size }
+  );
 
   return (
     <ChakraModal

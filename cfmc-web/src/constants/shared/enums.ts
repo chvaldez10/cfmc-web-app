@@ -70,15 +70,23 @@ export enum FooterLabels {
 }
 
 export enum ContactUsOptions {
-  NEED_A_PRAYER = "Request Prayer Support",
-  PASTORAL_VISIT = "Request a Pastoral Visit (Home or Hospital)",
-  HOME_BIBLE_STUDY = "Join a Home Bible Study or Discipleship Group",
-  DESIRE_CHURCH_MEMBERSHIP = "Interested in Church Membership",
-  BAPTISM = "Baptism Inquiry",
-  PASTORAL_COUNSELING = "Request Pastoral Counseling",
-  BLESSING_DEDICATION = "Request a Blessing or Dedication (Home, Vehicle, Business, Project)",
-  FUNERAL_MEMORIAL_SERVICE = "Funeral or Memorial Service Request",
-  MARRIAGE_OFFICIANT = "Marriage Officiant Request",
+  REQUEST_PRAYER_SUPPORT = "Request prayer support",
+  REQUEST_PASTORAL_VISIT = "Request a pastoral visit (home or hospital)",
+  HOME_BIBLE_STUDY = "Join a home bible study or discipleship group",
+  DESIRE_CHURCH_MEMBERSHIP = "Interested in church membership",
+  BAPTISM_INQUIRY = "Baptism inquiry",
+  REQUEST_PASTORAL_COUNSELING = "Request pastoral counseling",
+  REQUEST_BLESSING_DEDICATION = "Request a blessing or dedication (home, vehicle, business, project)",
+  REQUEST_FUNERAL_MEMORIAL_SERVICE = "Request a funeral or memorial service",
+  REQUEST_MARRIAGE_OFFICIANT = "Request a marriage officiant",
+}
+
+export enum ConnectWithUsOption {
+  CONNECT_WITH_US = "Connect with us",
+}
+
+export enum MediaRequest {
+  MEDIA_REQUEST = "Media Request",
 }
 
 export enum AllowedColorSchemes {
