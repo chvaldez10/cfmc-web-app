@@ -13,11 +13,11 @@ export const getPositionStyles = (
       case "top-left":
         return { top: "10%", left: "5%" };
       case "top-right":
-        return { top: "10%", right: "5%" };
+        return { top: "15%", right: "5%" };
       case "bottom-left":
-        return { bottom: "20%", left: "10%" };
+        return { bottom: "15%", left: "10%" };
       case "bottom-right":
-        return { bottom: "10%", right: "5%" };
+        return { bottom: "20%", right: "10%" };
       default:
         return { top: "10%", left: "5%" };
     }

@@ -27,25 +27,26 @@ const VisionMissionParallax = () => {
       py={{ base: 16, md: 24 }}
       position="relative"
       overflow="hidden"
+      minH="100vh"
     >
       {/* Background decorative elements */}
       <ParallaxFloatingImage
         scrollYProgress={scrollYProgress}
-        position="top-left"
-        size={250}
-        src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-1.jpg"
-        alt="Christmas choir background decoration"
-        yRange={[0, -200]}
-        opacity={0.15}
-      />
-      <ParallaxFloatingImage
-        scrollYProgress={scrollYProgress}
-        position="bottom-right"
+        position="top-right"
         size={200}
         src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-2.JPEG"
         alt="Christmas choir background decoration"
+        yRange={[0, -200]}
+        opacity={0.3}
+      />
+      <ParallaxFloatingImage
+        scrollYProgress={scrollYProgress}
+        position="bottom-left"
+        size={250}
+        src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-1.jpg"
+        alt="Christmas choir background decoration"
         yRange={[0, 150]}
-        opacity={0.12}
+        opacity={0.22}
       />
 
       <Container maxW={COMMON_MAX_WIDTH} px={{ base: 4, md: 8 }}>
