@@ -112,6 +112,11 @@ export const EVENTS_PAGE_CONTENT: { title: string; description: string }[] = [
   {
     title: "Events",
     description:
-      "Discover meaningful events and gatherings in our community. Join us for worship, fellowship, and spiritual growth.",
+      "Discover events and gatherings in our community. Join us for worship, fellowship, and spiritual growth.",
+  },
+  {
+    title: "No Upcoming Events",
+    description:
+      "No upcoming events. Check back soon for new events and activities.",
   },
 ];

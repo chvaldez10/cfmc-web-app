@@ -4,6 +4,7 @@ import { SimpleGrid, Heading, Text, Flex, Icon } from "@chakra-ui/react";
 import { Events } from "@/types/supabase/worship";
 import { FiCalendar } from "react-icons/fi";
 import EventCard from "./EventCard";
+import { EVENTS_PAGE_CONTENT } from "@/constants/shared/ministries";
 
 interface UpcomingEventsProps {
   events: Events[] | null;
@@ -35,10 +36,10 @@ function EmptyState() {
     >
       <Icon as={FiCalendar} boxSize={16} color="gray.300" mb={4} />
       <Heading size="lg" color="gray.600" mb={2}>
-        No upcoming events
+        {EVENTS_PAGE_CONTENT[1].title}
       </Heading>
       <Text color="gray.500" maxW="md">
-        Check back soon for new events and activities.
+        {EVENTS_PAGE_CONTENT[1].description}
       </Text>
     </Flex>
   );

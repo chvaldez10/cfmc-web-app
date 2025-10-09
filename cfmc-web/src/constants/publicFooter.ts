@@ -18,8 +18,8 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
         href: "/media",
       },
       {
-        label: "Upcoming Events",
-        href: "/get-involved/upcoming-events",
+        label: "Events",
+        href: "/get-involved/events",
       },
       {
         label: "Ministries",

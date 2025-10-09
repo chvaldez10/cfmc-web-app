@@ -9,8 +9,8 @@ export default async function UpcomingEventsPage() {
   return (
     <>
       <HeroHeader
-        title="Upcoming Events"
-        description="Join us for our upcoming events and activities."
+        title="Events"
+        description="Join us for our events and activities."
       />
 
       <Container maxW="7xl" py={{ base: 8, md: 12 }}>

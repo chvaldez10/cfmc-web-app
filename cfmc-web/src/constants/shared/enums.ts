@@ -28,6 +28,7 @@ export enum PublicLabels {
   ANNOUNCEMENTS = "Announcements",
   INQUIRE = "Inquire",
   UPCOMING_EVENTS = "Upcoming Events",
+  EVENTS = "Events",
   BIBLE_STUDY = "Bible Study",
   MUSIC = "Music",
   TITHES_AND_OFFERINGS = "Tithes and Offerings",

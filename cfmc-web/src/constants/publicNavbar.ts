@@ -32,9 +32,9 @@ export const NAV_ITEMS: Array<NavItem> = [
     label: PublicLabels.GET_INVOLVED,
     children: [
       {
-        label: PublicLabels.UPCOMING_EVENTS,
-        subLabel: "Join us for our upcoming events and activities.",
-        href: "/get-involved/upcoming-events",
+        label: PublicLabels.EVENTS,
+        subLabel: "Join us for events and activities.",
+        href: "/get-involved/events",
       },
       {
         label: PublicLabels.MINISTRIES,

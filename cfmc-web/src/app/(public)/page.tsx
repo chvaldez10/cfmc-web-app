@@ -20,8 +20,8 @@ export default async function Page() {
       <VisionMissionParallax />
       <MinistriesShowcase />
       <SectionHeader
-        title={ABOUT_CONTENT.GET_INVOLVED.title}
-        description={ABOUT_CONTENT.GET_INVOLVED.description}
+        title={ABOUT_CONTENT.EVENT_SHOWCASE.title}
+        description={ABOUT_CONTENT.EVENT_SHOWCASE.description}
         mt="0"
       />
       <EventSwiper />
