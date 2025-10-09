@@ -27,7 +27,6 @@ export default function InquiryForm({
   // Set pre-selected subject on mount
   useEffect(() => {
     handleInputChange("subject", preSelectedSubject);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [preSelectedSubject]);
 
   const onFormSubmit = async (e: React.FormEvent) => {

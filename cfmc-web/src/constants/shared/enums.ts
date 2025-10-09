@@ -81,7 +81,7 @@ export enum ConnectWithUsOption {
 }
 
 export enum MediaRequest {
-  MEDIA_REQUEST = "Media Request",
+  GENERAL_MEDIA_REQUEST = "General Media Request",
 }
 
 export enum AllowedColorSchemes {

@@ -22,7 +22,7 @@ const getPreSelectedSubject = (type: InquiryType): string[] => {
     case Inquiries.PRAYER:
       return [ContactUsOptions.REQUEST_PRAYER_SUPPORT];
     case Inquiries.MEDIA:
-      return [MediaRequest.MEDIA_REQUEST];
+      return [MediaRequest.GENERAL_MEDIA_REQUEST];
     default:
       return [];
   }
