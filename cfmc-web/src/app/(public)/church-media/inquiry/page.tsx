@@ -1,18 +1,14 @@
-import { HeroHeader } from "@/components/hero";
-import { MediaInquiryForm } from "@/components/forms";
-import { ColumnLayout } from "@/components/hero";
+import { Box } from "@chakra-ui/react";
+import {
+  MediaHeroSection,
+  MediaFormSection,
+} from "@/components/features/church-media";
 
 export default function MediaInquiryPage() {
   return (
-    <>
-      <HeroHeader
-        title="Media"
-        titleHighlight="Inquiry"
-        description="Feel free to inquire about our services."
-      />
-      <ColumnLayout maxW="5xl">
-        <MediaInquiryForm />
-      </ColumnLayout>
-    </>
+    <Box>
+      <MediaHeroSection />
+      <MediaFormSection />
+    </Box>
   );
 }
