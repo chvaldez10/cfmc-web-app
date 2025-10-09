@@ -1,5 +1,3 @@
-"use client";
-
 import { Badge, BadgeProps } from "@chakra-ui/react";
 
 interface CategoryBadgeProps extends Omit<BadgeProps, "colorScheme"> {

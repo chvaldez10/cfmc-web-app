@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Box, Text, Flex, Circle } from "@chakra-ui/react";
 import { FaBook, FaCalendarAlt, FaHeart, FaUsers } from "react-icons/fa";

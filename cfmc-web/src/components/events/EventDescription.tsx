@@ -1,5 +1,3 @@
-"use client";
-
 import { VStack, Heading, Box, Text } from "@chakra-ui/react";
 import EventBadges from "./EventBadges";
 

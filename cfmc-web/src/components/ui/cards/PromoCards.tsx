@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, SimpleGrid } from "@chakra-ui/react";
 
 import { PromoCard } from "@/components/ui/cards";

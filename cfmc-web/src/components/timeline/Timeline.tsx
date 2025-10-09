@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { VStack } from "@chakra-ui/react";
 import TimelineSection from "./TimelineSection";

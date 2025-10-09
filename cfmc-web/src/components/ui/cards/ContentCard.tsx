@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Text, Heading, BoxProps } from "@chakra-ui/react";
 
 interface ContentCardProps extends BoxProps {

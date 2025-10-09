@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Text, Heading } from "@chakra-ui/react";
 
 interface ContentSectionProps {

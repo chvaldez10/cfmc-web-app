@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, VStack, HStack, Text, Heading, Icon } from "@chakra-ui/react";
 import { MdLocationOn, MdDateRange } from "react-icons/md";
 import { formatLocalDateTimeToHumanReadable } from "@/utils/dateUtils";

@@ -1,17 +1,16 @@
 "use client";
 
 import { InquiryHeroSection } from "@/components/ui/headers";
-import { FiMail, FiPhone, FiMessageSquare, FiMapPin } from "react-icons/fi";
-
+import { FaPrayingHands, FaHome, FaCross, FaRing } from "react-icons/fa";
 const CONTACT_HERO_CONFIG = {
   title: "Contact",
   titleHighlight: "Us",
   scrollText: "SCROLL TO GET IN TOUCH",
   icons: [
-    { icon: FiMail, label: "Email", delay: "0s" },
-    { icon: FiPhone, label: "Phone", delay: "0.1s" },
-    { icon: FiMessageSquare, label: "Message", delay: "0.2s" },
-    { icon: FiMapPin, label: "Visit", delay: "0.3s" },
+    { icon: FaPrayingHands, label: "Prayer", delay: "0s" },
+    { icon: FaHome, label: "Pastoral Visit", delay: "0.1s" },
+    { icon: FaCross, label: "Baptism", delay: "0.2s" },
+    { icon: FaRing, label: "Marriage", delay: "0.3s" },
   ],
 };
 

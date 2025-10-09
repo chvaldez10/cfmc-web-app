@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Container,
@@ -150,7 +148,6 @@ export default function InquiryHeroSection({
                 borderColor="brand.100"
                 boxShadow="lg"
                 transition="all 0.3s ease"
-                cursor="pointer"
                 sx={{
                   animation: `scaleIn 0.6s ease-out ${item.delay} both`,
                 }}
