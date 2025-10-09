@@ -1,20 +1,18 @@
 // Inspiration from: https://codepen.io/khone-vongsouthi/full/NbLqeo
 
 import { VStack } from "@chakra-ui/react";
+import "@/styles/gradientBackground.css";
 
 // Components
 import TwoByOneGrid from "@/components/hero/layouts/TwoByOneGrid";
 import { WorshipCountdown } from "@/components/features/date";
 import JumboSlideInText from "./JumboSlideInText";
 
-// Styles
-import styles from "@/styles/GradientBackground.module.css";
-
 export default async function HomeJumbotron() {
   return (
     <VStack
       id="home-jumbotron-container"
-      className={styles.radialGradient}
+      className="radial-gradient-bg"
       minH="100vh"
       justifyContent="center"
       alignItems="center"

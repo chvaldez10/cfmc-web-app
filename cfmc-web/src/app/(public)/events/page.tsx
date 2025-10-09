@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-
+import { EVENTS_PAGE_CONTENT } from "@/constants/shared/ministries";
 export default function EventsPage() {
   const bgColor = "gray.50";
   const accentColor = "purple.600";
@@ -28,11 +28,10 @@ export default function EventsPage() {
               bgGradient={`linear(to-r, ${accentColor}, purple.400)`}
               bgClip="text"
             >
-              Upcoming Events
+              {EVENTS_PAGE_CONTENT[0].title}
             </Heading>
             <Text fontSize="xl" color={textColor} maxW="3xl" lineHeight="tall">
-              Discover meaningful events and gatherings in our community. Join
-              us for worship, fellowship, and spiritual growth.
+              {EVENTS_PAGE_CONTENT[0].description}
             </Text>
           </VStack>
 

@@ -1,11 +1,11 @@
 "use client";
 
 import { Flex, Heading, Text, VStack, Divider } from "@chakra-ui/react";
+import "@/styles/slideInAnimations.css";
 
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { Branding, ModalButtonLabels } from "@/constants/shared/enums";
 import { LearnMoreButton } from "@/components/ui/button";
-import styles from "@/styles/SlideInAnimations.module.css";
 
 const JumboSlideInText = () => {
   return (
@@ -20,7 +20,7 @@ const JumboSlideInText = () => {
       py={4}
     >
       {/* Super script Header*/}
-      <div className={`${styles.fadeInScale} ${styles["delay-0"]}`}>
+      <div className="fade-in-scale delay-0">
         <Flex alignItems="center" gap={2}>
           <Divider
             orientation="horizontal"
@@ -38,19 +38,19 @@ const JumboSlideInText = () => {
         </Flex>
       </div>
       {/* Our Mission Header */}
-      <div className={`${styles.fadeInScale} ${styles["delay-1"]}`}>
+      <div className="fade-in-scale delay-1">
         <Heading as="h1" size={{ base: "xl", md: "2xl" }} color="purple.600">
           {ABOUT_CONTENT.WHAT_WE_BELIEVE.title}
         </Heading>
       </div>
       {/* What We Believe */}
-      <div className={`${styles.fadeInScale} ${styles["delay-2"]}`}>
+      <div className="fade-in-scale delay-2">
         <Text fontSize={{ base: "sm", md: "md" }} color="gray.700">
           {ABOUT_CONTENT.WHAT_WE_BELIEVE.description}
         </Text>
       </div>
       {/* Learn More Button */}
-      <div className={`${styles.fadeInScale} ${styles["delay-3"]}`}>
+      <div className="fade-in-scale delay-3">
         <LearnMoreButton
           href="/about/beliefs"
           label={ModalButtonLabels.LEARN_MORE}

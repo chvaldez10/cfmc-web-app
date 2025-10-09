@@ -1,7 +1,6 @@
 import { Flex, Container, Heading, Text, VStack, Box } from "@chakra-ui/react";
 import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
-
-import styles from "@/styles/GradientBackground.module.css";
+import "@/styles/gradientBackground.css";
 
 interface HeroHeaderProps {
   title: string;
@@ -28,7 +27,7 @@ export default function HeroHeader({
   const defaultDescriptionColor = "gray.600";
 
   return (
-    <Box className={styles.radialGradient} w="full">
+    <Box className="radial-gradient-bg" w="full">
       <Container
         maxW={COMMON_MAX_WIDTH}
         minH="100vh"

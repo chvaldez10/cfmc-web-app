@@ -1,9 +1,9 @@
-.radialGradient {
+.radial-gradient-bg {
   position: relative;
   overflow: hidden;
 }
 
-.radialGradient::before {
+.radial-gradient-bg::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -30,7 +30,7 @@
   z-index: -1;
 }
 
-.radialGradient::after {
+.radial-gradient-bg::after {
   content: "";
   position: absolute;
   bottom: 0;

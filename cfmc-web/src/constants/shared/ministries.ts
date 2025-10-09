@@ -107,3 +107,11 @@ export const MINISTRIES_CONTENT = ministriesContentData as Record<
   string,
   Ministry
 >;
+
+export const EVENTS_PAGE_CONTENT: { title: string; description: string }[] = [
+  {
+    title: "Events",
+    description:
+      "Discover meaningful events and gatherings in our community. Join us for worship, fellowship, and spiritual growth.",
+  },
+];

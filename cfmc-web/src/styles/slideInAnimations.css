@@ -1,28 +1,28 @@
 /* CSS-only slide-in animations for smoother performance */
 
-.slideInContainer {
+.slide-in-container {
   opacity: 0;
   transform: translateY(-30px);
   animation: slideInUp 0.6s ease-out forwards;
 }
 
-.slideInContainer:nth-child(1) {
+.slide-in-container:nth-child(1) {
   animation-delay: 0.1s;
 }
 
-.slideInContainer:nth-child(2) {
+.slide-in-container:nth-child(2) {
   animation-delay: 0.3s;
 }
 
-.slideInContainer:nth-child(3) {
+.slide-in-container:nth-child(3) {
   animation-delay: 0.5s;
 }
 
-.slideInContainer:nth-child(4) {
+.slide-in-container:nth-child(4) {
   animation-delay: 0.7s;
 }
 
-.slideInContainer:nth-child(5) {
+.slide-in-container:nth-child(5) {
   animation-delay: 0.9s;
 }
 
@@ -38,29 +38,29 @@
 }
 
 /* Staggered animation for multiple elements */
-.staggeredSlideIn {
+.staggered-slide-in {
   opacity: 0;
   transform: translateY(-20px);
   animation: staggeredSlideIn 0.5s ease-out forwards;
 }
 
-.staggeredSlideIn.delay-0 {
+.staggered-slide-in.delay-0 {
   animation-delay: 0s;
 }
 
-.staggeredSlideIn.delay-1 {
+.staggered-slide-in.delay-1 {
   animation-delay: 0.2s;
 }
 
-.staggeredSlideIn.delay-2 {
+.staggered-slide-in.delay-2 {
   animation-delay: 0.4s;
 }
 
-.staggeredSlideIn.delay-3 {
+.staggered-slide-in.delay-3 {
   animation-delay: 0.6s;
 }
 
-.staggeredSlideIn.delay-4 {
+.staggered-slide-in.delay-4 {
   animation-delay: 0.8s;
 }
 
@@ -76,29 +76,29 @@
 }
 
 /* Fade in with subtle scale for smoother feel */
-.fadeInScale {
+.fade-in-scale {
   opacity: 0;
   transform: scale(0.95);
   animation: fadeInScale 0.4s ease-out forwards;
 }
 
-.fadeInScale.delay-0 {
+.fade-in-scale.delay-0 {
   animation-delay: 0s;
 }
 
-.fadeInScale.delay-1 {
+.fade-in-scale.delay-1 {
   animation-delay: 0.15s;
 }
 
-.fadeInScale.delay-2 {
+.fade-in-scale.delay-2 {
   animation-delay: 0.3s;
 }
 
-.fadeInScale.delay-3 {
+.fade-in-scale.delay-3 {
   animation-delay: 0.45s;
 }
 
-.fadeInScale.delay-4 {
+.fade-in-scale.delay-4 {
   animation-delay: 0.6s;
 }
 
@@ -115,9 +115,9 @@
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .slideInContainer,
-  .staggeredSlideIn,
-  .fadeInScale {
+  .slide-in-container,
+  .staggered-slide-in,
+  .fade-in-scale {
     animation: none;
     opacity: 1;
     transform: none;
