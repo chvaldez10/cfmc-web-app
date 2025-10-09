@@ -1,16 +1,32 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { SimpleGrid, Heading, Text, Flex, Icon } from "@chakra-ui/react";
 import { Events } from "@/types/supabase/worship";
 import { FiCalendar } from "react-icons/fi";
 import EventCard from "./EventCard";
+import EventCardSkeleton from "./EventCardSkeleton";
 import { EVENTS_PAGE_CONTENT } from "@/constants/shared/ministries";
+import { getUpcomingEvents } from "@/lib/supabase/actions/events";
 
-interface UpcomingEventsProps {
-  events: Events[] | null;
-}
+export default function UpcomingEvents() {
+  const [events, setEvents] = useState<Events[] | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-export default function UpcomingEvents({ events }: UpcomingEventsProps) {
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setIsLoading(true);
+      const data = await getUpcomingEvents();
+      setEvents(data);
+      setIsLoading(false);
+    };
+    fetchEvents();
+  }, []);
+
+  if (isLoading) {
+    return <LoadingSkeleton />;
+  }
+
   if (!events || events.length === 0) {
     return <EmptyState />;
   }
@@ -19,6 +35,16 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
     <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={6}>
       {events.map((event, index) => (
         <EventCard key={event.id} event={event} isFirstSlide={index === 0} />
+      ))}
+    </SimpleGrid>
+  );
+}
+
+function LoadingSkeleton() {
+  return (
+    <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={6}>
+      {[1, 2, 3, 4, 5, 6].map((i) => (
+        <EventCardSkeleton key={i} />
       ))}
     </SimpleGrid>
   );

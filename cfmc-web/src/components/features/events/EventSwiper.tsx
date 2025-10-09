@@ -22,6 +22,7 @@ import { COMMON_X_PADDING } from "@/constants/theme/ui";
 
 // Components
 import EventCard from "./EventCard";
+import EventCardSkeleton from "./EventCardSkeleton";
 
 const EventSwiper = () => {
   const breakpoint = useBreakpointValue({
@@ -33,11 +34,14 @@ const EventSwiper = () => {
   });
 
   const [featuredEvents, setFeaturedEvents] = useState<Events[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchEvents = async () => {
+      setIsLoading(true);
       const events = await getFeaturedEvents();
       setFeaturedEvents(events || []);
+      setIsLoading(false);
     };
     fetchEvents();
   }, []);
@@ -69,11 +73,19 @@ const EventSwiper = () => {
         freeMode={true}
         modules={[FreeMode]}
       >
-        {featuredEvents.map((event, index) => (
-          <SwiperSlide key={event.id}>
-            <EventCard event={event} isFirstSlide={index === 0} />
-          </SwiperSlide>
-        ))}
+        {isLoading
+          ? // Show skeleton cards while loading
+            [1, 2, 3, 4].map((i) => (
+              <SwiperSlide key={`skeleton-${i}`}>
+                <EventCardSkeleton />
+              </SwiperSlide>
+            ))
+          : // Show actual event cards
+            featuredEvents.map((event, index) => (
+              <SwiperSlide key={event.id}>
+                <EventCard event={event} isFirstSlide={index === 0} />
+              </SwiperSlide>
+            ))}
       </Swiper>
     </Box>
   );
