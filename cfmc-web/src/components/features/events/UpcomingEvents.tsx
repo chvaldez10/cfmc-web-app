@@ -32,7 +32,11 @@ export default function UpcomingEvents() {
   }
 
   return (
-    <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={6}>
+    <SimpleGrid
+      columns={{ base: 1, sm: 2, lg: 3 }}
+      spacing={6}
+      py={{ base: 8, md: 12 }}
+    >
       {events.map((event, index) => (
         <EventCard key={event.id} event={event} isFirstSlide={index === 0} />
       ))}
@@ -42,7 +46,11 @@ export default function UpcomingEvents() {
 
 function LoadingSkeleton() {
   return (
-    <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={6}>
+    <SimpleGrid
+      columns={{ base: 1, sm: 2, lg: 3 }}
+      spacing={6}
+      py={{ base: 8, md: 12 }}
+    >
       {[1, 2, 3, 4, 5, 6].map((i) => (
         <EventCardSkeleton key={i} />
       ))}
