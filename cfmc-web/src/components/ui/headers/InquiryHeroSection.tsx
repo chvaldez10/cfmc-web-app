@@ -10,18 +10,29 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
-import { FiCamera, FiVideo, FiMusic } from "react-icons/fi";
-import { HiComputerDesktop } from "react-icons/hi2";
 import { DecorativeFloatingShapes } from "@/components/ui/decorative";
+import { IconType } from "react-icons";
 
-const mediaIcons = [
-  { icon: FiCamera, label: "Photos", delay: "0s" },
-  { icon: FiVideo, label: "Videos", delay: "0.1s" },
-  { icon: FiMusic, label: "Music", delay: "0.2s" },
-  { icon: HiComputerDesktop, label: "Presentations", delay: "0.3s" },
-];
+interface MediaIcon {
+  icon: IconType;
+  label: string;
+  delay: string;
+}
 
-export default function MediaHeroSection() {
+interface InquiryHeroConfig {
+  title: string;
+  titleHighlight: string;
+  icons: MediaIcon[];
+  scrollText: string;
+}
+
+interface InquiryHeroSectionProps {
+  config: InquiryHeroConfig;
+}
+
+export default function InquiryHeroSection({
+  config,
+}: InquiryHeroSectionProps) {
   return (
     <Box
       position="relative"
@@ -97,14 +108,14 @@ export default function MediaHeroSection() {
                 animation: "slideInDown 0.8s ease-out",
               }}
             >
-              Media{" "}
+              {config.title}{" "}
               <Box
                 as="span"
                 bgGradient="linear(to-r, brand.400, purple.500)"
                 bgClip="text"
               >
-                Inquiry
-              </Box>{" "}
+                {config.titleHighlight}
+              </Box>
             </Heading>
           </Box>
 
@@ -128,7 +139,7 @@ export default function MediaHeroSection() {
               },
             }}
           >
-            {mediaIcons.map((item) => (
+            {config.icons.map((item) => (
               <VStack
                 key={item.label}
                 spacing={3}
@@ -188,7 +199,7 @@ export default function MediaHeroSection() {
                 letterSpacing="wider"
                 color="brand.600"
               >
-                SCROLL TO REQUEST
+                {config.scrollText}
               </Text>
               <Box
                 w="6px"

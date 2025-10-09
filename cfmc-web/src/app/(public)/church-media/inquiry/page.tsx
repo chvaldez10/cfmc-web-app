@@ -1,13 +1,11 @@
 import { Box } from "@chakra-ui/react";
-import {
-  MediaHeroSection,
-  MediaFormSection,
-} from "@/components/features/church-media";
+import { MediaFormSection } from "@/components/features/church-media";
+import MediaInquiryHero from "./_sections/MediaInquiryHero";
 
 export default function MediaInquiryPage() {
   return (
     <Box>
-      <MediaHeroSection />
+      <MediaInquiryHero />
       <MediaFormSection />
     </Box>
   );
