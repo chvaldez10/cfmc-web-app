@@ -7,7 +7,7 @@ import { AllowedColorSchemes, PublicLabels } from "@/constants/shared/enums";
 
 import { ParallaxCard1 } from "@/components/ui/cards";
 import { ParallaxSectionHeading } from "@/components/ui/sections";
-import { ParallaxFloatingElement } from "@/components/ui/parallax";
+import ParallaxFloatingImage from "@/components/ui/parallax/ParallaxFloatingImage";
 import { ABOUT_CONTENT } from "@/constants/shared/about";
 import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 
@@ -29,21 +29,23 @@ const VisionMissionParallax = () => {
       overflow="hidden"
     >
       {/* Background decorative elements */}
-      <ParallaxFloatingElement
+      <ParallaxFloatingImage
         scrollYProgress={scrollYProgress}
         position="top-left"
-        size={200}
-        color={AllowedColorSchemes.PURPLE}
+        size={250}
+        src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-1.jpg"
+        alt="Christmas choir background decoration"
         yRange={[0, -200]}
-        opacity={0.3}
+        opacity={0.15}
       />
-      <ParallaxFloatingElement
+      <ParallaxFloatingImage
         scrollYProgress={scrollYProgress}
         position="bottom-right"
-        size={150}
-        color={AllowedColorSchemes.GREEN}
+        size={200}
+        src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-2.JPEG"
+        alt="Christmas choir background decoration"
         yRange={[0, 150]}
-        opacity={0.25}
+        opacity={0.12}
       />
 
       <Container maxW={COMMON_MAX_WIDTH} px={{ base: 4, md: 8 }}>
