@@ -9,7 +9,6 @@ import {
   SimpleGrid,
   Icon,
 } from "@chakra-ui/react";
-import { useRef } from "react";
 import { COMMON_MAX_WIDTH } from "@/constants/theme/ui";
 import { FiCamera, FiVideo, FiMusic } from "react-icons/fi";
 import { HiComputerDesktop } from "react-icons/hi2";
@@ -23,11 +22,8 @@ const mediaIcons = [
 ];
 
 export default function MediaHeroSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
     <Box
-      ref={containerRef}
       position="relative"
       minH={{ base: "100vh", md: "90vh" }}
       bg="var(--color-light-100)"

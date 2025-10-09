@@ -10,8 +10,6 @@ interface ShapeConfig {
   bottom?: string;
   size: { base: string; md: string };
   color: string;
-  duration: number;
-  delay?: number;
 }
 
 const shapes: ShapeConfig[] = [
@@ -21,8 +19,6 @@ const shapes: ShapeConfig[] = [
     right: "5%",
     size: { base: "50px", md: "80px" },
     color: "brand.200",
-    duration: 15,
-    delay: 0,
   },
   {
     type: "square",
@@ -30,8 +26,6 @@ const shapes: ShapeConfig[] = [
     right: "15%",
     size: { base: "40px", md: "60px" },
     color: "purple.200",
-    duration: 20,
-    delay: 2,
   },
   {
     type: "diamond",
@@ -39,8 +33,6 @@ const shapes: ShapeConfig[] = [
     right: "35%",
     size: { base: "45px", md: "70px" },
     color: "brand.300",
-    duration: 18,
-    delay: 4,
   },
 ];
 
@@ -67,8 +59,7 @@ const ShapeRenderer = ({ config }: { config: ShapeConfig }) => {
         opacity={0.6}
         sx={{
           clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
-          animation: `rotateShape ${config.duration}s linear infinite`,
-          animationDelay: `${config.delay}s`,
+          animation: "rotateShape 10s linear infinite",
         }}
       />
     );
@@ -82,8 +73,7 @@ const ShapeRenderer = ({ config }: { config: ShapeConfig }) => {
         borderRadius="8px"
         transform="rotate(45deg)"
         sx={{
-          animation: `rotateShape ${config.duration}s linear infinite`,
-          animationDelay: `${config.delay}s`,
+          animation: "rotateShape 10s linear infinite",
         }}
       />
     );
@@ -95,8 +85,7 @@ const ShapeRenderer = ({ config }: { config: ShapeConfig }) => {
       {...baseStyles}
       borderRadius="12px"
       sx={{
-        animation: `rotateShape ${config.duration}s linear infinite`,
-        animationDelay: `${config.delay}s`,
+        animation: "rotateShape 10s linear infinite",
       }}
     />
   );
