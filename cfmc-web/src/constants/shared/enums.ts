@@ -76,12 +76,15 @@ export enum ContactUsOptions {
   REQUEST_MARRIAGE_OFFICIANT = "Request a marriage officiant",
 }
 
-export enum ConnectWithUsOption {
+export enum ConnectWithUsOptions {
   CONNECT_WITH_US = "Connect with us",
 }
 
-export enum MediaRequest {
+export enum MediaRequestOptions {
   GENERAL_MEDIA_REQUEST = "General Media Request",
+  MUSIC_REQUEST = "Music Request",
+  VIDEO_REQUEST = "Video Request",
+  WEBSITE_REQUEST = "Website Request",
 }
 
 export enum AllowedColorSchemes {

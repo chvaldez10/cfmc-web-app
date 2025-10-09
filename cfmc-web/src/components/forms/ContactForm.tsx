@@ -8,6 +8,7 @@ import {
   ContactFormLabels,
   ContactFormToastMessages,
 } from "@/constants/shared/contact";
+import { ContactUsOptions } from "@/constants/shared/enums";
 
 export default function ContactForm() {
   const { formData, errors, isSubmitting, handleInputChange, handleSubmit } =
@@ -45,6 +46,7 @@ export default function ContactForm() {
           formData={formData}
           errors={errors}
           onInputChange={handleInputChange}
+          checkboxOptions={Object.values(ContactUsOptions)}
         />
 
         {/* Submit Button */}

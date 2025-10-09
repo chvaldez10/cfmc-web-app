@@ -3,7 +3,7 @@
 import { VStack, Text } from "@chakra-ui/react";
 import { FormCheckboxGroup, FormTextarea } from "../inputs";
 import { FormData, FormErrors } from "@/types/ui/forms";
-import { ContactUsOptions } from "@/constants/shared/enums";
+// import { ContactUsOptions } from "@/constants/shared/enums";
 import {
   ContactFormLabels,
   ContactFormPlaceholders,
@@ -13,12 +13,14 @@ interface MessageDetailsSectionProps {
   formData: FormData;
   errors: FormErrors;
   onInputChange: (field: keyof FormData, value: string | string[]) => void;
+  checkboxOptions: string[];
 }
 
 export default function MessageDetailsSection({
   formData,
   errors,
   onInputChange,
+  checkboxOptions,
 }: MessageDetailsSectionProps) {
   return (
     <VStack spacing={6} w="full">
@@ -37,7 +39,7 @@ export default function MessageDetailsSection({
       <VStack spacing={5} w="full">
         <FormCheckboxGroup
           label={ContactFormLabels.WHAT_CAN_WE_HELP}
-          options={Object.values(ContactUsOptions)}
+          options={Object.values(checkboxOptions)}
           value={formData.subject}
           onChange={(values) => onInputChange("subject", values)}
           error={errors.subject}

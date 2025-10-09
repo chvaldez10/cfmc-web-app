@@ -1,6 +1,8 @@
 import { HeroHeader } from "@/components/hero";
+import { MediaInquiryForm } from "@/components/forms";
+import { ColumnLayout } from "@/components/hero";
 
-export default function AnnouncementsPage() {
+export default function MediaInquiryPage() {
   return (
     <>
       <HeroHeader
@@ -8,6 +10,9 @@ export default function AnnouncementsPage() {
         titleHighlight="Inquiry"
         description="Feel free to inquire about our services."
       />
+      <ColumnLayout maxW="5xl">
+        <MediaInquiryForm />
+      </ColumnLayout>
     </>
   );
 }

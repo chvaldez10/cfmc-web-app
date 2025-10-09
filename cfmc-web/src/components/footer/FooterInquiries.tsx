@@ -8,9 +8,9 @@ import { InquiryCard } from "@/components/ui/cards";
 import { BaseModal } from "@/components/ui/modals";
 import { InquiryForm } from "@/components/forms";
 import {
-  ConnectWithUsOption,
+  ConnectWithUsOptions,
   ContactUsOptions,
-  MediaRequest,
+  MediaRequestOptions,
 } from "@/constants/shared/enums";
 import { InquiryType } from "@/types/ui/components";
 import { Inquiries } from "@/constants/shared/enums";
@@ -18,11 +18,11 @@ import { Inquiries } from "@/constants/shared/enums";
 const getPreSelectedSubject = (type: InquiryType): string[] => {
   switch (type) {
     case Inquiries.CONNECT:
-      return [ConnectWithUsOption.CONNECT_WITH_US];
+      return [ConnectWithUsOptions.CONNECT_WITH_US];
     case Inquiries.PRAYER:
       return [ContactUsOptions.REQUEST_PRAYER_SUPPORT];
     case Inquiries.MEDIA:
-      return [MediaRequest.GENERAL_MEDIA_REQUEST];
+      return [MediaRequestOptions.GENERAL_MEDIA_REQUEST];
     default:
       return [];
   }
