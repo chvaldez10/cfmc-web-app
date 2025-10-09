@@ -45,6 +45,14 @@ export const CONTACT_US_CONTENT: { title: string; description: string }[] = [
   },
 ];
 
+export const MEDIA_INQUIRY_CONTENT: { title: string; description: string }[] = [
+  {
+    title: "Need Media Help?",
+    description:
+      "Have photos, videos, music, or presentations you'd like to share during our services? Fill out the form below and our media team will help you get it ready for worship.",
+  },
+];
+
 export const DONATION_METHODS: DonationMethod[] = [
   {
     icon: FaEnvelope,

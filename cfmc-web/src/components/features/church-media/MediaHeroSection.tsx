@@ -101,35 +101,16 @@ export default function MediaHeroSection() {
                 animation: "slideInDown 0.8s ease-out",
               }}
             >
-              Share Your{" "}
+              Media{" "}
               <Box
                 as="span"
                 bgGradient="linear(to-r, brand.400, purple.500)"
                 bgClip="text"
               >
-                Story.
+                Inquiry
               </Box>{" "}
-              Inspire Others.
             </Heading>
           </Box>
-
-          {/* Subheading */}
-          <Text
-            fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
-            fontWeight="600"
-            maxW="3xl"
-            color="gray.700"
-            sx={{
-              "@keyframes fadeIn": {
-                from: { opacity: 0 },
-                to: { opacity: 1 },
-              },
-              animation: "fadeIn 1s ease-out 0.3s both",
-            }}
-          >
-            Need help sharing your photos, videos, music, or presentations
-            during our services? We're here to help make it happen.
-          </Text>
 
           {/* Icon Grid */}
           <SimpleGrid

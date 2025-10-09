@@ -1,5 +1,6 @@
 import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import { MediaInquiryForm } from "@/components/forms";
+import { MEDIA_INQUIRY_CONTENT } from "@/constants/shared/contact";
 
 export default function MediaFormSection() {
   return (
@@ -47,7 +48,7 @@ export default function MediaFormSection() {
                 animation: "fadeInUp 0.8s ease-out",
               }}
             >
-              Need Media Help?
+              {MEDIA_INQUIRY_CONTENT[0].title}
             </Heading>
             <Text
               fontSize={{ base: "lg", md: "xl" }}
@@ -57,9 +58,7 @@ export default function MediaFormSection() {
                 animation: "fadeInUp 0.8s ease-out 0.2s both",
               }}
             >
-              Have photos, videos, music, or presentations you'd like to share
-              during our services? Fill out the form below and our media team
-              will help you get it ready for worship.
+              {MEDIA_INQUIRY_CONTENT[0].description}
             </Text>
           </VStack>
 
