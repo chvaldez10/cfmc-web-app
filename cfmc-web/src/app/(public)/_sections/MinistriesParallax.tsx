@@ -13,7 +13,7 @@ import {
   FLOATING_ELEMENTS,
 } from "@/constants/layeredParallax";
 
-const LayeredParallaxSection = () => {
+const MinistriesParallax = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -170,4 +170,4 @@ const LayeredParallaxSection = () => {
   );
 };
 
-export default LayeredParallaxSection;
+export default MinistriesParallax;
