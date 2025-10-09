@@ -17,7 +17,7 @@ const MinistriesShowcase = () => {
       bg="var(--color-light-100)"
       position="relative"
       overflow="hidden"
-      py={{ base: 16, md: 24, lg: 32 }}
+      pt={{ base: 16, md: 24, lg: 32 }}
     >
       {/* Decorative Background Elements */}
       <Box
