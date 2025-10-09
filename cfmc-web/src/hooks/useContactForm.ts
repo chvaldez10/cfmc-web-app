@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useToast } from "@chakra-ui/react";
 import { FormData, FormErrors } from "@/types/ui/forms";
 import {
@@ -23,15 +23,15 @@ export function useContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const toast = useToast();
 
-  const handleInputChange = (
-    field: keyof FormData,
-    value: string | string[]
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-    if (errors[field]) {
-      setErrors((prev) => ({ ...prev, [field]: "" }));
-    }
-  };
+  const handleInputChange = useCallback(
+    (field: keyof FormData, value: string | string[]) => {
+      setFormData((prev) => ({ ...prev, [field]: value }));
+      if (errors[field]) {
+        setErrors((prev) => ({ ...prev, [field]: "" }));
+      }
+    },
+    [errors]
+  );
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};

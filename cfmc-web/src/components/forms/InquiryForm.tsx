@@ -27,7 +27,7 @@ export default function InquiryForm({
   // Set pre-selected subject on mount
   useEffect(() => {
     handleInputChange("subject", preSelectedSubject);
-  }, [preSelectedSubject]);
+  }, [preSelectedSubject, handleInputChange]);
 
   const onFormSubmit = async (e: React.FormEvent) => {
     const success = await handleSubmit(e);
