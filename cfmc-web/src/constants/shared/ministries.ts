@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import ministriesContentData from "@/data/ministries-content.json";
 import {
   FaHeart,
   FaHandsHelping,
@@ -6,6 +7,25 @@ import {
   FaCross,
   FaGlobeAmericas,
 } from "react-icons/fa";
+
+export interface Ministry {
+  id?: string;
+  title: string;
+  description: string;
+  isQuote?: boolean;
+  verse?: {
+    text: string;
+    reference: string;
+  };
+  contact?: {
+    name: string;
+    phone: string;
+  };
+  contacts?: Array<{
+    name: string;
+    phone: string;
+  }>;
+}
 
 export interface MinistryCardData {
   id: string;
@@ -82,3 +102,8 @@ export const MINISTRIES_CTA_CONTENT = {
   helperText:
     "Questions? We're here to help you find your place in our community.",
 };
+
+export const MINISTRIES_CONTENT = ministriesContentData as Record<
+  string,
+  Ministry
+>;

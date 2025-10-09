@@ -3,7 +3,7 @@ import {
   HomeJumbotron,
   PassedLiveStream,
   VisionMissionParallax,
-  MinistriesParallax,
+  MinistriesShowcase,
 } from "./_sections";
 import { FooterInquiries } from "@/components/footer";
 import EventSwiper from "@/components/features/events/EventSwiper";
@@ -18,7 +18,7 @@ export default async function Page() {
       <HomeJumbotron />
       <PassedLiveStream />
       <VisionMissionParallax />
-      <MinistriesParallax />
+      <MinistriesShowcase />
       <SectionHeader
         title={ABOUT_CONTENT.GET_INVOLVED.title}
         description={ABOUT_CONTENT.GET_INVOLVED.description}

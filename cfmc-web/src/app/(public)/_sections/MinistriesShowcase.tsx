@@ -11,7 +11,7 @@ import {
 import { MinistryCard, MinistryCTA } from "@/components/features/ministries";
 import { MINISTRIES_SHOWCASE } from "@/constants/shared/ministries";
 
-const MinistriesParallax = () => {
+const MinistriesShowcase = () => {
   return (
     <Box
       bg="var(--color-light-100)"
@@ -128,4 +128,4 @@ const MinistriesParallax = () => {
   );
 };
 
-export default MinistriesParallax;
+export default MinistriesShowcase;

@@ -4,7 +4,7 @@ import {
   EventStatus,
   Inquiries,
 } from "@/constants/shared/enums";
-import { MINISTRIES_CONTENT, Ministry } from "@/constants/ministries";
+import { MINISTRIES_CONTENT, Ministry } from "@/constants/shared/ministries";
 
 export interface CardDataProps {
   bg: string;

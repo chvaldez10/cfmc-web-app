@@ -2,7 +2,7 @@ import {
   generateSectionsData,
   VISUAL_PRESETS,
 } from "@/utils/sectionDataGenerator";
-import { MINISTRIES_CONTENT } from "@/constants/ministries";
+import { MINISTRIES_CONTENT } from "@/constants/shared/ministries";
 import { IMAGE_PRESETS } from "@/constants/gallery";
 import { SectionData } from "@/types/ui/components";
 

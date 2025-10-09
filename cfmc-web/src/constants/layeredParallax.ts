@@ -6,7 +6,7 @@ import {
   FaCross,
   FaGlobeAmericas,
 } from "react-icons/fa";
-import { MINISTRIES_CONTENT } from "./ministries";
+import { MINISTRIES_CONTENT } from "./shared/ministries";
 
 export interface ParallaxSectionConfig {
   id: string;
