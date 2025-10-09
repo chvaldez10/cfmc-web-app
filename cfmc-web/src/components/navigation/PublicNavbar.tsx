@@ -94,7 +94,7 @@ export default function PublicNavbar() {
           />
         </Flex>
 
-        {/* Responsive Tithes Button */}
+        {/* Tithes Button */}
         <TithesButton onClick={onOpen} buttonHeight={BUTTON_HEIGHT} />
 
         <TithesAndOfferingsModal isOpen={isModalOpen} onClose={onClose} />

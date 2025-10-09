@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, useBreakpointValue } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { PublicLabels } from "@/constants/shared/enums";
 
 interface TithesButtonProps {
@@ -12,11 +12,9 @@ const TithesButton = ({
   onClick,
   buttonHeight = "40px",
 }: TithesButtonProps) => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
-
-  if (isMobile) {
-    // Mobile: Floating Action Button
-    return (
+  return (
+    <>
+      {/* Mobile: Floating Action Button */}
       <Button
         onClick={onClick}
         position="fixed"
@@ -35,29 +33,28 @@ const TithesButton = ({
         fontSize="sm"
         fontWeight={600}
         px={6}
+        display={{ base: "inline-flex", md: "none" }}
       >
         {PublicLabels.GIVE}
       </Button>
-    );
-  }
 
-  // Desktop: Navbar Button
-  return (
-    <Button
-      onClick={onClick}
-      display="inline-flex"
-      fontSize="sm"
-      fontWeight={600}
-      color="white"
-      bg="purple.600"
-      _hover={{
-        bg: "purple.500",
-      }}
-      borderRadius="full"
-      height={buttonHeight}
-    >
-      {PublicLabels.TITHES_AND_OFFERINGS}
-    </Button>
+      {/* Desktop: Navbar Button */}
+      <Button
+        onClick={onClick}
+        display={{ base: "none", md: "inline-flex" }}
+        fontSize="sm"
+        fontWeight={600}
+        color="white"
+        bg="purple.600"
+        _hover={{
+          bg: "purple.500",
+        }}
+        borderRadius="full"
+        height={buttonHeight}
+      >
+        {PublicLabels.TITHES_AND_OFFERINGS}
+      </Button>
+    </>
   );
 };
 
