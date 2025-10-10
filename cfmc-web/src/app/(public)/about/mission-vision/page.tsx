@@ -4,7 +4,7 @@ import { StickyParallax } from "@/components/ui/parallax";
 import { MISSION_VISION_STICKY_PARALLAX_SECTIONS as SECTIONS_DATA } from "./page.data";
 import { calculateParallaxHeight } from "@/utils/parallaxHeight";
 
-const DISABLE_STICKY_ON_MOBILE = true;
+const DISABLE_STICKY_ON_MOBILE = false;
 
 export default function MissionVisionPage() {
   const sectionHeight = calculateParallaxHeight(SECTIONS_DATA.length);

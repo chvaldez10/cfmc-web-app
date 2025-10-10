@@ -21,13 +21,13 @@ const StickyImageContainer = ({
   imageSrc,
   imageAlt,
   priority = false,
-  aspectRatio = { base: "3/2", md: "16/10" },
-  sizes = "(max-width: 768px) 90vw, (max-width: 1024px) 512px, 576px",
-  rounded = { base: "lg", md: "xl" },
-  shadow = { base: "lg", md: "2xl" },
-  maxWidth = { base: "95%", md: "lg", lg: "xl" },
-  width = { base: "full", md: "lg", lg: "xl" },
-  marginBottom = { base: "4", md: "0" },
+  aspectRatio = { base: "3/2", sm: "16/10", md: "16/10", lg: "4/3" },
+  sizes = "(max-width: 640px) 90vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 576px",
+  rounded = { base: "lg", sm: "xl", md: "xl", lg: "2xl" },
+  shadow = { base: "lg", sm: "xl", md: "xl", lg: "2xl" },
+  maxWidth = { base: "95%", sm: "90%", md: "85%", lg: "xl" },
+  width = { base: "full", sm: "full", md: "full", lg: "xl" },
+  marginBottom = { base: "4", sm: "6", md: "8", lg: "0" },
 }: StickyImageContainerProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 

@@ -2,6 +2,7 @@
 
 import { Box } from "@chakra-ui/react";
 import { AllowedColorSchemes } from "@/constants/shared/enums";
+import styles from "./StickyAnimatedBackground.module.css";
 
 interface StickyAnimatedBackgroundProps {
   colorScheme: AllowedColorSchemes;
@@ -51,13 +52,26 @@ const StickyAnimatedBackground = ({
     },
   };
 
+  const gradientBackground = `
+    radial-gradient(
+      circle 300px at center,
+      ${colorSchemes[colorScheme].smokeColors.accent} 0%,
+      ${colorSchemes[colorScheme].smokeColors.secondary} 35%,
+      ${colorSchemes[colorScheme].smokeColors.primary} 70%,
+      transparent 100%
+    )
+  `;
+
   return (
     <Box
+      className={styles.animatedBefore}
       position={
-        disableStickyOnMobile ? { base: "relative", md: "sticky" } : "sticky"
+        disableStickyOnMobile
+          ? { base: "relative", sm: "relative", md: "relative", lg: "sticky" }
+          : "sticky"
       }
       top="0"
-      minH={{ base: "100vh", md: "100vh" }}
+      minH={{ base: "100vh", sm: "100vh", md: "100vh", lg: "100vh" }}
       height="fit-content"
       display="flex"
       alignItems="center"
@@ -74,39 +88,9 @@ const StickyAnimatedBackground = ({
         left: 0,
         width: "100%",
         height: "100%",
-        background: `
-          radial-gradient(
-            circle 300px at center,
-            ${colorSchemes[colorScheme].smokeColors.accent} 0%,
-            ${colorSchemes[colorScheme].smokeColors.secondary} 35%,
-            ${colorSchemes[colorScheme].smokeColors.primary} 70%,
-            transparent 100%
-          )
-        `,
+        background: gradientBackground,
         filter: "blur(30px)",
-        animation: "radial-pulse 20s ease-in-out infinite",
         zIndex: -1,
-      }}
-      sx={{
-        // This is for mobile devices that are 700px tall or less and 768px wide or less.
-        // "@media (max-height: 700px) and (max-width: 768px)": {
-        //   position: "relative",
-        //   minHeight: "auto",
-        // },
-        "@keyframes radial-pulse": {
-          "0%": {
-            transform: "scale(0.8)",
-            opacity: 0.9,
-          },
-          "50%": {
-            transform: "scale(1.3)",
-            opacity: 0.4,
-          },
-          "100%": {
-            transform: "scale(0.8)",
-            opacity: 0.9,
-          },
-        },
       }}
     >
       {children}

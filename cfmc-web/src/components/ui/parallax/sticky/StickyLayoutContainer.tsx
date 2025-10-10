@@ -15,17 +15,21 @@ const StickyLayoutContainer = ({
   return (
     <Container
       maxW={COMMON_MAX_WIDTH}
-      px={{ base: 4, md: 8 }}
-      py={{ base: 8, md: 12 }}
+      px={{ base: 4, sm: 6, md: 8, lg: 10 }}
+      py={{ base: 8, sm: 10, md: 12, lg: 16 }}
       height="fit-content"
     >
       <Flex
-        direction={{ base: "column", md: reverse ? "row-reverse" : "row" }}
+        direction={{
+          base: "column",
+          md: "column",
+          lg: reverse ? "row-reverse" : "row",
+        }}
         align="center"
         justify="center"
-        gap={{ base: 6, md: 16 }}
+        gap={{ base: 6, sm: 8, md: 10, lg: 16 }}
         height="fit-content"
-        minH={{ base: "auto", md: "100vh" }}
+        minH={{ base: "auto", lg: "100vh" }}
       >
         {children}
       </Flex>

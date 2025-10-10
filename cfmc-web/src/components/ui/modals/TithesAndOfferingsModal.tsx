@@ -25,6 +25,7 @@ import { DonationMethod } from "@/types/ui/components";
 import { PublicLabels } from "@/constants/shared/enums";
 import { TITHERS_AND_OFFERINGS_MODAL } from "@/constants/publicNavbar";
 import { DONATION_METHODS } from "@/constants/shared/contact";
+import styles from "./TithesAndOfferingsModal.module.css";
 
 interface DonationMethodCardProps {
   method: DonationMethod;
@@ -190,16 +191,7 @@ const InfoSection = () => {
       position="relative"
       overflow="hidden"
     >
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        h="2px"
-        bg="linear-gradient(90deg, #3182ce, #805ad5, #3182ce)"
-        backgroundSize="200% 100%"
-        animation="gradient 3s ease infinite"
-      />
+      <Box className={styles.infoBorder} />
       <Text
         fontSize={{ base: "sm", md: "md" }}
         color="blue.800"
@@ -337,20 +329,6 @@ const TithesAndOfferingsModal = ({
           </Button>
         </ModalFooter>
       </ModalContent>
-
-      <style jsx>{`
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-      `}</style>
     </Modal>
   );
 };
