@@ -32,11 +32,11 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
     children: [
       {
         label: "Documentation",
-        href: "/documentation",
+        href: "#",
       },
       {
         label: "Github",
-        href: "/github",
+        href: "https://github.com/chvaldez10/cfmc-web-app",
       },
     ],
   },
