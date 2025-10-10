@@ -2,6 +2,7 @@
 
 import { Box, VStack, Heading, Text, Icon } from "@chakra-ui/react";
 import { MinistryCardData } from "@/constants/shared/ministries";
+import styles from "./MinistryCard.module.css";
 
 interface MinistryCardProps {
   ministry: MinistryCardData;
@@ -14,6 +15,7 @@ export default function MinistryCard({
 }: MinistryCardProps) {
   return (
     <Box
+      className={styles.card}
       bg="white"
       borderRadius="2xl"
       border="2px solid"
@@ -22,19 +24,7 @@ export default function MinistryCard({
       position="relative"
       overflow="hidden"
       transition="all 0.3s ease"
-      sx={{
-        "@keyframes cardFadeIn": {
-          from: {
-            opacity: 0,
-            transform: "translateY(20px) scale(0.95)",
-          },
-          to: {
-            opacity: 1,
-            transform: "translateY(0) scale(1)",
-          },
-        },
-        animation: `cardFadeIn 0.6s ease-out ${delay} both`,
-      }}
+      style={{ animationDelay: delay }}
       _hover={{
         transform: "translateY(-8px)",
         boxShadow: "2xl",
@@ -43,6 +33,7 @@ export default function MinistryCard({
     >
       {/* Gradient Background */}
       <Box
+        className={styles.gradientBg}
         position="absolute"
         top="0"
         right="0"
@@ -51,11 +42,6 @@ export default function MinistryCard({
         bgGradient={ministry.bgGradient}
         opacity="0.5"
         borderBottomLeftRadius="full"
-        transition="all 0.3s ease"
-        _groupHover={{
-          opacity: 0.7,
-          transform: "scale(1.2)",
-        }}
       />
 
       <VStack align="start" spacing={4} position="relative" zIndex={1}>

@@ -1,0 +1,12 @@
+.card {
+  animation: scaleInWithTranslate 0.6s ease-out both;
+}
+
+.gradientBg {
+  transition: all 0.3s ease;
+}
+
+.card:hover .gradientBg {
+  opacity: 0.7;
+  transform: scale(1.2);
+}

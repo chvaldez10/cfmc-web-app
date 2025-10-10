@@ -1,0 +1,11 @@
+.header {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.description {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.formWrapper {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}

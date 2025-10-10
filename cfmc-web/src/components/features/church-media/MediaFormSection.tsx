@@ -1,6 +1,7 @@
 import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import { MediaInquiryForm } from "@/components/forms";
 import { MEDIA_INQUIRY_CONTENT } from "@/constants/shared/contact";
+import styles from "./MediaFormSection.module.css";
 
 export default function MediaFormSection() {
   return (
@@ -22,31 +23,14 @@ export default function MediaFormSection() {
       <Container maxW="5xl" px={{ base: 6, md: 8 }}>
         <VStack spacing={{ base: 8, md: 12 }} align="stretch">
           {/* Section Header */}
-          <VStack
-            spacing={4}
-            textAlign="center"
-            sx={{
-              "@keyframes fadeInUp": {
-                from: {
-                  opacity: 0,
-                  transform: "translateY(20px)",
-                },
-                to: {
-                  opacity: 1,
-                  transform: "translateY(0)",
-                },
-              },
-            }}
-          >
+          <VStack spacing={4} textAlign="center">
             <Heading
               as="h2"
               fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
               fontWeight="800"
               bgGradient="linear(to-r, brand.500, purple.600)"
               bgClip="text"
-              sx={{
-                animation: "fadeInUp 0.8s ease-out",
-              }}
+              className={styles.header}
             >
               {MEDIA_INQUIRY_CONTENT[0].title}
             </Heading>
@@ -54,20 +38,14 @@ export default function MediaFormSection() {
               fontSize={{ base: "lg", md: "xl" }}
               color="gray.600"
               maxW="2xl"
-              sx={{
-                animation: "fadeInUp 0.8s ease-out 0.2s both",
-              }}
+              className={styles.description}
             >
               {MEDIA_INQUIRY_CONTENT[0].description}
             </Text>
           </VStack>
 
           {/* Form with Entrance Animation */}
-          <Box
-            sx={{
-              animation: "fadeInUp 0.8s ease-out 0.4s both",
-            }}
-          >
+          <Box className={styles.formWrapper}>
             <MediaInquiryForm />
           </Box>
         </VStack>

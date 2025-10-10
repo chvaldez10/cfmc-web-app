@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { MinistryCard, MinistryCTA } from "@/components/features/ministries";
 import { MINISTRIES_SHOWCASE } from "@/constants/shared/ministries";
+import styles from "./MinistriesShowcase.module.css";
 
 const MinistriesShowcase = () => {
   return (
@@ -21,6 +22,7 @@ const MinistriesShowcase = () => {
     >
       {/* Decorative Background Elements */}
       <Box
+        className={styles.decorativeOrbLeft}
         position="absolute"
         top="10%"
         left="-5%"
@@ -30,15 +32,9 @@ const MinistriesShowcase = () => {
         bgGradient="radial(purple.100, transparent)"
         opacity="0.4"
         filter="blur(60px)"
-        sx={{
-          "@keyframes floatSlow": {
-            "0%, 100%": { transform: "translate(0, 0) scale(1)" },
-            "50%": { transform: "translate(20px, -20px) scale(1.1)" },
-          },
-          animation: "floatSlow 12s ease-in-out infinite",
-        }}
       />
       <Box
+        className={styles.decorativeOrbRight}
         position="absolute"
         bottom="20%"
         right="-5%"
@@ -48,9 +44,6 @@ const MinistriesShowcase = () => {
         bgGradient="radial(blue.100, transparent)"
         opacity="0.3"
         filter="blur(60px)"
-        sx={{
-          animation: "floatSlow 15s ease-in-out infinite reverse",
-        }}
       />
 
       <Container
@@ -65,19 +58,7 @@ const MinistriesShowcase = () => {
             spacing={4}
             textAlign="center"
             maxW="3xl"
-            sx={{
-              "@keyframes fadeInUp": {
-                from: {
-                  opacity: 0,
-                  transform: "translateY(30px)",
-                },
-                to: {
-                  opacity: 1,
-                  transform: "translateY(0)",
-                },
-              },
-              animation: "fadeInUp 0.8s ease-out",
-            }}
+            className={styles.headerWrapper}
           >
             <Heading
               as="h2"

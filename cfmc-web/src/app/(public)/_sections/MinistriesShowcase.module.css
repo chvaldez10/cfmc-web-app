@@ -1,0 +1,11 @@
+.decorativeOrbLeft {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+.decorativeOrbRight {
+  animation: floatSlow 15s ease-in-out infinite reverse;
+}
+
+.headerWrapper {
+  animation: fadeInUp 0.8s ease-out;
+}
