@@ -2,6 +2,7 @@ import React from "react";
 import { VStack, Heading, Text, SimpleGrid } from "@chakra-ui/react";
 import { ChurchMembers } from "@/types/supabase/members";
 import { ProfileCard } from "./ProfileCard";
+import { SectionHeader } from "@/components/ui/headers";
 
 interface ProfileSectionProps {
   title: string;
@@ -20,34 +21,17 @@ export const ProfileSection = ({
 
   return (
     <VStack spacing={8} w="100%">
-      <VStack spacing={4} textAlign="center" maxW="4xl">
-        <Heading
-          as="h2"
-          fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
-          fontWeight="bold"
-          color="purple.600"
-        >
-          {title}
-        </Heading>
-        {description && (
-          <Text
-            fontSize={{ base: "md", md: "lg" }}
-            color="gray.700"
-            lineHeight="tall"
-          >
-            {description}
-          </Text>
-        )}
-      </VStack>
+      <SectionHeader title={title} description={description} />
 
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} w="100%">
+      <VStack spacing={6} w="100%">
         {members.map((member, index) => (
           <ProfileCard
             key={`${member.firstName}-${member.lastName}-${index}`}
             member={member}
+            delay={`${index * 0.1}s`}
           />
         ))}
-      </SimpleGrid>
+      </VStack>
     </VStack>
   );
 };

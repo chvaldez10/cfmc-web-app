@@ -4,7 +4,7 @@ import { COMMON_X_PADDING, COMMON_Y_PADDING } from "@/constants/theme/ui";
 
 interface SectionHeaderProps {
   title: string;
-  description: string;
+  description?: string;
   textAlign?: "left" | "center" | "right";
   mt?: string;
 }
@@ -39,16 +39,18 @@ export default function SectionHeader({
           {title}
         </Heading>
 
-        <Text
-          fontSize={{ base: "md", md: "lg" }}
-          lineHeight="tall"
-          color={textColor}
-          fontWeight="normal"
-          opacity={0.95}
-          maxW="3xl"
-        >
-          {description}
-        </Text>
+        {description && (
+          <Text
+            fontSize={{ base: "md", md: "lg" }}
+            lineHeight="tall"
+            color={textColor}
+            fontWeight="normal"
+            opacity={0.95}
+            maxW="3xl"
+          >
+            {description}
+          </Text>
+        )}
       </VStack>
     </Box>
   );
