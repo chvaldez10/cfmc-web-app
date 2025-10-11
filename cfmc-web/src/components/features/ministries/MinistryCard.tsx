@@ -19,7 +19,7 @@ export default function MinistryCard({
       bg="white"
       borderRadius="2xl"
       border="2px solid"
-      borderColor={ministry.borderColor}
+      borderColor={`${ministry.borderColor}.200`}
       p={{ base: 6, md: 8 }}
       position="relative"
       overflow="hidden"
@@ -28,7 +28,7 @@ export default function MinistryCard({
       _hover={{
         transform: "translateY(-8px)",
         boxShadow: "2xl",
-        borderColor: ministry.iconColor,
+        borderColor: `${ministry.iconColor}.200`,
       }}
     >
       {/* Gradient Background */}
@@ -47,16 +47,16 @@ export default function MinistryCard({
       <VStack align="start" spacing={4} position="relative" zIndex={1}>
         {/* Icon */}
         <Box
-          bg={`${ministry.iconColor.split(".")[0]}.50`}
+          bg={`${ministry.iconColor}.50`}
           p={4}
           borderRadius="xl"
           border="2px solid"
-          borderColor={ministry.borderColor}
+          borderColor={`${ministry.borderColor}.200`}
         >
           <Icon
             as={ministry.icon}
             boxSize={{ base: 6, md: 8 }}
-            color={ministry.iconColor}
+            color={`${ministry.iconColor}.500`}
           />
         </Box>
 

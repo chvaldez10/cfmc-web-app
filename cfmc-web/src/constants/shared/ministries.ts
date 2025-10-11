@@ -7,6 +7,21 @@ import {
   FaCross,
   FaGlobeAmericas,
 } from "react-icons/fa";
+import { AllowedColorSchemes } from "./enums";
+
+// Color scheme constants for ministry cards
+export const MINISTRY_COLOR_SCHEMES = {
+  RED: {
+    iconColor: AllowedColorSchemes.RED,
+    borderColor: AllowedColorSchemes.RED,
+    bgGradient: "linear(to-br, red.50, pink.50)",
+  },
+  PURPLE: {
+    iconColor: AllowedColorSchemes.PURPLE,
+    borderColor: AllowedColorSchemes.PURPLE,
+    bgGradient: "linear(to-br, purple.50, pink.50)",
+  },
+} as const;
 
 export interface Ministry {
   id?: string;
@@ -30,8 +45,8 @@ export interface Ministry {
 export interface MinistryCardData {
   id: string;
   icon: IconType;
-  iconColor: string;
-  borderColor: string;
+  iconColor: AllowedColorSchemes;
+  borderColor: AllowedColorSchemes;
   bgGradient: string;
   title: string;
   description: string;
@@ -41,9 +56,7 @@ export const MINISTRIES_SHOWCASE: MinistryCardData[] = [
   {
     id: "discipleship",
     icon: FaHeart,
-    iconColor: "red.500",
-    borderColor: "red.200",
-    bgGradient: "linear(to-br, red.50, pink.50)",
+    ...MINISTRY_COLOR_SCHEMES.RED,
     title: "Discipleship Ministry",
     description:
       "Growing in faith together through Bible study, prayer, and mentorship.",
@@ -51,9 +64,7 @@ export const MINISTRIES_SHOWCASE: MinistryCardData[] = [
   {
     id: "mens",
     icon: FaHandsHelping,
-    iconColor: "blue.500",
-    borderColor: "blue.200",
-    bgGradient: "linear(to-br, blue.50, cyan.50)",
+    ...MINISTRY_COLOR_SCHEMES.PURPLE,
     title: "Men's Ministry",
     description:
       "Building strong Christian men through fellowship, accountability, and service.",
@@ -61,9 +72,7 @@ export const MINISTRIES_SHOWCASE: MinistryCardData[] = [
   {
     id: "womens",
     icon: FaPrayingHands,
-    iconColor: "green.500",
-    borderColor: "green.200",
-    bgGradient: "linear(to-br, green.50, teal.50)",
+    ...MINISTRY_COLOR_SCHEMES.RED,
     title: "Women's Ministry",
     description:
       "Empowering women to grow spiritually and support one another in faith.",
@@ -71,9 +80,7 @@ export const MINISTRIES_SHOWCASE: MinistryCardData[] = [
   {
     id: "children",
     icon: FaCross,
-    iconColor: "purple.500",
-    borderColor: "purple.200",
-    bgGradient: "linear(to-br, purple.50, pink.50)",
+    ...MINISTRY_COLOR_SCHEMES.PURPLE,
     title: "Children's Ministry",
     description:
       "Nurturing young hearts with biblical truth through engaging activities and lessons.",
@@ -81,9 +88,7 @@ export const MINISTRIES_SHOWCASE: MinistryCardData[] = [
   {
     id: "outreach",
     icon: FaGlobeAmericas,
-    iconColor: "teal.500",
-    borderColor: "teal.200",
-    bgGradient: "linear(to-br, teal.50, cyan.50)",
+    ...MINISTRY_COLOR_SCHEMES.RED,
     title: "Outreach Ministry",
     description:
       "Sharing God's love with our community through service and evangelism.",
