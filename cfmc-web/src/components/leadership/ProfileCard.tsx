@@ -5,10 +5,8 @@ import {
   Card,
   CardBody,
   VStack,
-  HStack,
   Heading,
   Text,
-  Badge,
   Icon,
   Box,
   Stack,
@@ -28,7 +26,6 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
       ? `${member.suffix} ${member.firstName} ${member.lastName}`
       : `${member.firstName} ${member.lastName}`
   }`;
-  const username = member.username ? `(${member.username})` : "";
 
   return (
     <Card
@@ -88,18 +85,13 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
               <VStack spacing={1} textAlign="center">
                 <Heading
                   as="h3"
-                  fontSize={{ base: "xl", md: "2xl" }}
+                  fontSize="xl"
                   fontWeight="bold"
                   color="gray.800"
                   lineHeight="tight"
                 >
                   {displayName}
                 </Heading>
-                {username && (
-                  <Text fontSize="sm" color="purple.600" fontWeight="medium">
-                    {username}
-                  </Text>
-                )}
               </VStack>
 
               {/* Role */}
@@ -127,7 +119,7 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
               )}
 
               {/* Badges */}
-              <HStack spacing={2} flexWrap="wrap" justify="center">
+              {/* <HStack spacing={2} flexWrap="wrap" justify="center">
                 {member.isBoardMember && (
                   <Badge
                     colorScheme="purple"
@@ -152,7 +144,7 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
                     Ministerial Team
                   </Badge>
                 )}
-              </HStack>
+              </HStack> */}
             </VStack>
           </Box>
 
@@ -169,7 +161,7 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
               </Heading>
               <Text
                 fontSize={{ base: "sm", md: "md" }}
-                color="gray.600"
+                color="gray.800"
                 lineHeight="tall"
                 textAlign="justify"
               >

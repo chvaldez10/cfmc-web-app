@@ -1,17 +1,17 @@
 import React from "react";
 import { ColumnLayout, HeroHeader } from "@/components/hero";
 import { LEADERSHIP_CONTENT_INTROS } from "@/data/mock/leadership";
-import { LeadershipGrid } from "@/components/leadership";
+import { LeadershipCards } from "@/components/leadership";
+import { PastoralTeam } from "@/data/mock/leadership";
+import { SectionHeader } from "@/components/ui/headers";
 
 export default function LeadershipPage() {
   return (
     <>
       <HeroHeader
-        title="Pastors and"
-        titleHighlight="Leaders"
-        description={
-          "Committed to guiding hearts, growing disciples, and glorifying God through faithful leadership."
-        }
+        title="Board"
+        titleHighlight="Members"
+        description={LEADERSHIP_CONTENT_INTROS.BOARD_MEMBERS.description}
       />
       <ColumnLayout
         maxW="5xl"
@@ -19,7 +19,11 @@ export default function LeadershipPage() {
         textAlign="left"
         minH="auto"
       >
-        <LeadershipGrid />
+        <LeadershipCards
+          title={LEADERSHIP_CONTENT_INTROS.PASTORAL_TEAM.title}
+          description={LEADERSHIP_CONTENT_INTROS.PASTORAL_TEAM.description}
+          members={PastoralTeam}
+        />
       </ColumnLayout>
     </>
   );
