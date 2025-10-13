@@ -5,15 +5,13 @@ export interface GalleryItem {
   altText: string;
 }
 
-// Cloudflare Images configuration via Next.js API proxy to handle CORS
 const CLOUDFLARE_IMAGE_PREFIX =
   "https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ";
 
 export const IMAGE_PRESETS = {
   SEVENTH_ANNIVERSARY_IMAGE: {
     id: 1,
-    // image: `${CLOUDFLARE_IMAGE_API}/775358ab-0440-4261-ed71-1b2bf5ead700?variant=public`,
-    image: `${CLOUDFLARE_IMAGE_PREFIX}/775358ab-0440-4261-ed71-1b2bf5ead700/public`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/6a23152c-98aa-46e8-d53f-7beef1414900/public`,
     title: "7th Anniversary Celebration",
     altText: "7th Anniversary Image",
   },

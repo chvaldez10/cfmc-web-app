@@ -1,5 +1,4 @@
 import { ChurchMembers } from "@/types/supabase/members";
-import { BARREL_OPTIMIZATION_PREFIX } from "next/dist/shared/lib/constants";
 
 export const PastoralTeam: ChurchMembers[] = [
   {

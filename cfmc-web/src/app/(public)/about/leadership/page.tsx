@@ -3,7 +3,6 @@ import { ColumnLayout, HeroHeader } from "@/components/hero";
 import { LEADERSHIP_CONTENT_INTROS } from "@/data/mock/leadership";
 import { LeadershipCards } from "@/components/leadership";
 import { PastoralTeam } from "@/data/mock/leadership";
-import { SectionHeader } from "@/components/ui/headers";
 
 export default function LeadershipPage() {
   return (

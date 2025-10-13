@@ -16,7 +16,6 @@ export const ABOUT_US_PAGE_CARDS: CardDataProps[] = [
       "Calgary Filipino Methodist Church exists to love God who first loved us and love people by faithfully, holistically, boldly and joyfully proclaiming the Good News of Christ to all.",
     footerLink: { label: "Learn More", href: "/about/mission-vision" },
   },
-
   {
     bg: plumCloud,
     icon: FaHandsHelping,

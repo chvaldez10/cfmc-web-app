@@ -1,4 +1,3 @@
-import { HeroHeader } from "@/components/hero";
 import { Container } from "@chakra-ui/react";
 import UpcomingEvents from "@/components/features/events/UpcomingEvents";
 import { SectionHeader } from "@/components/ui/headers";

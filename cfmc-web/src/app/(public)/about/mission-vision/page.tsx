@@ -3,6 +3,7 @@ import { HeroHeader } from "@/components/hero";
 import { StickyParallax } from "@/components/ui/parallax";
 import { MISSION_VISION_STICKY_PARALLAX_SECTIONS as SECTIONS_DATA } from "./page.data";
 import { calculateParallaxHeight } from "@/utils/parallaxHeight";
+import aboutContentData from "@/data/about-content.json";
 
 const DISABLE_STICKY_ON_MOBILE = false;
 
@@ -13,7 +14,7 @@ export default function MissionVisionPage() {
       <HeroHeader
         title="Mission and"
         titleHighlight="Vision"
-        description="Love God, Love People. Proclaim the Good News of Christ."
+        description={aboutContentData.CFMC_MOTTO_QUOTE.description}
       />
 
       <Box position="relative" height={`${sectionHeight}vh`}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Heading, Text, SimpleGrid } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { ChurchMembers } from "@/types/supabase/members";
 import { ProfileCard } from "./ProfileCard";
 import { SectionHeader } from "@/components/ui/headers";
