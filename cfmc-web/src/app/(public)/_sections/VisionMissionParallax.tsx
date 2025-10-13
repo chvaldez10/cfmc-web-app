@@ -34,7 +34,7 @@ const VisionMissionParallax = () => {
         scrollYProgress={scrollYProgress}
         position="top-right"
         size={200}
-        src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-2.JPEG"
+        src="https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ/75f08637-8fc5-4f83-a4a4-120a86eb2b00/public"
         alt="Christmas choir background decoration"
         yRange={[0, -200]}
         opacity={0.3}
@@ -43,7 +43,7 @@ const VisionMissionParallax = () => {
         scrollYProgress={scrollYProgress}
         position="bottom-left"
         size={250}
-        src="https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/christmas-choir-pic-1.jpg"
+        src="https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ/f4fc7089-af9b-429f-f87f-4eab9c3cc900/public"
         alt="Christmas choir background decoration"
         yRange={[0, 150]}
         opacity={0.22}

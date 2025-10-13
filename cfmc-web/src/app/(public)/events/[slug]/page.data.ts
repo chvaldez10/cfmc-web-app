@@ -43,12 +43,10 @@ export const mockAnniversaryEvent: Events = {
   google_maps_url:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.0886!2d-114.0881!3d51.0486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717071c2c6a63f%3A0x4dc97df0a6b5f5b5!2sCalgary%2C%20AB!5e0!3m2!1sen!2sca!4v1000000000000!5m2!1sen!2sca",
   image:
-    "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/seventh-anniversary-group-pic-1.JPG",
+    "https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ/6a23152c-98aa-46e8-d53f-7beef1414900/public",
   images: [
-    "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/header/seventh-anniversary-group-pic-1.JPG",
-    "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/seventh-anniversary-group-pic-2.JPG",
-    "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/seventh-anniversary-group-pic-3.JPEG",
-    "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/past_events/seventh-anniversary-group-pic-4.JPG",
+    "https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ/6a23152c-98aa-46e8-d53f-7beef1414900/public",
+    "https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ/9bc73748-87b2-409f-f23f-d5ffa2662600/public",
   ],
   occurrence: "once",
   status: "upcoming",

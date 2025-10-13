@@ -35,7 +35,7 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
         href: "/",
       },
       {
-        label: "Github",
+        label: "GitHub",
         href: "https://github.com/chvaldez10/cfmc-web-app",
       },
     ],

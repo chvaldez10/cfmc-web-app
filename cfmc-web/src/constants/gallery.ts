@@ -5,97 +5,99 @@ export interface GalleryItem {
   altText: string;
 }
 
-const IMAGE_PREFIX =
-  "https://skdambngwkjvsmkhgswi.supabase.co/storage/v1/object/public/images/";
+// Cloudflare Images configuration via Next.js API proxy to handle CORS
+const CLOUDFLARE_IMAGE_PREFIX =
+  "https://imagedelivery.net/EVfpTCcTyYozHMUDHi2cUQ";
 
 export const IMAGE_PRESETS = {
   SEVENTH_ANNIVERSARY_IMAGE: {
     id: 1,
-    image: `${IMAGE_PREFIX}/header/seventh-anniversary-group-pic-1.JPG`,
+    // image: `${CLOUDFLARE_IMAGE_API}/775358ab-0440-4261-ed71-1b2bf5ead700?variant=public`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/775358ab-0440-4261-ed71-1b2bf5ead700/public`,
     title: "7th Anniversary Celebration",
     altText: "7th Anniversary Image",
   },
   CHRISTMAS_CHOIR_IMAGE: {
     id: 2,
-    image: `${IMAGE_PREFIX}/header/christmas-choir-pic-1.jpg`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/f4fc7089-af9b-429f-f87f-4eab9c3cc900/public`,
     title: "Christmas Choir",
     altText: "Christmas Choir Image",
   },
   CHRISTMAS_CONCERT_IMAGE: {
     id: 3,
-    image: `${IMAGE_PREFIX}/header/christmas-choir-pic-2.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/b6fbe0f7-f5c6-4bd0-6d28-1fa421c48800/public`,
     title: "Christmas Choir",
     altText: "Christmas Choir Image",
   },
   CHRISTMAS_CONCERT_IMAGE_TITA_KAYLA: {
     id: 4,
-    image: `${IMAGE_PREFIX}/header/christmas-choir-pic-3.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/a7f184cc-4d5c-4e07-4d48-0b097e2cac00/public`,
     title: "Christmas Choir - Tita Kayla",
     altText: "Christmas Choir Image Tita Kayla",
   },
   SUMMER_CAMP_2025_OUTSIDE_OF_CHAPEL: {
     id: 5,
-    image: `${IMAGE_PREFIX}/header/summer-camp-2025-1.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/0fd2cb2c-4075-4e57-f140-774f30c56300/public`,
     title: "Summer Camp 2025",
     altText: "Summer Camp 2025 Outside of Chapel",
   },
-  OUTDOOR_OUTREACH_IMAGE_1: {
+  FAIRMONT_RETREAT_2024_1: {
     id: 6,
-    image: `${IMAGE_PREFIX}/header/fairmont-2024-1.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/07642bee-4434-4cd8-fa61-8f50c6f82e00/public`,
     title: "Fairmont Retreat 2024",
-    altText: "Fairmont Retreat 2024 Image",
+    altText: "Fairmont Retreat 2024",
   },
-  OUTDOOR_OUTREACH_IMAGE_2: {
+  FAIRMONT_RETREAT_2024_2: {
     id: 7,
-    image: `${IMAGE_PREFIX}/header/group-pic-kuriakos-2025-3.JPEG`,
-    title: "Group Pic Kuriakos 2025",
-    altText: "Group Pic Kuriakos 2025",
-  },
-  OUTDOOR_OUTREACH_IMAGE_3: {
-    id: 8,
-    image: `${IMAGE_PREFIX}/header/fairmont-2024-2.JPG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/739e2356-4255-4053-dd2f-8ef6e2669b00/public`,
     title: "Fairmont Retreat 2024",
-    altText: "Fairmont Retreat 2024 Image",
+    altText: "Fairmont Retreat 2024",
   },
-  GROUP_PIC_KURIAKOS_2025_2: {
+  FAIRMONT_RETREAT_2024_3: {
+    id: 8,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/99b4fe13-4520-4654-d2f8-2d9232b3a000/public`,
+    title: "Fairmont Retreat 2024",
+    altText: "Fairmont Retreat 2024",
+  },
+  GROUP_PIC_KURIAKOS_2025: {
     id: 9,
-    image: `${IMAGE_PREFIX}/header/group-pic-kuriakos-2025-2.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/3bd0a3d1-623b-47ce-f988-bdaae0d72200/public`,
     title: "Group Pic Kuriakos 2025",
     altText: "Group Pic Kuriakos 2025",
   },
   CHILDREN_MINISTRY_IMAGE_1: {
     id: 10,
-    image: `${IMAGE_PREFIX}/ministries/children-ministry-1.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/0a6c3ebf-f349-4e1e-3cdf-d930d9b53000/public`,
     title: "Children Ministry",
     altText: "Children Ministry Image",
   },
   OUTREACH_MINISTRY_IMAGE_1: {
     id: 11,
-    image: `${IMAGE_PREFIX}/ministries/outreach-image-1.JPG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/e7a63877-1df1-4399-762b-72c718c80b00/public`,
     title: "Outreach Ministry",
     altText: "Outreach Ministry Image",
   },
   MENS_MINISTRY_IMAGE_1: {
     id: 12,
-    image: `${IMAGE_PREFIX}/ministries/mens-ministry-image-1.JPG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/96f45333-7169-4b40-50ef-76078754f800/public`,
     title: "Mens Ministry",
     altText: "Mens Ministry Image",
   },
   WOMENS_MINISTRY_IMAGE_1: {
     id: 12,
-    image: `${IMAGE_PREFIX}/ministries/womens-ministry-image-1.JPG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/04a2d684-518e-43a1-80af-5f6bee67e800/public`,
     title: "Womens Ministry",
     altText: "Womens Ministry Image",
   },
   YOUTH_MINISTRY_IMAGE_1: {
     id: 12,
-    image: `${IMAGE_PREFIX}/ministries/youth-ministry-image-1.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/062d1b91-990d-4d3c-c9b4-64c1027cbd00/public`,
     title: "Youth Ministry",
     altText: "Youth Ministry Image",
   },
   PRAISE_WORSHIP_MINISTRY_IMAGE_1: {
     id: 12,
-    image: `${IMAGE_PREFIX}/ministries/praise-worship-ministry-image-1.JPEG`,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/053aab20-b6d6-483d-032d-1377ef13cd00/public`,
     title: "Praise Worship Ministry",
     altText: "Praise Worship Ministry Image",
   },
