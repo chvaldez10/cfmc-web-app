@@ -70,7 +70,7 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
           <Box flex={{ base: "none", lg: "0 0 300px" }} bg="gray.50" p={6}>
             <VStack spacing={4} align="center" justify="center" h="100%">
               {/* Profile Icon */}
-              <Box
+              {/* <Box
                 bg="purple.50"
                 borderRadius="full"
                 p={4}
@@ -79,7 +79,7 @@ export const ProfileCard = ({ member, delay = "0s" }: ProfileCardProps) => {
                 boxShadow="sm"
               >
                 <Icon as={FaUser} w={10} h={10} color="purple.500" />
-              </Box>
+              </Box> */}
 
               {/* Name Section */}
               <VStack spacing={1} textAlign="center">

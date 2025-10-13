@@ -41,16 +41,16 @@ export const NAV_ITEMS: Array<NavItem> = [
         subLabel: "Our ministries aim to serve and uplift.",
         href: "/get-involved/ministries",
       },
-      {
-        label: PublicLabels.BIBLE_STUDY,
-        subLabel: "Engage in our enriching Bible study sessions.",
-        href: "#",
-      },
-      {
-        label: PublicLabels.MUSIC,
-        subLabel: "Enjoy uplifting music and performances.",
-        href: "#",
-      },
+      // {
+      //   label: PublicLabels.BIBLE_STUDY,
+      //   subLabel: "Engage in our enriching Bible study sessions.",
+      //   href: "#",
+      // },
+      // {
+      //   label: PublicLabels.MUSIC,
+      //   subLabel: "Enjoy uplifting music and performances.",
+      //   href: "#",
+      // },
     ],
   },
   {
