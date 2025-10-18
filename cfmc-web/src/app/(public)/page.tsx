@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 // Components
 import {
   HomeJumbotron,
@@ -11,6 +13,23 @@ import { SectionHeader } from "@/components/ui/headers";
 
 // Data
 import { ABOUT_CONTENT } from "@/constants/shared/about";
+
+// SEO
+import { generatePageMetadata } from "@/utils/seo";
+
+export const metadata: Metadata = generatePageMetadata({
+  title: "Home",
+  description:
+    "Welcome to Calgary Filipino Methodist Church - A vibrant Christian community in Calgary, Alberta. Join us for worship services, ministries, and fellowship events.",
+  path: "/",
+  keywords: [
+    "worship services Calgary",
+    "Sunday service",
+    "Filipino community",
+    "church events",
+    "Christian fellowship",
+  ],
+});
 
 export default async function Page() {
   return (
