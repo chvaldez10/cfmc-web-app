@@ -21,8 +21,8 @@ export const PastoralTeam: ChurchMembers[] = [
     firstName: "Jonavern P.",
     lastName: "Lungub",
     suffix: "Rev",
-    role: "Founding Pastor",
-    headline: "Adviser",
+    role: "Administrative Pastor",
+    headline: "Pastor",
     bio: "He served various Methodist churches in the Philippines, the USA, and the Middle East before joining Calgary Filipino Methodist Church as the lead Pastor. He was honed theologically from Far Eastern Bible Institute and Seminary (Bachelor of Theology, 2004) in Valenzuela City and Union Theological Seminary (Master of Divinity, 2010) in Dasmariñas City, Philippines. He took further studies at the United Theological Seminary (Master of Theological Studies, 2016) in Dayton, Ohio, and is currently pursuing a Doctor of Ministry program at the Asbury Theological Seminary, Kentucky, USA.",
   },
 ];
