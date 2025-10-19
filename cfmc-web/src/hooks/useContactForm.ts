@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useToast } from "@chakra-ui/react";
 import { FormData, FormErrors } from "@/types/ui/forms";
 import {
   ContactFormValidationMessages,
   ContactFormToastMessages,
 } from "@/constants/shared/contact";
 import { submitContactForm } from "@/lib/supabase/actions/contact-submissions";
+import { toaster } from "@/components/ui/toaster";
 
 const initialFormData: FormData = {
   name: "",
@@ -21,7 +21,6 @@ export function useContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
-  const toast = useToast();
 
   const handleInputChange = useCallback(
     (field: keyof FormData, value: string | string[]) => {
@@ -69,13 +68,11 @@ export function useContactForm() {
       });
 
       if (result.success) {
-        toast({
+        toaster.create({
           title: ContactFormToastMessages.SUCCESS_TITLE,
           description: ContactFormToastMessages.SUCCESS_DESCRIPTION,
-          status: "success",
+          type: "success",
           duration: 5000,
-          isClosable: true,
-          position: "top",
         });
 
         // Reset form on successful submission
@@ -85,16 +82,14 @@ export function useContactForm() {
         throw new Error(result.message);
       }
     } catch (error) {
-      toast({
+      toaster.create({
         title: ContactFormToastMessages.ERROR_TITLE,
         description:
           error instanceof Error
             ? error.message
             : ContactFormToastMessages.ERROR_DESCRIPTION,
-        status: "error",
+        type: "error",
         duration: 5000,
-        isClosable: true,
-        position: "top",
       });
       return false;
     } finally {

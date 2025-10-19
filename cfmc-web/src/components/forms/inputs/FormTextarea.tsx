@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  FormControl,
-  FormLabel,
-  Textarea,
-  FormErrorMessage,
-} from "@chakra-ui/react";
+import { Field, Textarea } from "@chakra-ui/react";
 
 interface FormTextareaProps {
   label: string;
@@ -27,10 +22,10 @@ export default function FormTextarea({
   rows = 5,
 }: FormTextareaProps) {
   return (
-    <FormControl isInvalid={!!error} isRequired={isRequired}>
-      <FormLabel color="gray.700" fontSize="sm" fontWeight="semibold" mb={2}>
+    <Field.Root invalid={!!error} required={isRequired}>
+      <Field.Label color="gray.700" fontSize="sm" fontWeight="semibold" mb={2}>
         {label}
-      </FormLabel>
+      </Field.Label>
       <Textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -38,17 +33,11 @@ export default function FormTextarea({
         size="lg"
         rows={rows}
         resize="vertical"
-        focusBorderColor="purple.500"
         _placeholder={{ color: "gray.500" }}
       />
-      <FormErrorMessage
-        fontSize="xs"
-        color="red.500"
-        mt={1}
-        fontWeight="medium"
-      >
+      <Field.ErrorText fontSize="xs" color="red.500" mt={1} fontWeight="medium">
         {error}
-      </FormErrorMessage>
-    </FormControl>
+      </Field.ErrorText>
+    </Field.Root>
   );
 }

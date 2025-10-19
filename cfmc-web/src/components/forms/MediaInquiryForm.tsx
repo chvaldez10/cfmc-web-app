@@ -27,13 +27,13 @@ export default function MediaInquiryForm() {
       transition="all 0.3s ease"
     >
       <VStack
-        spacing={{ base: 6, md: 8 }}
+        gap={{ base: 6, md: 8 }}
         as="form"
         onSubmit={handleSubmit}
         data-testid="contact-form"
       >
         {/* Personal Information Section */}
-        <VStack spacing={6} w="full" data-testid="personal-info-section">
+        <VStack gap={6} w="full" data-testid="personal-info-section">
           <PersonalInfoSection
             formData={formData}
             errors={errors}

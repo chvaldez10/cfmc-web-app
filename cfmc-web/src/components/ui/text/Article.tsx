@@ -81,8 +81,8 @@ export default function Article({ items, showDividers = true }: ArticleProps) {
                     borderLeft="4px solid"
                     borderLeftColor={accentColor}
                   >
-                    <VStack spacing={3} align="start">
-                      <HStack spacing={2}>
+                    <VStack gap={3} align="start">
+                      <HStack gap={2}>
                         <Box
                           as="svg"
                           width={4}
@@ -107,7 +107,7 @@ export default function Article({ items, showDividers = true }: ArticleProps) {
                           Bible References
                         </Text>
                       </HStack>
-                      <Wrap spacing={2}>
+                      <Wrap gap={2}>
                         {item.bibleReferences.map((reference, refIndex) => (
                           <WrapItem key={refIndex}>
                             <Badge

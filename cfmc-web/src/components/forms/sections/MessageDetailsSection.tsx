@@ -23,7 +23,7 @@ export default function MessageDetailsSection({
   checkboxOptions,
 }: MessageDetailsSectionProps) {
   return (
-    <VStack spacing={6} w="full">
+    <VStack gap={6} w="full">
       <Text
         alignSelf="flex-start"
         fontSize="sm"
@@ -36,7 +36,7 @@ export default function MessageDetailsSection({
         {ContactFormLabels.HOW_CAN_WE_HELP}
       </Text>
 
-      <VStack spacing={5} w="full">
+      <VStack gap={5} w="full">
         <FormCheckboxGroup
           label={ContactFormLabels.WHAT_CAN_WE_HELP}
           options={Object.values(checkboxOptions)}

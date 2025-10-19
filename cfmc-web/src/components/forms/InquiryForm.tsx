@@ -37,12 +37,7 @@ export default function InquiryForm({
   };
 
   return (
-    <VStack
-      spacing={{ base: 5, md: 6 }}
-      as="form"
-      onSubmit={onFormSubmit}
-      w="full"
-    >
+    <VStack gap={{ base: 5, md: 6 }} as="form" onSubmit={onFormSubmit} w="full">
       {/* Personal Information Section */}
       <PersonalInfoSection
         formData={formData}

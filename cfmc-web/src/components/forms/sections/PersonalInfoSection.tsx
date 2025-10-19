@@ -20,7 +20,7 @@ export default function PersonalInfoSection({
   onInputChange,
 }: PersonalInfoSectionProps) {
   return (
-    <VStack spacing={5} w="full">
+    <VStack gap={5} w="full">
       <FormInput
         label={ContactFormLabels.FULL_NAME}
         value={formData.name}

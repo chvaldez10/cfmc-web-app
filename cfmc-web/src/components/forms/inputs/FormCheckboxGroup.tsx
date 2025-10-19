@@ -1,11 +1,9 @@
 "use client";
 
 import {
-  FormControl,
-  FormLabel,
+  Field,
   CheckboxGroup,
   Checkbox,
-  FormErrorMessage,
   VStack,
   Flex,
   Box,
@@ -37,8 +35,8 @@ export default function FormCheckboxGroup({
   };
 
   return (
-    <FormControl isInvalid={!!error}>
-      <FormLabel color="gray.700" fontSize="sm" fontWeight="semibold" mb={3}>
+    <Field.Root invalid={!!error} required={isRequired}>
+      <Field.Label color="gray.700" fontSize="sm" fontWeight="semibold" mb={3}>
         {label}
         {isRequired && (
           <Text
@@ -51,15 +49,15 @@ export default function FormCheckboxGroup({
             *
           </Text>
         )}
-      </FormLabel>
-      <CheckboxGroup value={value} onChange={onChange}>
-        <VStack spacing={4} align="start" w="full">
+      </Field.Label>
+      <CheckboxGroup value={value} onValueChange={onChange}>
+        <VStack gap={4} align="start" w="full">
           {options.map((option) => (
             <Flex key={option} align="start" w="full" gap={3}>
               <Checkbox
                 value={option}
                 size="md"
-                colorScheme="purple"
+                colorPalette="purple"
                 flexShrink={0}
               />
               <Box
@@ -84,14 +82,9 @@ export default function FormCheckboxGroup({
           ))}
         </VStack>
       </CheckboxGroup>
-      <FormErrorMessage
-        fontSize="xs"
-        color="red.500"
-        mt={2}
-        fontWeight="medium"
-      >
+      <Field.ErrorText fontSize="xs" color="red.500" mt={2} fontWeight="medium">
         {error}
-      </FormErrorMessage>
-    </FormControl>
+      </Field.ErrorText>
+    </Field.Root>
   );
 }

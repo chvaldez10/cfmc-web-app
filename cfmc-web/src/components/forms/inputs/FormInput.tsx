@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  Text,
-} from "@chakra-ui/react";
+import { Field, Input, Text } from "@chakra-ui/react";
 
 interface FormInputProps {
   label: string;
@@ -30,8 +24,8 @@ export default function FormInput({
   type = "text",
 }: FormInputProps) {
   return (
-    <FormControl isInvalid={!!error} isRequired={isRequired}>
-      <FormLabel color="gray.700" fontSize="sm" fontWeight="semibold" mb={2}>
+    <Field.Root invalid={!!error} required={isRequired}>
+      <Field.Label color="gray.700" fontSize="sm" fontWeight="semibold" mb={2}>
         {label}
         {isOptional && (
           <Text
@@ -44,24 +38,18 @@ export default function FormInput({
             (Optional)
           </Text>
         )}
-      </FormLabel>
+      </Field.Label>
       <Input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         size="lg"
-        focusBorderColor="purple.500"
         _placeholder={{ color: "gray.500" }}
       />
-      <FormErrorMessage
-        fontSize="xs"
-        color="red.500"
-        mt={1}
-        fontWeight="medium"
-      >
+      <Field.ErrorText fontSize="xs" color="red.500" mt={1} fontWeight="medium">
         {error}
-      </FormErrorMessage>
-    </FormControl>
+      </Field.ErrorText>
+    </Field.Root>
   );
 }
