@@ -10,16 +10,6 @@ export default function MediaFormSection() {
       py={{ base: 16, md: 24 }}
       position="relative"
     >
-      {/* Decorative Top Border */}
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        height="3px"
-        bgGradient="linear(to-r, brand.400, purple.500, brand.400)"
-      />
-
       <Container maxW="5xl" px={{ base: 6, md: 8 }}>
         <VStack spacing={{ base: 8, md: 12 }} align="stretch">
           {/* Section Header */}

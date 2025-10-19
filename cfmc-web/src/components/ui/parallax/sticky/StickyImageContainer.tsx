@@ -41,7 +41,6 @@ const StickyImageContainer = ({
       shadow={shadow}
       overflow="hidden"
       mb={marginBottom}
-      bg="gray.100"
     >
       {!imageLoaded && (
         <Skeleton

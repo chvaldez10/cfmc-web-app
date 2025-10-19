@@ -40,6 +40,17 @@ export default function InquiryHeroSection({
       display="flex"
       alignItems="center"
       justifyContent="center"
+      _before={{
+        content: '""',
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: "3px",
+        background:
+          "linear-gradient(to right, var(--chakra-colors-brand-400), var(--chakra-colors-purple-500), var(--chakra-colors-brand-400))",
+        zIndex: 1,
+      }}
     >
       {/* Animated Background Gradient Orbs */}
       <Box

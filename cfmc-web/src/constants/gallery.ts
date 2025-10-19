@@ -106,3 +106,12 @@ export const HOME_JUMBO_GALLERY_ITEMS = Object.values(
 ) as readonly GalleryItem[];
 
 export const HOME_JUMBO_LIMIT = 8;
+
+export const MEDIA_INQUIRY_GALLERY_ITEMS = {
+  SEVENTH_ANNIVERSARY_IMAGE: {
+    id: 1,
+    image: "/other-logos/freeshow.png",
+    title: "Freeshow Logo",
+    altText: "Freeshow Logo",
+  },
+};
