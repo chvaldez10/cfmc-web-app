@@ -15,9 +15,9 @@ const ImageModal: React.FC<ImageModalProps> = ({
   imageSrc,
   imageAlt,
 }) => {
-  const modalSize = useBreakpointValue({ base: "full", md: "6xl" }) as
+  const modalSize = useBreakpointValue({ base: "full", md: "xl" }) as
     | "full"
-    | "6xl";
+    | "xl";
 
   return (
     <BaseModal
@@ -25,8 +25,8 @@ const ImageModal: React.FC<ImageModalProps> = ({
       onClose={onClose}
       title="Gallery Image"
       size={modalSize}
-      closeOnOverlayClick={true}
-      closeOnEsc={true}
+      closeOnInteractOutside={true}
+      closeOnEscape={true}
     >
       <Box
         display="flex"

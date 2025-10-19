@@ -282,10 +282,7 @@ const TithesAndOfferingsModal = ({
           maxH="90vh"
           data-testid="tithes-and-offerings-modal-content"
         >
-          <DialogHeader
-            textAlign="center"
-            pb={2}
-          >
+          <DialogHeader textAlign="center" pb={2}>
             <DialogTitle
               fontSize={{ base: "xl", md: "2xl" }}
               fontWeight="bold"

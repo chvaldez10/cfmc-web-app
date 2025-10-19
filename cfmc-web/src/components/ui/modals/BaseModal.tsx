@@ -16,21 +16,14 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-interface FooterAction extends Omit<ButtonProps, 'isLoading'> {
+interface FooterAction extends Omit<ButtonProps, "isLoading"> {
   label: string;
   onClick?: () => void;
   isPrimary?: boolean;
   loading?: boolean;
 }
 
-type ModalSize =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "full"
-  | "cover";
+type ModalSize = "xs" | "sm" | "md" | "lg" | "xl" | "full" | "cover";
 
 interface BaseModalProps {
   isOpen: boolean;
@@ -106,7 +99,9 @@ const BaseModal: React.FC<BaseModalProps> = ({
                     key={index}
                     onClick={action.onClick}
                     colorScheme={
-                      action.isPrimary ? action.colorScheme ?? "blue" : undefined
+                      action.isPrimary
+                        ? action.colorScheme ?? "blue"
+                        : undefined
                     }
                     variant={action.isPrimary ? "solid" : "ghost"}
                     loading={action.loading}

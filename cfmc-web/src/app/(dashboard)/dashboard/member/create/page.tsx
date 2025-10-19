@@ -19,27 +19,22 @@ import {
   TagLabel,
   Textarea,
   VStack,
-  useToast,
   Text,
   Image,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  ModalCloseButton,
-  useDisclosure,
+  DialogRoot,
+  DialogBackdrop,
+  DialogPositioner,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogBody,
+  DialogFooter,
+  DialogCloseTrigger,
   Flex,
   IconButton,
-  AlertDialog,
-  AlertDialogOverlay,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogBody,
-  AlertDialogFooter,
 } from "@chakra-ui/react";
 import { IoAdd, IoTrash } from "react-icons/io5";
+import { toaster } from "@/components/ui/toaster";
 import {
   createChurchMember,
   uploadMemberImage,
@@ -95,18 +90,13 @@ export default function CreateMemberPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const cropModalRef = useRef(null);
 
-  const {
-    isOpen: isCropModalOpen,
-    onOpen: onCropModalOpen,
-    onClose: onCropModalClose,
-  } = useDisclosure();
-  const {
-    isOpen: isAlertOpen,
-    onOpen: onAlertOpen,
-    onClose: onAlertClose,
-  } = useDisclosure();
+  const [isCropModalOpen, setIsCropModalOpen] = useState(false);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
 
-  const toast = useToast();
+  const onCropModalOpen = () => setIsCropModalOpen(true);
+  const onCropModalClose = () => setIsCropModalOpen(false);
+  const onAlertOpen = () => setIsAlertOpen(true);
+  const onAlertClose = () => setIsAlertOpen(false);
 
   // Consistent color scheme following design system
   const textColor = "gray.800";
@@ -177,10 +167,10 @@ export default function CreateMemberPage() {
     if (file) {
       if (file.size > 2 * 1024 * 1024) {
         // 2MB limit - appropriate for headshots
-        toast({
+        toaster.create({
           title: "File too large",
           description: "Please select an image smaller than 2MB",
-          status: "error",
+          type: "error",
           duration: 3000,
         });
         return;
@@ -289,10 +279,10 @@ export default function CreateMemberPage() {
             setCroppedImage(canvas.toDataURL());
             onCropModalClose();
 
-            toast({
+            toaster.create({
               title: "Image cropped successfully",
               description: "Your headshot has been prepared for upload",
-              status: "success",
+              type: "success",
               duration: 2000,
             });
           }
@@ -303,17 +293,17 @@ export default function CreateMemberPage() {
     };
 
     sourceImage.onerror = () => {
-      toast({
+      toaster.create({
         title: "Crop failed",
         description: "Unable to process the selected image",
-        status: "error",
+        type: "error",
         duration: 3000,
       });
     };
 
     // Load the original image data
     sourceImage.src = selectedImage;
-  }, [cropArea, onCropModalClose, toast, selectedImage]);
+  }, [cropArea, onCropModalClose, selectedImage]);
 
   // Handle drag for cropping
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -356,10 +346,10 @@ export default function CreateMemberPage() {
     e.preventDefault();
 
     if (!validateForm()) {
-      toast({
+      toaster.create({
         title: "Validation Error",
         description: "Please fix the errors in the form",
-        status: "error",
+        type: "error",
         duration: 3000,
       });
       return;
@@ -385,10 +375,10 @@ export default function CreateMemberPage() {
 
       await createChurchMember(memberData);
 
-      toast({
+      toaster.create({
         title: "Success!",
         description: "Church member created successfully",
-        status: "success",
+        type: "success",
         duration: 3000,
       });
 
@@ -413,11 +403,11 @@ export default function CreateMemberPage() {
       setCroppedImage(null);
       setSelectedImage(null);
     } catch (error) {
-      toast({
+      toaster.create({
         title: "Error",
         description:
           error instanceof Error ? error.message : "Failed to create member",
-        status: "error",
+        type: "error",
         duration: 5000,
       });
     } finally {
@@ -1084,87 +1074,100 @@ export default function CreateMemberPage() {
       </VStack>
 
       {/* Image Cropping Modal */}
-      <Modal isOpen={isCropModalOpen} onClose={onCropModalClose} size="4xl">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Crop Profile Picture</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <VStack spacing={4}>
-              <Text color="gray.600">
-                Click and drag to select the area for the profile picture. Aim
-                for a square crop that focuses on the person&apos;s face and
-                upper shoulders.
-              </Text>
-              <Box position="relative" display="inline-block">
-                {selectedImage && (
-                  <>
-                    <Image
-                      ref={imageRef}
-                      src={selectedImage}
-                      alt="Image to crop"
-                      maxW="500px"
-                      maxH="400px"
-                      onMouseDown={handleMouseDown}
-                      cursor="crosshair"
-                      userSelect="none"
-                    />
-                    <Box
-                      position="absolute"
-                      left={`${cropArea.x}px`}
-                      top={`${cropArea.y}px`}
-                      width={`${cropArea.width}px`}
-                      height={`${cropArea.height}px`}
-                      border="2px dashed"
-                      borderColor="purple.500"
-                      bg="rgba(147, 51, 234, 0.1)"
-                      pointerEvents="none"
-                    />
-                  </>
-                )}
-              </Box>
-              <Text fontSize="sm" color="gray.500">
-                Selected area: {cropArea.width} x {cropArea.height} pixels
-              </Text>
-            </VStack>
-          </ModalBody>
-          <ModalFooter>
-            <Button variant="ghost" mr={3} onClick={onCropModalClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="purple" onClick={handleCrop}>
-              Crop Image
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <DialogRoot
+        open={isCropModalOpen}
+        onOpenChange={(e) => !e.open && onCropModalClose()}
+        size="xl"
+        placement="center"
+      >
+        <DialogBackdrop />
+        <DialogPositioner>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Crop Profile Picture</DialogTitle>
+            </DialogHeader>
+            <DialogCloseTrigger />
+            <DialogBody>
+              <VStack gap={4}>
+                <Text color="gray.600">
+                  Click and drag to select the area for the profile picture. Aim
+                  for a square crop that focuses on the person&apos;s face and
+                  upper shoulders.
+                </Text>
+                <Box position="relative" display="inline-block">
+                  {selectedImage && (
+                    <>
+                      <Image
+                        ref={imageRef}
+                        src={selectedImage}
+                        alt="Image to crop"
+                        maxW="500px"
+                        maxH="400px"
+                        onMouseDown={handleMouseDown}
+                        cursor="crosshair"
+                        userSelect="none"
+                      />
+                      <Box
+                        position="absolute"
+                        left={`${cropArea.x}px`}
+                        top={`${cropArea.y}px`}
+                        width={`${cropArea.width}px`}
+                        height={`${cropArea.height}px`}
+                        border="2px dashed"
+                        borderColor="purple.500"
+                        bg="rgba(147, 51, 234, 0.1)"
+                        pointerEvents="none"
+                      />
+                    </>
+                  )}
+                </Box>
+                <Text fontSize="sm" color="gray.500">
+                  Selected area: {cropArea.width} x {cropArea.height} pixels
+                </Text>
+              </VStack>
+            </DialogBody>
+            <DialogFooter>
+              <Button variant="ghost" mr={3} onClick={onCropModalClose}>
+                Cancel
+              </Button>
+              <Button colorScheme="purple" onClick={handleCrop}>
+                Crop Image
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </DialogPositioner>
+      </DialogRoot>
 
       {/* Remove Image Confirmation */}
-      <AlertDialog
-        isOpen={isAlertOpen}
-        leastDestructiveRef={cropModalRef}
-        onClose={onAlertClose}
+      <DialogRoot
+        open={isAlertOpen}
+        onOpenChange={(e) => !e.open && onAlertClose()}
+        role="alertdialog"
+        placement="center"
       >
-        <AlertDialogOverlay>
-          <AlertDialogContent>
-            <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Remove Profile Picture
-            </AlertDialogHeader>
-            <AlertDialogBody>
+        <DialogBackdrop />
+        <DialogPositioner>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle fontSize="lg" fontWeight="bold">
+                Remove Profile Picture
+              </DialogTitle>
+            </DialogHeader>
+            <DialogBody>
               Are you sure you want to remove this profile picture? This action
               cannot be undone.
-            </AlertDialogBody>
-            <AlertDialogFooter>
+            </DialogBody>
+            <DialogFooter>
               <Button ref={cropModalRef} onClick={onAlertClose}>
                 Cancel
               </Button>
               <Button colorScheme="red" onClick={removeImage} ml={3}>
                 Remove
               </Button>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialogOverlay>
-      </AlertDialog>
+            </DialogFooter>
+          </DialogContent>
+        </DialogPositioner>
+      </DialogRoot>
 
       {/* Hidden canvas for image processing */}
       <canvas ref={canvasRef} style={{ display: "none" }} />
