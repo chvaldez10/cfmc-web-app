@@ -1,4 +1,4 @@
-import { Heading, Divider } from "@chakra-ui/react";
+import { Heading, Separator } from "@chakra-ui/react";
 import { motion, useTransform, MotionValue } from "framer-motion";
 
 interface ParallaxSectionHeadingProps {
@@ -38,9 +38,9 @@ const ParallaxSectionHeading = ({
       >
         {title}
       </Heading>
-      <Divider
+      <Separator
         borderColor={`${colorScheme}.300`}
-        borderWidth="2px"
+        css={{ "--separator-border-width": "2px" }}
         maxW="100px"
         mx="auto"
       />

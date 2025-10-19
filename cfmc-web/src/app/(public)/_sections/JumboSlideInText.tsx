@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Heading, Text, VStack, Divider } from "@chakra-ui/react";
+import { Flex, Heading, Text, VStack, Separator } from "@chakra-ui/react";
 import "@/styles/slideInAnimations.css";
 
 import { ABOUT_CONTENT } from "@/constants/shared/about";
@@ -10,7 +10,7 @@ import { LearnMoreButton } from "@/components/ui/button";
 const JumboSlideInText = () => {
   return (
     <VStack
-      spacing={{ base: 2, md: 4 }}
+      gap={{ base: 2, md: 4 }}
       align="start"
       w="full"
       borderLeft="solid"
@@ -22,10 +22,10 @@ const JumboSlideInText = () => {
       {/* Super script Header*/}
       <div className="fade-in-scale delay-0">
         <Flex alignItems="center" gap={2}>
-          <Divider
+          <Separator
             orientation="horizontal"
             borderColor="purple.600"
-            borderWidth="2px"
+            css={{ "--separator-border-width": "2px" }}
             width="12px"
           />
           <Text

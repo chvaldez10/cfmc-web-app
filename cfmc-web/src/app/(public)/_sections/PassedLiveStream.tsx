@@ -7,7 +7,6 @@ import {
   Button,
   Stack,
   Icon,
-  Tooltip,
   createIcon,
   Spinner,
 } from "@chakra-ui/react";
@@ -18,6 +17,7 @@ import { COMMON_X_PADDING } from "@/constants/theme/ui";
 import { getPreviousSundayWorshipService } from "@/lib/supabase/actions/sundays-special-days";
 import type { SundaysAndSpecialDays } from "@/lib/supabase/actions/sundays-special-days";
 import { Branding } from "@/constants/shared/enums";
+import { Tooltip } from "@/components/ui/tooltip";
 
 export default function PassedLiveStream() {
   const [previousSundayData, setPreviousSundayData] =
@@ -103,34 +103,39 @@ export default function PassedLiveStream() {
           </Box>
         ) : (
           <Box
-            as="iframe"
-            title="Facebook video player"
-            src={livestreamUrl}
-            width={{ base: "100%", sm: "560px" }}
-            height={{ base: "auto", sm: "314px" }}
-            minH={{ base: "200px", sm: "314px" }}
-            style={{
-              border: "none",
-              overflow: "hidden",
-              borderRadius: "12px",
-              boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-            }}
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen={true}
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          />
+            width="100%"
+            maxWidth={{ base: "100%", sm: "560px" }}
+            height="314px"
+            minHeight={{ base: "200px", sm: "314px" }}
+          >
+            <iframe
+              title="Facebook video player"
+              src={livestreamUrl}
+              width="100%"
+              height="100%"
+              style={{
+                border: "none",
+                overflow: "hidden",
+                borderRadius: "12px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+              }}
+              scrolling="no"
+              frameBorder="0"
+              allowFullScreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            />
+          </Box>
         )}
       </Box>
 
       <Stack
         direction={"column"}
-        spacing={4}
+        gap={4}
         align={"center"}
         position={"relative"}
       >
         {/* Arrow and label as Tooltip on desktop */}
-        <Tooltip label={LiveStreamLabels.TOOLTIP_TEXT} hasArrow>
+        <Tooltip content={LiveStreamLabels.TOOLTIP_TEXT} showArrow>
           <Box
             id="live-stream-arrow"
             position="absolute"
