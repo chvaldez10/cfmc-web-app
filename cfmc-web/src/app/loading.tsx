@@ -1,3 +1,5 @@
+"use client";
+
 import { Center, Spinner, Text, VStack, Box } from "@chakra-ui/react";
 
 export default function LoadingSpinner() {
@@ -12,11 +14,10 @@ export default function LoadingSpinner() {
       zIndex={9999}
     >
       <Center minH="100vh" px={4}>
-        <VStack spacing={6}>
+        <VStack gap={6}>
           <Spinner
-            thickness="6px"
-            speed="0.7s"
-            emptyColor="gray.200"
+            borderWidth="6px"
+            animationDuration="0.7s"
             color="purple.500"
             size="xl"
           />

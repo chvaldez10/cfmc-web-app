@@ -76,7 +76,7 @@ const BaseModal: React.FC<BaseModalProps> = ({
     >
       <DialogBackdrop />
       <DialogPositioner>
-        <DialogContent>
+        <DialogContent bg="white" color="gray.800">
           {renderHeader ? (
             renderHeader()
           ) : title ? (

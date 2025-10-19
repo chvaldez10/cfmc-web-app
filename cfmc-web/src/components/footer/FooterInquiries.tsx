@@ -80,7 +80,7 @@ const FooterInquiries: React.FC = () => {
         title={selectedInquiry?.label || ""}
         size={{ base: "full", sm: "md", md: "lg", lg: "xl" }}
       >
-        <VStack spacing={4} align="stretch">
+        <VStack gap={4} align="stretch">
           <Text color="gray.600" fontSize={{ base: "sm", md: "md" }}>
             {selectedInquiry?.description}
           </Text>
