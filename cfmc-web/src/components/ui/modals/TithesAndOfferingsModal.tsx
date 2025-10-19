@@ -1,23 +1,25 @@
 import {
-  Modal,
-  ModalContent,
-  ModalOverlay,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
   Button,
   Text,
   VStack,
   HStack,
   Box,
   Icon,
-  Divider,
-  useToast,
-  Tooltip,
+  Separator,
+  DialogRoot,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogCloseTrigger,
+  DialogBody,
+  DialogFooter,
+  DialogBackdrop,
+  DialogPositioner,
 } from "@chakra-ui/react";
 import { FaCopy, FaCheck } from "react-icons/fa";
 import { useState } from "react";
+import { toaster } from "@/components/ui/toaster";
+import { Tooltip } from "@/components/ui/tooltip";
 
 // Types
 import { DonationMethod } from "@/types/ui/components";
@@ -47,7 +49,7 @@ const CopyItemSection = ({
 }) => {
   const isCopied = copiedIndex === index;
   return (
-    <Tooltip label={item} placement="top" hasArrow>
+    <Tooltip content={item} showArrow positioning={{ placement: "top" }}>
       <Box
         mt={3}
         p={3}
@@ -116,7 +118,7 @@ const DonationMethodCard = ({
       position="relative"
       overflow="hidden"
     >
-      <HStack spacing={4} align="start">
+      <HStack gap={4} align="start">
         <Box
           p={3}
           bg="brand.100"
@@ -127,7 +129,7 @@ const DonationMethodCard = ({
           <Icon as={method.icon} boxSize={{ base: 5, md: 6 }} />
         </Box>
 
-        <VStack align="start" spacing={2} flex={1}>
+        <VStack align="start" gap={2} flex={1}>
           <Text
             fontWeight="bold"
             fontSize={{ base: "lg", md: "xl" }}
@@ -242,7 +244,6 @@ const TithesAndOfferingsModal = ({
   onClose: () => void;
 }) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
-  const toast = useToast();
 
   // Color values for theming
   const bgColor = "white";
@@ -252,13 +253,11 @@ const TithesAndOfferingsModal = ({
     navigator.clipboard.writeText(item);
     setCopiedIndex(index);
 
-    toast({
+    toaster.create({
       title: "Copied!",
       description: "The information has been copied to your clipboard.",
-      status: "success",
+      type: "success",
       duration: 2000,
-      isClosable: true,
-      position: "top",
     });
 
     // Reset copied state after 2 seconds
@@ -266,78 +265,81 @@ const TithesAndOfferingsModal = ({
   };
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      isCentered
+    <DialogRoot
+      open={isOpen}
+      onOpenChange={(e) => !e.open && onClose()}
+      placement="center"
       size={{ base: "sm", md: "md", lg: "lg" }}
       scrollBehavior="inside"
-      data-testid="tithes-and-offerings-modal"
     >
-      <ModalOverlay bg="blackAlpha.600" backdropFilter="blur(4px)" />
-      <ModalContent
-        mx={4}
-        bg={bgColor}
-        borderRadius="xl"
-        boxShadow="2xl"
-        maxH="90vh"
-        data-testid="tithes-and-offerings-modal-content"
-      >
-        <ModalHeader
-          fontSize={{ base: "xl", md: "2xl" }}
-          textAlign="center"
-          fontWeight="bold"
-          color="brand.600"
-          pb={2}
+      <DialogBackdrop bg="blackAlpha.600" backdropFilter="blur(4px)" />
+      <DialogPositioner>
+        <DialogContent
+          mx={4}
+          bg={bgColor}
+          borderRadius="xl"
+          boxShadow="2xl"
+          maxH="90vh"
+          data-testid="tithes-and-offerings-modal-content"
         >
-          {PublicLabels.TITHES_AND_OFFERINGS}
-        </ModalHeader>
-        <ModalCloseButton
-          size="lg"
-          borderRadius="full"
-          bg="gray.100"
-          _hover={{ bg: "gray.200" }}
-        />
-        <ModalBody pb={6} px={6}>
-          <VStack spacing={6} align="stretch">
-            <IntroductionSection />
-            <Divider borderColor={borderColor} />
-
-            {/* Donation Methods */}
-            <VStack spacing={4} align="stretch">
-              {DONATION_METHODS.map((method, index) => (
-                <DonationMethodCard
-                  key={index}
-                  method={method}
-                  index={index}
-                  onCopyItem={handleCopyItem}
-                  copiedIndex={copiedIndex}
-                />
-              ))}
-            </VStack>
-
-            <InfoSection />
-          </VStack>
-        </ModalBody>
-        <ModalFooter pt={2} pb={6} px={6}>
-          <Button
-            bg="brand.500"
-            color="white"
-            onClick={onClose}
-            _hover={{ bg: "brand.400", transform: "translateY(-1px)" }}
-            _active={{ bg: "brand.600" }}
-            size={{ base: "md", md: "lg" }}
-            w={{ base: "full", md: "auto" }}
-            px={8}
-            borderRadius="lg"
-            fontWeight="semibold"
-            transition="all 0.2s"
+          <DialogHeader
+            textAlign="center"
+            pb={2}
           >
-            Close
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+            <DialogTitle
+              fontSize={{ base: "xl", md: "2xl" }}
+              fontWeight="bold"
+              color="brand.600"
+            >
+              {PublicLabels.TITHES_AND_OFFERINGS}
+            </DialogTitle>
+          </DialogHeader>
+          <DialogCloseTrigger
+            borderRadius="full"
+            bg="gray.100"
+            _hover={{ bg: "gray.200" }}
+          />
+          <DialogBody pb={6} px={6}>
+            <VStack gap={6} align="stretch">
+              <IntroductionSection />
+              <Separator borderColor={borderColor} />
+
+              {/* Donation Methods */}
+              <VStack gap={4} align="stretch">
+                {DONATION_METHODS.map((method, index) => (
+                  <DonationMethodCard
+                    key={index}
+                    method={method}
+                    index={index}
+                    onCopyItem={handleCopyItem}
+                    copiedIndex={copiedIndex}
+                  />
+                ))}
+              </VStack>
+
+              <InfoSection />
+            </VStack>
+          </DialogBody>
+          <DialogFooter pt={2} pb={6} px={6}>
+            <Button
+              bg="brand.500"
+              color="white"
+              onClick={onClose}
+              _hover={{ bg: "brand.400", transform: "translateY(-1px)" }}
+              _active={{ bg: "brand.600" }}
+              size={{ base: "md", md: "lg" }}
+              w={{ base: "full", md: "auto" }}
+              px={8}
+              borderRadius="lg"
+              fontWeight="semibold"
+              transition="all 0.2s"
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </DialogPositioner>
+    </DialogRoot>
   );
 };
 

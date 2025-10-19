@@ -1,24 +1,26 @@
 import React from "react";
 import {
-  Modal as ChakraModal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
+  DialogRoot,
+  DialogBackdrop,
+  DialogPositioner,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogBody,
+  DialogFooter,
+  DialogCloseTrigger,
   Button,
   ButtonProps,
   useBreakpointValue,
   Flex,
-  IconButton,
   Box,
 } from "@chakra-ui/react";
-import { IoClose } from "react-icons/io5";
 
-interface FooterAction extends ButtonProps {
+interface FooterAction extends Omit<ButtonProps, 'isLoading'> {
   label: string;
   onClick?: () => void;
   isPrimary?: boolean;
+  loading?: boolean;
 }
 
 type ModalSize =
@@ -27,12 +29,8 @@ type ModalSize =
   | "md"
   | "lg"
   | "xl"
-  | "2xl"
-  | "3xl"
-  | "4xl"
-  | "5xl"
-  | "6xl"
-  | "full";
+  | "full"
+  | "cover";
 
 interface BaseModalProps {
   isOpen: boolean;
@@ -50,8 +48,8 @@ interface BaseModalProps {
         xl?: ModalSize;
         "2xl"?: ModalSize;
       };
-  closeOnOverlayClick?: boolean;
-  closeOnEsc?: boolean;
+  closeOnInteractOutside?: boolean;
+  closeOnEscape?: boolean;
   renderHeader?: () => React.ReactNode;
   renderFooter?: () => React.ReactNode;
   hideCloseButton?: boolean;
@@ -64,8 +62,8 @@ const BaseModal: React.FC<BaseModalProps> = ({
   children,
   footerActions,
   size = "md",
-  closeOnOverlayClick = true,
-  closeOnEsc = true,
+  closeOnInteractOutside = true,
+  closeOnEscape = true,
   renderHeader,
   renderFooter,
   hideCloseButton = false,
@@ -75,62 +73,54 @@ const BaseModal: React.FC<BaseModalProps> = ({
   );
 
   return (
-    <ChakraModal
-      isOpen={isOpen}
-      onClose={onClose ?? (() => {})}
+    <DialogRoot
+      open={isOpen}
+      onOpenChange={(e) => !e.open && onClose?.()}
       size={modalSize}
-      closeOnOverlayClick={closeOnOverlayClick}
-      closeOnEsc={closeOnEsc}
-      isCentered
+      closeOnInteractOutside={closeOnInteractOutside}
+      closeOnEscape={closeOnEscape}
+      placement="center"
     >
-      <ModalOverlay />
-      <ModalContent>
-        {renderHeader ? (
-          renderHeader()
-        ) : title ? (
-          <ModalHeader>{title}</ModalHeader>
-        ) : null}
+      <DialogBackdrop />
+      <DialogPositioner>
+        <DialogContent>
+          {renderHeader ? (
+            renderHeader()
+          ) : title ? (
+            <DialogHeader>
+              <DialogTitle>{title}</DialogTitle>
+            </DialogHeader>
+          ) : null}
 
-        {!hideCloseButton && (
-          <Box position="absolute" top={4} right={4} zIndex={1}>
-            <IconButton
-              aria-label="Close modal"
-              icon={<IoClose />}
-              size="sm"
-              variant="ghost"
-              onClick={onClose}
-              _hover={{ bg: "gray.100" }}
-              borderRadius="full"
-            />
-          </Box>
-        )}
+          {!hideCloseButton && <DialogCloseTrigger />}
 
-        <ModalBody>{children}</ModalBody>
+          <DialogBody>{children}</DialogBody>
 
-        {renderFooter ? (
-          renderFooter()
-        ) : footerActions?.length ? (
-          <ModalFooter>
-            <Flex w="full" justify="flex-end" gap={3} flexWrap="wrap">
-              {footerActions.map((action, index) => (
-                <Button
-                  key={index}
-                  onClick={action.onClick}
-                  colorScheme={
-                    action.isPrimary ? action.colorScheme ?? "blue" : undefined
-                  }
-                  variant={action.isPrimary ? "solid" : "ghost"}
-                  isLoading={action.isLoading}
-                  {...action}
-                >
-                  {action.label}
-                </Button>
-              ))}
-            </Flex>
-          </ModalFooter>
-        ) : null}
-      </ModalContent>
-    </ChakraModal>
+          {renderFooter ? (
+            renderFooter()
+          ) : footerActions?.length ? (
+            <DialogFooter>
+              <Flex w="full" justify="flex-end" gap={3} flexWrap="wrap">
+                {footerActions.map((action, index) => (
+                  <Button
+                    key={index}
+                    onClick={action.onClick}
+                    colorScheme={
+                      action.isPrimary ? action.colorScheme ?? "blue" : undefined
+                    }
+                    variant={action.isPrimary ? "solid" : "ghost"}
+                    loading={action.loading}
+                    {...action}
+                  >
+                    {action.label}
+                  </Button>
+                ))}
+              </Flex>
+            </DialogFooter>
+          ) : null}
+        </DialogContent>
+      </DialogPositioner>
+    </DialogRoot>
   );
 };
 
