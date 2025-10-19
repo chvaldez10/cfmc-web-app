@@ -13,7 +13,7 @@ import {
   IconButton,
   Box,
 } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { IoClose } from "react-icons/io5";
 
 interface FooterAction extends ButtonProps {
   label: string;
@@ -95,7 +95,7 @@ const BaseModal: React.FC<BaseModalProps> = ({
           <Box position="absolute" top={4} right={4} zIndex={1}>
             <IconButton
               aria-label="Close modal"
-              icon={<CloseIcon />}
+              icon={<IoClose />}
               size="sm"
               variant="ghost"
               onClick={onClose}

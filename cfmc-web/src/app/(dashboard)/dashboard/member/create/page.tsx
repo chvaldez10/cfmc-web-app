@@ -39,7 +39,7 @@ import {
   AlertDialogBody,
   AlertDialogFooter,
 } from "@chakra-ui/react";
-import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
+import { IoAdd, IoTrash } from "react-icons/io5";
 import {
   createChurchMember,
   uploadMemberImage,
@@ -536,7 +536,7 @@ export default function CreateMemberPage() {
                           colorScheme="red"
                           variant="outline"
                           aria-label="Remove image"
-                          icon={<DeleteIcon />}
+                          icon={<IoTrash />}
                           onClick={onAlertOpen}
                         />
                       </HStack>
@@ -548,7 +548,7 @@ export default function CreateMemberPage() {
                       Upload a headshot for the member profile
                     </Text>
                     <Button
-                      leftIcon={<AddIcon />}
+                      leftIcon={<IoAdd />}
                       onClick={() => fileInputRef.current?.click()}
                       colorScheme="purple"
                       variant="outline"

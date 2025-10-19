@@ -19,7 +19,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 import { login, logout } from "./action";
 import { createClient } from "@/lib/supabase/client";
 
@@ -277,7 +277,7 @@ export default function LoginPage() {
                       aria-label={
                         showPassword ? "Hide password" : "Show password"
                       }
-                      icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                      icon={showPassword ? <IoEyeOff /> : <IoEye />}
                       variant="ghost"
                       onClick={() => setShowPassword(!showPassword)}
                     />
