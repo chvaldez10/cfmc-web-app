@@ -1,6 +1,10 @@
 {
-  "MEDIA_TOOLS": {
-    "title": "Media Tools",
-    "description": "We use various tools to create and manage our media content. Freeshow is our primary tool for media creation and management. In addition, we use Canva to design graphics, source most of our images from Unsplash, and obtain motion backgrounds from MOTIONBOLT."
+  "MEDIA_TEAM": {
+    "title": "Media Team",
+    "description": "The Media Team helps share the story of what God is doing using media and technology. From capturing powerful moments to creating visuals and videos that inspire, this team uses creativity and technology to make sure every message reaches hearts — both in person and online."
+  },
+  "PRAISE_WORSHIP_TEAM": {
+    "title": "Praise & Worship Team",
+    "description": "The Praise & Worship Team leads our congregation into meaningful encounters with God through music. They create an atmosphere of praise that invites the Holy Spirit to move and draws us closer to His presence."
   }
 }

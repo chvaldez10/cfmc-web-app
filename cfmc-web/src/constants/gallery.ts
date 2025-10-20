@@ -108,10 +108,16 @@ export const HOME_JUMBO_GALLERY_ITEMS = Object.values(
 export const HOME_JUMBO_LIMIT = 8;
 
 export const MEDIA_INQUIRY_GALLERY_ITEMS = {
-  SEVENTH_ANNIVERSARY_IMAGE: {
+  MEDIA_TOOLS_IMAGE: {
     id: 1,
-    image: "/other-logos/freeshow.png",
-    title: "Freeshow Logo",
-    altText: "Freeshow Logo",
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/851cdecb-3541-4ab2-c916-ae76f34ea700/public`,
+    title: "Media Team",
+    altText: "Media Team",
+  },
+  PRAISE_WORSHIP_TEAM_IMAGE: {
+    id: 2,
+    image: `${CLOUDFLARE_IMAGE_PREFIX}/053aab20-b6d6-483d-032d-1377ef13cd00/public`,
+    title: "Praise & Worship Team",
+    altText: "Praise & Worship Team",
   },
 };

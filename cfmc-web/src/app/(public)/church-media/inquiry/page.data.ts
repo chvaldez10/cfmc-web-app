@@ -9,13 +9,23 @@ export const MEDIA_INQUIRY_STICKY_PARALLAX_SECTIONS: readonly SectionData[] =
     [
       {
         content: {
-          contentKeys: ["MEDIA_TOOLS"],
+          contentKeys: ["MEDIA_TEAM"],
         },
         visual: {
           ...VISUAL_PRESETS.PURPLE_LEFT,
-          image: MEDIA_INQUIRY_GALLERY_ITEMS.SEVENTH_ANNIVERSARY_IMAGE.image,
+          image: MEDIA_INQUIRY_GALLERY_ITEMS.MEDIA_TOOLS_IMAGE.image,
+          altText: MEDIA_INQUIRY_GALLERY_ITEMS.MEDIA_TOOLS_IMAGE.altText,
+        },
+      },
+      {
+        content: {
+          contentKeys: ["PRAISE_WORSHIP_TEAM"],
+        },
+        visual: {
+          ...VISUAL_PRESETS.GREEN_RIGHT,
+          image: MEDIA_INQUIRY_GALLERY_ITEMS.PRAISE_WORSHIP_TEAM_IMAGE.image,
           altText:
-            MEDIA_INQUIRY_GALLERY_ITEMS.SEVENTH_ANNIVERSARY_IMAGE.altText,
+            MEDIA_INQUIRY_GALLERY_ITEMS.PRAISE_WORSHIP_TEAM_IMAGE.altText,
         },
       },
     ],
