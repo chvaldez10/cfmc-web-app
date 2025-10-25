@@ -2,7 +2,7 @@
 
 import { Box, Stack, VStack } from "@chakra-ui/react";
 import {
-  EventImageCarousel,
+  EventImageGallery,
   EventDescription,
   EventDetails,
   EventMap,
@@ -19,7 +19,7 @@ const EventDetailPage = ({ event }: EventDetailPageProps) => {
   return (
     <Box bg="gray.50" mt={NAVBAR_HEIGHT} minH="100vh" py={8}>
       <Box mx="auto" maxW={COMMON_MAX_WIDTH} px={COMMON_X_PADDING}>
-        <EventImageCarousel images={event.images} eventName={event.name} />
+        <EventImageGallery images={event.images} eventName={event.name} />
 
         <Stack
           direction={{ base: "column", xl: "row" }}

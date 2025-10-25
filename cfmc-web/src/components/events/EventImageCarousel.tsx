@@ -17,6 +17,12 @@ interface EventImageCarouselProps {
   eventName: string;
 }
 
+/**
+ * @deprecated This component is deprecated. Use EventImageGallery instead.
+ * EventImageGallery provides a modern grid-based layout with better accessibility
+ * and performance characteristics.
+ */
+
 const EventImageCarousel = ({ images, eventName }: EventImageCarouselProps) => {
   const [imageLoadStates, setImageLoadStates] = useState<
     Record<string, boolean>
