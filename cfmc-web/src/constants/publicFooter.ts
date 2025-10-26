@@ -15,7 +15,7 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
     children: [
       {
         label: "Media",
-        href: "/media",
+        href: "/church-media/inquiry",
       },
       {
         label: "Events",

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import { Box } from "@chakra-ui/react";
-import { HeroHeader } from "@/components/hero";
 import { StickyParallax } from "@/components/ui/parallax";
 import { MINISTRIES_STICKY_PARALLAX_SECTIONS as SECTIONS_DATA } from "./page.data";
 import { calculateParallaxHeight } from "@/utils/parallaxHeight";
 import { generatePageMetadata } from "@/utils/seo";
+import MinistriesHero from "./_sections/MinistriesHero";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Our Ministries",
@@ -27,10 +27,7 @@ export default function MinistriesPage() {
 
   return (
     <>
-      <HeroHeader
-        title="Ministries"
-        description="Our ministries aim to serve and uplift."
-      />
+      <MinistriesHero />
 
       <Box position="relative" height={`${sectionHeight}vh`}>
         {SECTIONS_DATA.map((section, index) => (
