@@ -128,7 +128,9 @@ export function MarkdownCodeBlock({
     <Box
       as="pre"
       bg={codeBg}
-      p={{ base: 4, md: 6 }}
+      pt={{ base: 12, md: 6 }}
+      px={{ base: 4, md: 6 }}
+      pb={{ base: 4, md: 6 }}
       borderRadius="lg"
       overflow="auto"
       mb={{ base: 4, md: 6 }}
@@ -141,14 +143,21 @@ export function MarkdownCodeBlock({
         position="absolute"
         top={2}
         right={2}
+        left={{ base: 2, md: "auto" }}
         display="flex"
         alignItems="center"
+        justifyContent={{ base: "space-between", md: "flex-end" }}
         gap={2}
+        bg={{ base: "blackAlpha.300", md: "transparent" }}
+        borderRadius="md"
+        px={{ base: 2, md: 0 }}
+        py={{ base: 1, md: 0 }}
+        backdropFilter={{ base: "blur(4px)", md: "none" }}
       >
         {language && (
           <Text
             fontSize="xs"
-            color="gray.400"
+            color="gray.300"
             textTransform="uppercase"
             fontWeight="semibold"
           >
@@ -179,7 +188,6 @@ export function MarkdownCodeBlock({
         fontFamily="monospace"
         fontSize={{ base: "sm", md: "md" }}
         lineHeight="tall"
-        pr={{ base: 8, md: 10 }} // Add padding to prevent text overlap with copy button
       >
         {children}
       </Code>
