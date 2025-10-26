@@ -15,13 +15,8 @@ import {
   MarkdownSection,
   TableOfContents,
 } from "@/components/ui/text";
-import {
-  documentationContent,
-  documentationMetadata,
-  type ContentBlock,
-  type InlineCode,
-  type Link,
-} from "./page.data";
+import { documentationContent, documentationMetadata } from "./page.data";
+import type { ContentBlock, InlineCode, Link } from "@/types/ui/documentation";
 import "./styles.css";
 
 // Metadata for SEO

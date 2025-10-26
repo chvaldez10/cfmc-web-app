@@ -6,6 +6,8 @@ export enum Branding {
   CHURCH_PHONE_NUMBER = "1 (587) 888-4216",
   CHURCH_EMAIL = "methodist.cfmc@gmail.com",
   CHURCH_FACEBOOK_URL = "https://www.facebook.com/calgaryfilipino.methodistchurch",
+  CHURCH_GITHUB_URL = "https://github.com/chvaldez10/cfmc-web-app",
+  CHURCH_DOMAIN_URL = "https://www.calgaryfilipinomethodistchurch.ca",
 }
 
 export enum ModalButtonLabels {
@@ -129,4 +131,9 @@ export enum Inquiries {
   CONNECT = "connect",
   PRAYER = "prayer",
   MEDIA = "media",
+}
+
+export enum DocumentationLabels {
+  PAGE_TITLE = "CFMC Web Documentation",
+  PAGE_DESCRIPTION = "Complete setup guide and documentation for the Calgary Filipino Methodist Church web application built with Next.js 15.",
 }

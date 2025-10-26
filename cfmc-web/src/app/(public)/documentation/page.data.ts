@@ -1,51 +1,9 @@
 // Documentation page content - Combined from both README files
-
-export interface CodeBlock {
-  type: "code";
-  content: string;
-  language: string;
-}
-
-export interface Paragraph {
-  type: "paragraph";
-  content: string | (string | InlineCode | Link)[];
-}
-
-export interface InlineCode {
-  type: "inline-code";
-  content: string;
-}
-
-export interface Link {
-  type: "link";
-  text: string;
-  url: string;
-}
-
-export interface List {
-  type: "list";
-  ordered: boolean;
-  items: (string | InlineCode | Link)[][];
-}
-
-export interface Heading {
-  type: "heading";
-  level: 1 | 2 | 3 | 4;
-  content: string;
-  id?: string;
-}
-
-export interface Divider {
-  type: "divider";
-}
-
-export type ContentBlock = Heading | Paragraph | CodeBlock | List | Divider;
-
-export interface DocumentationSection {
-  title: string;
-  id: string;
-  blocks: ContentBlock[];
-}
+import {
+  DocumentationSection,
+  DocumentationMetadata,
+} from "@/types/ui/documentation";
+import { Branding, DocumentationLabels } from "@/constants/shared/enums";
 
 export const documentationContent: DocumentationSection[] = [
   {
@@ -64,7 +22,7 @@ export const documentationContent: DocumentationSection[] = [
           "This is the web project for the ",
           {
             type: "inline-code",
-            content: "Calgary Filipino Methodist Church (CFMC)",
+            content: `${Branding.CHURCH_NAME} (${Branding.CHURCH_NAME_ABBREVIATION})`,
           },
           " landing page, built with ",
           { type: "inline-code", content: "Next.js 15" },
@@ -90,8 +48,7 @@ export const documentationContent: DocumentationSection[] = [
       },
       {
         type: "code",
-        content:
-          "git clone https://github.com/chvaldez10/cfmc-web-app.git\ncd cfmc-web",
+        content: `git clone ${Branding.CHURCH_GITHUB_URL}.git\ncd cfmc-web`,
         language: "bash",
       },
     ],
@@ -288,8 +245,8 @@ export const documentationContent: DocumentationSection[] = [
           "Live deployment: 🔗 ",
           {
             type: "link",
-            text: "https://www.calgaryfilipinomethodistchurch.ca/",
-            url: "https://www.calgaryfilipinomethodistchurch.ca/",
+            text: Branding.CHURCH_DOMAIN_URL,
+            url: Branding.CHURCH_DOMAIN_URL,
           },
         ],
       },
@@ -298,9 +255,8 @@ export const documentationContent: DocumentationSection[] = [
 ];
 
 // Metadata for the documentation page
-export const documentationMetadata = {
-  title: "CFMC Web Documentation",
-  description:
-    "Complete setup guide and documentation for the Calgary Filipino Methodist Church web application built with Next.js 15.",
+export const documentationMetadata: DocumentationMetadata = {
+  title: DocumentationLabels.PAGE_TITLE,
+  description: DocumentationLabels.PAGE_DESCRIPTION,
   lastUpdated: "2025-10-26",
 };

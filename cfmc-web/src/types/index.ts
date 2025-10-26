@@ -3,3 +3,4 @@ export * from "./ui/forms";
 export * from "./ui/components";
 export * from "./ui/navbar";
 export * from "./supabase";
+export * from "./ui/documentation";
