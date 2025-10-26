@@ -7,11 +7,9 @@ import {
   VStack,
   Heading,
   Text,
-  Icon,
   Box,
   Stack,
 } from "@chakra-ui/react";
-import { FaUser } from "react-icons/fa";
 import { ChurchMembers } from "@/types/supabase/members";
 import styles from "./ProfileCard.module.css";
 

@@ -32,7 +32,7 @@ export const FOOTER_ITEMS: Array<FooterItem> = [
     children: [
       {
         label: "Documentation",
-        href: "/",
+        href: "/documentation",
       },
       {
         label: "GitHub",

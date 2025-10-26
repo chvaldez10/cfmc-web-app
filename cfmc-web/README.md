@@ -49,4 +49,4 @@ To deploy, request access to the **Vercel project**.
 Currently, the project is being built and deployed from a local environment.
 
 Live deployment:
-🔗 [https://cfmc-web.vercel.app/](https://cfmc-web.vercel.app/)
+🔗 [https://www.calgaryfilipinomethodistchurch.ca/](https://www.calgaryfilipinomethodistchurch.ca/)
