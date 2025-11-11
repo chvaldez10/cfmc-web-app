@@ -9,6 +9,7 @@ import {
   Stack,
   HStack,
   Icon,
+  Tooltip,
 } from "@chakra-ui/react";
 import { FaFacebook, FaEnvelope } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
@@ -32,6 +33,7 @@ interface SocialIconLinkProps {
   hoverBgColor: string;
   hoverTextColor?: string;
   hoverShadow: string;
+  tooltipLabel: string;
 }
 
 const SocialIconLink = ({
@@ -43,35 +45,48 @@ const SocialIconLink = ({
   hoverBgColor,
   hoverTextColor,
   hoverShadow,
+  tooltipLabel,
 }: SocialIconLinkProps) => {
   return (
-    <Link
-      href={href}
-      isExternal
-      aria-label={ariaLabel}
-      bg="white"
-      border="1px solid"
-      borderColor="gray.300"
-      borderRadius="full"
-      p={2}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      color={color}
-      transition="all 0.3s ease"
-      _hover={{
-        borderColor: hoverBorderColor,
-        bg: hoverBgColor,
-        color: hoverTextColor,
-        transform: "translateY(-2px)",
-        boxShadow: hoverShadow,
-      }}
-      _active={{
-        transform: "translateY(0)",
-      }}
+    <Tooltip
+      label={tooltipLabel}
+      hasArrow
+      placement="top"
+      bg="gray.700"
+      color="white"
+      fontSize="sm"
+      px={3}
+      py={2}
+      borderRadius="md"
     >
-      <Icon as={icon} boxSize={{ base: 4, md: 5 }} />
-    </Link>
+      <Link
+        href={href}
+        isExternal
+        aria-label={ariaLabel}
+        bg="white"
+        border="1px solid"
+        borderColor="gray.300"
+        borderRadius="full"
+        p={2}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        color={color}
+        transition="all 0.3s ease"
+        _hover={{
+          borderColor: hoverBorderColor,
+          bg: hoverBgColor,
+          color: hoverTextColor,
+          transform: "translateY(-2px)",
+          boxShadow: hoverShadow,
+        }}
+        _active={{
+          transform: "translateY(0)",
+        }}
+      >
+        <Icon as={icon} boxSize={{ base: 4, md: 5 }} />
+      </Link>
+    </Tooltip>
   );
 };
 
@@ -148,6 +163,7 @@ const FooterDetails = () => {
                 hoverBorderColor="#1877F2"
                 hoverBgColor="blue.50"
                 hoverShadow="0 4px 12px rgba(24, 119, 242, 0.15)"
+                tooltipLabel="Visit our Facebook page"
               />
               <SocialIconLink
                 href={`mailto:${Branding.CHURCH_EMAIL}`}
@@ -158,6 +174,7 @@ const FooterDetails = () => {
                 hoverBgColor="green.50"
                 hoverTextColor="secondary.600"
                 hoverShadow="0 4px 12px rgba(71, 160, 71, 0.15)"
+                tooltipLabel={`Email: ${Branding.CHURCH_EMAIL}`}
               />
               <SocialIconLink
                 href={`tel:${Branding.CHURCH_PHONE_NUMBER}`}
@@ -168,6 +185,7 @@ const FooterDetails = () => {
                 hoverBgColor="green.50"
                 hoverTextColor="green.700"
                 hoverShadow="0 4px 12px rgba(34, 197, 94, 0.15)"
+                tooltipLabel={`Call: ${Branding.CHURCH_PHONE_NUMBER}`}
               />
             </HStack>
           </Box>
