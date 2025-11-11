@@ -11,6 +11,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FaFacebook, FaEnvelope } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 import { IconType } from "react-icons";
 import { FOOTER_ITEMS } from "@/constants/publicFooter";
 import { Branding, FooterLabels } from "@/constants/shared/enums";
@@ -103,7 +104,7 @@ const FooterNavSection = ({ label, items }: FooterNavSectionProps) => {
 
 interface ContactInfoProps {
   label: string;
-  value: string;
+  value?: string;
 }
 
 const ContactInfo = ({ label, value }: ContactInfoProps) => {
@@ -112,7 +113,7 @@ const ContactInfo = ({ label, value }: ContactInfoProps) => {
       <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
         {label}
       </Text>
-      <Text fontSize={{ base: "sm", md: "md" }}>{value}</Text>
+      {value && <Text fontSize={{ base: "sm", md: "md" }}>{value}</Text>}
     </>
   );
 };
@@ -129,40 +130,47 @@ const FooterDetails = () => {
         wrap="wrap"
       >
         <VStack align="start" spacing={4} mb={{ base: 8, md: 0 }}>
+          {/* Contact Information */}
           <ContactInfo
             label={FooterLabels.ADDRESS}
             value={`Place of Worship: ${Branding.CHURCH_ADDRESS}`}
           />
-          <ContactInfo
-            label={FooterLabels.CONTACT}
-            value={Branding.CHURCH_PHONE_NUMBER}
-          />
-          <Text fontSize={{ base: "sm", md: "md" }}>
-            {Branding.CHURCH_EMAIL}
-          </Text>
 
           {/* Social Media Icons */}
-          <HStack spacing={4} pt={2}>
-            <SocialIconLink
-              href={Branding.CHURCH_FACEBOOK_URL}
-              ariaLabel="Visit our Facebook page"
-              icon={FaFacebook}
-              color="#1877F2"
-              hoverBorderColor="#1877F2"
-              hoverBgColor="blue.50"
-              hoverShadow="0 4px 12px rgba(24, 119, 242, 0.15)"
-            />
-            <SocialIconLink
-              href={`mailto:${Branding.CHURCH_EMAIL}`}
-              ariaLabel="Send us an email"
-              icon={FaEnvelope}
-              color="gray.600"
-              hoverBorderColor="secondary.500"
-              hoverBgColor="green.50"
-              hoverTextColor="secondary.600"
-              hoverShadow="0 4px 12px rgba(71, 160, 71, 0.15)"
-            />
-          </HStack>
+          <ContactInfo label={FooterLabels.CONTACT} />
+          <Box>
+            <HStack spacing={4}>
+              <SocialIconLink
+                href={Branding.CHURCH_FACEBOOK_URL}
+                ariaLabel="Visit our Facebook page"
+                icon={FaFacebook}
+                color="#1877F2"
+                hoverBorderColor="#1877F2"
+                hoverBgColor="blue.50"
+                hoverShadow="0 4px 12px rgba(24, 119, 242, 0.15)"
+              />
+              <SocialIconLink
+                href={`mailto:${Branding.CHURCH_EMAIL}`}
+                ariaLabel="Send us an email"
+                icon={FaEnvelope}
+                color="gray.600"
+                hoverBorderColor="secondary.500"
+                hoverBgColor="green.50"
+                hoverTextColor="secondary.600"
+                hoverShadow="0 4px 12px rgba(71, 160, 71, 0.15)"
+              />
+              <SocialIconLink
+                href={`tel:${Branding.CHURCH_PHONE_NUMBER}`}
+                ariaLabel="Call us"
+                icon={FaPhone}
+                color="green.600"
+                hoverBorderColor="green.500"
+                hoverBgColor="green.50"
+                hoverTextColor="green.700"
+                hoverShadow="0 4px 12px rgba(34, 197, 94, 0.15)"
+              />
+            </HStack>
+          </Box>
         </VStack>
 
         <Stack
