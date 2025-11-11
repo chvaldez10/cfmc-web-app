@@ -1,4 +1,17 @@
-import { Box, Flex, Text, Link, VStack, Stack } from "@chakra-ui/react";
+"use client";
+
+import {
+  Box,
+  Flex,
+  Text,
+  Link,
+  VStack,
+  Stack,
+  HStack,
+  Icon,
+} from "@chakra-ui/react";
+import { FaFacebook, FaEnvelope } from "react-icons/fa";
+import { IconType } from "react-icons";
 import { FOOTER_ITEMS } from "@/constants/publicFooter";
 import { Branding, FooterLabels } from "@/constants/shared/enums";
 import { COMMON_X_PADDING, COMMON_MAX_WIDTH } from "@/constants/theme/ui";
@@ -8,6 +21,101 @@ const Footer = () => {
 };
 
 export default Footer;
+
+interface SocialIconLinkProps {
+  href: string;
+  ariaLabel: string;
+  icon: IconType;
+  color: string;
+  hoverBorderColor: string;
+  hoverBgColor: string;
+  hoverTextColor?: string;
+  hoverShadow: string;
+}
+
+const SocialIconLink = ({
+  href,
+  ariaLabel,
+  icon,
+  color,
+  hoverBorderColor,
+  hoverBgColor,
+  hoverTextColor,
+  hoverShadow,
+}: SocialIconLinkProps) => {
+  return (
+    <Link
+      href={href}
+      isExternal
+      aria-label={ariaLabel}
+      bg="white"
+      border="1px solid"
+      borderColor="gray.300"
+      borderRadius="full"
+      p={2}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      color={color}
+      transition="all 0.3s ease"
+      _hover={{
+        borderColor: hoverBorderColor,
+        bg: hoverBgColor,
+        color: hoverTextColor,
+        transform: "translateY(-2px)",
+        boxShadow: hoverShadow,
+      }}
+      _active={{
+        transform: "translateY(0)",
+      }}
+    >
+      <Icon as={icon} boxSize={{ base: 4, md: 5 }} />
+    </Link>
+  );
+};
+
+interface FooterNavSectionProps {
+  label: string;
+  children?: Array<{
+    label: string;
+    href?: string;
+  }>;
+}
+
+const FooterNavSection = ({ label, children }: FooterNavSectionProps) => {
+  return (
+    <VStack align="start" spacing={4}>
+      <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
+        {label}
+      </Text>
+      {children?.map((item) => (
+        <Link
+          href={item.href || "#"}
+          key={item.label}
+          fontSize={{ base: "sm", md: "md" }}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </VStack>
+  );
+};
+
+interface ContactInfoProps {
+  label: string;
+  value: string;
+}
+
+const ContactInfo = ({ label, value }: ContactInfoProps) => {
+  return (
+    <>
+      <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
+        {label}
+      </Text>
+      <Text fontSize={{ base: "sm", md: "md" }}>{value}</Text>
+    </>
+  );
+};
 
 const FooterDetails = () => {
   return (
@@ -21,24 +129,40 @@ const FooterDetails = () => {
         wrap="wrap"
       >
         <VStack align="start" spacing={4} mb={{ base: 8, md: 0 }}>
-          <Text fontWeight="bold" fontSize={{ base: "lg", md: "xl" }}>
-            {Branding.CHURCH_NAME_ABBREVIATION}
-          </Text>
-          <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
-            {FooterLabels.ADDRESS}
-          </Text>
-          <Text fontSize={{ base: "sm", md: "md" }}>
-            Place of Worship: {Branding.CHURCH_ADDRESS}
-          </Text>
-          <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
-            {FooterLabels.CONTACT}
-          </Text>
-          <Text fontSize={{ base: "sm", md: "md" }}>
-            {Branding.CHURCH_PHONE_NUMBER}
-          </Text>
+          <ContactInfo
+            label={FooterLabels.ADDRESS}
+            value={`Place of Worship: ${Branding.CHURCH_ADDRESS}`}
+          />
+          <ContactInfo
+            label={FooterLabels.CONTACT}
+            value={Branding.CHURCH_PHONE_NUMBER}
+          />
           <Text fontSize={{ base: "sm", md: "md" }}>
             {Branding.CHURCH_EMAIL}
           </Text>
+
+          {/* Social Media Icons */}
+          <HStack spacing={4} pt={2}>
+            <SocialIconLink
+              href={Branding.CHURCH_FACEBOOK_URL}
+              ariaLabel="Visit our Facebook page"
+              icon={FaFacebook}
+              color="#1877F2"
+              hoverBorderColor="#1877F2"
+              hoverBgColor="blue.50"
+              hoverShadow="0 4px 12px rgba(24, 119, 242, 0.15)"
+            />
+            <SocialIconLink
+              href={`mailto:${Branding.CHURCH_EMAIL}`}
+              ariaLabel="Send us an email"
+              icon={FaEnvelope}
+              color="gray.600"
+              hoverBorderColor="secondary.500"
+              hoverBgColor="green.50"
+              hoverTextColor="secondary.600"
+              hoverShadow="0 4px 12px rgba(71, 160, 71, 0.15)"
+            />
+          </HStack>
         </VStack>
 
         <Stack
@@ -46,20 +170,11 @@ const FooterDetails = () => {
           spacing={{ base: 8, md: 16 }}
         >
           {FOOTER_ITEMS.map((footerItem, index) => (
-            <VStack align="start" spacing={4} key={index}>
-              <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
-                {footerItem.label}
-              </Text>
-              {footerItem.children?.map((item) => (
-                <Link
-                  href={item.href}
-                  key={item.label}
-                  fontSize={{ base: "sm", md: "md" }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </VStack>
+            <FooterNavSection
+              key={index}
+              label={footerItem.label}
+              children={footerItem.children}
+            />
           ))}
         </Stack>
       </Flex>
