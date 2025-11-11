@@ -76,19 +76,19 @@ const SocialIconLink = ({
 
 interface FooterNavSectionProps {
   label: string;
-  children?: Array<{
+  items?: Array<{
     label: string;
     href?: string;
   }>;
 }
 
-const FooterNavSection = ({ label, children }: FooterNavSectionProps) => {
+const FooterNavSection = ({ label, items }: FooterNavSectionProps) => {
   return (
     <VStack align="start" spacing={4}>
       <Text fontWeight="bold" fontSize={{ base: "md", md: "lg" }}>
         {label}
       </Text>
-      {children?.map((item) => (
+      {items?.map((item) => (
         <Link
           href={item.href || "#"}
           key={item.label}
@@ -173,7 +173,7 @@ const FooterDetails = () => {
             <FooterNavSection
               key={index}
               label={footerItem.label}
-              children={footerItem.children}
+              items={footerItem.children}
             />
           ))}
         </Stack>
