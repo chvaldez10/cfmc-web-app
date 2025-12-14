@@ -5,6 +5,7 @@ export enum Branding {
   CHURCH_POSTAL_CODE = "T2K 3H7",
   CHURCH_PHONE_NUMBER = "1 (587) 888-4216",
   CHURCH_EMAIL = "methodist.cfmc@gmail.com",
+  CHURCH_E_TRANSFER_EMAIL = "calgaryfilipinomethodistchurch@yahoo.com",
   CHURCH_FACEBOOK_URL = "https://www.facebook.com/calgaryfilipino.methodistchurch",
   CHURCH_GITHUB_URL = "https://github.com/chvaldez10/cfmc-web-app",
   CHURCH_DOMAIN_URL = "https://www.calgaryfilipinomethodistchurch.ca",

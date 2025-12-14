@@ -58,7 +58,7 @@ export const DONATION_METHODS: DonationMethod[] = [
     icon: FaEnvelope,
     title: "E-Transfer",
     description: "Send directly to our church email",
-    onCopyItem: Branding.CHURCH_EMAIL,
+    onCopyItem: Branding.CHURCH_E_TRANSFER_EMAIL,
   },
   {
     icon: FaMailBulk,
