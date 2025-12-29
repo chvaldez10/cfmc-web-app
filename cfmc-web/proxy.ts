@@ -5,6 +5,7 @@ import { updateSession } from "@/lib/supabase/middleware";
 const allowedOrigins = [
   "https://cfmc-web.vercel.app",
   "https://localhost:3000",
+  "https://www.calgaryfilipinomethodistchurch.ca/",
 ];
 
 const corsOptions = {
@@ -12,7 +13,7 @@ const corsOptions = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Check the origin from the request
   const origin = request.headers.get("origin") ?? "";
   const isAllowedOrigin = allowedOrigins.includes(origin);
