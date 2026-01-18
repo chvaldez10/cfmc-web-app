@@ -16,22 +16,22 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@supabase/ssr": "^0.6.1",
-    "@supabase/supabase-js": "^2.87.1",
-    "framer-motion": "^12.23.26",
+    "@supabase/supabase-js": "^2.90.1",
+    "framer-motion": "^12.26.2",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
-    "styled-components": "^6.1.19",
+    "styled-components": "^6.3.8",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
-    "@types/node": "^24.10.4",
+    "@types/node": "^24.10.9",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.1",
-    "supabase": "^2.67.1",
+    "supabase": "^2.72.8",
     "typescript": "^5.9.3"
   },
   "overrides": {
