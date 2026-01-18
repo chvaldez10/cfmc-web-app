@@ -65,7 +65,6 @@ export enum FooterLabels {
   ADDRESS = "Address",
   CONTACT = "Contact",
   NAVIGATION = "Navigation",
-  COPYRIGHT_NOTICE = "© 2025",
 }
 
 export enum ContactUsOptions {

@@ -208,7 +208,7 @@ const FooterDetails = () => {
       <Box borderTop="1px" borderColor="gray.300" mt={10} pt={4}>
         <Flex justify="center" align="center">
           <Text mb={{ base: 4, md: 0 }} fontSize={{ base: "sm", md: "md" }}>
-            {FooterLabels.COPYRIGHT_NOTICE} {Branding.CHURCH_NAME}
+            © {new Date().getFullYear()} {Branding.CHURCH_NAME}
           </Text>
         </Flex>
       </Box>
