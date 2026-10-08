@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useSyncExternalStore } from "react";
 
 // Chakra UI
 import {
@@ -160,14 +160,14 @@ const EventDetails = ({ event }: { event: Events }) => {
 };
 
 // Client-side component to handle date formatting and prevent hydration mismatch
-const ClientSideEventDate = ({ start_date }: { start_date: string }) => {
-  const [formattedDate, setFormattedDate] = useState<string>("");
-  const [isClient, setIsClient] = useState(false);
+const subscribeToClient = () => () => {};
 
-  useEffect(() => {
-    setIsClient(true);
-    setFormattedDate(formatLocalDateTimeToHumanReadable(start_date));
-  }, [start_date]);
+const ClientSideEventDate = ({ start_date }: { start_date: string }) => {
+  const isClient = useSyncExternalStore(
+    subscribeToClient,
+    () => true,
+    () => false
+  );
 
   // Show a placeholder during SSR or before client hydration
   if (!isClient) {
@@ -180,7 +180,7 @@ const ClientSideEventDate = ({ start_date }: { start_date: string }) => {
 
   return (
     <Text fontSize="sm" color="gray.500" mt="auto">
-      {formattedDate}
+      {formatLocalDateTimeToHumanReadable(start_date)}
     </Text>
   );
 };

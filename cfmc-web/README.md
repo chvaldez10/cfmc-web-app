@@ -34,6 +34,17 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
+Before deploying, run:
+
+```bash
+npm ci
+npm run typecheck
+npm run lint
+npm run build
+```
+
+The project uses TypeScript 7 and Oxlint. Chakra UI remains on v2. The older ESLint config is retained as a reference; using it again will require migrating it to ESLint's flat config and waiting for TypeScript 7 support in typescript-eslint.
+
 ---
 
 ## ⚙️ Notes

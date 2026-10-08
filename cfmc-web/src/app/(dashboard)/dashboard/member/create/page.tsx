@@ -136,7 +136,7 @@ export default function CreateMemberPage() {
 
     if (
       formData.phoneNumber &&
-      !/^\+?[\d\s\-\(\)]+$/.test(formData.phoneNumber)
+      !/^\+?[\d\s()-]+$/.test(formData.phoneNumber)
     ) {
       newErrors.phoneNumber = "Please enter a valid phone number";
     }

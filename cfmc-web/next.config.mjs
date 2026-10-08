@@ -20,6 +20,7 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["framer-motion"],
+    useTypeScriptCli: true,
   },
   transpilePackages: ["framer-motion"],
 };

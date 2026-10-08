@@ -9,16 +9,14 @@ export default async function EventPage({
 }) {
   const { slug } = await params;
 
-  try {
-    const event = await getEventBySlug(slug);
-
-    if (!event) {
-      notFound();
-    }
-
-    return <EventDetailPage event={event} />;
-  } catch (error) {
+  const event = await getEventBySlug(slug).catch((error) => {
     console.error("Error fetching event:", error);
     notFound();
+  });
+
+  if (!event) {
+    notFound();
   }
+
+  return <EventDetailPage event={event} />;
 }
