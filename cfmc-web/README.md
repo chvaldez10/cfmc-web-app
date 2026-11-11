@@ -8,10 +8,18 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ### 1. Install dependencies
 
+Use Node.js 22 or newer and pnpm 11.28.5 (pinned in `package.json`).
+If pnpm is not installed, enable it with Corepack:
+
+```bash
+corepack enable pnpm
+corepack install
+```
+
 Run the following command to install all required packages:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### 2. Set up environment variables
@@ -29,7 +37,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 Run the development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
@@ -37,10 +45,10 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser to view
 Before deploying, run:
 
 ```bash
-npm ci
-npm run typecheck
-npm run lint
-npm run build
+ppnpm install --frozen-lockfile
+pnpm typecheck
+pnpm lint
+pnpm build
 ```
 
 The project uses TypeScript 7 and Oxlint. Chakra UI remains on v2. The older ESLint config is retained as a reference; using it again will require migrating it to ESLint's flat config and waiting for TypeScript 7 support in typescript-eslint.
@@ -57,6 +65,11 @@ The project uses TypeScript 7 and Oxlint. Chakra UI remains on v2. The older ESL
 ## ☁️ Deploy on Vercel
 
 To deploy, request access to the **Vercel project**.
+Set `ENABLE_EXPERIMENTAL_COREPACK=1` in every Vercel environment you deploy
+so Vercel uses the pnpm version pinned in `package.json`. Remove any custom
+install command that forces npm; use `pnpm install --frozen-lockfile` if an
+explicit install command is needed. Use Node.js 22 or newer for builds.
+
 Currently, the project is being built and deployed from a local environment.
 
 Live deployment:

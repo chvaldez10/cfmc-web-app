@@ -1,6 +1,6 @@
 <!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+## This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
 
@@ -13,7 +13,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Project setup
 
 - This is a Next.js App Router app using React 19, TypeScript 7, Chakra UI 2, and Supabase.
-- Use npm and commit changes to `package-lock.json` whenever dependencies change. Run `npm ci` to verify a clean install.
+- Use pnpm 11 and commit changes to `pnpm-lock.yaml` and `pnpm-workspace.yaml` whenever dependencies change. Run `ppnpm install --frozen-lockfile` to verify a clean install.
 - Keep Chakra UI on major version 2. Do not introduce Chakra 3 APIs or migrate the theme or provider unless explicitly requested.
 - `src/app` contains routes and layouts; `src/components` contains shared UI; `src/lib` contains integrations; `src/types` contains shared types. The `@/` import alias points to `src/`.
 
@@ -27,7 +27,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Verification
 
-- Run `npm run typecheck`, `npm run lint`, and `npm run build` after code or dependency changes. Fix failures before considering the work complete.
-- Use `npm run dev` and check the affected route in a browser for visible UI changes; a successful build alone does not verify interaction or layout.
-- `npm run lint` uses Oxlint. The `.eslintrc.json` file is a legacy reference and is not the active lint setup.
+- Run `pnpm typecheck`, `pnpm lint`, and `pnpm build` after code or dependency changes. Fix failures before considering the work complete.
+- Use `pnpm dev` and check the affected route in a browser for visible UI changes; a successful build alone does not verify interaction or layout.
+- `pnpm lint` uses Oxlint. The `.eslintrc.json` file is a legacy reference and is not the active lint setup.
 - Do not edit files inside `.next/` or `node_modules/`; both are generated.

@@ -129,7 +129,7 @@ export const documentationContent: DocumentationSection[] = [
       },
       {
         type: "code",
-        content: "npm install",
+        content: "pnpm install",
         language: "bash",
       },
       {
@@ -165,7 +165,7 @@ export const documentationContent: DocumentationSection[] = [
       },
       {
         type: "code",
-        content: "npm run dev",
+        content: "pnpm dev",
         language: "bash",
       },
       {
